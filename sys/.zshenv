@@ -7,6 +7,7 @@ export LC_CTYPE=en_US.UTF-8
 # Set default editors
 export EDITOR='nvim'
 export VISUAL='nvim'
+export TERM='xterm-256color'
 
 # XDG directories
 export XDG_CONFIG_HOME="$HOME/.config"
