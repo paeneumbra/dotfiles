@@ -1,3 +1,15 @@
+# Linux
+*.der
+
+# Zimfw
+/*/.config/zsh/.zim
+/*/.config/zsh/*.zwc
+
+# IDE
+.idea
+.vscode
+
+# Python
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,0 +1,27 @@
+env:
+  TERM: 'xterm-256color'
+
+window:
+  padding:
+    x: 24
+    y: 24
+  opacity: 0.90 # value range is 0 ~ 1
+
+
+font:
+  normal:
+    family: Iosevka Term
+    style: Bold
+
+  bold:
+    family: Iosevka Term
+    style: Oblique
+  
+  italic:
+    family: Iosevka Term
+    style: Bold
+  
+  size: 12.0
+
+import:
+  - ~/.config/decorator/output/alacritty
