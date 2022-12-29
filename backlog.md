@@ -21,3 +21,5 @@
   - [ ] `upower -i `upower -e | grep 'BAT1' | grep 'percentage'``
 - [ ] cutefish seems to be abandoned
   - [ ] alternatives?
+  - [ ] mate?
+  - [ ] ?

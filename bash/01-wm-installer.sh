@@ -9,8 +9,11 @@ PKGS=(
     xorg-xinit
     nvidia-dkms
 
-    cutefish
+    # cutefish
     noto-fonts
+
+    # mate
+    # mate-extra
 
     bspwm
     sxhkd
