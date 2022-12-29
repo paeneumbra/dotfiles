@@ -1,7 +1,14 @@
 # Makefile
 
+init-submodules:
+	git submodule init
+	git submodule update
+
 pacman-install:
 	./bash/00-installer.sh
+
+wm-install:
+	./bash/01-wm-installer.sh
 
 stow-sys:
 	 exec stow --verbose --dir=$(HOME)/workspace --target=$(HOME) sys
@@ -17,7 +24,7 @@ install-yay:
 	(cd repositories/yay && makepkg -si)
 
 yay-install:
-	./bash/01-yay-installer.sh
+	./bash/02-yay-installer.sh
 
 logiops-install:
 	sudo pacman -S cmake libevdev libconfig pkgconf
