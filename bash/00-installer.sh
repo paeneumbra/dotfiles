@@ -63,6 +63,7 @@ PKGS=(
     zsa-wally
     calibre
 
+    tlp
 )
 
 for PKG in ${PKGS[@]};

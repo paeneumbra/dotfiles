@@ -16,3 +16,8 @@
 - [ ] What to do with decorator
 - [ ] tldr
 - [ ] zettlekasten
+- [ ] cutefish does not recognize both batteries
+  - [ ] `upower -i `upower -e | grep 'BAT0' | grep 'percentage'``
+  - [ ] `upower -i `upower -e | grep 'BAT1' | grep 'percentage'``
+- [ ] cutefish seems to be abandoned
+  - [ ] alternatives?
