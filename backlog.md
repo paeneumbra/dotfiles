@@ -13,3 +13,6 @@
 - [ ] Test teams
 - [ ] Test camera
 - [ ] Test sound
+- [ ] What to do with decorator
+- [ ] tldr
+- [ ] zettlekasten
