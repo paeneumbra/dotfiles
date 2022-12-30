@@ -1,0 +1,21 @@
+{
+  "main": "main-folder",
+  "repos": [
+    {
+      "name": "sub-folder-one",
+      "repos": [
+        "git@github.com:simao-ferreira/code-katas.git",
+        "git@github.com:simao-ferreira/gradle-template.git"
+      ]
+    },
+    {
+      "name": "sub-folder-two",
+      "repos": [
+        "git@github.com:simao-ferreira/markdown-resume.git",
+        "git@github.com:simao-ferreira/game-of-life.git"
+      ]
+    },
+    "git@github.com:simao-ferreira/python-template.git",
+    "git@github.com:simao-ferreira/nvim.git"
+  ]
+}

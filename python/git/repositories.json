@@ -1,0 +1,7 @@
+{
+	"main": "workspace/repositories",
+	"repos": [
+        "git@github.com:tldr-pages/tldr.git",
+        "git@github.com:archlinux/archinstall.git"
+    ]
+}
