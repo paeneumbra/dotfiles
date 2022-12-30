@@ -2,27 +2,24 @@
 
 set -e
 
-
 PKGS=(
-    redshift
+  redshift
 
-    nerd-fonts-complete
-    ttf-nerd-fonts-symbols
+  nerd-fonts-complete
+  ttf-nerd-fonts-symbols
 
-    python-pynvim
+  python-pynvim
 
-    vscodium-bin
-    pip-tools
+  vscodium-bin
+  pip-tools
 
-    brave-bin
-
+  brave-bin
 )
 
-for PKG in ${PKGS[@]};
-do
-    echo
-    echo "INSTALLING PACKAGE: $PKG"
-    yay -S "$PKG" --noconfirm --needed
+for PKG in "${PKGS[@]}"; do
+  echo
+  echo "INSTALLING PACKAGE: $PKG"
+  yay -S "$PKG" --noconfirm --needed
 done
 
 echo

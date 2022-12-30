@@ -1,6 +1,5 @@
 # Environment
 alias reloadzsh='source $ZDOTDIR/.zshrc'
-alias dots='cd $DOTFILES'
 
 # Directories
 alias la='ls -lAh'
@@ -16,6 +15,10 @@ alias mv='mv -iv'
 
 # Print each PATH entry on a separate line
 alias path="echo -e \"${PATH//:/\\n}\""
+
+# Bluetooth
+alias btc='bluetoothctl connect'
+alias btd='bluetoothctl disconnect'
 
 # Stow
 alias restow='stow --verbose --dir=$HOME/workspace --target=$HOME sys'

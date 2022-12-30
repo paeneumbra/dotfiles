@@ -15,9 +15,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-# Path to dotfiles
-export DOTFILES=$HOME/workspace/sys
-
 # Force packages to be XDG compliant
 # https://wiki.archlinux.org/title/XDG_Base_Directory
 export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle

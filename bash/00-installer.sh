@@ -2,75 +2,74 @@
 
 set -e
 
-
 PKGS=(
-	alacritty
-	fd
-	fzf
-    git
-    git-filter-repo
-	openssh
-	ripgrep
-	starship
-	stow
-	tree
-	zsh
-	zsh-completions
-	
-    neovim
-    prettier
-    npm
+  alacritty
+  fd
+  fzf
+  git
+  git-filter-repo
+  openssh
+  ripgrep
+  starship
+  stow
+  tree
+  zsh
+  zsh-completions
 
-	ranger 
-	ueberzug
-	
-    zathura
-	zathura-cb
-	zathura-pdf-mupdf
-	
-	glow
-    neofetch
+  neovim
+  prettier
+  npm
 
-	ttf-fira-code
+  ranger
+  ueberzug
 
+  zathura
+  zathura-cb
+  zathura-pdf-mupdf
 
-    intellij-idea-community-edition
-    jre8-openjdk
-    jre11-openjdk
-    jre17-openjdk
-    kotlin
-    gradle
-    groovy
+  glow
+  neofetch
 
-    lua
-    luarocks
-    stylua
+  ttf-fira-code
+  noto-fonts
 
-    python
-    python-pip
-    python-virtualenv
-    python-pipenv
-    python-setuptools
-    pycharm-community-edition
-    python-black
-    flake8
+  intellij-idea-community-edition
+  jre8-openjdk
+  jre11-openjdk
+  jre17-openjdk
+  kotlin
+  gradle
+  groovy
 
-    jq
-    yq
+  lua
+  luarocks
+  stylua
 
-    firefox
-    thunderbird
-    zsa-wally
-    calibre
+  python
+  python-pip
+  python-virtualenv
+  python-pipenv
+  python-setuptools
+  pycharm-community-edition
+  python-black
+  flake8
 
-    tlp
+  jq
+  yq
+
+  firefox
+  thunderbird
+  zsa-wally
+  calibre
+
+  tlp
+  fwupd
 )
 
-for PKG in ${PKGS[@]};
-do
-    echo
-    echo "INSTALLING PACKAGE: $PKG"
-    sudo pacman -S "$PKG" --noconfirm --needed
+for PKG in "${PKGS[@]}"; do
+  echo
+  echo "INSTALLING PACKAGE: $PKG"
+  sudo pacman -S "$PKG" --noconfirm --needed
 done
 
 echo

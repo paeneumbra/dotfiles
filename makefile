@@ -10,6 +10,9 @@ pacman-install:
 wm-install:
 	./bash/01-wm-installer.sh
 
+gnome-install:
+	./bash/01-gnome-installer.sh
+
 stow-sys:
 	 exec stow --verbose --dir=$(HOME)/workspace --target=$(HOME) sys
 

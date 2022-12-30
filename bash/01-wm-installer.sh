@@ -2,28 +2,29 @@
 
 set -e
 
-
 PKGS=(
-    dkms
-    xorg-server
-    xorg-xinit
-    nvidia-dkms
+  dkms
+  xorg-server
+  xorg-xinit
+  nvidia-dkms
 
-    # cutefish
-    noto-fonts
+  #https://wiki.archlinux.org/title/Bspwm
+  #bspwm
+  #sxhkd
 
-    # mate
-    # mate-extra
+  #Python based WM
+  #https://wiki.archlinux.org/title/Qtile
+  #qtile
 
-    bspwm
-    sxhkd
+  #Lua based WM
+  #https://wiki.archlinux.org/title/Awesome
+  #awesome
 )
 
-for PKG in ${PKGS[@]};
-do
-    echo
-    echo "INSTALLING PACKAGE: $PKG"
-    sudo pacman -S "$PKG" --noconfirm --needed
+for PKG in "${PKGS[@]}"; do
+  echo
+  echo "INSTALLING PACKAGE: $PKG"
+  sudo pacman -S "$PKG" --noconfirm --needed
 done
 
 echo
