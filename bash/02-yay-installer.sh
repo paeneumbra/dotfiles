@@ -6,7 +6,6 @@ PKGS=(
   redshift
 
   nerd-fonts-complete
-  ttf-nerd-fonts-symbols
 
   python-pynvim
 

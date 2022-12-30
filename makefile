@@ -11,10 +11,11 @@ wm-install:
 	./bash/01-wm-installer.sh
 
 gnome-install:
-	./bash/01-gnome-installer.sh
+	./bash/02-gnome-installer.sh
 
 stow-sys:
-	 exec stow --verbose --dir=$(HOME)/workspace --target=$(HOME) sys
+	mkdir -p $(HOME)/.config
+	exec stow --verbose --dir=$(HOME)/workspace --target=$(HOME) sys
 
 default-zsh:
 	mkdir -p $(HOME)/.cache/zsh

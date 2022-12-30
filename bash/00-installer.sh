@@ -32,11 +32,14 @@ PKGS=(
 
   ttf-fira-code
   noto-fonts
+  ttf-nerd-fonts-symbols-common
 
   intellij-idea-community-edition
   jre8-openjdk
   jre11-openjdk
+  jdk11-openjdk
   jre17-openjdk
+  jdk17-openjdk
   kotlin
   gradle
   groovy
