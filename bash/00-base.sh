@@ -15,6 +15,12 @@ PKGS=(
   tree
   zsh
   zsh-completions
+  
+  glow
+  neofetch
+
+  tlp
+  fwupd
 
   neovim
   prettier
@@ -27,14 +33,6 @@ PKGS=(
   zathura-cb
   zathura-pdf-mupdf
 
-  glow
-  neofetch
-
-  ttf-fira-code
-  noto-fonts
-  ttf-nerd-fonts-symbols-common
-
-  intellij-idea-community-edition
   jre8-openjdk
   jre11-openjdk
   jdk11-openjdk
@@ -53,20 +51,12 @@ PKGS=(
   python-virtualenv
   python-pipenv
   python-setuptools
-  pycharm-community-edition
   python-black
   flake8
 
   jq
   yq
 
-  firefox
-  thunderbird
-  zsa-wally
-  calibre
-
-  tlp
-  fwupd
 )
 
 for PKG in "${PKGS[@]}"; do

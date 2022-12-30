@@ -3,6 +3,12 @@
 set -e
 
 PKGS=(
+  dkms
+  xorg-server
+  xorg-xinit
+  nvidia-dkms
+
+  # My Basic Gnome
   #https://wiki.archlinux.org/title/GNOME
   #https://archlinux.org/groups/x86_64/gnome/
   baobab
@@ -16,8 +22,19 @@ PKGS=(
   mutter
   tracker3-miners
   xdg-user-dirs-gtk
-
   gnome-tweaks
+
+  #https://wiki.archlinux.org/title/Bspwm
+  bspwm
+  sxhkd
+
+  #Python based WM
+  #https://wiki.archlinux.org/title/Qtile
+  #qtile
+
+  #Lua based WM
+  #https://wiki.archlinux.org/title/Awesome
+  awesome
 )
 
 for PKG in "${PKGS[@]}"; do
