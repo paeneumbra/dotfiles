@@ -4,6 +4,7 @@ set -e
 
 PKGS=(
   redshift
+  extension-manager
 
   nerd-fonts-complete
 

@@ -23,10 +23,13 @@ PKGS=(
   tracker3-miners
   xdg-user-dirs-gtk
   gnome-tweaks
+  nautilus
 
   #https://wiki.archlinux.org/title/Bspwm
   bspwm
   sxhkd
+  picom
+  wmname
 
   #Python based WM
   #https://wiki.archlinux.org/title/Qtile
