@@ -1,0 +1,93 @@
+@import "~/.config/decorator/output/rofi.rasi"
+
+window {
+    background-color:             	@background;
+	border:							22px;
+    width: 							30%;
+    spacing:                        2;
+}
+
+mainbox {
+    background-color:               @background;
+    border-color:                   @blue;
+    border:                         2px;
+    padding:                        2px;
+}
+
+inputbar {
+    background-color:               @background;
+    border:                         2px;
+    children: 						[ prompt, entry ];
+}
+
+prompt {
+    background-color:               @background;
+	text-color: 					@blue;
+    border:                         2px;
+    padding:                        0px 8px 0px 2px;
+}
+
+entry {
+    background-color:               @background;
+    text-color:                     @foreground;
+    placeholder-color:              @gray;
+    placeholder:                    " search";
+    border:                         2px;
+}
+
+listview {
+    background-color:               @background;
+    padding: 						5px;
+    lines:							10;
+    columns:						1;
+}
+
+element {
+    background-color: 				@background;
+    border: 						2px;
+    padding:                        0px 0px 0px 2px;
+}
+
+element.normal.normal {
+    text-color:       				@foreground;
+}
+
+element.normal.active {
+    text-color:       				@foreground;
+}
+
+element.selected.normal {
+    background-color: 				@background;
+}
+
+element.selected.active {
+    background-color: 				@background;
+}
+
+element-text {
+    background-color: 				inherit;
+    text-color:       				inherit;
+}
+
+element-text.normal.active{
+    text-color: 				    @yellow;
+}
+
+
+element-text.selected.normal {
+    text-color: 				    @blue;
+}
+
+element-text.selected.active {
+    text-color: 				    @yellow;
+}
+
+element-text.alternate.normal {
+    text-color:       				@foreground;
+}
+
+element-icon {
+    background-color: 				inherit;
+    text-color:       				inherit;
+    padding:                        0px 8px 0px 0px;
+}

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+feh --bg-fill $HOME/workspace/.wallpapers/t480.png --no-fehbg &
+
+xrdb ~/.Xresources
+polybar_start &
+killall redshift; sleep 4; redshift &

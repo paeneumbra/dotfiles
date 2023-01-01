@@ -1,0 +1,37 @@
+#!/usr/bin/env sh
+
+EXIT="  Exit"
+HIBERNATE="❄  Hibernate"
+LOCK="  Lock"
+REBOOT="  Reboot"
+SHUTDOWN="  Shutdown"
+SUSPEND="鈴  Suspend"
+
+OPTIONS="$EXIT\n$HIBERNATE\n$LOCK\n$REBOOT\n$SHUTDOWN\n$SUSPEND"
+COMMAND="rofi -i -theme base -p "
+
+function menu(){
+    option="$(echo -e "$OPTIONS" | $COMMAND -dmenu | tr -d '\r\n')"
+    if [ ${#option} -gt 0 ] ; then
+        case "$option" in
+            $EXIT)
+                bspc quit
+                ;;                
+            $LOCK)
+                lock_desktop lock 
+                ;;
+            $REBOOT) 
+                systemctl reboot
+                ;;
+            $SHUTDOWN) 
+                systemctl poweroff
+                ;;
+            $SUSPEND)
+                systemctl suspend
+                ;;
+        esac
+    fi
+}
+
+menu
+

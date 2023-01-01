@@ -4,6 +4,7 @@ set -e
 
 PKGS=(
   alacritty
+  rxvt-unicode
   fd
   fzf
   git
@@ -15,6 +16,7 @@ PKGS=(
   tree
   zsh
   zsh-completions
+  xclip
   
   glow
   neofetch

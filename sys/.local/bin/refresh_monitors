@@ -1,0 +1,77 @@
+#!/bin/bash
+
+LAPTOP_MONITOR="eDP-1"
+EXTERNAL_MONITORS=($(xrandr -q | awk '/ connected / {print $1}' | grep -v $LAPTOP_MONITOR | head -2))
+
+function move_to_monitor(){
+    # not working - look into it
+    bspc desktop any --to-monitor $1
+}
+
+function set_laptop_monitor_only(){
+    echo "Setting laptop configuration only"
+    move_to_monitor $LAPTOP_MONITOR
+    force_kill
+    bspc monitor $LAPTOP_MONITOR --reset-desktops I II III IV V
+}
+
+function set_one_external_monitor(){
+    if [ ! -z $1 ]; then
+        echo "Setting external configuration adding monitor $1"
+        xrandr --output $1 --auto --left-of $LAPTOP_MONITOR
+        bspc monitor $1 --reset-desktops I II III IV V
+        bspc monitor $LAPTOP_MONITOR --reset-desktops VI VII VIII IX X
+        move_to_monitor $1
+    fi
+}
+
+function set_two_external_monitors(){
+    echo "Setting external configuration for adding monitor $1 and $2"
+    xrandr --output $1 --auto --left-of $LAPTOP_MONITOR
+    xrandr --output $2 --auto --left-of $1
+    bspc monitor $1 --reset-desktops I II III IV V
+    bspc monitor $2 --reset-desktops VI VII VIII IX
+    bspc monitor $LAPTOP_MONITOR --reset-desktops X
+    move_to_monitor $2
+}
+
+function refresh_monitors(){
+    case ${#EXTERNAL_MONITORS[@]} in
+        2)
+            set_two_external_monitors ${EXTERNAL_MONITORS[@]};;
+        1)
+            set_one_external_monitor ${EXTERNAL_MONITORS[0]};;
+        *)
+            set_laptop_monitor_only;;
+    esac
+}
+
+function force_kill(){
+    # Sometimes, does not recognize monitor is switched off
+    xrandr --output DP-1 --off
+    xrandr --output DP-2 --off
+    xrandr --output DP-1-8 --off
+    xrandr --output DP-2-8 --off
+    xrandr --output HDMI-1 --off
+    xrandr --output eDP1 --auto --primary
+}
+
+case $1 in
+    --all)
+        refresh_monitors;;
+    -a)
+        refresh_monitors;;
+    --kill)
+        force_kill;;
+    -k)
+        force_kill;;
+    --help)
+        echo "Usage: command [OPTION]"
+        echo "  -a, --all       refresh all monitors, disconnects and resets all monitors configurations"
+        echo "  -k, --kill      kill external monitors - DP-1, DP-1-8 - using xrandr"
+        ;;
+    *)
+        echo "Unknown command."
+        echo "Try 'command --help' for more information."
+        ;;
+esac

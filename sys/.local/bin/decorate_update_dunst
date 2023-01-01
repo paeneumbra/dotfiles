@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# This script makes usage of decorate_load_xcolors to load xresources colors
+# and use them to update dunstrc file
+
+# load colors from xresources
+COLOR0=$(decorate_load_xcolors color0 '#010201')
+COLOR3=$(decorate_load_xcolors color3 '#d79921')
+
+DUNST_CONFIG=$XDG_CONFIG_HOME/dunst/dunstrc
+
+# update dunst based on xresources.
+sed -i '/background = /s/.*/background = "'$COLOR0'"/' $DUNST_CONFIG
+sed -i '/foreground = /s/.*/foreground = "'$COLOR3'"/' $DUNST_CONFIG
+sed -i '/frame_color = /s/.*/frame_color = "'$COLOR3'"/' $DUNST_CONFIG
+sed -i '/separator_color = /s/.*/separator_color = "'$COLOR3'"/' $DUNST_CONFIG
+

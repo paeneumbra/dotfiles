@@ -29,7 +29,11 @@ PKGS=(
   bspwm
   sxhkd
   picom
+  dunst
+  rofi
+  polybar
   wmname
+  feh
 
   #Python based WM
   #https://wiki.archlinux.org/title/Qtile

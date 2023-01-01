@@ -47,5 +47,4 @@ gaming-setup:
 	./bash/08-games.sh
 
 repos-setup:
-	./python/git/cloneworkspace.py ./python/git/repositories.json
-	./python/git/cloneworkspace.py ./python/git/workspace.json
+	./bin/cloneworkspace.py ./git/workspace.json

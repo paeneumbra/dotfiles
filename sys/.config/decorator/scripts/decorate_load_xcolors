@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# This script is used to load colors from xresources to several config files
+# Expects a call to be made with a colorname according to xresources structure
+# and a default value in case no color is found - format #rrggbb
+
+xrdb_get () {
+    output="$(xrdb -query all | grep "$1:" | head -n1 | cut -f2)"
+    default="$2"
+    printf '%s' "${output:-$default}"
+}
+
+if [[ $# -ne 2 ]]; then
+    echo "Illegal number of parameters $#" >&2
+    echo "Usage: command [STRING] [DEFAULT]"
+    exit 2
+fi
+
+xrdb_get $1 $2
