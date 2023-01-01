@@ -20,5 +20,5 @@ alias path="echo -e \"${PATH//:/\\n}\""
 alias btc='bluetoothctl connect'
 alias btd='bluetoothctl disconnect'
 
-# Stow
-alias restow='stow --verbose --dir=$HOME/workspace --target=$HOME sys'
+# Gnome
+alias gnome-logout='gnome-session-quit --logout --no-prompt'
