@@ -1,44 +1,45 @@
 {
-  "main": "workspace/projects",
-  "repos": [
-    "git@github.com:simao-ferreira/dotfiles.git",
-    "git@github.com:simao-ferreira/ecb-exchange-rates.git",
-    "git@github.com:simao-ferreira/code-katas.git",
-    "git@github.com:simao-ferreira/game-of-life.git",
-    "git@github.com:simao-ferreira/noggin.git",
-    "git@github.com:simao-ferreira/nvim.git",
-    "git@github.com:simao-ferreira/markdown-resume.git",
-    "git@github.com:simao-ferreira/pi-dotfiles.git",
-    "git@github.com:simao-ferreira/simao-ferreira.github.io.git",
-    {
-      "name": "archived",
-      "repos": [
-        "git@github.com:simao-ferreira/bscscan-wrapper.git",
-        "git@github.com:simao-ferreira/PD_ThreeRow.git",
-        "git@github.com:simao-ferreira/slipped-my-mind.git",
-        "git@github.com:simao-ferreira/SpaceWinvaders.git"
-      ]
-    },
-    {
-      "name": "deprecating",
-      "repos": [
-        "git@github.com:simao-ferreira/core.git",
-        "git@github.com:simao-ferreira/sebenta.git"
-      ]
-    },
-    {
-      "name": "templates",
-      "repos": [
-        "git@github.com:simao-ferreira/gradle-template.git",
-        "git@github.com:simao-ferreira/python-template.git"
-      ]
-    },
-    {
-      "name": "repositories",
-      "repos": [
-        "git@github.com:archlinux/archinstall.git",
-        "git@github.com:tldr-pages/tldr.git"
-      ]
-    }
-  ]
+	"main": "workspace/projects",
+	"repos": [
+		"git@github.com:simao-ferreira/dotfiles.git",
+		"git@github.com:simao-ferreira/ecb-exchange-rates.git",
+		"git@github.com:simao-ferreira/code-katas.git",
+		"git@github.com:simao-ferreira/game-of-life.git",
+		"git@github.com:simao-ferreira/macos.git",
+		"git@github.com:simao-ferreira/noggin.git",
+		"git@github.com:simao-ferreira/nvim.git",
+		"git@github.com:simao-ferreira/markdown-resume.git",
+		"git@github.com:simao-ferreira/pi-dotfiles.git",
+		"git@github.com:simao-ferreira/simao-ferreira.github.io.git",
+		{
+			"name": "archived",
+			"repos": [
+				"git@github.com:simao-ferreira/bscscan-wrapper.git",
+				"git@github.com:simao-ferreira/PD_ThreeRow.git",
+				"git@github.com:simao-ferreira/slipped-my-mind.git",
+				"git@github.com:simao-ferreira/SpaceWinvaders.git"
+			]
+		},
+		{
+			"name": "deprecating",
+			"repos": [
+				"git@github.com:simao-ferreira/core.git",
+				"git@github.com:simao-ferreira/sebenta.git"
+			]
+		},
+		{
+			"name": "templates",
+			"repos": [
+				"git@github.com:simao-ferreira/gradle-template.git",
+				"git@github.com:simao-ferreira/python-template.git"
+			]
+		},
+		{
+			"name": "repositories",
+			"repos": [
+				"git@github.com:archlinux/archinstall.git",
+				"git@github.com:tldr-pages/tldr.git"
+			]
+		}
+	]
 }
