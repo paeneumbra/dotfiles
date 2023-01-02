@@ -4,37 +4,37 @@ init-submodules:
 	git submodule init
 	git submodule update
 
-base-install:
+install-base:
 	./bash/00-base.sh
 
-wm-install:
+install-wm:
 	./bash/01-window-manager.sh
 
-extra-install:
+install-extra:
 	./bash/02-gui-extras.sh
 
 stow-config:
 	mkdir -p $(HOME)/.config
 	exec stow --verbose --dir=$(HOME)/workspace --target=$(HOME) sys
 
-default-zsh:
+setup-zsh:
 	mkdir -p $(HOME)/.cache/zsh
 	sudo chsh -s $$(which zsh)
 	echo "Restart to enable zsh"
 
-yay-setup:
+setup-yay:
 	mkdir -p repositories/yay
 	git clone https://aur.archlinux.org/yay.git repositories/yay
 	(cd repositories/yay && makepkg -si)
 
-yay-install:
+install-yay-pkgs:
 	./bash/03-yay.sh
 
-bluetooth-setup:
+setup-bluetooth:
 	./bash/04-bluetooth.sh
 	sudo systemctl enable --now bluetooth.service
 
-logiops-setup:
+setup-logiops:
 	sudo pacman -S cmake libevdev libconfig pkgconf
 	mkdir -p repositories/logiops
 	git clone https://github.com/PixlOne/logiops.git repositories/logiops
@@ -43,8 +43,8 @@ logiops-setup:
 	(cd repositories/logiops/build && sudo make install)
 	sudo systemctl enable --now logid
 
-gaming-setup:
+setup-gaming:
 	./bash/08-games.sh
 
-repos-setup:
-	./bin/cloneworkspace.py ./git/workspace.json
+setup-repos:
+	./bin/cloneworkspace.py -s ./git/workspace.json -r
