@@ -9,8 +9,15 @@
 .idea
 .vscode
 
-# Workspace
+# WORKSPACE
 projects/
+core/
+scratchpad/
+cheatsheet/
+
+# DATA
+python/.data/*
+!python/.data/.gitkeep
 
 # Python
 # Byte-compiled / optimized / DLL files

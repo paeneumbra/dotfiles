@@ -48,3 +48,4 @@ setup-gaming:
 
 setup-repos:
 	./bin/cloneworkspace.py -s ./git/workspace.json -r
+	./bin/cloneworkspace.py -s ./git/projects.json -r
