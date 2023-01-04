@@ -9,6 +9,7 @@ PKGS=(
   fzf
   git
   git-filter-repo
+  maim
   openssh
   ripgrep
   starship

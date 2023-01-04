@@ -19,6 +19,7 @@
   - [ ] pywall?
   - [ ] background
   - [ ] nvim
-- [ ] Bluetooth not working on bspwm
-
-
+- [x] Bluetooth not working on bspwm - but works on gnome
+- [ ] Light is not working on bspwm - but works on gnome
+- [ ] calibre
+- [ ] cdm or ly

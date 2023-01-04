@@ -4,6 +4,8 @@ set -e
 
 PKGS=(
     # https://wiki.archlinux.org/title/Bluetooth
+    pipewire
+    pipewire-pulse
     bluez
     bluez-utils
 )

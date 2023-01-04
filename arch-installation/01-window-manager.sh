@@ -34,7 +34,10 @@ PKGS=(
   polybar
   wmname
   feh
-
+  light
+  pavucontrol
+  xdo
+  
   #Python based WM
   #https://wiki.archlinux.org/title/Qtile
   #qtile
@@ -49,6 +52,8 @@ for PKG in "${PKGS[@]}"; do
   echo "INSTALLING PACKAGE: $PKG"
   sudo pacman -S "$PKG" --noconfirm --needed
 done
+
+yay -S bluetuith xtitle --noconfirm --needed
 
 echo
 echo "Installation is done"

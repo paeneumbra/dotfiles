@@ -5,13 +5,13 @@ init-submodules:
 	git submodule update
 
 install-base:
-	./bash/00-base.sh
+	./arch-installation/00-base.sh
 
 install-wm:
-	./bash/01-window-manager.sh
+	./arch-installation/01-window-manager.sh
 
 install-extra:
-	./bash/02-gui-extras.sh
+	./arch-installation/02-gui-extras.sh
 
 stow-config:
 	mkdir -p $(HOME)/.config
@@ -28,10 +28,13 @@ setup-yay:
 	(cd repositories/yay && makepkg -si)
 
 install-yay-pkgs:
-	./bash/03-yay.sh
+	./arch-installation/03-yay.sh
 
 setup-bluetooth:
-	./bash/04-bluetooth.sh
+	./arch-installation/04-bluetooth.sh
+	systemctl --user enable --now pipewire
+	systemctl --user enable --now pipewire
+	systemctl --user enable --now wireplumber
 	sudo systemctl enable --now bluetooth.service
 
 setup-logiops:
@@ -44,7 +47,7 @@ setup-logiops:
 	sudo systemctl enable --now logid
 
 setup-gaming:
-	./bash/08-games.sh
+	./arch-installation/08-games.sh
 
 setup-repos:
 	./bin/cloneworkspace.py -s ./git/workspace.json -r

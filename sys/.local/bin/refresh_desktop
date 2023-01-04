@@ -1,6 +1,6 @@
 #!/bin/bash
 
-feh --bg-fill $HOME/Pictures/wallhaven-r2opq1.jpg --no-fehbg &
+feh --bg-fill $HOME/media/wallhaven-r2opq1.jpg --no-fehbg &
 
 xrdb ~/.Xresources
 polybar_start &

@@ -55,7 +55,7 @@ super + alt + m
 
 # print screen
 super + p
-	maim --select -o -u > ~/Downloads/$(date +%Y%m%d%s).png
+	maim --select -o -u > ~/downloads/$(date +%Y%m%d%s).png
 
 # Backlight
 ctrl + super + b

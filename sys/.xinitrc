@@ -11,10 +11,11 @@ fi
 
 case ${1} in
     bspwm) exec bspwm 2>~/.cache/.bspwm.err > ~/.cache/.bspwm.out ;;
-    *)
+    gnome)
         export XDG_SESSION_TYPE=x11
         export GDK_BACKEND=x11
         exec gnome-session
     ;;
+    *) exec bspwm 2>~/.cache/.bspwm.err > ~/.cache/.bspwm.out ;;
 esac
 
