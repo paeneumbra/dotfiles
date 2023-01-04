@@ -21,4 +21,5 @@ alias btc='bluetoothctl connect'
 alias btd='bluetoothctl disconnect'
 
 # Gnome
-alias gnome-logout='gnome-session-quit --logout --no-prompt'
+alias gnome-quit='gnome-session-quit --logout --no-prompt'
+alias bspwm-quit='bspc quit'
