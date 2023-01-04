@@ -10,6 +10,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 case ${1} in
+    awesome) exec awesome ;;
     bspwm) exec bspwm 2>~/.cache/.bspwm.err > ~/.cache/.bspwm.out ;;
     gnome)
         export XDG_SESSION_TYPE=x11
