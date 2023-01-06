@@ -17,3 +17,18 @@ color = {
 -- TODO: Use gears.filesystem.file_readable (filename) to check is wallpaper exists
 -- if not, default, or send an error
 wallpaper = os.getenv("HOME") .. "/workspace/wallpapers/wallhaven-o3ew8p.png"
+
+
+terminal = "alacritty"
+editor = "nvim"
+editor_cmd = terminal .. " -e " .. editor
+
+apps = {
+	terminal = "alacritty",
+	editor = "nvim",
+	launcher = "rofi -show drun",
+	browser = "firefox",
+	picture = "feh",
+	fileManager = "nautilus",
+	email = "thunderbird",
+}
