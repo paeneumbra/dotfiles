@@ -6,25 +6,27 @@ local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 
 -- Widgets
+local battery = require("bars.widgets.battery")
 local clock = require("bars.widgets.clock")
 local launcher = require("bars.widgets.launcher")
+local layoutbox = require("bars.widgets.layoutbox")
 local menu = require("bars.widgets.menu")
 local tags = require("bars.widgets.tags")
 local task = require("bars.widgets.tasks")
 local volume = require("bars.widgets.volume")
 local wifi = require("bars.widgets.wifi")
 --
-local layoutbox = require("bars.widgets.layoutbox")
 
 -- Systray
 local systray = wibox.widget({
 	{
 		{
 			{
-                launcher,
+				launcher,
 				menu,
 				wifi,
 				volume,
+				battery,
 				spacing = dpi(6),
 				wibox.widget.systray,
 				layout = wibox.layout.fixed.horizontal,
@@ -47,7 +49,7 @@ local right = wibox.widget({
 	{
 		systray,
 		clock,
-        layoutbox(s),
+		layoutbox(s),
 		spacing = dpi(20),
 		layout = wibox.layout.fixed.horizontal,
 	},

@@ -7,23 +7,25 @@ local wifi = wibox.widget.textbox()
 wifi.font = "Iosevka Nerd Font 14"
 
 local function get_wifi()
-	local script = [[
-        nmcli g | tail -1 | awk '{printf $1}'
-        ]]
+	local script = "nmcli g | tail -1 | awk '{printf $1}'"
 
 	awful.spawn.easy_async_with_shell(script, function(stdout)
 		local status = tostring(stdout)
 		if not status:match("disconnected") then
-			local get_strength = [[
-                awk '/^\s*w/ { print  int($3 * 100 / 70) }' /proc/net/wireless
-                ]]
+			local get_strength = "awk '/^s*w/ { print  int($3 * 100 / 70) }' /proc/net/wireless"
 
 			awful.spawn.easy_async_with_shell(get_strength, function(stdout)
-				local strength = tonumber(stdout)
-				if strength < 20 then
+				local strength
+
+				-- This validation avoids nil errors when connection is down
+				if not stdout then
+					strength = 0
+				else
+					strength = tonumber(stdout)
+				end
+
+				if strength < 30 then
 					wifi.markup = "<span foreground='" .. color.red .. "'>  </span>"
-				elseif strength < 40 then
-					wifi.markup = "<span foreground='" .. color.yellow .. "'>  </span>"
 				else
 					wifi.markup = "<span foreground='" .. color.green .. "'>  </span>"
 				end
@@ -35,7 +37,7 @@ local function get_wifi()
 end
 
 gears.timer({
-	timeout = 5,
+	timeout = 10,
 	autostart = true,
 	call_now = true,
 	callback = function()

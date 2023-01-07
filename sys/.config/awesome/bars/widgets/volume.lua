@@ -3,7 +3,7 @@ local naughty = require("naughty")
 local wibox = require("wibox")
 local dpi = require("beautiful").xresources.apply_dpi
 
-local mute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+local unmute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 
 -- Volume
 local volume = wibox.widget({
@@ -22,7 +22,7 @@ awesome.connect_signal("signal::volume", function(vol, mute)
 end)
 
 volume:connect_signal("button::press", function()
-	awful.spawn.easy_async_with_shell(mute, function()
+	awful.spawn.easy_async_with_shell(unmute, function()
 		naughty.notification({
 			urgency = "normal",
 			title = "You muted/unmuted!",
