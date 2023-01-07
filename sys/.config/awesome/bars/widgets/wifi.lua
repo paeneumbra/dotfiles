@@ -4,7 +4,7 @@ local wibox = require("wibox")
 
 -- Wifi
 local wifi = wibox.widget.textbox()
-wifi.font = "Roboto Medium 16"
+wifi.font = "Iosevka Nerd Font 14"
 
 local function get_wifi()
 	local script = [[
@@ -21,19 +21,15 @@ local function get_wifi()
 			awful.spawn.easy_async_with_shell(get_strength, function(stdout)
 				local strength = tonumber(stdout)
 				if strength < 20 then
-					wifi.markup = "<span foreground='" .. color.yellow .. "'></span>"
+					wifi.markup = "<span foreground='" .. color.red .. "'>  </span>"
 				elseif strength < 40 then
-					wifi.markup = "<span foreground='" .. color.green .. "'></span>"
-				elseif strength < 60 then
-					wifi.markup = "<span foreground='" .. color.green .. "'></span>"
-				elseif strength < 80 then
-					wifi.markup = "<span foreground='" .. color.green .. "'></span>"
+					wifi.markup = "<span foreground='" .. color.yellow .. "'>  </span>"
 				else
-					wifi.markup = "<span foreground='" .. color.green .. "'></span>"
+					wifi.markup = "<span foreground='" .. color.green .. "'>  </span>"
 				end
 			end)
 		else
-			wifi.markup = "<span foreground='" .. color.red .. "'></span>"
+			wifi.markup = "<span foreground='" .. color.red .. "'>  </span>"
 		end
 	end)
 end

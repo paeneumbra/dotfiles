@@ -3,7 +3,7 @@ local wibox = require("wibox")
 
 -- Clock
 local clock = wibox.widget.textbox()
-clock.font = "Iosevka Nerd Font 16"
+clock.font = "Iosevka Nerd Font 14"
 
 gears.timer({
 	timeout = 60,

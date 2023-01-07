@@ -3,13 +3,13 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 
-local function update_tag(item, tag, index)
+local function update_tag(item, tag)
 	if tag.selected then
-		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. color.blue .. "'>◆</span>"
+		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. color.blue .. "'> </span>"
 	elseif #tag:clients() > 0 then
-		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. color.green .. "'>◇</span>"
+		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. color.green .. "'> </span>"
 	else
-		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. color.gray .. "'>◇</span>"
+		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. color.gray .. "'> </span>"
 	end
 end
 
@@ -27,22 +27,19 @@ return function(s)
 			layout = wibox.layout.fixed.horizontal,
 		},
 		style = {
-			spacing = dpi(10), --[[
-fg_focus = beautiful.red,
-fg_empty = beautiful.bg_alt,
-fg_occupied = beautiful.fg --]]
+			spacing = dpi(5),
 		},
 		widget_template = {
 			id = "tag",
-			font = "Roboto Medium 14",
+			font = "Iosevka Nerd Font 12",
 			widget = wibox.widget.textbox,
 
-			create_callback = function(self, c3, index, object)
-				update_tag(self, c3, index)
+			create_callback = function(self, c3)
+				update_tag(self, c3)
 			end,
 
-			update_callback = function(self, c3, index, object)
-				update_tag(self, c3, index)
+			update_callback = function(self, c3)
+				update_tag(self, c3)
 			end,
 		},
 	})

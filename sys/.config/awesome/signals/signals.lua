@@ -3,7 +3,6 @@ local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
--- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function(c)
 	-- Set the windows at the slave,
@@ -47,8 +46,8 @@ client.connect_signal("request::titlebars", function(c)
 		{ -- Right
 			awful.titlebar.widget.floatingbutton(c),
 			awful.titlebar.widget.maximizedbutton(c),
-			awful.titlebar.widget.stickybutton(c),
-			awful.titlebar.widget.ontopbutton(c),
+			-- awful.titlebar.widget.stickybutton(c),
+			-- awful.titlebar.widget.ontopbutton(c),
 			awful.titlebar.widget.closebutton(c),
 			layout = wibox.layout.fixed.horizontal(),
 		},
@@ -68,4 +67,3 @@ end)
 client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
--- }}}

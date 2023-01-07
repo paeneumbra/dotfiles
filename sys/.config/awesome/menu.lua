@@ -32,6 +32,12 @@ powerMenu = {
 			awful.spawn("reboot", false)
 		end,
 	},
+	{
+		"Quit Awesome",
+        function ()
+            awesome.quit()
+        end
+	},
 }
 
 mainmenu = awful.menu({
