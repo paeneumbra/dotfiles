@@ -6,22 +6,26 @@ PKGS=(
   alacritty
   rxvt-unicode
   fd
+  feh
   fzf
   git
   git-filter-repo
   maim
   openssh
+  redshift
   ripgrep
   starship
   stow
   tree
+  wmname
+  xclip
   zsh
   zsh-completions
-  xclip
   
   glow
   neofetch
 
+  arandr
   tlp
   fwupd
 
@@ -59,7 +63,6 @@ PKGS=(
 
   jq
   yq
-
 )
 
 for PKG in "${PKGS[@]}"; do

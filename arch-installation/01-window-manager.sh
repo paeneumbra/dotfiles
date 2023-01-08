@@ -3,11 +3,6 @@
 set -e
 
 PKGS=(
-  dkms
-  xorg-server
-  xorg-xinit
-  nvidia-dkms
-
   # My Basic Gnome
   #https://wiki.archlinux.org/title/GNOME
   #https://archlinux.org/groups/x86_64/gnome/
@@ -32,8 +27,6 @@ PKGS=(
   dunst
   rofi
   polybar
-  wmname
-  feh
   light
   pavucontrol
   xdo
@@ -44,7 +37,7 @@ PKGS=(
 
   #Lua based WM
   #https://wiki.archlinux.org/title/Awesome
-  awesome
+  # awesome
 )
 
 for PKG in "${PKGS[@]}"; do

@@ -7,11 +7,19 @@ init-submodules:
 install-base:
 	./arch-installation/00-base.sh
 
+setup-yay:
+	mkdir -p repositories/yay
+	git clone https://aur.archlinux.org/yay.git repositories/yay
+	(cd repositories/yay && makepkg -si)
+
+install-awesome:
+	./arch-installation/01-awesomewm.sh
+
 install-wm:
 	./arch-installation/01-window-manager.sh
 
 install-extra:
-	./arch-installation/02-gui-extras.sh
+	./arch-installation/02-extras.sh
 
 stow-config:
 	mkdir -p $(HOME)/.config
@@ -21,14 +29,6 @@ setup-zsh:
 	mkdir -p $(HOME)/.cache/zsh
 	sudo chsh -s $$(which zsh)
 	echo "Restart to enable zsh"
-
-setup-yay:
-	mkdir -p repositories/yay
-	git clone https://aur.archlinux.org/yay.git repositories/yay
-	(cd repositories/yay && makepkg -si)
-
-install-yay-pkgs:
-	./arch-installation/03-yay.sh
 
 setup-bluetooth:
 	./arch-installation/04-bluetooth.sh

@@ -8,12 +8,13 @@ PKGS=(
     pipewire-pulse
     bluez
     bluez-utils
+    bluez-hid2hci
 )
 
 for PKG in "${PKGS[@]}"; do
-  echo
-  echo "INSTALLING PACKAGE: $PKG"
-  sudo pacman -S "$PKG" --noconfirm --needed
+    echo
+    echo "INSTALLING PACKAGE: $PKG"
+    sudo pacman -S "$PKG" --noconfirm --needed
 done
 
 echo
