@@ -26,7 +26,7 @@ return function(s)
 			end),
 		},
 		layout = {
-			spacing = dpi(0),
+			spacing = dpi(1),
 			layout = wibox.layout.fixed.horizontal,
 		},
 		widget_template = {
@@ -35,7 +35,7 @@ return function(s)
 					id = "client",
 					widget = awful.widget.clienticon,
 				},
-				margins = dpi(12),
+				margins = dpi(3),
 				widget = wibox.container.margin,
 			},
 			id = "bg",

@@ -4,7 +4,7 @@ local gears = require("gears")
 local wibox = require("wibox")
 
 return function(s)
-	local layoutbox = wibox.widget({
+	local layoutlist = wibox.widget({
 		{
 			{
 				awful.widget.layoutbox(s),
@@ -12,9 +12,9 @@ return function(s)
 				widget = wibox.container.place,
 			},
 			id = "icon_margin",
-			left = dpi(5),
-			right = dpi(5),
-			forced_width = dpi(40),
+			left = dpi(2),
+			right = dpi(2),
+			-- forced_width = dpi(30),
 			widget = wibox.container.margin,
 		},
 		bg = color.bg,
@@ -28,13 +28,9 @@ return function(s)
 		screen = s,
 	})
 
-	layoutbox:connect_signal("button::press", function()
-		awful.layout.inc(-1, s)
-	end)
-
-	layoutbox:connect_signal("button::press", function()
+	layoutlist:connect_signal("button::press", function()
 		awful.layout.inc(1, s)
 	end)
 
-	return layoutbox
+	return layoutlist
 end

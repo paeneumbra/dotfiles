@@ -5,7 +5,7 @@ local gears = require("gears")
 -- Menu
 local menu = wibox.widget({
 	widget = wibox.widget.textbox,
-	font = "Iosevka Nerd Font 14",
+	font = "Iosevka Nerd Font 8",
 	markup = "<span foreground='" .. color.blue .. "'>  </span>",
 })
 

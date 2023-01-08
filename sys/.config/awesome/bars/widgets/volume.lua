@@ -8,7 +8,7 @@ local unmute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 -- Volume
 local volume = wibox.widget({
 	widget = wibox.widget.textbox,
-	font = "Iosevka Nerd Font 14",
+	font = "Iosevka Nerd Font 8",
 	markup = "  ",
 })
 
@@ -32,6 +32,6 @@ end)
 
 return {
 	volume,
-	spacing = dpi(4),
+	-- spacing = dpi(0),
 	layout = wibox.layout.fixed.horizontal,
 }

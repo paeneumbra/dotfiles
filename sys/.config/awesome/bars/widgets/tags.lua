@@ -23,15 +23,15 @@ return function(s)
 		filter = awful.widget.taglist.filter.all,
 		buttons = button,
 		layout = {
-			spacing = dpi(4),
+			spacing = dpi(2),
 			layout = wibox.layout.fixed.horizontal,
 		},
 		style = {
-			spacing = dpi(5),
+			spacing = dpi(2),
 		},
 		widget_template = {
 			id = "tag",
-			font = "Iosevka Nerd Font 12",
+			font = "Iosevka Nerd Font 8",
 			widget = wibox.widget.textbox,
 
 			create_callback = function(self, c3)

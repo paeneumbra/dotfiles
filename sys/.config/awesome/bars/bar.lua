@@ -9,7 +9,7 @@ local dpi = beautiful.xresources.apply_dpi
 local battery = require("bars.widgets.battery")
 local clock = require("bars.widgets.clock")
 local launcher = require("bars.widgets.launcher")
-local layoutbox = require("bars.widgets.layoutbox")
+local layoutlist = require("bars.widgets.layoutlist")
 local menu = require("bars.widgets.menu")
 local tags = require("bars.widgets.tags")
 local task = require("bars.widgets.tasks")
@@ -22,16 +22,15 @@ local systray = wibox.widget({
 	{
 		{
 			{
-				launcher,
 				menu,
 				wifi,
 				volume,
 				battery,
-				spacing = dpi(6),
+				spacing = dpi(2),
 				wibox.widget.systray,
 				layout = wibox.layout.fixed.horizontal,
 			},
-			margins = { top = dpi(2), bottom = dpi(2), left = dpi(6), right = dpi(6) },
+			margins = { top = dpi(1), bottom = dpi(1), left = dpi(2), right = dpi(2) },
 			widget = wibox.container.margin,
 		},
 		shape = function(cr, w, h)
@@ -40,32 +39,35 @@ local systray = wibox.widget({
 		bg = color.bg,
 		widget = wibox.container.background,
 	},
-	margins = { top = dpi(6), bottom = dpi(6) },
+	margins = { top = dpi(2), bottom = dpi(2) },
 	widget = wibox.container.margin,
 })
 
 -- Right
-local right = wibox.widget({
-	{
-		systray,
-		clock,
-		layoutbox(s),
-		spacing = dpi(20),
-		layout = wibox.layout.fixed.horizontal,
-	},
-	margins = { top = dpi(4), bottom = dpi(4), right = dpi(10) },
-	widget = wibox.container.margin,
-})
+local function right(s)
+	return wibox.widget({
+		{
+			systray,
+			clock,
+			layoutlist(s),
+			-- spacing = dpi(5),
+			layout = wibox.layout.fixed.horizontal,
+		},
+		margins = { top = dpi(2), bottom = dpi(2), right = dpi(6) },
+		widget = wibox.container.margin,
+	})
+end
 
 -- Left
 local function left(s)
 	return wibox.widget({
 		{
+			launcher,
 			tags(s),
-			spacing = dpi(20),
+			spacing = dpi(10),
 			layout = wibox.layout.fixed.horizontal,
 		},
-		margins = { top = dpi(4), bottom = dpi(4), left = dpi(10) },
+		margins = { top = dpi(2), bottom = dpi(2), left = dpi(6) },
 		widget = wibox.container.margin,
 	})
 end
@@ -76,13 +78,13 @@ local function get_bar(s)
 		visible = true,
 		ontop = false,
 		width = s.geometry.width,
-		height = dpi(50),
-		y = s.geometry.height - dpi(50),
+		height = dpi(20),
+		y = s.geometry.height - dpi(20),
 		bg = color.bg,
 		type = "dock",
 	})
 
-	bar:struts({ bottom = dpi(50), top = dpi(20), left = dpi(20), right = dpi(20) })
+	bar:struts({ bottom = dpi(20), top = dpi(10), left = dpi(10), right = dpi(10) })
 
 	bar:setup({
 		left(s),
@@ -92,7 +94,7 @@ local function get_bar(s)
 			expand = "none",
 			layout = wibox.layout.align.horizontal,
 		},
-		right,
+		right(s),
 		layout = wibox.layout.align.horizontal,
 	})
 end

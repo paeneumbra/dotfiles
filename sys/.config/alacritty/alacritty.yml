@@ -5,7 +5,7 @@ window:
   padding:
     x: 24
     y: 24
-  opacity: 0.90 # value range is 0 ~ 1
+  opacity: 0.85 # value range is 0 ~ 1
 
 font:
   normal:
@@ -20,7 +20,7 @@ font:
     family: Iosevka Term
     style: Bold
 
-  size: 12.0
+  size: 7.0
 
 import:
   - ~/.config/decorator/output/alacritty

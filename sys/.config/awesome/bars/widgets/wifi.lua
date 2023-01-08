@@ -3,9 +3,12 @@ local gears = require("gears")
 local wibox = require("wibox")
 
 -- Wifi
-local wifi = wibox.widget.textbox()
-wifi.font = "Iosevka Nerd Font 14"
+local wifi = wibox.widget({
+	widget = wibox.widget.textbox,
+	font = "Iosevka Nerd Font 8",
+})
 
+-- TODO; Could be a signal called from here?
 local function get_wifi()
 	local script = "nmcli g | tail -1 | awk '{printf $1}'"
 

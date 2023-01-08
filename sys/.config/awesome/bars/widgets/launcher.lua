@@ -5,7 +5,7 @@ local wibox = require("wibox")
 local launcher = wibox.widget({
 	markup = "  ",
 	widget = wibox.widget.textbox,
-	font = "Iosevka Nerd Font 14",
+	font = "Iosevka Nerd Font 8",
 })
 
 launcher:connect_signal("mouse::enter", function()
