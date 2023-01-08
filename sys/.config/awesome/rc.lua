@@ -9,11 +9,8 @@
 
 pcall(require, "luarocks.loader")
 
-local awful = require("awful")
-require("awful.autofocus")
-require("awful.hotkeys_popup.keys")
-
 require("error_handler")
+require("startup")
 require("settings")
 require("theme")
 require("signals")
@@ -23,7 +20,3 @@ require("layout")
 require("bindings")
 require("tags")
 require("bars")
-
--- Autorun at startup
--- awful.spawn.with_shell("picom /home/archy/.config/picom/picom.conf")
-awful.spawn.with_shell("sh -c 'pgrep picom > /dev/null && pkill picom || picom --config /home/archy/.config/picom/picom.conf & disown'")
