@@ -1,5 +1,4 @@
 local awful = require("awful")
-local beautiful = require("beautiful")
 local ruled = require("ruled")
 -- local helpers = require("helpers")
 
@@ -17,10 +16,8 @@ ruled.client.connect_signal("request::rules", function()
 			size_hints_honor = false,
 			honor_workarea = true,
 			honor_padding = true,
-			-- screen = awful.screen.preferred,
 			screen = awful.screen.focused,
-			focus = awful.client.focus.filter,
-			titlebars_enabled = beautiful.titlebar_enabled,
+			titlebars_enabled = false,
 			placement = awful.placement.no_overlap + awful.placement.no_offscreen,
 		},
 	})
@@ -38,62 +35,18 @@ ruled.client.connect_signal("request::rules", function()
 		id = "titlebars",
 		rule_any = {
 			class = {
-				"Spotify",
 				"Org.gnome.Nautilus",
-				"Peek",
+                "urxvt",
+                "alacritty",
 			},
 		},
 		properties = {
-			titlebars_enabled = false,
+			titlebars_enabled = true,
 		},
-	})
-
-	--- Float
-	ruled.client.append_rule({
-		id = "floating",
-		rule_any = {
-			instance = {
-				"Devtools", --- Firefox devtools
-			},
-			class = {
-				"Lxappearance",
-				"Nm-connection-editor",
-			},
-			name = {
-				"Event Tester", -- xev
-			},
-			role = {
-				"AlarmWindow",
-				"pop-up",
-				"GtkFileChooserDialog",
-				"conversation",
-			},
-			type = {
-				"dialog",
-			},
-		},
-		-- properties = { floating = true, placement = helpers.client.centered_client_placement },
-	})
-
-	--- Centered
-	ruled.client.append_rule({
-		id = "centered",
-		rule_any = {
-			type = {
-				"dialog",
-			},
-			class = {
-				--- "discord",
-			},
-			role = {
-				"GtkFileChooserDialog",
-				"conversation",
-			},
-		},
-		-- properties = { placement = helpers.client.centered_client_placement },
 	})
 
     --- Image viewers
+    -- TODO: Uncertain of usefulness
 	ruled.client.append_rule({
 		rule_any = {
 			class = {
@@ -102,8 +55,8 @@ ruled.client.connect_signal("request::rules", function()
 		},
 		properties = {
 			floating = true,
-			width = screen_width * 0.7,
-			height = screen_height * 0.75,
+			width = screen_width * 0.8,
+			height = screen_height * 0.85,
 		},
 		callback = function(c)
 			awful.placement.centered(c, { honor_padding = true, honor_workarea = true })
