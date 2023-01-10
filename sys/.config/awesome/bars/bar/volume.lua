@@ -1,7 +1,6 @@
 local awful = require("awful")
 local naughty = require("naughty")
 local wibox = require("wibox")
-local dpi = require("beautiful").xresources.apply_dpi
 
 local unmute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 
@@ -32,6 +31,5 @@ end)
 
 return {
 	volume,
-	-- spacing = dpi(0),
 	layout = wibox.layout.fixed.horizontal,
 }

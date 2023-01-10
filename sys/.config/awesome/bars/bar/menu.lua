@@ -22,4 +22,8 @@ menu:buttons(gears.table.join(awful.button({}, 1, function()
 	awesome.emit_signal("sidebar::toggle")
 end)))
 
+-- menu:connect_signal("button::press", function()
+-- 	awesome.emit_signal("sidebar::toggle")
+-- end)
+
 return menu

@@ -22,28 +22,28 @@ ruled.client.connect_signal("request::rules", function()
 		},
 	})
 
-	--- Tasklist order
-	ruled.client.append_rule({
-		id = "tasklist_order",
-		rule = {},
-		properties = {},
-		callback = awful.client.setslave,
-	})
-
-	--- Titlebar rules
-	ruled.client.append_rule({
-		id = "titlebars",
-		rule_any = {
-			class = {
-				"Org.gnome.Nautilus",
-                "urxvt",
-                "alacritty",
-			},
-		},
-		properties = {
-			titlebars_enabled = true,
-		},
-	})
+	-- --- Tasklist order
+	-- ruled.client.append_rule({
+	-- 	id = "tasklist_order",
+	-- 	rule = {},
+	-- 	properties = {},
+	-- 	callback = awful.client.setslave,
+	-- })
+	--
+	-- --- Titlebar rules
+	-- ruled.client.append_rule({
+	-- 	id = "titlebars",
+	-- 	rule_any = {
+	-- 		class = {
+	-- 			"Org.gnome.Nautilus",
+ --                "urxvt",
+ --                "alacritty",
+	-- 		},
+	-- 	},
+	-- 	properties = {
+	-- 		titlebars_enabled = true,
+	-- 	},
+	-- })
 
     --- Image viewers
     -- TODO: Uncertain of usefulness
