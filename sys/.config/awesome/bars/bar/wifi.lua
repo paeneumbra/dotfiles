@@ -8,7 +8,6 @@ local wifi = wibox.widget({
 	font = "Iosevka Nerd Font 8",
 })
 
--- TODO; Could be a signal called from here?
 local function get_wifi()
 	local script = "nmcli g | tail -1 | awk '{printf $1}'"
 
@@ -47,5 +46,13 @@ gears.timer({
 		get_wifi()
 	end,
 })
+
+wifi:connect_signal("button::press", function()
+	awful.spawn(apps.terminal .. " -e nmtui", {
+		floating = true,
+		tag = mouse.screen.selected_tag,
+		placement = awful.placement.centered,
+	})
+end)
 
 return wifi

@@ -29,6 +29,8 @@ volume:connect_signal("button::press", function()
 	end)
 end)
 
+-- TODO: Consider opening pavucontrol with left click
+
 return {
 	volume,
 	layout = wibox.layout.fixed.horizontal,
