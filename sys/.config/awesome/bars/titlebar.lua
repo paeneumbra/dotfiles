@@ -37,15 +37,15 @@ local get_titlebar = function(c)
 	})
 
 	local container = wibox.widget({
-		bg = color.bg,
+		bg = Color.bg,
 		widget = wibox.container.background,
 	})
 
 	c:connect_signal("focus", function()
-		container.bg = color.blue
+		container.bg = Color.blue
 	end)
 	c:connect_signal("unfocus", function()
-		container.bg = color.bg
+		container.bg = Color.bg
 	end)
 
 	return wibox.widget({

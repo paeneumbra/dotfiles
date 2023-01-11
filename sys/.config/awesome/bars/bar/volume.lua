@@ -7,16 +7,16 @@ local unmute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 -- Volume
 local volume = wibox.widget({
 	widget = wibox.widget.textbox,
-	font = "Iosevka Nerd Font 8",
+	font = Font,
 	markup = "  ",
 })
 
 awesome.connect_signal("signal::volume", function(vol, mute)
 	vol = tonumber(vol)
 	if mute or vol == 0 then
-		volume.markup = "<span foreground='" .. color.red .. "'>  </span>"
+		volume.markup = "<span foreground='" .. Color.red .. "'>  </span>"
 	else
-		volume.markup = "<span foreground='" .. color.green .. "'>  </span>"
+		volume.markup = "<span foreground='" .. Color.green .. "'>  </span>"
 	end
 end)
 

@@ -30,7 +30,7 @@ local function box_widget(widgets, width, height)
 			forced_width = dpi(width),
 			forced_height = dpi(height),
 			shape = round_widget(8),
-			bg = color.yellow,
+			bg = Color.yellow,
 			widget = wibox.container.background,
 		},
 		margins = { left = dpi(20), right = dpi(20) },
@@ -45,7 +45,7 @@ local space = function(height)
 	return wibox.widget {
 		forced_height = dpi(height),
 		layout = wibox.layout.align.horizontal,
-        bg = color.magenta,
+        bg = Color.magenta,
 	}
 end
 
@@ -59,7 +59,7 @@ local sidebar = wibox({
 	y = workarea_y + gap_buffer,
 	-- bg = color.bg,
 	border_width = dpi(2),
-	border_color = color.yellow,
+	border_color = Color.yellow,
 	setup = {
 		{
 			clock_widget,

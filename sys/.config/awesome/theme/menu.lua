@@ -26,9 +26,9 @@ local powerMenu = {
 mainmenu = awful.menu({
 	items = {
 		{ "Refresh", awesome.restart },
-		{ "Terminal", apps.terminal },
-		{ "Browser", apps.browser },
-		{ "File Manager", apps.fileManager },
+		{ "Terminal", Apps.terminal },
+		{ "Browser", Apps.browser },
+		{ "File Manager", Apps.fileManager },
 		{ "Power Options", powerMenu },
 	},
 	-- TODO: shape is totally ignored, don't know why.

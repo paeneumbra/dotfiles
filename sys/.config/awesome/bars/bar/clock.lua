@@ -5,7 +5,7 @@ local wibox = require("wibox")
 -- Clock
 local clock = wibox.widget({
 	widget = wibox.widget.textbox,
-	font = "Iosevka Nerd Medium Font 8",
+	font = Font,
 })
 
 local month_calendar = awful.widget.calendar_popup.month({

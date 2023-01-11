@@ -1,6 +1,7 @@
 local xrdb = require("beautiful.xresources").get_current_theme()
 
-color = {
+Color = {
+	accent = xrdb.color4,
 	bg = xrdb.background,
 	fg = xrdb.foreground,
 	black = xrdb.color0,
@@ -16,14 +17,14 @@ color = {
 
 -- TODO: Use gears.filesystem.file_readable (filename) to check is wallpaper exists
 -- if not, default, or send an error
-wallpaper = os.getenv("HOME") .. "/workspace/wallpapers/wallhaven-o3ew8p.png"
+Wallpaper = os.getenv("HOME") .. "/workspace/wallpapers/wallhaven-o3ew8p.png"
 
 
-terminal = "alacritty"
-editor = "nvim"
-editor_cmd = terminal .. " -e " .. editor
+Terminal = "alacritty"
+Editor = "nvim"
+Ecmd = Terminal .. " -e " .. Editor
 
-apps = {
+Apps = {
 	terminal = "alacritty",
 	editor = "nvim",
 	launcher = "rofi -theme base -modi drun -show drun",
@@ -32,3 +33,5 @@ apps = {
 	fileManager = "nautilus",
 	email = "thunderbird",
 }
+
+Font = "Iosevka Term Medium Font 8"

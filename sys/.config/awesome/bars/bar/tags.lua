@@ -5,11 +5,11 @@ local dpi = beautiful.xresources.apply_dpi
 
 local function update_tag(item, tag)
 	if tag.selected then
-		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. color.blue .. "'> </span>"
+		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. Color.blue .. "'> </span>"
 	elseif #tag:clients() > 0 then
-		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. color.green .. "'> </span>"
+		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. Color.green .. "'> </span>"
 	else
-		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. color.gray .. "'> </span>"
+		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. Color.gray .. "'> </span>"
 	end
 end
 
@@ -31,7 +31,7 @@ return function(s)
 		},
 		widget_template = {
 			id = "tag",
-			font = "Iosevka Nerd Font 8",
+			font = Font,
 			widget = wibox.widget.textbox,
 
 			create_callback = function(self, c3)

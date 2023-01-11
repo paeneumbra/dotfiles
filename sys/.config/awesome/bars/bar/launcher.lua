@@ -5,11 +5,11 @@ local wibox = require("wibox")
 local launcher = wibox.widget({
 	markup = "  ",
 	widget = wibox.widget.textbox,
-	font = "Iosevka Nerd Font 8",
+	font = Font,
 })
 
 launcher:connect_signal("mouse::enter", function()
-	launcher.markup = "<span foreground='" .. color.yellow .. "'>  </span>"
+	launcher.markup = "<span foreground='" .. Color.yellow .. "'>  </span>"
 end)
 
 launcher:connect_signal("mouse::leave", function()
@@ -17,7 +17,7 @@ launcher:connect_signal("mouse::leave", function()
 end)
 
 launcher:buttons(gears.table.join(awful.button({}, 1, function()
-	awful.spawn(apps.launcher, false)
+	awful.spawn(Apps.launcher, false)
 end)))
 
 return launcher

@@ -5,7 +5,7 @@ local wibox = require("wibox")
 -- Wifi
 local wifi = wibox.widget({
 	widget = wibox.widget.textbox,
-	font = "Iosevka Nerd Font 8",
+	font = Font,
 })
 
 local function get_wifi()
@@ -27,13 +27,13 @@ local function get_wifi()
 				end
 
 				if strength < 30 then
-					wifi.markup = "<span foreground='" .. color.red .. "'>  </span>"
+					wifi.markup = "<span foreground='" .. Color.red .. "'>  </span>"
 				else
-					wifi.markup = "<span foreground='" .. color.green .. "'>  </span>"
+					wifi.markup = "<span foreground='" .. Color.green .. "'>  </span>"
 				end
 			end)
 		else
-			wifi.markup = "<span foreground='" .. color.red .. "'>  </span>"
+			wifi.markup = "<span foreground='" .. Color.red .. "'>  </span>"
 		end
 	end)
 end
@@ -48,7 +48,7 @@ gears.timer({
 })
 
 wifi:connect_signal("button::press", function()
-	awful.spawn(apps.terminal .. " -e nmtui", {
+	awful.spawn(Apps.terminal .. " -e nmtui", {
 		floating = true,
 		tag = mouse.screen.selected_tag,
 		placement = awful.placement.centered,

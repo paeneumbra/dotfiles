@@ -8,7 +8,7 @@ alt = "Mod1"
 
 awful.keyboard.append_global_keybindings({
 	awful.key({ modkey }, "r", function()
-		awful.spawn(apps.launcher, false)
+		awful.spawn(Apps.launcher, false)
 	end), -- Rofi
 	awful.key({ alt }, "c", function()
 		awesome.emit_signal("sidebar::toggle")

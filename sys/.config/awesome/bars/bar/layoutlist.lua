@@ -17,7 +17,7 @@ return function(s)
 			-- forced_width = dpi(30),
 			widget = wibox.container.margin,
 		},
-		bg = color.bg,
+		bg = Color.bg,
 		style = {
 			spacing = dpi(5),
 		},

@@ -36,7 +36,7 @@ local systray = wibox.widget({
 		shape = function(cr, w, h)
 			gears.shape.rounded_rect(cr, w, h, 8)
 		end,
-		bg = color.bg,
+		bg = Color.bg,
 		widget = wibox.container.background,
 	},
 	margins = { top = dpi(2), bottom = dpi(2) },
@@ -80,7 +80,7 @@ local function get_bar(s)
 		width = s.geometry.width,
 		height = dpi(20),
 		y = s.geometry.height - dpi(20),
-		bg = color.bg,
+		bg = Color.bg,
 		type = "dock",
 	})
 

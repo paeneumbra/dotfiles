@@ -16,7 +16,7 @@ gears.timer({
 	call_now = true,
 	autostart = true,
 	callback = function()
-		day.markup = "<span foreground='" .. color.red .. "'>" .. os.date("%A") .. "</span>"
+		day.markup = "<span foreground='" .. Color.red .. "'>" .. os.date("%A") .. "</span>"
 		date.markup = os.date("%d %B %Y")
 	end,
 })

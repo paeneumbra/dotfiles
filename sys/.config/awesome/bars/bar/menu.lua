@@ -5,25 +5,20 @@ local gears = require("gears")
 -- Menu
 local menu = wibox.widget({
 	widget = wibox.widget.textbox,
-	font = "Iosevka Nerd Font 8",
-	markup = "<span foreground='" .. color.blue .. "'>  </span>",
+	font = Font,
+	markup = "<span foreground='" .. Color.blue .. "'>  </span>",
 })
 
 menu:connect_signal("mouse::enter", function()
-	menu.markup = "<span foreground='" .. color.yellow .. "'>  </span>"
+	menu.markup = "<span foreground='" .. Color.yellow .. "'>  </span>"
 end)
 
 menu:connect_signal("mouse::leave", function()
-	menu.markup = "<span foreground='" .. color.blue .. "'>  </span>"
+	menu.markup = "<span foreground='" .. Color.blue .. "'>  </span>"
 end)
 
--- TODO: sidebar is a function to be created
 menu:buttons(gears.table.join(awful.button({}, 1, function()
 	awesome.emit_signal("sidebar::toggle")
 end)))
-
--- menu:connect_signal("button::press", function()
--- 	awesome.emit_signal("sidebar::toggle")
--- end)
 
 return menu

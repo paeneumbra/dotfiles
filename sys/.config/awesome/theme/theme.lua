@@ -7,32 +7,32 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.wallpaper = wallpaper
-theme.font = "Iosevka Term Medium Font 8"
+theme.wallpaper = Wallpaper
+theme.font = Font
 
-theme.bg_normal = color.bg
-theme.bg_focus = color.blue
-theme.bg_urgent = color.red
-theme.bg_minimize = color.yellow
+theme.bg_normal = Color.bg
+theme.bg_focus = Color.blue
+theme.bg_urgent = Color.red
+theme.bg_minimize = Color.yellow
 theme.bg_systray = theme.bg_normal
 
-theme.fg_normal = color.fg
-theme.fg_focus = color.cyan
-theme.fg_urgent = color.magenta
-theme.fg_minimize = color.yellow
+theme.fg_normal = Color.fg
+theme.fg_focus = Color.cyan
+theme.fg_urgent = Color.magenta
+theme.fg_minimize = Color.yellow
 
 theme.useless_gap = dpi(1)
 theme.border_width = dpi(2)
-theme.border_normal = color.gray
-theme.border_focus = color.blue
-theme.border_marked = color.white
+theme.border_normal = Color.gray
+theme.border_focus = Color.blue
+theme.border_marked = Color.white
 
 -- Menu:
 theme.menu_submenu_icon = themes_path .. "default/submenu.png"
 theme.menu_height = dpi(10)
 theme.menu_width = dpi(100)
-theme.menu_border_color = color.blue
-theme.menu_fg_focus = color.bg
+theme.menu_border_color = Color.blue
+theme.menu_fg_focus = Color.bg
 
 -- Define the image to load
 -- titlebar's buttons

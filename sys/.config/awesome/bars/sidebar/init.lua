@@ -14,12 +14,12 @@ local gap_buffer = beautiful.useless_gap * 2
 -- Clock
 local clock = wibox.widget.background()
 clock:set_widget(wibox.widget.textclock("%A %d/%m/%Y | %R"))
-clock:set_fg(color.yellow)
+clock:set_fg(Color.yellow)
 
 -- Calendar
 local calendar = wibox.widget.background()
 calendar:set_widget(wibox.widget.calendar.month(os.date("*t")))
-calendar:set_fg(color.magenta)
+calendar:set_fg(Color.magenta)
 
 local dashboard = awful.popup({
 	widget = {
@@ -30,7 +30,7 @@ local dashboard = awful.popup({
 					-- forced_width = dpi(100),
 					widget = wibox.container.background(wibox.container.place(clock)),
 				},
-				bg = color.bg,
+				bg = Color.bg,
 				-- clip = true,
 				widget = wibox.container.background,
 			},
@@ -38,7 +38,7 @@ local dashboard = awful.popup({
 				{
 					widget = wibox.container.background(wibox.container.place(calendar)),
 				},
-				bg = color.bg,
+				bg = Color.bg,
 				-- clip = true,
 				widget = wibox.container.background,
 			},
@@ -49,7 +49,7 @@ local dashboard = awful.popup({
 		layout = wibox.layout.fixed.horizontal,
 	},
 	border_width = dpi(2),
-	border_color = color.blue,
+	border_color = Color.blue,
 	placement = awful.placement.centered,
 	ontop = true,
 	visible = false,

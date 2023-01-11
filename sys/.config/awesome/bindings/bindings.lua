@@ -19,7 +19,7 @@ awful.keyboard.append_global_keybindings({
 	-- 	})
 	-- end, { description = "lua execute prompt", group = "awesome" }),
 	awful.key({ modkey }, "Return", function()
-		awful.spawn(apps.terminal)
+		awful.spawn(Apps.terminal)
 	end, { description = "open a terminal", group = "launcher" }),
     -- TODO: Causes an error  
 	-- awful.key({ modkey }, "p", function()

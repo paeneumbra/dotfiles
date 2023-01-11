@@ -7,13 +7,13 @@ local dpi = beautiful.xresources.apply_dpi
 return function(s)
 	local update_task = function(self, c)
 		if c.active then
-			self:get_children_by_id("bg")[1].bg = color.blue
+			self:get_children_by_id("bg")[1].bg = Color.blue
 			return
 		elseif c.minimized then
-			self:get_children_by_id("bg")[1].bg = color.bg .. "4d"
+			self:get_children_by_id("bg")[1].bg = Color.bg .. "4d"
 			return
 		else
-			self:get_children_by_id("bg")[1].bg = color.gray
+			self:get_children_by_id("bg")[1].bg = Color.gray
 		end
 	end
 
@@ -39,7 +39,7 @@ return function(s)
 				widget = wibox.container.margin,
 			},
 			id = "bg",
-			bg = color.bg,
+			bg = Color.bg,
 			widget = wibox.container.background,
 
 			create_callback = function(self, c, _, __)
