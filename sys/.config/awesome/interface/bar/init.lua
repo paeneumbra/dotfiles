@@ -6,15 +6,15 @@ local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 
 -- Widgets
-local battery = require("bars.bar.battery")
-local clock = require("bars.bar.clock")
-local launcher = require("bars.bar.launcher")
-local layoutlist = require("bars.bar.layoutlist")
-local menu = require("bars.bar.menu")
-local tags = require("bars.bar.tags")
-local task = require("bars.bar.tasks")
-local volume = require("bars.bar.volume")
-local wifi = require("bars.bar.wifi")
+local battery = require("interface.bar.battery")
+local clock = require("interface.bar.clock")
+local launcher = require("interface.bar.launcher")
+local layoutlist = require("interface.bar.layoutlist")
+local menu = require("interface.bar.menu")
+local tags = require("interface.bar.tags")
+local task = require("interface.bar.tasks")
+local volume = require("interface.bar.volume")
+local wifi = require("interface.bar.wifi")
 --
 
 -- Systray

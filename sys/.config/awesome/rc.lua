@@ -8,15 +8,16 @@
 -- Awesome: https://awesomewm.org/apidoc/index.html
 
 pcall(require, "luarocks.loader")
-
+--
+require("awful.autofocus")
+--
 require("error_handler")
 require("startup")
 require("settings")
-require("theme")
+require("interface")
 require("signals")
 require("rules")
 require("wallpaper")
 require("layout")
 require("bindings")
 require("tags")
-require("bars")

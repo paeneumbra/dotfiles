@@ -9,7 +9,7 @@ local width = awful.screen.focused().workarea.width
 local height = awful.screen.focused().workarea.height
 local workarea_x = awful.screen.focused().workarea.x
 local workarea_y = awful.screen.focused().workarea.y
-local gap_buffer = beautiful.useless_gap * 2
+local gap_buffer = 4
 
 -- Clock
 local clock = wibox.widget.background()

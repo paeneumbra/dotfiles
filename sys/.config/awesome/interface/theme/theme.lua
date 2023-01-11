@@ -21,7 +21,7 @@ theme.fg_focus = Color.cyan
 theme.fg_urgent = Color.magenta
 theme.fg_minimize = Color.yellow
 
-theme.useless_gap = dpi(1)
+theme.useless_gap = dpi(2)
 theme.border_width = dpi(2)
 theme.border_normal = Color.gray
 theme.border_focus = Color.blue

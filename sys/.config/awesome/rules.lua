@@ -18,6 +18,7 @@ ruled.client.connect_signal("request::rules", function()
 			honor_padding = true,
 			screen = awful.screen.focused,
 			titlebars_enabled = false,
+			focus = awful.client.focus.filter,
 			placement = awful.placement.no_overlap + awful.placement.no_offscreen,
 		},
 	})
