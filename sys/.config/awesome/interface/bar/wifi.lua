@@ -51,7 +51,8 @@ wifi:connect_signal("button::press", function()
 	awful.spawn(Apps.terminal .. " -e nmtui", {
 		floating = true,
 		tag = mouse.screen.selected_tag,
-		placement = awful.placement.centered,
+		-- TODO: Widget does not respect placement
+		placement = awful.placement.left,
 	})
 end)
 

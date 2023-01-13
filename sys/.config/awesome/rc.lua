@@ -17,7 +17,7 @@ require("settings")
 require("interface")
 require("signals")
 require("rules")
-require("wallpaper")
 require("layout")
 require("bindings")
 require("tags")
+--

@@ -8,23 +8,15 @@ modkey = "Mod4"
 -- General awesome keybindings
 awful.keyboard.append_global_keybindings({
 	awful.key({ modkey, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
-	awful.key({ modkey, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
-	-- TODO:
-	--    awful.key({ modkey }, "x", function()
-	-- 	awful.prompt.run({
-	-- 		prompt = "Run Lua code: ",
-	-- 		textbox = awful.screen.focused().mypromptbox.widget,
-	-- 		exe_callback = awful.util.eval,
-	-- 		history_path = awful.util.get_cache_dir() .. "/history_eval",
-	-- 	})
-	-- end, { description = "lua execute prompt", group = "awesome" }),
-	awful.key({ modkey }, "Return", function()
-		awful.spawn(Apps.terminal)
-	end, { description = "open a terminal", group = "launcher" }),
-    -- TODO: Causes an error  
-	-- awful.key({ modkey }, "p", function()
-	-- 	menubar.show()
-	-- end, { description = "show the menubar", group = "launcher" }),
+	awful.key({ modkey, "Control" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
+	awful.key({ modkey }, "x", function()
+		awful.prompt.run({
+			prompt = "Run Lua code: ",
+			textbox = awful.screen.focused().mypromptbox.widget,
+			exe_callback = awful.util.eval,
+			history_path = awful.util.get_cache_dir() .. "/history_eval",
+		})
+	end, { description = "lua execute prompt", group = "awesome" }),
 })
 
 -- Tag bindings
@@ -89,18 +81,6 @@ awful.keyboard.append_global_keybindings({
 			end
 		end,
 	}),
-	awful.key({
-		modifiers = { modkey },
-		keygroup = "numpad",
-		description = "select layout directly",
-		group = "layout",
-		on_press = function(index)
-			local t = awful.screen.focused().selected_tag
-			if t then
-				t.layout = t.layouts[index] or t.layout
-			end
-		end,
-	}),
 })
 
 -- Focus bindings
@@ -159,9 +139,6 @@ awful.keyboard.append_global_keybindings({
 	awful.key({ modkey, "Control" }, "l", function()
 		awful.tag.incncol(-1, nil, true)
 	end, { description = "decrease the number of columns", group = "layout" }),
-	awful.key({ modkey }, "space", function()
-		awful.layout.inc(1)
-	end, { description = "select next", group = "layout" }),
 	awful.key({ modkey, "Shift" }, "space", function()
 		awful.layout.inc(-1)
 	end, { description = "select previous", group = "layout" }),
@@ -209,29 +186,5 @@ client.connect_signal("request::default_keybindings", function()
 			c.maximized_horizontal = not c.maximized_horizontal
 			c:raise()
 		end, { description = "(un)maximize horizontally", group = "client" }),
-	})
-end)
-
--- Mouse bindings
-awful.mouse.append_global_mousebindings({
-	awful.button({}, 3, function()
-		mainmenu:toggle()
-		return
-	end),
-	awful.button({}, 4, awful.tag.viewprev),
-	awful.button({}, 5, awful.tag.viewnext),
-})
-
-client.connect_signal("request::default_mousebindings", function()
-	awful.mouse.append_client_mousebindings({
-		awful.button({}, 1, function(c)
-			c:activate({ context = "mouse_click" })
-		end),
-		awful.button({ modkey }, 1, function(c)
-			c:activate({ context = "mouse_click", action = "mouse_move" })
-		end),
-		awful.button({ modkey }, 3, function(c)
-			c:activate({ context = "mouse_click", action = "mouse_resize" })
-		end),
 	})
 end)

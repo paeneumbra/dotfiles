@@ -18,6 +18,7 @@ Color = {
 -- TODO: Use gears.filesystem.file_readable (filename) to check is wallpaper exists
 -- if not, default, or send an error
 Wallpaper = os.getenv("HOME") .. "/workspace/wallpapers/wallhaven-o3ew8p.png"
+Font = "Iosevka Term Medium Font 8"
 
 
 Terminal = "alacritty"
@@ -34,4 +35,3 @@ Apps = {
 	email = "thunderbird",
 }
 
-Font = "Iosevka Term Medium Font 8"
