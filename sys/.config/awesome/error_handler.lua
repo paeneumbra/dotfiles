@@ -1,8 +1,3 @@
------------------------------
-------  Error Handler  ------
------------------------------
-
--- notification library
 local naughty = require("naughty")
 
 -- Error handling
