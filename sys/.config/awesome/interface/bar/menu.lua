@@ -18,7 +18,7 @@ menu:connect_signal("mouse::leave", function()
 end)
 
 menu:buttons(gears.table.join(awful.button({}, 1, function()
-	awesome.emit_signal("sidebar::toggle")
+	awesome.emit_signal("displays::toggle")
 end)))
 
 return menu

@@ -1,4 +1,11 @@
-local xrdb = require("beautiful.xresources").get_current_theme()
+local beautiful = require("beautiful")
+local dpi = beautiful.xresources.apply_dpi
+local xrdb = beautiful.xresources.get_current_theme()
+
+Dimensions = {
+    gap = dpi(2),
+    border = dpi(2),
+}
 
 Color = {
 	accent = xrdb.color4,
