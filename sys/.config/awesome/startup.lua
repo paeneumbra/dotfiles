@@ -1,5 +1,14 @@
 local awful = require("awful")
-local gears = require("gears")
+local helper = require("helpers.run")
 
 --- Autostart ---
-awful.spawn.with_shell(gears.filesystem.get_configuration_dir() .. "scripts/startup.sh")
+
+-- Picom
+helper.start_if_not_running("picom", function ()
+    awful.spawn("picom --config /home/archy/.config/picom/picom.conf", false)
+end)
+
+-- Redshift
+helper.start_if_not_running("redshift", function ()
+    awful.spawn("redshift", false)
+end)
