@@ -1,6 +1,6 @@
 local awful = require("awful")
 
-local xrandr = require("signals.xrandr")
+local xrandr = require("interface.xrandr")
 
 modkey = "Mod4"
 alt = "Mod1"
@@ -20,7 +20,7 @@ awful.keyboard.append_global_keybindings({
 		awful.titlebar.toggle(client.focus)
 	end), -- Toggle titlebar
 	--
-	awful.key({ alt }, "m", function()
-		xrandr.xrandr()
+	awful.key({}, "XF86Display", function()
+	    awesome.emit_signal("displays::toggle")	
 	end), -- Set monitors
 })

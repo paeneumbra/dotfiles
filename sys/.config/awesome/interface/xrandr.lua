@@ -8,7 +8,7 @@ local wibox = require("wibox")
 local area_width = awful.screen.focused().tiling_area.width
 local area_height = awful.screen.focused().tiling_area.height
 
-local cmd = "arandr"
+local arandr_command = "arandr"
 
 local function active_outputs()
 	local outputs = {}
@@ -25,27 +25,28 @@ local function active_outputs()
 	return outputs
 end
 
-local function ping(command)
-	-- awful.spawn.with_shell(command)
+-- TEMP: Notify
+local function xrandrnotify(command)
 	naughty.notification({
 		title = "Achtung!",
 		message = "CMD:" .. command,
 	})
 end
 
--- Create a list of buttons
-local display_buttons = wibox.widget({
+-- TEMP: Arandr widget
+local arandr_widget = wibox.widget({
 	widget = wibox.widget.textbox,
 	valign = "center",
 	halign = "center",
 	text = "ARANDR",
 	buttons = {
 		awful.button({}, 1, nil, function()
-			ping()
+			awful.spawn.with_shell(arandr_command)
 		end),
 	},
 })
 
+-- TODO: Replace by active outputs (intertwined with widget display array)
 local function temp_layouts()
 	local temp_outputs = {
 		"eDP1 + DP2",
@@ -64,7 +65,7 @@ local function temp_layouts()
 	return active
 end
 
-local function disps()
+local function display_widgets()
 	local widgets = {}
 
 	for i, v in ipairs(temp_layouts()) do
@@ -75,14 +76,14 @@ local function disps()
 			halign = "center",
 			buttons = {
 				awful.button({}, 1, nil, function()
-					ping(v)
+					xrandrnotify(v)
 				end),
 			},
 		})
 		table.insert(widgets, wid)
 	end
 
-	table.insert(widgets, display_buttons)
+	table.insert(widgets, arandr_widget)
 
 	return widgets
 end
@@ -90,12 +91,14 @@ end
 local displays = awful.popup({
 	widget = {
 		{
+            -- TODO: Take a look at gears.table
+			-- display_widgets(),
 
-			disps()[1],
-			disps()[2],
-			disps()[3],
-			disps()[4],
-			disps()[5],
+			display_widgets()[1],
+			display_widgets()[2],
+			display_widgets()[3],
+			display_widgets()[4],
+			display_widgets()[5],
 			-- {
 			-- 	text = active_outputs()[1],
 			-- 	widget = wibox.widget.textbox,
