@@ -31,7 +31,9 @@ PKGS=(
   nerd-fonts-complete
   noto-fonts
   ttf-fira-code
+  ttf-material-design-icons-webfont
   ttf-nerd-fonts-symbols-common
+  ttf-roboto
 )
 
 for PKG in "${PKGS[@]}"; do
