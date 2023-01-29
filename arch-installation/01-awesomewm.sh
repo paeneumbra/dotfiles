@@ -7,6 +7,10 @@ PKGS=(
   xorg-server
   xorg-xinit
   nvidia-dkms
+  nvidia-settings
+  nvidia-utils
+  mesa-utils
+  vulkan-intel
 
   #Lua based WM
   #https://wiki.archlinux.org/title/Awesome
