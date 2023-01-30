@@ -1,7 +1,5 @@
 local awful = require("awful")
 local wibox = require("wibox")
-local beautiful = require("beautiful")
-local dpi = beautiful.xresources.apply_dpi
 
 -- Create tasklist
 return function(s)
@@ -26,7 +24,7 @@ return function(s)
 			end),
 		},
 		layout = {
-			spacing = dpi(1),
+			spacing = xdpi(1),
 			layout = wibox.layout.fixed.horizontal,
 		},
 		widget_template = {
@@ -35,7 +33,7 @@ return function(s)
 					id = "client",
 					widget = awful.widget.clienticon,
 				},
-				margins = dpi(3),
+				margins = xdpi(3),
 				widget = wibox.container.margin,
 			},
 			id = "bg",

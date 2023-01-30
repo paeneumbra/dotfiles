@@ -1,7 +1,5 @@
 local awful = require("awful")
 local wibox = require("wibox")
-local beautiful = require("beautiful")
-local dpi = beautiful.xresources.apply_dpi
 
 local function update_tag(item, tag)
 	if tag.selected then
@@ -23,11 +21,11 @@ return function(s)
 		filter = awful.widget.taglist.filter.all,
 		buttons = button,
 		layout = {
-			spacing = dpi(2),
+			spacing = xdpi(2),
 			layout = wibox.layout.fixed.horizontal,
 		},
 		style = {
-			spacing = dpi(2),
+			spacing = xdpi(2),
 		},
 		widget_template = {
 			id = "tag",

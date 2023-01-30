@@ -12,14 +12,14 @@ return function(s)
 				widget = wibox.container.place,
 			},
 			id = "icon_margin",
-			left = dpi(2),
-			right = dpi(2),
-			-- forced_width = dpi(30),
+			left = xdpi(2),
+			right = xdpi(2),
+			-- forced_width = xdpi(30),
 			widget = wibox.container.margin,
 		},
 		bg = Color.bg,
 		style = {
-			spacing = dpi(5),
+			spacing = xdpi(5),
 		},
 		shape = function(cr, width, height)
 			gears.shape.rounded_rect(cr, width, height, 5)

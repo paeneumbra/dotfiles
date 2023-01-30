@@ -36,7 +36,7 @@ theme.menu_submenu_icon = default_theme .. "default/submenu.png"
 theme.menu_height = xdpi(20)
 theme.menu_width = xdpi(120)
 
-theme.menu_border_width = dpi(2)
+theme.menu_border_width = xdpi(2)
 theme.menu_border_color = Color.blue
 theme.menu_fg_focus = Color.blue
 

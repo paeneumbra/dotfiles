@@ -1,9 +1,6 @@
 local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
-local beautiful = require("beautiful")
-
-local dpi = beautiful.xresources.apply_dpi
 
 -- Widgets
 local battery = require("interface.bar.battery")
@@ -26,11 +23,11 @@ local systray = wibox.widget({
 				wifi,
 				volume,
 				battery,
-				spacing = dpi(2),
+				spacing = xdpi(2),
 				wibox.widget.systray,
 				layout = wibox.layout.fixed.horizontal,
 			},
-			margins = { top = dpi(1), bottom = dpi(1), left = dpi(2), right = dpi(2) },
+			margins = { top = xdpi(1), bottom = xdpi(1), left = xdpi(2), right = xdpi(2) },
 			widget = wibox.container.margin,
 		},
 		shape = function(cr, w, h)
@@ -39,7 +36,7 @@ local systray = wibox.widget({
 		bg = Color.bg,
 		widget = wibox.container.background,
 	},
-	margins = { top = dpi(2), bottom = dpi(2) },
+	margins = { top = xdpi(2), bottom = xdpi(2) },
 	widget = wibox.container.margin,
 })
 
@@ -50,10 +47,10 @@ local function right(s)
 			systray,
 			clock,
 			layoutlist(s),
-			-- spacing = dpi(5),
+			-- spacing = xdpi(5),
 			layout = wibox.layout.fixed.horizontal,
 		},
-		margins = { top = dpi(2), bottom = dpi(2), right = dpi(6) },
+		margins = { top = xdpi(2), bottom = xdpi(2), right = xdpi(6) },
 		widget = wibox.container.margin,
 	})
 end
@@ -64,10 +61,10 @@ local function left(s)
 		{
 			launcher,
 			tags(s),
-			spacing = dpi(10),
+			spacing = xdpi(10),
 			layout = wibox.layout.fixed.horizontal,
 		},
-		margins = { top = dpi(2), bottom = dpi(2), left = dpi(6) },
+		margins = { top = xdpi(2), bottom = xdpi(2), left = xdpi(6) },
 		widget = wibox.container.margin,
 	})
 end
@@ -78,13 +75,13 @@ local function get_bar(s)
 		visible = true,
 		ontop = false,
 		width = s.geometry.width,
-		height = dpi(20),
-		y = s.geometry.height - dpi(20),
+		height = xdpi(20),
+		y = s.geometry.height - xdpi(20),
 		bg = Color.bg,
 		type = "dock",
 	})
 
-	bar:struts({ bottom = dpi(20), top = dpi(10), left = dpi(10), right = dpi(10) })
+	bar:struts({ bottom = xdpi(20), top = xdpi(10), left = xdpi(10), right = xdpi(10) })
 
 	bar:setup({
 		left(s),

@@ -1,9 +1,6 @@
 local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
-local beautiful = require("beautiful")
-
-local dpi = beautiful.xresources.apply_dpi
 
 ----- Titlebar
 client.connect_signal("request::titlebars", function(c)
@@ -19,7 +16,7 @@ client.connect_signal("request::titlebars", function(c)
 
     awful.titlebar(c, {
         position = "top",
-        size = dpi(15),
+        size = xdpi(15),
         bg_normal = Color.bg,
         fg_normal = Color.gray,
         bg_focus = Color.bg,
