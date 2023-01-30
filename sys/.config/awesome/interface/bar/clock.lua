@@ -5,7 +5,7 @@ local wibox = require("wibox")
 -- Clock
 local clock = wibox.widget({
     widget = wibox.widget.textbox,
-    font = Font,
+    font = Bold_Font,
 })
 
 local month_calendar = awful.widget.calendar_popup.month({
@@ -31,7 +31,7 @@ gears.timer({
     autostart = true,
     call_now = true,
     callback = function()
-        clock.markup = os.date("%a %d/%m/%y | %H:%M ")
+        clock.markup = os.date("󰃰 %a %d/%m/%y | %H:%M ")
     end,
 })
 

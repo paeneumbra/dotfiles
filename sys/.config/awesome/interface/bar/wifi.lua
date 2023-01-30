@@ -27,13 +27,13 @@ local function get_wifi()
 				end
 
 				if strength < 30 then
-					wifi.markup = "<span foreground='" .. Color.red .. "'>  </span>"
+					wifi.markup = "<span foreground='" .. Color.red .. "'> 󱛂 </span>"
 				else
-					wifi.markup = "<span foreground='" .. Color.green .. "'>  </span>"
+					wifi.markup = "<span foreground='" .. Color.green .. "'> 󰖩 </span>"
 				end
 			end)
 		else
-			wifi.markup = "<span foreground='" .. Color.red .. "'>  </span>"
+			wifi.markup = "<span foreground='" .. Color.red .. "'> 󰖪 </span>"
 		end
 	end)
 end

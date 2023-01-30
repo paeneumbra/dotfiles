@@ -6,6 +6,7 @@
 --
 -- Arch: https://wiki.archlinux.org/title/Awesome
 -- Awesome: https://awesomewm.org/apidoc/index.html
+-- Font Icons: https://pictogrammers.com/library/mdi/
 
 pcall(require, "luarocks.loader")
 --

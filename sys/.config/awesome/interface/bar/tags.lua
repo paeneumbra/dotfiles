@@ -3,11 +3,11 @@ local wibox = require("wibox")
 
 local function update_tag(item, tag)
 	if tag.selected then
-		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. Color.blue .. "'> </span>"
+		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. Color.blue .. "'>󰄯 </span>"
 	elseif #tag:clients() > 0 then
-		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. Color.green .. "'> </span>"
+		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. Color.green .. "'>󰪡 </span>"
 	else
-		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. Color.gray .. "'> </span>"
+		item:get_children_by_id("tag")[1].markup = "<span foreground='" .. Color.gray .. "'>󰄰 </span>"
 	end
 end
 

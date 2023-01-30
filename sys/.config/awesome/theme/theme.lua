@@ -30,15 +30,13 @@ theme.border_focus = Color.bg
 theme.border_marked = Color.white
 
 -- Menu:
--- New menu should be done, this one is rather convoluted
--- Also settings don't really work from current widgets
 theme.menu_submenu_icon = default_theme .. "default/submenu.png"
 theme.menu_height = xdpi(20)
-theme.menu_width = xdpi(120)
-
+theme.menu_width = xdpi(150)
 theme.menu_border_width = xdpi(2)
-theme.menu_border_color = Color.blue
-theme.menu_fg_focus = Color.blue
+theme.menu_border_color = Color.accent
+theme.menu_fg_focus = Color.bg
+theme.menu_bg_focus = Color.accent
 
 --- Titlebars
 theme.titlebar_close_button_normal = gco.recolor_image(assets, Color.red)

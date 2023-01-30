@@ -30,6 +30,7 @@ Color = {
 -- if not, default, or send an error
 Wallpaper = os.getenv("HOME") .. "/workspace/wallpapers/wallhaven-o3ew8p.png"
 Font = "Iosevka Term Medium Font 8"
+Bold_Font = "Iosevka Term Bold Font 8"
 
 
 Terminal = "alacritty"
