@@ -6,78 +6,53 @@ local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 
 ----- Titlebar
-local get_titlebar = function(c)
-	-- Buttons
-	local buttons = gears.table.join({
-		awful.button({}, 1, function()
-			c:activate({ context = "titlebar", action = "mouse_move" })
-		end),
-		awful.button({}, 3, function()
-			c:activate({ context = "titlebar", action = "mouse_resize" })
-		end),
-	})
-
-	-- Titlebar's decorations
-	local left = wibox.widget({
-		awful.titlebar.widget.closebutton(c),
-		awful.titlebar.widget.maximizedbutton(c),
-		awful.titlebar.widget.minimizebutton(c),
-		spacing = dpi(2),
-		layout = wibox.layout.fixed.horizontal,
-	})
-
-	local middle = wibox.widget({
-		buttons = buttons,
-		layout = wibox.layout.fixed.horizontal,
-	})
-
-	local right = wibox.widget({
-		buttons = buttons,
-		layout = wibox.layout.fixed.horizontal,
-	})
-
-	local container = wibox.widget({
-		bg = Color.bg,
-		widget = wibox.container.background,
-	})
-
-	c:connect_signal("focus", function()
-		container.bg = Color.blue
-	end)
-	c:connect_signal("unfocus", function()
-		container.bg = Color.bg
-	end)
-
-	return wibox.widget({
-		{
-			{
-				left,
-				middle,
-				right,
-				layout = wibox.layout.align.horizontal,
-			},
-			margins = { top = dpi(3), bottom = dpi(3), left = dpi(3), right = dpi(3) },
-			widget = wibox.container.margin,
-		},
-		widget = container,
-	})
-end
-
-local function top(c)
-	local titlebar = awful.titlebar(c, {
-		position = "top",
-		size = dpi(20),
-	})
-
-	titlebar:setup({
-		widget = get_titlebar(c),
-	})
-end
-
 client.connect_signal("request::titlebars", function(c)
-	if c.class == "feh" then
-		awful.titlebar.hide(c)
-	else
-		top(c)
-	end
+    -- Button interactions
+    local buttons = gears.table.join({
+        awful.button({}, 1, function()
+            c:activate({ context = "titlebar", action = "mouse_move" })
+        end),
+        awful.button({}, 3, function()
+            c:activate({ context = "titlebar", action = "mouse_resize" })
+        end),
+    })
+
+    awful.titlebar(c, {
+        position = "top",
+        size = dpi(15),
+        bg_normal = Color.bg,
+        fg_normal = Color.gray,
+        bg_focus = Color.bg,
+        fg_focus = Color.blue,
+    })
+         :setup({
+        { -- Left
+            awful.titlebar.widget.iconwidget(c),
+            buttons = buttons,
+            layout = wibox.layout.fixed.horizontal,
+        },
+        { -- Middle
+            { -- Title
+                align = "center",
+                widget = awful.titlebar.widget.titlewidget(c),
+            },
+            buttons = buttons,
+            layout = wibox.layout.flex.horizontal,
+        },
+        {
+            awful.titlebar.widget.stickybutton(c),
+            awful.titlebar.widget.minimizebutton(c),
+            awful.titlebar.widget.maximizedbutton(c),
+            awful.titlebar.widget.closebutton(c),
+            layout = wibox.layout.fixed.horizontal(),
+        },
+        layout = wibox.layout.align.horizontal,
+    })
+end)
+
+client.connect_signal("focus", function(c)
+    c.border_color = Color.bg
+end)
+client.connect_signal("unfocus", function(c)
+    c.border_color = Color.bg
 end)

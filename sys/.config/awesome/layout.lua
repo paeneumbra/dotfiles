@@ -31,7 +31,10 @@ tag.connect_signal("property::layout", function(t)
 end)
 
 client.connect_signal("manage", function(c)
-	if awful.layout.get(mouse.screen) == awful.layout.suit.floating then
+	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
+		-- Prevent clients from being unreachable after screen count changes.
+		awful.placement.no_offscreen(c)
+	elseif awful.layout.get(mouse.screen) == awful.layout.suit.floating then
 		awful.client.property.set(c, "floating_geometry", c:geometry())
 	end
 end)

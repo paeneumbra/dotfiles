@@ -16,7 +16,7 @@ ruled.client.connect_signal("request::rules", function()
 			honor_workarea = true,
 			honor_padding = true,
 			screen = awful.screen.focused,
-			titlebars_enabled = false,
+			titlebars_enabled = true,
 			focus = awful.client.focus.filter,
 			placement = awful.placement.no_overlap + awful.placement.no_offscreen,
 		},
@@ -35,18 +35,15 @@ ruled.client.connect_signal("request::rules", function()
 		id = "titlebars",
 		rule_any = {
 			class = {
-				"Org.gnome.Nautilus",
-                "urxvt",
-                "alacritty",
+				"firefox",
 			},
 		},
 		properties = {
-			titlebars_enabled = true,
+			titlebars_enabled = false,
 		},
 	})
 
     --- Image viewers
-    -- TODO: Uncertain of usefulness
 	ruled.client.append_rule({
 		rule_any = {
 			class = {
