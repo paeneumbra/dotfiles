@@ -2,6 +2,10 @@ local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 local xrdb = beautiful.xresources.get_current_theme()
 
+function xdpi(number)
+    return dpi(number)
+end
+
 Dimensions = {
     gap = dpi(2),
     border = dpi(2),

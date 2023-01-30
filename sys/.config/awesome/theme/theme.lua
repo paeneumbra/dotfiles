@@ -1,6 +1,4 @@
 local theme_assets = require("beautiful.theme_assets")
-local xresources = require("beautiful.xresources")
-local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
 local gco = require("gears.color")
@@ -12,6 +10,8 @@ local theme = {}
 theme.wallpaper = Wallpaper
 theme.font = Font
 
+--TODO: There is some clash between definitions done here and in some other places, like in titlebar_close_button_focus
+-- take a look and normalize it
 theme.bg_normal = Color.bg
 theme.bg_focus = Color.blue
 theme.bg_urgent = Color.red
@@ -30,9 +30,11 @@ theme.border_focus = Color.bg
 theme.border_marked = Color.white
 
 -- Menu:
+-- New menu should be done, this one is rather convoluted
+-- Also settings don't really work from current widgets
 theme.menu_submenu_icon = default_theme .. "default/submenu.png"
-theme.menu_height = dpi(20)
-theme.menu_width = dpi(120)
+theme.menu_height = xdpi(20)
+theme.menu_width = xdpi(120)
 
 theme.menu_border_width = dpi(2)
 theme.menu_border_color = Color.blue
