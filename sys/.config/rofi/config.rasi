@@ -4,8 +4,8 @@ configuration {
     click-to-exit: 					true;
     disable-history:                true;
 	sidebar-mode: 					false;
-    display-window: 				"";
-    display-run: 					"";
-    display-drun: 					"";
+    display-window: 				"󰺕";
+    display-run: 					"󰳟";
+    display-drun: 					"󰛂";
 }
 

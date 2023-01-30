@@ -4,6 +4,7 @@ return {
 	font = wezterm.font_with_fallback({
 		{ family = "Iosevka Term", weight = "Medium" },
 		"Fira Code",
+		"Material Design Icons"
 	}),
     font_size = 14,
 	color_scheme = "Bright (base16)",

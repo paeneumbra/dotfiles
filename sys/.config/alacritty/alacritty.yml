@@ -9,18 +9,22 @@ window:
 
 font:
   normal:
-    family: Iosevka Term
+    family: Iosevka Nerd Font Mono
     style: Bold
 
   bold:
-    family: Iosevka Term
+    family: Iosevka Nerd Font Mono
     style: Oblique
 
   italic:
-    family: Iosevka Term
+    family: Iosevka Nerd Font Mono
     style: Bold
 
   size: 7.0
+
+  builtin_box_drawing: true
+
+live_config_reload: true
 
 import:
   - ~/.config/decorator/output/alacritty
