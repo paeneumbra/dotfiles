@@ -3,7 +3,11 @@ local wibox = require("wibox")
 
 local helper = require("helpers.workspace")
 
+local clock_widget = require("interface.sidebar.clock")
+local calendar_widget = require("interface.sidebar.calendar")
+local profile_widget = require("interface.sidebar.profile")
 local sliders_widget = require("interface.sidebar.sliders")
+local uptime_widget = require("interface.sidebar.uptime")
 
 local width = helper.workspace_width() * 0.25
 local height = helper.workspace_height()
@@ -25,7 +29,7 @@ local function box_widget(widgets, box_width, box_height)
             forced_width = xdpi(box_width),
             forced_height = xdpi(box_height),
             shape = round_widget(10),
-            bg = Color.accent,
+            bg = Color.bg,
             widget = wibox.container.background,
         },
         margins = { left = xdpi(20), right = xdpi(20) },
@@ -35,7 +39,11 @@ end
 
 
 -- Combine some widgets
-local sliders = box_widget(sliders_widget, 380, 210)
+local clock = box_widget(clock_widget, width, height * 0.03)
+local uptime = box_widget(uptime_widget, width, height * 0.03)
+local calendar = box_widget(calendar_widget, width, height * 0.12)
+local sliders = box_widget(sliders_widget, width, height * 0.10)
+local profile = box_widget(profile_widget, width, height * 0.10)
 
 -- Sidebar
 local sidebar = wibox {
@@ -53,7 +61,11 @@ local sidebar = wibox {
 -- Sidebar widget setup
 sidebar:setup {
     {
+        profile,
+        clock,
+        calendar,
         sliders,
+        uptime,
         spacing = xdpi(20),
         layout = wibox.layout.fixed.vertical,
     },
@@ -61,9 +73,9 @@ sidebar:setup {
     widget = wibox.container.margin,
 }
 
--- Sidebar timer is not working
+-- Timer for closing the sidebar
 sidebar.timer = gears.timer {
-    timeout = 0.5,
+    timeout = 0.2,
     single_shot = true,
     callback = function()
         sidebar.visible = not sidebar.visible

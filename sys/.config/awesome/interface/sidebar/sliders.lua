@@ -7,8 +7,8 @@ local function bar()
     end
 end
 
-local bar_color = Color.green
-local bar_background = Color.bg
+local bar_color = Color.blue
+local bar_background = Color.fg
 local bar_height = xdpi(10)
 
 local function grouping_widget(group_width, container_width)
@@ -100,6 +100,7 @@ local function get_stats()
             bat0_icon.markup = charging_icon
         elseif battery0 ~= nil and battery0 < 20 then
             bat0_icon.markup = empty_icon
+            bat0_slider.color = Color.red
         end
     end)
     awesome.connect_signal("signal::battery", function(battery0, battery1, charging)
@@ -108,12 +109,14 @@ local function get_stats()
             bat1_icon.markup = charging_icon
         elseif battery1 ~= nil and battery1 < 20 then
             bat1_icon.markup = empty_icon
+            bat1_slider.color = Color.red
         end
     end)
     awesome.connect_signal("signal::volume", function(vol, muted)
         volume_slider.value = vol
         if muted == true then
             volume_icon.markup = "<span foreground='" .. Color.red .. "'>󰖁</span>"
+            volume_slider.color = Color.red
         end
     end)
     awesome.connect_signal("signal::cpu", function(cpu_temperature)
@@ -124,6 +127,7 @@ local function get_stats()
     end)
 end
 
+-- TODO: brightness
 get_stats()
 
 return wrapping_widget(wibox.widget {

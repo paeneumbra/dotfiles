@@ -7,7 +7,6 @@ local clock = require("interface.bar.clock")
 local displays = require("interface.bar.displays")
 local launcher = require("interface.bar.launcher")
 local layoutlist = require("interface.bar.layoutlist")
-local sidebar = require("interface.bar.sidebar")
 local tags = require("interface.bar.tags")
 local task = require("interface.bar.tasks")
 local volume = require("interface.bar.volume")
@@ -49,7 +48,6 @@ local menus = wibox.widget({
             {
                 displays,
                 launcher,
-                sidebar,
                 spacing = xdpi(2),
                 wibox.widget.systray,
                 layout = wibox.layout.fixed.horizontal,

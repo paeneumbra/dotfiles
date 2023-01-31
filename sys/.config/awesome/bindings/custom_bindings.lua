@@ -19,6 +19,9 @@ awful.keyboard.append_global_keybindings({
 	awful.key({ alt }, "t", function()
 		awful.titlebar.toggle(client.focus)
 	end), -- Toggle titlebar
+	awful.key({ alt }, "s", function()
+		awesome.emit_signal("sidebar::toggle")
+	end), -- Toggle sidebar
 	--
 	awful.key({}, "XF86Display", function()
 	    awesome.emit_signal("displays::toggle")	

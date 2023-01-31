@@ -22,6 +22,8 @@ awesome.connect_signal("signal::battery", function(bat_zero, bat_one, charging)
         battery.markup = "<span foreground='" .. Color.green .. "'> 󱐥 </span>"
     elseif capacity < 40 then
         battery.markup = "<span foreground='" .. Color.red .. "'> 󱊡 </span>"
+    elseif bat_one < 25 then
+        battery.markup = "<span foreground='" .. Color.yellow .. "'> 󱊢 </span>"
     elseif capacity < 50 then
         battery.markup = "<span foreground='" .. Color.yellow .. "'> 󱊢 </span>"
     else
