@@ -11,7 +11,7 @@ local function get_disk_space()
 end
 
 gears.timer({
-	timout = 10000,
+	timeout = 10000,
 	call_now = true,
 	autostart = true,
 	callback = function()
