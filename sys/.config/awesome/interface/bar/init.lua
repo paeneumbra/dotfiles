@@ -4,6 +4,7 @@ local wibox = require("wibox")
 -- Widgets
 local battery = require("interface.bar.battery")
 local clock = require("interface.bar.clock")
+local displays = require("interface.bar.displays")
 local launcher = require("interface.bar.launcher")
 local layoutlist = require("interface.bar.layoutlist")
 local sidebar = require("interface.bar.sidebar")
@@ -46,6 +47,7 @@ local menus = wibox.widget({
     {
         {
             {
+                displays,
                 launcher,
                 sidebar,
                 spacing = xdpi(2),
