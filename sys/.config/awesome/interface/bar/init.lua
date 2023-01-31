@@ -13,12 +13,18 @@ local volume = require("interface.bar.volume")
 local wifi = require("interface.bar.wifi")
 --
 
+-- Separator
+local separator = wibox.widget({
+    markup = "<span foreground='" .. Color.accent .. "'>󱋱</span>",
+    widget = wibox.widget.textbox,
+    font = Bold_Font,
+})
+
 -- Systray
 local systray = wibox.widget({
     {
         {
             {
-                sidebar,
                 wifi,
                 volume,
                 battery,
@@ -26,10 +32,29 @@ local systray = wibox.widget({
                 wibox.widget.systray,
                 layout = wibox.layout.fixed.horizontal,
             },
-            margins = { top = xdpi(1), bottom = xdpi(1), left = xdpi(2), right = xdpi(2) },
+            margins = { top = xdpi(1), bottom = xdpi(1), left = xdpi(1), right = xdpi(1) },
             widget = wibox.container.margin,
         },
-        bg = Color.bg,
+        widget = wibox.container.background,
+    },
+    margins = { top = xdpi(2), bottom = xdpi(2) },
+    widget = wibox.container.margin,
+})
+
+-- Menus
+local menus = wibox.widget({
+    {
+        {
+            {
+                launcher,
+                sidebar,
+                spacing = xdpi(2),
+                wibox.widget.systray,
+                layout = wibox.layout.fixed.horizontal,
+            },
+            margins = { top = xdpi(1), bottom = xdpi(1), left = xdpi(1), right = xdpi(1) },
+            widget = wibox.container.margin,
+        },
         widget = wibox.container.background,
     },
     margins = { top = xdpi(2), bottom = xdpi(2) },
@@ -40,7 +65,10 @@ local systray = wibox.widget({
 local function right(s)
     return wibox.widget({
         {
+            menus,
+            separator,
             systray,
+            separator,
             clock,
             layoutlist(s),
             layout = wibox.layout.fixed.horizontal,
@@ -54,7 +82,6 @@ end
 local function left(s)
     return wibox.widget({
         {
-            launcher,
             tags(s),
             spacing = xdpi(5),
             layout = wibox.layout.fixed.horizontal,

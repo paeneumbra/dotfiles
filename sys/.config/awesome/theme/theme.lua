@@ -1,16 +1,15 @@
 local theme_assets = require("beautiful.theme_assets")
-
 local gfs = require("gears.filesystem")
-local gco = require("gears.color")
-local assets = gfs.get_configuration_dir() .. "/theme/assets/round_button.png"
-local default_theme = gfs.get_themes_dir()
+
+local helper = require("helpers.icons")
+local assets = gfs.get_configuration_dir() .. "/theme/assets/"
+local button_icon = assets .. "round_button.png"
 
 local theme = {}
 
 theme.wallpaper = Wallpaper
 theme.font = Font
 
---TODO: There is some clash between definitions done here and in some other places, like in titlebar_close_button_focus
 -- take a look and normalize it
 theme.bg_normal = Color.bg
 theme.bg_focus = Color.blue
@@ -30,7 +29,7 @@ theme.border_focus = Color.bg
 theme.border_marked = Color.white
 
 -- Menu:
-theme.menu_submenu_icon = default_theme .. "default/submenu.png"
+theme.menu_submenu_icon = helper.recolor(assets .. "submenu.svg", Color.accent)
 theme.menu_height = xdpi(20)
 theme.menu_width = xdpi(150)
 theme.menu_border_width = xdpi(2)
@@ -39,44 +38,35 @@ theme.menu_fg_focus = Color.bg
 theme.menu_bg_focus = Color.accent
 
 --- Titlebars
-theme.titlebar_close_button_normal = gco.recolor_image(assets, Color.red)
-theme.titlebar_close_button_focus = gco.recolor_image(assets, Color.red)
-theme.titlebar_close_button_normal_hover = gco.recolor_image(assets, Color.white)
-theme.titlebar_close_button_focus_hover = gco.recolor_image(assets, Color.white)
+theme.titlebar_close_button_normal = helper.recolor(button_icon, Color.red)
+theme.titlebar_close_button_focus = helper.recolor(button_icon, Color.red)
+theme.titlebar_close_button_normal_hover = helper.recolor(button_icon, Color.white)
+theme.titlebar_close_button_focus_hover = helper.recolor(button_icon, Color.white)
 
-theme.titlebar_maximized_button_normal_inactive = gco.recolor_image(assets, Color.yellow)
-theme.titlebar_maximized_button_focus_inactive = gco.recolor_image(assets, Color.yellow)
-theme.titlebar_maximized_button_normal_inactive_hover = gco.recolor_image(assets, Color.white)
-theme.titlebar_maximized_button_focus_inactive_hover = gco.recolor_image(assets, Color.white)
+theme.titlebar_maximized_button_normal_inactive = helper.recolor(button_icon, Color.yellow)
+theme.titlebar_maximized_button_focus_inactive = helper.recolor(button_icon, Color.yellow)
+theme.titlebar_maximized_button_normal_inactive_hover = helper.recolor(button_icon, Color.white)
+theme.titlebar_maximized_button_focus_inactive_hover = helper.recolor(button_icon, Color.white)
 
-theme.titlebar_maximized_button_normal_active = gco.recolor_image(assets, Color.yellow)
-theme.titlebar_maximized_button_focus_active = gco.recolor_image(assets, Color.yellow)
-theme.titlebar_maximized_button_normal_active_hover = gco.recolor_image(assets, Color.white)
-theme.titlebar_maximized_button_focus_active_hover = gco.recolor_image(assets, Color.white)
+theme.titlebar_maximized_button_normal_active = helper.recolor(button_icon, Color.yellow)
+theme.titlebar_maximized_button_focus_active = helper.recolor(button_icon, Color.yellow)
+theme.titlebar_maximized_button_normal_active_hover = helper.recolor(button_icon, Color.white)
+theme.titlebar_maximized_button_focus_active_hover = helper.recolor(button_icon, Color.white)
 
-theme.titlebar_minimize_button_normal = gco.recolor_image(assets, Color.green)
-theme.titlebar_minimize_button_focus = gco.recolor_image(assets, Color.green)
-theme.titlebar_minimize_button_normal_hover = gco.recolor_image(assets, Color.white)
-theme.titlebar_minimize_button_focus_hover = gco.recolor_image(assets, Color.white)
+theme.titlebar_minimize_button_normal = helper.recolor(button_icon, Color.green)
+theme.titlebar_minimize_button_focus = helper.recolor(button_icon, Color.green)
+theme.titlebar_minimize_button_normal_hover = helper.recolor(button_icon, Color.white)
+theme.titlebar_minimize_button_focus_hover = helper.recolor(button_icon, Color.white)
 
-theme.titlebar_sticky_button_normal_inactive = gco.recolor_image(assets, Color.cyan)
-theme.titlebar_sticky_button_focus_inactive = gco.recolor_image(assets, Color.cyan)
-theme.titlebar_sticky_button_normal_active = gco.recolor_image(assets, Color.white)
-theme.titlebar_sticky_button_focus_active = gco.recolor_image(assets, Color.white)
+theme.titlebar_sticky_button_normal_inactive = helper.recolor(button_icon, Color.cyan)
+theme.titlebar_sticky_button_focus_inactive = helper.recolor(button_icon, Color.cyan)
+theme.titlebar_sticky_button_normal_active = helper.recolor(button_icon, Color.white)
+theme.titlebar_sticky_button_focus_active = helper.recolor(button_icon, Color.white)
 
 -- You can use your own layout icons like this:
-theme.layout_fairh = default_theme .. "default/layouts/fairhw.png"
-theme.layout_fairv = default_theme .. "default/layouts/fairvw.png"
-theme.layout_floating = default_theme .. "default/layouts/floatingw.png"
-theme.layout_magnifier = default_theme .. "default/layouts/magnifierw.png"
-theme.layout_max = default_theme .. "default/layouts/maxw.png"
-theme.layout_fullscreen = default_theme .. "default/layouts/fullscreenw.png"
-theme.layout_tilebottom = default_theme .. "default/layouts/tilebottomw.png"
-theme.layout_tileleft = default_theme .. "default/layouts/tileleftw.png"
-theme.layout_tile = default_theme .. "default/layouts/tilew.png"
-theme.layout_tiletop = default_theme .. "default/layouts/tiletopw.png"
-theme.layout_spiral = default_theme .. "default/layouts/spiralw.png"
-theme.layout_dwindle = default_theme .. "default/layouts/dwindlew.png"
+theme.layout_floating = helper.recolor(assets .. "floating.png", Color.accent)
+theme.layout_tile = helper.recolor(assets .. "tile.png", Color.accent)
+theme.layout_dwindle = helper.recolor(assets .. "dwindle.png", Color.accent)
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)

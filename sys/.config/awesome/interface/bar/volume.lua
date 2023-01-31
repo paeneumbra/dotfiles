@@ -29,6 +29,10 @@ volume:connect_signal("button::press", function()
     end)
 end)
 
+volume:connect_signal("mouse::enter", function()
+    volume.markup = "<span foreground='" .. Color.gray .. "'> 󰕾 </span>"
+end)
+
 -- TODO: Consider opening pavucontrol with left click
 
 return {
