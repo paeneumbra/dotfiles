@@ -45,7 +45,7 @@ function _widgets.basic_text()
     }
 end
 
-function _widgets.slider_text(value, symbol)
+function _widgets.basic_markup(value, symbol)
     text = tostring(value)
     return "<span foreground='" .. Color.bg .. "'> <b>" .. text .. symbol .. "</b> </span>"
 end
@@ -61,7 +61,7 @@ function _widgets.grouping_widget(icon, slider)
     return container
 end
 
-function _widgets.basic_slider(max_bar_value)
+function _widgets.basic_progressbar(max_bar_value)
     return wibox.widget {
         forced_height = bar_height,
         color = bar_color,
