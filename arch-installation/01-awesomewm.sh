@@ -17,10 +17,11 @@ PKGS=(
   awesome-git
   picom
   rofi
- 
-   # Tools
+
+  # Tools
   bluetuith
-  
+  brightnessctl
+
   # Terminals
   wezterm
 )

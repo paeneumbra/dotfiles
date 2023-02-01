@@ -39,6 +39,13 @@ local cpu_text = widgets.basic_text()
 local cpu_stack = widgets.basic_stack(cpu_slider, cpu_text)
 local cpu = widgets.grouping_widget(cpu_icon, cpu_stack)
 
+-- Brightness Level
+local brightness_icon = widgets.basic_widget("󰌵")
+local brightness_slider = widgets.basic_slider(100) --Unknown max, however, 100 = bad
+local brightness_text = widgets.basic_text()
+local brightness_stack = widgets.basic_stack(brightness_slider, brightness_text)
+local brightness = widgets.grouping_widget(brightness_icon, brightness_stack)
+
 local function get_stats()
     awesome.connect_signal("signal::disk", function(disk_capacity)
         disk_slider.value = tonumber(disk_capacity)
@@ -68,6 +75,10 @@ local function get_stats()
         cpu_slider.color = cpu_attributes.pick(cpu_temperature).slider_color
         cpu_text.markup = widgets.slider_text(cpu_temperature, "°C")
     end)
+    awesome.connect_signal("signal::brightness", function(brightness_level)
+        brightness_slider.value = brightness_level
+        brightness_text.markup = widgets.slider_text(brightness_level, "%")
+    end)
 end
 
 -- TODO: brightness
@@ -78,6 +89,7 @@ return widgets.wrapping_widget(wibox.widget {
     bat0,
     bat1,
     volume,
+    brightness,
     disk,
     spacing = xdpi(10),
     layout = wibox.layout.fixed.vertical,
