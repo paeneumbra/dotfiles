@@ -9,6 +9,13 @@ local function bar()
     end
 end
 
+local function handle(radius)
+    return function(cr, w, h)
+        gears.shape.circle(cr, w, h, radius)
+    end
+end
+
+-- Common to progressbar and sliders
 local bar_color = Color.blue
 local bar_background = Color.fg
 local bar_height = xdpi(10)
@@ -28,7 +35,7 @@ function _widgets.wrapping_widget(widget)
     }
 end
 
-function _widgets.basic_widget(icon)
+function _widgets.basic_icon(icon)
     return wibox.widget({
         markup = icon,
         font = Bold_Font,
@@ -51,15 +58,6 @@ function _widgets.basic_markup(value, symbol)
     return "<span foreground='" .. Color.fg .. "'>" .. text .. symbol .. "</span>"
 end
 
-function _widgets.grouping_widget(icon, slider)
-    return wibox.widget {
-        icon,
-        slider,
-        spacing = xdpi(10),
-        layout = wibox.layout.fixed.horizontal,
-    }
-end
-
 function _widgets.horizontal_group(icon, widget, label)
     return wibox.widget {
         icon,
@@ -73,7 +71,7 @@ end
 
 function _widgets.basic_progressbar(max_bar_value)
     return wibox.widget {
-        forced_height = bar_height,
+        forced_height = brightness,
         forced_width = bar_width,
         color = bar_color,
         background_color = bar_background,
@@ -84,12 +82,40 @@ function _widgets.basic_progressbar(max_bar_value)
     }
 end
 
-function _widgets.basic_stack(slider, text)
+function _widgets.basic_slider(max_bar_value)
     return wibox.widget {
-        slider,
-        text,
-        forced_height = bar_height,
-        layout = wibox.layout.stack
+        --forced_height = bar_height,
+        forced_width = bar_width,
+        bar_color = bar_background,
+        bar_active_color = bar_color,
+        bar_shape = bar(),
+        bar_margins = xdpi(2),
+        handle_color = bar_color,
+        handle_shape = handle(bar_height / 2), -- radius
+        shape = bar(),
+        minimum = 0,
+        maximum = max_bar_value,
+        widget = wibox.widget.slider,
     }
 end
+
+-- TODO: delete if unused
+--function _widgets.basic_stack(slider, text)
+--    return wibox.widget {
+--        slider,
+--        text,
+--        forced_height = bar_height,
+--        layout = wibox.layout.stack
+--    }
+--end
+--
+--function _widgets.grouping_widget(icon, widget)
+--    return wibox.widget {
+--        icon,
+--        widget,
+--        spacing = xdpi(10),
+--        layout = wibox.layout.fixed.horizontal,
+--    }
+--end
+
 return _widgets

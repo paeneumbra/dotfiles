@@ -5,24 +5,24 @@ local cpu_attributes = require("interface.sidebar.helpers.cpu")
 local widgets = require("interface.sidebar.helpers.widgets")
 
 -- Disk
-local disk_icon = widgets.basic_widget("󰋊")
+local disk_icon = widgets.basic_icon("󰋊")
 local disk_progressbar = widgets.basic_progressbar(100)
 local disk_text = widgets.basic_text()
 local disk = widgets.horizontal_group(disk_icon, disk_progressbar, disk_text)
 
 -- Batteries
-local bat0_icon = widgets.basic_widget("󰁹")
+local bat0_icon = widgets.basic_icon("󰁹")
 local bat0_progressbar = widgets.basic_progressbar(100)
 local bat0_text = widgets.basic_text()
 local bat0 = widgets.horizontal_group(bat0_icon, bat0_progressbar, bat0_text)
 
-local bat1_icon = widgets.basic_widget("󰁹")
+local bat1_icon = widgets.basic_icon("󰁹")
 local bat1_progressbar = widgets.basic_progressbar(100)
 local bat1_text = widgets.basic_text()
 local bat1 = widgets.horizontal_group(bat1_icon, bat1_progressbar, bat1_text)
 
 -- CPU Temperature
-local cpu_icon = widgets.basic_widget("󰔏")
+local cpu_icon = widgets.basic_icon("󰔏")
 local cpu_progressbar = widgets.basic_progressbar(100) --Unknown max, however, 100 = bad
 local cpu_text = widgets.basic_text()
 local cpu = widgets.horizontal_group(cpu_icon, cpu_progressbar, cpu_text)

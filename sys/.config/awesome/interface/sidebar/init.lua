@@ -24,7 +24,7 @@ local function box_widget(widgets, box_width, box_height)
         {
             {
                 widgets,
-                margins = xdpi(10),
+                margins = xdpi(5),
                 widget = wibox.container.margin,
             },
             forced_width = xdpi(box_width),
@@ -33,7 +33,7 @@ local function box_widget(widgets, box_width, box_height)
             bg = Color.bg,
             widget = wibox.container.background,
         },
-        margins = { left = xdpi(20), right = xdpi(20) },
+        margins = { left = xdpi(15), right = xdpi(15) },
         widget = wibox.container.margin,
     }
 end

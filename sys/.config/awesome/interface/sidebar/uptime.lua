@@ -4,7 +4,7 @@ local widgets = require("interface.sidebar.helpers.widgets")
 
 local cmd_uptime = "uptime -p"
 
-local uptime = widgets.basic_widget()
+local uptime = widgets.basic_icon()
 
 -- Uptime
 local function get_status()
