@@ -12,6 +12,7 @@ end
 local bar_color = Color.blue
 local bar_background = Color.fg
 local bar_height = xdpi(10)
+local bar_width = xdpi(200)
 
 function _widgets.wrapping_widget(widget)
     return wibox.widget {
@@ -38,7 +39,7 @@ end
 
 function _widgets.basic_text()
     return wibox.widget {
-        markup = "<span foreground='" .. Color.bg .. "'> <b> ! </b> </span>",
+        markup = "<span foreground='" .. Color.fg .. "'> ! </span>",
         valign = "center",
         halign = "center",
         widget = wibox.widget.textbox,
@@ -47,23 +48,33 @@ end
 
 function _widgets.basic_markup(value, symbol)
     text = tostring(value)
-    return "<span foreground='" .. Color.bg .. "'> <b>" .. text .. symbol .. "</b> </span>"
+    return "<span foreground='" .. Color.fg .. "'>" .. text .. symbol .. "</span>"
 end
 
 function _widgets.grouping_widget(icon, slider)
-    local container = wibox.widget {
+    return wibox.widget {
         icon,
         slider,
         spacing = xdpi(10),
         layout = wibox.layout.fixed.horizontal,
     }
+end
 
-    return container
+function _widgets.horizontal_group(icon, widget, label)
+    return wibox.widget {
+        icon,
+        widget,
+        label,
+        forced_height = bar_height,
+        spacing = xdpi(5),
+        layout = wibox.layout.fixed.horizontal,
+    }
 end
 
 function _widgets.basic_progressbar(max_bar_value)
     return wibox.widget {
         forced_height = bar_height,
+        forced_width = bar_width,
         color = bar_color,
         background_color = bar_background,
         shape = bar(),

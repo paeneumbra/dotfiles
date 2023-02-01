@@ -8,28 +8,24 @@ local widgets = require("interface.sidebar.helpers.widgets")
 local disk_icon = widgets.basic_widget("󰋊")
 local disk_progressbar = widgets.basic_progressbar(100)
 local disk_text = widgets.basic_text()
-local disk_stack = widgets.basic_stack(disk_progressbar, disk_text)
-local disk = widgets.grouping_widget(disk_icon, disk_stack)
+local disk = widgets.horizontal_group(disk_icon, disk_progressbar, disk_text)
 
 -- Batteries
 local bat0_icon = widgets.basic_widget("󰁹")
 local bat0_progressbar = widgets.basic_progressbar(100)
 local bat0_text = widgets.basic_text()
-local bat0_stack = widgets.basic_stack(bat0_progressbar, bat0_text)
-local bat0 = widgets.grouping_widget(bat0_icon, bat0_stack)
+local bat0 = widgets.horizontal_group(bat0_icon, bat0_progressbar, bat0_text)
 
 local bat1_icon = widgets.basic_widget("󰁹")
 local bat1_progressbar = widgets.basic_progressbar(100)
 local bat1_text = widgets.basic_text()
-local bat1_stack = widgets.basic_stack(bat1_progressbar, bat1_text)
-local bat1 = widgets.grouping_widget(bat1_icon, bat1_stack)
+local bat1 = widgets.horizontal_group(bat1_icon, bat1_progressbar, bat1_text)
 
 -- CPU Temperature
 local cpu_icon = widgets.basic_widget("󰔏")
 local cpu_progressbar = widgets.basic_progressbar(100) --Unknown max, however, 100 = bad
 local cpu_text = widgets.basic_text()
-local cpu_stack = widgets.basic_stack(cpu_progressbar, cpu_text)
-local cpu = widgets.grouping_widget(cpu_icon, cpu_stack)
+local cpu = widgets.horizontal_group(cpu_icon, cpu_progressbar, cpu_text)
 
 local function get_stats()
     awesome.connect_signal("signal::disk", function(disk_capacity)
@@ -37,22 +33,25 @@ local function get_stats()
         disk_text.markup = widgets.basic_markup(disk_capacity, "%")
     end)
     awesome.connect_signal("signal::battery", function(battery0, battery1, charging)
+        att = battery_attributes.pick(charging, battery0)
         bat0_progressbar.value = battery0
-        bat0_icon.markup = battery_attributes.pick(charging, battery0).icon
-        bat0_progressbar.color = battery_attributes.pick(charging, battery0).widget_color
-        bat0_text.markup = widgets.basic_markup(battery0, "%")
+        bat0_icon.markup = att.icon
+        bat0_progressbar.color = att.widget_color
+        bat0_text.markup = att.text
     end)
     awesome.connect_signal("signal::battery", function(battery0, battery1, charging)
+        att = battery_attributes.pick(charging, battery1)
         bat1_progressbar.value = battery1
-        bat1_icon.markup = battery_attributes.pick(charging, battery1).icon
-        bat1_progressbar.color = battery_attributes.pick(charging, battery1).widget_color
-        bat1_text.markup = widgets.basic_markup(battery1, "%")
+        bat1_icon.markup = att.icon
+        bat1_progressbar.color = att.widget_color
+        bat1_text.markup = att.text
     end)
     awesome.connect_signal("signal::cpu", function(cpu_temperature)
+        att = cpu_attributes.pick(cpu_temperature)
         cpu_progressbar.value = cpu_temperature
-        cpu_icon.markup = cpu_attributes.pick(cpu_temperature).icon
-        cpu_progressbar.color = cpu_attributes.pick(cpu_temperature).widget_color
-        cpu_text.markup = widgets.basic_markup(cpu_temperature, "°C")
+        cpu_icon.markup = att.icon
+        cpu_progressbar.color = att.widget_color
+        cpu_text.markup = att.text
     end)
 end
 
