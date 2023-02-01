@@ -1,18 +1,10 @@
 local awful = require("awful")
-local wibox = require("wibox")
 local gears = require("gears")
+local widgets = require("interface.sidebar.helpers.widgets")
 
 local cmd_uptime = "uptime -p"
 
-local function basic_widget()
-    return wibox.widget({
-        font = Bold_Font,
-        align = "center",
-        widget = wibox.widget.textbox,
-    })
-end
-
-local uptime = basic_widget()
+local uptime = widgets.basic_widget()
 
 -- Uptime
 local function get_status()

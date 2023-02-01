@@ -1,5 +1,10 @@
-local wibox = require "wibox"
-local gears = require "gears"
+local wibox = require("wibox")
+local gears = require("gears")
+
+local battery_attributes = require("interface.sidebar.helpers.battery")
+local cpu_attributes = require("interface.sidebar.helpers.cpu")
+local volume_attributes = require("interface.sidebar.helpers.volume")
+local widgets = require("interface.sidebar.helpers.widgets")
 
 local function bar()
     return function(cr, w, h)
@@ -11,12 +16,12 @@ local bar_color = Color.blue
 local bar_background = Color.fg
 local bar_height = xdpi(10)
 
-local function grouping_widget(group_width, container_width)
+local function grouping_widget(icon, slider)
     local container = wibox.widget {
-        group_width,
+        icon,
         {
             nil,
-            container_width,
+            slider,
             expand = "none",
             layout = wibox.layout.align.vertical,
         },
@@ -25,29 +30,6 @@ local function grouping_widget(group_width, container_width)
     }
 
     return container
-end
-
-local function wrapping_widget(widget)
-    return wibox.widget {
-        nil,
-        {
-            nil,
-            widget,
-            expand = "none",
-            layout = wibox.layout.align.horizontal,
-        },
-        expand = "none",
-        layout = wibox.layout.align.vertical,
-    }
-end
-
-local function basic_widget(icon)
-    return wibox.widget({
-        widget = wibox.widget.textbox,
-        font = Bold_Font,
-        align = "left",
-        markup = icon
-    })
 end
 
 local function basic_slider(max_bar_value)
@@ -63,30 +45,26 @@ local function basic_slider(max_bar_value)
 end
 
 -- Disk
-local disk_icon = basic_widget("󰋊")
+local disk_icon = widgets.basic_widget("󰋊")
 local disk_slider = basic_slider(100)
 local disk = grouping_widget(disk_icon, disk_slider)
 
-
 -- Batteries
-local charging_icon = "<span foreground='" .. Color.yellow .. "'>󰢞</span>"
-local empty_icon = "<span foreground='" .. Color.red .. "'>󰁺</span>"
-
-local bat0_icon = basic_widget("󰁹")
+local bat0_icon = widgets.basic_widget("󰁹")
 local bat0_slider = basic_slider(100)
 local bat0 = grouping_widget(bat0_icon, bat0_slider)
 
-local bat1_icon = basic_widget("󰁹")
+local bat1_icon = widgets.basic_widget("󰁹")
 local bat1_slider = basic_slider(100)
 local bat1 = grouping_widget(bat1_icon, bat1_slider)
 
 -- Volume
-local volume_icon = basic_widget("󰕾")
+local volume_icon = widgets.basic_widget("󰕾")
 local volume_slider = basic_slider(153) -- Max volume is 153%
 local volume = grouping_widget(volume_icon, volume_slider)
 
 -- CPU Temperature
-local cpu_icon = basic_widget("󰔏")
+local cpu_icon = widgets.basic_widget("󰔏")
 local cpu_slider = basic_slider(100) --Unknown max, however, 100 = bad
 local cpu = grouping_widget(cpu_icon, cpu_slider)
 
@@ -95,42 +73,31 @@ local function get_stats()
         disk_slider.value = tonumber(disk_capacity)
     end)
     awesome.connect_signal("signal::battery", function(battery0, battery1, charging)
-        bat0_slider.value = tonumber(battery0)
-        if charging == true then
-            bat0_icon.markup = charging_icon
-        elseif battery0 ~= nil and battery0 < 20 then
-            bat0_icon.markup = empty_icon
-            bat0_slider.color = Color.red
-        end
+        bat0_slider.value = battery0
+        bat0_icon.markup = battery_attributes.pick(charging, battery0).icon
+        bat0_slider.color = battery_attributes.pick(charging, battery0).slider_color
     end)
     awesome.connect_signal("signal::battery", function(battery0, battery1, charging)
-        bat1_slider.value = tonumber(battery1)
-        if charging == true then
-            bat1_icon.markup = charging_icon
-        elseif battery1 ~= nil and battery1 < 20 then
-            bat1_icon.markup = empty_icon
-            bat1_slider.color = Color.red
-        end
+        bat1_slider.value = battery1
+        bat1_icon.markup = battery_attributes.pick(charging, battery1).icon
+        bat1_slider.color = battery_attributes.pick(charging, battery1).slider_color
     end)
     awesome.connect_signal("signal::volume", function(vol, muted)
         volume_slider.value = vol
-        if muted == true then
-            volume_icon.markup = "<span foreground='" .. Color.red .. "'>󰖁</span>"
-            volume_slider.color = Color.red
-        end
+        volume_icon.markup = volume_attributes.pick(muted).icon
+        volume_slider.color = volume_attributes.pick(muted).slider_color
     end)
     awesome.connect_signal("signal::cpu", function(cpu_temperature)
         cpu_slider.value = cpu_temperature
-        if cpu_temperature > 70 then
-            cpu_icon.markup = "<span foreground='" .. Color.red .. "'>󰈸</span>"
-        end
+        cpu_icon.markup = cpu_attributes.pick(cpu_temperature).icon
+        cpu_slider.color = cpu_attributes.pick(cpu_temperature).slider_color
     end)
 end
 
 -- TODO: brightness
 get_stats()
 
-return wrapping_widget(wibox.widget {
+return widgets.wrapping_widget(wibox.widget {
     cpu,
     bat0,
     bat1,
