@@ -12,7 +12,7 @@ local uptime_widget = require("interface.sidebar.uptime")
 local width = helper.workspace_width() * 0.25
 local height = helper.workspace_height()
 
-local function round_widget(radius)
+local function round_box(radius)
     return function(cr, w, h)
         gears.shape.rounded_rect(cr, w, h, radius)
     end
@@ -28,7 +28,7 @@ local function box_widget(widgets, box_width, box_height)
             },
             forced_width = xdpi(box_width),
             forced_height = xdpi(box_height),
-            shape = round_widget(10),
+            shape = round_box(10),
             bg = Color.bg,
             widget = wibox.container.background,
         },
