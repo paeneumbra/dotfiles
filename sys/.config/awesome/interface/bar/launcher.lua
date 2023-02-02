@@ -6,7 +6,7 @@ local default_markup = "<span foreground='" .. Color.cyan .. "'> 󱥨 </span>"
 local launcher = wibox.widget({
     markup = default_markup,
     widget = wibox.widget.textbox,
-    font = Font,
+    font = Default_Font,
 })
 
 launcher:connect_signal("mouse::enter", function()

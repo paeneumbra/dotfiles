@@ -3,7 +3,6 @@ local wibox = require("wibox")
 
 local helper = require("helpers.workspace")
 
-local clock_widget = require("interface.sidebar.clock")
 local calendar_widget = require("interface.sidebar.calendar")
 local profile_widget = require("interface.sidebar.profile")
 local progressbar_widget = require("interface.sidebar.progressbars")
@@ -24,16 +23,16 @@ local function box_widget(widgets, box_width, box_height)
         {
             {
                 widgets,
-                margins = xdpi(5),
+                margins = Xdpi(10),
                 widget = wibox.container.margin,
             },
-            forced_width = xdpi(box_width),
-            forced_height = xdpi(box_height),
+            forced_width = Xdpi(box_width),
+            --forced_height = Xdpi(box_height), -- ignored for now
             shape = round_box(10),
-            bg = Color.bg,
+            bg = Color.green,
             widget = wibox.container.background,
         },
-        margins = { left = xdpi(15), right = xdpi(15) },
+        margins = { left = Xdpi(20), right = Xdpi(20) },
         widget = wibox.container.margin,
     }
 end
@@ -41,9 +40,8 @@ end
 
 -- Combine widgets
 local profile = box_widget(profile_widget, width, height * 0.10)
-local clock = box_widget(clock_widget, width, height * 0.025)
 local uptime = box_widget(uptime_widget, width, height * 0.025)
-local calendar = box_widget(calendar_widget, width, height * 0.10)
+local calendar = box_widget(calendar_widget, width, height * 0.20)
 local sliders = box_widget(sliders_widget, width, height * 0.10)
 local progressbar = box_widget(progressbar_widget, width, height * 0.10)
 
@@ -56,7 +54,7 @@ local sidebar = wibox {
     y = helper.workspace_y(),
     x = helper.workspace_x(),
     bg = Color.bg,
-    border_width = xdpi(2),
+    border_width = Xdpi(2),
     border_color = Color.accent,
 }
 
@@ -64,15 +62,14 @@ local sidebar = wibox {
 sidebar:setup {
     {
         profile,
-        clock,
         calendar,
         progressbar,
         sliders,
         uptime,
-        spacing = xdpi(5),
+        spacing = Xdpi(10),
         layout = wibox.layout.fixed.vertical,
     },
-    margins = { top = xdpi(5), bottom = xdpi(5) },
+    margins = { top = Xdpi(20), bottom = Xdpi(20) },
     widget = wibox.container.margin,
 }
 

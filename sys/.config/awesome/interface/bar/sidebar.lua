@@ -6,7 +6,7 @@ local gears = require("gears")
 local default_markup = "<span foreground='" .. Color.cyan .. "'> 󰛾 </span>"
 local sidebar = wibox.widget({
     widget = wibox.widget.textbox,
-    font = Font,
+    font = Default_Font,
     markup = default_markup,
 })
 

@@ -18,8 +18,8 @@ end
 -- Common to progressbar and sliders
 local bar_color = Color.blue
 local bar_background = Color.fg
-local bar_height = xdpi(10)
-local bar_width = xdpi(200)
+local bar_height = Xdpi(10)
+local bar_width = Xdpi(200)
 
 function _widgets.wrapping_widget(widget)
     return wibox.widget {
@@ -46,7 +46,7 @@ end
 
 function _widgets.basic_text()
     return wibox.widget {
-        markup = "<span foreground='" .. Color.fg .. "'> ! </span>",
+        markup = "<span foreground='" .. Color.fg .. "'>󰀦</span>",
         valign = "center",
         halign = "center",
         widget = wibox.widget.textbox,
@@ -64,7 +64,7 @@ function _widgets.horizontal_group(icon, widget, label)
         widget,
         label,
         forced_height = bar_height,
-        spacing = xdpi(5),
+        spacing = Xdpi(5),
         layout = wibox.layout.fixed.horizontal,
     }
 end
@@ -89,7 +89,7 @@ function _widgets.basic_slider(max_bar_value)
         bar_color = bar_background,
         bar_active_color = bar_color,
         bar_shape = bar(),
-        bar_margins = xdpi(2),
+        bar_margins = Xdpi(2),
         handle_color = bar_color,
         handle_shape = handle(bar_height / 2), -- radius
         shape = bar(),

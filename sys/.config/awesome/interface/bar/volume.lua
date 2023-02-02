@@ -7,7 +7,7 @@ local unmute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 -- Volume
 local volume = wibox.widget({
     widget = wibox.widget.textbox,
-    font = Font,
+    font = Default_Font,
     markup = " 󰕾 ",
 })
 

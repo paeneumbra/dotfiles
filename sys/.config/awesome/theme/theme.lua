@@ -8,7 +8,7 @@ local button_icon = assets .. "round_button.png"
 local theme = {}
 
 theme.wallpaper = Wallpaper
-theme.font = Font
+theme.font = Default_Font
 
 -- take a look and normalize it
 theme.bg_normal = Color.bg
@@ -30,9 +30,9 @@ theme.border_marked = Color.white
 
 -- Menu
 theme.menu_submenu_icon = helper.recolor(assets .. "submenu.svg", Color.accent)
-theme.menu_height = xdpi(20)
-theme.menu_width = xdpi(150)
-theme.menu_border_width = xdpi(2)
+theme.menu_height = Xdpi(20)
+theme.menu_width = Xdpi(150)
+theme.menu_border_width = Xdpi(2)
 theme.menu_border_color = Color.accent
 theme.menu_fg_focus = Color.bg
 theme.menu_bg_focus = Color.accent

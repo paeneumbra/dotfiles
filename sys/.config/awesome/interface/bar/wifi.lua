@@ -6,7 +6,7 @@ local wibox = require("wibox")
 local default_markup = "<span foreground='" .. Color.green .. "'> 󰖩 </span>"
 local wifi = wibox.widget({
     widget = wibox.widget.textbox,
-    font = Font,
+    font = Default_Font,
 })
 
 local function get_wifi()

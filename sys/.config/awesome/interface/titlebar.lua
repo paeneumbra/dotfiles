@@ -16,7 +16,7 @@ client.connect_signal("request::titlebars", function(c)
 
     awful.titlebar(c, {
         position = "top",
-        size = xdpi(15),
+        size = Xdpi(15),
         bg_normal = Color.bg,
         fg_normal = Color.gray,
         bg_focus = Color.bg,

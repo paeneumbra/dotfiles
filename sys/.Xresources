@@ -2,7 +2,7 @@
 #include ".config/decorator/output/xresources"
 
 !! Dpi
-Xft.dpi:        192
+Xft.dpi:        96
 
 !! URxvt configs !!
 URxvt*depth: 32

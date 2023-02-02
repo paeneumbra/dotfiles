@@ -3,7 +3,7 @@ local wibox = require("wibox")
 -- Battery
 local battery = wibox.widget({
     widget = wibox.widget.textbox,
-    font = Font,
+    font = Default_Font,
     markup = " 󱊣 ",
 })
 

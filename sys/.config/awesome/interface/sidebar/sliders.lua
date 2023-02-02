@@ -46,6 +46,6 @@ get_stats()
 return widgets.wrapping_widget(wibox.widget {
     volume,
     brightness,
-    spacing = xdpi(10),
+    spacing = Xdpi(10),
     layout = wibox.layout.fixed.vertical,
 })

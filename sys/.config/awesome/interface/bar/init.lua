@@ -28,16 +28,16 @@ local systray = wibox.widget({
                 wifi,
                 volume,
                 battery,
-                spacing = xdpi(2),
+                spacing = Xdpi(2),
                 wibox.widget.systray,
                 layout = wibox.layout.fixed.horizontal,
             },
-            margins = { top = xdpi(1), bottom = xdpi(1), left = xdpi(1), right = xdpi(1) },
+            margins = { top = Xdpi(1), bottom = Xdpi(1), left = Xdpi(1), right = Xdpi(1) },
             widget = wibox.container.margin,
         },
         widget = wibox.container.background,
     },
-    margins = { top = xdpi(2), bottom = xdpi(2) },
+    margins = { top = Xdpi(2), bottom = Xdpi(2) },
     widget = wibox.container.margin,
 })
 
@@ -48,16 +48,16 @@ local menus = wibox.widget({
             {
                 displays,
                 launcher,
-                spacing = xdpi(2),
+                spacing = Xdpi(2),
                 wibox.widget.systray,
                 layout = wibox.layout.fixed.horizontal,
             },
-            margins = { top = xdpi(1), bottom = xdpi(1), left = xdpi(1), right = xdpi(1) },
+            margins = { top = Xdpi(1), bottom = Xdpi(1), left = Xdpi(1), right = Xdpi(1) },
             widget = wibox.container.margin,
         },
         widget = wibox.container.background,
     },
-    margins = { top = xdpi(2), bottom = xdpi(2) },
+    margins = { top = Xdpi(2), bottom = Xdpi(2) },
     widget = wibox.container.margin,
 })
 
@@ -73,7 +73,7 @@ local function right(s)
             layoutlist(s),
             layout = wibox.layout.fixed.horizontal,
         },
-        margins = { top = xdpi(2), bottom = xdpi(2), right = xdpi(6) },
+        margins = { top = Xdpi(2), bottom = Xdpi(2), right = Xdpi(6) },
         widget = wibox.container.margin,
     })
 end
@@ -83,10 +83,10 @@ local function left(s)
     return wibox.widget({
         {
             tags(s),
-            spacing = xdpi(5),
+            spacing = Xdpi(5),
             layout = wibox.layout.fixed.horizontal,
         },
-        margins = { top = xdpi(2), bottom = xdpi(2), left = xdpi(6) },
+        margins = { top = Xdpi(2), bottom = Xdpi(2), left = Xdpi(6) },
         widget = wibox.container.margin,
     })
 end
@@ -97,13 +97,13 @@ local function get_bar(s)
         visible = true,
         ontop = false,
         width = s.geometry.width,
-        height = xdpi(20),
-        y = s.geometry.height - xdpi(20),
+        height = Xdpi(20),
+        y = s.geometry.height - Xdpi(20),
         bg = Color.bg,
         type = "dock",
     })
 
-    bar:struts({ bottom = xdpi(20), top = xdpi(10), left = xdpi(10), right = xdpi(10) })
+    bar:struts({ bottom = Xdpi(20), top = Xdpi(10), left = Xdpi(10), right = Xdpi(10) })
 
     bar:setup({
         left(s),

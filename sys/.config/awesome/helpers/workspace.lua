@@ -7,7 +7,7 @@ local margin = Dimensions.border + Dimensions.gap
 function _workspace.workspace_height()
     -- https://awesomewm.org/apidoc/core_components/screen.html
     -- tilling area = 44, matches windows + border
-    return awful.screen.focused().geometry.height - xdpi(44) + Dimensions.border
+    return awful.screen.focused().geometry.height - Xdpi(44) + Dimensions.border
 end
 
 function _workspace.workspace_width()
