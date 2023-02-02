@@ -3,47 +3,47 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 
 local power_menu = {
     {
-        "󰿅 Quit Awesome",
+        "󰿅  Quit Awesome",
         function()
             awesome.quit()
         end,
     },
     {
-        "󰐥 Poweroff",
+        "󰐥  Poweroff",
         function()
             awful.spawn("poweroff", false)
         end,
     },
     {
-        "󰜉 Reboot",
+        "󰜉  Reboot",
         function()
             awful.spawn("reboot", false)
         end,
     },
 }
 
--- TODO: It's a global variable, needs refactoring
 mainmenu = awful.menu({
     items = {
-        { "󰑐 Refresh", awesome.restart },
-        { "󰆍 Terminal", Apps.terminal },
-        { "󰈹 Browser", Apps.browser },
-        { "󰪶 File Manager", Apps.fileManager },
-        { "󰍜 Applications",
+        { "󰑐  Refresh", awesome.restart },
+        { "󰈹  Browser", Apps.browser },
+        { "󰆍  Alacritty", Apps.terminal },
+        { "󰆍  Wezterm", Apps.alternative_terminal },
+        { "󰪶  File Manager", Apps.file_manager },
+        { "󰍜  Applications",
           function()
               awful.spawn(Apps.launcher, false)
           end,
         },
-        { "󰇰 Email",
+        { "󰇰  Email",
           function()
               awful.spawn(Apps.email, false)
           end,
         },
-        { "󰘥 Help",
+        { "󰘥  Help",
           function()
               hotkeys_popup.show_help(nil, awful.screen.focused())
           end,
         },
-        { "󰐦 Power Options", power_menu },
+        { "󰐦  Power Options", power_menu },
     },
 })
