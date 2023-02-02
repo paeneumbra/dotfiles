@@ -1,5 +1,7 @@
 local awful = require("awful")
 
+local helper = require("helpers.displays")
+
 modkey = "Mod4"
 alt = "Mod1"
 
@@ -20,4 +22,8 @@ awful.keyboard.append_global_keybindings({
 	awful.key({ modkey, "Control" }, "k", function()
 		awful.screen.focus_relative(-1)
 	end, { description = "focus the previous screen", group = "display" }),
+
+	awful.key({}, "XF86Display", function()
+		    helper.standard_dual_setup()
+	end, { description = "Set standard double display", group = "display" }),
 })

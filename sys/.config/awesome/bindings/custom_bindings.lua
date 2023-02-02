@@ -49,8 +49,4 @@ awful.keyboard.append_global_keybindings({
 		hotkeys_popup.show_help(nil, awful.screen.focused())
 	end, { description = "show help", group = "Others" }),
 
-	-- Temporary hack for monitor menu
-	awful.key({}, "XF86Display", function()
-		awesome.emit_signal("displays::toggle")
-	end),
 })

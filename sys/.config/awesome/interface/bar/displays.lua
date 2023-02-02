@@ -2,8 +2,8 @@ local awful = require("awful")
 local wibox = require("wibox")
 local gears = require("gears")
 
---TODO: Temporary - display utility will be used only by XF86Display keybinding
--- At most move it to sidebar as a button!
+local helper = require("helpers.displays")
+
 
 -- Displays
 local default_markup = "<span foreground='" .. Color.cyan .. "'> 󰍺 </span>"
@@ -22,7 +22,7 @@ displays:connect_signal("mouse::leave", function()
 end)
 
 displays:buttons(gears.table.join(awful.button({}, 1, function()
-    awesome.emit_signal("displays::toggle")
+    helper.standard_dual_setup()
 end)))
 
 return displays
