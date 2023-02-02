@@ -6,7 +6,7 @@ return {
 		"Fira Code",
 		"Material Design Icons"
 	}),
-    font_size = 14,
+    font_size = 12,
 	color_scheme = "Bright (base16)",
 
 	-- Padding
