@@ -29,7 +29,7 @@ local function box_widget(widgets, box_width, box_height)
             forced_width = Xdpi(box_width),
             --forced_height = Xdpi(box_height), -- ignored for now
             shape = round_box(10),
-            bg = Color.green,
+            bg = Color.bg,
             widget = wibox.container.background,
         },
         margins = { left = Xdpi(20), right = Xdpi(20) },
