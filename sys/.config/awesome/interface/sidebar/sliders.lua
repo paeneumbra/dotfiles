@@ -1,8 +1,8 @@
 local awful = require("awful")
 local wibox = require("wibox")
 
-local volume_attributes = require("interface.sidebar.helpers.volume")
-local widgets = require("interface.sidebar.helpers.widgets")
+local volume_attributes = require("interface.helpers.volume")
+local widgets = require("interface.helpers.widgets")
 
 -- Volume
 local volume_icon = widgets.basic_icon("󰕾")

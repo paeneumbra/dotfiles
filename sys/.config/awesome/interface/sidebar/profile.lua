@@ -1,7 +1,7 @@
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local helper = require("helpers.icons")
-local widgets = require("interface.sidebar.helpers.widgets")
+local widgets = require("interface.helpers.widgets")
 
 local profile_picture = wibox.widget({
     image = helper.recolor(beautiful.profile_picture, Color.fg),

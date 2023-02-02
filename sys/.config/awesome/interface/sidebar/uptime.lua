@@ -1,6 +1,6 @@
 local awful = require("awful")
 local gears = require("gears")
-local widgets = require("interface.sidebar.helpers.widgets")
+local widgets = require("interface.helpers.widgets")
 
 local cmd_uptime = "uptime -p"
 
