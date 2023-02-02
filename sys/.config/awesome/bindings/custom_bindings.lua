@@ -8,7 +8,7 @@ alt = "Mod1"
 awful.keyboard.append_global_keybindings({
 	-- Apps
 
-	awful.key({ alt }, "Return", function()
+	awful.key({ modkey }, "Return", function()
 		awful.spawn(Apps.terminal)
 	end, { description = "open alacritty", group = "launcher" }),
 

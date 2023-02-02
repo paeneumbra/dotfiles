@@ -94,12 +94,6 @@ awful.keyboard.append_global_keybindings({
 			client.focus:raise()
 		end
 	end, { description = "go back", group = "client" }),
-	awful.key({ modkey, "Control" }, "j", function()
-		awful.screen.focus_relative(1)
-	end, { description = "focus the next screen", group = "screen" }),
-	awful.key({ modkey, "Control" }, "k", function()
-		awful.screen.focus_relative(-1)
-	end, { description = "focus the previous screen", group = "screen" }),
 	awful.key({ modkey, "Control" }, "n", function()
 		local c = awful.client.restore()
 		-- Focus restored client
@@ -160,9 +154,6 @@ client.connect_signal("request::default_keybindings", function()
 		awful.key({ modkey, "Control" }, "Return", function(c)
 			c:swap(awful.client.getmaster())
 		end, { description = "move to master", group = "client" }),
-		awful.key({ modkey }, "o", function(c)
-			c:move_to_screen()
-		end, { description = "move to screen", group = "client" }),
 		awful.key({ modkey }, "t", function(c)
 			c.ontop = not c.ontop
 		end, { description = "toggle keep on top", group = "client" }),
@@ -175,13 +166,15 @@ client.connect_signal("request::default_keybindings", function()
 			c.maximized = not c.maximized
 			c:raise()
 		end, { description = "(un)maximize", group = "client" }),
-		awful.key({ modkey, "Control" }, "m", function(c)
-			c.maximized_vertical = not c.maximized_vertical
-			c:raise()
-		end, { description = "(un)maximize vertically", group = "client" }),
-		awful.key({ modkey, "Shift" }, "m", function(c)
-			c.maximized_horizontal = not c.maximized_horizontal
-			c:raise()
-		end, { description = "(un)maximize horizontally", group = "client" }),
+
+		-- TODO: Remove if unused
+		-- awful.key({ modkey, "Control" }, "m", function(c)
+		-- 	c.maximized_vertical = not c.maximized_vertical
+		-- 	c:raise()
+		-- end, { description = "(un)maximize vertically", group = "client" }),
+		-- awful.key({ modkey, "Shift" }, "m", function(c)
+		-- 	c.maximized_horizontal = not c.maximized_horizontal
+		-- 	c:raise()
+		-- end, { description = "(un)maximize horizontally", group = "client" }),
 	})
 end)
