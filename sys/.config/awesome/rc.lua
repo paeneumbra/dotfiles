@@ -12,7 +12,7 @@ pcall(require, "luarocks.loader")
 --
 require("awful.autofocus")
 --
-require("error_handler")
+require("errorhandler")
 require("startup")
 require("settings")
 require("theme")
