@@ -1,13 +1,7 @@
-local wibox = require("wibox")
+local widgets = require("interface.helpers.widgets")
 
 -- Battery
-local battery = wibox.widget({
-    widget = wibox.widget.textbox,
-    font = Default_Font,
-    markup = " 󱊣 ",
-})
-
-local capacity
+local battery = widgets.basic_icon("󱊣")
 
 awesome.connect_signal("signal::battery", function(bat_zero, bat_one, charging)
     -- Battery signals are not available immediately after startup
@@ -19,19 +13,14 @@ awesome.connect_signal("signal::battery", function(bat_zero, bat_one, charging)
         capacity = bat_zero + bat_one
     end
     if charging then
-        battery.markup = "<span foreground='" .. Color.green .. "'> 󰚥 </span>"
+        battery.markup = widgets.colored_markup("󰚥", Color.green)
     elseif capacity < 40 then
-        battery.markup = "<span foreground='" .. Color.red .. "'> 󱊡 </span>"
-    elseif bat_one < 25 then
-        battery.markup = "<span foreground='" .. Color.yellow .. "'> 󱊢 </span>"
-    elseif capacity < 50 then
-        battery.markup = "<span foreground='" .. Color.yellow .. "'> 󱊢 </span>"
+        battery.markup = widgets.colored_markup("󱊡", Color.red)
+    elseif bat_one < 25 or capacity < 50 then
+        battery.markup = widgets.colored_markup("󱊢", Color.yellow)
     else
-        battery.markup = "<span foreground='" .. Color.green .. "'> 󱊣 </span>"
+        battery.markup = widgets.colored_markup("󱊣", Color.green)
     end
 end)
 
-return {
-    battery,
-    layout = wibox.layout.fixed.horizontal,
-}
+return battery

@@ -1,20 +1,16 @@
 local awful = require("awful")
-local wibox = require("wibox")
 local gears = require("gears")
 
 local helper = require("helpers.displays")
+local widgets = require("interface.helpers.widgets")
 
 
 -- Displays
-local default_markup = "<span foreground='" .. Color.cyan .. "'> 󰍺 </span>"
-local displays = wibox.widget({
-    widget = wibox.widget.textbox,
-    font = Default_Font,
-    markup = default_markup,
-})
+local default_markup = widgets.colored_markup("󰍺", Color.cyan)
+local displays = widgets.basic_icon(default_markup)
 
 displays:connect_signal("mouse::enter", function()
-    displays.markup = "<span foreground='" .. Color.gray .. "'> 󰍺 </span>"
+    displays.markup = widgets.colored_markup("󰍺", Color.gray)
 end)
 
 displays:connect_signal("mouse::leave", function()

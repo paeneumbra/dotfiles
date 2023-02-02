@@ -1,23 +1,23 @@
 local awful = require("awful")
 local gears = require("gears")
-local wibox = require("wibox")
+
+local widgets = require("interface.helpers.widgets")
+
+
+local cmd_wifi = "nmcli g | tail -1 | awk '{printf $1}'"
+local cmd_strength = "awk '/^s*w/ { print  int($3 * 100 / 70) }' /proc/net/wireless"
 
 -- Wifi
-local default_markup = "<span foreground='" .. Color.green .. "'> 󰖩 </span>"
-local wifi = wibox.widget({
-    widget = wibox.widget.textbox,
-    font = Default_Font,
-})
+local default_markup = widgets.colored_markup("󰖩", Color.green)
+local wifi = widgets.basic_icon(default_markup)
 
 local function get_wifi()
-    local script = "nmcli g | tail -1 | awk '{printf $1}'"
 
-    awful.spawn.easy_async_with_shell(script, function(stdout)
+    awful.spawn.easy_async_with_shell(cmd_wifi, function(stdout)
         local status = tostring(stdout)
         if not status:match("disconnected") then
-            local get_strength = "awk '/^s*w/ { print  int($3 * 100 / 70) }' /proc/net/wireless"
 
-            awful.spawn.easy_async_with_shell(get_strength, function(stdout)
+            awful.spawn.easy_async_with_shell(cmd_strength, function(stdout)
                 local strength
 
                 -- This validation avoids nil errors when connection is down
@@ -28,13 +28,13 @@ local function get_wifi()
                 end
 
                 if strength < 30 then
-                    wifi.markup = "<span foreground='" .. Color.red .. "'> 󱛂 </span>"
+                    wifi.markup =  widgets.colored_markup("󱛂", Color.yellow)
                 else
                     wifi.markup = default_markup
                 end
             end)
         else
-            wifi.markup = "<span foreground='" .. Color.red .. "'> 󰖪 </span>"
+            wifi.markup = widgets.colored_markup("󰖪", Color.red)
         end
     end)
 end
@@ -50,15 +50,13 @@ gears.timer({
 
 wifi:connect_signal("button::press", function()
     awful.spawn(Apps.terminal .. " -e nmtui", {
-        floating = true,
+        floating = false,
         tag = mouse.screen.selected_tag,
-        -- TODO: Widget does not respect placement
-        placement = awful.placement.left,
     })
 end)
 
 wifi:connect_signal("mouse::enter", function()
-    wifi.markup = "<span foreground='" .. Color.gray .. "'> 󰖩 </span>"
+    wifi.markup = widgets.colored_markup("󰖩", Color.gray)
 end)
 
 wifi:connect_signal("mouse::leave", function()

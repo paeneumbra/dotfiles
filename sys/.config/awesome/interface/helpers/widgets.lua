@@ -58,6 +58,11 @@ function _widgets.basic_markup(value, symbol)
     return "<span foreground='" .. Color.fg .. "'>" .. text .. symbol .. "</span>"
 end
 
+function _widgets.colored_markup(value, color)
+    text = tostring(value)
+    return "<span foreground='" .. color .. "'>" .. text .. "</span>"
+end
+
 function _widgets.horizontal_group(icon, widget, label)
     return wibox.widget {
         icon,

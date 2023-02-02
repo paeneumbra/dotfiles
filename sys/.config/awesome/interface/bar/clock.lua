@@ -1,11 +1,9 @@
 local gears = require("gears")
-local wibox = require("wibox")
+
+local widgets = require("interface.helpers.widgets")
 
 -- Clock
-local clock = wibox.widget({
-    widget = wibox.widget.textbox,
-    font = Bold_Font,
-})
+local clock = widgets.basic_icon()
 
 gears.timer({
     timeout = 60,
