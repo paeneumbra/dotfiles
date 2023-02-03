@@ -5,7 +5,7 @@ local _displays = {}
 
 local cmd_xrandr = [[ bash -c "xrandr -q --current | grep ' connected' | awk '{print $1}'"]]
 local cmd_kill_display = "xrandr --output %s --off"
-local cmd_xrandr_dual = "xrandr --output eDP1 --auto --output %s --auto --primary --right-of eDP1"
+local cmd_xrandr_dual = "xrandr --output eDP1 --auto --output %s --auto --right-of eDP1"
 local external_connections = {
     "DP1",
     "DP2",

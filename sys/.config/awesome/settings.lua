@@ -48,7 +48,7 @@ Editor = "nvim"
 
 Apps = {
     terminal = "alacritty",
-    alternative_terminal = "wezterm",
+    alternative_terminal = "urxvt",
     editor = "nvim",
     launcher = "rofi -theme base -modi drun -show drun",
     browser = "firefox",

@@ -27,7 +27,7 @@ mainmenu = awful.menu({
         { "󰑐  Refresh", awesome.restart },
         { "󰈹  Browser", Apps.browser },
         { "󰆍  Alacritty", Apps.terminal },
-        { "󰆍  Wezterm", Apps.alternative_terminal },
+        { "󰆍  Urxvt", Apps.alternative_terminal },
         { "󰪶  File Manager", Apps.file_manager },
         { "󰍜  Applications",
           function()

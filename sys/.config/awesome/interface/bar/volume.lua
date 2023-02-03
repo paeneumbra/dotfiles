@@ -1,6 +1,6 @@
 local awful = require("awful")
-local naughty = require("naughty")
 
+local notify = require("helpers.notifications")
 local widgets = require("interface.helpers.widgets")
 
 local cmd_mute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -20,11 +20,7 @@ end)
 
 volume:connect_signal("button::press", function()
     awful.spawn.easy_async_with_shell(cmd_mute, function()
-        naughty.notification({
-            urgency = "normal",
-            title = "󰋼 Info:",
-            message = "Mute/Unmute!",
-        })
+        notify.normal("Mute/Unmute!")
     end)
 end)
 

@@ -18,7 +18,7 @@ displays:connect_signal("mouse::leave", function()
 end)
 
 displays:buttons(gears.table.join(awful.button({}, 1, function()
-    helper.standard_dual_setup()
+    helper.update_displays()
 end)))
 
 return displays

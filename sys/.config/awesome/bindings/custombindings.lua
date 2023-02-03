@@ -1,6 +1,8 @@
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
+local volume = require("helpers.mute")
+
 modkey = "Mod4"
 alt = "Mod1"
 
@@ -14,7 +16,7 @@ awful.keyboard.append_global_keybindings({
 
 	awful.key({ alt }, "Return", function()
 		awful.spawn(Apps.alternative_terminal)
-	end, { description = "open wezterm", group = "launcher" }),
+	end, { description = "open urxvt", group = "launcher" }),
 
 	awful.key({ alt }, "c", function()
 		awful.spawn(Apps.browser)
@@ -48,5 +50,9 @@ awful.keyboard.append_global_keybindings({
 	awful.key({ alt }, "i", function()
 		hotkeys_popup.show_help(nil, awful.screen.focused())
 	end, { description = "show help", group = "Others" }),
+
+    awful.key({}, "XF86AudioMute", function()
+        volume.toggle_volume()
+    end, { description = "Mute/Unmute (F1)", group = "Others" }),
 
 })
