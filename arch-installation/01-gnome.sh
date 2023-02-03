@@ -20,24 +20,9 @@ PKGS=(
   gnome-tweaks
   nautilus
 
-  #https://wiki.archlinux.org/title/Bspwm
-  bspwm
-  sxhkd
-  picom
-  dunst
-  rofi
-  polybar
-  light
-  pavucontrol
-  xdo
-  
   #Python based WM
   #https://wiki.archlinux.org/title/Qtile
   #qtile
-
-  #Lua based WM
-  #https://wiki.archlinux.org/title/Awesome
-  # awesome
 )
 
 for PKG in "${PKGS[@]}"; do

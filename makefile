@@ -15,11 +15,11 @@ setup-yay:
 install-awesome:
 	./arch-installation/01-awesomewm.sh
 
-install-wm:
-	./arch-installation/01-window-manager.sh
-
 install-extra:
 	./arch-installation/02-extras.sh
+
+install-development:
+	./arch-installation/03-development.sh
 
 stow-config:
 	mkdir -p $(HOME)/.config
@@ -30,8 +30,8 @@ setup-zsh:
 	sudo chsh -s $$(which zsh)
 	echo "Restart to enable zsh"
 
-setup-bluetooth:
-	./arch-installation/04-bluetooth.sh
+setup-audio:
+	./arch-installation/04-audio.sh
 	systemctl --user enable --now pipewire
 	systemctl --user enable --now pipewire
 	systemctl --user enable --now wireplumber

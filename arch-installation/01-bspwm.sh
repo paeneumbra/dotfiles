@@ -3,19 +3,25 @@
 set -e
 
 PKGS=(
-  #Lua based WM
-  #https://wiki.archlinux.org/title/Awesome
-  awesome-git
+  #https://wiki.archlinux.org/title/Bspwm
+  bspwm
+  sxhkd
   picom
+  dunst
   rofi
-  redshift
+  polybar
   bluetuith
-  brightnessctl
-  ttf-nerd-fonts-symbols-2048-em-mono
-  ttf-material-design-icons-webfont
+  light
+  pavucontrol
+  xdo
+  xtitle
 
-  # Terminals
-  wezterm
+  #gtk
+  baobab
+  cheese
+  gnome-font-viewer
+  nautilus
+  xdg-user-dirs-gtk
 )
 
 for PKG in "${PKGS[@]}"; do

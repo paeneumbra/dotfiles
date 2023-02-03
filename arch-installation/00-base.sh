@@ -3,66 +3,45 @@
 set -e
 
 PKGS=(
+  # Graphic Drivers
+  dkms
+  xorg-server
+  xorg-xinit
+  nvidia-dkms
+  nvidia-prime
+  lib32-nvidia-utils
+  nvidia-utils
+  mesa-utils
+  vulkan-intel
+
+  # Basic Apps
   alacritty
+  arandr
   rxvt-unicode
   fd
   feh
   fzf
+  fwupd
   git
   git-filter-repo
+  glow
   maim
+  neofetch
   openssh
-  redshift
+  ranger
   ripgrep
   starship
   stow
   tree
   wmname
-  xclip
-  zsh
-  zsh-completions
-  
-  glow
-  neofetch
-
-  arandr
   tlp
-  fwupd
-
-  neovim
-  prettier
-  npm
-
-  ranger
   ueberzug
-
+  xclip
   zathura
   zathura-cb
   zathura-pdf-mupdf
-
-  jre8-openjdk
-  jre11-openjdk
-  jdk11-openjdk
-  jre17-openjdk
-  jdk17-openjdk
-  kotlin
-  gradle
-  groovy
-
-  lua
-  luarocks
-  stylua
-
-  python
-  python-pip
-  python-virtualenv
-  python-pipenv
-  python-setuptools
-  python-black
-  flake8
-
-  jq
-  yq
+  zsh
+  zsh-completions
 )
 
 for PKG in "${PKGS[@]}"; do

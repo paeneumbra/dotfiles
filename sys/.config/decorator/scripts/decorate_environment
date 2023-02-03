@@ -3,30 +3,31 @@
 echo 'Reloading environment colour scheme'
 
 if [[ $# -ne 1 ]]; then
-    echo "Illegal number of parameters $#" >&2
-    echo "Usage: command [COLORSCHEME]" 
-    echo "Colorschemes can be found under .config/decorator/resources"
-    exit 2
+  echo "Illegal number of parameters $#" >&2
+  echo "Usage: command [COLORSCHEME]"
+  echo "Color schemes can be found under .config/decorator/resources"
+  exit 2
 fi
 
 echo "Creating new output files"
 dunstify "Decorate!" "Creating new colorscheme files" -u critical
-decorate_new_output_files $1
-sleep 2;
+decorate_new_output_files "$1"
+sleep 2
 
 echo "Loading xresources with the new colorscheme"
 dunstify "Decorate!" "Loading Xresources" -u critical
-xrdb $HOME/.Xresources
-sleep 2;
+xrdb "$HOME"/.Xresources
+sleep 2
 
-echo "Updating dunst for new colorscheme"
-dunstify "Decorate!" "Updating dunst!" -u critical
-decorate_update_dunst;
-killall dunst; sleep 2; dunst &
+# Dunst
+#echo "Updating dunst for new colorscheme"
+#dunstify "Decorate!" "Updating dunst!" -u critical
+#decorate_update_dunst;
+#killall dunst; sleep 2; dunst &
 
+# Bspwm
+#echo "Reloading bspwm environment"
+#dunstify "Decorate!" "Reloading bspwm" -u critical
+#bspc wm -r;
 
-echo "Reloading bspwm environment"
-dunstify "Decorate!" "Reloading bspwm" -u critical
-bspc wm -r;
-
-echo "WARNING: Neither gtk, qt or neovim are changed by this file."
+echo "WARNING: Neither firefox, gtk, qt, neovim or wezterm are changed by this file."
