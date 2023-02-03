@@ -1,10 +1,10 @@
 local awful = require("awful")
 local gears = require("gears")
 
-local vol_sc = "wpctl get-volume @DEFAULT_AUDIO_SINK@"
+local cmd_volume = "wpctl get-volume @DEFAULT_AUDIO_SINK@"
 
 local function get_vol()
-    awful.spawn.easy_async_with_shell(vol_sc, function(vol)
+    awful.spawn.easy_async_with_shell(cmd_volume, function(vol)
         if string.find(vol, "MUTED") then
             muted = true
         else

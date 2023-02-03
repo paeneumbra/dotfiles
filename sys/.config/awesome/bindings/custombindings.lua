@@ -1,7 +1,7 @@
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
-local volume = require("helpers.mute")
+local volume = require("helpers.volume")
 
 modkey = "Mod4"
 alt = "Mod1"
@@ -45,14 +45,24 @@ awful.keyboard.append_global_keybindings({
 		awesome.emit_signal("sidebar::toggle")
 	end, { description = "toggle sidebar", group = "Menus" }),
 
+	-- Volume
+
+	awful.key({}, "XF86AudioMute", function()
+		volume.toggle_volume()
+	end, { description = "Mute/Unmute (F1)", group = "Volume" }),
+
+	awful.key({}, "XF86AudioLowerVolume", function()
+		volume.decrease_volume()
+	end, { description = "Decrease Volume (F2)", group = "Volume" }),
+
+	awful.key({}, "XF86AudioRaiseVolume", function()
+		volume.increase_volume()
+	end, { description = "Increase Volume (F3)", group = "Volume" }),
+
 	-- Others
 
 	awful.key({ alt }, "i", function()
 		hotkeys_popup.show_help(nil, awful.screen.focused())
 	end, { description = "show help", group = "Others" }),
-
-    awful.key({}, "XF86AudioMute", function()
-        volume.toggle_volume()
-    end, { description = "Mute/Unmute (F1)", group = "Others" }),
 
 })
