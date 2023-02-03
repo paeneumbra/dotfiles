@@ -1,14 +1,18 @@
 local awful = require("awful")
-local helper = require("helpers.run")
+local run = require("helpers.run")
+local displays = require("helpers.displays")
 
 --- Autostart ---
 
 -- Picom
-helper.start_if_not_running("picom", function()
+run.start_if_not_running("picom", function()
     awful.spawn("picom --config /home/archy/.config/picom/picom.conf", false)
 end)
 
 -- Redshift
-helper.start_if_not_running("redshift", function()
+run.start_if_not_running("redshift", function()
     awful.spawn("redshift", false)
 end)
+
+-- Display reset
+displays.update_displays()
