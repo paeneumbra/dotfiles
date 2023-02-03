@@ -2,6 +2,7 @@ local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
 local volume = require("helpers.volume")
+local brightness = require("helpers.brightness")
 
 modkey = "Mod4"
 alt = "Mod1"
@@ -52,12 +53,22 @@ awful.keyboard.append_global_keybindings({
 	end, { description = "Mute/Unmute (F1)", group = "Volume" }),
 
 	awful.key({}, "XF86AudioLowerVolume", function()
-		volume.decrease_volume()
+		volume.decrease()
 	end, { description = "Decrease Volume (F2)", group = "Volume" }),
 
 	awful.key({}, "XF86AudioRaiseVolume", function()
-		volume.increase_volume()
+		volume.increase()
 	end, { description = "Increase Volume (F3)", group = "Volume" }),
+
+	-- Brightness
+
+	awful.key({}, "XF86MonBrightnessDown", function()
+		brightness.decrease()
+	end, { description = "Decrease brightness (F5)", group = "Volume" }),
+
+	awful.key({}, "XF86MonBrightnessUp", function()
+		brightness.increase()
+	end, { description = "Increase brightness (F6)", group = "Volume" }),
 
 	-- Others
 

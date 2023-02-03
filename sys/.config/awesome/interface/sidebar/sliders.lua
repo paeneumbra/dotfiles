@@ -15,7 +15,7 @@ volume_slider:connect_signal("property::value", function(_, value)
 end)
 
 -- Brightness Level
-local brightness_icon = widgets.basic_icon("󰌵")
+local brightness_icon = widgets.basic_icon("󰖙")
 local brightness_slider = widgets.basic_slider(100)
 local brightness_text = widgets.basic_text()
 local brightness = widgets.horizontal_group(brightness_icon, brightness_slider, brightness_text)
