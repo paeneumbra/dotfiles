@@ -46,7 +46,7 @@ function _displays.update_displays()
         elseif #lines == 2 then
             for _, v in pairs(lines) do
                 if v ~= "eDP-1" then
-                    notify.normal(string.format("Command: " .. cmd_xrandr_dual, v))
+                    --notify.normal(string.format("Debug: " .. cmd_xrandr_dual, v))
                     awful.spawn.easy_async(string.format(cmd_xrandr_dual, v),
                     -- Async sometimes gives a callback error is response is not handled properly
                             function(stdout)
