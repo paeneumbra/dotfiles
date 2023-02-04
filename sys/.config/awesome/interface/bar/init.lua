@@ -17,7 +17,7 @@ local wifi = require("interface.bar.wifi")
 local separator = wibox.widget({
     markup = "<span foreground='" .. Color.accent .. "'>󱋱</span>",
     widget = wibox.widget.textbox,
-    font = Bold_Font,
+    font = Icon_Font,
 })
 
 -- Systray

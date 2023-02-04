@@ -38,7 +38,7 @@ end
 function _widgets.basic_icon(icon)
     return wibox.widget({
         markup = icon,
-        font = Bold_Font,
+        font = Icon_Font,
         align = "center",
         widget = wibox.widget.textbox,
     })

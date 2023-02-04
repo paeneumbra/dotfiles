@@ -12,15 +12,14 @@ local profile_picture = wibox.widget({
 })
 
 local user_box = wibox.widget({
-    font = Font(30),
+    font = Font(45),
     align = "center",
     widget = wibox.widget.textbox,
-    markup = "󰳣 󰣇󰰟󰯲󰰁󰰴"
+    markup = "󰣇󰰟󰯲󰰁󰰴"
 })
 
 return widgets.wrapping_widget(wibox.widget {
     profile_picture,
     user_box,
-    spacing = Xdpi(20),
     layout = wibox.layout.fixed.vertical,
 })

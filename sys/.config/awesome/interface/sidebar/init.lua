@@ -29,7 +29,7 @@ local function box_widget(widgets, box_width, box_height)
             forced_width = Xdpi(box_width),
             --forced_height = Xdpi(box_height), -- ignored for now
             shape = round_box(10),
-            bg = Color.bg,
+            bg = Color.gray,
             widget = wibox.container.background,
         },
         margins = { left = Xdpi(20), right = Xdpi(20) },
@@ -66,7 +66,7 @@ sidebar:setup {
         progressbar,
         sliders,
         uptime,
-        spacing = Xdpi(10),
+        spacing = Xdpi(5),
         layout = wibox.layout.fixed.vertical,
     },
     margins = { top = Xdpi(20), bottom = Xdpi(20) },

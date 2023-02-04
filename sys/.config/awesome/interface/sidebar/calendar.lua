@@ -20,6 +20,5 @@ local time = wibox.widget({
 return widgets.wrapping_widget(wibox.widget {
     time,
     month_calendar,
-    spacing = Xdpi(5),
     layout = wibox.layout.fixed.vertical,
 })

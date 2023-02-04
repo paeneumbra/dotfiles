@@ -5,7 +5,6 @@ local xrdb = beautiful.xresources.get_current_theme()
 function Xdpi(value)
     -- Setup was designed for a single monitor in dpi 192, however scaling became a nightmare when using two monitors.
     -- Then I reverted to dpi = 96, multiplying all giving inputs for 2
-    -- TODO: instead of multiplying by 2 just change all calls for the double?
     return dpi(value * 2)
 end
 
@@ -13,11 +12,12 @@ function Font(size, type)
     if type == nil then
         type = "Medium"
     end
-    return "Iosevka Term " .. type .. " Font " .. size
+    return "Iosevka Nerd Font " .. type .. " Font " .. size
 end
 
-Default_Font = "Iosevka Term Medium Font 14"
-Bold_Font = "Iosevka Term Bold Font 14"
+Default_Font = Font(14)
+Bold_Font = Font(14, "Bold")
+Icon_Font = Font(30)
 
 Dimensions = {
     gap = Xdpi(2),

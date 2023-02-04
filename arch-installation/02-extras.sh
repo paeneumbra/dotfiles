@@ -14,7 +14,6 @@ PKGS=(
   noto-fonts
   ttf-fira-code
   ttf-material-design-icons-webfont
-  ttf-nerd-fonts-symbols-2048-em-mono
   ttf-roboto
 )
 
