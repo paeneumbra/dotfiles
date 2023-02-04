@@ -10,6 +10,12 @@ function _run.start_if_not_running(command, callback)
     end)
 end
 
+function _run.restart(command)
+    awful.spawn.easy_async_with_shell(string.format("pkill '%s'", command), function()
+        awful.spawn.with_shell(string.format("sleep 5;  %s", command), false)
+    end)
+end
+
 function _run.sleep(value)
     awful.spawn.easy_async_with_shell(string.format("sleep %s", value), false)
 end
