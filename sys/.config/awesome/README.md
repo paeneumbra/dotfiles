@@ -43,7 +43,7 @@ To have the intended colors running, please update `.Xresources` file.
 
 To set up correctly the color scheme please read [decorator](./../decorator/README.md) instructions.
 
-## Some config examples
+## Acknowledgements
 
 - [rklyz](https://github.com/rklyz/MyRice)
 - [rxyhn](https://github.com/rxyhn/yoru)
