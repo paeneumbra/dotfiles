@@ -13,9 +13,14 @@ PKGS=(
   brightnessctl
   ttf-nerd-fonts-symbols-2048-em-mono
   ttf-material-design-icons-webfont
-
-  # Terminals
   wezterm
+
+  #gtk
+  baobab
+  cheese
+  gnome-font-viewer
+  nautilus
+  xdg-user-dirs-gtk
 )
 
 for PKG in "${PKGS[@]}"; do

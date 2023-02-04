@@ -10,6 +10,7 @@ PKGS=(
   brave-bin
 
   # Fonts
+  nerd-fonts-git
   noto-fonts
   ttf-fira-code
   ttf-material-design-icons-webfont

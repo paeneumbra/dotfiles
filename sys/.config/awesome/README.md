@@ -16,7 +16,7 @@ Setup dependencies:
 * Launcher: [rofi](https://davatorium.github.io/rofi/)
 * File Manager: [ranger](https://ranger.github.io/)
 * Editor [neovim](https://neovim.io/) with [my own config](https://github.com/simao-ferreira/nvim)
-* Font: [Iosevka](https://typeof.net/Iosevka/)
+* Font: [Iosevka](https://typeof.net/Iosevka/) via [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 * Icons: [Material Design Icons](https://pictogrammers.com/library/mdi/)
 
 <details>
@@ -42,6 +42,17 @@ Instructions can be found in [installation-scrips](./../../../arch-installation)
 To have the intended colors running, please update `.Xresources` file.
 
 To set up correctly the color scheme please read [decorator](./../decorator/README.md) instructions.
+
+## Issues
+
+During setup it can happen that some references have changed, this will most certainly happen for monitors and disk.
+For getting new display namings run `xrandr` and replace all references in the project - e.g. `eDP-1`.
+
+```shell
+$ xrandr -q
+```
+
+For disk setup run `lsblk -f` and replace the with new disk path.
 
 ## Acknowledgements
 

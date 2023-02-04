@@ -1,16 +1,12 @@
 # Makefile
 
-init-submodules:
-	git submodule init
-	git submodule update
-
 install-base:
 	./arch-installation/00-base.sh
 
 setup-yay:
-	mkdir -p repositories/yay
-	git clone https://aur.archlinux.org/yay.git repositories/yay
-	(cd repositories/yay && makepkg -si)
+	mkdir -p projects/repositories/yay
+	git clone https://aur.archlinux.org/yay.git projects/repositories/yay
+	(cd projects/repositories/yay && makepkg -si)
 
 install-awesome:
 	./arch-installation/01-awesomewm.sh
@@ -27,6 +23,7 @@ stow-config:
 
 setup-zsh:
 	mkdir -p $(HOME)/.cache/zsh
+	chsh -s $$(wich zsh)
 	sudo chsh -s $$(which zsh)
 	echo "Restart to enable zsh"
 
@@ -39,16 +36,24 @@ setup-audio:
 
 setup-logiops:
 	sudo pacman -S cmake libevdev libconfig pkgconf
-	mkdir -p repositories/logiops
-	git clone https://github.com/PixlOne/logiops.git repositories/logiops
-	mkdir -p repositories/logiops/build
-	(cd repositories/logiops/build && cmake .. && make)
-	(cd repositories/logiops/build && sudo make install)
+	mkdir -p projects/repositories/logiops
+	git clone https://github.com/PixlOne/logiops.git projects/repositories/logiops
+	mkdir -p projects/repositories/logiops/build
+	(cd projects/repositories/logiops/build && cmake .. && make)
+	(cd projects/repositories/logiops/build && sudo make install)
 	sudo systemctl enable --now logid
 
 setup-gaming:
 	./arch-installation/08-games.sh
 
+init-submodules:
+	echo "Requires ssh configured in github"
+	echo "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
+	echo "https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key"
+	git submodule init
+	git submodule update
+
 setup-repos:
+	echo "Requires ssh configured in github"
 	./bin/cloneworkspace.py -s ./git/workspace.json -r
 	./bin/cloneworkspace.py -s ./git/projects.json -r

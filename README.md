@@ -71,3 +71,8 @@ it facilitates managing special configurations and settings.
 ```
 
 </details>
+
+## Issues
+
+Some issues might arise while configuring this application, initializing submodules and cloning uses ssh and for it to
+work ssh must be configured with github.

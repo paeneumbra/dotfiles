@@ -1,19 +1,16 @@
 # Backlog
 
-- [x] Config bluetooth
-- [x] Test and config sound
-- [x] Test and validate java config
-- [x] mason groovyls is complaining
-- [ ] Test teams
-- [x] Test camera
-- [x] Test sound
-- [ ] my tldr
-- [ ] my zettlekasten
-- [x] double monitor
-- [ ] gnome extensions
+- [ ] cheatsheets
+    - [ ] add lsblk
+    - [ ] add xrandr
+- [ ] zettlekasten
+    - [ ] restart backlog
+    - [ ] move this backlog to zk
 - [ ] refactor decorator
-  - [ ] move decorator to python?
-  - [ ] pywall?
-  - [ ] background
-  - [ ] nvim
+    - [ ] move decorator to python?
+    - [ ] pywall?
+    - [ ] background
+    - [ ] nvim
 - [ ] calibre
+    - [ ] move books over
+- [ ] intellij and nvim conflict after spaces/tabs

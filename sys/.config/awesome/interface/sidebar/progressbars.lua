@@ -2,6 +2,7 @@ local wibox = require("wibox")
 
 local battery_attributes = require("interface.helpers.battery")
 local cpu_attributes = require("interface.helpers.cpu")
+local disk_attributes = require("interface.helpers.disk")
 local widgets = require("interface.helpers.widgets")
 
 -- Disk
@@ -29,17 +30,20 @@ local cpu = widgets.horizontal_group(cpu_icon, cpu_progressbar, cpu_text)
 
 local function get_stats()
     awesome.connect_signal("signal::disk", function(disk_capacity)
-        disk_progressbar.value = tonumber(disk_capacity)
-        disk_text.markup = widgets.basic_markup(disk_capacity, "%")
+        att = disk_attributes.pick(disk_capacity)
+        disk_progressbar.value = disk_capacity
+        disk_icon.markup = att.icon
+        disk_progressbar.color = att.widget_color
+        disk_text.markup = att.text
     end)
-    awesome.connect_signal("signal::battery", function(battery0, battery1, charging)
+    awesome.connect_signal("signal::battery", function(battery0, _, charging)
         att = battery_attributes.pick(charging, battery0)
         bat0_progressbar.value = battery0
         bat0_icon.markup = att.icon
         bat0_progressbar.color = att.widget_color
         bat0_text.markup = att.text
     end)
-    awesome.connect_signal("signal::battery", function(battery0, battery1, charging)
+    awesome.connect_signal("signal::battery", function(_, battery1, charging)
         att = battery_attributes.pick(charging, battery1)
         bat1_progressbar.value = battery1
         bat1_icon.markup = att.icon
