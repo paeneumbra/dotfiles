@@ -19,15 +19,4 @@ dunstify "Decorate!" "Loading Xresources" -u critical
 xrdb "$HOME"/.Xresources
 sleep 2
 
-# Dunst
-#echo "Updating dunst for new colorscheme"
-#dunstify "Decorate!" "Updating dunst!" -u critical
-#decorate_update_dunst;
-#killall dunst; sleep 2; dunst &
-
-# Bspwm
-#echo "Reloading bspwm environment"
-#dunstify "Decorate!" "Reloading bspwm" -u critical
-#bspc wm -r;
-
 echo "WARNING: Neither firefox, gtk, qt, neovim or wezterm are changed by this file."

@@ -9,7 +9,7 @@ using [archinstall v2.5.2](https://github.com/archlinux/archinstall/tree/v2.5.2)
 
 **NOTE:** Setup was designed for `bspwm`, however in the meantime I got a bit curious
 about `lua` and started playing around with `awesomewm`.
-So I cannot guarantee the `bspwm` setup is still working as intended.
+All configurations pertaining to `bspwm` were removed.
 
 Clone the workspace repository.
 

@@ -9,17 +9,11 @@
 - [x] Test sound
 - [ ] my tldr
 - [ ] my zettlekasten
-- [ ] double monitor
+- [x] double monitor
 - [ ] gnome extensions
-- [ ] change mutter for bspwm or awesome
-- [x] test bspwm config
 - [ ] refactor decorator
-  - [ ] remove bspwm part ( or don't run it if not on bspwm)
   - [ ] move decorator to python?
   - [ ] pywall?
   - [ ] background
   - [ ] nvim
-- [x] Bluetooth not working on bspwm - but works on gnome
-- [ ] Light is not working on bspwm - but works on gnome
 - [ ] calibre
-- [ ] cdm or ly

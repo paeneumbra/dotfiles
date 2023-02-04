@@ -2,6 +2,9 @@
 
 set -e
 
+# Note configurations for bspwm were removed in favor of awesome wm
+# this file is deprecated
+
 PKGS=(
   #https://wiki.archlinux.org/title/Bspwm
   bspwm
