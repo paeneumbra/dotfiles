@@ -6,11 +6,11 @@ local widgets = require("interface.helpers.widgets")
 -- Tags
 local function update_tag(item, tag)
 	if tag.selected then
-		item:get_children_by_id("tag")[1].markup = widgets.colored_markup("󰄯 ", Color.blue)
+		item:get_children_by_id("tag")[1].markup = widgets.colored_markup("󰄯", Color.blue)
 	elseif #tag:clients() > 0 then
-		item:get_children_by_id("tag")[1].markup = widgets.colored_markup("󰪡 ", Color.green)
+		item:get_children_by_id("tag")[1].markup = widgets.colored_markup("󰪡", Color.green)
 	else
-		item:get_children_by_id("tag")[1].markup = widgets.colored_markup("󰄰 ", Color.gray)
+		item:get_children_by_id("tag")[1].markup = widgets.colored_markup("󰄰", Color.gray)
 	end
 end
 
@@ -32,7 +32,7 @@ return function(s)
 		},
 		widget_template = {
 			id = "tag",
-			font = Default_Font,
+			font = Icon_Font,
 			widget = wibox.widget.textbox,
 
 			create_callback = function(self, c3)
