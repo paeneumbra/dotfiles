@@ -9,7 +9,7 @@ local launcher = require("interface.bar.launcher")
 local layoutlist = require("interface.bar.layoutlist")
 local tags = require("interface.bar.tags")
 local task = require("interface.bar.tasks")
-local volume = require("interface.bar.volume")
+local volume = require("interface.bar.volumebutton")
 local wifi = require("interface.bar.wifi")
 --
 
@@ -71,6 +71,7 @@ local function right(s)
             separator,
             clock,
             layoutlist(s),
+            spacing = Xdpi(1),
             layout = wibox.layout.fixed.horizontal,
         },
         margins = { top = Xdpi(4), bottom = Xdpi(4), right = Xdpi(10) },

@@ -36,7 +36,7 @@ Color = {
     gray = xrdb.color8,
 
     -- Select color accent and transparency for backgrounds
-    accent = xrdb.color3,
+    accent = xrdb.color6,
     transparent = xrdb.background .. "20",
 }
 

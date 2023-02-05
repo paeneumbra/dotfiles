@@ -28,6 +28,4 @@ volume:connect_signal("mouse::enter", function()
     volume.markup = widgets.colored_markup("󰕾", Color.gray)
 end)
 
--- TODO: Consider opening pavucontrol with left click
-
 return volume

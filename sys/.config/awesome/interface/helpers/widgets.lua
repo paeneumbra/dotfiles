@@ -16,7 +16,7 @@ local function handle(radius)
 end
 
 -- Common to progressbar and sliders
-local bar_color = Color.blue
+local bar_color = Color.cyan
 local bar_background = Color.fg
 local bar_height = Xdpi(20)
 local bar_width = Xdpi(400)
@@ -76,20 +76,22 @@ end
 
 function _widgets.basic_progressbar(max_bar_value)
     return wibox.widget {
-        forced_height = brightness,
         forced_width = bar_width,
         color = bar_color,
         background_color = bar_background,
         shape = bar(),
         bar_shape = bar(),
         max_value = max_bar_value,
+        margins = {
+            top = Xdpi(1),
+            bottom = Xdpi(1),
+        },
         widget = wibox.widget.progressbar,
     }
 end
 
 function _widgets.basic_slider(max_bar_value)
     return wibox.widget {
-        --forced_height = bar_height,
         forced_width = bar_width,
         bar_color = bar_background,
         bar_active_color = bar_color,

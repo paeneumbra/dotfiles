@@ -27,8 +27,8 @@ awful.keyboard.append_global_keybindings({
         helper.update_displays()
     end, { description = "Update displays (F7)", group = "display" }),
 
-    awful.key({ alt }, "d", function()
+    awful.key({ alt }, "r", function()
         helper.update_displays()
-    end, { description = "Update displays", group = "display" }),
+    end, { description = "Reload displays", group = "display" }),
 
 })

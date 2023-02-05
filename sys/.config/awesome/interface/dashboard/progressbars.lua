@@ -66,6 +66,6 @@ return widgets.wrapping_widget(wibox.widget {
     bat0,
     bat1,
     disk,
-    spacing = Xdpi(20),
+    spacing = Xdpi(30),
     layout = wibox.layout.fixed.vertical,
 })

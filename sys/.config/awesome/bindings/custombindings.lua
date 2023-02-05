@@ -42,9 +42,9 @@ awful.keyboard.append_global_keybindings({
 		awful.titlebar.toggle(client.focus)
 	end, { description = "toggle titlebar", group = "Menus" }),
 
-	awful.key({ alt }, "s", function()
-		awesome.emit_signal("sidebar::toggle")
-	end, { description = "toggle sidebar", group = "Menus" }),
+	awful.key({ alt }, "d", function()
+		awesome.emit_signal("dashboard::toggle")
+	end, { description = "toggle dashboard", group = "Menus" }),
 
 	-- Volume
 

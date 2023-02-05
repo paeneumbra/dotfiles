@@ -19,7 +19,7 @@ gears.timer({
 })
 
 clock:connect_signal("button::press", function()
-    awesome.emit_signal("sidebar::toggle")
+    awesome.emit_signal("dashboard::toggle")
 end)
 
 return widgets.wrapping_widget(wibox.widget {
