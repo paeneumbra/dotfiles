@@ -3,9 +3,7 @@ local dpi = beautiful.xresources.apply_dpi
 local xrdb = beautiful.xresources.get_current_theme()
 
 function Xdpi(value)
-    -- Setup was designed for a single monitor in dpi 192, however scaling became a nightmare when using two monitors.
-    -- Then I reverted to dpi = 96, multiplying all giving inputs for 2
-    return dpi(value * 2)
+    return dpi(value)
 end
 
 function Font(size, type)
@@ -20,8 +18,8 @@ Bold_Font = Font(14, "Bold")
 Icon_Font = Font(30)
 
 Dimensions = {
-    useless_gap = Xdpi(2),
-    border = Xdpi(2),
+    useless_gap = Xdpi(4),
+    border = Xdpi(4),
 }
 
 Color = {

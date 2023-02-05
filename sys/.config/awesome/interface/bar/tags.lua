@@ -24,11 +24,11 @@ return function(s)
 		filter = awful.widget.taglist.filter.all,
 		buttons = button,
 		layout = {
-			spacing = Xdpi(2),
+			spacing = Xdpi(4),
 			layout = wibox.layout.fixed.horizontal,
 		},
 		style = {
-			spacing = Xdpi(2),
+			spacing = Xdpi(4),
 		},
 		widget_template = {
 			id = "tag",

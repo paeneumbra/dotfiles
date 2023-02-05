@@ -25,6 +25,6 @@ end)
 return widgets.wrapping_widget(wibox.widget {
     clock_icon,
     clock,
-    spacing = Xdpi(5),
+    spacing = Xdpi(10),
     layout = wibox.layout.fixed.horizontal,
 })

@@ -19,3 +19,7 @@ Idea backlog - it might never happen.
 - [ ] Create lockscreen
 
 - [ ] Move titlebar to the left side?
+
+- [ ] Move bar to awful.wibar, should be easier to setup in both screens
+
+- [ ] Fix font glyphs in menu, because of font change they are not working as expected

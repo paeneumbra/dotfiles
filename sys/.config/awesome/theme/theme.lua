@@ -27,9 +27,9 @@ theme.border_marked = Color.white
 
 -- Menu
 theme.menu_submenu_icon = helper.recolor(assets .. "submenu.svg", Color.accent)
-theme.menu_height = Xdpi(20)
-theme.menu_width = Xdpi(150)
-theme.menu_border_width = Xdpi(2)
+theme.menu_height = Xdpi(40)
+theme.menu_width = Xdpi(300)
+theme.menu_border_width = Xdpi(4)
 theme.menu_border_color = Color.accent
 theme.menu_fg_focus = Color.bg
 theme.menu_bg_focus = Color.accent
