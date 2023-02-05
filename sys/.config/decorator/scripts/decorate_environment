@@ -10,13 +10,11 @@ if [[ $# -ne 1 ]]; then
 fi
 
 echo "Creating new output files"
-dunstify "Decorate!" "Creating new colorscheme files" -u critical
-decorate_new_output_files "$1"
+./decorate_new_output_files "$1"
 sleep 2
 
 echo "Loading xresources with the new colorscheme"
-dunstify "Decorate!" "Loading Xresources" -u critical
 xrdb "$HOME"/.Xresources
 sleep 2
 
-echo "WARNING: Neither firefox, gtk, qt, neovim or wezterm are changed by this file."
+echo "WARNING: Color scheme was updated to '$1'"
