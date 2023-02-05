@@ -2,7 +2,7 @@ local awful = require("awful")
 
 local _workspace = {}
 
-local margin = Dimensions.border + Dimensions.gap
+local margin = Dimensions.border + Dimensions.useless_gap
 
 function _workspace.workspace_height()
     -- https://awesomewm.org/apidoc/core_components/screen.html

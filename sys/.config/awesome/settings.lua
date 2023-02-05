@@ -20,12 +20,11 @@ Bold_Font = Font(14, "Bold")
 Icon_Font = Font(30)
 
 Dimensions = {
-    gap = Xdpi(2),
+    useless_gap = Xdpi(2),
     border = Xdpi(2),
 }
 
 Color = {
-    accent = xrdb.color4,
     bg = xrdb.background,
     fg = xrdb.foreground,
     black = xrdb.color0,
@@ -37,11 +36,15 @@ Color = {
     cyan = xrdb.color6,
     white = xrdb.color7,
     gray = xrdb.color8,
+
+    -- Select color accent and transparency for backgrounds
+    accent = xrdb.color3,
+    transparent = xrdb.background .. "20",
 }
 
 -- TODO: Use gears.filesystem.file_readable (filename) to check is wallpaper exists
 -- if not, default, or send an error
-Wallpaper = os.getenv("HOME") .. "/workspace/wallpapers/wallhaven-o3ew8p.png"
+Wallpaper = os.getenv("HOME") .. "/workspace/wallpapers/wallhaven-pkq3zp.jpg"
 
 Terminal = "alacritty"
 Editor = "nvim"

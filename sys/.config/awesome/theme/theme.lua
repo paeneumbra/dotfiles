@@ -11,18 +11,15 @@ theme.wallpaper = Wallpaper
 theme.font = Default_Font
 
 -- take a look and normalize it
-theme.bg_normal = Color.bg
-theme.bg_focus = Color.blue
-theme.bg_urgent = Color.red
-theme.bg_minimize = Color.yellow
-theme.bg_systray = theme.bg_normal
+theme.bg_normal = Color.transparent
+theme.bg_systray = Color.transparent
 
 theme.fg_normal = Color.fg
 theme.fg_focus = Color.cyan
 theme.fg_urgent = Color.magenta
 theme.fg_minimize = Color.yellow
 
-theme.useless_gap = Dimensions.gap
+theme.useless_gap = Dimensions.useless_gap
 theme.border_width = Dimensions.border
 theme.border_normal = Color.bg
 theme.border_focus = Color.bg
