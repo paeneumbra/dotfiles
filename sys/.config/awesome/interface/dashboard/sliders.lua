@@ -2,22 +2,13 @@ local awful = require("awful")
 local wibox = require("wibox")
 
 local volume_attributes = require("interface.helpers.volume")
-local volume_button = require("interface.bar.volumebutton")
 local widgets = require("interface.helpers.widgets")
-local notify = require("helpers.notifications")
 
 -- Volume
---local volume_icon = widgets.basic_icon("󰕾")
-local volume_icon = volume_button
+local volume_icon = widgets.basic_icon("󰕾")
 local volume_slider = widgets.basic_slider(153) -- Max volume is 153%
 local volume_text = widgets.basic_text()
 local volume = widgets.horizontal_group(volume_icon, volume_slider, volume_text)
-
-volume_icon:connect_signal("button::press", function()
-    awful.spawn.easy_async_with_shell(cmd_mute, function()
-        notify.normal("Mute/Unmute!")
-    end)
-end)
 
 volume_slider:connect_signal("property::value", function(_, value)
     awful.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ " .. value .. "%", false)

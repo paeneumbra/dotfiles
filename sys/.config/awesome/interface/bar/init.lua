@@ -9,7 +9,7 @@ local launcher = require("interface.bar.launcher")
 local layoutlist = require("interface.bar.layoutlist")
 local tags = require("interface.bar.tags")
 local task = require("interface.bar.tasks")
-local volume = require("interface.bar.volumebutton")
+local volume = require("interface.bar.volume")
 local wifi = require("interface.bar.wifi")
 --
 

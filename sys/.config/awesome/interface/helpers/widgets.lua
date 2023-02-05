@@ -35,6 +35,15 @@ function _widgets.wrapping_widget(widget)
     }
 end
 
+function _widgets.basic_button(icon)
+    return wibox.widget({
+        markup = _widgets.colored_markup(icon, Color.accent),
+        font = Font(100),
+        align = "center",
+        widget = wibox.widget.textbox,
+    })
+end
+
 function _widgets.basic_icon(icon)
     return wibox.widget({
         markup = icon,

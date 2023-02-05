@@ -16,4 +16,18 @@ function _attributes.pick(vol, muted)
     end
 end
 
+function _attributes.button_area(muted)
+    if muted then
+        return {
+            icon = "<span foreground='" .. Color.bg .. "'>󰖁</span>",
+            background = Color.accent,
+        }
+    else
+        return {
+            icon = "<span foreground='" .. Color.accent .. "'>󰕾</span>",
+            background = Color.bg,
+        }
+    end
+end
+
 return _attributes
