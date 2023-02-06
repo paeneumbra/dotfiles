@@ -3,6 +3,7 @@ local wibox = require("wibox")
 local battery_attributes = require("helpers.battery")
 local cpu_attributes = require("helpers.cpu")
 local disk_attributes = require("helpers.disk")
+local wifi_attributes = require("helpers.wifi")
 local widgets = require("helpers.widgets")
 
 -- Disk
@@ -27,6 +28,12 @@ local cpu_icon = widgets.basic_icon("󰔏")
 local cpu_progressbar = widgets.basic_progressbar(100) --Unknown max, however, 100 = bad
 local cpu_text = widgets.basic_text()
 local cpu = widgets.horizontal_group(cpu_icon, cpu_progressbar, cpu_text)
+
+-- Wifi signal
+local wifi_icon = widgets.basic_icon("󰔏")
+local wifi_progressbar = widgets.basic_progressbar(100)
+local wifi_text = widgets.basic_text()
+local wifi = widgets.horizontal_group(wifi_icon, wifi_progressbar, wifi_text)
 
 local function get_stats()
     awesome.connect_signal("signal::disk", function(disk_capacity)
@@ -57,6 +64,13 @@ local function get_stats()
         cpu_progressbar.color = att.widget_color
         cpu_text.markup = att.text
     end)
+    awesome.connect_signal("signal::wifi", function(state, signal)
+        att = wifi_attributes.pick(state, signal)
+        wifi_progressbar.value = signal
+        wifi_icon.markup = att.icon
+        wifi_progressbar.color = att.widget_color
+        wifi_text.markup = att.text
+    end)
 end
 
 get_stats()
@@ -66,6 +80,7 @@ return widgets.wrapping_widget(wibox.widget {
     bat0,
     bat1,
     disk,
+    wifi,
     spacing = Xdpi(30),
     layout = wibox.layout.fixed.vertical,
 })

@@ -35,4 +35,8 @@ bluetooth:connect_signal("mouse::enter", function()
     bluetooth.markup = widgets.colored_markup("󰂯", Color.fg)
 end)
 
+bluetooth:connect_signal("mouse::leave", function()
+    bluetooth.markup = widgets.colored_markup("󰂯", Color.accent)
+end)
+
 return bluetooth

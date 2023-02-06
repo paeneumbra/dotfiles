@@ -15,4 +15,8 @@ volume:connect_signal("mouse::enter", function()
     volume.markup = widgets.colored_markup("󰕾", Color.fg)
 end)
 
+volume:connect_signal("mouse::leave", function()
+    volume.markup = widgets.colored_markup("󰕾", Color.accent)
+end)
+
 return volume

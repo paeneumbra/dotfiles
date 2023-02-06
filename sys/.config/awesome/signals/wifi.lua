@@ -25,7 +25,7 @@ local function get_wifi()
 end
 
 gears.timer({
-    timeout = 10,
+    timeout = 5,
     autostart = true,
     call_now = true,
     callback = function()

@@ -1,3 +1,4 @@
+local helper = require("helpers.wifi")
 local widgets = require("helpers.widgets")
 
 -- Wifi
@@ -16,5 +17,18 @@ awesome.connect_signal("signal::wifi", function(is_connected, strength)
         wifi.markup = widgets.colored_markup("󰖪", Color.red)
     end
 end)
+
+wifi:connect_signal("button::press", function()
+    helper.toggle_wifi()
+end)
+
+wifi:connect_signal("mouse::enter", function()
+    wifi.markup = widgets.colored_markup("󰖩", Color.fg)
+end)
+
+wifi:connect_signal("mouse::leave", function()
+    wifi.markup = widgets.colored_markup("󰖩", Color.green)
+end)
+
 
 return wifi
