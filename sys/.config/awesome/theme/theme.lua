@@ -60,10 +60,10 @@ theme.titlebar_sticky_button_focus_inactive = helper.recolor(button_icon, Color.
 theme.titlebar_sticky_button_normal_active = helper.recolor(button_icon, Color.white)
 theme.titlebar_sticky_button_focus_active = helper.recolor(button_icon, Color.white)
 
--- You can use your own layout icons like this:
-theme.layout_floating = helper.recolor(assets .. "floating.png", Color.accent)
-theme.layout_tile = helper.recolor(assets .. "tile.png", Color.accent)
-theme.layout_dwindle = helper.recolor(assets .. "dwindle.png", Color.accent)
+-- Layout icons:
+theme.layout_floating = helper.recolor(assets .. "floating.png", Color.green)
+theme.layout_tile = helper.recolor(assets .. "tile.png", Color.green)
+theme.layout_dwindle = helper.recolor(assets .. "dwindle.png", Color.green)
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)

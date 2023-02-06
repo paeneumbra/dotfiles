@@ -9,13 +9,13 @@ local cmd_brightness_decrease = "brightnessctl set 10%-"
 
 function _brightness.increase()
     awful.spawn.easy_async_with_shell(cmd_brightness_increase, function()
-        notify.normal("Brightness increased")
+        notify.normal("Brightness: Increased")
     end)
 end
 
 function _brightness.decrease()
     awful.spawn.easy_async_with_shell(cmd_brightness_decrease, function()
-        notify.normal("Brightness decreased")
+        notify.normal("Brightness: Decreased")
     end)
 end
 

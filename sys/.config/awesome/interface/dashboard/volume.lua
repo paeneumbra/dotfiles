@@ -1,6 +1,6 @@
 local awful = require("awful")
 
-local widgets = require("interface.helpers.widgets")
+local widgets = require("helpers.widgets")
 
 local cmd_mute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 

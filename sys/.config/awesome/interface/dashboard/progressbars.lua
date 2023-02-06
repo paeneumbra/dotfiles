@@ -1,9 +1,9 @@
 local wibox = require("wibox")
 
-local battery_attributes = require("interface.helpers.battery")
-local cpu_attributes = require("interface.helpers.cpu")
-local disk_attributes = require("interface.helpers.disk")
-local widgets = require("interface.helpers.widgets")
+local battery_attributes = require("helpers.battery")
+local cpu_attributes = require("helpers.cpu")
+local disk_attributes = require("helpers.disk")
+local widgets = require("helpers.widgets")
 
 -- Disk
 local disk_icon = widgets.basic_icon("󰋊")

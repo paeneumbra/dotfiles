@@ -1,63 +1,48 @@
 local awful = require("awful")
 local wibox = require("wibox")
 
+-- Helpers
+local widgets = require("helpers.widgets")
+
 -- Widgets
 local battery = require("interface.bar.battery")
-local clock = require("interface.bar.clock")
+local date = require("interface.bar.date")
+local dashboard = require("interface.bar.dashboard")
 local displays = require("interface.bar.displays")
-local launcher = require("interface.bar.launcher")
+local rofi_launcher = require("interface.bar.launcher")
 local layoutlist = require("interface.bar.layoutlist")
 local tags = require("interface.bar.tags")
 local task = require("interface.bar.tasks")
 local volume = require("interface.bar.volume")
 local wifi = require("interface.bar.wifi")
---
 
 -- Separator
-local separator = wibox.widget({
-    markup = "<span foreground='" .. Color.accent .. "'>󱋱</span>",
-    widget = wibox.widget.textbox,
-    font = Icon_Font,
-})
+local separator = widgets.wibar_icon("|", Color.accent)
+local spacer = widgets.wibar_icon(" ", Color.transparent)
+
+-- Margins
+local systray_margin = { top = Xdpi(5), bottom = Xdpi(5) }
+local systray_spacing = Xdpi(5)
 
 -- Systray
 local systray = wibox.widget({
     {
-        {
-            {
-                wifi,
-                volume,
-                battery,
-                spacing = Xdpi(4),
-                wibox.widget.systray,
-                layout = wibox.layout.fixed.horizontal,
-            },
-            margins = { top = Xdpi(2), bottom = Xdpi(2), left = Xdpi(2), right = Xdpi(2) },
-            widget = wibox.container.margin,
-        },
-        widget = wibox.container.background,
+        rofi_launcher,
+        separator,
+        dashboard,
+        separator,
+        displays,
+        wifi,
+        volume,
+        battery,
+        separator,
+        date,
+        separator,
+        spacing = systray_spacing,
+        wibox.widget.systray,
+        layout = wibox.layout.fixed.horizontal,
     },
-    margins = { top = Xdpi(4), bottom = Xdpi(4) },
-    widget = wibox.container.margin,
-})
-
--- Menus
-local menus = wibox.widget({
-    {
-        {
-            {
-                displays,
-                launcher,
-                spacing = Xdpi(4),
-                wibox.widget.systray,
-                layout = wibox.layout.fixed.horizontal,
-            },
-            margins = { top = Xdpi(2), bottom = Xdpi(2), left = Xdpi(1), right = Xdpi(2) },
-            widget = wibox.container.margin,
-        },
-        widget = wibox.container.background,
-    },
-    margins = { top = Xdpi(4), bottom = Xdpi(4) },
+    margins = systray_margin,
     widget = wibox.container.margin,
 })
 
@@ -65,16 +50,13 @@ local menus = wibox.widget({
 local function right(s)
     return wibox.widget({
         {
-            menus,
-            separator,
             systray,
-            separator,
-            clock,
             layoutlist(s),
-            spacing = Xdpi(1),
+            spacer,
+            spacing = systray_spacing,
             layout = wibox.layout.fixed.horizontal,
         },
-        margins = { top = Xdpi(4), bottom = Xdpi(4), right = Xdpi(10) },
+        margins = systray_margin,
         widget = wibox.container.margin,
     })
 end
@@ -83,28 +65,23 @@ end
 local function left(s)
     return wibox.widget({
         {
+            spacer,
             tags(s),
-            spacing = Xdpi(10),
+            spacing = systray_spacing,
             layout = wibox.layout.fixed.horizontal,
         },
-        margins = { top = Xdpi(4), bottom = Xdpi(4), left = Xdpi(10) },
+        margins = systray_margin,
         widget = wibox.container.margin,
     })
 end
 
 -- Bar
-local function get_bar(s)
-    local bar = wibox({
-        visible = true,
-        ontop = false,
-        width = s.geometry.width,
-        height = Xdpi(40),
-        y = s.geometry.height - Xdpi(40),
+local function set_bar(s)
+    local bar = awful.wibar {
+        position = "bottom",
+        screen = s,
         bg = Color.bg,
-        type = "dock",
-    })
-
-    bar:struts({ bottom = Xdpi(40), top = Xdpi(20), left = Xdpi(20), right = Xdpi(20) })
+    }
 
     bar:setup({
         left(s),
@@ -120,5 +97,5 @@ local function get_bar(s)
 end
 
 awful.screen.connect_for_each_screen(function(s)
-    get_bar(s)
+    set_bar(s)
 end)

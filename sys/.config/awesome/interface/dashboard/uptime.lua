@@ -1,5 +1,5 @@
 local wibox = require("wibox")
-local widgets = require("interface.helpers.widgets")
+local widgets = require("helpers.widgets")
 
 local colored_icon = "<span foreground='" .. Color.accent .. "'>󰋚</span>"
 local uptime = widgets.basic_text()

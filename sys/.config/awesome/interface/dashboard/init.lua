@@ -2,8 +2,8 @@ local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
 
-local volume_attributes = require("interface.helpers.volume")
-local bluetooth_attributes = require("interface.helpers.bluetooth")
+local volume_attributes = require("helpers.volume")
+local bluetooth_attributes = require("helpers.bluetooth")
 
 -- widgets
 local calendar_widget = require("interface.dashboard.calendar")
@@ -101,7 +101,7 @@ dashboard_layout:add_widget_at(bluetooth_area, 7, 13, 1, 1)
 
 -- Blurred dashboard
 local dashboard = wibox {
-    visible = true,
+    visible = false,
     ontop = true,
     width = full_screen_width,
     height = full_screen_height,

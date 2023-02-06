@@ -1,6 +1,6 @@
 local awful = require("awful")
 
-local widgets = require("interface.helpers.widgets")
+local widgets = require("helpers.widgets")
 local notify = require("helpers.notifications")
 
 local cmd_block_bluetooth = [[

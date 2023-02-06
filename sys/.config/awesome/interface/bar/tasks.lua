@@ -1,17 +1,14 @@
 local awful = require("awful")
 local wibox = require("wibox")
 
--- Create tasklist
+-- Tasklist
 return function(s)
 	local update_task = function(self, c)
 		if c.active then
-			self:get_children_by_id("bg")[1].bg = Color.blue
-			return
-		elseif c.minimized then
-			self:get_children_by_id("bg")[1].bg = Color.bg .. "4d"
+			self:get_children_by_id("bg")[1].bg = Color.accent
 			return
 		else
-			self:get_children_by_id("bg")[1].bg = Color.gray
+			self:get_children_by_id("bg")[1].bg = Color.bg
 		end
 	end
 

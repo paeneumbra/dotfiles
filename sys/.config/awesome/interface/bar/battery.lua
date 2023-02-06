@@ -1,7 +1,7 @@
-local widgets = require("interface.helpers.widgets")
+local widgets = require("helpers.widgets")
 
 -- Battery
-local battery = widgets.basic_icon("󱊣")
+local battery = widgets.wibar_icon("󱊣", Color.green)
 
 awesome.connect_signal("signal::battery", function(bat_zero, bat_one, charging)
     -- Battery signals are not available immediately after startup

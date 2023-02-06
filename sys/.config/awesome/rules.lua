@@ -36,6 +36,7 @@ ruled.client.connect_signal("request::rules", function()
 		rule_any = {
 			class = {
 				"firefox",
+				"Nautilus"
 			},
 		},
 		properties = {

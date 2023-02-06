@@ -1,7 +1,7 @@
 local awful = require("awful")
 local wibox = require("wibox")
 
-local widgets = require("interface.helpers.widgets")
+local widgets = require("helpers.widgets")
 
 -- Tags
 local function update_tag(item, tag)
@@ -24,11 +24,11 @@ return function(s)
 		filter = awful.widget.taglist.filter.all,
 		buttons = button,
 		layout = {
-			spacing = Xdpi(4),
+			spacing = Xdpi(5),
 			layout = wibox.layout.fixed.horizontal,
 		},
 		style = {
-			spacing = Xdpi(4),
+			spacing = Xdpi(5),
 		},
 		widget_template = {
 			id = "tag",
