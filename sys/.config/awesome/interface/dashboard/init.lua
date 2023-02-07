@@ -72,37 +72,7 @@ dashboard_grid:add_widget_at(bluetooth_area, 8, 15, 1, 1)
 dashboard_grid:add_widget_at(wifi_area, 4, 6, 1, 1)
 
 -- Blurred dashboard
-local dashboard = wibox {
-    visible = false,
-    ontop = true,
-    width = helper.full_screen_width,
-    height = helper.full_screen_height,
-    y = 0,
-    x = 0,
-}
-
--- Blurred screen widget setup
-dashboard:setup {
-    widget = dashboard_grid,
-}
-
--- Timer for closing after button press
-dashboard.timer = gears.timer {
-    timeout = 0.2,
-    single_shot = true,
-    callback = function()
-        dashboard.visible = not dashboard.visible
-    end
-}
-
--- Toggle
-dashboard.toggle = function()
-    if dashboard.visible then
-        dashboard.timer:start()
-    else
-        dashboard.visible = not dashboard.visible
-    end
-end
+local dashboard = helper.dashboard(dashboard_grid)
 
 awesome.connect_signal("dashboard::toggle", function()
     dashboard.toggle()

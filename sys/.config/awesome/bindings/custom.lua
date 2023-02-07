@@ -46,6 +46,10 @@ awful.keyboard.append_global_keybindings({
 		awesome.emit_signal("dashboard::toggle")
 	end, { description = "toggle dashboard", group = "Menus" }),
 
+	awful.key({ alt }, "x", function()
+		awesome.emit_signal("power::toggle")
+	end, { description = "toggle power menu", group = "Menus" }),
+
 	-- Volume
 
 	awful.key({}, "XF86AudioMute", function()

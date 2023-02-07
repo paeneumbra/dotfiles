@@ -1,7 +1,7 @@
 local widgets = require("helpers.dashboardwidgets")
 local helper = require("helpers.wifi")
 
--- Volume
+-- Wifi
 local wifi = widgets.dashboard_button("󰖩")
 
 wifi:connect_signal("button::press", function()

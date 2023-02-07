@@ -5,12 +5,12 @@ local wibox = require("wibox")
 local _widgets = {}
 
 -- Screen of 2560x1440
-_widgets.full_screen_height = awful.screen.focused().geometry.height
-_widgets.full_screen_width = awful.screen.focused().geometry.width
+local full_screen_height = awful.screen.focused().geometry.height
+local full_screen_width = awful.screen.focused().geometry.width
 
 -- Screen of 2560x1440 in a grid
-_widgets.dashboard_height = Xdpi(_widgets.full_screen_height / 10)
-_widgets.dashboard_width = Xdpi(_widgets.full_screen_width / 20)
+local dashboard_height = Xdpi(full_screen_height / 10)
+local dashboard_width = Xdpi(full_screen_width / 20)
 
 -- Dashboard widgets
 function _widgets.recolor(value, color)
@@ -131,8 +131,8 @@ function _widgets.dashboard_box(widgets)
         {
             widgets,
             margins = Xdpi(20),
-            forced_width = _widgets.dashboard_width,
-            forced_height = _widgets.dashboard_height,
+            forced_width = dashboard_width,
+            forced_height = dashboard_height,
             widget = wibox.container.margin,
         },
         shape = round_box(),
@@ -141,6 +141,60 @@ function _widgets.dashboard_box(widgets)
         border_color = Color.transparent,
         widget = wibox.container.background,
     }
+end
+
+-- Full button
+function _widgets.full_button(icon)
+    local button = _widgets.dashboard_button(icon)
+    local box = _widgets.dashboard_box(button)
+
+    box:connect_signal("mouse::enter", function()
+        button.markup = _widgets.recolor(icon, Color.fg)
+        box.bg = Color.accent
+    end)
+
+    box:connect_signal("mouse::leave", function()
+        button.markup = _widgets.recolor(icon, Color.accent)
+        box.bg = Color.bg
+    end)
+
+    return box
+end
+
+-- Blurred dashboard
+function _widgets.dashboard(layout)
+    local dashboard = wibox {
+        visible = false,
+        ontop = true,
+        width = full_screen_width,
+        height = full_screen_height,
+        y = 0,
+        x = 0,
+    }
+
+    dashboard:setup {
+        widget = layout,
+    }
+
+    -- Timer for closing after button press
+    dashboard.timer = gears.timer {
+        timeout = 0.2,
+        single_shot = true,
+        callback = function()
+            dashboard.visible = not dashboard.visible
+        end
+    }
+
+    -- Toggle
+    dashboard.toggle = function()
+        if dashboard.visible then
+            dashboard.timer:start()
+        else
+            dashboard.visible = not dashboard.visible
+        end
+    end
+
+    return dashboard
 end
 
 return _widgets

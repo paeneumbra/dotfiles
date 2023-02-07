@@ -22,9 +22,6 @@ function _attributes.toggle_wifi()
     end)
 end
 
-function _attributes.connect()
-end
-
 function _attributes.pick(state, signal)
     if signal == nil or signal == 0 or state == false then
         return {
@@ -36,13 +33,13 @@ function _attributes.pick(state, signal)
         return {
             icon = "<span foreground='" .. Color.yellow .. "'>󱛂</span>",
             widget_color = Color.yellow,
-            text = "<span foreground='" .. Color.yellow .. "'>" .. signal .. "dB</span>",
+            text = "<span foreground='" .. Color.yellow .. "'>" .. signal .. "%</span>",
         }
     else
         return {
             icon = "<span foreground='" .. Color.fg .. "'>󰖩</span>",
             widget_color = Color.accent,
-            text = "<span foreground='" .. Color.fg .. "'>" .. signal .. "dB</span>",
+            text = "<span foreground='" .. Color.fg .. "'>" .. signal .. "%</span>",
         }
     end
 end

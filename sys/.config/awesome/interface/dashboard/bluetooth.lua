@@ -13,7 +13,7 @@ local cmd_unblock_bluetooth = [[
     bluetoothctl power on
 ]]
 
--- Volume
+-- Bluetooth
 local bluetooth = widgets.dashboard_button("󰂯")
 
 bluetooth:connect_signal("button::press", function()
