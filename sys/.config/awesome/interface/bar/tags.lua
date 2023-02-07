@@ -1,7 +1,7 @@
 local awful = require("awful")
 local wibox = require("wibox")
 
-local widgets = require("helpers.wibar_widgets")
+local widgets = require("helpers.wibarwidgets")
 
 -- Tags
 local function update_tag(item, tag)

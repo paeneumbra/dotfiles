@@ -1,6 +1,6 @@
 local awful = require("awful")
 
-local widgets = require("helpers.widgets")
+local widgets = require("helpers.dashboardwidgets")
 local notify = require("helpers.notifications")
 
 local cmd_block_bluetooth = [[
@@ -14,7 +14,7 @@ local cmd_unblock_bluetooth = [[
 ]]
 
 -- Volume
-local bluetooth = widgets.basic_button("󰂯")
+local bluetooth = widgets.dashboard_button("󰂯")
 
 bluetooth:connect_signal("button::press", function()
     -- Don't use the signal -  it causes a loop on turn off
@@ -32,11 +32,11 @@ bluetooth:connect_signal("button::press", function()
 end)
 
 bluetooth:connect_signal("mouse::enter", function()
-    bluetooth.markup = widgets.colored_markup("󰂯", Color.fg)
+    bluetooth.markup = widgets.recolor("󰂯", Color.fg)
 end)
 
 bluetooth:connect_signal("mouse::leave", function()
-    bluetooth.markup = widgets.colored_markup("󰂯", Color.accent)
+    bluetooth.markup = widgets.recolor("󰂯", Color.accent)
 end)
 
 return bluetooth

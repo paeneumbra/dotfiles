@@ -4,36 +4,36 @@ local battery_attributes = require("helpers.battery")
 local cpu_attributes = require("helpers.cpu")
 local disk_attributes = require("helpers.disk")
 local wifi_attributes = require("helpers.wifi")
-local widgets = require("helpers.widgets")
+local widgets = require("helpers.dashboardwidgets")
 
 -- Disk
-local disk_icon = widgets.basic_icon("󰋊")
-local disk_progressbar = widgets.basic_progressbar(100)
-local disk_text = widgets.basic_text()
-local disk = widgets.horizontal_group(disk_icon, disk_progressbar, disk_text)
+local disk_icon = widgets.simple_icon("󰋊")
+local disk_progressbar = widgets.progressbar(100)
+local disk_text = widgets.simple_text()
+local disk = widgets.bar_group(disk_icon, disk_progressbar, disk_text)
 
 -- Batteries
-local bat0_icon = widgets.basic_icon("󰁹")
-local bat0_progressbar = widgets.basic_progressbar(100)
-local bat0_text = widgets.basic_text()
-local bat0 = widgets.horizontal_group(bat0_icon, bat0_progressbar, bat0_text)
+local bat0_icon = widgets.simple_icon("󰁹")
+local bat0_progressbar = widgets.progressbar(100)
+local bat0_text = widgets.simple_text()
+local bat0 = widgets.bar_group(bat0_icon, bat0_progressbar, bat0_text)
 
-local bat1_icon = widgets.basic_icon("󰁹")
-local bat1_progressbar = widgets.basic_progressbar(100)
-local bat1_text = widgets.basic_text()
-local bat1 = widgets.horizontal_group(bat1_icon, bat1_progressbar, bat1_text)
+local bat1_icon = widgets.simple_icon("󰁹")
+local bat1_progressbar = widgets.progressbar(100)
+local bat1_text = widgets.simple_text()
+local bat1 = widgets.bar_group(bat1_icon, bat1_progressbar, bat1_text)
 
 -- CPU Temperature
-local cpu_icon = widgets.basic_icon("󰔏")
-local cpu_progressbar = widgets.basic_progressbar(100) --Unknown max, however, 100 = bad
-local cpu_text = widgets.basic_text()
-local cpu = widgets.horizontal_group(cpu_icon, cpu_progressbar, cpu_text)
+local cpu_icon = widgets.simple_icon("󰔏")
+local cpu_progressbar = widgets.progressbar(100) --Unknown max, however, 100 = bad
+local cpu_text = widgets.simple_text()
+local cpu = widgets.bar_group(cpu_icon, cpu_progressbar, cpu_text)
 
 -- Wifi signal
-local wifi_icon = widgets.basic_icon("󰔏")
-local wifi_progressbar = widgets.basic_progressbar(100)
-local wifi_text = widgets.basic_text()
-local wifi = widgets.horizontal_group(wifi_icon, wifi_progressbar, wifi_text)
+local wifi_icon = widgets.simple_icon("󰔏")
+local wifi_progressbar = widgets.progressbar(100)
+local wifi_text = widgets.simple_text()
+local wifi = widgets.bar_group(wifi_icon, wifi_progressbar, wifi_text)
 
 local function get_stats()
     awesome.connect_signal("signal::disk", function(disk_capacity)

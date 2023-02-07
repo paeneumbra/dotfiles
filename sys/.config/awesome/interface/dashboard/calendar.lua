@@ -1,5 +1,5 @@
 local wibox = require("wibox")
-local widgets = require("helpers.widgets")
+local widgets = require("helpers.dashboardwidgets")
 
 -- Calendar
 local month_calendar = wibox.widget({

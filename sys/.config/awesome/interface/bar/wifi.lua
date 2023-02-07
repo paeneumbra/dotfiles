@@ -1,5 +1,5 @@
 local helper = require("helpers.wifi")
-local widgets = require("helpers.wibar_widgets")
+local widgets = require("helpers.wibarwidgets")
 
 -- Wifi
 local wifi = widgets.wibar_icon("󰖩", Color.green)

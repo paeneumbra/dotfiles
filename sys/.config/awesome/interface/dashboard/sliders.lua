@@ -2,23 +2,23 @@ local awful = require("awful")
 local wibox = require("wibox")
 
 local volume_attributes = require("helpers.volume")
-local widgets = require("helpers.widgets")
+local widgets = require("helpers.dashboardwidgets")
 
 -- Volume
-local volume_icon = widgets.basic_icon("󰕾")
-local volume_slider = widgets.basic_slider(153) -- Max volume is 153%
-local volume_text = widgets.basic_text()
-local volume = widgets.horizontal_group(volume_icon, volume_slider, volume_text)
+local volume_icon = widgets.simple_icon("󰕾")
+local volume_slider = widgets.slider(153) -- Max volume is 153%
+local volume_text = widgets.simple_text()
+local volume = widgets.bar_group(volume_icon, volume_slider, volume_text)
 
 volume_slider:connect_signal("property::value", function(_, value)
     awful.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ " .. value .. "%", false)
 end)
 
 -- Brightness Level
-local brightness_icon = widgets.basic_icon("󰖙")
-local brightness_slider = widgets.basic_slider(100)
-local brightness_text = widgets.basic_text()
-local brightness = widgets.horizontal_group(brightness_icon, brightness_slider, brightness_text)
+local brightness_icon = widgets.simple_icon("󰖙")
+local brightness_slider = widgets.slider(100)
+local brightness_text = widgets.simple_text()
+local brightness = widgets.bar_group(brightness_icon, brightness_slider, brightness_text)
 
 brightness_slider:connect_signal("property::value", function(_, value)
     awful.spawn("brightnessctl set " .. value .. "%", false)
@@ -37,7 +37,7 @@ local function get_stats()
 
     awesome.connect_signal("signal::brightness", function(brightness_level)
         brightness_slider.value = brightness_level
-        brightness_text.markup = widgets.basic_markup(brightness_level, "%")
+        brightness_text.markup = widgets.recolor(brightness_level .. "%", Color.fg)
     end)
 end
 

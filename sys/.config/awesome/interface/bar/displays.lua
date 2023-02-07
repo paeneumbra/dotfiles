@@ -2,7 +2,7 @@ local awful = require("awful")
 local gears = require("gears")
 
 local helper = require("helpers.displays")
-local widgets = require("helpers.wibar_widgets")
+local widgets = require("helpers.wibarwidgets")
 
 -- Displays
 local displays = widgets.wibar_icon("󱡶", Color.green)

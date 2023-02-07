@@ -1,9 +1,9 @@
 local wibox = require("wibox")
-local widgets = require("helpers.widgets")
+local widgets = require("helpers.dashboardwidgets")
 
 local colored_icon = "<span foreground='" .. Color.accent .. "'>󰋚</span>"
-local uptime = widgets.basic_text()
-local uptime_icon = widgets.basic_icon(colored_icon)
+local uptime = widgets.simple_text()
+local uptime_icon = widgets.simple_icon(colored_icon)
 
 -- Uptime
 local function get_status()

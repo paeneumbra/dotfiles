@@ -1,4 +1,4 @@
-local widgets = require("helpers.wibar_widgets")
+local widgets = require("helpers.wibarwidgets")
 local helper = require("helpers.volume")
 
 -- Volume
