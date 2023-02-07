@@ -19,4 +19,8 @@ function _brightness.decrease()
     end)
 end
 
+function _brightness.set(value)
+    awful.spawn("brightnessctl set " .. value .. "%", false)
+end
+
 return _brightness

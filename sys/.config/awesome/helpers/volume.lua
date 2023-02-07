@@ -26,6 +26,10 @@ function _volume.decrease()
     end)
 end
 
+function _volume.set(value)
+    awful.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ " .. value .. "%", false)
+end
+
 function _volume.pick(vol, muted)
     if muted then
         return {
