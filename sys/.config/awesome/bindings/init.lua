@@ -1,4 +1,4 @@
-require("bindings.bindings")
-require("bindings.mousebindings")
-require("bindings.custombindings")
-require("bindings.displaybindings")
+require("bindings.awesome")
+require("bindings.custom")
+require("bindings.display")
+require("bindings.mouse")
