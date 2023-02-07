@@ -2,17 +2,17 @@ local awful = require("awful")
 local gears = require("gears")
 
 local helper = require("helpers.displays")
-local widgets = require("helpers.widgets")
+local widgets = require("helpers.wibar_widgets")
 
 -- Displays
 local displays = widgets.wibar_icon("󱡶", Color.green)
 
 displays:connect_signal("mouse::enter", function()
-    displays.markup = widgets.colored_markup("󱡶", Color.fg)
+    displays.markup = widgets.recolor("󱡶", Color.fg)
 end)
 
 displays:connect_signal("mouse::leave", function()
-    displays.markup = widgets.colored_markup("󱡶", Color.green)
+    displays.markup = widgets.recolor("󱡶", Color.green)
 end)
 
 displays:buttons(gears.table.join(awful.button({}, 1, function()

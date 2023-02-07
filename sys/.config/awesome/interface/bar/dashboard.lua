@@ -1,4 +1,4 @@
-local widgets = require("helpers.widgets")
+local widgets = require("helpers.wibar_widgets")
 
 local dashboard = widgets.wibar_icon("󰕮", Color.green)
 
@@ -7,11 +7,11 @@ dashboard:connect_signal("button::press", function()
 end)
 
 dashboard:connect_signal("mouse::enter", function()
-    dashboard.markup = widgets.colored_markup("󰕮", Color.fg)
+    dashboard.markup = widgets.recolor("󰕮", Color.fg)
 end)
 
 dashboard:connect_signal("mouse::leave", function()
-    dashboard.markup = widgets.colored_markup("󰕮", Color.green)
+    dashboard.markup = widgets.recolor("󰕮", Color.green)
 end)
 
 return dashboard

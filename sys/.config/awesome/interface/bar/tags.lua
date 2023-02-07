@@ -1,16 +1,16 @@
 local awful = require("awful")
 local wibox = require("wibox")
 
-local widgets = require("helpers.widgets")
+local widgets = require("helpers.wibar_widgets")
 
 -- Tags
 local function update_tag(item, tag)
 	if tag.selected then
-		item:get_children_by_id("tag")[1].markup = widgets.colored_markup("󰄯", Color.blue)
+		item:get_children_by_id("tag")[1].markup = widgets.recolor("󰄯", Color.blue)
 	elseif #tag:clients() > 0 then
-		item:get_children_by_id("tag")[1].markup = widgets.colored_markup("󰪡", Color.green)
+		item:get_children_by_id("tag")[1].markup = widgets.recolor("󰪡", Color.green)
 	else
-		item:get_children_by_id("tag")[1].markup = widgets.colored_markup("󰄰", Color.gray)
+		item:get_children_by_id("tag")[1].markup = widgets.recolor("󰄰", Color.gray)
 	end
 end
 

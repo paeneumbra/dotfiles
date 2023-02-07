@@ -2,7 +2,7 @@ local awful = require("awful")
 local wibox = require("wibox")
 
 -- Helpers
-local widgets = require("helpers.widgets")
+local widgets = require("helpers.wibar_widgets")
 
 -- Widgets
 local battery = require("interface.bar.battery")

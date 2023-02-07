@@ -1,15 +1,15 @@
-local widgets = require("helpers.widgets")
+local widgets = require("helpers.wibar_widgets")
 local helper = require("helpers.volume")
 
 -- Volume
-local volume = widgets.wibar_icon(default_markup)
+local volume = widgets.wibar_icon("󰕾")
 
 awesome.connect_signal("signal::volume", function(vol, mute)
     vol = tonumber(vol)
     if mute or vol == 0 then
-        volume.markup = widgets.colored_markup("󰖁", Color.red)
+        volume.markup = widgets.recolor("󰖁", Color.red)
     else
-        volume.markup = widgets.colored_markup("󰕾", Color.green)
+        volume.markup = widgets.recolor("󰕾", Color.green)
     end
 end)
 
@@ -18,7 +18,7 @@ volume:connect_signal("button::press", function()
 end)
 
 volume:connect_signal("mouse::enter", function()
-    volume.markup = widgets.colored_markup("󰕾", Color.fg)
+    volume.markup = widgets.recolor("󰕾", Color.fg)
 end)
 
 return volume

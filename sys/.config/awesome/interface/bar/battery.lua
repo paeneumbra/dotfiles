@@ -1,4 +1,4 @@
-local widgets = require("helpers.widgets")
+local widgets = require("helpers.wibar_widgets")
 
 -- Battery
 local battery = widgets.wibar_icon("󱊣", Color.green)
@@ -13,13 +13,13 @@ awesome.connect_signal("signal::battery", function(bat_zero, bat_one, charging)
         capacity = bat_zero + bat_one
     end
     if charging then
-        battery.markup = widgets.colored_markup("󰚥", Color.green)
+        battery.markup = widgets.recolor("󰚥", Color.green)
     elseif capacity < 40 then
-        battery.markup = widgets.colored_markup("󱊡", Color.red)
+        battery.markup = widgets.recolor("󱊡", Color.red)
     elseif bat_one < 25 or capacity < 50 then
-        battery.markup = widgets.colored_markup("󱊢", Color.yellow)
+        battery.markup = widgets.recolor("󱊢", Color.yellow)
     else
-        battery.markup = widgets.colored_markup("󱊣", Color.green)
+        battery.markup = widgets.recolor("󱊣", Color.green)
     end
 end)
 

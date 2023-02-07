@@ -10,38 +10,6 @@ function _widgets.colored_markup(value, color)
     return "<span foreground='" .. color .. "'>" .. text .. "</span>"
 end
 
-function _widgets.wibar_icon(icon, color)
-    if color == nil then
-        wibar_markup = _widgets.colored_markup(icon, Color.green)
-    else
-        wibar_markup = _widgets.colored_markup(icon, color)
-    end
-    return wibox.widget({
-        markup = wibar_markup,
-        font = Icon_Font,
-        valign = "center",
-        halign = "center",
-        widget = wibox.widget.textbox,
-    })
-end
-
-function _widgets.wibar_text(icon, color)
-    if color == nil then
-        wibar_markup = _widgets.colored_markup(icon, Color.green)
-    else
-        wibar_markup = _widgets.colored_markup(icon, color)
-    end
-    return wibox.widget({
-        markup = wibar_markup,
-        font = Font(18, "Bold"),
-        valign = "center",
-        halign = "center",
-        widget = wibox.widget.textbox,
-    })
-end
-
---
-
 local function bar()
     return function(cr, w, h)
         gears.shape.rounded_bar(cr, w, h)
