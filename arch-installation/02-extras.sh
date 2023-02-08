@@ -8,6 +8,7 @@ PKGS=(
   thunderbird
   calibre
   brave-bin
+  gnome-tweaks
 
   # Fonts
   nerd-fonts-git

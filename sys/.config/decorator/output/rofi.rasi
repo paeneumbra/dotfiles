@@ -1,4 +1,5 @@
 * {
+    transparent:    #01020120;
     background:     #010201;
     foreground:     #ebdbb2;
     red:            #cc241d;
@@ -6,4 +7,5 @@
     yellow:         #d79921;
     blue:           #458588;
     gray:           #928374;
+    accent:         #689d6a;
 }
