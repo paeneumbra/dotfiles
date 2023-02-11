@@ -8,7 +8,6 @@ local widgets = require("helpers.wibarwidgets")
 local battery = require("interface.bar.battery")
 local date = require("interface.bar.date")
 local dashboard = require("interface.bar.dashboard")
-local displays = require("interface.bar.displays")
 local rofi_launcher = require("interface.bar.launcher")
 local layoutlist = require("interface.bar.layoutlist")
 local tags = require("interface.bar.tags")
@@ -31,7 +30,6 @@ local systray = wibox.widget({
         separator,
         dashboard,
         separator,
-        displays,
         wifi,
         volume,
         battery,

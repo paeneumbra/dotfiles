@@ -13,6 +13,8 @@ local uptime_widget = require("interface.dashboard.uptime")
 
 -- boxes
 local bluetooth_area = require("interface.dashboard.bluetoothbutton")
+local display_area = require("interface.dashboard.displaybutton")
+local close_dashboard_area = require("interface.dashboard.closedashboardbutton")
 local volume_area = require("interface.dashboard.volumebutton")
 local wifi_area = require("interface.dashboard.wifibutton")
 
@@ -38,8 +40,10 @@ dashboard_grid:add_widget_at(progressbar_area, 5, 12, 3, 5)
 dashboard_grid:add_widget_at(sliders_area, 7, 6, 2, 5)
 
 dashboard_grid:add_widget_at(volume_area, 6, 8, 1, 1)
-dashboard_grid:add_widget_at(bluetooth_area, 8, 15, 1, 1)
+dashboard_grid:add_widget_at(bluetooth_area, 9, 15, 1, 1)
 dashboard_grid:add_widget_at(wifi_area, 4, 6, 1, 1)
+dashboard_grid:add_widget_at(display_area, 7, 17, 1, 1)
+dashboard_grid:add_widget_at(close_dashboard_area, 10, 20, 1, 1)
 
 -- Blurred dashboard
 local dashboard = widgets.dashboard(dashboard_grid)
