@@ -41,4 +41,5 @@ Idea backlog - it might never happen.
     - [ ] controllers
     - [ ] dropdown with options
 
-- [ ] Rofi with same look as dashboard?
+- [x] Rofi with same look as dashboard
+  - almost, no blur

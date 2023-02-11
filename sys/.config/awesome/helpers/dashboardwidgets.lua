@@ -144,9 +144,13 @@ function _widgets.dashboard_box(widgets)
 end
 
 -- Full button
-function _widgets.full_button(icon)
+function _widgets.full_button(icon, command)
     local button = _widgets.dashboard_button(icon)
     local box = _widgets.dashboard_box(button)
+
+    box:connect_signal("button::press", function()
+        command()
+    end)
 
     box:connect_signal("mouse::enter", function()
         button.markup = _widgets.recolor(icon, Color.fg)
@@ -185,12 +189,22 @@ function _widgets.dashboard(layout)
         end
     }
 
+    -- Open
+    dashboard.open = function()
+        dashboard.visible = true
+    end
+
+    -- Close
+    dashboard.close = function()
+        dashboard.visible = false
+    end
+
     -- Toggle
     dashboard.toggle = function()
         if dashboard.visible then
-            dashboard.timer:start()
+            dashboard.close()
         else
-            dashboard.visible = not dashboard.visible
+            dashboard.open()
         end
     end
 

@@ -19,6 +19,3 @@ alias path="echo -e \"${PATH//:/\\n}\""
 # Bluetooth
 alias btc='bluetoothctl connect'
 alias btd='bluetoothctl disconnect'
-
-# Gnome
-alias gnome-quit='gnome-session-quit --logout --no-prompt'
