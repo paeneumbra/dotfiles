@@ -5,23 +5,22 @@ set -e
 PKGS=(
   # Graphic Drivers
   dkms
-  xorg-server
-  xorg-xinit
+  lib32-nvidia-utils
+  mesa-utils
   nvidia-dkms
   nvidia-prime
-  lib32-nvidia-utils
   nvidia-utils
-  mesa-utils
   vulkan-intel
+  xorg-server
+  xorg-xinit
 
   # Basic Apps
   alacritty
   arandr
-  rxvt-unicode
   fd
   feh
-  fzf
   fwupd
+  fzf
   git
   git-filter-repo
   glow
@@ -30,12 +29,13 @@ PKGS=(
   openssh
   ranger
   ripgrep
+  rxvt-unicode
   starship
   stow
-  tree
-  wmname
   tlp
+  tree
   ueberzug
+  wmname
   xclip
   zathura
   zathura-cb

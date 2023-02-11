@@ -4,11 +4,11 @@ set -e
 
 PKGS=(
   # Apps
-  firefox
-  thunderbird
-  calibre
   brave-bin
+  calibre
+  firefox
   gnome-tweaks
+  thunderbird
 
   # Fonts
   nerd-fonts-git

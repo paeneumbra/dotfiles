@@ -8,7 +8,7 @@ local cmd_mute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 local volume = widgets.dashboard_button("󰕾")
 
 volume:connect_signal("button::press", function()
-    awful.spawn.spawn(cmd_mute, false)
+    awful.spawn(cmd_mute, false)
 end)
 
 volume:connect_signal("mouse::enter", function()

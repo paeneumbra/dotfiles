@@ -31,14 +31,16 @@ awful.keyboard.append_global_keybindings({
 		awful.spawn(Apps.email)
 	end, { description = "open thunderbird", group = "launcher" }),
 
-	-- Menus
-
 	-- Todo: spawns and closes immediately
 	awful.key({ modkey }, "space", function()
 		awful.spawn(Apps.launcher, false)
 	end, { description = "open app menu", group = "Menus" }),
 
-	awful.key({ alt }, "t", function()
+    awful.key({ alt }, "Tab", function()
+        awful.spawn("rofi -theme base -modi window -show window", false)
+    end, { description = "open window switcher menu", group = "Menus" }),
+
+    awful.key({ alt }, "t", function()
 		awful.titlebar.toggle(client.focus)
 	end, { description = "toggle titlebar", group = "Menus" }),
 
@@ -76,8 +78,12 @@ awful.keyboard.append_global_keybindings({
 
 	-- Others
 
-	awful.key({ alt }, "i", function()
-		hotkeys_popup.show_help(nil, awful.screen.focused())
-	end, { description = "show help", group = "Others" }),
+    awful.key({ alt }, "p", function()
+        awful.spawn.with_shell("maim --select -o -u > ~/downloads/$(date +%Y%m%d%s).png", false)
+    end, { description = "Print screen selected area", group = "Others" }),
+
+    awful.key({ alt }, "i", function()
+        hotkeys_popup.show_help(nil, awful.screen.focused())
+    end, { description = "show help", group = "Others" }),
 
 })

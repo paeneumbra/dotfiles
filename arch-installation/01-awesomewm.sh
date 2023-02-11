@@ -6,13 +6,13 @@ PKGS=(
   #Lua based WM
   #https://wiki.archlinux.org/title/Awesome
   awesome-git
-  picom
-  rofi
-  redshift
   bluetuith
   brightnessctl
-  ttf-nerd-fonts-symbols-2048-em-mono
+  picom
+  redshift
+  rofi
   ttf-material-design-icons-webfont
+  ttf-nerd-fonts-symbols-2048-em-mono
   wezterm
 
   #gtk

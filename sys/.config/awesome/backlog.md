@@ -32,7 +32,7 @@ Idea backlog - it might never happen.
 
 - [ ] Gnome theme - dark
 
-- [ ] Printscreen functionality
+- [x] Printscreen functionality
 
 - [ ] Add and activate map mode for mac keyboard
 
