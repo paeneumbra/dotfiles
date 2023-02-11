@@ -1,5 +1,5 @@
 local widgets = require("helpers.wibarwidgets")
-local helper = require("helpers.volume")
+local system = require("system.volume")
 
 -- Volume
 local volume = widgets.wibar_icon("󰕾")
@@ -14,7 +14,7 @@ awesome.connect_signal("signal::volume", function(vol, mute)
 end)
 
 volume:connect_signal("button::press", function()
-    helper.toggle_volume()
+    system.toggle_volume()
 end)
 
 volume:connect_signal("mouse::enter", function()

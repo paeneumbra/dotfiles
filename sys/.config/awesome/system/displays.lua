@@ -1,7 +1,7 @@
 local awful = require("awful")
 local notify = require("helpers.notifications")
 
-local _displays = {}
+local displays = {}
 
 local cmd_xrandr = [[ bash -c "xrandr -q --current | grep ' connected' | awk '{print $1}'"]]
 local cmd_kill_display = "xrandr --output %s --off"
@@ -13,7 +13,7 @@ local external_connections = {
     "HDMI-2",
 }
 
-function _displays.standard_dual_setup()
+function displays.standard_dual_setup()
     notify.normal("Setting eDP-1 + DP-2 dual monitor setup.")
     awful.spawn(string.format(cmd_xrandr_dual, "DP-2"), function(stdout)
         notify.normal("Successful display update" .. stdout)
@@ -28,7 +28,7 @@ local function parse_async_output(output)
     return lines
 end
 
-function _displays.update_displays()
+function displays.update_displays()
     awful.spawn.easy_async(cmd_xrandr, function(output)
 
         lines = parse_async_output(output)
@@ -46,7 +46,6 @@ function _displays.update_displays()
         elseif #lines == 2 then
             for _, v in pairs(lines) do
                 if v ~= "eDP-1" then
-                    --notify.normal(string.format("Debug: " .. cmd_xrandr_dual, v))
                     awful.spawn.easy_async(string.format(cmd_xrandr_dual, v),
                     -- Async sometimes gives a callback error is response is not handled properly
                             function(stdout)
@@ -60,4 +59,4 @@ function _displays.update_displays()
     end)
 end
 
-return _displays
+return displays

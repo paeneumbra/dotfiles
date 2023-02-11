@@ -1,6 +1,6 @@
 local awful = require("awful")
-local run = require("helpers.run")
-local displays = require("helpers.displays")
+local run = require("system.run")
+local displays = require("system.displays")
 
 --- Autostart ---
 

@@ -1,4 +1,4 @@
-local helper = require("helpers.wifi")
+local system = require("system.wifi")
 local widgets = require("helpers.wibarwidgets")
 
 -- Wifi
@@ -19,7 +19,7 @@ awesome.connect_signal("signal::wifi", function(is_connected, strength)
 end)
 
 wifi:connect_signal("button::press", function()
-    helper.toggle_wifi()
+    system.toggle_wifi()
 end)
 
 wifi:connect_signal("mouse::enter", function()

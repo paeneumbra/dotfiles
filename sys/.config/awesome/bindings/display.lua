@@ -1,6 +1,6 @@
 local awful = require("awful")
 
-local helper = require("helpers.displays")
+local displays = require("system.displays")
 
 modkey = "Mod4"
 alt = "Mod1"
@@ -24,11 +24,11 @@ awful.keyboard.append_global_keybindings({
 	end, { description = "focus the previous screen", group = "display" }),
 
     awful.key({}, "XF86Display", function()
-        helper.update_displays()
+        displays.update_displays()
     end, { description = "Update displays (F7)", group = "display" }),
 
     awful.key({ alt }, "r", function()
-        helper.update_displays()
+        displays.update_displays()
     end, { description = "Reload displays", group = "display" }),
 
 })

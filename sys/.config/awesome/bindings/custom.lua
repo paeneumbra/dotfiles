@@ -1,8 +1,8 @@
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
-local volume = require("helpers.volume")
-local brightness = require("helpers.brightness")
+local volume = require("system.volume")
+local brightness = require("system.brightness")
 
 modkey = "Mod4"
 alt = "Mod1"

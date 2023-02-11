@@ -1,7 +1,7 @@
 local awful = require("awful")
-
-local widgets = require("helpers.dashboardwidgets")
 local notify = require("helpers.notifications")
+
+local bluetooth = {}
 
 local cmd_block_bluetooth = [[
     bluetoothctl power off
@@ -13,11 +13,7 @@ local cmd_unblock_bluetooth = [[
     bluetoothctl power on
 ]]
 
--- Bluetooth
-local bluetooth = widgets.dashboard_button("󰂯")
-
-bluetooth:connect_signal("button::press", function()
-    -- Don't use the signal -  it causes a loop on turn off
+function bluetooth.toggle_bluetooth()
     awful.spawn.easy_async_with_shell("rfkill list bluetooth", function(stdout)
         if stdout:match("Soft blocked: yes") then
             awful.spawn.easy_async_with_shell(cmd_unblock_bluetooth, function()
@@ -29,14 +25,6 @@ bluetooth:connect_signal("button::press", function()
             end)
         end
     end)
-end)
-
-bluetooth:connect_signal("mouse::enter", function()
-    bluetooth.markup = widgets.recolor("󰂯", Color.fg)
-end)
-
-bluetooth:connect_signal("mouse::leave", function()
-    bluetooth.markup = widgets.recolor("󰂯", Color.accent)
-end)
+end
 
 return bluetooth

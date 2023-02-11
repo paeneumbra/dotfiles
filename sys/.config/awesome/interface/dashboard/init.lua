@@ -1,11 +1,7 @@
-local gears = require("gears")
 local wibox = require("wibox")
 
 -- helpers
-local helper = require("helpers.dashboardwidgets")
-local volume_attributes = require("helpers.volume")
-local bluetooth_attributes = require("helpers.bluetooth")
-local wifi_attributes = require("helpers.wifi")
+local widgets = require("helpers.dashboardwidgets")
 
 -- widgets
 local calendar_widget = require("interface.dashboard.calendar")
@@ -15,43 +11,17 @@ local profile_widget = require("interface.dashboard.profile")
 local awesome_widget = require("interface.dashboard.awesome")
 local uptime_widget = require("interface.dashboard.uptime")
 
--- buttons
-local volume_button = require("interface.dashboard.volume")
-local bluetooth_button = require("interface.dashboard.bluetooth")
-local wifi_button = require("interface.dashboard.wifi")
-
 -- boxes
-local awesome_area = helper.dashboard_box(awesome_widget)
-local calendar_area = helper.dashboard_box(calendar_widget)
-local progressbar_area = helper.dashboard_box(progressbar_widget)
-local sliders_area = helper.dashboard_box(sliders_widget)
-local profile_area = helper.dashboard_box(profile_widget)
-local uptime_area = helper.dashboard_box(uptime_widget)
+local bluetooth_area = require("interface.dashboard.bluetoothbutton")
+local volume_area = require("interface.dashboard.volumebutton")
+local wifi_area = require("interface.dashboard.wifibutton")
 
-local volume_area = helper.dashboard_box(volume_button)
-local bluetooth_area = helper.dashboard_box(bluetooth_button)
-local wifi_area = helper.dashboard_box(wifi_button)
-
--- Button updates
-local function get_signal()
-    awesome.connect_signal("signal::volume", function(_, muted)
-        att = volume_attributes.button_area(muted)
-        volume_button.markup = att.icon
-        volume_area.bg = att.background
-    end)
-    awesome.connect_signal("signal::bluetooth", function(is_on)
-        att = bluetooth_attributes.button_area(is_on)
-        bluetooth_button.markup = att.icon
-        bluetooth_area.bg = att.background
-    end)
-    awesome.connect_signal("signal::wifi", function(is_on, _)
-        att = wifi_attributes.button_area(is_on)
-        wifi_button.markup = att.markup
-        wifi_area.bg = att.background
-    end)
-end
-
-get_signal()
+local awesome_area = widgets.dashboard_box(awesome_widget)
+local calendar_area = widgets.dashboard_box(calendar_widget)
+local progressbar_area = widgets.dashboard_box(progressbar_widget)
+local sliders_area = widgets.dashboard_box(sliders_widget)
+local profile_area = widgets.dashboard_box(profile_widget)
+local uptime_area = widgets.dashboard_box(uptime_widget)
 
 local dashboard_grid = wibox.widget {
     layout = wibox.layout.grid,
@@ -72,7 +42,7 @@ dashboard_grid:add_widget_at(bluetooth_area, 8, 15, 1, 1)
 dashboard_grid:add_widget_at(wifi_area, 4, 6, 1, 1)
 
 -- Blurred dashboard
-local dashboard = helper.dashboard(dashboard_grid)
+local dashboard = widgets.dashboard(dashboard_grid)
 
 awesome.connect_signal("dashboard::toggle", function()
     dashboard.toggle()

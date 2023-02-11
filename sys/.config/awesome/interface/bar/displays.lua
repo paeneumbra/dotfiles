@@ -1,7 +1,7 @@
 local awful = require("awful")
 local gears = require("gears")
 
-local helper = require("helpers.displays")
+local system = require("system.displays")
 local widgets = require("helpers.wibarwidgets")
 
 -- Displays
@@ -16,7 +16,7 @@ displays:connect_signal("mouse::leave", function()
 end)
 
 displays:buttons(gears.table.join(awful.button({}, 1, function()
-    helper.update_displays()
+    system.update_displays()
 end)))
 
 return displays
