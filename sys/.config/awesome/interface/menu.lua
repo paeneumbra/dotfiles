@@ -11,13 +11,19 @@ local power_menu = {
     {
         "󰐥  Poweroff",
         function()
-            awful.spawn("poweroff", false)
+            awful.spawn.with_shell("systemctl poweroff")
+        end,
+    },
+    {
+        "󰒲  Suspend",
+        function()
+            awful.spawn.with_shell("systemctl suspend")
         end,
     },
     {
         "󰜉  Reboot",
         function()
-            awful.spawn("reboot", false)
+            awful.spawn.with_shell("systemctl reboot")
         end,
     },
 }

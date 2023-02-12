@@ -3,6 +3,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 
 local volume = require("system.volume")
 local brightness = require("system.brightness")
+local printscreen = require("system.printscreen")
 
 modkey = "Mod4"
 alt = "Mod1"
@@ -79,7 +80,7 @@ awful.keyboard.append_global_keybindings({
 	-- Others
 
     awful.key({ alt }, "p", function()
-        awful.spawn.with_shell("maim --select -o -u > ~/downloads/$(date +%Y%m%d%s).png", false)
+        printscreen.print_selected_area()
     end, { description = "Print screen selected area", group = "Others" }),
 
     awful.key({ alt }, "i", function()
