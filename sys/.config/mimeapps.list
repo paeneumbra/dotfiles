@@ -1,14 +1,17 @@
 [Default Applications]
-x-scheme-handler/http=firefox.desktop
-text/html=firefox.desktop
-application/xhtml+xml=firefox.desktop
-x-scheme-handler/https=firefox.desktop
 application/pdf=zathura.desktop
 application/txt=nvim.desktop
+application/xhtml+xml=firefox.desktop
 inode/directory=ranger.desktop
+text/html=firefox.desktop
+text/plain=nvim.desktop
+text/x-script.python=nvim.desktop
+text/x-shellscript=nvim.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
 
 [Added Associations]
-x-scheme-handler/http=firefox.desktop;
-text/html=firefox.desktop;
 application/xhtml+xml=firefox.desktop;
+text/html=firefox.desktop;
+x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
