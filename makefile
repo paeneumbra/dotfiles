@@ -57,3 +57,6 @@ setup-repos:
 	echo "Requires ssh configured in github"
 	./bin/cloneworkspace.py -s ./git/workspace.json -r
 	./bin/cloneworkspace.py -s ./git/projects.json -r
+
+update-workspace-repos:
+	python3 ./bin/workspaceupdate.py --workspace
