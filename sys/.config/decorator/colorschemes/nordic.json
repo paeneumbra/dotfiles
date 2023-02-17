@@ -1,0 +1,26 @@
+{
+  "name": "nordic",
+  "modified": "true",
+  "author": "",
+  "color": [
+    "#3b4252",
+    "#bf616a",
+    "#a3be8c",
+    "#ebcb8b",
+    "#81a1c1",
+    "#b48ead",
+    "#88c0d0",
+    "#bed0f0",
+    "#4c566a",
+    "#bf7b82",
+    "#b6beb0",
+    "#ebdab7",
+    "#9dafc1",
+    "#b497af",
+    "#a7c7d0",
+    "#eceff4"
+  ],
+  "foreground": "#eceff4",
+  "background": "#00091e"
+}
+
