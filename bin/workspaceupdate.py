@@ -3,9 +3,8 @@
 import argparse
 import os
 import subprocess
-from datetime import datetime
-
 import sys
+from datetime import datetime
 
 __version__ = "0.0.1"
 
@@ -54,15 +53,22 @@ def parse_args(parser: argparse.ArgumentParser):
 
 
 def print_result(command: str, result: subprocess.CompletedProcess):
-    """Print command results"""
+    """Print command results in a readable form"""
+
+    print(f"\n[COMMAND] {command}\n")
+
     if result.returncode != 0:
-        print(F"ERROR: Step {command} not successful with code {result.returncode}")
-    print(f"{command} stdout: {result.stdout}")
-    if result.stderr != "":
-        print(f"[WARN] {command} stderr: {result.stderr}")
+        print(F"[ERROR]: Step {command} not successful with code {result.returncode}")
+
+    print(f"[STDOUT] {result.stdout}")
+
+    if result.stderr != "" and result.stderr != "Already on 'master'" and result.stderr != "Already on 'main'":
+        print(f"[STDERR] {result.stderr}")
+
+    print("\n")
 
 
-def update_repos(workspace_dir):
+def update_repos(workspace_dir: str):
     """Validates directory is a git repository,
     changes to said directory
     stashes any present changes, including untracked files,
@@ -70,7 +76,6 @@ def update_repos(workspace_dir):
     pull all changes from origin"""
     if workspace_dir is not None and not os.path.exists(workspace_dir):
         sys.exit(f"ERROR: Directory not found: {workspace_dir}")
-    print(f"Workspace: {workspace_dir}")
 
     for dirpath, dirnames, filenames in os.walk(workspace_dir):
         # Validates directory is a git repository
@@ -80,8 +85,8 @@ def update_repos(workspace_dir):
             os.chdir(repo)
 
             date = datetime.now()
-            print(f"\n############################################################################################")
-            print(f"Repository: {repo}")
+            print(f"\n#############################################################\n")
+            print(f"[UPDATING REPOSITORY] {repo}")
 
             # stashes all changes including untracked files with a date message
             stash = subprocess.run(
@@ -91,7 +96,7 @@ def update_repos(workspace_dir):
                 text=True,
                 check=True
             )
-            print_result("Stash", stash)
+            print_result(f"git stash push --include-untracked {str(date)}", stash)
 
             # Checks if default branch is master or main
             default = subprocess.run(
@@ -106,14 +111,14 @@ def update_repos(workspace_dir):
                 default_branch = "master"
 
             # Checkout master or main, any other will return an error and stop script
-            master = subprocess.run(
+            checkout_default_branch = subprocess.run(
                 ["git", "checkout", default_branch],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True,
                 check=True
             )
-            print_result("Master", master)
+            print_result(f"git checkout {default_branch}", checkout_default_branch)
 
             # Pull any changes from origin
             pull = subprocess.run(
@@ -123,9 +128,9 @@ def update_repos(workspace_dir):
                 text=True,
                 check=True
             )
-            print_result("Pull", pull)
+            print_result("git pull", pull)
 
 
 arguments = define_arguments()
-worspace_directory = parse_args(arguments)
-update_repos(worspace_directory)
+workspace_directory = parse_args(arguments)
+update_repos(workspace_directory)
