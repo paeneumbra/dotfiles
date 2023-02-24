@@ -40,6 +40,10 @@ PKGS=(
   vscodium-bin
   zsa-wally
 
+  # Docker
+  docker
+  docker-compose
+
   # Misc
   jq
   yq
