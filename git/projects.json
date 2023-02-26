@@ -2,7 +2,7 @@
   "main": "workspace/projects",
   "repos": [
     "git@github.com:simao-ferreira/code-katas.git",
-    "git@github.com:simao-ferreira/ecb-exchange-rates.git",
+    "git@github.com:simao-ferreira/exchange-rate-api.git",
     "git@github.com:simao-ferreira/game-of-life.git",
     "git@github.com:simao-ferreira/macos.git",
     "git@github.com:simao-ferreira/markdown-resume.git",
@@ -13,6 +13,7 @@
       "repos": [
         "git@github.com:simao-ferreira/bscscan-wrapper.git",
         "git@github.com:simao-ferreira/dotfiles.git",
+        "git@github.com:simao-ferreira/ecb-exchange-rates.git",
         "git@github.com:simao-ferreira/PD_ThreeRow.git",
         "git@github.com:simao-ferreira/SpaceWinvaders.git"
       ]

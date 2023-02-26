@@ -16,7 +16,7 @@ awful.keyboard.append_global_keybindings({
 		awful.spawn(Apps.terminal)
 	end, { description = "open alacritty", group = "launcher" }),
 
-	awful.key({ alt }, "Return", function()
+	awful.key({ modkey, alt }, "Return", function()
 		awful.spawn(Apps.alternative_terminal)
 	end, { description = "open urxvt", group = "launcher" }),
 

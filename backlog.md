@@ -29,6 +29,7 @@
     - [ ] dropdown with options
 - [x] Rofi with same look as dashboard
     - [ ] PICOM: missing background blur
+- [ ] Wezterm config
 
 ## Done
 
