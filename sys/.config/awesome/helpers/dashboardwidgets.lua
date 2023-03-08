@@ -189,14 +189,25 @@ function _widgets.dashboard(layout)
         end
     }
 
+    -- Add keygrabber
+    local function keygrabber_callback(_, key, event)
+        if event == 'release' then
+            if key == 'Escape' or key == ' ' then
+                dashboard.close()
+            end
+        end
+    end
+
     -- Open
     dashboard.open = function()
         dashboard.visible = true
+        awful.keygrabber.run(keygrabber_callback)
     end
 
     -- Close
     dashboard.close = function()
         dashboard.visible = false
+        awful.keygrabber.stop(keygrabber_callback)
     end
 
     -- Toggle
