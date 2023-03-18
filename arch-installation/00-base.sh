@@ -17,6 +17,7 @@ PKGS=(
   # Basic Apps
   alacritty
   arandr
+  bottom
   fd
   feh
   fwupd
