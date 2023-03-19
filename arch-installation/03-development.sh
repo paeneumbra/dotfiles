@@ -47,6 +47,7 @@ PKGS=(
   # Misc
   jq
   yq
+  slack-desktop
 )
 
 for PKG in "${PKGS[@]}"; do
