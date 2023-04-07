@@ -23,7 +23,6 @@ PKGS=(
   baobab
   cheese
   gnome-font-viewer
-  nautilus
   xdg-user-dirs-gtk
 )
 

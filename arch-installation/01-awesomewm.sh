@@ -5,12 +5,12 @@ set -e
 PKGS=(
   #Lua based WM
   #https://wiki.archlinux.org/title/Awesome
-  #awesome-git
-  #bluetuith
-  #brightnessctl
-  #picom
-  #redshift
-  #rofi
+  awesome-git
+  bluetuith
+  brightnessctl
+  picom
+  redshift
+  rofi
   ttf-material-design-icons-webfont
   wezterm
 

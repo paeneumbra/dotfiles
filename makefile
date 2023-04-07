@@ -34,15 +34,6 @@ setup-audio:
 	systemctl --user enable --now wireplumber
 	sudo systemctl enable --now bluetooth.service
 
-setup-logiops:
-	sudo pacman -S cmake libevdev libconfig pkgconf
-	mkdir -p projects/repositories/logiops
-	git clone https://github.com/PixlOne/logiops.git projects/repositories/logiops
-	mkdir -p projects/repositories/logiops/build
-	(cd projects/repositories/logiops/build && cmake .. && make)
-	(cd projects/repositories/logiops/build && sudo make install)
-	sudo systemctl enable --now logid
-
 setup-gaming:
 	./arch-installation/08-games.sh
 
