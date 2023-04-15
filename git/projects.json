@@ -8,6 +8,7 @@
     "git@github.com:simao-ferreira/markdown-resume.git",
     "git@github.com:simao-ferreira/pi-dotfiles.git",
     "git@github.com:simao-ferreira/simao-ferreira.github.io.git",
+    "git@github.com:simao-ferreira/shorturl.git",
     {
       "name": "archived",
       "repos": [
