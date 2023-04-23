@@ -54,6 +54,6 @@ Apps = {
     launcher = "rofi -theme base -modi drun -show drun",
     browser = "firefox",
     picture = "feh",
-    file_manager = "nautilus",
+    file_manager = "thunar",
     email = "thunderbird",
 }

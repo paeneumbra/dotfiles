@@ -26,7 +26,7 @@ awful.keyboard.append_global_keybindings({
 
 	awful.key({ alt }, "f", function()
 		awful.spawn(Apps.file_manager)
-	end, { description = "open nautilus", group = "launcher" }),
+	end, { description = "open thunar", group = "launcher" }),
 
 	awful.key({ alt }, "e", function()
 		awful.spawn(Apps.email)
