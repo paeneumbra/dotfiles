@@ -8,6 +8,7 @@ PKGS=(
   calibre
   firefox
   gnome-tweaks
+  seahorse
   thunderbird
 
   # Fonts
