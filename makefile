@@ -23,7 +23,7 @@ stow-config:
 
 setup-zsh:
 	mkdir -p $(HOME)/.cache/zsh
-	chsh -s $$(wich zsh)
+	chsh -s $$(which zsh)
 	sudo chsh -s $$(which zsh)
 	echo "Restart to enable zsh"
 
