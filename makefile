@@ -50,4 +50,4 @@ setup-repos:
 	./bin/cloneworkspace.py -s ./git/projects.json -r
 
 update-workspace-repos:
-	python3 ./bin/workspaceupdate.py --workspace
+	python3 ./bin/updategitrepos.py --workspace -r
