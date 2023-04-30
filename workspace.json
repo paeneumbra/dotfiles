@@ -1,13 +1,13 @@
 {
 	"main": "workspace/projects",
 	"repos": [
-		"git@github.com:simao-ferreira/code-katas.git",
 		"git@github.com:simao-ferreira/exchange-rate-api.git",
 		"git@github.com:simao-ferreira/game-of-life.git",
 		"git@github.com:simao-ferreira/macos.git",
 		"git@github.com:simao-ferreira/markdown-resume.git",
-		"git@github.com:simao-ferreira/pi-dotfiles.git",
+		"git@github.com:simao-ferreira/scratchpad.git",
 		"git@github.com:simao-ferreira/shorturl.git",
+		"git@github.com:simao-ferreira/pi-dotfiles.git",
 		{
 			"name": "archived",
 			"repos": [

@@ -11,9 +11,7 @@
 
 # WORKSPACE
 projects/
-core/
-scratchpad/
-cheatsheet/
+forge/
 
 # DATA
 python/.data/*

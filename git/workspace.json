@@ -1,8 +1,0 @@
-{
-  "main": "workspace",
-  "repos": [
-    "git@github.com:simao-ferreira/core.git",
-    "git@github.com:simao-ferreira/scratchpad.git",
-    "git@github.com:simao-ferreira/cheatsheet.git"
-  ]
-}

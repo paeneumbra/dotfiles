@@ -14,7 +14,7 @@ All configurations pertaining to `bspwm` were removed.
 Clone the workspace repository.
 
 ```shell
-$ git clone https://github.com/simao-ferreira/workspace.git
+git clone https://github.com/simao-ferreira/workspace.git
 ```
 
 Instructions are included in the [makefile](./makefile), run them will do the trick.
