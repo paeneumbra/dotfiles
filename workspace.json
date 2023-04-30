@@ -1,5 +1,5 @@
 {
-	"main": "workspace/projects",
+	"name": "workspace/projects",
 	"repos": [
 		"git@github.com:simao-ferreira/exchange-rate-api.git",
 		"git@github.com:simao-ferreira/game-of-life.git",

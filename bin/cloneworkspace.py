@@ -2,12 +2,11 @@
 
 """
 Generates `git clone` commands based on given input file.
-Input file should contain a tag specifying the main directory
-where all repositories will be created.
+Uses name to define the directory and subdirectories.
 
-Input json file should following structure:
+Input json file should be in the following structure:
 {
-  "main": "main-folder",
+  "name": "folder",
   "repos": [
     "git@github.com:someone/other-stuff.git",
     ...,
@@ -17,6 +16,9 @@ Input json file should following structure:
         "git@github.com:someone/one.git",
         "ssh@bitbucket.com:someone/another-one.git",
         ...
+        {
+            ...
+        }
       ]
     },
     {
@@ -32,7 +34,7 @@ import os
 import sys
 from argparse import ArgumentParser, Namespace
 
-__version__ = '2.1'
+__version__ = '0.3.1'
 
 from typing import Dict, Any
 
@@ -60,40 +62,37 @@ def get_arguments() -> Dict[str, Any]:
 
     if type(args) == Namespace:
         args = vars(args)
-    print(f"Config: {args}")
+    print(f"Arguments: {args}")
     return args
 
 
 HOME = os.getenv("HOME")
 
 
-def parse_json(filepath: str):
+def read_json(filepath: str):
     """Returns a json object from given file"""
-    read_file = open(filepath)
-    try:
-        json_file = json.load(read_file)
-    except ValueError as err:
-        sys.exit(f"Failure reading file: {err}")
+    with open(filepath) as read_file:
+        try:
+            json_file = json.load(read_file)
+        except ValueError as err:
+            sys.exit(f"Failure reading file: {err}")
     return json_file
 
 
-def get_repositories_structure(json_obj: json):
+def parse_repositories(json_obj: json, directory: str = ""):
     """
-    Returns dict composed of directory and repository based on json structure.
+    Returns a flat dict composed of directory and repository lists based on json structure.
     Directory is a composite of root node plus subdirectory, if it exists.
     """
     repository_dt = {}
-    base_repositories = []
-    base_folder = json_obj["main"]
+    directory = f"{directory}/{json_obj['name']}" if directory else json_obj['name']
 
-    for sub_dir in json_obj["repos"][:]:
-        if isinstance(sub_dir, dict):
-            folder = f'{base_folder}/{sub_dir["name"]}'
-            repository_dt[folder] = sub_dir["repos"]
+    for value in (x for x in json_obj["repos"]):
+        if isinstance(value, dict):
+            repository_dt.update(parse_repositories(value, directory))
         else:
-            base_repositories.append(sub_dir)
+            repository_dt.setdefault(directory, []).append(value)
 
-    repository_dt[base_folder] = base_repositories
     return repository_dt
 
 
@@ -103,28 +102,35 @@ def create_commands(repository_structure: dict, destination: str):
     generating a destination folder based on given arguments and
     git repository name
 
+    If destination folder exists, does not clone that repository
+
     Returns string commands for cloning
     """
     commands = []
     for folder in repository_structure:
         for repo in repository_structure[folder]:
             name = repo.split(".git")[0].split("/")[-1]
-            commands.append(f"git clone {repo} {destination}/{folder}/{name}")
+            directory = f"{destination}/{folder}/{name}"
+            if os.path.exists(directory):
+                print(f"\n[WARN] {directory} exists, repo will not be cloned")
+            else:
+                commands.append(f"git clone {repo} {destination}/{folder}/{name}")
     return commands
 
 
-def execute_commands(commands: list, execute_command: bool):
-    print("Commands to execute:")
-    for index, command in enumerate(commands):
-        print(f"Repo {index + 1}: {command}")
-        if execute_command:
+def execute_commands(commands: list, run_command: bool = False):
+    """Executes passed command list"""
+    for command in commands:
+        print(f"\n[COMMAND] {command}")
+        if run_command:
             os.system(command)
 
 
 define_arguments()
 arguments = get_arguments()
 
-json_object = parse_json(arguments.get("source"))
-repos = get_repositories_structure(json_object)
+json_object = read_json(arguments.get("source"))
+repos = parse_repositories(json_object)
 command_list = create_commands(repos, f"{HOME}")
+
 execute_commands(command_list, arguments.get("run"))
