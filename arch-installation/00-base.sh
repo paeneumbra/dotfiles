@@ -34,6 +34,7 @@ PKGS=(
   starship
   stow
   tlp
+  tlpui
   tree
   ueberzug
   wmname

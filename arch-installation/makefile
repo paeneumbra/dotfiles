@@ -12,5 +12,5 @@ setup-logiops:
 setup-k2:
 	echo "https://github.com/adam-savard/keyboard-function-keys-linux"
 	sudo cp ./extras/keychron.service /etc/systemd/system/
-	systemctl enable --now keychron
+	sudo systemctl enable --now keychron
 	
