@@ -32,15 +32,15 @@ mainmenu = awful.menu({
     items = {
         { "󰑐  Refresh", awesome.restart },
         { "󰈹  Browser", Apps.browser },
-        { "󰆍  Alacritty", Apps.terminal },
-        { "󰆍  Urxvt", Apps.alternative_terminal },
+        { "  Alacritty", Apps.terminal },
+        { "  Urxvt", Apps.alternative_terminal },
         { "󰪶  File Manager", Apps.file_manager },
         { "󰍜  Applications",
           function()
               awful.spawn(Apps.launcher, false)
           end,
         },
-        { "󰇰  Email",
+        { "󰇮  Email",
           function()
               awful.spawn(Apps.email, false)
           end,

@@ -2,7 +2,7 @@ local widgets = require("helpers.dashboardwidgets")
 local system = require("system.volume")
 
 -- Volume
-local volume_button = widgets.dashboard_button("󰕾")
+local volume_button = widgets.dashboard_button("")
 local volume_area = widgets.dashboard_box(volume_button)
 
 volume_button:connect_signal("button::press", function()
@@ -10,22 +10,22 @@ volume_button:connect_signal("button::press", function()
 end)
 
 volume_button:connect_signal("mouse::enter", function()
-    volume_button.markup = widgets.recolor("󰕾", Color.fg)
+    volume_button.markup = widgets.recolor("", Color.fg)
 end)
 
 volume_button:connect_signal("mouse::leave", function()
-    volume_button.markup = widgets.recolor("󰕾", Color.accent)
+    volume_button.markup = widgets.recolor("", Color.accent)
 end)
 
 local function update(muted)
     if muted then
         return {
-            icon = "<span foreground='" .. Color.bg .. "'>󰖁</span>",
+            icon = "<span foreground='" .. Color.bg .. "'>󰸈</span>",
             background = Color.accent,
         }
     else
         return {
-            icon = "<span foreground='" .. Color.accent .. "'>󰕾</span>",
+            icon = "<span foreground='" .. Color.accent .. "'></span>",
             background = Color.bg,
         }
     end

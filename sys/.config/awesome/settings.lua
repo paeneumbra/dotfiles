@@ -10,7 +10,7 @@ function Font(size, type)
     if type == nil then
         type = "Medium"
     end
-    return "Iosevka Nerd Font " .. type .. " Font " .. size
+    return "Iosevka NFM" .. type .. " " .. size
 end
 
 Default_Font = Font(14)

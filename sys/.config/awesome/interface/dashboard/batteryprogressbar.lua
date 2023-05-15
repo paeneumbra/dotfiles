@@ -1,11 +1,11 @@
 local widgets = require("helpers.dashboardwidgets")
 
-local bat0_icon = widgets.simple_icon("󰁹")
+local bat0_icon = widgets.simple_icon("")
 local bat0_progressbar = widgets.progressbar(100)
 local bat0_text = widgets.simple_text()
 local bat0 = widgets.bar_group(bat0_icon, bat0_progressbar, bat0_text)
 
-local bat1_icon = widgets.simple_icon("󰁹")
+local bat1_icon = widgets.simple_icon("")
 local bat1_progressbar = widgets.progressbar(100)
 local bat1_text = widgets.simple_text()
 local bat1 = widgets.bar_group(bat1_icon, bat1_progressbar, bat1_text)
@@ -13,25 +13,25 @@ local bat1 = widgets.bar_group(bat1_icon, bat1_progressbar, bat1_text)
 local function update(battery, charging)
     if battery == nil then
         return {
-            icon = "<span foreground='" .. Color.yellow .. "'>󰀦</span>",
+            icon = "<span foreground='" .. Color.yellow .. "'></span>",
             widget_color = Color.yellow,
             text = "<span foreground='" .. Color.yellow .. "'>WARN</span>",
         }
     elseif charging then
         return {
-            icon = "<span foreground='" .. Color.yellow .. "'>󰢞</span>",
+            icon = "<span foreground='" .. Color.yellow .. "'></span>",
             widget_color = Color.yellow,
             text = "<span foreground='" .. Color.yellow .. "'>" .. battery .. "%</span>",
         }
     elseif battery ~= nil and battery < 20 then
         return {
-            icon = "<span foreground='" .. Color.red .. "'>󰁺</span>",
+            icon = "<span foreground='" .. Color.red .. "'></span>",
             widget_color = Color.red,
             text = "<span foreground='" .. Color.red .. "'>" .. battery .. "%</span>",
         }
     else
         return {
-            icon = "<span foreground='" .. Color.fg .. "'>󰁹</span>",
+            icon = "<span foreground='" .. Color.fg .. "'></span>",
             widget_color = Color.accent,
             text = "<span foreground='" .. Color.fg .. "'>" .. battery .. "%</span>",
         }

@@ -1,7 +1,7 @@
 local widgets = require("helpers.dashboardwidgets")
 
 -- Wifi signal
-local wifi_icon = widgets.simple_icon("󰔏")
+local wifi_icon = widgets.simple_icon("󰖩")
 local wifi_progressbar = widgets.progressbar(100)
 local wifi_text = widgets.simple_text()
 local wifi = widgets.bar_group(wifi_icon, wifi_progressbar, wifi_text)

@@ -1,7 +1,7 @@
 local widgets = require("helpers.dashboardwidgets")
 local system = require("system.volume")
 
-local volume_icon = widgets.simple_icon("󰕾")
+local volume_icon = widgets.simple_icon("")
 local volume_slider = widgets.slider(153) -- Max volume is 153%
 local volume_text = widgets.simple_text()
 local volume = widgets.bar_group(volume_icon, volume_slider, volume_text)
@@ -13,13 +13,13 @@ end)
 local function update(vol, muted)
     if muted then
         return {
-            icon = "<span foreground='" .. Color.red .. "'>󰖁</span>",
+            icon = "<span foreground='" .. Color.red .. "'>󰸈</span>",
             widget_color = Color.red,
             text = "<span foreground='" .. Color.red .. "'>" .. vol .. "%</span>",
         }
     else
         return {
-            icon = "<span foreground='" .. Color.fg .. "'>󰕾</span>",
+            icon = "<span foreground='" .. Color.fg .. "'></span>",
             widget_color = Color.accent,
             text = "<span foreground='" .. Color.fg .. "'>" .. vol .. "%</span>",
         }
