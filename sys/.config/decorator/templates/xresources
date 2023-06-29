@@ -4,7 +4,7 @@
 *.cursorColor:  {{foreground}}
 
 ! black
-*.color0:       {{color0}} 
+*.color0:       {{color0}}
 *.color8: 		{{color8}}
 
 ! red

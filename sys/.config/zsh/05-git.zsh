@@ -24,19 +24,16 @@ alias gcb='git checkout -b'
 alias gco='git checkout'
 alias gaa='git add --all'
 alias glo='git log --oneline --decorate'
-alias gsab='git submodule add -b'
+alias gema='git log --pretty="%an - %ae"'
+alias glgg='git log --graph'
 
 # Commands still trying to memorize
-# More: https://github.com/ohmyzsh/ohmyzsh/tree/58478d0888aa842adc71aded800>
-alias glgg='git log --graph'
+# More: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/git.plugin.zsh
+alias gc!='git commit --verbose --amend'
 alias gcf='git config --list'
-alias gb='git branch'
 alias gd='git diff'
 
-# Some new alias to test
-alias gpl='git pull'
-alias grs='git restore --staged'
-alias grv='git remote -v'
-alias gema='git log --pretty="%an - %ae"'
+# Deprecated
+alias gsab='git submodule add -b'
 
 unset git_version

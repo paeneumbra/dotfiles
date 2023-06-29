@@ -5,7 +5,7 @@ alias fdf='fd -c always -H -tf'
 alias fdd='fd -c always -H -td'
 alias fde='fd -c always -H -e'
 
-# Find in dir - with tree 
+# Find in dir - with tree
 function fdir() {
     PREFIX='fd -c always -H -td'
     local dir
@@ -20,7 +20,7 @@ function fdir() {
     cd "$dir"
 }
 
-# Find file in dirs 
+# Find file in dirs
 function ffile() {
     PREFIX='fd -c always -H -tf'
     local file
