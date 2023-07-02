@@ -7,7 +7,6 @@ PKGS=(
   brave-bin
   calibre
   firefox
-  gnome-tweaks
   seahorse
   thunderbird
 

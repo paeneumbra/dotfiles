@@ -14,6 +14,7 @@ Template files:
 * Xresources
 * rofi
 * alacritty
+* wezterm - //TODO: does not reload automatically
 
 """
 
