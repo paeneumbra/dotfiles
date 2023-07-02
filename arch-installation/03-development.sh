@@ -8,7 +8,7 @@ PKGS=(
   prettier
   npm
 
-  # Java
+  # JVM
   jre8-openjdk
   jre11-openjdk
   jdk11-openjdk
@@ -31,6 +31,7 @@ PKGS=(
   python-pynvim
   python-setuptools
   python-black
+  python-pre-commit
   pip-tools
   flake8
 
@@ -38,7 +39,6 @@ PKGS=(
   intellij-idea-community-edition
   pycharm-community-edition
   vscodium-bin
-  zsa-wally
 
   # Docker
   docker
@@ -48,6 +48,7 @@ PKGS=(
   jq
   yq
   slack-desktop
+  zsa-wally
 )
 
 for PKG in "${PKGS[@]}"; do
