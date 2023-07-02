@@ -13,3 +13,6 @@ setup-k2:
 	echo "https://github.com/adam-savard/keyboard-function-keys-linux"
 	sudo cp ./extras/keychron.service /etc/systemd/system/
 	sudo systemctl enable --now keychron
+
+start-k2:
+    sudo systemctl start keychron
