@@ -59,5 +59,5 @@ function fzsh() {
 }
 
 function wzsh() {
-  print -z "$(fc -rnl 1 | fzf -q "$1" --bind enter:print-query+abort)"
+  print -z "$(fc -rnl 1 | fzf -q "$1" --bind esc:print-query+abort)"
 }
