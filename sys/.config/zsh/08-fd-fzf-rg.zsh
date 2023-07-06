@@ -51,3 +51,13 @@ function fif() {
 	echo "opening $file" &&
 	xdg-open "$file"
 }
+
+# WORKS on MACOS
+# Needs testing on linux
+function fzsh() {
+  print -z "$(fc -rnl 1 | fzf -q "$1")"
+}
+
+function wzsh() {
+  print -z "$(fc -rnl 1 | fzf -q "$1" --bind enter:print-query+abort)"
+}
