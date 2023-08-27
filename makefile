@@ -50,3 +50,6 @@ setup-repos:
 
 update-workspace-repos:
 	python3 ./bin/updategitrepos.py --workspace -r
+
+setup-pre-commit:
+	pre-commit install
