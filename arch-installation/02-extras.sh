@@ -16,6 +16,10 @@ PKGS=(
   ttf-fira-code
   ttf-material-design-icons-webfont
   ttf-roboto
+
+  #Others
+  git-extras
+
 )
 
 for PKG in "${PKGS[@]}"; do
