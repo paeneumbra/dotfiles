@@ -34,7 +34,7 @@ import os
 import sys
 from argparse import ArgumentParser, Namespace
 
-__version__ = '0.3.1'
+__version__ = "0.3.1"
 
 from typing import Dict, Any
 
@@ -47,17 +47,17 @@ def define_arguments():
     Refer to https://docs.python.org/3/library/argparse.html for documentation
     """
     parser.add_argument(
-        '-v', '--version', action='version', version='%(prog)s ' + __version__
+        "-v", "--version", action="version", version="%(prog)s " + __version__
     )
     parser.add_argument(
-        '-s', '--source', type=str, help='JSON configuration file', required=True
+        "-s", "--source", type=str, help="JSON configuration file", required=True
     )
     parser.add_argument(
-        '-r',
-        '--run',
-        action='store_true',
+        "-r",
+        "--run",
+        action="store_true",
         default=False,
-        help='Execute commands - will attempt to create git repos',
+        help="Execute commands - will attempt to create git repos",
     )
 
 
@@ -67,15 +67,15 @@ def get_arguments() -> Dict[str, Any]:
     args, unknowns = parser.parse_known_args()
 
     if args.source is not None and not os.path.exists(args.source):
-        sys.exit(f'File not found: {args.source}')
+        sys.exit(f"File not found: {args.source}")
 
     if type(args) == Namespace:
         args = vars(args)
-    print(f'Arguments: {args}')
+    print(f"Arguments: {args}")
     return args
 
 
-HOME = os.getenv('HOME')
+HOME = os.getenv("HOME")
 
 
 def read_json(filepath: str):
@@ -84,19 +84,19 @@ def read_json(filepath: str):
         try:
             json_file = json.load(read_file)
         except ValueError as err:
-            sys.exit(f'Failure reading file: {err}')
+            sys.exit(f"Failure reading file: {err}")
     return json_file
 
 
-def parse_repositories(json_obj: json, directory: str = ''):
+def parse_repositories(json_obj: json, directory: str = ""):
     """
     Returns a flat dict composed of directory and repository lists based on json structure.
     Directory is a composite of root node plus subdirectory, if it exists.
     """
     repository_dt = {}
-    directory = f"{directory}/{json_obj['name']}" if directory else json_obj['name']
+    directory = f"{directory}/{json_obj['name']}" if directory else json_obj["name"]
 
-    for value in (x for x in json_obj['repos']):
+    for value in (x for x in json_obj["repos"]):
         if isinstance(value, dict):
             repository_dt.update(parse_repositories(value, directory))
         else:
@@ -118,19 +118,19 @@ def create_commands(repository_structure: dict, destination: str):
     commands = []
     for folder in repository_structure:
         for repo in repository_structure[folder]:
-            name = repo.split('.git')[0].split('/')[-1]
-            directory = f'{destination}/{folder}/{name}'
+            name = repo.split(".git")[0].split("/")[-1]
+            directory = f"{destination}/{folder}/{name}"
             if os.path.exists(directory):
-                print(f'\n[WARN] {directory} exists, repo will not be cloned')
+                print(f"\n[WARN] {directory} exists, repo will not be cloned")
             else:
-                commands.append(f'git clone {repo} {destination}/{folder}/{name}')
+                commands.append(f"git clone {repo} {destination}/{folder}/{name}")
     return commands
 
 
 def execute_commands(commands: list, run_command: bool = False):
     """Executes passed command list"""
     for command in commands:
-        print(f'\n[COMMAND] {command}')
+        print(f"\n[COMMAND] {command}")
         if run_command:
             os.system(command)
 
@@ -138,8 +138,8 @@ def execute_commands(commands: list, run_command: bool = False):
 define_arguments()
 arguments = get_arguments()
 
-json_object = read_json(arguments.get('source'))
+json_object = read_json(arguments.get("source"))
 repos = parse_repositories(json_object)
-command_list = create_commands(repos, f'{HOME}')
+command_list = create_commands(repos, f"{HOME}")
 
-execute_commands(command_list, arguments.get('run'))
+execute_commands(command_list, arguments.get("run"))
