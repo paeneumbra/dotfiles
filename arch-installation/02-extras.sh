@@ -19,7 +19,7 @@ PKGS=(
 
   #Others
   git-extras
-
+  tldr
 )
 
 for PKG in "${PKGS[@]}"; do
