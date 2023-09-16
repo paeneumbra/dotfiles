@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/simao-ferreira/workspace/compare/v1.0.0...v1.0.1) (2023-09-16)
+
+
+### Changed
+
+* **arch:** Add tldr package to arch installation ([2ba53cb](https://github.com/simao-ferreira/workspace/commit/2ba53cb56f138817956c01f32bd6f1c12210bafa))
+
 ## 1.0.0 (2023-09-16)
 
 
