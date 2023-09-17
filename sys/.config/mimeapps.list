@@ -1,17 +1,27 @@
-[Default Applications]
-application/pdf=zathura.desktop
-application/txt=nvim.desktop
-application/xhtml+xml=firefox.desktop
-inode/directory=ranger.desktop
-text/html=firefox.desktop
-text/plain=nvim.desktop
-text/x-script.python=nvim.desktop
-text/x-shellscript=nvim.desktop
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
-
 [Added Associations]
 application/xhtml+xml=firefox.desktop;
 text/html=firefox.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-B89P31.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-B89P31.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-E7JO31.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-E7JO31.desktop;
+
+[Default Applications]
+application/pdf=org.pwmt.zathura.desktop;
+application/x-extension-ics=userapp-Thunderbird-E7JO31.desktop;
+application/xhtml+xml=firefox.desktop;
+image/jpeg=feh.desktop;
+image/png=feh.desktop;
+inode/directory=ranger.desktop;
+message/rfc822=userapp-Thunderbird-B89P31.desktop;
+text/*=nvim.desktop;
+text/calendar=userapp-Thunderbird-E7JO31.desktop;
+text/html=firefox.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-B89P31.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-B89P31.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-E7JO31.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-E7JO31.desktop;

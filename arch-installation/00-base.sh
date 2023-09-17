@@ -25,6 +25,7 @@ PKGS=(
   git
   git-filter-repo
   glow
+  handlr
   maim
   neofetch
   openssh
@@ -34,7 +35,6 @@ PKGS=(
   starship
   stow
   tlp
-  tlpui
   tree
   ueberzug
   wmname

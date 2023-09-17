@@ -19,3 +19,6 @@ alias path="echo -e \"${PATH//:/\\n}\""
 # Bluetooth
 alias btc='bluetoothctl connect'
 alias btd='bluetoothctl disconnect'
+
+# Handlr - replacement for xdg-open
+alias open='handlr open'

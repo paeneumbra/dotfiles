@@ -32,7 +32,7 @@ function ffile() {
                 --preview-window="60%:wrap"
  	)" &&
 	echo "opening $file" &&
-	xdg-open "$file"
+	open "$file"
 }
 
 # Find in files
@@ -49,15 +49,9 @@ function fif() {
 				--preview-window="60%:wrap"
 	)" &&
 	echo "opening $file" &&
-	xdg-open "$file"
+	open "$file"
 }
 
-# WORKS on MACOS
-# Needs testing on linux
-function fzsh() {
-  print -z "$(fc -rnl 1 | fzf -q "$1")"
-}
-
-function wzsh() {
+function fcmd() {
   print -z "$(fc -rnl 1 | fzf -q "$1" --bind esc:print-query+abort)"
 }
