@@ -30,17 +30,17 @@ It's a on going process that might change without notice.
 ## Usage examples
 
 ```shell
-$ decorate -s /home/archy/.config/decorator/colourschemes/gruvbox-dark.json
+decorate -s /home/archy/.config/decorator/colourschemes/gruvbox-dark.json
 ```
 
 ```shell
-$ decorate -c nordic
+decorate -c nordic
 ```
 
 ```shell
-$ decorate -d
+decorate -d
 ```
 
 ```shell
-$ decorate --list
+decorate --list
 ```

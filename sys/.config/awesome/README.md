@@ -8,16 +8,16 @@ Awesome wm configuration files.
 
 Setup dependencies:
 
-* OS: [arch](https://archlinux.org/)
-* WM: [awesomewm](https://awesomewm.org/apidoc/index.html) using [aur/awesome-git](https://github.com/awesomeWM/awesome)
-* Compositor: [picom](https://github.com/yshui/picom)
-* Shell: [zsh](https://www.zsh.org/) with [zimfw](https://zimfw.sh/)
-* Terminal: [alacritty](https://alacritty.org/) and [urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)
-* Launcher: [rofi](https://davatorium.github.io/rofi/)
-* File Manager: [ranger](https://ranger.github.io/)
-* Editor [neovim](https://neovim.io/) with [my own config](https://github.com/simao-ferreira/nvim)
-* Font: [Iosevka](https://typeof.net/Iosevka/) via [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
-* Icons: [Material Design Icons](https://pictogrammers.com/library/mdi/)
+- OS: [arch](https://archlinux.org/)
+- WM: [awesomewm](https://awesomewm.org/apidoc/index.html) using [aur/awesome-git](https://github.com/awesomeWM/awesome)
+- Compositor: [picom](https://github.com/yshui/picom)
+- Shell: [zsh](https://www.zsh.org/) with [zimfw](https://zimfw.sh/)
+- Terminal: [alacritty](https://alacritty.org/) and [urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)
+- Launcher: [rofi](https://davatorium.github.io/rofi/)
+- File Manager: [ranger](https://ranger.github.io/)
+- Editor [neovim](https://neovim.io/) with [my own config](https://github.com/simao-ferreira/nvim)
+- Font: [Iosevka](https://typeof.net/Iosevka/) via [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+- Icons: [Material Design Icons](https://pictogrammers.com/library/mdi/)
 
 <details>
 <summary>Other dependencies</summary>
@@ -49,7 +49,7 @@ During setup it can happen that some references have changed, this will most cer
 For getting new display namings run `xrandr` and replace all references in the project - e.g. `eDP-1`.
 
 ```shell
-$ xrandr -q
+xrandr -q
 ```
 
 For disk setup run `lsblk -f` and replace the with new disk path.

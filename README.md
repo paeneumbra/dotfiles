@@ -55,7 +55,7 @@ it facilitates managing special configurations and settings.
 <summary>Structure</summary>
 <br>
 
-```
+```shell
 .
 ├── .config
 │   └── zsh
