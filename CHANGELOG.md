@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.2](https://github.com/simao-ferreira/workspace/compare/v1.0.1...v1.0.2) (2023-09-22)
+
+
+### Changed
+
+* **arch:** Refactor arch installation scripts ([c2919ff](https://github.com/simao-ferreira/workspace/commit/c2919ff696239117ed63bf419b5f71e9a5c8fe1d))
+* **arch:** Replace xdg-open for handlr, update starship, remove tlpui ([169d051](https://github.com/simao-ferreira/workspace/commit/169d05135b8665918b174dd53d45e3f7db0381d8))
+* **infra:** Fix pre-commit configuration for markdown, apply pre commit suggestions ([d6af6fc](https://github.com/simao-ferreira/workspace/commit/d6af6fc6efdc0633748f4cb5b2b6d1fb99c241c1))
+* **ranger:** Update ranger config replacing xdg-open for handlr ([efc0bbe](https://github.com/simao-ferreira/workspace/commit/efc0bbea9076ca3092b9e99e84e49608ddcea763))
+* **workspace:** Update awesome config for handling new monitor ([e44a3c9](https://github.com/simao-ferreira/workspace/commit/e44a3c957dd7edbdd380ee566aa8d0ad06dd4dca))
+* **workspace:** Update nvim ([ef647ce](https://github.com/simao-ferreira/workspace/commit/ef647ce61eb94391dfb3d0a2d65b2f3584fd167c))
+* **workspace:** Update nvim ([eb6598a](https://github.com/simao-ferreira/workspace/commit/eb6598ab8e79a67ca6025ab00e8e3d452e5b1c94))
+* **workspace:** Update workspace repository list ([c3245c2](https://github.com/simao-ferreira/workspace/commit/c3245c2cf8d5c6f32bf1670827f8cf7f5c75e2cc))
+
 ## [1.0.1](https://github.com/simao-ferreira/workspace/compare/v1.0.0...v1.0.1) (2023-09-16)
 
 
