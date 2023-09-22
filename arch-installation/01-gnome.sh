@@ -18,20 +18,22 @@ PKGS=(
   tracker3-miners
   xdg-user-dirs-gtk
   gnome-tweaks
-  nautilus
 
-  #Python based WM
-  #https://wiki.archlinux.org/title/Qtile
-  #qtile
+  #xfce
+  thunar
+  tumbler
+  thunar-volman
+  thunar-archive-plugin
+
+  bluetuith
+  xtitle
 )
 
 for PKG in "${PKGS[@]}"; do
   echo
   echo "INSTALLING PACKAGE: $PKG"
-  sudo pacman -S "$PKG" --noconfirm --needed
+  yay -S "$PKG" --noconfirm --needed
 done
-
-yay -S bluetuith xtitle --noconfirm --needed
 
 echo
 echo "Installation is done"

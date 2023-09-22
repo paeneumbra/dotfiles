@@ -16,4 +16,4 @@ setup-k2:
 
 start-k2:
 	echo "Enable fn keys in keychron k2"
-	sudo systemctl start keychron
+	sudo systemctl enable --now keychron
