@@ -5,6 +5,7 @@ set -e
 PKGS=(
   gnome
   gnome-extra
+  gdm-settings
 
   # GTK Themes
   gtk-engine-murrine
