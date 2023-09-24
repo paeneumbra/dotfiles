@@ -4,6 +4,7 @@ set -e
 
 PKGS=(
   # Graphic Drivers
+  # Check nvidia is working with "prime-run glxinfo | grep "OpenGL renderer""
   dkms
   lib32-nvidia-utils
   mesa-utils
@@ -33,6 +34,7 @@ PKGS=(
   ranger
   ripgrep
   rxvt-unicode
+  shellcheck
   starship
   stow
   tlp

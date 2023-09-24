@@ -11,6 +11,8 @@ PKGS=(
   # https://wiki.archlinux.org/title/Steam
   steam
   # https://wiki.archlinux.org/title/Minecraft
+  # Check nvidia is working with "prime-run glxinfo | grep "OpenGL renderer""
+  # Run with nvidia by setting "prime-run %command%"
   minecraft-launcher
 )
 
