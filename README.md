@@ -83,6 +83,20 @@ sudo passwd {{user}}
 
 For installation follow instructions in [makefile](./arch-installation/makefile) setup-gnome instead of setup-awesome.
 
+## IDEA
+
+Intellij IDEA commuity useful plugins:
+
+- Emmylua
+- Gherkin
+- GraphQL
+- Hiberbee Theme
+- IdeaVim
+- Makefile Language
+- Python
+- Rainbow Brackets Lite
+- Terraform and HCL
+
 ## Issues
 
 Some issues might arise while configuring this application, initializing submodules and cloning uses ssh and for it to

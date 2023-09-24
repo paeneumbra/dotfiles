@@ -27,6 +27,7 @@ import sys
 __version__ = "3.0.1"
 
 HOME = os.getenv("HOME")
+SESSION = os.getenv("$XDG_SESSION_DESKTOP")
 DECORATOR = f"{os.getenv('XDG_CONFIG_HOME', os.path.join(HOME, '.config'))}/decorator"
 COLORSCHEMES = f"{DECORATOR}/colorschemes"
 TEMPLATE_DIR = f"{DECORATOR}/templates"
@@ -205,4 +206,5 @@ for path in template_files:
     write_new_file(path, new_file_lines)
 
 reload_xresources()
-reload_awesome()
+if SESSION == "awesome":
+    reload_awesome()

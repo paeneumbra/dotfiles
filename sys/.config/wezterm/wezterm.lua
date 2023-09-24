@@ -30,7 +30,7 @@ return {
     -- Coloscheme
     -- color_scheme = "Bright (base16)",
     color_scheme_dirs = {
-        "/home/archy/.config/decorator/output"
+        os.getenv("HOME") .. "/.config/decorator/output"
     },
     color_scheme = "Wezterm",
 
