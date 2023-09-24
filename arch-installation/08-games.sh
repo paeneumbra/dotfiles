@@ -3,6 +3,11 @@
 set -e
 
 PKGS=(
+  #https://github.com/Askannz/optimus-manager#gnome-gdm
+  gdm-prime
+  xinit-xsession
+  #https://github.com/Askannz/optimus-manager
+  optimus-manager
   # https://wiki.archlinux.org/title/Steam
   steam
   # https://wiki.archlinux.org/title/Minecraft

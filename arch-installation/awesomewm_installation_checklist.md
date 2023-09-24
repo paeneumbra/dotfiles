@@ -28,4 +28,3 @@ After a clean installation validate the following.
     - [ ] Awesome transparency works on dashboards
 - [ ] Microphone
 - [ ] Intellij
-- [ ] My scripts work

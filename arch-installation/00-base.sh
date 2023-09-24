@@ -14,7 +14,7 @@ PKGS=(
   xorg-server
   xorg-xinit
 
-  # Basic Apps
+  # Apps
   alacritty
   arandr
   bottom
@@ -28,6 +28,7 @@ PKGS=(
   handlr
   maim
   neofetch
+  neovim
   openssh
   ranger
   ripgrep
@@ -44,6 +45,7 @@ PKGS=(
   zathura-pdf-mupdf
   zsh
   zsh-completions
+  wezterm
 )
 
 for PKG in "${PKGS[@]}"; do

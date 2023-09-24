@@ -11,20 +11,7 @@ PKGS=(
   picom
   redshift
   rofi
-  ttf-material-design-icons-webfont
-  wezterm
-
-  #gtk
-  baobab
-  cheese
-  gnome-font-viewer
-  xdg-user-dirs-gtk
-
-  #xfce
-  thunar
-  tumbler
-  thunar-volman
-  thunar-archive-plugin
+  xtitle
 )
 
 for PKG in "${PKGS[@]}"; do

@@ -14,6 +14,18 @@ setup-k2:
 	sudo cp ./extras/keychron.service /etc/systemd/system/
 	sudo systemctl enable --now keychron
 
+setup-login-manager:
+	echo "Enable gdm"
+	sudo systemctl enable gdm
+	sudo systemctl start gdm
+
+setup-gnome:
+	echo "Gnome requires unique user"
+	./01-gnome.sh
+	echo "Setup stow"
+	mkdir -p $(HOME)/.config
+	exec stow --verbose --dir=$(HOME)/workspace --target=$(HOME) sys
+
 start-k2:
 	echo "Enable fn keys in keychron k2"
-	sudo systemctl enable --now keychron
+	sudo systemctl start keychron

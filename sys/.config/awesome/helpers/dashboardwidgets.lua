@@ -9,7 +9,7 @@ local _widgets = {}
 --local full_screen_height = awful.screen.focused({ client = true, mouse = false }).geometry.height
 --local full_screen_width = awful.screen.focused({ client = true, mouse = false }).geometry.width
 
--- Set first screen[1] ( always eDP-1) as source
+-- Set first screen[1] ( always eDP-1/eDP-1-1) as source
 -- Presents dashboard on left screen
 local full_screen_height = screen[1].geometry.height
 local full_screen_width = screen[1].geometry.width

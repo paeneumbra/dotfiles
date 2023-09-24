@@ -7,23 +7,31 @@ set -e
 
 PKGS=(
   #https://wiki.archlinux.org/title/Bspwm
-  bspwm
-  sxhkd
-  picom
-  dunst
-  rofi
-  polybar
   bluetuith
+  bspwm
+  dunst
   light
   pavucontrol
+  picom
+  polybar
+  rofi
+  sxhkd
   xdo
   xtitle
 
-  #gtk
+  #https://wiki.archlinux.org/title/GNOME
+  #https://archlinux.org/groups/x86_64/gnome/
   baobab
   cheese
+  gnome-disk-utility
   gnome-font-viewer
   xdg-user-dirs-gtk
+
+  #xfce
+  thunar
+  thunar-archive-plugin
+  thunar-volman
+  tumbler
 )
 
 for PKG in "${PKGS[@]}"; do

@@ -72,6 +72,17 @@ it facilitates managing special configurations and settings.
 
 </details>
 
+## Gnome
+
+For using a full gnome desktop create a new user and assign to wheel group.
+
+```shell
+useradd -m -G wheel -s /bin/bash {{user}}
+sudo passwd {{user}}
+```
+
+For installation follow instructions in [makefile](./arch-installation/makefile) setup-gnome instead of setup-awesome.
+
 ## Issues
 
 Some issues might arise while configuring this application, initializing submodules and cloning uses ssh and for it to

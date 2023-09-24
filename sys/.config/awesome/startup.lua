@@ -4,12 +4,12 @@ local displays = require("system.displays")
 
 --- Autostart ---
 
+awful.screen.set_auto_dpi_enabled(true)
+
 -- Picom
 run.start_if_not_running("picom", function()
 	awful.spawn("picom --config /home/archy/.config/picom/picom.conf", false)
 end)
-
-awful.screen.set_auto_dpi_enabled(true)
 
 -- Display reset
 displays.update_displays()

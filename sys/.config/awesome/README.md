@@ -46,7 +46,9 @@ To set up correctly the color scheme please read [decorator](./../decorator/READ
 ## Issues
 
 During setup it can happen that some references have changed, this will most certainly happen for monitors and disk.
-For getting new display namings run `xrandr` and replace all references in the project - e.g. `eDP-1`.
+For getting new display namings run `xrandr` and replace all references in the project - e.g. `eDP-1`, `eDP-1-1`.
+
+NOTE: Depending on the active graphics card the monitor names are different
 
 ```shell
 xrandr -q

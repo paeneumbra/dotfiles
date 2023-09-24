@@ -1,6 +1,6 @@
 # Makefile
 
-install-base:
+setup-base:
 	./arch-installation/00-base.sh
 
 setup-yay:
@@ -8,18 +8,21 @@ setup-yay:
 	git clone https://aur.archlinux.org/yay.git projects/repositories/yay
 	(cd projects/repositories/yay && makepkg -si)
 
-install-awesome:
+setup-awesome:
 	./arch-installation/01-awesomewm.sh
 
-install-extra:
+setup-extra:
 	./arch-installation/02-extras.sh
 
-install-development:
+setup-development:
 	./arch-installation/03-development.sh
 
 stow-config:
 	mkdir -p $(HOME)/.config
 	exec stow --verbose --dir=$(HOME)/workspace --target=$(HOME) sys
+
+copy-mimelist:
+	cp ./arch-installation/extras/mimeapps.list $(HOME)/.config
 
 setup-zsh:
 	mkdir -p $(HOME)/.cache/zsh

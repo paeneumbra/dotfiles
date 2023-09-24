@@ -4,7 +4,6 @@ set -e
 
 PKGS=(
   # Neovim
-  neovim
   prettier
   npm
 
