@@ -206,5 +206,5 @@ for path in template_files:
     write_new_file(path, new_file_lines)
 
 reload_xresources()
-if SESSION == "awesome":
+if SESSION != "gnome":
     reload_awesome()

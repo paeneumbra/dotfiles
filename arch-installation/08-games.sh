@@ -9,10 +9,9 @@ PKGS=(
   #https://github.com/Askannz/optimus-manager
   optimus-manager
   # https://wiki.archlinux.org/title/Steam
+  # Run with nvidia by setting "prime-run %command%"
   steam
   # https://wiki.archlinux.org/title/Minecraft
-  # Check nvidia is working with "prime-run glxinfo | grep "OpenGL renderer""
-  # Run with nvidia by setting "prime-run %command%"
   minecraft-launcher
 )
 

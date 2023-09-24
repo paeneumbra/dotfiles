@@ -87,6 +87,7 @@ For installation follow instructions in [makefile](./arch-installation/makefile)
 
 Intellij IDEA commuity useful plugins:
 
+- .ignore
 - Emmylua
 - Gherkin
 - GraphQL
