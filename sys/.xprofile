@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# GDM requires xprofile to properly start awesomewm
+exec sh ~/.xinitrc >~/.cache/xprofile-errors 2>&1
