@@ -50,6 +50,3 @@ if [[ -n ${terminfo[kcuu1]} && -n ${terminfo[kcud1]} ]]; then
   bindkey ${terminfo[kcuu1]} history-substring-search-up
   bindkey ${terminfo[kcud1]} history-substring-search-down
 fi
-
-# Kubectl completion
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh)

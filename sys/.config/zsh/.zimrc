@@ -2,13 +2,20 @@ zmodule environment
 zmodule input
 zmodule utility
 zmodule archive
+zmodule fzf
 
 # Prompt
 zmodule duration-info
-
 zmodule zsh-users/zsh-completions
 zmodule completion
+
+# Others
+zmodule nnao45/zsh-kubectl-completion
+zmodule eastokes/aws-plugin-zsh
+zmodule srijanshetty/zsh-pip-completion
+zmodule greymd/docker-zsh-completion
+
+# Modules that must be initialized last
 zmodule zsh-users/zsh-autosuggestions
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
-zmodule fzf
