@@ -1,5 +1,28 @@
 # Changelog
 
+## [2.0.0](https://github.com/simao-ferreira/workspace/compare/v1.0.2...v2.0.0) (2023-09-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* Include login manager, add installation for gnome, refactor installation and awesome for graphical use
+
+### Added
+
+* Include login manager, add installation for gnome, refactor installation and awesome for graphical use ([eb7b603](https://github.com/simao-ferreira/workspace/commit/eb7b6036bbbc3b27a4ba8bc2221297a9f2374d12))
+
+
+### Changed
+
+* **arch:** Fix decorator script, add mc script ([9b6eea4](https://github.com/simao-ferreira/workspace/commit/9b6eea47416dad852412a8640d0ed0507e13ed9e))
+* **arch:** Fix gdm awesome startup ([a4d991d](https://github.com/simao-ferreira/workspace/commit/a4d991d7e081bd7d836fc3e2b6661c2e2c72fc53))
+* **arch:** Update arch installation with audio tools ([bdd550f](https://github.com/simao-ferreira/workspace/commit/bdd550fae1c4f3b3254e23321a70713a74827323))
+* **awesome:** Add awesome bling module for layouts ([937a693](https://github.com/simao-ferreira/workspace/commit/937a693b08715cb3f7542eb8695cb46b6d07b3e2))
+* **gnome:** Add gdm configuration manager ([19a28fc](https://github.com/simao-ferreira/workspace/commit/19a28fc50ffe8010f5c69fe04dea6154776b3944))
+* **gnome:** Update configuration after launch in gnome ([1b7700e](https://github.com/simao-ferreira/workspace/commit/1b7700ed630474711a66f9d386de82c7c5e459a9))
+* **gnome:** Update zsh config with alias for prime switching ([9203fb9](https://github.com/simao-ferreira/workspace/commit/9203fb92e427e82625aeccf10c8ff217d4bb2e65))
+* **zsh:** Update zsh plugins with completions ([f3d17d2](https://github.com/simao-ferreira/workspace/commit/f3d17d2d1aed5fa22b54901d55811fa81b7ff4b0))
+
 ## [1.0.2](https://github.com/simao-ferreira/workspace/compare/v1.0.1...v1.0.2) (2023-09-22)
 
 
