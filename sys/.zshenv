@@ -32,7 +32,6 @@ export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GOPATH="$XDG_DATA_HOME"/go
 export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
 export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
 # Zsh directory
 ZDOTDIR=$XDG_CONFIG_HOME/zsh
