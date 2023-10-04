@@ -31,9 +31,9 @@ PKGS=(
 	python-pynvim
 	python-setuptools
 	python-black
+	python-ruff
 	python-pre-commit
 	pip-tools
-	flake8
 
 	# IDE
 	intellij-idea-community-edition
