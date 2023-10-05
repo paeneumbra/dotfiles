@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.0.1](https://github.com/simao-ferreira/workspace/compare/v2.0.0...v2.0.1) (2023-10-05)
+
+
+### Changed
+
+* **arch:** Move from flake8 to ruff, update nvim version ([66c8607](https://github.com/simao-ferreira/workspace/commit/66c8607fe7e8dfb0ffd4f0328542f95c855f285e))
+* **arch:** Refactor development and java setup ([d3b0b60](https://github.com/simao-ferreira/workspace/commit/d3b0b608212e16e754b15761472646944fb96479))
+* **nvim:** Update nvim setup ([3bfeb69](https://github.com/simao-ferreira/workspace/commit/3bfeb697ae84c15d594c33888b716131de599706))
+
 ## [2.0.0](https://github.com/simao-ferreira/workspace/compare/v1.0.2...v2.0.0) (2023-09-27)
 
 
