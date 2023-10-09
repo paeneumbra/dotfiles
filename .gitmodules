@@ -1,0 +1,6 @@
+[submodule "dotfiles/archlinux/.config/awesome/modules/bling"]
+	path = dotfiles/archlinux/.config/awesome/modules/bling
+	url = git@github.com:BlingCorp/bling.git
+[submodule "dotfiles/common/.config/nvim"]
+	path = dotfiles/common/.config/nvim
+	url = git@github.com:simao-ferreira/nvim.git
