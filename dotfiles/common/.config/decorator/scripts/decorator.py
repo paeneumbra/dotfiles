@@ -22,7 +22,7 @@ import argparse
 import glob
 import json
 import os
-import dotfiles
+import sys
 
 __version__ = "3.0.1"
 
@@ -81,8 +81,8 @@ def parse_args(parser: argparse.ArgumentParser):
     """Process command line arguments"""
     args = parser.parse_args()
 
-    if len(dotfiles.argv) <= 1:
-        dotfiles.exit(f"No arguments given, run decorate -h")
+    if len(sys.argv) <= 1:
+        sys.exit(f"No arguments given, run decorate -h")
 
     if args.light:
         return colorscheme("gruvbox-light")
@@ -102,14 +102,14 @@ def parse_args(parser: argparse.ArgumentParser):
 
 def assert_directory_exists(directory):
     if os.path.exists(directory) is False:
-        dotfiles.exit(f"{directory} does not exist")
+        sys.exit(f"{directory} does not exist")
     if not os.listdir(directory):
-        dotfiles.exit(f"{directory} is empty")
+        sys.exit(f"{directory} is empty")
 
 
 def assert_file_exists(colorscheme):
     if colorscheme is None or os.path.exists(colorscheme) is False:
-        dotfiles.exit(f"{colorscheme} does not exist")
+        sys.exit(f"{colorscheme} does not exist")
     return colorscheme
 
 
@@ -117,7 +117,7 @@ def decorator_colorschemes():
     """Print all available color schemes"""
     for scheme in glob.glob(f"{COLORSCHEMES}/*"):
         print(os.path.splitext(os.path.basename(scheme))[0])
-    dotfiles.exit()
+    sys.exit()
 
 
 def colorscheme(name: str):
@@ -130,7 +130,7 @@ def colorscheme(name: str):
     if colorscheme_path is not None:
         return colorscheme_path
     else:
-        dotfiles.exit(f"Colorscheme {name} is not present in decorator folder")
+        sys.exit(f"Colorscheme {name} is not present in decorator folder")
 
 
 def terminal_sexy_json(json_colorscheme) -> json:

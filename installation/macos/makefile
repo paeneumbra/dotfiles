@@ -15,8 +15,8 @@ setup: init-submodules stow bundle
 
 stow:
 	mkdir -p $(HOME)/.config
-	exec stow --no --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) common
-	exec stow --no --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) macos
+	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) common
+	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) macos
 
 
 init-submodules:
