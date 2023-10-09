@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.0.0](https://github.com/simao-ferreira/workspace/compare/v2.0.1...v3.0.0) (2023-10-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* Refactor installation scripts and include macos
+
+### Added
+
+* Refactor configuration ([2dbf9c2](https://github.com/simao-ferreira/workspace/commit/2dbf9c2a091949e57fc684f6e093416d60c7708b))
+* Refactor installation scripts and include macos ([a464f77](https://github.com/simao-ferreira/workspace/commit/a464f77f397f540d0fd7d7d87177f218c5938974))
+* Update readme files ([cffa443](https://github.com/simao-ferreira/workspace/commit/cffa443f491b89471690c7564390e4dd0f6ef1c5))
+
+
+### Changed
+
+* Add wallpaper ([7aa9af5](https://github.com/simao-ferreira/workspace/commit/7aa9af5e539790dd364a32ca74b4ddcac97b46cd))
+* **infra:** Add submodules again ([d32d2af](https://github.com/simao-ferreira/workspace/commit/d32d2af7a73e8982bd852e33faffb4c73f853bcc))
+* **infra:** Fix mac configurations ([24e2b72](https://github.com/simao-ferreira/workspace/commit/24e2b72738a0bbd12cb8d977969a94e615e7f961))
+* **infra:** Fix workspace repository list ([ce37681](https://github.com/simao-ferreira/workspace/commit/ce37681e85bb17ba650434c6045696722171d9c0))
+* **infra:** Update pre-commit config ([02e5f9f](https://github.com/simao-ferreira/workspace/commit/02e5f9fdcff31aed54e5466724932a1e606a5ad3))
+
 ## [2.0.1](https://github.com/simao-ferreira/workspace/compare/v2.0.0...v2.0.1) (2023-10-05)
 
 
