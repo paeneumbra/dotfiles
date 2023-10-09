@@ -3,13 +3,13 @@
 	"repos": [
 		"git@github.com:simao-ferreira/exchange-rate-api.git",
 		"git@github.com:simao-ferreira/game-of-life.git",
-		"git@github.com:simao-ferreira/macos.git",
 		"git@github.com:simao-ferreira/markdown-resume.git",
 		"git@github.com:simao-ferreira/sheepskin.git",
-		"git@github.com:simao-ferreira/pi-dotfiles.git",
 		{
 			"name": "archived",
 			"repos": [
+				"git@github.com:simao-ferreira/macos.git",
+				"git@github.com:simao-ferreira/pi-dotfiles.git",
 				"git@github.com:simao-ferreira/scratchpad.git",
 				"git@github.com:simao-ferreira/dotfiles.git",
 				"git@github.com:simao-ferreira/PD_ThreeRow.git",
