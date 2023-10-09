@@ -7,7 +7,7 @@ default_stages:
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: check-yaml
       - id: end-of-file-fixer
@@ -40,7 +40,7 @@ repos:
         args: [ fix, feat, chore, docs, feat!, chore!, fix! ]
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.36.0
+    rev: v0.37.0
     hooks:
       - id: markdownlint
         args:
