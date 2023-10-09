@@ -6,6 +6,7 @@ PKGS=(
   gnome
   gnome-extra
   gdm-settings
+  gnome-software
 
   # GTK Themes
   gtk-engine-murrine
