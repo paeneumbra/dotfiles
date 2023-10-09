@@ -35,7 +35,7 @@ Setup dependencies:
 
 </details>
 
-Instructions can be found in [installation-scrips](./../../../arch-installation)
+Instructions can be found in [installation-scrips](./../../../installation/arch/)
 
 ### Color scheme
 

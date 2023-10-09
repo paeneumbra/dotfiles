@@ -17,7 +17,7 @@ Clone the workspace repository.
 git clone https://github.com/simao-ferreira/workspace.git
 ```
 
-Instructions are included in the [makefile](./makefile), run them will do the trick.
+Instructions are included in the [makefile](./installation/arch/makefile), run them will do the trick.
 
 ## Awesomewm
 
@@ -81,7 +81,7 @@ useradd -m -G wheel -s /bin/bash {{user}}
 sudo passwd {{user}}
 ```
 
-For installation follow instructions in [makefile](./arch-installation/makefile) setup-gnome instead of setup-awesome.
+For installation follow instructions in [makefile](./installation/arch/makefile) setup-gnome instead of setup-awesome.
 
 ## IDEA
 

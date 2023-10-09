@@ -1,58 +1,33 @@
 # Makefile
 
-setup-base:
-	./arch-installation/00-base.sh
-
-setup-yay:
-	mkdir -p projects/repositories/yay
-	git clone https://aur.archlinux.org/yay.git projects/repositories/yay
-	(cd projects/repositories/yay && makepkg -si)
-
-setup-awesome:
-	./arch-installation/01-awesomewm.sh
-
-setup-extra:
-	./arch-installation/02-extras.sh
-
-setup-development:
-	./arch-installation/03-development.sh
-
-stow-config:
-	mkdir -p $(HOME)/.config
-	exec stow --verbose --dir=$(HOME)/workspace --target=$(HOME) sys
-
-copy-mimelist:
-	cp ./arch-installation/extras/mimeapps.list $(HOME)/.config
-
-setup-zsh:
-	mkdir -p $(HOME)/.cache/zsh
-	chsh -s $$(which zsh)
-	sudo chsh -s $$(which zsh)
-	echo "Restart to enable zsh"
-
-setup-audio:
-	./arch-installation/04-audio.sh
-	systemctl --user enable --now pipewire
-	systemctl --user enable --now pipewire
-	systemctl --user enable --now wireplumber
-	sudo systemctl enable --now bluetooth.service
-
-setup-gaming:
-	./arch-installation/08-games.sh
-
-init-submodules:
-	echo "Requires ssh configured in github"
-	echo "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
-	echo "https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key"
-	git submodule init
-	git submodule update
+OS := $(shell uname -s)
 
 setup-repos:
-	echo "Requires ssh configured in github"
+	@echo "Requires ssh configured in github"
 	./bin/cloneworkspace.py -s ./workspace.json -r
+
+start-k2:
+ifeq ($(OS),Darwin)
+	@echo "Not available for macos"
+else
+	@echo "Enable fn keys in keychron k2"
+	sudo systemctl start keychron
+endif
+
+bundle:
+ifeq ($(OS), Darwin)
+	brew bundle --file $(HOME)/workspace/installation/macos/brew/Brewfile
+else
+	@echo "Only available for macos"
+endif
 
 update-workspace-repos:
 	python3 ./bin/updategitrepos.py --workspace -r
 
+pre-commit: setup-pre-commit update-pre-commit
+
 setup-pre-commit:
 	pre-commit install
+
+update-pre-commit:
+	pre-commit autoupdate
