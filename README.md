@@ -4,12 +4,8 @@ Personal workspace mostly for development.
 
 ## Installation
 
-This configuration is for an Arch Linux machine and installed
-using [archinstall v2.5.2](https://github.com/archlinux/archinstall/tree/v2.5.2).
-
-**NOTE:** Setup was designed for `bspwm`, however in the meantime I got a bit curious
-about `lua` and started playing around with `awesomewm`.
-All configurations pertaining to `bspwm` were removed.
+- Install Arch Linux using [archinstall v2.5.2](https://github.com/archlinux/archinstall/tree/v2.5.2).
+- MacOS installed via [brew](./installation/macos/brew/Brewfile)
 
 Clone the workspace repository.
 
@@ -17,7 +13,8 @@ Clone the workspace repository.
 git clone https://github.com/simao-ferreira/workspace.git
 ```
 
-Instructions are included in the [makefile](./installation/arch/makefile), run them will do the trick.
+- Instructions for archlinux in [makefile](./installation/arch/makefile).
+- Instructions for macOS in [makefile](./installation/macos/makefile) and [readme](./installation/macos/README.md).
 
 ## Awesomewm
 
@@ -27,19 +24,21 @@ Take look into [awesome readme](dotfiles/archlinux/.config/awesome/README.md)
 
 ### Color scheme
 
-This setup is designed for integrating the same colorscheme as smoothly as I had opportunity to make it.
-Was initially designed for `bspwm` but it works similarly for `awesomewm`.
-
-The color settings are heavily dependent on the `.Xresources` file, including `awesomewm`.
+This setup is designed for integrating setting up the colorscheme for linux system and it is heavily dependent on
+the `.Xresources` file, including `awesomewm`.
 
 More information and details can be found in [decorator](dotfiles/common/.config/decorator), inside scripts can be
 found for using a json color scheme file - I personally use [terminal.sexy](https://terminal.sexy/) - and
 porting the result for `.Xresources` and other required formats.
 
+It also works for macOS through `.Xresources` file, it configures mostly the terminals in that case, **WARN** the script
+does not account for macOS usage.
+
 ### Zsh
 
-Configuration for zsh can be found under [dotfiles folder](./dotfiles) and can it can be setup by copying the files to the proper
-location, via symlink or [stow](https://www.gnu.org/software/stow/).
+Configuration for zsh can be found under [dotfiles folder](./dotfiles) and can it can be setup by copying the files to
+the proper location, via symlink or through [stow](https://www.gnu.org/software/stow/).
+There are two sets of stow folders to configure, commons and specific to OS.
 
 It uses a self-installed, self-managed plugin manager called [zimfw](https://github.com/zimfw/zimfw) that will install
 itself and setup all needed plugins once zsh is started.
@@ -85,7 +84,7 @@ For installation follow instructions in [makefile](./installation/arch/makefile)
 
 ## IDEA
 
-Intellij IDEA commuity useful plugins:
+Intellij IDEA community useful plugins:
 
 - .ignore
 - Emmylua

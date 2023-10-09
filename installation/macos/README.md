@@ -47,7 +47,7 @@ softwareupdate --install-rosetta
 ## My setup
 
 Should be mainly related to this repository.
-Most instructions should be also present in [makefile](/makefile)
+Most instructions should be also present in [makefile](./makefile)
 
 ### Nvim
 
@@ -67,8 +67,6 @@ Symlink configurations like nvim, ranger and zsh to the proper folders
 stow -v -d $HOME/workspace/dotfiles -t ~/ common
 stow -v -d $HOME/workspace/dotfiles -t ~/ macos
 ```
-
-- `workspace` represents the folder where the working space is going to be created.
 
 ### Brew
 
