@@ -21,7 +21,7 @@ Instructions are included in the [makefile](./installation/arch/makefile), run t
 
 ## Awesomewm
 
-Take look into [awesome readme](./sys/.config/awesome/README.md)
+Take look into [awesome readme](dotfiles/archlinux/.config/awesome/README.md)
 
 ## Configuration
 
@@ -32,18 +32,18 @@ Was initially designed for `bspwm` but it works similarly for `awesomewm`.
 
 The color settings are heavily dependent on the `.Xresources` file, including `awesomewm`.
 
-More information and details can be found in [decorator](./sys/.config/decorator), inside scripts can be
+More information and details can be found in [decorator](dotfiles/common/.config/decorator), inside scripts can be
 found for using a json color scheme file - I personally use [terminal.sexy](https://terminal.sexy/) - and
 porting the result for `.Xresources` and other required formats.
 
 ### Zsh
 
-Configuration for zsh can be found under [sys folder](./sys) and can it can be setup by copying the files to the proper
+Configuration for zsh can be found under [dotfiles folder](./dotfiles) and can it can be setup by copying the files to the proper
 location, via symlink or [stow](https://www.gnu.org/software/stow/).
 
 It uses a self-installed, self-managed plugin manager called [zimfw](https://github.com/zimfw/zimfw) that will install
 itself and setup all needed plugins once zsh is started.
-Plugin configuration can be found in the [.zimrc file](./sys/.config/zsh/.zimrc).
+Plugin configuration can be found in the [.zimrc file](dotfiles/common/.config/zsh/.zimrc).
 A folder will automatically be created as `.zim` to store all required files for `zimfw`.
 
 Global variable `ZDOTDIR` is defined under `./zshenv` as `$HOME/.config/zsh`. This tells zsh to look for further

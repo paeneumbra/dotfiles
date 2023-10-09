@@ -2,7 +2,7 @@
 *.der
 
 # Zimfw
-/*/.config/zsh/.zim
+/dotfiles/archlinux/.config/zsh/.zim
 /*/.config/zsh/*.zwc
 
 # IDE

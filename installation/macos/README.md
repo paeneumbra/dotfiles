@@ -51,7 +51,7 @@ Most instructions should be also present in [makefile](/makefile)
 
 ### Nvim
 
-Initiate git submodule with [nvim configuration](/sys/.config/nvim)
+Initiate git submodule with [nvim configuration](/dotfiles/common/.config/nvim)
 
 ```shell
 git submodule init
@@ -64,10 +64,11 @@ git submodule update
 Symlink configurations like nvim, ranger and zsh to the proper folders
 
 ```shell
-stow -v -d $HOME/workbench/macos -t ~/ sys
+stow -v -d $HOME/workspace/dotfiles -t ~/ common
+stow -v -d $HOME/workspace/dotfiles -t ~/ macos
 ```
 
-- `workbench` represents the folder where the working space is going to be created.
+- `workspace` represents the folder where the working space is going to be created.
 
 ### Brew
 

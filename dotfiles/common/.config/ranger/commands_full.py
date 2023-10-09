@@ -909,12 +909,12 @@ class load_copy_buffer(Command):
     copy_buffer_filename = 'copy_buffer'
 
     def execute(self):
-        import sys
+        import dotfiles
         from ranger.container.file import File
         from os.path import exists
 
         fname = self.fm.datapath(self.copy_buffer_filename)
-        unreadable = IOError if sys.version_info[0] < 3 else OSError
+        unreadable = IOError if dotfiles.version_info[0] < 3 else OSError
         try:
             fobj = open(fname, 'r')
         except unreadable:
@@ -937,11 +937,11 @@ class save_copy_buffer(Command):
     copy_buffer_filename = 'copy_buffer'
 
     def execute(self):
-        import sys
+        import dotfiles
 
         fname = None
         fname = self.fm.datapath(self.copy_buffer_filename)
-        unwritable = IOError if sys.version_info[0] < 3 else OSError
+        unwritable = IOError if dotfiles.version_info[0] < 3 else OSError
         try:
             fobj = open(fname, 'w')
         except unwritable:
@@ -1195,12 +1195,12 @@ class bulkrename(Command):
 
     def execute(self):
         # pylint: disable=too-many-locals,too-many-statements,too-many-branches
-        import sys
+        import dotfiles
         import tempfile
         from ranger.container.file import File
         from ranger.ext.shell_escape import shell_escape as esc
 
-        py3 = sys.version_info[0] >= 3
+        py3 = dotfiles.version_info[0] >= 3
 
         # Create and edit the file list
         filenames = [f.relative_path for f in self.fm.thistab.get_selection()]

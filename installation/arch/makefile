@@ -19,7 +19,8 @@ setup-development:
 
 stow-config:
 	mkdir -p $(HOME)/.config
-	exec stow --verbose --dir=$(HOME)/workspace --target=$(HOME) sys
+	exec stow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) common
+	exec stow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) archlinux
 
 setup-zsh:
 	mkdir -p $(HOME)/.cache/zsh
