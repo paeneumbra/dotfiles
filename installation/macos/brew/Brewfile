@@ -17,8 +17,12 @@ brew 'git-extras'
 brew 'git-filter-repo'
 brew 'pre-commit'
 
-# Java M1
+# Jvm
+brew 'gradle'
+brew 'groovy'
 brew 'kotlin'
+brew 'ktlint'
+brew 'maven'
 cask 'zulu8'
 cask 'zulu11'
 cask 'zulu17'
@@ -36,12 +40,9 @@ brew 'fzf'
 brew 'glow'
 brew 'gnupg'
 brew 'gnutls'
-brew 'gradle'
 brew 'grep'
-brew 'groovy'
 brew 'httpie'
 brew 'jq'
-brew 'maven'
 brew 'nano'
 brew 'nvim'
 brew 'openssl'
@@ -102,6 +103,9 @@ brew 'docker-compose'
 # diagrams
 brew 'plantuml'
 brew 'graphviz'
+
+# others
+brew 'cargo'
 
 # applications
 cask 'alacritty'

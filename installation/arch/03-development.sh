@@ -15,6 +15,7 @@ PKGS=(
 	jdk17-openjdk
 	jdk-openjdk
 	kotlin
+	ktlint
 	gradle
 	groovy
 
@@ -45,6 +46,7 @@ PKGS=(
 	docker-compose
 
 	# Misc
+	cargo
 	jq
 	yq
 	slack-desktop
