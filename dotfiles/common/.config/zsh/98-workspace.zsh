@@ -1,4 +1,7 @@
 # Quick access to repositories
+export WS="$HOME/workspace/"
+export CONF="$HOME/.config/"
+export NVIM="$HOME/.config/nvim/"
 export FORGE="$HOME/workspace/forge"
 export OBS="$HOME/workspace/projects/sheepskin/"
 
