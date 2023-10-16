@@ -87,6 +87,7 @@ brew 'int128/kubelogin/kubelogin'
 # terraform
 brew 'tfenv'
 brew 'tflint'
+brew 'tfsec'
 
 # vscode
 cask 'visual-studio-code'
