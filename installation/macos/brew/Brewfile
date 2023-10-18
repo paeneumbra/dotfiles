@@ -105,9 +105,6 @@ brew 'docker-compose'
 brew 'plantuml'
 brew 'graphviz'
 
-# others
-brew 'cargo'
-
 # applications
 cask 'alacritty'
 cask 'chromium'
