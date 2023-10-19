@@ -3,7 +3,7 @@ local notify = require("helpers.notifications")
 
 local print_screen = {}
 
-local cmd_select_print_area = "maim --select -o -u > ~/downloads/ps%s.png"
+local cmd_select_print_area = "maim --select -o -u > ~/Downloads/ps%s.png"
 
 function print_screen.print_selected_area()
     date = os.date("%Y%m%d%H%M%S")
