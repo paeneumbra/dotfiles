@@ -18,17 +18,19 @@ Template files:
 
 """
 
-import argparse
 import glob
 import json
 import os
 import sys
+import platform
+
+import argparse
 
 __version__ = "3.0.1"
 
 HOME = os.getenv("HOME")
 SESSION = os.getenv("$XDG_SESSION_DESKTOP")
-DECORATOR = f"{os.getenv('XDG_CONFIG_HOME', os.path.join(HOME, '.config'))}/decorator"
+DECORATOR = f"{os.getenv('XDG_CONFIG_HOME')}/decorator"
 COLORSCHEMES = f"{DECORATOR}/colorschemes"
 TEMPLATE_DIR = f"{DECORATOR}/templates"
 OUTPUT_DIR = f"{DECORATOR}/output"
@@ -82,7 +84,7 @@ def parse_args(parser: argparse.ArgumentParser):
     args = parser.parse_args()
 
     if len(sys.argv) <= 1:
-        sys.exit(f"No arguments given, run decorate -h")
+        sys.exit("No arguments given, run decorate -h")
 
     if args.light:
         return colorscheme("gruvbox-light")
@@ -133,7 +135,7 @@ def colorscheme(name: str):
         sys.exit(f"Colorscheme {name} is not present in decorator folder")
 
 
-def terminal_sexy_json(json_colorscheme) -> json:
+def terminal_sexy_json(json_colorscheme):
     with open(json_colorscheme) as json_file:
         return json.load(json_file)
 
@@ -202,9 +204,11 @@ parsed_colorscheme = parse_colors(terminal_sexy_json(parsed_arguments))
 
 for path in template_files:
     file_lines = get_lines(path)
-    new_file_lines = replace_colors(file_lines, parsed_colorscheme)
-    write_new_file(path, new_file_lines)
+    if "iterm.itermcolors" not in path:
+        new_file_lines = replace_colors(file_lines, parsed_colorscheme)
+        write_new_file(path, new_file_lines)
 
 reload_xresources()
-if SESSION != "gnome":
+
+if platform.system() == "Linux" and SESSION != "gnome":
     reload_awesome()
