@@ -18,13 +18,13 @@ brights = [
     '#2bb2e8',
     '#8b7dca',
     '#8ec07c',
-    '#ebdbb2',
+    '#eae8e1',
 ]
-cursor_bg = '#ebdbb2'
-cursor_border = '#ebdbb2'
+cursor_bg = '#eae8e1'
+cursor_border = '#eae8e1'
 cursor_fg = '#282828'
 foreground = '#ebdbb2'
-selection_bg = '#ebdbb2'
+selection_bg = '#eae8e1'
 selection_fg = '#689d6a'
 
 [colors.indexed]

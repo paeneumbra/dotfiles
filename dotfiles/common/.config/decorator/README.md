@@ -44,3 +44,9 @@ decorate -d
 ```shell
 decorate --list
 ```
+
+## Neovim
+
+The file `palette.lua` could be used for nvim, however the extra color will break the colorscheme if it's a lighter tone.
+
+It's a WIP.
