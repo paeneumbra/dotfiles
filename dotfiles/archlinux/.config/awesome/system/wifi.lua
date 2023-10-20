@@ -1,5 +1,5 @@
-local awful = require("awful")
-local notify = require("helpers.notifications")
+local awful = require "awful"
+local notify = require "helpers.notifications"
 
 local wifi = {}
 
@@ -12,11 +12,11 @@ function wifi.toggle_wifi()
         local status = tostring(state)
         if string.match(status, "disconnected") or string.match(status, "asleep") then
             awful.spawn.easy_async_with_shell(cmd_wifi_on, function()
-                notify.normal("Wifi: on")
+                notify.normal "Wifi: on"
             end)
         else
             awful.spawn.easy_async_with_shell(cmd_wifi_off, function()
-                notify.normal("Wifi: off")
+                notify.normal "Wifi: off"
             end)
         end
     end)

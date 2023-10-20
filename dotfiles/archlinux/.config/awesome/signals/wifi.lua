@@ -1,5 +1,5 @@
-local awful = require("awful")
-local gears = require("gears")
+local awful = require "awful"
+local gears = require "gears"
 
 local cmd_wifi = "nmcli g | tail -1 | awk '{print $1}'"
 local cmd_strength = "awk '/^s*w/ { print  int($3 * 100 / 70) }' /proc/net/wireless"
@@ -24,11 +24,11 @@ local function get_wifi()
     end)
 end
 
-gears.timer({
+gears.timer {
     timeout = 5,
     autostart = true,
     call_now = true,
     callback = function()
         get_wifi()
     end,
-})
+}

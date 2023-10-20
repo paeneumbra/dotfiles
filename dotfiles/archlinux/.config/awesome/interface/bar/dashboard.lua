@@ -1,9 +1,9 @@
-local widgets = require("helpers.wibarwidgets")
+local widgets = require "helpers.wibarwidgets"
 
 local dashboard = widgets.wibar_icon("󱓞", Color.green)
 
 dashboard:connect_signal("button::press", function()
-    awesome.emit_signal("dashboard::toggle")
+    awesome.emit_signal "dashboard::toggle"
 end)
 
 dashboard:connect_signal("mouse::enter", function()

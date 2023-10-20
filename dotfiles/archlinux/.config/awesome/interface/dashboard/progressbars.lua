@@ -1,11 +1,11 @@
-local wibox = require("wibox")
+local wibox = require "wibox"
 
-local widgets = require("helpers.dashboardwidgets")
+local widgets = require "helpers.dashboardwidgets"
 
-local batteries = require("interface.dashboard.batteryprogressbar")
-local cpu = require("interface.dashboard.cpuprogressbar")
-local disk = require("interface.dashboard.diskprogressbar")
-local wifi = require("interface.dashboard.wifiprogressbar")
+local batteries = require "interface.dashboard.batteryprogressbar"
+local cpu = require "interface.dashboard.cpuprogressbar"
+local disk = require "interface.dashboard.diskprogressbar"
+local wifi = require "interface.dashboard.wifiprogressbar"
 
 -- Batteries
 local bat0 = batteries.battery0

@@ -1,5 +1,5 @@
-local system = require("system.wifi")
-local widgets = require("helpers.wibarwidgets")
+local system = require "system.wifi"
+local widgets = require "helpers.wibarwidgets"
 
 -- Wifi
 local wifi = widgets.wibar_icon("󰖩", Color.green)
@@ -29,6 +29,5 @@ end)
 wifi:connect_signal("mouse::leave", function()
     wifi.markup = widgets.recolor("󰖩", Color.green)
 end)
-
 
 return wifi

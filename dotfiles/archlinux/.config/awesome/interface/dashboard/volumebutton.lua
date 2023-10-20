@@ -1,8 +1,8 @@
-local widgets = require("helpers.dashboardwidgets")
-local system = require("system.volume")
+local widgets = require "helpers.dashboardwidgets"
+local system = require "system.volume"
 
 -- Volume
-local volume_button = widgets.dashboard_button("")
+local volume_button = widgets.dashboard_button ""
 local volume_area = widgets.dashboard_box(volume_button)
 
 volume_button:connect_signal("button::press", function()

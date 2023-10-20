@@ -1,5 +1,5 @@
-local awful = require("awful")
-local notify = require("helpers.notifications")
+local awful = require "awful"
+local notify = require "helpers.notifications"
 
 local displays = {}
 
@@ -20,7 +20,7 @@ local external_connections = {
 }
 
 function displays.standard_dual_setup()
-    notify.normal("Setting eDP-1 + DP-2 dual monitor setup.")
+    notify.normal "Setting eDP-1 + DP-2 dual monitor setup."
     awful.spawn(string.format(cmd_xrandr_dual, "DP-2"), function(stdout)
         notify.normal("Successful display update" .. stdout)
     end)
@@ -43,22 +43,22 @@ function displays.update_displays()
             if (lines[1] == "eDP-1") or (lines[1] == "eDP-1-1") then
                 notify.normal("Only " .. lines[1] .. "found, killing remainder displays")
                 for _, i in pairs(external_connections) do
-                    notify.normal("Killing all external displays")
+                    notify.normal "Killing all external displays"
                     awful.spawn.easy_async(string.format(cmd_kill_display, i))
                 end
             else
-                notify.critical("eDP-1 or eDP-1-1 is not connected - use arandr")
+                notify.critical "eDP-1 or eDP-1-1 is not connected - use arandr"
             end
         elseif #lines == 2 then
             if lines[1] == "eDP-1" then
                 for _, v in pairs(lines) do
                     if v ~= "eDP-1" then
                         awful.spawn.easy_async(
-                                string.format(cmd_intel_xrandr_dual, v),
-                        -- Async sometimes gives a callback error is response is not handled properly
-                                function(stdout)
-                                    notify.normal("Successful display update" .. stdout)
-                                end
+                            string.format(cmd_intel_xrandr_dual, v),
+                            -- Async sometimes gives a callback error is response is not handled properly
+                            function(stdout)
+                                notify.normal("Successful display update" .. stdout)
+                            end
                         )
                     end
                 end
@@ -66,17 +66,17 @@ function displays.update_displays()
                 for _, v in pairs(lines) do
                     if v ~= "eDP-1-1" then
                         awful.spawn.easy_async(
-                                string.format(cmd_nvidia_xrandr_dual, v),
-                        -- Async sometimes gives a callback error is response is not handled properly
-                                function(stdout)
-                                    notify.normal("Successful display update" .. stdout)
-                                end
+                            string.format(cmd_nvidia_xrandr_dual, v),
+                            -- Async sometimes gives a callback error is response is not handled properly
+                            function(stdout)
+                                notify.normal("Successful display update" .. stdout)
+                            end
                         )
                     end
                 end
             end
         else
-            notify.critical("eDP-1 or eDP-1-1 is not connected - use arandr")
+            notify.critical "eDP-1 or eDP-1-1 is not connected - use arandr"
         end
     end)
 end

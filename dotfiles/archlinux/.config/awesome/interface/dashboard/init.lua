@@ -1,22 +1,22 @@
-local wibox = require("wibox")
+local wibox = require "wibox"
 
 -- helpers
-local widgets = require("helpers.dashboardwidgets")
+local widgets = require "helpers.dashboardwidgets"
 
 -- widgets
-local calendar_widget = require("interface.dashboard.calendar")
-local progressbar_widget = require("interface.dashboard.progressbars")
-local sliders_widget = require("interface.dashboard.sliders")
-local profile_widget = require("interface.dashboard.profile")
-local awesome_widget = require("interface.dashboard.awesome")
-local uptime_widget = require("interface.dashboard.uptime")
+local calendar_widget = require "interface.dashboard.calendar"
+local progressbar_widget = require "interface.dashboard.progressbars"
+local sliders_widget = require "interface.dashboard.sliders"
+local profile_widget = require "interface.dashboard.profile"
+local awesome_widget = require "interface.dashboard.awesome"
+local uptime_widget = require "interface.dashboard.uptime"
 
 -- boxes
-local bluetooth_area = require("interface.dashboard.bluetoothbutton")
-local display_area = require("interface.dashboard.displaybutton")
-local close_dashboard_area = require("interface.dashboard.closedashboardbutton")
-local volume_area = require("interface.dashboard.volumebutton")
-local wifi_area = require("interface.dashboard.wifibutton")
+local bluetooth_area = require "interface.dashboard.bluetoothbutton"
+local display_area = require "interface.dashboard.displaybutton"
+local close_dashboard_area = require "interface.dashboard.closedashboardbutton"
+local volume_area = require "interface.dashboard.volumebutton"
+local wifi_area = require "interface.dashboard.wifibutton"
 
 local awesome_area = widgets.dashboard_box(awesome_widget)
 local calendar_area = widgets.dashboard_box(calendar_widget)

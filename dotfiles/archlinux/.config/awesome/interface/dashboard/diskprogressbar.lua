@@ -1,7 +1,7 @@
-local widgets = require("helpers.dashboardwidgets")
+local widgets = require "helpers.dashboardwidgets"
 
 -- Disk
-local disk_icon = widgets.simple_icon("")
+local disk_icon = widgets.simple_icon ""
 local disk_progressbar = widgets.progressbar(100)
 local disk_text = widgets.simple_text()
 local disk = widgets.bar_group(disk_icon, disk_progressbar, disk_text)

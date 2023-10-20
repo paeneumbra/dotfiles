@@ -1,6 +1,6 @@
-local awful = require("awful")
+local awful = require "awful"
 
-local notify = require("helpers.notifications")
+local notify = require "helpers.notifications"
 
 local volume = {}
 
@@ -10,19 +10,19 @@ local cmd_volume_decrease = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-"
 
 function volume.toggle_volume()
     awful.spawn.easy_async_with_shell(cmd_mute, function()
-        notify.normal("Volume: Mute/Unmute!")
+        notify.normal "Volume: Mute/Unmute!"
     end)
 end
 
 function volume.increase()
     awful.spawn.easy_async_with_shell(cmd_volume_increase, function()
-        notify.normal("Volume: Increased")
+        notify.normal "Volume: Increased"
     end)
 end
 
 function volume.decrease()
     awful.spawn.easy_async_with_shell(cmd_volume_decrease, function()
-        notify.normal("Volume: Decreased")
+        notify.normal "Volume: Decreased"
     end)
 end
 

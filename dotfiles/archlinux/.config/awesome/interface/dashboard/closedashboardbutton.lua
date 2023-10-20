@@ -1,11 +1,11 @@
-local widgets = require("helpers.dashboardwidgets")
+local widgets = require "helpers.dashboardwidgets"
 
 -- close dashboard
-local exit_button = widgets.dashboard_button("󰩈")
+local exit_button = widgets.dashboard_button "󰩈"
 local exit_area = widgets.dashboard_box(exit_button)
 
 exit_button:connect_signal("button::press", function()
-    awesome.emit_signal("dashboard::toggle")
+    awesome.emit_signal "dashboard::toggle"
 end)
 
 exit_button:connect_signal("mouse::enter", function()

@@ -1,17 +1,17 @@
-local awful = require("awful")
-local bling = require("modules.bling")
+local awful = require "awful"
+local bling = require "modules.bling"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.spiral.dwindle,
     awful.layout.suit.floating,
-    bling.layout.centered
+    bling.layout.centered,
 }
 
 -- Client rules
 client.connect_signal("mouse::enter", function(c)
-    c:activate({ context = "mouse_enter", raise = false })
+    c:activate { context = "mouse_enter", raise = false }
 end)
 
 client.connect_signal("request::manage", function(c)

@@ -1,4 +1,4 @@
-local wibox = require("wibox")
+local wibox = require "wibox"
 
 local _widgets = {}
 
@@ -13,23 +13,23 @@ function _widgets.wibar_icon(icon, color)
     else
         wibar_markup = _widgets.recolor(icon, color)
     end
-    return wibox.widget({
+    return wibox.widget {
         markup = wibar_markup,
         font = Icon_Font,
         valign = "center",
         halign = "center",
         widget = wibox.widget.textbox,
-    })
+    }
 end
 
 function _widgets.wibar_text(icon, color)
-    return wibox.widget({
+    return wibox.widget {
         markup = _widgets.recolor(icon, color or Color.green),
         font = Font(18, "Bold"),
         valign = "center",
         halign = "center",
         widget = wibox.widget.textbox,
-    })
+    }
 end
 
 return _widgets

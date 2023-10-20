@@ -1,4 +1,4 @@
-local gco = require("gears.color")
+local gco = require "gears.color"
 
 local _icons = {}
 

@@ -1,8 +1,8 @@
-local widgets = require("helpers.dashboardwidgets")
-local system = require("system.wifi")
+local widgets = require "helpers.dashboardwidgets"
+local system = require "system.wifi"
 
 -- Wifi
-local wifi_button = widgets.dashboard_button("󰖩")
+local wifi_button = widgets.dashboard_button "󰖩"
 local wifi_area = widgets.dashboard_box(wifi_button)
 
 wifi_button:connect_signal("button::press", function()

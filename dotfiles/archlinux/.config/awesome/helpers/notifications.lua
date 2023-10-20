@@ -1,20 +1,20 @@
-local naughty = require("naughty")
+local naughty = require "naughty"
 
 local _notification = {}
 
 function _notification.normal(message)
-    naughty.notification({
+    naughty.notification {
         title = "󰗖 Info:",
         message = message,
-    })
+    }
 end
 
 function _notification.critical(message)
-    naughty.notification({
+    naughty.notification {
         urgency = "critical",
         title = "󰀪 Error:",
         message = message,
-    })
+    }
 end
 
 return _notification

@@ -1,11 +1,11 @@
-local wezterm = require("wezterm")
+local wezterm = require "wezterm"
 
 return {
-    font = wezterm.font_with_fallback({
+    font = wezterm.font_with_fallback {
         { family = "IosevkaTerm Nerd Font Mono", weight = "Medium" },
         "Fira Code",
-        "Material Design Icons"
-    }),
+        "Material Design Icons",
+    },
     warn_about_missing_glyphs = true,
     font_size = 13,
 
@@ -30,7 +30,7 @@ return {
     -- Coloscheme
     -- color_scheme = "Bright (base16)",
     color_scheme_dirs = {
-        os.getenv("HOME") .. "/.config/decorator/output"
+        os.getenv "HOME" .. "/.config/decorator/output",
     },
     color_scheme = "Wezterm",
 

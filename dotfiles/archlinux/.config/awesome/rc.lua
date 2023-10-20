@@ -10,28 +10,28 @@
 
 pcall(require, "luarocks.loader")
 --
-require("awful.autofocus")
+require "awful.autofocus"
 --
-require("errorhandler")
-require("startup")
-require("settings")
-require("theme")
-require("interface")
-require("signals")
-require("rules")
-require("layout")
-require("bindings")
-require("tags")
+require "errorhandler"
+require "startup"
+require "settings"
+require "theme"
+require "interface"
+require "signals"
+require "rules"
+require "layout"
+require "bindings"
+require "tags"
 --
 --- Enable for lower memory consumption
-local gears = require("gears")
+local gears = require "gears"
 collectgarbage("setpause", 110)
 collectgarbage("setstepmul", 1000)
-gears.timer({
-	timeout = 5,
-	autostart = true,
-	call_now = true,
-	callback = function()
-		collectgarbage("collect")
-	end,
-})
+gears.timer {
+    timeout = 5,
+    autostart = true,
+    call_now = true,
+    callback = function()
+        collectgarbage "collect"
+    end,
+}

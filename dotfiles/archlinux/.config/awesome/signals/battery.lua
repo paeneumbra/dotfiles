@@ -1,5 +1,5 @@
-local awful = require("awful")
-local gears = require("gears")
+local awful = require "awful"
+local gears = require "gears"
 
 -- This accommodates the presence of two batteries
 local cmd_battery_zero = "cat /sys/class/power_supply/BAT0/capacity 2>/dev/null | head -1"
@@ -45,11 +45,11 @@ local function get_bat()
     awesome.emit_signal("signal::battery", remainder_battery_zero, remainder_battery_one, charging)
 end
 
-gears.timer({
+gears.timer {
     timeout = 10,
     call_now = true,
     autostart = true,
     callback = function()
         get_bat()
     end,
-})
+}

@@ -1,7 +1,7 @@
-local widgets = require("helpers.dashboardwidgets")
+local widgets = require "helpers.dashboardwidgets"
 
 -- CPU Temperature
-local cpu_icon = widgets.simple_icon("")
+local cpu_icon = widgets.simple_icon ""
 local cpu_progressbar = widgets.progressbar(100) --Unknown max, however, 100 = bad
 local cpu_text = widgets.simple_text()
 local cpu = widgets.bar_group(cpu_icon, cpu_progressbar, cpu_text)

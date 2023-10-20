@@ -1,7 +1,7 @@
-local theme_assets = require("beautiful.theme_assets")
-local gfs = require("gears.filesystem")
+local theme_assets = require "beautiful.theme_assets"
+local gfs = require "gears.filesystem"
 
-local helper = require("helpers.icons")
+local helper = require "helpers.icons"
 local assets = gfs.get_configuration_dir() .. "/theme/assets/"
 local button_icon = assets .. "round_button.png"
 

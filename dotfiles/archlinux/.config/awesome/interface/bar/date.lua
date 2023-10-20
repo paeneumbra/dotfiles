@@ -1,4 +1,4 @@
-local widgets = require("helpers.wibarwidgets")
+local widgets = require "helpers.wibarwidgets"
 
 -- Date
 local date = widgets.wibar_text()

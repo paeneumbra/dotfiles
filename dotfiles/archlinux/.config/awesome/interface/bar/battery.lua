@@ -1,4 +1,4 @@
-local widgets = require("helpers.wibarwidgets")
+local widgets = require "helpers.wibarwidgets"
 
 -- Battery
 local battery = widgets.wibar_icon("", Color.green)

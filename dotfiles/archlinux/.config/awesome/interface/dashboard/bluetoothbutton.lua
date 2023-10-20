@@ -1,9 +1,8 @@
-local widgets = require("helpers.dashboardwidgets")
-local system = require("system.bluetooth")
-
+local widgets = require "helpers.dashboardwidgets"
+local system = require "system.bluetooth"
 
 -- Bluetooth
-local bluetooth_button = widgets.dashboard_button("󰂯")
+local bluetooth_button = widgets.dashboard_button "󰂯"
 local bluetooth_area = widgets.dashboard_box(bluetooth_button)
 
 bluetooth_button:connect_signal("button::press", function()

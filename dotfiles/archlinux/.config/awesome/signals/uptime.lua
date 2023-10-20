@@ -1,5 +1,5 @@
-local awful = require("awful")
-local gears = require("gears")
+local awful = require "awful"
+local gears = require "gears"
 
 local cmd_uptime = "uptime -p"
 
@@ -16,5 +16,5 @@ gears.timer {
     call_now = true,
     callback = function()
         get_status()
-    end
+    end,
 }

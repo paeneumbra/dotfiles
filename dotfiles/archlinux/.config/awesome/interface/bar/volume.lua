@@ -1,8 +1,8 @@
-local widgets = require("helpers.wibarwidgets")
-local system = require("system.volume")
+local widgets = require "helpers.wibarwidgets"
+local system = require "system.volume"
 
 -- Volume
-local volume = widgets.wibar_icon("")
+local volume = widgets.wibar_icon ""
 
 awesome.connect_signal("signal::volume", function(vol, mute)
     vol = tonumber(vol)

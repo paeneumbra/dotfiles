@@ -1,5 +1,5 @@
-local awful = require("awful")
-local gears = require("gears")
+local awful = require "awful"
+local gears = require "gears"
 
 local cmd_volume = "wpctl get-volume @DEFAULT_AUDIO_SINK@"
 
@@ -23,11 +23,11 @@ local function get_vol()
     end)
 end
 
-gears.timer({
+gears.timer {
     timeout = 2,
     call_now = true,
     autostart = true,
     callback = function()
         get_vol()
     end,
-})
+}
