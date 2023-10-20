@@ -24,10 +24,10 @@ repos:
     rev: v1.3.2
     hooks:
       - id: python-safety-dependencies-check
-        args: [ '--disable-telemetry' ]
+        args: ["--disable-telemetry"]
 
   - repo: https://github.com/psf/black
-    rev: 23.9.1
+    rev: 23.10.0
     hooks:
       - id: black
         exclude: ^dotfiles/common/.config/ranger
@@ -36,8 +36,8 @@ repos:
     rev: v2.4.0
     hooks:
       - id: conventional-pre-commit
-        stages: [ commit-msg ]
-        args: [ fix, feat, chore, docs, feat!, chore!, fix! ]
+        stages: [commit-msg]
+        args: [fix, feat, chore, docs, feat!, chore!, fix!]
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.37.0
@@ -47,3 +47,8 @@ repos:
           - --config
           - .markdownlint.yaml
           - --fix
+
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v0.18.2
+    hooks:
+      - id: stylua-system
