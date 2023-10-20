@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.0.1](https://github.com/simao-ferreira/workspace/compare/v3.0.0...v3.0.1) (2023-10-20)
+
+
+### Changed
+
+* Add decorator template for iterm - wip ([560fdb9](https://github.com/simao-ferreira/workspace/commit/560fdb94e2a9050789922b75b30d7e8f2814f5a7))
+* Add nvim pallete based of thescream ([f404493](https://github.com/simao-ferreira/workspace/commit/f404493749ab88f8eeeea54e511be5c7d342151b))
+* Add project the scream to workspace configuration ([9cdc3a8](https://github.com/simao-ferreira/workspace/commit/9cdc3a8dc4a553dd99dd6242be93498f457d5f35))
+* Create alias for common folders, nvim update ([40e5b7f](https://github.com/simao-ferreira/workspace/commit/40e5b7f69765cba2c5efa6836fc06dbd05108a16))
+* Fix printscreen configuration, update nvim version ([382ab75](https://github.com/simao-ferreira/workspace/commit/382ab755ecd8926a3a79f068c3c06561c4565862))
+* **gnome:** Update installation script ([0e8b955](https://github.com/simao-ferreira/workspace/commit/0e8b9552fda11ee9810b981d4f3f80949c7e70a6))
+* **infra:** Update neovim ([c3769e3](https://github.com/simao-ferreira/workspace/commit/c3769e390357d83b63db41f33c97fd993702ef6d))
+* Refactor gnome installation ([f3e480b](https://github.com/simao-ferreira/workspace/commit/f3e480bcce36fb70986ee4f215e18039f263a884))
+* remove cargo installation ([3fea72c](https://github.com/simao-ferreira/workspace/commit/3fea72cde4df39b6cac038609c746045214b1c07))
+* Update brewfile intallation for tfsec ([0b80373](https://github.com/simao-ferreira/workspace/commit/0b8037372f8656dfbaa1393510b8eacfa42cbd42))
+* Update decorator color schemes ([2772279](https://github.com/simao-ferreira/workspace/commit/2772279456cf8be4fd5e921167fcad85a685ea6a))
+* Update nvim ([29dc53d](https://github.com/simao-ferreira/workspace/commit/29dc53de62c60018d69a759ecae91d91c50f2614))
+* Update nvim and installation of nvim required packages ([76980a5](https://github.com/simao-ferreira/workspace/commit/76980a5f02c106c356008a5010a7787c70375b87))
+
 ## [3.0.0](https://github.com/simao-ferreira/workspace/compare/v2.0.1...v3.0.0) (2023-10-09)
 
 
