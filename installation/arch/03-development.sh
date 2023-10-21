@@ -15,7 +15,7 @@ PKGS=(
 	jdk17-openjdk
 	jdk-openjdk
 	kotlin
-	ktlint
+	# ktlint -- package is outdated
 	gradle
 	groovy
 
@@ -34,6 +34,7 @@ PKGS=(
 	python-black
 	python-ruff
 	python-pre-commit
+	python-cookiecutter
 	pip-tools
 
 	# IDE

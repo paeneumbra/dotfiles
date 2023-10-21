@@ -79,6 +79,7 @@ brew 'python@3.10'
 brew 'pipenv'
 brew 'pip-tools'
 brew 'virtualenv'
+brew 'cookiecutter'
 
 # kubernetes
 brew 'helm'
