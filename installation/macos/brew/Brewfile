@@ -80,6 +80,7 @@ brew 'pipenv'
 brew 'pip-tools'
 brew 'virtualenv'
 brew 'cookiecutter'
+brew 'poetry'
 
 # kubernetes
 brew 'helm'
