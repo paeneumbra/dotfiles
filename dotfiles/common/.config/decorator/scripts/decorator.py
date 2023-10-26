@@ -14,17 +14,16 @@ Template files:
 * Xresources
 * rofi
 * alacritty
-* wezterm - //TODO: does not reload automatically
+* wezterm - //Reloads by shortcut https://wezfurlong.org/wezterm/config/lua/keyassignment/ReloadConfiguration.html
 
 """
 
+import argparse
 import glob
 import json
 import os
-import sys
 import platform
-
-import argparse
+import sys
 
 __version__ = "3.0.1"
 
@@ -56,25 +55,14 @@ def define_arguments():
         "-c",
         "--colorscheme",
         type=str,
-        help="colorcheme name",
+        help="color cheme name",
         required=False,
     )
     parser.add_argument(
-        "-d",
-        "--dark",
-        action="store_true",
-        help="Defaults to gruvbox dark JSON colorscheme",
-    )
-    parser.add_argument(
         "-l",
-        "--light",
-        action="store_true",
-        help="Defaults to gruvbox light JSON colorscheme",
-    )
-    parser.add_argument(
         "--list",
         action="store_true",
-        help="Defaults to nordic JSON colorscheme",
+        help="Returns list of available color schemes",
     )
     return parser
 
@@ -85,12 +73,6 @@ def parse_args(parser: argparse.ArgumentParser):
 
     if len(sys.argv) <= 1:
         sys.exit("No arguments given, run decorate -h")
-
-    if args.light:
-        return colorscheme("gruvbox-light")
-
-    if args.dark:
-        return colorscheme("gruvbox-dark")
 
     if args.list:
         return decorator_colorschemes()
@@ -104,14 +86,14 @@ def parse_args(parser: argparse.ArgumentParser):
 
 def assert_directory_exists(directory):
     if os.path.exists(directory) is False:
-        sys.exit(f"{directory} does not exist")
+        sys.exit(f"Required {directory} does not exist")
     if not os.listdir(directory):
-        sys.exit(f"{directory} is empty")
+        sys.exit(f"Required {directory} is empty")
 
 
 def assert_file_exists(colorscheme):
     if colorscheme is None or os.path.exists(colorscheme) is False:
-        sys.exit(f"{colorscheme} does not exist")
+        sys.exit(f"File {colorscheme} does not exist")
     return colorscheme
 
 
@@ -135,8 +117,9 @@ def colorscheme(name: str):
         sys.exit(f"Colorscheme {name} is not present in decorator folder")
 
 
-def terminal_sexy_json(json_colorscheme):
-    with open(json_colorscheme) as json_file:
+def terminal_sexy_json(filename):
+    """Opens file and returns a json"""
+    with open(filename) as json_file:
         return json.load(json_file)
 
 
@@ -155,6 +138,7 @@ def parse_colors(json_file: dict) -> dict:
 
 
 def get_lines(filename: str) -> list:
+    """Open file and return list of lines"""
     with open(filename, "rt") as data:
         return list(data)
 
@@ -169,7 +153,31 @@ def replace_template(line: str, colorscheme_dict: dict) -> str:
     return line
 
 
+def get_component(color_hex, component):
+    """Convert hex colors to rgb components"""
+    color_hex = color_hex.lstrip("#")
+    num = 0.0
+    if component == "r":
+        num = int("0x" + color_hex[0:2], 16) / 255
+    elif component == "g":
+        num = int("0x" + color_hex[2:4], 16) / 255
+    elif component == "b":
+        num = int("0x" + color_hex[4:6], 16) / 255
+    return f"{num:.16f}"
+
+
+def get_iterm_colors(color_dict: dict):
+    """Return dict with rgb component colors"""
+    iterm_colors = {}
+    for color, hex in color_dict.items():
+        iterm_colors[f"{color}.r"] = get_component(hex, "r")
+        iterm_colors[f"{color}.g"] = get_component(hex, "g")
+        iterm_colors[f"{color}.b"] = get_component(hex, "b")
+    return iterm_colors
+
+
 def replace_colors(lines: list, colorscheme_dict: dict) -> list:
+    """Replace line placeholder variables with colors"""
     new_lines = []
     for line in lines:
         res = replace_template(line, colorscheme_dict)
@@ -185,30 +193,42 @@ def write_new_file(filepath: str, lines: list):
 
 
 def reload_xresources():
+    # Reload linux system colors, needed for rofi, urxvt, awesome, etc...
     os.system(f"xrdb {HOME}/.Xresources")
 
 
 def reload_awesome():
+    # Reload awesome
     os.system("echo 'awesome.restart()' | awesome-client")
 
 
+# Validate required directories exist
 assert_directory_exists(TEMPLATE_DIR)
 assert_directory_exists(OUTPUT_DIR)
 assert_directory_exists(COLORSCHEMES)
 
+# Load templates
 template_files = glob.glob(f"{TEMPLATE_DIR}/*")
+
+# Evaluate arguments for loading color schemes
 arguments = define_arguments()
 parsed_arguments = parse_args(arguments)
 
+# Parse colors from given file argument
 parsed_colorscheme = parse_colors(terminal_sexy_json(parsed_arguments))
 
+# Create output files
 for path in template_files:
     file_lines = get_lines(path)
-    if "iterm.itermcolors" not in path:
+    if "iterm.itermcolors" in path:
+        iterm = get_iterm_colors(parsed_colorscheme)
+        new_file_lines = replace_colors(file_lines, iterm)
+    else:
         new_file_lines = replace_colors(file_lines, parsed_colorscheme)
-        write_new_file(path, new_file_lines)
+    write_new_file(path, new_file_lines)
 
-reload_xresources()
-
-if platform.system() == "Linux" and SESSION != "gnome":
-    reload_awesome()
+# Reload environment
+if platform.system() == "Linux":
+    reload_xresources()
+    if SESSION != "gnome":
+        reload_awesome()
