@@ -1,20 +1,13 @@
 {
     "name": "workspace/projects",
     "repos": [
-        "git@github.com:simao-ferreira/exchange-rate-api.git",
-        "git@github.com:simao-ferreira/game-of-life.git",
         "git@github.com:simao-ferreira/pyresume.git",
         "git@github.com:simao-ferreira/sheepskin.git",
         "git@github.com:simao-ferreira/thescream.nvim.git",
         {
             "name": "archived",
             "repos": [
-                "git@github.com:simao-ferreira/macos.git",
                 "git@github.com:simao-ferreira/pi-dotfiles.git",
-                "git@github.com:simao-ferreira/scratchpad.git",
-                "git@github.com:simao-ferreira/dotfiles.git",
-                "git@github.com:simao-ferreira/PD_ThreeRow.git",
-                "git@github.com:simao-ferreira/SpaceWinvaders.git",
                 "git@github.com:simao-ferreira/deprecated-static-site.git"
             ]
         },
@@ -31,7 +24,6 @@
         {
             "name": "repositories",
             "repos": [
-                "git@github.com:archlinux/archinstall.git",
                 "git@github.com:tldr-pages/tldr.git"
             ]
         }
