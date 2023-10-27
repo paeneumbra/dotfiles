@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.0.2](https://github.com/simao-ferreira/workspace/compare/v3.0.1...v3.0.2) (2023-10-27)
+
+
+### Changed
+
+* Add cookiecutter to installation scripts, include cookiecutter base in workspace ([d2646e1](https://github.com/simao-ferreira/workspace/commit/d2646e1bdd98d745ad25feaf40025074863f5f87))
+* Add lazygit to installation scripts ([ff854a2](https://github.com/simao-ferreira/workspace/commit/ff854a2f7d940887b2d5d279d2273c9e2b89a1c1))
+* Add poetry to tools, refactor workspace json ([a6306a6](https://github.com/simao-ferreira/workspace/commit/a6306a6acaa6a73570743165e65c703b7e2a8669))
+* Add precommit, linting and formatting config for lua ([f72169e](https://github.com/simao-ferreira/workspace/commit/f72169eaa91f5a42396d59a5a11c3b064b404bd8))
+* Apply starship confiog schema ([6a5d36d](https://github.com/simao-ferreira/workspace/commit/6a5d36d019640086e25ccb74b4fe568ccf38db2a))
+* Apply stylua formatting ([805310f](https://github.com/simao-ferreira/workspace/commit/805310f5036aba51431d32a367dbe0859f72a959))
+* Clean workspace setup repositories ([7ba942f](https://github.com/simao-ferreira/workspace/commit/7ba942f06b37d1fa173465aefe326bc75882a42c))
+* Update decorator script, include iterm colors generation ([2950760](https://github.com/simao-ferreira/workspace/commit/295076067df062e066e9fd0c1567ed90bf7ac7e8))
+* Update nvim ([891a311](https://github.com/simao-ferreira/workspace/commit/891a3112f337f54f491d60f6384b1cdb66428271))
+
 ## [3.0.1](https://github.com/simao-ferreira/workspace/compare/v3.0.0...v3.0.1) (2023-10-20)
 
 
