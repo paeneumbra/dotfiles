@@ -1,5 +1,24 @@
 # Changelog
 
+## 4.0.0 (2023-10-28)
+
+### Breaking Change
+
+- Migrate to commitizen
+
+### Patch
+
+- Include cookiecutter project for python, add commitizen to installation
+- Clean workspace setup repositories
+- Update decorator script, include iterm colors generation
+- Apply starship confiog schema
+- Add poetry to tools, refactor workspace json
+- Add cookiecutter to installation scripts, include cookiecutter base in workspace
+- Add lazygit to installation scripts
+- Apply stylua formatting
+- Update nvim
+- Add precommit, linting and formatting config for lua
+
 ## [3.0.1](https://github.com/simao-ferreira/workspace/compare/v3.0.0...v3.0.1) (2023-10-20)
 
 
