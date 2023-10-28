@@ -81,6 +81,7 @@ brew 'pip-tools'
 brew 'virtualenv'
 brew 'cookiecutter'
 brew 'poetry'
+brew 'commitizen'
 
 # kubernetes
 brew 'helm'

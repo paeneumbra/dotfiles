@@ -18,7 +18,8 @@
                 "git@github.com:simao-ferreira/python-template.git",
                 "git@github.com:simao-ferreira/mvn-template.git",
                 "git@github.com:simao-ferreira/obsidian-template.git",
-                "git@github.com:simao-ferreira/cookiecutter-base.git"
+                "git@github.com:simao-ferreira/cookiecutter-base.git",
+                "git@github.com:simao-ferreira/cookiecutter-python.git"
             ]
         },
         {

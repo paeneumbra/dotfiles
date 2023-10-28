@@ -36,6 +36,7 @@ PKGS=(
 	python-pre-commit
 	python-cookiecutter
     python-poetry
+    python-commmitizen
 	pip-tools
 
 	# IDE
