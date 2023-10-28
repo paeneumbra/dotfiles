@@ -27,17 +27,16 @@ repos:
         args: ["--disable-telemetry"]
 
   - repo: https://github.com/psf/black
-    rev: 23.10.0
+    rev: 23.10.1
     hooks:
       - id: black
         exclude: ^dotfiles/common/.config/ranger
 
-  - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: v2.4.0
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: 3.12.0
     hooks:
-      - id: conventional-pre-commit
+      - id: commitizen
         stages: [commit-msg]
-        args: [fix, feat, chore, docs, feat!, chore!, fix!]
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.37.0
