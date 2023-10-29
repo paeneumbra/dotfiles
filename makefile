@@ -39,3 +39,4 @@ update-pre-commit:
 
 bump:
 	cz bump
+	git push --tags
