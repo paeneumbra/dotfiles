@@ -1,5 +1,15 @@
 # Changelog
 
+## v4.1.0 (2023-10-29)
+
+### Feature
+
+- Add github action for automatic bump
+
+### Fix
+
+- Reverting tag test, it will push a tag pointing to no commit
+
 ## v4.0.2 (2023-10-29)
 
 ### Fix
