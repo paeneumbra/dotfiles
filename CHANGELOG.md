@@ -1,6 +1,13 @@
 # Changelog
 
-## 4.0.0 (2023-10-28)
+## v4.0.1 (2023-10-29)
+
+### Fix
+
+- Refactor makefile
+- Fix installation scripts for commitizen, add pipx
+
+## v4.0.0 (2023-10-28)
 
 ### Breaking Change
 
