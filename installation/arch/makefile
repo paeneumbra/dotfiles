@@ -16,6 +16,7 @@ setup-extra:
 
 setup-development:
 	./03-development.sh
+	./05-pipx.sh
 
 stow-config:
 	mkdir -p $(HOME)/.config

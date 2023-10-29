@@ -27,6 +27,7 @@ PKGS=(
 	# Python
 	python
 	python-pip
+    python-pipx
 	python-virtualenv
 	python-pipenv
 	python-pynvim
@@ -36,7 +37,6 @@ PKGS=(
 	python-pre-commit
 	python-cookiecutter
     python-poetry
-    python-commmitizen
 	pip-tools
 
 	# IDE
