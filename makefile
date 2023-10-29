@@ -2,9 +2,13 @@
 
 OS := $(shell uname -s)
 
+# Workspace setup
 setup-repos:
 	@echo "Requires ssh configured in github"
 	./bin/cloneworkspace.py -s ./workspace.json -r
+
+update-workspace-repos:
+	python3 ./bin/updategitrepos.py --workspace -r
 
 start-k2:
 ifeq ($(OS),Darwin)
@@ -14,16 +18,17 @@ else
 	sudo systemctl start keychron
 endif
 
-bundle:
+# MacOS/Linux system update
+update-system:
 ifeq ($(OS), Darwin)
+	@echo "Updating MacOS packages"
 	brew bundle --file $(HOME)/workspace/installation/macos/brew/Brewfile
 else
-	@echo "Only available for macos"
+	@echo "Updating Linux packages"
+	yay -Syu --noconfirm
 endif
 
-update-workspace-repos:
-	python3 ./bin/updategitrepos.py --workspace -r
-
+# Repository helpers
 pre-commit: setup-pre-commit update-pre-commit
 
 setup-pre-commit:
@@ -31,3 +36,6 @@ setup-pre-commit:
 
 update-pre-commit:
 	pre-commit autoupdate
+
+bump:
+	cz bump
