@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.1 (2023-10-31)
+
+### Patch
+
+- Refactor brew installation file
+
 ## v4.1.0 (2023-10-29)
 
 ### Feature
