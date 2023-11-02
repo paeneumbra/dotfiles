@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.1.2 (2023-11-02)
+
+### Patch
+
+- Add productivity tools to installation scripts
+- Update workspace repos
+
 ## v4.1.1 (2023-10-31)
 
 ### Patch
