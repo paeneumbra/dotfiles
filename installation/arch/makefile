@@ -39,6 +39,9 @@ setup-audio:
 setup-gaming:
 	./08-games.sh
 
+setup-productivity:
+	./06-productivity.sh
+
 init-submodules:
 	@echo "Requires ssh configured in github"
 	@echo "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"

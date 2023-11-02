@@ -29,7 +29,7 @@ brew 'poetry'
 brew 'commitizen'
 brew 'pipx'
 brew 'awscli'
-brew 'httpie'
+# brew 'httpie'
 
 # Jvm
 brew 'gradle'
@@ -76,7 +76,7 @@ brew 'zsh-syntax-highlighting'
 
 # db
 cask 'dbeaver-community'
-brew 'postgresql@14'
+brew 'postgresql'
 
 # lua
 brew 'lua'
@@ -118,8 +118,8 @@ cask 'iterm2'
 cask 'jetbrains-toolbox'
 cask 'microsoft-office'
 cask 'microsoft-teams'
-cask 'obsidian'
-cask 'postman'
+# cask 'postman'
+# cask 'insomnia'
 cask 'slack'
 cask 'spectacle'
 cask 'spotify', args: { require_sha: false }
@@ -132,7 +132,11 @@ cask 'font-hack-nerd-font'
 cask 'font-iosevka'
 cask 'font-iosevka-nerd-font'
 
+# productivity
+cask 'obsidian'
+# cask 'ticktick'
+
 # hardware
-cask 'zsa-wally'
-cask 'displaylink'
-cask 'displaylink-login-extension'
+# cask 'zsa-wally'
+# cask 'displaylink'
+# cask 'displaylink-login-extension'
