@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.3 (2023-11-05)
+
+### Fix
+
+- Remove jre installation from scripts for archlinux to avoid conflict
+
 ## v4.1.2 (2023-11-02)
 
 ### Patch
