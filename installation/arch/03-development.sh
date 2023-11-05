@@ -10,7 +10,6 @@ PKGS=(
 	jre8-openjdk
 	jre11-openjdk
 	jre17-openjdk
-	jre-openjdk
 	jdk11-openjdk
 	jdk17-openjdk
 	jdk-openjdk
