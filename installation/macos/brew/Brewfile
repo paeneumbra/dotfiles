@@ -44,6 +44,7 @@ brew 'scala'
 
 # binaries
 brew 'base64'
+brew 'bat'
 brew 'bottom'
 brew 'coreutils'
 brew 'curl'

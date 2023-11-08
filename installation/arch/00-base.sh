@@ -18,6 +18,7 @@ PKGS=(
 	# Apps
 	alacritty
 	arandr
+    bat
 	bottom
 	fd
 	feh
