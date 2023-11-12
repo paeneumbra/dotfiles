@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.1.4 (2023-11-12)
+
+### Patch
+
+- Update paths for macos
+- Add bat to installation scripts
+
 ## v4.1.3 (2023-11-05)
 
 ### Fix
