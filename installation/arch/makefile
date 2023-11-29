@@ -19,7 +19,7 @@ setup-development:
 	./05-pipx.sh
 
 stow-config:
-	mkdir -p $(HOME)/.config
+	mkdir -p $(HOME)/.config/gtk-3.0
 	exec stow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) common
 	exec stow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) archlinux
 
