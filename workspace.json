@@ -15,7 +15,6 @@
             "name": "templates",
             "repos": [
                 "git@github.com:simao-ferreira/gradle-template.git",
-                "git@github.com:simao-ferreira/python-template.git",
                 "git@github.com:simao-ferreira/mvn-template.git",
                 "git@github.com:simao-ferreira/obsidian-template.git",
                 "git@github.com:simao-ferreira/cookiecutter-base.git",
