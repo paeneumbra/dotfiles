@@ -5,7 +5,6 @@ tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/services'
-tap 'homebrew/cask-drivers'
 tap 'int128/kubelogin'
 
 # Make sure apps get installed in system Applications dir
@@ -85,6 +84,7 @@ brew 'stylua'
 brew 'luarocks'
 
 # kubernetes
+brew 'k9s'
 brew 'helm'
 brew 'kubectl'
 brew 'int128/kubelogin/kubelogin'
@@ -117,6 +117,7 @@ cask 'firefox'
 cask 'firefox-developer-edition'
 cask 'iterm2'
 cask 'jetbrains-toolbox'
+cask 'keepassxc'
 cask 'microsoft-office'
 cask 'microsoft-teams'
 # cask 'postman'
@@ -135,7 +136,8 @@ cask 'font-iosevka-nerd-font'
 
 # productivity
 cask 'obsidian'
-# cask 'ticktick'
+cask 'ticktick'
+brew 'magic-wormhole'
 
 # hardware
 # cask 'zsa-wally'
