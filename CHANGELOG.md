@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.7 (2023-12-01)
+
+### Fix
+
+- Update workspace repos
+
 ## v4.1.6 (2023-12-01)
 
 ### Patch
