@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.8 (2023-12-04)
+
+### Patch
+
+- Replace macos spectacle with rectangle
+
 ## v4.1.7 (2023-12-01)
 
 ### Fix
