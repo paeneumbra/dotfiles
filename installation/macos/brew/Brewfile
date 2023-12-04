@@ -121,9 +121,9 @@ cask 'keepassxc'
 cask 'microsoft-office'
 cask 'microsoft-teams'
 # cask 'postman'
-# cask 'insomnia'
+cask 'insomnia'
 cask 'slack'
-cask 'spectacle'
+cask 'rectangle'
 cask 'spotify', args: { require_sha: false }
 cask 'wezterm'
 
