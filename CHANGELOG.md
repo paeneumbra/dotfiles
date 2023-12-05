@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.9 (2023-12-05)
+
+### Patch
+
+- Update macos installation and configuration
+
 ## v4.1.8 (2023-12-04)
 
 ### Patch
