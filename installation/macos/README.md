@@ -75,3 +75,7 @@ Set up all required application through brew
 ```shell
 brew bundle
 ```
+
+### Sdkman
+
+WIP: Used for installing java, kotlin, groovy, gradle, scala and maven

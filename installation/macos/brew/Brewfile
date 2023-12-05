@@ -31,15 +31,8 @@ brew 'awscli'
 # brew 'httpie'
 
 # Jvm
-brew 'gradle'
-brew 'groovy'
-brew 'kotlin'
+# java, groovy, scala, kotlin, maven and gradle are managed by sdkman
 brew 'ktlint'
-brew 'maven'
-cask 'zulu8'
-cask 'zulu11'
-cask 'zulu17'
-brew 'scala'
 
 # binaries
 brew 'base64'
