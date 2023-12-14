@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.10 (2023-12-14)
+
+### Patch
+
+- Update mac installation files
+
 ## v4.1.9 (2023-12-05)
 
 ### Patch
