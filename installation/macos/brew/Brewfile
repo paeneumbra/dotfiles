@@ -5,7 +5,6 @@ tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/services'
-tap 'int128/kubelogin'
 
 # Make sure apps get installed in system Applications dir
 cask_args appdir: '/Applications'
@@ -17,7 +16,6 @@ brew 'git-filter-repo'
 
 # python
 brew 'python'
-brew 'python3'
 brew 'pipenv'
 brew 'pip-tools'
 brew 'virtualenv'
@@ -27,7 +25,6 @@ brew 'cookiecutter'
 brew 'poetry'
 brew 'commitizen'
 brew 'pipx'
-brew 'awscli'
 # brew 'httpie'
 
 # Jvm
@@ -43,7 +40,6 @@ brew 'curl'
 brew 'fd'
 brew 'findutils'
 brew 'fzf'
-brew 'glow'
 brew 'gnupg'
 brew 'gnutls'
 brew 'grep'
@@ -67,9 +63,16 @@ brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 
+
+# aws
+# brew 'awscli'
+
+# azure
+# brew 'azure-cli'
+
 # db
-cask 'dbeaver-community'
 brew 'postgresql'
+brew 'postgis'
 
 # lua
 brew 'lua'
@@ -80,15 +83,21 @@ brew 'luarocks'
 brew 'k9s'
 brew 'helm'
 brew 'kubectl'
-brew 'int128/kubelogin/kubelogin'
+# brew 'kustomize'
+brew 'kubectx'
+tap 'boz/repo'
+brew 'boz/repo/kail'
+
+# jwt
+tap 'mike-engel/jwt-cli'
+brew 'jwt-cli'
 
 # terraform
-brew 'tfenv'
+brew 'terraform'
 brew 'tflint'
-brew 'tfsec'
-
-# vscode
-cask 'visual-studio-code'
+# terraform and tfenv conflict if both are installed
+# brew 'tfenv'
+# brew 'tfsec'
 
 # frontend
 brew 'yarn'
@@ -97,28 +106,25 @@ brew 'node'
 
 # docker
 cask 'docker'
-brew 'docker-compose'
-
-# diagrams
-brew 'plantuml'
-brew 'graphviz'
 
 # applications
-cask 'alacritty'
 cask 'chromium'
 cask 'firefox'
 cask 'firefox-developer-edition'
+cask 'insomnia'
 cask 'iterm2'
 cask 'jetbrains-toolbox'
 cask 'keepassxc'
 cask 'microsoft-office'
 cask 'microsoft-teams'
+cask 'obsidian'
 # cask 'postman'
-cask 'insomnia'
-cask 'slack'
 cask 'rectangle'
+cask 'slack'
 cask 'spotify', args: { require_sha: false }
+cask 'ticktick'
 cask 'wezterm'
+
 
 # fonts
 cask 'font-fira-code'
@@ -127,12 +133,5 @@ cask 'font-hack-nerd-font'
 cask 'font-iosevka'
 cask 'font-iosevka-nerd-font'
 
-# productivity
-cask 'obsidian'
-cask 'ticktick'
-brew 'magic-wormhole'
-
 # hardware
 # cask 'zsa-wally'
-# cask 'displaylink'
-# cask 'displaylink-login-extension'

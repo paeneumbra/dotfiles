@@ -25,10 +25,10 @@ pynvim:
 
 setup-sdkman:
 	curl -s "https://get.sdkman.io" | bash
-	# source "$(HOME)/.sdkman/bin/sdkman-init.sh"
-	# sdk install java
-	# sdk install kotlin
-	# sdk install scala
-	# sdk install groovy
-	# sdk install gradle
-	# sdk install maven
+	@echo 'Now run the following commands'
+	@echo 'sdk install java'
+	@echo 'sdk install kotlin'
+	@echo 'sdk install scala'
+	@echo 'sdk install groovy'
+	@echo 'sdk install gradle'
+	@echo 'sdk install maven'
