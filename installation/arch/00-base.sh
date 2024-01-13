@@ -18,7 +18,7 @@ PKGS=(
 	# Apps
 	alacritty
 	arandr
-    bat
+	bat
 	bottom
 	fd
 	feh
@@ -44,6 +44,7 @@ PKGS=(
 	ueberzug
 	wmname
 	xclip
+	zoxide
 	zathura
 	zathura-cb
 	zathura-pdf-mupdf

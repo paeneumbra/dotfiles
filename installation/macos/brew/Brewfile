@@ -111,7 +111,6 @@ cask 'docker'
 cask 'chromium'
 cask 'firefox'
 cask 'firefox-developer-edition'
-cask 'insomnia'
 cask 'iterm2'
 cask 'jetbrains-toolbox'
 cask 'keepassxc'
@@ -125,7 +124,6 @@ cask 'spotify', args: { require_sha: false }
 cask 'ticktick'
 cask 'wezterm'
 
-
 # fonts
 cask 'font-fira-code'
 cask 'font-fira-mono-nerd-font'
@@ -135,3 +133,10 @@ cask 'font-iosevka-nerd-font'
 
 # hardware
 # cask 'zsa-wally'
+
+# In test
+cask 'insomnia'
+brew 'lazydocker'
+cask 'microsoft-edge'
+brew 'ollama'
+brew 'zoxide'
