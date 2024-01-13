@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.11 (2024-01-13)
+
+### Patch
+
+- Add zoxide to experimental tools
+
 ## v4.1.10 (2023-12-14)
 
 ### Patch
