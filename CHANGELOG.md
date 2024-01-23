@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.12 (2024-01-23)
+
+### Fix
+
+- Configure zoxide as zimfw module
+
 ## v4.1.11 (2024-01-13)
 
 ### Patch
