@@ -11,9 +11,10 @@ zmodule completion
 
 # Others
 zmodule nnao45/zsh-kubectl-completion
-zmodule eastokes/aws-plugin-zsh
+# zmodule eastokes/aws-plugin-zsh
 zmodule srijanshetty/zsh-pip-completion
 zmodule greymd/docker-zsh-completion
+zmodule kiesman99/zim-zoxide
 
 # Modules that must be initialized last
 zmodule zsh-users/zsh-autosuggestions
