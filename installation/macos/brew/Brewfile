@@ -13,6 +13,7 @@ cask_args appdir: '/Applications'
 brew 'git'
 brew 'git-extras'
 brew 'git-filter-repo'
+brew 'lazygit'
 
 # python
 brew 'python'
@@ -44,7 +45,6 @@ brew 'gnupg'
 brew 'gnutls'
 brew 'grep'
 brew 'jq'
-brew 'lazygit'
 brew 'nano'
 brew 'nvim'
 brew 'openssl'
@@ -58,6 +58,7 @@ brew 'trash'
 brew 'tree'
 brew 'wget'
 brew 'yq'
+brew 'zoxide'
 brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
@@ -72,7 +73,6 @@ brew 'zsh-syntax-highlighting'
 
 # db
 brew 'postgresql'
-brew 'postgis'
 
 # lua
 brew 'lua'
@@ -99,18 +99,24 @@ brew 'tflint'
 # brew 'tfenv'
 # brew 'tfsec'
 
+# Kafka
+brew "kcat"
+
 # frontend
 brew 'yarn'
+# brew 'nvm'
 brew 'npm'
 brew 'node'
 
 # docker
 cask 'docker'
+brew 'lazydocker'
 
 # applications
 cask 'chromium'
 cask 'firefox'
 cask 'firefox-developer-edition'
+# cask 'insomnia'
 cask 'iterm2'
 cask 'jetbrains-toolbox'
 cask 'keepassxc'
@@ -122,6 +128,7 @@ cask 'rectangle'
 cask 'slack'
 cask 'spotify', args: { require_sha: false }
 cask 'ticktick'
+cask 'visual-studio-code'
 cask 'wezterm'
 
 # fonts
@@ -132,11 +139,11 @@ cask 'font-iosevka'
 cask 'font-iosevka-nerd-font'
 
 # hardware
-# cask 'zsa-wally'
+cask 'keymapp'
+
+# AI
+brew 'ollama'
 
 # In test
-cask 'insomnia'
-brew 'lazydocker'
-cask 'microsoft-edge'
-brew 'ollama'
-brew 'zoxide'
+# brew 'magic-wormhole'
+# brew 'microsoft-edge'
