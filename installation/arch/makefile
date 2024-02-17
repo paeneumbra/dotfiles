@@ -1,62 +1,65 @@
 # Makefile
+.DEFAULT_GOAL := help
 
-setup-base:
+SDKMAN := $(HOME)/.sdkman/bin/sdkman-init.sh
+
+base-setup:
 	./00-base.sh
 
-setup-yay:
+yay-setup:
 	mkdir -p $(HOME)/projects/repositories/yay
 	git clone https://aur.archlinux.org/yay.git projects/repositories/yay
 	(cd $(HOME)/projects/repositories/yay && makepkg -si)
 
-setup-awesome:
+awesomewm-setup:
 	./01-awesomewm.sh
 
-setup-extra:
+extra-setup:
 	./02-extras.sh
 
-setup-development:
+development-setup:
 	./03-development.sh
 	./05-pipx.sh
 
-stow-config:
+stow-setup:
 	mkdir -p $(HOME)/.config/gtk-3.0
 	exec stow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) common
 	exec stow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) archlinux
 
-setup-zsh:
+zsh-setup:
 	mkdir -p $(HOME)/.cache/zsh
 	chsh -s $$(which zsh)
 	sudo chsh -s $$(which zsh)
 	@echo "Restart to enable zsh"
 
-setup-audio:
+audio-setup:
 	./04-audio.sh
 	systemctl --user enable --now pipewire
 	systemctl --user enable --now pipewire
 	systemctl --user enable --now wireplumber
 	sudo systemctl enable --now bluetooth.service
 
-setup-gaming:
+gaming-setup:
 	./08-games.sh
 
-setup-productivity:
+productivity-setup:
 	./06-productivity.sh
 
-init-submodules:
+git-submodules-init:
 	@echo "Requires ssh configured in github"
 	@echo "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
 	git submodule init
 	git submodule update
 
-setup-repos:
+repository-setup:
 	@echo "Requires ssh configured in github"
 	@echo "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
 	$(HOME)/workspace/bin/cloneworkspace.py -s ./workspace.json -r
 
-copy-mimelist:
+mimelist-copy:
 	cp $(HOME)/workspace/installation/arch/extras/mimeapps.list $(HOME)/.config
 
-setup-logiops:
+logiops-setup:
 	sudo pacman -S cmake libevdev libconfig pkgconf
 	mkdir -p $(HOME)/workspace/projects/repositories/logiops
 	git clone https://github.com/PixlOne/logiops.git projects/repositories/logiops
@@ -65,16 +68,37 @@ setup-logiops:
 	(cd $(HOME)/workspace/projects/repositories/logiops/build && sudo make install)
 	sudo systemctl enable --now logid
 
-setup-k2:
+k2-setup:
 	@echo "https://github.com/adam-savard/keyboard-function-keys-linux"
 	sudo cp $(HOME)/workspace/installation/arch/extras/keychron.service /etc/systemd/system/
 	sudo systemctl enable --now keychron
 
-setup-login-manager:
+login-manager-setup:
 	@echo "Enable gdm"
 	sudo systemctl enable gdm
 	sudo systemctl start gdm
 
-setup-gnome: stow-config
+gnome-setup: stow-setup
 	@echo "Gnome requires unique user"
 	./01-gnome.sh
+
+sdkman-setup:
+	@. $(SDKMAN)
+ifndef SDKMAN_DIR
+	@curl -Ss "https://get.sdkman.io" | bash
+	@source $(SDKMAN)
+	ifndef SDKMAN_DIR
+		SDKMAN_EXISTS := @echo "SDKMAN_VERSION is undefined" && exit 1
+	endif
+endif
+
+	@. $(SDKMAN) && echo N | sdk install java
+	@. $(SDKMAN) && echo N | sdk install kotlin
+	@. $(SDKMAN) && echo N | sdk install scala
+	@. $(SDKMAN) && echo N | sdk install groovy
+	@. $(SDKMAN) && echo N | sdk install gradle
+	@. $(SDKMAN) && echo N | sdk install maven
+
+	@printf "\xE2\x9C\x94 "
+	@printf "sdkman"
+	@printf "\n"

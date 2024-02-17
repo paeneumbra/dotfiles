@@ -3,14 +3,14 @@
 OS := $(shell uname -s)
 
 # Workspace setup
-setup-repos:
+repositories-update:
 	@echo "Requires ssh configured in github"
 	./bin/cloneworkspace.py -s ./workspace.json -r
 
-update-workspace-repos:
+workspace-repositories-update:
 	python3 ./bin/updategitrepos.py --workspace -r
 
-start-k2:
+k2-start:
 ifeq ($(OS),Darwin)
 	@echo "Not available for macos"
 else
@@ -19,7 +19,7 @@ else
 endif
 
 # MacOS/Linux system update
-update-system:
+system-update:
 ifeq ($(OS), Darwin)
 	@echo "Updating MacOS packages"
 	brew bundle --file $(HOME)/workspace/installation/macos/brew/Brewfile
@@ -29,12 +29,12 @@ else
 endif
 
 # Repository helpers
-pre-commit: setup-pre-commit update-pre-commit
+pre-commit: pre-commit-setup pre-commit-update
 
-setup-pre-commit:
+pre-commit-setup:
 	pre-commit install
 
-update-pre-commit:
+pre-commit-update:
 	pre-commit autoupdate
 
 bump:
