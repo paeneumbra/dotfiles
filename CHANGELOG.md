@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.14 (2024-02-17)
+
+### Patch
+
+- Refactor makefiles, add sdkman installation
+
 ## v4.1.13 (2024-02-17)
 
 ### Patch
