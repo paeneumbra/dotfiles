@@ -7,7 +7,6 @@ zmodule fzf
 # Prompt
 zmodule duration-info
 zmodule zsh-users/zsh-completions
-zmodule completion
 
 # Others
 zmodule nnao45/zsh-kubectl-completion
@@ -17,6 +16,7 @@ zmodule greymd/docker-zsh-completion
 zmodule kiesman99/zim-zoxide
 
 # Modules that must be initialized last
+zmodule completion
 zmodule zsh-users/zsh-autosuggestions
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
