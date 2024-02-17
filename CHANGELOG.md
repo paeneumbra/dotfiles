@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.16 (2024-02-17)
+
+### Patch
+
+- Update wezterm configuration
+
 ## v4.1.15 (2024-02-17)
 
 ### Patch
