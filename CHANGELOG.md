@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.15 (2024-02-17)
+
+### Patch
+
+- Update pre commit configuration
+
 ## v4.1.14 (2024-02-17)
 
 ### Patch
