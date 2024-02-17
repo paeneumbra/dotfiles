@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.1.13 (2024-02-17)
+
+### Patch
+
+- Update nvim config
+- Refresh brewfile installation
+- Refresh zsh config
+
 ## v4.1.12 (2024-01-23)
 
 ### Fix
