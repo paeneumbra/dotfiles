@@ -36,4 +36,47 @@ return {
 
     -- Pretty Colors
     bold_brightens_ansi_colors = true,
+
+    -- Keybinds
+    keys = {
+        {
+            key = [[\]],
+            mods = "CTRL|ALT",
+            action = wezterm.action {
+                SplitHorizontal = { domain = "CurrentPaneDomain" },
+            },
+        },
+        {
+            key = [[\]],
+            mods = "CTRL",
+            action = wezterm.action {
+                SplitVertical = { domain = "CurrentPaneDomain" },
+            },
+        },
+        {
+            key = "q",
+            mods = "CTRL",
+            action = wezterm.action { CloseCurrentPane = { confirm = false } },
+        },
+        {
+            key = "h",
+            mods = "CTRL",
+            action = wezterm.action { ActivatePaneDirection = "Prev" },
+        },
+        {
+            key = "l",
+            mods = "CTRL",
+            action = wezterm.action { ActivatePaneDirection = "Prev" },
+        },
+        {
+            key = "k",
+            mods = "CTRL",
+            action = wezterm.action { ActivatePaneDirection = "Next" },
+        },
+        {
+            key = "j",
+            mods = "CTRL",
+            action = wezterm.action { ActivatePaneDirection = "Next" },
+        },
+    },
 }
