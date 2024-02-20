@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.17 (2024-02-20)
+
+### Patch
+
+- Refactor fzf functions
+
 ## v4.1.16 (2024-02-17)
 
 ### Patch
