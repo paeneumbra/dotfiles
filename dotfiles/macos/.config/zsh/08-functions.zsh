@@ -29,13 +29,13 @@ function fif() {
 	RG_PREFIX="rg --column --line-number --no-heading --color=always --hidden --glob='!.git' --smart-case "
 	INITIAL_QUERY="${*:-}"
 	: | fzf --ansi --disabled --query "$INITIAL_QUERY" \
-		--prompt 'Find in file> ' \
+		--prompt 'Find in file (ctrl-y to clipboard) > ' \
 		--bind "start:reload:$RG_PREFIX {q}" \
 		--bind "change:reload:sleep 0.1; $RG_PREFIX {q} || true" \
 		--delimiter : \
 		--preview 'bat --color=always {1} --highlight-line {2}' \
 		--preview-window 'right,60%,border-bottom,+{2}+3/3,~3' \
-		--bind 'enter:become(nvim {1} +{2})'
+		--bind 'ctrl-y:execute-silent(echo {} | pbcopy)+abort,enter:become(nvim {1} +{2})'
 }
 
 # find file or directory with fzf - does not work as expected
@@ -54,12 +54,12 @@ function ffile() {
 	FD_PREFIX="fd --hidden --no-ignore --ignore-case --type file"
 	INITIAL_QUERY="${*:-}"
 	: | fzf --ansi --disabled --query "$INITIAL_QUERY" \
-		--prompt 'Files> ' \
+		--prompt 'Files (ctrl-y to clipboard) > ' \
 		--bind "start:reload:$FD_PREFIX {q}" \
 		--bind "change:reload:sleep 0.1; $FD_PREFIX {q} || true" \
 		--delimiter : \
 		--preview 'bat --color=always {}' \
-		--bind 'enter:become(nvim {1})'
+		--bind 'ctrl-y:execute-silent(echo {} | pbcopy)+abort,enter:become(nvim {1})'
 }
 
 # Find directory and move to it or copy to clipboard
@@ -81,12 +81,12 @@ function fde() {
 	FD_PREFIX="fd --hidden --no-ignore --ignore-case --extension"
 	INITIAL_QUERY="${*:-}"
 	: | fzf --ansi --disabled --query "$INITIAL_QUERY" \
-		--prompt 'Extention> ' \
+		--prompt 'Extention (ctrl-y to clipboard) > ' \
 		--bind "start:reload:$FD_PREFIX {q}" \
 		--bind "change:reload:sleep 0.1; $FD_PREFIX {q} || true" \
 		--delimiter : \
 		--preview 'bat --color=always {}' \
-		--bind 'enter:become(nvim {1})'
+		--bind 'ctrl-y:execute-silent(echo {} | pbcopy)+abort,enter:become(nvim {1})'
 }
 
 # Find directory and open it with IDE
