@@ -1,5 +1,18 @@
 # Changelog
 
+## v4.1.19 (2024-03-01)
+
+### Fix
+
+- Refactor wezterm config to not clash with neovim
+
+### Patch
+
+- Update neovim to lastest
+- Introduce checkmake validation to pre-commit config
+- Update pre commit configuration
+- Adjustments to the fzf functions
+
 ## v4.1.18 (2024-02-21)
 
 ### Patch
