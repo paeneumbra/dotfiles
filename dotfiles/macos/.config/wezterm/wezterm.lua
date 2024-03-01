@@ -55,27 +55,27 @@ return {
         },
         {
             key = "q",
-            mods = "CTRL",
+            mods = "CTRL|SHIFT",
             action = wezterm.action { CloseCurrentPane = { confirm = false } },
         },
         {
             key = "h",
-            mods = "CTRL",
+            mods = "CTRL|SHIFT",
             action = wezterm.action { ActivatePaneDirection = "Prev" },
         },
         {
             key = "l",
-            mods = "CTRL",
+            mods = "CTRL|SHIFT",
             action = wezterm.action { ActivatePaneDirection = "Prev" },
         },
         {
             key = "k",
-            mods = "CTRL",
+            mods = "CTRL|SHIFT",
             action = wezterm.action { ActivatePaneDirection = "Next" },
         },
         {
             key = "j",
-            mods = "CTRL",
+            mods = "CTRL|SHIFT",
             action = wezterm.action { ActivatePaneDirection = "Next" },
         },
     },
