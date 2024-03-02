@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.21 (2024-03-02)
+
+### Patch
+
+- Add sketchybar and amethyst initial config
+
 ## v4.1.20 (2024-03-02)
 
 ### Fix
