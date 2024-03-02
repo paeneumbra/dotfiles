@@ -4,3 +4,6 @@
 [submodule "dotfiles/common/.config/nvim"]
 	path = dotfiles/common/.config/nvim
 	url = git@github.com:simao-ferreira/nvim.git
+[submodule "dotfiles/common/.config/ranger/plugins/devicons2"]
+	path = dotfiles/common/.config/ranger/plugins/devicons2
+	url = git@github.com:cdump/ranger-devicons2.git
