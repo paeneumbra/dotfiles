@@ -16,7 +16,7 @@
 
 ### Fix
 
-- Black pre commit hook
+- Fix python security pre commit hook
 
 ## v4.1.19 (2024-03-01)
 
