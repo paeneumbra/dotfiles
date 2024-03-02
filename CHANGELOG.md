@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.20 (2024-03-02)
+
+### Fix
+
+- Black pre commit hook
+
 ## v4.1.19 (2024-03-01)
 
 ### Fix
