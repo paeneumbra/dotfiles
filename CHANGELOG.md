@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.22 (2024-03-03)
+
+### Patch
+
+- Update alacritty to toml format
+
 ## v4.1.21 (2024-03-02)
 
 ### Patch
