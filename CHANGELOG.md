@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.1.24 (2024-03-05)
+
+### Patch
+
+- Remove unused zsh config files
+- Refactor for macos installation scripts
+- Add macos defaults script
+
 ## v4.1.23 (2024-03-05)
 
 ### Patch
