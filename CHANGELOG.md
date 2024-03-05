@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.1.23 (2024-03-05)
+
+### Patch
+
+- Tryout warp
+- Add icons to ranger config
+- Fix changelog description
+
 ## v4.1.22 (2024-03-03)
 
 ### Patch
