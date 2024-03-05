@@ -3,30 +3,65 @@
 
 SDKMAN := $(HOME)/.sdkman/bin/sdkman-init.sh
 
+define print-header
+@echo "\033[0;33m\xE2\x9A\xA0 initiating "${1}"\033[0m"
+endef
+
+define print-footer
+@echo "\033[0;32m\xE2\x9C\x94"${1}"\033[0m"
+endef
+
+GREEN='\033[0;32m'  # ANSI escape code for green color
+RESET='\033[0m'     # ANSI escape code to reset color
+
+text="\xE2\x9C\x94"  # Unicode character representation
+
 help:
 	@echo 'Available make targets:'
 	@grep '^[^#[:space:]].*:' Makefile
 
-setup: git-submodules-init stow-update bundle-update
+.PHONY: setup
+setup: brew-install git-submodules-setup brew-setup stow-setup pynvim-install macos-defaults sdkman-setup
 	pre-commit install
+	@$(call print-footer, "setup was successful")
 
-bundle-update: pynvim-install
+.PHONY: brew-install
+brew-install:
+	@$(call print-header,"brew")
+	bash brew-install.sh
+	@$(call print-footer, "brew")
+
+.PHONY: git-submodules-setup
+git-submodules-setup:
+	@$(call print-header,"git submodules")
+	git submodule init
+	git submodule update
+	@$(call print-footer,"git submodules")
+
+.PHONY: brew-setup
+brew-setup:
+	@$(call print-header,"brewfile")
 	brew bundle --file brew/Brewfile
+	@$(call print-footer, "brewfile")
 
-stow-update:
+.PHONY: stow-setup
+stow-setup:
+	@$(call print-header,"stow")
 	mkdir -p $(HOME)/.config
 	mkdir -p $(HOME)/.cache/zsh
 	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) common
 	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) macos
+	@$(call print-footer, "stow")
 
-git-submodules-init:
-	git submodule init
-	git submodule update
-
+.PHONY: pynvim-install
 pynvim-install:
+	@$(call print-header,"pynvim")
 	python3 -m pip install --user --upgrade pynvim
+	@$(call print-footer, "pynvim")
 
+.PHONY: sdkman-setup
 sdkman-setup:
+	@$(call print-header,"sdkman")
 	@. $(SDKMAN)
 ifndef SDKMAN_DIR
 	@curl -Ss "https://get.sdkman.io" | bash
@@ -43,6 +78,11 @@ endif
 	@. $(SDKMAN) && echo N | sdk install gradle
 	@. $(SDKMAN) && echo N | sdk install maven
 
-	@printf "\xE2\x9C\x94 "
-	@printf "sdkman"
-	@printf "\n"
+	@$(call print-footer, "sdkman")
+	@$(call print-footer, "java koltin scala groovy gradle maven")
+
+.PHONY: macos-defaults
+macos-defaults:
+	@$(call print-header,"osx defaults")
+	bash macos-defaults.sh
+	@$(call print-footer, "osx defaults")

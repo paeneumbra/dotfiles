@@ -147,3 +147,4 @@ brew 'ollama'
 # In test
 # brew 'magic-wormhole'
 # brew 'microsoft-edge'
+# brew 'gabrie30/utils/ghorg'

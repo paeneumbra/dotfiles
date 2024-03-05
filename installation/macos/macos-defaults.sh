@@ -3,30 +3,15 @@
 set -euo pipefail
 
 # Define some colors for output
-CYAN=$(tput setaf 6)
 GREEN=$(tput setaf 2)
 RESET=$(tput sgr0)
-
-# Print fancy header
-function print_header() {
-    echo
-    local len=${#1}
-    local dashes
-    dashes=$(printf -- '-%.0s' $(seq 1 "$len"))
-
-    echo -e "${CYAN}${dashes}${RESET}"
-    echo -e "${CYAN}${1}${RESET}"
-    echo -e "${CYAN}${dashes}${RESET}"
-    echo
-}
 
 # Print an info message
 function print_info() {
     echo -e "${GREEN}$1${RESET}"
 }
 
-print_header "Mac personalized config update"
-print_header "More information can be found at https://macos-defaults.com/"
+print_info "Mac personalized config update: https://macos-defaults.com/"
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -50,7 +35,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 print_info "- disabling auto-correct"
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-print_line " - disabling siri"
+print_info "- disabling siri"
 defaults write com.apple.assistant.support "Assistant Enabled" -bool false
 
 print_info "- enabling 'natural' scrolling"
@@ -59,7 +44,7 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 print_info "- enabling finder hidden files by default"
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-print_info "# Killing affected applications"
+print_info "- killing affected applications"
 for app in "Finder" \
 	"SystemUIServer"; do
 	killall "${app}" &> /dev/null

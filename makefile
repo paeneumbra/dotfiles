@@ -1,5 +1,9 @@
 # Makefile
 
+define print-header
+@echo "\033[0;33m\xE2\x9A\xA0 initiating "${1}"\033[0m"
+endef
+
 OS := $(shell uname -s)
 
 # Workspace setup
@@ -21,10 +25,10 @@ endif
 # MacOS/Linux system update
 system-update:
 ifeq ($(OS), Darwin)
-	@echo "Updating MacOS packages"
+	@$(call print-header,"Updating osx packages via brewfile")
 	brew bundle --file $(HOME)/workspace/installation/macos/brew/Brewfile
 else
-	@echo "Updating Linux packages"
+	@$(call print-header,"Updating archlinux packages via yay")
 	yay -Syu --noconfirm
 endif
 
