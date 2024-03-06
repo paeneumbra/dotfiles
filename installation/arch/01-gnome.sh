@@ -3,20 +3,20 @@
 set -e
 
 PKGS=(
-	gnome
-	gnome-extra
-	gnome-software
+  gnome
+  gnome-extra
+  gnome-software
 
-	# GTK Themes
-	gtk-engine-murrine
-	gtk-engines
-	qogir-gtk-theme
+  # GTK Themes
+  gtk-engine-murrine
+  gtk-engines
+  qogir-gtk-theme
 )
 
 for PKG in "${PKGS[@]}"; do
-	echo
-	echo "INSTALLING PACKAGE: $PKG"
-	yay -S "$PKG" --noconfirm --needed
+  echo
+  echo "INSTALLING PACKAGE: $PKG"
+  yay -S "$PKG" --noconfirm --needed
 done
 
 # gmd is required for gnome, but conflicts with gdm-prime, which is required for prime usage

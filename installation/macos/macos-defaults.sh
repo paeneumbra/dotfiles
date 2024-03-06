@@ -8,7 +8,7 @@ RESET=$(tput sgr0)
 
 # Print an info message
 function print_info() {
-    echo -e "${GREEN}$1${RESET}"
+  echo -e "${GREEN}$1${RESET}"
 }
 
 print_info "Mac personalized config update: https://macos-defaults.com/"
@@ -20,7 +20,11 @@ osascript -e 'tell application "System Preferences" to quit'
 sudo -v
 
 # Keep-alive: update existing `sudo` timestamp until done
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
+done 2>/dev/null &
 
 print_info "- disabling .DS_Store file creation"
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
@@ -46,6 +50,6 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 
 print_info "- killing affected applications"
 for app in "Finder" \
-	"SystemUIServer"; do
-	killall "${app}" &> /dev/null
+  "SystemUIServer"; do
+  killall "${app}" &>/dev/null
 done

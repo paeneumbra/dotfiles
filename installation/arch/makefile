@@ -47,13 +47,11 @@ productivity-setup:
 
 git-submodules-init:
 	@echo "Requires ssh configured in github"
-	@echo "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
 	git submodule init
 	git submodule update
 
 repository-setup:
 	@echo "Requires ssh configured in github"
-	@echo "https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent"
 	$(HOME)/workspace/bin/cloneworkspace.py -s ./workspace.json -r
 
 mimelist-copy:

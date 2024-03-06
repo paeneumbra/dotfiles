@@ -5,17 +5,17 @@ LAYOUT_ID="${INPUT##*.}"
 
 case "$LAYOUT_ID" in
 "British")
-	LAYOUT="EN"
-	;;
+  LAYOUT="EN"
+  ;;
 "Spanish-ISO")
-	LAYOUT="ES"
-	;;
+  LAYOUT="ES"
+  ;;
 "com.apple.keylayout.ABC")
-	LAYOUT="ABC"
-	;;
+  LAYOUT="ABC"
+  ;;
 *)
-	LAYOUT="$LAYOUT_NAME"
-	;;
+  LAYOUT="$LAYOUT_NAME"
+  ;;
 esac
 
 sketchybar --set keyboard label="$LAYOUT"

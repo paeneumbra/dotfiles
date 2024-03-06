@@ -18,7 +18,6 @@ repos:
       - id: check-symlinks
       - id: check-case-conflict
       - id: detect-private-key
-      - id: end-of-file-fixer
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
     rev: v1.3.3
@@ -33,7 +32,7 @@ repos:
         exclude: ^dotfiles/common/.config/ranger
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.16.0
+    rev: v3.17.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
@@ -46,6 +45,7 @@ repos:
           - --config
           - .markdownlint.yaml
           - --fix
+        exclude: '^(CHANGELOG.md)$'
 
   - repo: https://github.com/JohnnyMorganz/StyLua
     rev: v0.20.0
@@ -57,3 +57,13 @@ repos:
     hooks:
       - id: checkmake
         args: [ --config=./.checkmake-config.ini ]
+
+  - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
+    rev: '2.7.3'
+    hooks:
+      - id: editorconfig-checker
+        exclude: |
+          (?x)^(
+              CHANGELOG.md |
+              lazyvim.json
+          )$

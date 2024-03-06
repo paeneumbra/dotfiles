@@ -3,13 +3,13 @@
 set -e
 
 PKGS=(
-    commitizen
+  commitizen
 )
 
 for PKG in "${PKGS[@]}"; do
-	echo
-	echo "INSTALLING PIPX PACKAGE: $PKG"
-	pipx install "$PKG"
+  echo
+  echo "INSTALLING PIPX PACKAGE: $PKG"
+  pipx install "$PKG"
 done
 
 echo
