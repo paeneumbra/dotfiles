@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.25 (2024-03-06)
+
+### Patch
+
+- Start using editorconfig, apply suggestions
+
 ## v4.1.24 (2024-03-05)
 
 ### Patch
