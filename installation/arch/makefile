@@ -25,6 +25,7 @@ stow-setup:
 	mkdir -p $(HOME)/.config/gtk-3.0
 	exec stow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) common
 	exec stow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) archlinux
+	exec stow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
 
 zsh-setup:
 	mkdir -p $(HOME)/.cache/zsh

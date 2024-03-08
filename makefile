@@ -1,7 +1,13 @@
 # Makefile
 
+
+
 define print-header
 @echo "\033[0;33m\xE2\x9A\xA0 initiating "${1}"\033[0m"
+endef
+
+define print-footer
+@echo "\033[0;32m\xE2\x9C\x94"${1}"\033[0m"
 endef
 
 OS := $(shell uname -s)
@@ -31,6 +37,19 @@ else
 	@$(call print-header,"Updating archlinux packages via yay")
 	yay -Syu --noconfirm
 endif
+
+# MacOS/Linux re-stow
+.PHONY: restow
+restow:
+	@$(call print-header,"restow")
+	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) common
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
+ifeq ($(OS), Darwin)
+	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) macos
+else
+	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) archlinux
+endif
+	@$(call print-footer, "restow")
 
 # Repository helpers
 pre-commit: pre-commit-setup pre-commit-update
