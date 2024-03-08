@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.1.26 (2024-03-08)
+
+### Patch
+
+- refactor nvim directory and makefiles
+- update to latest nvim config
+
 ## v4.1.25 (2024-03-06)
 
 ### Patch
