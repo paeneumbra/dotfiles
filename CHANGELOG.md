@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.1.27 (2024-03-09)
+
+### Fix
+
+- Nvim gitmodule directory
+
+### Patch
+
+- Prettify makefile
+- Refactor update git repos script to ignore given directories
+
 ## v4.1.26 (2024-03-08)
 
 ### Patch
