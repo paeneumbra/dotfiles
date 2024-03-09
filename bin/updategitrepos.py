@@ -6,7 +6,7 @@ import subprocess
 import sys
 from datetime import datetime
 
-__version__ = "0.1.3"
+__version__ = "0.2.0"
 
 HOME = os.getenv("HOME", os.getenv("USERPROFILE"))
 
@@ -34,12 +34,21 @@ def define_arguments():
         help="Update workspace repositories",
     )
     parser.add_argument(
+        "-i",
+        "--ignore",
+        nargs="*",
+        type=str,
+        metavar="/home/user/folder /home/user/other/folder",
+        help="Directories to ignore separated by space",
+    )
+    parser.add_argument(
         "-r",
         "--run",
         action="store_true",
         default=False,
         help="Execute git repositories update",
     )
+
     return parser
 
 
@@ -147,7 +156,14 @@ def resolve_default_branch():
         print_result(checkout_default_branch)
 
 
-def update_repos(repositories_dir: str, execute_command: bool):
+def ignore_repo(directory_path: str, ignore_list: list) -> bool:
+    for ignore in ignore_list:
+        if ignore in directory_path:
+            return True
+    return False
+
+
+def update_repos(repositories_dir: str, execute_command: bool, ignore_list: list):
     """
     Validates directory is a git repository,
     changes to said directory
@@ -159,8 +175,9 @@ def update_repos(repositories_dir: str, execute_command: bool):
         sys.exit(f"ERROR: Directory not found: {repositories_dir}")
 
     for dir_path, dir_names, filenames in os.walk(repositories_dir):
-        # Validates directory is a git repository
-        if ".git" in dir_names:
+        ignore = ignore_repo(dir_path, ignore_list)
+        # Validates directory is a git repository and not in ignore list
+        if ".git" in dir_names and not ignore:
             repo = os.path.abspath(dir_path)
             # Change to given directory
             os.chdir(repo)
@@ -185,4 +202,8 @@ def update_repos(repositories_dir: str, execute_command: bool):
 
 arguments = define_arguments()
 directory_to_update = parse_arguments(arguments)
-update_repos(directory_to_update.get("source"), directory_to_update.get("run"))
+update_repos(
+    directory_to_update.get("source"),
+    directory_to_update.get("run"),
+    directory_to_update.get("ignore"),
+)
