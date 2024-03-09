@@ -1,47 +1,67 @@
 # Makefile
 
+checkmark=\xE2\x9C\x94  # Unicode character representation
+warning=\xE2\x9A\xA0  # Unicode character representation
 
-
-define print-header
-@echo "\033[0;33m\xE2\x9A\xA0 initiating "${1}"\033[0m"
+define warn
+	@tput bold
+	@tput setaf 3
+	@printf '${warning}${1}\n'
+	@tput sgr0
 endef
 
-define print-footer
-@echo "\033[0;32m\xE2\x9C\x94"${1}"\033[0m"
+define log
+	@tput bold
+	@tput setaf 6
+	@printf '${checkmark}${1}\n'
+	@tput sgr0
 endef
 
 OS := $(shell uname -s)
 
-# Workspace setup
-repositories-update:
-	@echo "Requires ssh configured in github"
+.PHONY: init
+init:
+	@$(call warn, Init warning)
+	@$(call log, Init log)
+
+.PHONY: workspace-clone
+workspace-clone:
+	@$(call warn, Cloning workspace repositories)
 	./bin/cloneworkspace.py -s ./workspace.json -r
+	@$(call log, Cloning successfull)
 
-workspace-repositories-update:
-	python3 ./bin/updategitrepos.py --workspace -r
+.PHONY: workspace-git-update
+workspace-git-update:
+	@$(call warn, Update workspace repositories)
+	./bin/updategitrepos.py \
+		--workspace \
+		--ignore /home/archy/workspace/projects/archived /home/archy/workspace/projects/demos/ \
+		-r
+	@$(call log, Workspace git repositories successfully updated)
 
+.PHONY: k2-start
 k2-start:
 ifeq ($(OS),Darwin)
-	@echo "Not available for macos"
+	@$(call warn, Not for macos!)
 else
-	@echo "Enable fn keys in keychron k2"
+	@$(call warn, Enabling keychron fn keys!)
 	sudo systemctl start keychron
 endif
 
-# MacOS/Linux system update
 system-update:
 ifeq ($(OS), Darwin)
-	@$(call print-header,"Updating osx packages via brewfile")
+	@$(call warn, Updating osx packages via brewfile)
 	brew bundle --file $(HOME)/workspace/installation/macos/brew/Brewfile
+	@$(call log, system update)
 else
-	@$(call print-header,"Updating archlinux packages via yay")
+	@$(call warn, Updating archlinux packages via pacman/yay)
 	yay -Syu --noconfirm
+	@$(call log, system update)
 endif
 
-# MacOS/Linux re-stow
 .PHONY: restow
 restow:
-	@$(call print-header,"restow")
+	@$(call warn, restow)
 	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) common
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
 ifeq ($(OS), Darwin)
@@ -49,7 +69,7 @@ ifeq ($(OS), Darwin)
 else
 	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) archlinux
 endif
-	@$(call print-footer, "restow")
+	@$(call log, restow)
 
 # Repository helpers
 pre-commit: pre-commit-setup pre-commit-update
