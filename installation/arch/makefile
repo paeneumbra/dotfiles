@@ -26,7 +26,7 @@ stow-setup:
 	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) common
 	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) archlinux
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminals
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminal
 
 zsh-setup:
 	mkdir -p $(HOME)/.cache/zsh
