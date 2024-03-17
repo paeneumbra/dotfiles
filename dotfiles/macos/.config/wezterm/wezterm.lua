@@ -32,6 +32,7 @@ return {
     color_scheme_dirs = {
         os.getenv "HOME" .. "/.config/decorator/output",
     },
+
     color_scheme = "Wezterm",
 
     -- Pretty Colors
@@ -40,42 +41,28 @@ return {
     -- Keybinds
     keys = {
         {
-            key = [[\]],
-            mods = "CTRL|ALT",
-            action = wezterm.action {
-                SplitHorizontal = { domain = "CurrentPaneDomain" },
-            },
+            key = "d",
+            mods = "SHIFT|ALT",
+            action = wezterm.action { SplitHorizontal = { domain = "CurrentPaneDomain" } },
         },
         {
-            key = [[\]],
-            mods = "CTRL",
-            action = wezterm.action {
-                SplitVertical = { domain = "CurrentPaneDomain" },
-            },
+            key = "d",
+            mods = "ALT",
+            action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } },
         },
         {
             key = "q",
-            mods = "CTRL|SHIFT",
+            mods = "CTRL|ALT",
             action = wezterm.action { CloseCurrentPane = { confirm = false } },
         },
         {
-            key = "h",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action { ActivatePaneDirection = "Prev" },
-        },
-        {
-            key = "l",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action { ActivatePaneDirection = "Prev" },
-        },
-        {
-            key = "k",
-            mods = "CTRL|SHIFT",
+            key = "]",
+            mods = "ALT",
             action = wezterm.action { ActivatePaneDirection = "Next" },
         },
         {
-            key = "j",
-            mods = "CTRL|SHIFT",
+            key = "[",
+            mods = "ALT",
             action = wezterm.action { ActivatePaneDirection = "Next" },
         },
     },
