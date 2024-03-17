@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.1.30 (2024-03-17)
+
+### Fix
+
+- Rename terminals folder to terminal
+
+### Patch
+
+- Move and reconfigure ranger
+- Move common zsh to terminals folder
+
 ## v4.1.29 (2024-03-17)
 
 ### Patch
