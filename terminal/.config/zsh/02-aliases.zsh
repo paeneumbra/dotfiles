@@ -13,6 +13,10 @@ alias vim='nvim'
 alias cp='cp -iv'
 alias mv='mv -iv'
 
+# Lazy
+alias lzg='lazygit'
+alias lzd='lazydocker'
+
 # Print each PATH entry on a separate line
 alias path="echo -e \"${PATH//:/\\n}\""
 

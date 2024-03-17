@@ -14,6 +14,7 @@ repos:
       - id: trailing-whitespace
       - id: check-json
       - id: check-executables-have-shebangs
+        exclude: ^terminal/.config/ranger
       - id: check-shebang-scripts-are-executable
       - id: check-symlinks
       - id: check-case-conflict
@@ -29,7 +30,7 @@ repos:
     rev: 24.2.0
     hooks:
       - id: black
-        exclude: ^dotfiles/common/.config/ranger
+        exclude: ^terminal/.config/ranger
 
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v3.17.0
@@ -65,5 +66,6 @@ repos:
         exclude: |
           (?x)^(
               CHANGELOG.md |
-              lazyvim.json
+              lazyvim.json |
+              terminal/.config/ranger/scope.sh
           )$
