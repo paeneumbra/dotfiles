@@ -3,6 +3,7 @@ local wezterm = require "wezterm"
 return {
     font = wezterm.font_with_fallback {
         { family = "Iosevka Term", weight = "Medium" },
+        { family = "Iosevka Nerd Font Mono", weight = "Medium" },
         "Fira Code",
         "Material Design Icons",
     },

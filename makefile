@@ -6,14 +6,14 @@ warning=\xE2\x9A\xA0  # Unicode character representation
 define warn
 	@tput bold
 	@tput setaf 3
-	@printf '${warning}${1}\n'
+	@printf "${warning}${1}\n"
 	@tput sgr0
 endef
 
 define log
 	@tput bold
 	@tput setaf 6
-	@printf '${checkmark}${1}\n'
+	@printf "${checkmark}${1}\n"
 	@tput sgr0
 endef
 
@@ -64,6 +64,7 @@ restow:
 	@$(call warn, restow)
 	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) common
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminals
 ifeq ($(OS), Darwin)
 	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) macos
 else

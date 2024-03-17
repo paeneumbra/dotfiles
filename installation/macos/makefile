@@ -52,6 +52,7 @@ stow-setup:
 	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) common
 	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) macos
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminals
 	@$(call print-footer, "stow")
 
 .PHONY: pynvim-install
