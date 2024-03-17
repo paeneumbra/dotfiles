@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.1.29 (2024-03-17)
+
+### Patch
+
+- Adjust configuration for terminals
+- tweak wezterm config
+- improve git log alias config
+
 ## v4.1.28 (2024-03-17)
 
 ### Patch
