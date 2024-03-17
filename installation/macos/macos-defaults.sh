@@ -43,10 +43,25 @@ print_info "- disabling siri"
 defaults write com.apple.assistant.support "Assistant Enabled" -bool false
 
 print_info "- enabling 'natural' scrolling"
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 print_info "- enabling finder hidden files by default"
 defaults write com.apple.finder AppleShowAllFiles -bool true
+
+print_info "- enabling press-and-hold for keys in favor of key repeat"
+defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "true"
+
+print_info "- disabling auto-correct"
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+print_info "- enable subpixel font rendering on non-Apple LCDs"
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
+
+print_info "- show the ~/Library folder"
+chflags nohidden ~/Library
+
+# To read the defaults:
+# defaults read NSGlobalDomain "ApplePressAndHoldEnabled"
 
 print_info "- killing affected applications"
 for app in "Finder" \

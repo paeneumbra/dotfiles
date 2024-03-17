@@ -26,6 +26,7 @@ brew 'cookiecutter'
 brew 'poetry'
 brew 'commitizen'
 brew 'pipx'
+# brew 'weasyprint'
 # brew 'httpie'
 
 # Jvm
@@ -63,7 +64,6 @@ brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
-
 
 # aws
 # brew 'awscli'
@@ -113,11 +113,11 @@ cask 'docker'
 brew 'lazydocker'
 
 # applications
-cask 'chromium'
+# cask 'chromium'
 cask 'firefox'
 cask 'firefox-developer-edition'
 # cask 'insomnia'
-cask 'iterm2'
+# cask 'iterm2'
 cask 'jetbrains-toolbox'
 cask 'keepassxc'
 cask 'microsoft-office'
@@ -127,7 +127,7 @@ cask 'obsidian'
 cask 'rectangle'
 cask 'slack'
 cask 'spotify', args: { require_sha: false }
-cask 'ticktick'
+# cask 'ticktick'
 cask 'visual-studio-code'
 cask 'wezterm'
 
@@ -145,6 +145,16 @@ cask 'keymapp'
 brew 'ollama'
 
 # In test
+brew 'glow'
 # brew 'magic-wormhole'
 # brew 'microsoft-edge'
 # brew 'gabrie30/utils/ghorg'
+cask 'appcleaner'
+cask 'caffeine'
+cask 'bluesnooze'
+brew 'k6'
+
+tap 'FelixKratz/formulae'
+brew 'sketchybar'
+cask 'amethyst'
+cask 'warp'
