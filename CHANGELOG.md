@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.1.28 (2024-03-17)
+
+### Patch
+
+- refresh macos configuration
+- refresh git alias config
+
 ## v4.1.27 (2024-03-09)
 
 ### Fix
