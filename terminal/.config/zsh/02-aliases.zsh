@@ -1,5 +1,5 @@
 # Environment
-alias reloadzsh='source $ZDOTDIR/.zshrc'
+alias rzsh='source $ZDOTDIR/.zshrc'
 
 # Directories
 alias la='ls -lAh'
