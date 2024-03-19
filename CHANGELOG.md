@@ -1,5 +1,15 @@
 # Changelog
 
+## v4.1.31 (2024-03-19)
+
+### Fix
+
+- Refactor git alias
+
+### Patch
+
+- Tweak zsh config alias, update nvim
+
 ## v4.1.30 (2024-03-17)
 
 ### Fix
