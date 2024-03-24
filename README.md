@@ -10,7 +10,7 @@ Personal workspace mostly for development.
 Clone the workspace repository.
 
 ```shell
-git clone https://github.com/simao-ferreira/workspace.git
+git clone https://github.com/itzalak/workspace.git
 ```
 
 - Instructions for archlinux in [makefile](./installation/arch/makefile).

@@ -1,25 +1,25 @@
 {
     "name": "workspace/projects",
     "repos": [
-        "git@github.com:simao-ferreira/pyresume.git",
-        "git@github.com:simao-ferreira/sheepskin.git",
-        "git@github.com:simao-ferreira/thescream.nvim.git",
+        "git@github.com:itzalak/pyresume.git",
+        "git@github.com:itzalak/sheepskin.git",
+        "git@github.com:itzalak/thescream.nvim.git",
         {
             "name": "archived",
             "repos": [
-                "git@github.com:simao-ferreira/pi-dotfiles.git",
-                "git@github.com:simao-ferreira/deprecated-static-site.git"
+                "git@github.com:itzalak/pi-dotfiles.git",
+                "git@github.com:itzalak/deprecated-static-site.git"
             ]
         },
         {
             "name": "templates",
             "repos": [
-                "git@github.com:simao-ferreira/gradle-template.git",
-                "git@github.com:simao-ferreira/mvn-template.git",
-                "git@github.com:simao-ferreira/obsidian-template.git",
-                "git@github.com:simao-ferreira/cookiecutter-base.git",
-                "git@github.com:simao-ferreira/cookiecutter-python.git",
-                "git@github.com:simao-ferreira/cookiecutter-kotlin.git"
+                "git@github.com:itzalak/gradle-template.git",
+                "git@github.com:itzalak/mvn-template.git",
+                "git@github.com:itzalak/obsidian-template.git",
+                "git@github.com:itzalak/cookiecutter-base.git",
+                "git@github.com:itzalak/cookiecutter-python.git",
+                "git@github.com:itzalak/cookiecutter-kotlin.git"
             ]
         },
         {

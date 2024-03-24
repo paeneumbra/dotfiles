@@ -15,7 +15,7 @@ Setup dependencies:
 - Terminal: [alacritty](https://alacritty.org/) and [urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)
 - Launcher: [rofi](https://davatorium.github.io/rofi/)
 - File Manager: [ranger](https://ranger.github.io/)
-- Editor [neovim](https://neovim.io/) with [my own config](https://github.com/simao-ferreira/nvim)
+- Editor [neovim](https://neovim.io/) with [my own config](https://github.com/itzalak/nvim)
 - Font: [Iosevka](https://typeof.net/Iosevka/) via [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 - Icons: [Material Design Icons](https://pictogrammers.com/library/mdi/)
 
