@@ -15,7 +15,6 @@
             "name": "templates",
             "repos": [
                 "git@github.com:itzalak/gradle-template.git",
-                "git@github.com:itzalak/mvn-template.git",
                 "git@github.com:itzalak/obsidian-template.git",
                 "git@github.com:itzalak/cookiecutter-base.git",
                 "git@github.com:itzalak/cookiecutter-python.git",
@@ -25,7 +24,8 @@
         {
             "name": "repositories",
             "repos": [
-                "git@github.com:tldr-pages/tldr.git"
+                "git@github.com:tldr-pages/tldr.git",
+                "git@github.com:sherlock-project/sherlock.git"
             ]
         }
     ]
