@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.0.1 (2024-03-24)
+
+### Patch
+
+- Refactor workspace json
+
 ## v5.0.0 (2024-03-24)
 
 ### Breaking Change
