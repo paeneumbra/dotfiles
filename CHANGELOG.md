@@ -1,5 +1,15 @@
 # Changelog
 
+## v5.0.0 (2024-03-24)
+
+### Breaking Change
+
+- update all links and submodules
+
+### Fix
+
+- Remove commit links from changelog
+
 ## v4.1.31 (2024-03-19)
 
 ### Fix
