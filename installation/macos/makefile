@@ -21,7 +21,7 @@ help:
 	@grep '^[^#[:space:]].*:' Makefile
 
 .PHONY: setup
-setup: brew-install git-submodules-setup brew-setup stow-setup pynvim-install macos-defaults sdkman-setup
+setup: brew-install git-submodules-setup brew-setup stow-setup poetry-install pynvim-install macos-defaults sdkman-setup
 	pre-commit install
 	@$(call print-footer, "setup was successful")
 
@@ -55,12 +55,6 @@ stow-setup:
 
 	@$(call print-footer, "stow")
 
-.PHONY: pynvim-install
-pynvim-install:
-	@$(call print-header,"pynvim")
-	python3 -m pip install --user --upgrade pynvim
-	@$(call print-footer, "pynvim")
-
 .PHONY: sdkman-setup
 sdkman-setup:
 	@$(call print-header,"sdkman")
@@ -88,3 +82,16 @@ macos-defaults:
 	@$(call print-header,"osx defaults")
 	bash macos-defaults.sh
 	@$(call print-footer, "osx defaults")
+
+.PHONY: poetry-install
+poetry-install:
+	@$(call print-header,"install poetry")
+	pipx install poetry
+	pipx inject poetry poetry-plugin-export
+	@$(call print-footer, "poetry install")
+
+.PHONY: pynvim-install
+pynvim-install:
+	@$(call print-header,"pynvim")
+	python3 -m pip install --user --upgrade pynvim
+	@$(call print-footer, "pynvim")

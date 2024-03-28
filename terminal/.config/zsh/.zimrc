@@ -6,7 +6,7 @@ zmodule fzf
 
 # Prompt
 zmodule duration-info
-zmodule zsh-users/zsh-completions
+zmodule zsh-users/zsh-completions --fpath src
 
 # Others
 zmodule nnao45/zsh-kubectl-completion

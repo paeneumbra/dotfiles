@@ -18,7 +18,7 @@ alias lzg='lazygit'
 alias lzd='lazydocker'
 
 # Print each PATH entry on a separate line
-alias path="echo -e \"${PATH//:/\\n}\""
+alias path='echo -e "${PATH//:/\\n}"'
 
 # Reload ssh agent
 alias rssh='eval "$(ssh-agent -s)"'

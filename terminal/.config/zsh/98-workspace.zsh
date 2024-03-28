@@ -5,6 +5,10 @@ export NVIM="$HOME/.config/nvim/"
 export FORGE="$HOME/workspace/forge"
 export OBS="$HOME/workspace/projects/sheepskin/"
 
-# Include bin scripts from repositories in path
+# Include in path
 export PATH="$HOME/workspace/bin:$PATH"
-export PATH="$HOME/workspace/dotfiles/common/.config/decorator/scripts/:$PATH"
+export PATH="$HOME/workspace/terminal/.config/decorator/scripts:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
