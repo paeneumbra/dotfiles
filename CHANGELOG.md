@@ -1,5 +1,12 @@
 # Changelog
 
+## v5.0.2 (2024-03-28)
+
+### Patch
+
+- Update nvim to 10.20
+- tweak terminal config
+
 ## v5.0.1 (2024-03-24)
 
 ### Patch
