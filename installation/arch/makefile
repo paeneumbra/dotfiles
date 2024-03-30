@@ -1,7 +1,22 @@
 # Makefile
 .DEFAULT_GOAL := help
 
-SDKMAN := $(HOME)/.sdkman/bin/sdkman-init.sh
+checkmark=\xE2\x9C\x94  # Unicode character representation
+warning=\xE2\x9A\xA0  # Unicode character representation
+
+define warn
+	@tput bold
+	@tput setaf 3
+	@printf "${warning}${1}\n"
+	@tput sgr0
+endef
+
+define log
+	@tput bold
+	@tput setaf 6
+	@printf "${checkmark}${1}\n"
+	@tput sgr0
+endef
 
 base-setup:
 	./00-base.sh
@@ -17,13 +32,12 @@ awesomewm-setup:
 extra-setup:
 	./02-extras.sh
 
-development-setup:
+development-setup: sdkman-setup python-setup
 	./03-development.sh
-	./05-pipx.sh
 
 stow-setup:
 	mkdir -p $(HOME)/.config/gtk-3.0
-	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) archlinux
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) arch
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminal
 
@@ -81,23 +95,14 @@ gnome-setup: stow-setup
 	@echo "Gnome requires unique user"
 	./01-gnome.sh
 
+.PHONY: sdkman-setup
 sdkman-setup:
-	@. $(SDKMAN)
-ifndef SDKMAN_DIR
-	@curl -Ss "https://get.sdkman.io" | bash
-	@source $(SDKMAN)
-	ifndef SDKMAN_DIR
-		SDKMAN_EXISTS := @echo "SDKMAN_VERSION is undefined" && exit 1
-	endif
-endif
+	@$(call warn, sdkman)
+	./03-sdkman.zsh
+	@$(call log, sdkman)
 
-	@. $(SDKMAN) && echo N | sdk install java
-	@. $(SDKMAN) && echo N | sdk install kotlin
-	@. $(SDKMAN) && echo N | sdk install scala
-	@. $(SDKMAN) && echo N | sdk install groovy
-	@. $(SDKMAN) && echo N | sdk install gradle
-	@. $(SDKMAN) && echo N | sdk install maven
-
-	@printf "\xE2\x9C\x94 "
-	@printf "sdkman"
-	@printf "\n"
+.PHONY: python-setup
+python-setup:
+	@$(call warn, python)
+	./03-python.sh
+	@$(call log, python)

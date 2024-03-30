@@ -21,8 +21,10 @@ OS := $(shell uname -s)
 
 .PHONY: init
 init:
-	@$(call warn, Init warning)
-	@$(call log, Init log)
+	@$(call warn, Init submodules - requires git ssh configuration)
+	git submodule init
+	git submodule update
+	@$(call log, Submodules initialized)
 
 .PHONY: workspace-clone
 workspace-clone:
@@ -33,7 +35,7 @@ workspace-clone:
 .PHONY: workspace-git-update
 workspace-git-update:
 	@$(call warn, Update workspace repositories)
-	./bin/updategitrepos.py \
+	@./bin/updategitrepos.py \
 		--workspace \
 		--ignore /home/archy/workspace/projects/archived /home/archy/workspace/projects/demos/ \
 		-r
@@ -65,9 +67,9 @@ restow:
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminal
 ifeq ($(OS), Darwin)
-	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) macos
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) macos
 else
-	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) archlinux
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) arch
 endif
 	@$(call log, restow)
 

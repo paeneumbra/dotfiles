@@ -6,17 +6,9 @@ PKGS=(
   # Neovim
   npm
 
-  # JVM
-  jre8-openjdk
-  jre11-openjdk
-  jre17-openjdk
-  jdk11-openjdk
-  jdk17-openjdk
-  jdk-openjdk
-  kotlin
-  # ktlint -- package is outdated
-  gradle
-  groovy
+  #JVM
+  # Moved to /03-sdkman.zsh
+  ktlint
 
   # Lua
   lua
@@ -24,19 +16,7 @@ PKGS=(
   stylua
 
   # Python
-  python
-  python-pip
-  python-pipx
-  python-virtualenv
-  python-pipenv
-  python-pynvim
-  python-setuptools
-  python-black
-  python-ruff
-  python-pre-commit
-  python-cookiecutter
-  python-poetry
-  pip-tools
+  # Moved to 03-python.sh
 
   # IDE
   intellij-idea-community-edition
@@ -52,7 +32,6 @@ PKGS=(
   jq
   yq
   slack-desktop
-  zsa-wally
 )
 
 for PKG in "${PKGS[@]}"; do

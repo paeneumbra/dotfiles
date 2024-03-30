@@ -18,7 +18,7 @@ git clone https://github.com/itzalak/workspace.git
 
 ## Awesomewm
 
-Take look into [awesome readme](dotfiles/archlinux/.config/awesome/README.md)
+Take look into [awesome readme](arch/.config/awesome/README.md)
 
 ## Configuration
 
@@ -27,7 +27,7 @@ Take look into [awesome readme](dotfiles/archlinux/.config/awesome/README.md)
 This setup is designed for integrating setting up the colorscheme for linux system and it is heavily dependent on
 the `.Xresources` file, including `awesomewm`.
 
-More information and details can be found in [decorator](dotfiles/common/.config/decorator), inside scripts can be
+More information and details can be found in [decorator](terminal/.config/decorator), inside scripts can be
 found for using a json color scheme file - I personally use [terminal.sexy](https://terminal.sexy/) - and
 porting the result for `.Xresources` and other required formats.
 
@@ -36,19 +36,15 @@ does not account for macOS usage.
 
 ### Zsh
 
-Configuration for zsh can be found under [dotfiles folder](./dotfiles) and can it can be setup by copying the files to
-the proper location, via symlink or through [stow](https://www.gnu.org/software/stow/).
-There are two sets of stow folders to configure, commons and specific to OS.
+Configuration for zsh can be found under [terminal folder](./terminal/) plus [arch folder](./arch) or [macos folder](./macos), specific os folders are required for correct functioning of the system like brew - and can it can be setup by allocating the files to the proper directory using [stow](https://www.gnu.org/software/stow/), symlink or just copying them.
+There are two sets of stow folders to configure, they can be found under [terminal](./terminal/) and specific to OS.
 
-It uses a self-installed, self-managed plugin manager called [zimfw](https://github.com/zimfw/zimfw) that will install
-itself and setup all needed plugins once zsh is started.
-Plugin configuration can be found in the [.zimrc file](dotfiles/common/.config/zsh/.zimrc).
+Zsh framework configuration uses a self-installed, self-managed plugin manager called [zimfw](https://github.com/zimfw/zimfw) that will install itself and setup all needed plugins once zsh is started.
+Plugin configuration can be found in the [.zimrc file](./terminal//.config/zsh/.zimrc).
 A folder will automatically be created as `.zim` to store all required files for `zimfw`.
 
-Global variable `ZDOTDIR` is defined under `./zshenv` as `$HOME/.config/zsh`. This tells zsh to look for further
-configurations files in that directory.
-In `./zshrc` we load all configuration files within the `ZDOTDIR` directory ending in `*.zsh`. This is not required but
-it facilitates managing special configurations and settings.
+Global variable `ZDOTDIR` is defined under `./zshenv` as `$HOME/.config/zsh`. This tells zsh to look for further configurations files in that directory.
+In `./zshrc` we load all configuration files within the `ZDOTDIR` directory ending in `*.zsh`. This is not required but it facilitates managing special configurations and settings.
 
 <details>
 <summary>Structure</summary>

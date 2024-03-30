@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Quick access to repositories
 export WS="$HOME/workspace/"
 export CONF="$HOME/.config/"
@@ -11,4 +13,3 @@ export PATH="$HOME/workspace/terminal/.config/decorator/scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"

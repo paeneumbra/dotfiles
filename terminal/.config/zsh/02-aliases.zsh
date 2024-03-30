@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Environment
 alias rzsh='source $ZDOTDIR/.zshrc'
 

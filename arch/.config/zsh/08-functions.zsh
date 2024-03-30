@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Find directory with zoxide and fzf
 function zd() {
   local dir
@@ -37,7 +39,7 @@ function fif() {
     --delimiter : \
     --preview 'bat --color=always {1} --highlight-line {2}' \
     --preview-window 'right,60%,border-bottom,+{2}+3/3,~3' \
-    --bind 'ctrl-y:execute-silent(echo {} | pbcopy)+abort,enter:become(nvim {1} +{2})'
+    --bind 'ctrl-y:execute-silent(echo {} | xclip -selection clipboard)+abort,enter:become(nvim {1} +{2})'
 }
 
 # find file or directory with fzf - does not work as expected
@@ -61,7 +63,7 @@ function ffile() {
     --bind "change:reload:sleep 0.1; $FD_PREFIX {q} || true" \
     --delimiter : \
     --preview 'bat --color=always {}' \
-    --bind 'ctrl-y:execute-silent(echo {} | pbcopy)+abort,enter:become(nvim {1})'
+    --bind 'ctrl-y:execute-silent(echo {} | xclip -selection clipboard)+abort,enter:become(nvim {1})'
 }
 
 # Find directory and move to it or copy to clipboard
@@ -74,7 +76,7 @@ function fdir() {
     --bind "change:reload:sleep 0.1; $FD_PREFIX {q} || true" \
     --delimiter : \
     --preview 'tree -C {}' \
-    --bind 'ctrl-y:execute-silent(echo {} | pbcopy)+abort')"
+    --bind 'ctrl-y:execute-silent(echo {} | xclip -selection clipboard)+abort')"
   cd "$DIR" || exit
 }
 
@@ -88,7 +90,7 @@ function fde() {
     --bind "change:reload:sleep 0.1; $FD_PREFIX {q} || true" \
     --delimiter : \
     --preview 'bat --color=always {}' \
-    --bind 'ctrl-y:execute-silent(echo {} | pbcopy)+abort,enter:become(nvim {1})'
+    --bind 'ctrl-y:execute-silent(echo {} | xclip -selection clipboard)+abort,enter:become(nvim {1})'
 }
 
 # Find directory and open it with IDE
@@ -101,8 +103,8 @@ function zide() {
     --bind "change:reload:sleep 0.1; $FD_PREFIX {q} || true" \
     --delimiter : \
     --preview 'tree -C {}' \
-    --bind 'enter:become(idea {1})' \
-    --bind 'ctrl-n:become(nvim {1})' \
+    --bind 'enter:become(nvim {1})' \
+    --bind 'ctrl-n:become(pycharm {1})' \
     --bind 'ctrl-o:become(code {1})' \
-    --bind 'ctrl-y:become(pycharm {1})'
+    --bind 'ctrl-y:become(idea {1})'
 }

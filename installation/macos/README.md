@@ -51,7 +51,7 @@ Most instructions should be also present in [makefile](./makefile)
 
 ### Nvim
 
-Initiate git submodule with [nvim configuration](/dotfiles/common/.config/nvim)
+Initiate git submodule with [nvim configuration](terminal/.config/nvim)
 
 ```shell
 git submodule init
@@ -64,8 +64,9 @@ git submodule update
 Symlink configurations like nvim, ranger and zsh to the proper folders
 
 ```shell
-stow -v -d $HOME/workspace/dotfiles -t ~/ common
-stow -v -d $HOME/workspace/dotfiles -t ~/ macos
+stow -v -d $HOME/workspace -t ~/ macos
+stow -v -d $HOME/workspace -t ~/ terminal
+stow -v -d $HOME/workspace -t ~/ neovim
 ```
 
 ### Brew

@@ -51,7 +51,7 @@ stow-setup:
 	mkdir -p $(HOME)/.cache/zsh
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminal
-	exec stow --restow --verbose --dir=$(HOME)/workspace/dotfiles --target=$(HOME) macos
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) macos
 
 	@$(call print-footer, "stow")
 

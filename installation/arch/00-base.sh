@@ -27,7 +27,7 @@ PKGS=(
   git
   git-filter-repo
   glow
-  handlr
+  handlr-regex
   lazygit
   maim
   neofetch

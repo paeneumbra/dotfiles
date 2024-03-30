@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # History
 HIST_STAMPS="dd.mm.yyyy"
 HISTFILE=$HOME/.cache/zsh/histfile
