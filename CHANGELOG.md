@@ -1,5 +1,16 @@
 # Changelog
 
+## v6.0.0 (2024-03-30)
+
+### Breaking Change
+
+- Restructuring, update installation files
+
+### Patch
+
+- Split arch and macos specific scripts
+- Pre commit update
+
 ## v5.0.2 (2024-03-28)
 
 ### Patch
