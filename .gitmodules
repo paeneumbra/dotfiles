@@ -4,9 +4,9 @@
 [submodule "terminal/.config/ranger/plugins/zoxide"]
 	path = terminal/.config/ranger/plugins/zoxide
 	url = git@github.com:jchook/ranger-zoxide.git
-[submodule "arch/.config/awesome/modules/bling"]
-	path = arch/.config/awesome/modules/bling
-	url = git@github.com:BlingCorp/bling.git
 [submodule "neovim/.config/nvim"]
 	path = neovim/.config/nvim
 	url = git@github.com:itzalak/nvim.git
+[submodule "awesome/.config/awesome/modules/bling"]
+	path = awesome/.config/awesome/modules/bling
+	url = git@github.com:BlingCorp/bling.git
