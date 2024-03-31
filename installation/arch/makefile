@@ -29,6 +29,14 @@ yay-setup:
 awesomewm-setup:
 	./01-awesomewm.sh
 
+.PHONY: qtile
+qtile:
+	@$(call warn, installing qtile)
+	./01-qtile.sh
+	@$(call warn, stow qtile)
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) qtile
+	@$(call log, qtile)
+
 extra-setup:
 	./02-extras.sh
 
@@ -54,7 +62,7 @@ awesome-stow: stow-setup
 
 .PHONY: qtile-stow
 qtile-stow: stow-setup
-	@$(call warn, qtile)
+	@$(call warn, stow - qtile)
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) qtile
 	@$(call log, qtile)
 
