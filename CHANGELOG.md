@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.2 (2024-03-31)
+
+### Fix
+
+- broken local config for nvim
+
 ## v6.0.1 (2024-03-31)
 
 ### Fix
