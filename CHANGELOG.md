@@ -1,5 +1,12 @@
 # Changelog
 
+## v6.0.3 (2024-03-31)
+
+### Patch
+
+- Continue refactoring to include qtile
+- Move awesome configuration to a separate folder to facilitate using other wm
+
 ## v6.0.2 (2024-03-31)
 
 ### Fix
