@@ -22,9 +22,9 @@ base-setup:
 	./00-base.sh
 
 yay-setup:
-	mkdir -p $(HOME)/projects/repositories/yay
-	git clone https://aur.archlinux.org/yay.git projects/repositories/yay
-	(cd $(HOME)/projects/repositories/yay && makepkg -si)
+	mkdir -p $(HOME)/workspace/projects/repositories/yay
+	git clone https://aur.archlinux.org/yay.git $(HOME)/workspace/projects/repositories/yay
+	(cd $(HOME)/workspace/projects/repositories/yay && makepkg -si)
 
 awesomewm-setup:
 	./01-awesomewm.sh
