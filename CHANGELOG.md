@@ -1,5 +1,15 @@
 # Changelog
 
+## v6.0.4 (2024-03-31)
+
+### Fix
+
+- Correct yay installation
+
+### Patch
+
+- WIP qtile config
+
 ## v6.0.3 (2024-03-31)
 
 ### Patch
