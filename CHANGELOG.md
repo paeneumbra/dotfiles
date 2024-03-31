@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.5 (2024-03-31)
+
+### Fix
+
+- correct makefile logiops installation, move some gnome files
+
 ## v6.0.4 (2024-03-31)
 
 ### Fix
