@@ -35,11 +35,28 @@ extra-setup:
 development-setup: sdkman-setup python-setup
 	./03-development.sh
 
+.PHONY: stow-setup
 stow-setup:
+	@$(call warn, stow - arch neovim terminal)
+	mkdir -p $(HOME)/.cache/zsh
 	mkdir -p $(HOME)/.config/gtk-3.0
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) arch
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminal
+	@$(call log, stow)
+
+
+.PHONY: awesome-stow
+awesome-stow: stow-setup
+	@$(call warn, stow - awesome)
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) awsome
+	@$(call log, awesome)
+
+.PHONY: qtile-stow
+qtile-stow: stow-setup
+	@$(call warn, qtile)
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) qtile
+	@$(call log, qtile)
 
 zsh-setup:
 	mkdir -p $(HOME)/.cache/zsh

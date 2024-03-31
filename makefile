@@ -70,8 +70,21 @@ ifeq ($(OS), Darwin)
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) macos
 else
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) arch
+	@$(call warn, run distribution specific stow for linux!)
 endif
 	@$(call log, restow)
+
+.PHONY: awestow
+awestow: restow
+	@$(call warn, awesome stow)
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) awesome
+	@$(call log, awesome stow)
+
+.PHONY: qtstow
+qtstow: restow
+	@$(call warn, awesome stow)
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) qtile
+	@$(call log, awesome stow)
 
 # Repository helpers
 pre-commit: pre-commit-setup pre-commit-update

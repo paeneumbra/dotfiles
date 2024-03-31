@@ -22,6 +22,7 @@ PKGS=(
   bottom
   fd
   feh
+  figlet
   fwupd
   fzf
   git
