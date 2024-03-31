@@ -8,15 +8,18 @@ PKGS=(
   calibre
   firefox
   git-extras
-  mullvad-vpn
+  mullvad-vpn-bin
   seahorse
   thunderbird
   tldr
 
   # Fonts
-  nerd-fonts-git
+  # nerd-fonts-git
   noto-fonts
   ttf-fira-code
+  ttf-iosevka
+  ttf-iosevka-nerd
+  ttf-iosevkaterm-nerd
   ttf-material-design-icons-webfont
   ttf-roboto
 

@@ -140,7 +140,7 @@ cask 'font-fira-mono-nerd-font'
 cask 'font-hack-nerd-font'
 cask 'font-iosevka'
 cask 'font-iosevka-nerd-font'
-
+cask 'font-iosevka-term-nerd-font'
 # hardware
 cask 'keymapp'
 
