@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.1 (2024-03-31)
+
+### Fix
+
+- Move scripts to local bin, fix compatibility of fonts
+
 ## v6.0.0 (2024-03-30)
 
 ### Breaking Change
