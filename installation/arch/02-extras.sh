@@ -12,6 +12,7 @@ PKGS=(
   seahorse
   thunderbird
   tldr
+  vivaldi
 
   # Fonts
   # nerd-fonts-git

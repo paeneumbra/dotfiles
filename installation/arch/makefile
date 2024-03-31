@@ -94,13 +94,15 @@ repository-setup:
 	@echo "Requires ssh configured in github"
 	$(HOME)/workspace/bin/cloneworkspace.py -s ./workspace.json -r
 
-mimelist-copy:
+.PHONY: copy-gnome-files:
+copy-gnome-files:
 	cp $(HOME)/workspace/installation/arch/extras/mimeapps.list $(HOME)/.config
+	cp $(HOME)/workspace/installation/arch/extras/user-dirs.dirs $(HOME)/.config
 
 logiops-setup:
 	sudo pacman -S cmake libevdev libconfig pkgconf
 	mkdir -p $(HOME)/workspace/projects/repositories/logiops
-	git clone https://github.com/PixlOne/logiops.git projects/repositories/logiops
+	git clone https://github.com/PixlOne/logiops.git $(HOME)/workspace/projects/repositories/logiops
 	mkdir -p $(HOME)/workspace/projects/repositories/logiops/build
 	(cd $(HOME)/workspace/projects/repositories/logiops/build && cmake .. && make)
 	(cd $(HOME)/workspace/projects/repositories/logiops/build && sudo make install)
