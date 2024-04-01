@@ -18,6 +18,7 @@ define log
 endef
 
 OS := $(shell uname -s)
+DISTRO := $(XDG_CURRENT_DESKTOP)
 
 .PHONY: init
 init:
@@ -68,9 +69,14 @@ restow:
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminal
 ifeq ($(OS), Darwin)
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) macos
-else
+endif
+ifeq ($(DISTRO), awesomewm)
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) arch
-	@$(call warn, run distribution specific stow for linux!)
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) awesome
+endif
+ifeq ($(DISTRO), qtile)
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) arch
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) qtile
 endif
 	@$(call log, restow)
 
@@ -83,7 +89,7 @@ awestow: restow
 .PHONY: qtstow
 qtstow: restow
 	@$(call warn, awesome stow)
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) qtile
+
 	@$(call log, awesome stow)
 
 # Repository helpers

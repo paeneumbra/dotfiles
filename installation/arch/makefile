@@ -94,7 +94,7 @@ repository-setup:
 	@echo "Requires ssh configured in github"
 	$(HOME)/workspace/bin/cloneworkspace.py -s ./workspace.json -r
 
-.PHONY: copy-gnome-files:
+.PHONY: copy-gnome-files
 copy-gnome-files:
 	cp $(HOME)/workspace/installation/arch/extras/mimeapps.list $(HOME)/.config
 	cp $(HOME)/workspace/installation/arch/extras/user-dirs.dirs $(HOME)/.config

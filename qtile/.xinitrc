@@ -9,4 +9,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-qtile start 2>~/.cache/.qtile.err > ~/.cache/.qtile.out
+# Export desktop session
+export XDG_CURRENT_DESKTOP='qtile'
+
+# Start qtile
+exec qtile start 2>~/.cache/.qtile.err > ~/.cache/.qtile.out

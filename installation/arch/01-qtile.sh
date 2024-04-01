@@ -6,6 +6,7 @@ PKGS=(
   #Python based WM with support for wayland
   #https://wiki.archlinux.org/title/Qtile
   qtile
+  dunst
   # bluetuith
   # brightnessctl
   picom
