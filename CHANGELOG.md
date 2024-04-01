@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.7 (2024-04-01)
+
+### Patch
+
+- Clean makefiles
+
 ## v6.0.6 (2024-04-01)
 
 ### Patch
