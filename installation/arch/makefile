@@ -18,6 +18,8 @@ define log
 	@tput sgr0
 endef
 
+DISTRO := $(XDG_CURRENT_DESKTOP)
+
 base-setup:
 	./00-base.sh
 
@@ -51,20 +53,15 @@ stow-setup:
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) arch
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminal
-	@$(call log, stow)
-
-
-.PHONY: awesome-stow
-awesome-stow: stow-setup
-	@$(call warn, stow - awesome)
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) awsome
-	@$(call log, awesome)
-
-.PHONY: qtile-stow
-qtile-stow: stow-setup
-	@$(call warn, stow - qtile)
+ifeq ($(DISTRO), awesomewm)
+	@$(call warn, awesome)
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) awesome
+endif
+ifeq ($(DISTRO), qtile)
+	@$(call warn, qtile)
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) qtile
-	@$(call log, qtile)
+endif
+	@$(call log, stow)
 
 zsh-setup:
 	mkdir -p $(HOME)/.cache/zsh
