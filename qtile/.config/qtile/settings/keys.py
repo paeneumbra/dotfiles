@@ -9,7 +9,7 @@ from libqtile.config import Key
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-mod = "mod4"
+mod = "mod1"
 terminal = guess_terminal("wezterm")
 
 keys = [
