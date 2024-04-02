@@ -8,6 +8,7 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+from libqtile.core.manager import Qtile
 
 mod = "mod1"
 terminal = guess_terminal("wezterm")
@@ -59,7 +60,7 @@ for vt in range(1, 8):
         Key(
             ["control", "mod1"],
             f"f{vt}",
-            lazy.core.change_vt(vt).when(func=lambda: qtile.core.name == "wayland"),
+            lazy.core.change_vt(vt).when(func=lambda: Qtile.core.name == "wayland"),
             desc=f"Switch to VT{vt}",
         )
     )

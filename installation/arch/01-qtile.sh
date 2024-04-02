@@ -12,10 +12,14 @@ PKGS=(
   picom
   redshift
   rofi
+  # xtitle
+  mypy
+  python-pytest-subtests
   wmname
 
   # Wayland support
-  # python-pywlroots
+  python-pywlroots
+  wlroots
 )
 
 for PKG in "${PKGS[@]}"; do
