@@ -6,12 +6,34 @@
 
 from libqtile import widget, bar
 from libqtile.config import Screen
+from libqtile.lazy import lazy
 
+from settings.keys import terminal
+
+# TODO: for now I focused on utility but later would be nice to have color for states like no wireless or volume
+# also, the damn icons don't have the same size - again.
+launcher_icon = widget.TextBox(
+    fmt=" 󱓞 ",
+    mouse_callbacks={"Button1": lazy.spawn("rofi -theme base -modi drun -show drun")},
+)
+
+volume_icon = widget.TextBox(
+    fmt="  ", mouse_callbacks={"Button1": lazy.spawn("pavucontrol")}
+)
+
+bluetoot_icon = widget.TextBox(
+    fmt=" 󰂯 ", mouse_callbacks={"Button1": lazy.spawn([terminal, "-e", "bluetoothctl"])}
+)
+
+wireless_icon = widget.TextBox(
+    fmt="󰖩 ", mouse_callbacks={"Button1": lazy.spawn([terminal, "-e", "nmtui"])}
+)
 screens = [
     Screen(
-        bottom=bar.Bar(
+        # TODO: Move all this to bar.py
+        top=bar.Bar(
             [
-                widget.CurrentLayout(),
+                widget.CurrentLayoutIcon(),
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
@@ -21,15 +43,21 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),
+                launcher_icon,
+                volume_icon,
+                bluetoot_icon,
+                wireless_icon,
+                # TODO: Is only considering one of the batteries
+                widget.Battery(
+                    format=" 󰁹 {percent:2.0%}",
+                ),
                 widget.Clock(format="%Y-%m-%d %a %H:%M"),
-                widget.QuickExit(),
+                widget.QuickExit(default_text="  ", countdown_start=10),
             ],
             24,
+            # opacity=1,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),

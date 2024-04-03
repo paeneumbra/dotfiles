@@ -8,4 +8,4 @@ import os
 
 
 def wallpaper():
-    os.system("feh --no-fehbg --bg-scale ~/workspace/wallpapers/wallhaven-pkq3zp.jpg")
+    os.system("feh --no-fehbg --bg-scale ~/workspace/wallpapers/blue-cosmos.jpg")
