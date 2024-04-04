@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.8 (2024-04-04)
+
+### Patch
+
+- Update nvim with telescope changes
+
 ## v6.0.7 (2024-04-01)
 
 ### Patch
