@@ -1,0 +1,44 @@
+# TODO
+
+- [x] Split config in smaller files
+    - [x] keys
+    - [x] wallpapers
+    - [x] layouts
+    - [x] groups
+- [ ] Use python instead of bash scripts to load dunst and picom
+- [ ] Define a new workflow and adjust shortcuts accordingly
+    - [x] Make mod = alt
+    - [ ] Refresh keybindings to match macos
+- [ ] Update readme
+    - [ ] add a qtile makefile
+- [ ] Refactor and split makefile
+- [ ] Rethink installation files
+- [ ] Make this project a poetry package - because python
+    - [ ] Might have to create a new folder called workspace to match requirements...
+- [x] Consider running a few of the common apps and check their behavior
+    - multiple things work fine
+    - steam games were too slow, but otherwise working
+- [x] Try all the installation scripts again
+    - [x] sdkman
+    - [x] ~~steam~~
+        - steam has multiple requirements that might conflict with the development plans for using wayland or just to drop gdm-prime (which is not working)
+- [ ] Read about noveau and nvidia
+- [ ] Wayland
+- [ ] Take a look at eww and consider if it is needed
+- [ ] Check if colorscheme can be used from xresources or from decorator
+- [ ] Can dunst use xresources
+    - there seems to be a way to wrap dunst or load external files, needs more research
+- [ ] wayland
+- [ ] consider making the qtile folder a repository
+    - [ ] consider also dependencies required to run qtile that might not be in the folder and might impact its use
+    - [ ] like rofi...
+
+## State of the art and ideas
+
+- <https://docs.qtile.org/en/stable/>
+- <https://github.com/daylinmorgan/tiles>
+- <https://github.com/archcraft-os/archcraft-qtile>
+- <https://github.com/gibranlp/QARSlp/tree/develop>
+- <https://github.com/sporestudio/dotfiles>
+- <https://github.com/daylinmorgan/tiles>
+- <https://github.com/DavideRagaini/dotfiles/tree/master/dot-config/qtile>

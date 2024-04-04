@@ -22,7 +22,7 @@ volume_icon = widget.TextBox(
 )
 
 bluetoot_icon = widget.TextBox(
-    fmt=" 󰂯 ", mouse_callbacks={"Button1": lazy.spawn([terminal, "-e", "bluetoothctl"])}
+    fmt=" 󰂯 ", mouse_callbacks={"Button1": lazy.spawn([terminal, "-e", "bluetuith"])}
 )
 
 wireless_icon = widget.TextBox(

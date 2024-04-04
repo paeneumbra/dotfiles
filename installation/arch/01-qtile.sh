@@ -18,8 +18,8 @@ PKGS=(
   wmname
 
   # Wayland support
-  python-pywlroots
-  wlroots
+  # python-pywlroots
+  # wlroots
 )
 
 for PKG in "${PKGS[@]}"; do

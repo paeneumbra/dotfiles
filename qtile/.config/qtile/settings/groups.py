@@ -5,9 +5,9 @@
 # <https://docs.qtile.org/en/latest/manual/config/groups.html>
 
 from libqtile.command import lazy
-from libqtile.config import Group, Key
+from libqtile.config import DropDown, Group, Key, ScratchPad
 
-from settings.keys import keys, mod
+from settings.keys import keys, mod, terminal
 
 # //TODO: To use icons instead we need to first move out keys and mod and import them here
 # also after using the icons - nerdfont icons like "" or "" we need to cycle through them
