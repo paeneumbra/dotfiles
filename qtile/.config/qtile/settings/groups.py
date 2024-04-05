@@ -3,11 +3,13 @@
 # \__, |_| \___/\_,_| .__/__/
 # |___/             |_|
 # <https://docs.qtile.org/en/latest/manual/config/groups.html>
+# <https://docs.qtile.org/en/latest/manual/config/groups.html#scratchpad-and-dropdown>
 
 from libqtile.command import lazy
-from libqtile.config import Group, Key
+from libqtile.config import DropDown, Group, Key, ScratchPad
 
-from settings.keys import keys, mod
+from settings.defaults import mod, term2
+from settings.keys import keys
 
 # //TODO: To use icons instead we need to first move out keys and mod and import them here
 # also after using the icons - nerdfont icons like "" or "" we need to cycle through them
@@ -37,3 +39,14 @@ for i in groups:
             #     desc="move focused window to group {}".format(i.name)),
         ]
     )
+
+groups.extend(
+    [
+        ScratchPad(
+            "scratchpad",
+            [
+                DropDown("term", term2, opacity=0.8, on_focus_lost_hide=True),
+            ],
+        ),
+    ]
+)

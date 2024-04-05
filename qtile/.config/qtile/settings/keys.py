@@ -7,10 +7,8 @@
 
 from libqtile.config import Key
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 
-mod = "mod1"
-terminal = guess_terminal("wezterm")
+from settings.defaults import mod, terminal
 
 keys = [
     # //TODO: Take a deeper look into the commands available
@@ -58,18 +56,6 @@ keys = [
         lazy.spawn("rofi -theme base -modi window -show window"),
         desc="Rofi open applications menu",
     ),
+    # Toggle dropdown scratchpad with a terminal
+    Key([mod], "s", lazy.group["scratchpad"].dropdown_toggle("term")),
 ]
-
-# TODO: I have no clue how to setup wayland
-# Add key bindings to switch VTs in Wayland.
-# We can't check qtile.core.name in default config as it is loaded before qtile is started
-# We therefore defer the check until the key binding is run by using .when(func=...)
-# for vt in range(1, 8):
-#     keys.append(
-#         Key(
-#             ["control", "mod1"],
-#             f"f{vt}",
-#             lazy.core.change_vt(vt).when(func=lambda: qtile.core.name == "wayland"),
-#             desc=f"Switch to VT{vt}",
-#         )
-#     )

@@ -8,20 +8,19 @@
 from libqtile import layout
 from libqtile.config import Match
 
+from settings.colors import color00, color02
+
+layout_defaults = {
+    "border_width": 2,
+    "margin": 8,
+    "border_focus": color02,
+    "border_normal": color00,
+}
+
 layouts = [
-    # TODO: Spiral behavior is not what I expected - actually none of them are
-    # For weird reasons can't enlarge, or resize, always spawns on the largest size
-    # layout.Spiral(
-    #     border_focus="#5f981a", border_normal="#1F1D2E", border_width=5, margin=10
-    # ),
     # TODO: Closer, but still no resize available - RTD
-    layout.MonadTall(
-        border_focus="#5f981a", border_normal="#1F1D2E", border_width=5, margin=10
-    ),
-    layout.Bsp(
-        border_focus="#5f981a", border_normal="#1F1D2E", border_width=5, margin=10
-    ),
-    layout.Max(),
+    layout.MonadTall(**layout_defaults),
+    layout.Max(**layout_defaults),
 ]
 
 floating_layout = layout.Floating(

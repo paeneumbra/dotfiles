@@ -18,6 +18,7 @@
     - [ ] add a qtile makefile
 - [ ] Refactor and split makefile
 - [ ] Rethink installation files
+    - [ ] <https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/install.sh>
 - [ ] Make this project a poetry package - because python
     - [ ] Might have to create a new folder called workspace to match requirements...
 - [x] Consider running a few of the common apps and check their behavior

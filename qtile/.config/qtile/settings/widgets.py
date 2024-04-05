@@ -9,14 +9,10 @@
 from libqtile import widget
 from libqtile.lazy import lazy
 
-from settings.keys import terminal
-from settings.defaults import font, font_size
+from settings.colors import bg
+from settings.defaults import font, font_size, terminal
 
-widget_defaults = dict(
-    font=font,
-    fontsize=font_size,
-    padding=3,
-)
+widget_defaults = dict(font=font, fontsize=font_size, padding=3, background=bg)
 
 extension_defaults = widget_defaults.copy()
 
