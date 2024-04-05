@@ -5,6 +5,11 @@
     - [x] wallpapers
     - [x] layouts
     - [x] groups
+- [x] Add a scratchpad
+- [ ] Figure out how to handle 2 monitors
+- [ ] Generalize border, margin and focus for layouts
+- [ ] Look into KeyChord and EzKey
+    - [ ] <https://docs.qtile.org/en/latest/manual/config/keys.html>
 - [ ] Use python instead of bash scripts to load dunst and picom
 - [ ] Define a new workflow and adjust shortcuts accordingly
     - [x] Make mod = alt

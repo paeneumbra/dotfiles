@@ -10,7 +10,8 @@ from settings.keys import keys, mod
 from settings.layouts import floating_layout, layouts
 from settings.screens import screens
 from settings.wallpaper import wallpaper
-from settings.widgets import extension_defaults
+from settings.widgets import *
+from settings.scratchpad import *
 
 # from settings.path import qtile_path
 
