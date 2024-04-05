@@ -47,3 +47,4 @@
 - <https://github.com/sporestudio/dotfiles>
 - <https://github.com/daylinmorgan/tiles>
 - <https://github.com/DavideRagaini/dotfiles/tree/master/dot-config/qtile>
+- <https://gitlab.com/dwt1/dotfiles/-/tree/master/.config/qtile>
