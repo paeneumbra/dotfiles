@@ -71,9 +71,9 @@ zsh-setup:
 
 audio-setup:
 	./04-audio.sh
-	systemctl --user enable --now pipewire
-	systemctl --user enable --now pipewire
-	systemctl --user enable --now wireplumber
+	systemctl --user enable --now pipewire.socket
+	systemctl --user enable --now pipewire-pulse.socket
+	systemctl --user enable --now wireplumber.service
 	sudo systemctl enable --now bluetooth.service
 
 gaming-setup:
