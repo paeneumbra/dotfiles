@@ -14,6 +14,7 @@ PKGS=(
   rofi
   # xtitle
   mypy
+  python-iwlib
   python-pytest-subtests
   wmname
 

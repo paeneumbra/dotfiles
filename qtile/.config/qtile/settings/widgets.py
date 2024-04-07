@@ -9,7 +9,7 @@
 from libqtile import widget
 from libqtile.lazy import lazy
 
-from settings.colors import bg
+from settings.colors import bg, red
 from settings.defaults import font, font_size, terminal
 
 widget_defaults = dict(font=font, fontsize=font_size, padding=3, background=bg)
@@ -27,12 +27,10 @@ volume_icon = widget.TextBox(
     fmt="  ", mouse_callbacks={"Button1": lazy.spawn("pavucontrol")}
 )
 
-bluetoot_icon = widget.TextBox(
-    fmt=" 󰂯 ", mouse_callbacks={"Button1": lazy.spawn([terminal, "-e", "bluetuith"])}
-)
-
-wireless_icon = widget.TextBox(
-    fmt=" 󰖩 ", mouse_callbacks={"Button1": lazy.spawn([terminal, "-e", "nmtui"])}
+bluetooth_icon = widget.TextBox(
+    # TODO: There is a bluetooth widget but I cannot understand it
+    fmt=" 󰂯 ",
+    mouse_callbacks={"Button1": lazy.spawn([terminal, "-e", "bluetuith"])},
 )
 
 bar_widgets = [
@@ -47,16 +45,56 @@ bar_widgets = [
         name_transform=lambda name: name.upper(),
     ),
     # widget.StatusNotifier(),
-    widget.Systray(),
+    # widget.Clipboard(
+    #     # background=1
+    #     # foreground=2
+    # ),
+    ###
+    widget.Battery(
+        battery=0,
+        charge_char="",
+        discharge_char="󰁽",
+        full_char="󰁹",
+        unknow_char="󰁹",
+        not_charging_char="󰁹",
+        low_percentage=0.2,
+        low_background=red,
+        notify_bellow=20,
+        show_short_text=False,
+        update_interval=1,
+        format=" {char} {percent:2.0%}",
+    ),
+    widget.Battery(
+        battery=1,
+        charge_char="",
+        discharge_char="󰁽",
+        full_char="󰁹",
+        unknow_char="󰁹",
+        not_charging_char="󰁹",
+        low_percentage=0.2,
+        low_background=red,
+        notify_bellow=20,
+        show_short_text=False,
+        update_interval=1,
+        format=" {char} {percent:2.0%}",
+    ),
+    ###
     widget.Volume(update_interval=0.1, emoji=True, volume_app="pavucontrol"),
     launcher_icon,
     volume_icon,
-    bluetoot_icon,
-    wireless_icon,
-    # TODO: Is only considering one of the batteries
-    widget.Battery(
-        format=" 󰁹 {percent:2.0%}",
+    bluetooth_icon,
+    widget.Wlan(
+        update_interval=1,
+        interface="wlp3s0",
+        format=" 󰖩 ",
+        disconnected_message=" 󰖪 ",
+        mouse_callbacks={"Button1": lazy.spawn([terminal, "-e", "nmtui"])},
     ),
+    ###
+    widget.Spacer(
+        length=10,
+    ),
+    widget.Systray(),
     widget.Clock(format="%Y-%m-%d %a %H:%M"),
     widget.QuickExit(default_text="  ", countdown_start=10),
 ]

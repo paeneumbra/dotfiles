@@ -22,3 +22,7 @@ color12 = "#9dafc1"  # light blue
 color13 = "#b497af"  # light purple
 color14 = "#a7c7d0"  # pale green
 color15 = "#eceff4"  # white
+
+red = color09
+green = color10
+yellow = color11
