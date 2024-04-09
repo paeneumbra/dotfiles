@@ -9,12 +9,14 @@ PKGS=(
   #https://wiki.archlinux.org/title/Bspwm
   bluetuith
   bspwm
+  dmenu
   dunst
   light
   pavucontrol
   picom
   polybar
   rofi
+  rxvt-unicode
   sxhkd
   xdo
   xtitle

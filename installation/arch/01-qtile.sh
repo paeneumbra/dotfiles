@@ -7,12 +7,11 @@ PKGS=(
   #https://wiki.archlinux.org/title/Qtile
   qtile
   dunst
-  # bluetuith
-  # brightnessctl
+  bluetuith
+  brightnessctl
   picom
-  # redshift
+  redshift
   rofi
-  # xtitle
   wmname
 
   # Wayland support
