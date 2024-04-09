@@ -44,11 +44,11 @@ Color = {
 -- if not, default, or send an error
 Wallpaper = os.getenv "HOME" .. "/workspace/wallpapers/wallhaven-pkq3zp.jpg"
 
-Terminal = "alacritty"
+Terminal = "wezterm"
 Editor = "nvim"
 
 Apps = {
-    terminal = "alacritty",
+    terminal = "wezterm",
     alternative_terminal = "urxvt",
     editor = "nvim",
     launcher = "rofi -theme base -modi drun -show drun",
