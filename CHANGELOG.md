@@ -1,5 +1,13 @@
 # Changelog
 
+## v6.0.9 (2024-04-09)
+
+### Patch
+
+- add archinstall extra packages
+- Tweak installation scripts
+- Tweak modkey config to depend on  alt instead of meta
+
 ## v6.0.8 (2024-04-04)
 
 ### Patch
