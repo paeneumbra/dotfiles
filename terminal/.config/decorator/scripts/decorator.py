@@ -29,6 +29,7 @@ __version__ = "3.0.1"
 
 HOME = os.getenv("HOME")
 SESSION = os.getenv("$XDG_SESSION_DESKTOP")
+WMANAGER = os.getenv("XDG_CURRENT_DESKTOP")
 DECORATOR = f"{os.getenv('XDG_CONFIG_HOME')}/decorator"
 COLORSCHEMES = f"{DECORATOR}/colorschemes"
 TEMPLATE_DIR = f"{DECORATOR}/templates"
@@ -231,4 +232,9 @@ for path in template_files:
 if platform.system() == "Linux":
     reload_xresources()
     if SESSION != "gnome":
-        reload_awesome()
+        if WMANAGER == "awesomewm":
+            reload_awesome()
+        else:
+            print(
+                "Script does not recognize the window manager - only xresources was reloaded"
+            )
