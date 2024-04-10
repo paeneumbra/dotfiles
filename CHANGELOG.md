@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.10 (2024-04-10)
+
+### Patch
+
+- Remove xresources from terminal config, not needed for macos
+
 ## v6.0.9 (2024-04-09)
 
 ### Patch
