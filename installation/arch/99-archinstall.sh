@@ -5,6 +5,7 @@ set -e
 # archinstall extra package
 
 PKGS=(
+  base-devel
   git
   neovim
   bluez

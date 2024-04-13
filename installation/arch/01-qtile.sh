@@ -12,7 +12,6 @@ PKGS=(
   picom
   redshift
   rofi
-  # xtitle
   mypy
   python-iwlib
   python-pytest-subtests
