@@ -1,5 +1,20 @@
 # Changelog
 
+## v6.0.11 (2024-04-13)
+
+### Patch
+
+- Tweaks to installation scripts
+- Qtile test some widgets
+- Qtile cleanup and colors playout
+- Qtile split widgets, add default settings
+- Correct audio pipewire makefile steps
+- Qtile introduce scratchpad
+- Qtile tweaks and tryouts
+- Qtile add new wallpaper, tweak bar
+- Qtile splitiing
+- make mod key alt in qtile
+
 ## v6.0.10 (2024-04-10)
 
 ### Patch
