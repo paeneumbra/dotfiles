@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "workbench"
+version = "6.0.11"
+description = "Personal development workbench"
+authors = ["Itzalak <itzalak@tuta.io>"]
+readme = "README.md"
+keywords = ["dotfiles"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.commitizen]
+name = "cz_customize"
+tag_format = "v$major.$minor.$patch"
+version_scheme = "semver"
+version = "6.0.11"
+update_changelog_on_bump = true
+version_files = ["pyproject.toml"]
+
+[tool.commitizen.customize]
+schema = "<type>: <body>"
+schema_pattern = "(bump|break|feat|chore|tools|docs|fix):(\\s.*)"
+bump_pattern = "^(bump|break|feat|tools|fix)"
+bump_map = { "break" = "MAJOR", "feat" = "MINOR", "tools" = "PATCH", "fix" = "PATCH", "docs" = "PATCH" }
+change_type_order = ["break", "feat", "fix", "chore", "tools", "docs"]
+commit_parser = "^(?P<change_type>break|feat|chore|tools|docs|fix):\\s(?P<message>.*)?"
+changelog_pattern = "^(break|feat|chore|tools|docs|fix)?(!)?"
+change_type_map = { "break" = "Breaking Change", "feat" = "Changed", "fix" = "Fixed", "chore" = "Changed", "tools" = "Tools", "docs" = "Notes" }

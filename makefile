@@ -19,6 +19,7 @@ endef
 
 OS := $(shell uname -s)
 DISTRO := $(XDG_CURRENT_DESKTOP)
+VENV = .venv
 
 .PHONY: init
 init:
@@ -82,7 +83,7 @@ ifeq ($(DISTRO), qtile)
 endif
 	@$(call log, restow)
 
-# Repository helpers
+# Pre commit examples
 pre-commit: pre-commit-setup pre-commit-update
 
 pre-commit-setup:
@@ -91,5 +92,26 @@ pre-commit-setup:
 pre-commit-update:
 	pre-commit autoupdate
 
+# Commitizen example
 bump:
 	cz bump
+
+# Poetry examples
+poetry-install:
+	poetry install
+
+python-delete-venv:
+	rm -rf $(VENV)
+	rm -rf venv
+
+poetry-local-venv:
+	poetry config virtualenvs.in-project true
+
+poetry-get-env:
+	poetry env info --path
+
+poetry-update:
+	poetry update
+
+poetry-test:
+	poetry run pytest
