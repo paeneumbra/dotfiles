@@ -83,12 +83,13 @@ macos-defaults:
 	bash macos-defaults.sh
 	@$(call print-footer, "osx defaults")
 
-.PHONY: poetry-install
-poetry-install:
-	@$(call print-header,"install poetry")
+.PHONY: pipx-install
+pipx-install:
+	@$(call print-header,"install pipx packages")
 	pipx install poetry
 	pipx inject poetry poetry-plugin-export
-	@$(call print-footer, "poetry install")
+	pipx install commitizen
+	@$(call print-footer, "poetry, commitizen installed")
 
 .PHONY: pynvim-install
 pynvim-install:
