@@ -1,5 +1,13 @@
 # Changelog
 
+## v6.0.12 (2024-04-16)
+
+### Tools
+
+- Introduce poetry
+- Update pre commit hooks
+- Update github checkout version
+
 ## v6.0.11 (2024-04-13)
 
 ### Patch
