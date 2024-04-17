@@ -1,5 +1,15 @@
 # Changelog
 
+## v6.0.13 (2024-04-17)
+
+### Changed
+
+- Add commitizen to pipx installation
+
+### Tools
+
+- Update brewfile
+
 ## v6.0.12 (2024-04-16)
 
 ### Tools
