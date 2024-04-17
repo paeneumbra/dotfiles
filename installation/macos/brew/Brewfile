@@ -1,65 +1,80 @@
-# Brewfile
+# Workspace Brewfile
 
 # taps
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/services'
+tap 'FelixKratz/formulae'
+tap 'boz/repo'
+tap 'mike-engel/jwt-cli'
 
-# Make sure apps get installed in system Applications dir
+# Install apps in macos Applications directory
 cask_args appdir: '/Applications'
 
-# git
-brew 'git'
-brew 'git-extras'
-brew 'git-filter-repo'
-brew 'lazygit'
-
-# python
-brew 'python'
-brew 'pipenv'
-brew 'pip-tools'
-brew 'virtualenv'
-brew 'ranger'
-brew 'pre-commit'
-brew 'cookiecutter'
-# In macos is preferable to install poetry via pipx
-# brew 'poetry'
-brew 'commitizen'
-brew 'pipx'
-# brew 'weasyprint'
-# brew 'httpie'
-
-# Jvm
-# java, groovy, scala, kotlin, maven and gradle are managed by sdkman
-brew 'ktlint'
-
-# binaries
+brew "kcat"
+brew 'azure-cli'
 brew 'base64'
 brew 'bat'
 brew 'bottom'
+brew 'boz/repo/kail'
+brew 'cookiecutter'
 brew 'coreutils'
-brew 'curl'
 brew 'fd'
 brew 'findutils'
 brew 'fzf'
+brew 'gabrie30/utils/ghorg'
+brew 'git'
+brew 'git-extras'
+brew 'git-filter-repo'
+brew 'glow'
+brew 'gnu-sed'
 brew 'gnupg'
 brew 'gnutls'
-brew 'gnu-sed'
 brew 'grep'
+brew 'helm'
 brew 'jq'
+brew 'jwt-cli'
+brew 'k6'
+brew 'k9s'
+brew 'ktlint'
+brew 'kubectl'
+brew 'kubectx'
+brew 'kustomize'
+brew 'lazydocker'
+brew 'lazygit'
+brew 'lua'
+brew 'luarocks'
+brew 'magic-wormhole'
 brew 'nano'
+brew 'node'
+brew 'npm'
 brew 'nvim'
+brew 'ollama'
 brew 'openssl'
+brew 'pip-tools'
+brew 'pipenv'
+brew 'pipx'
+brew 'postgis'
+brew 'postgresql'
+brew 'pre-commit'
+brew 'protobuf'
+brew 'python'
+brew 'ranger'
 brew 'ripgrep'
 brew 'shellcheck'
 brew 'starship'
 brew 'stow'
+brew 'stylua'
 brew 'telnet'
+brew 'terraform'
+brew 'tflint'
 brew 'tldr'
 brew 'trash'
 brew 'tree'
+brew 'virtualenv'
 brew 'wget'
+brew 'yarn'
 brew 'yq'
 brew 'zoxide'
 brew 'zsh'
@@ -67,97 +82,65 @@ brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 
-# aws
-# brew 'awscli'
-
-# azure
-# brew 'azure-cli'
-
-# db
-brew 'postgresql'
-
-# lua
-brew 'lua'
-brew 'stylua'
-brew 'luarocks'
-
-# kubernetes
-brew 'k9s'
-brew 'helm'
-brew 'kubectl'
-# brew 'kustomize'
-brew 'kubectx'
-tap 'boz/repo'
-brew 'boz/repo/kail'
-
-# jwt
-tap 'mike-engel/jwt-cli'
-brew 'jwt-cli'
-
-# terraform
-brew 'terraform'
-brew 'tflint'
-# terraform and tfenv conflict if both are installed
-# brew 'tfenv'
-# brew 'tfsec'
-
-# Kafka
-brew "kcat"
-
-# frontend
-brew 'yarn'
-# brew 'nvm'
-brew 'npm'
-brew 'node'
-
-# docker
-cask 'docker'
-brew 'lazydocker'
-
-# applications
+# Casks
 cask 'alacritty'
-# cask 'chromium'
+cask 'bluesnooze'
+cask 'caffeine'
+cask 'docker'
 cask 'firefox'
 cask 'firefox-developer-edition'
-# cask 'insomnia'
-# cask 'iterm2'
-cask 'jetbrains-toolbox'
-cask 'keepassxc'
-cask 'microsoft-office'
-cask 'microsoft-teams'
-cask 'obsidian'
-# cask 'postman'
-cask 'rectangle'
-cask 'slack'
-cask 'spotify', args: { require_sha: false }
-# cask 'ticktick'
-cask 'visual-studio-code'
-cask 'wezterm'
-
-# fonts
 cask 'font-fira-code'
 cask 'font-fira-mono-nerd-font'
 cask 'font-hack-nerd-font'
 cask 'font-iosevka'
 cask 'font-iosevka-nerd-font'
 cask 'font-iosevka-term-nerd-font'
-# hardware
+cask 'insomnia'
+cask 'iterm2'
+cask 'jetbrains-toolbox'
+cask 'keepassxc'
 cask 'keymapp'
+cask 'microsoft-office'
+cask 'microsoft-teams'
+cask 'obsidian'
+cask 'rectangle'
+cask 'slack'
+cask 'spotify', args: { require_sha: false }
+cask 'ticktick'
+cask 'visual-studio-code'
+cask 'vivaldi'
+cask 'warp'
+cask 'wezterm'
 
-# AI
-brew 'ollama'
-
-# In test
-brew 'glow'
-# brew 'magic-wormhole'
-# brew 'microsoft-edge'
-# brew 'gabrie30/utils/ghorg'
-cask 'appcleaner'
-cask 'caffeine'
-cask 'bluesnooze'
-brew 'k6'
-
-tap 'FelixKratz/formulae'
+# Under test
 brew 'sketchybar'
 cask 'amethyst'
-cask 'warp'
+cask 'appcleaner'
+
+
+# Notes
+
+# Python,
+# Packages poetry & commitizen give less issues when installed with pipx
+# brew 'poetry'
+# brew 'commitizen'
+
+# Java
+# java, groovy, scala, kotlin, maven and gradle are managed by sdkman
+
+# Terraform
+# terraform and tfenv conflict if both are installed
+# brew 'tfenv'
+# brew 'tfsec'
+
+# Recently I had an issue because curl is already provided by macos
+# brew 'curl'
+
+# Unused
+
+# brew 'awscli'
+# brew 'httpie'
+# brew 'microsoft-edge'
+# brew 'nvm'
+# cask 'chromium'
+# cask 'postman'
