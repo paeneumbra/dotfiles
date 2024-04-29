@@ -1,5 +1,16 @@
 # Changelog
 
+## v6.0.14 (2024-04-29)
+
+### Changed
+
+- Add gradle wrapper alias
+- tweak zsh history configuration
+
+### Fixed
+
+- Correct commitizen bump definition
+
 ## v6.0.13 (2024-04-17)
 
 ### Changed
