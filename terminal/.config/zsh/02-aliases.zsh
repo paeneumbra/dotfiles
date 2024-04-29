@@ -19,6 +19,11 @@ alias mv='mv -iv'
 alias lzg='lazygit'
 alias lzd='lazydocker'
 
+# Gradle
+alias gwa='./gradlew clean assemble'
+alias gwb='./gradlew clean build'
+alias gwsa='./gradlew :spotlessApply'
+
 # Print each PATH entry on a separate line
 alias path='echo -e "${PATH//:/\\n}"'
 
