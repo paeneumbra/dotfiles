@@ -52,7 +52,7 @@ else
 	sudo systemctl start keychron
 endif
 
-system-update:
+system-update: zimfw-refresh
 ifeq ($(OS), Darwin)
 	@$(call warn, Updating osx packages via brewfile)
 	brew bundle --file $(HOME)/workspace/installation/macos/brew/Brewfile
@@ -82,6 +82,14 @@ ifeq ($(DISTRO), qtile)
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) qtile
 endif
 	@$(call log, restow)
+
+# Zimfw
+.PHONY: zimfw-refresh
+zimfw-refresh:
+	@$(call warn, zimfw)
+	zsh -ic 'zimfw upgrade'
+	zsh -ic 'zimfw update'
+	@$(call log, zimfw)
 
 # Pre commit examples
 pre-commit: pre-commit-setup pre-commit-update
