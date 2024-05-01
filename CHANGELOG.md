@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.15 (2024-05-01)
+
+### Tools
+
+- add zimfw update to makefile
+
 ## v6.0.14 (2024-04-29)
 
 ### Changed
