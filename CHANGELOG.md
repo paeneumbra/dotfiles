@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.16 (2024-05-09)
+
+### Tools
+
+- Update brewfile and makefile
+
 ## v6.0.15 (2024-05-01)
 
 ### Tools
