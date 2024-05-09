@@ -35,7 +35,7 @@ help:
 	@make -qpRr | egrep -e '^[a-z].*:$$' | sed -e 's~:~~g' | sort
 
 .PHONY: all
-all: clean poetry-install pre-commit brew-setup sdkman-setup
+all: clean poetry-install pre-commit
 	@$(call warn, init config)
 
 .PHONY: test
