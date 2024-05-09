@@ -1,4 +1,4 @@
-# Workspace Brewfile
+# Brewfile
 
 # taps
 tap 'homebrew/bundle'
@@ -12,7 +12,6 @@ tap 'mike-engel/jwt-cli'
 # Install apps in macos Applications directory
 cask_args appdir: '/Applications'
 
-brew "kcat"
 brew 'azure-cli'
 brew 'base64'
 brew 'bat'
@@ -37,6 +36,7 @@ brew 'jq'
 brew 'jwt-cli'
 brew 'k6'
 brew 'k9s'
+brew 'kcat'
 brew 'ktlint'
 brew 'kubectl'
 brew 'kubectx'
@@ -106,7 +106,6 @@ cask 'obsidian'
 cask 'rectangle'
 cask 'slack'
 cask 'spotify', args: { require_sha: false }
-cask 'ticktick'
 cask 'visual-studio-code'
 cask 'vivaldi'
 cask 'warp'
@@ -116,7 +115,6 @@ cask 'wezterm'
 brew 'sketchybar'
 cask 'amethyst'
 cask 'appcleaner'
-
 
 # Notes
 
@@ -144,3 +142,4 @@ cask 'appcleaner'
 # brew 'nvm'
 # cask 'chromium'
 # cask 'postman'
+# cask 'ticktick'

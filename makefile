@@ -17,9 +17,36 @@ define log
 	@tput sgr0
 endef
 
+.DEFAULT_GOAL := help
+ROOT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 OS := $(shell uname -s)
 DISTRO := $(XDG_CURRENT_DESKTOP)
-VENV = .venv
+VENV := .venv
+
+###############################################################################
+# Default
+###############################################################################
+
+.PHONY: help
+help:
+	@echo "\n|> Directory: ${ROOT_DIR}"
+	@echo "|> OS: ${OS}"
+	@echo "|> Available targets:\n"
+	@make -qpRr | egrep -e '^[a-z].*:$$' | sed -e 's~:~~g' | sort
+
+.PHONY: all
+all: clean poetry-install pre-commit brew-setup sdkman-setup
+	@$(call warn, init config)
+
+.PHONY: test
+test: poetry-test
+
+.PHONY: clean
+clean: python-delete-venv
+
+###############################################################################
+# Setup
+###############################################################################
 
 .PHONY: init
 init:
@@ -91,35 +118,65 @@ zimfw-refresh:
 	zsh -ic 'zimfw update'
 	@$(call log, zimfw)
 
-# Pre commit examples
-pre-commit: pre-commit-setup pre-commit-update
+###############################################################################
+# Poetry setup and help
+###############################################################################
 
-pre-commit-setup:
-	pre-commit install
+.PHONY: poetry-setup
+poetry-setup: poetry-local-venv python-delete-venv poetry-install
 
-pre-commit-update:
-	pre-commit autoupdate
-
-# Commitizen example
-bump:
-	cz bump
-
-# Poetry examples
+.PHONY: poetry-setup
 poetry-install:
+	@$(call warn, create and install poetry dependencies)
 	poetry install
+	@$(call log, create and install poetry dependencies)
 
 python-delete-venv:
+	@$(call warn, delete existent virtualenv)
 	rm -rf $(VENV)
 	rm -rf venv
+	@$(call log, delete existent virtualenv)
 
 poetry-local-venv:
+	@$(call warn, setting virtualenv location to project)
 	poetry config virtualenvs.in-project true
+	@$(call log, virtualenv set to project location)
 
 poetry-get-env:
 	poetry env info --path
 
 poetry-update:
+	@$(call warn, update poetry dependencies)
 	poetry update
+	@$(call log, poetry dependencies update)
 
 poetry-test:
+	@$(call warn, run tests with poetry)
 	poetry run pytest
+	@$(call log, tests done)
+
+###############################################################################
+# Pre commit
+###############################################################################
+
+pre-commit: pre-commit-setup pre-commit-update
+
+pre-commit-setup:
+	@$(call warn, install pre-commit dependencies)
+	pre-commit install
+	@$(call log, install pre-commit dependencies)
+
+pre-commit-update:
+	@$(call warn, update pre-commit dependencies)
+	pre-commit autoupdate
+	@$(call log, update pre-commit dependencies)
+
+###############################################################################
+# Commitizen
+###############################################################################
+
+bump:
+	@$(call warn, bump version of commitizen)
+	cz bump
+	@$(call log, Dont forget to push the tags)
+	@$(call log, git push --tags)
