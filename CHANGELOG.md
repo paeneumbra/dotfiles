@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.18 (2024-05-09)
+
+### Tools
+
+- Add poetry to pre-commit
+
 ## v6.0.17 (2024-05-09)
 
 ### Fixed

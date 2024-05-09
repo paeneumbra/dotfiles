@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "workbench"
-version = "6.0.17"
+version = "6.0.18"
 description = "Personal development workbench"
 authors = ["Itzalak <itzalak@tuta.io>"]
 readme = "README.md"
@@ -19,7 +19,7 @@ build-backend = "poetry.core.masonry.api"
 name = "cz_customize"
 tag_format = "v$major.$minor.$patch"
 version_scheme = "semver"
-version = "6.0.17"
+version = "6.0.18"
 update_changelog_on_bump = true
 version_files = ["pyproject.toml"]
 
