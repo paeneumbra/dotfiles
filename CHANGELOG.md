@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.17 (2024-05-09)
+
+### Fixed
+
+- Fix makefile
+
 ## v6.0.16 (2024-05-09)
 
 ### Tools
