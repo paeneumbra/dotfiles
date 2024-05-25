@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.19 (2024-05-25)
+
+### Tools
+
+- Update nvim and pre-commit hooks version
+
 ## v6.0.18 (2024-05-09)
 
 ### Tools
