@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.21 (2024-05-30)
+
+### Tools
+
+- Update neovim config
+
 ## v6.0.20 (2024-05-30)
 
 ### Tools
