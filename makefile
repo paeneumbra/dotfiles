@@ -148,6 +148,7 @@ poetry-get-env:
 poetry-update:
 	@$(call warn, update poetry dependencies)
 	poetry update
+	poetry self update
 	@$(call log, poetry dependencies update)
 
 poetry-test:
@@ -180,3 +181,10 @@ bump:
 	cz bump
 	@$(call log, Dont forget to push the tags)
 	@$(call log, git push --tags)
+
+###############################################################################
+# Tools
+###############################################################################
+
+.PHONY: update
+update: pre-commit-update poetry-update
