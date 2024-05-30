@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.20 (2024-05-30)
+
+### Tools
+
+- Tweak makefile
+
 ## v6.0.19 (2024-05-25)
 
 ### Tools
