@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.23 (2024-06-20)
+
+### Fixed
+
+- Tweak macos defaults - wip
+
 ## v6.0.22 (2024-06-14)
 
 ### Tools
