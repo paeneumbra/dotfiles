@@ -65,6 +65,10 @@ chflags nohidden ~/Library
 
 print_info "- killing affected applications"
 for app in "Finder" \
+  "Music" \
   "SystemUIServer"; do
   killall "${app}" &>/dev/null
 done
+
+print_info "- to stop music from starting automatically run the following command"
+print_info "$ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist"
