@@ -1,7 +1,9 @@
 #!/usr/bin/env zsh
 
 # Environment
-alias rzsh='source $ZDOTDIR/.zshrc'
+# alias rzsh='source $ZDOTDIR/.zshrc'
+# zimfw recommendation to avoid compinit conflicts
+alias rzsh='exec zsh'
 
 # Directories
 alias la='ls -lAh'

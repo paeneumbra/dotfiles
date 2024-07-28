@@ -5,7 +5,7 @@
 # <https://docs.qtile.org/en/latest/manual/config/groups.html>
 # <https://docs.qtile.org/en/latest/manual/config/groups.html#scratchpad-and-dropdown>
 
-from libqtile.lazy import lazy
+from libqtile.command import lazy
 from libqtile.config import DropDown, Group, Key, ScratchPad
 
 from settings.defaults import mod, term2

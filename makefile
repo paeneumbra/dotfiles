@@ -50,19 +50,23 @@ clean: python-delete-venv
 
 .PHONY: init
 init:
-	@$(call warn, Init submodules - requires git ssh configuration)
-	git submodule init
-	git submodule update
-	@$(call log, Submodules initialized)
+	@$(call warn, DEPRECATED - modules should be initiated as needed!)
+	@$(call warn, WIP - initiate neovim and ranger or leave it to the installation. Awesome should be under installation)
+	# @$(call warn, Init submodules - requires git ssh configuration)
+	# git submodule init
+	# git submodule update
+	# @$(call log, Submodules initialized)
 
 .PHONY: workspace-clone
 workspace-clone:
+	@$(call warn, DEPRECATED - projects is being deprecated in favour of depository)
 	@$(call warn, Cloning workspace repositories)
 	./bin/cloneworkspace.py -s ./workspace.json -r
 	@$(call log, Cloning successfull)
 
 .PHONY: workspace-git-update
 workspace-git-update:
+	@$(call warn, DEPRECATED - projects is being deprecated in favour of depository)
 	@$(call warn, Update workspace repositories)
 	@./bin/updategitrepos.py \
 		--workspace \
@@ -92,8 +96,9 @@ endif
 
 .PHONY: restow
 restow:
-	@$(call warn, restow)
+	@$(call warn, restow - WIP)
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) zsh
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminal
 ifeq ($(OS), Darwin)
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) macos

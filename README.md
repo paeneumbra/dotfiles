@@ -2,6 +2,8 @@
 
 Personal workspace mostly for development.
 
+WIP: Ongoing refactoring!
+
 ## Installation
 
 - Install Arch Linux using [archinstall v2.5.2](https://github.com/archlinux/archinstall/tree/v2.5.2).
