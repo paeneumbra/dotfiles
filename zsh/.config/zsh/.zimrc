@@ -1,0 +1,26 @@
+zmodule environment
+zmodule input
+zmodule utility
+zmodule archive
+
+# Prompt
+zmodule duration-info
+
+# Others
+zmodule kiesman99/zim-zoxide
+zmodule joke/zim-helm
+zmodule joke/zim-k9s
+zmodule joke/zim-kubectl
+zmodule joke/zim-yq
+zmodule joke/zim-starship
+
+# Additional completion definitions for Zsh.
+zmodule zsh-users/zsh-completions --fpath src
+# Enables and configures smart and extensive tab completion.
+# completion must be sourced after all modules that add completion definitions.
+zmodule completion
+
+# Modules that must be after completion
+zmodule zsh-users/zsh-autosuggestions
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-history-substring-search

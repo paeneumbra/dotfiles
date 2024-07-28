@@ -52,7 +52,7 @@ stow-setup:
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminal
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) macos
-
+	./03-zsh.sh
 	@$(call print-footer, "stow")
 
 .PHONY: sdkman-setup
