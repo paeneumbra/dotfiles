@@ -4,3 +4,7 @@
 picom --config "$HOME/.config/picom/picom.conf" &
 
 dunst &
+
+pkill redshift
+
+redshift &

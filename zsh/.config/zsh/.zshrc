@@ -50,7 +50,3 @@ if [[ -n ${terminfo[kcuu1]} && -n ${terminfo[kcud1]} ]]; then
   bindkey ${terminfo[kcuu1]} history-substring-search-up
   bindkey ${terminfo[kcud1]} history-substring-search-down
 fi
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

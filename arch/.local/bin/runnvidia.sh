@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/bin/prime-run /usr/lib/jvm/java-17-openjdk/bin/java "$@"
+/usr/bin/prime-run "$HOME/.sdkman/candidates/java/current/bin/java" "$@"

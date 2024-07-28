@@ -12,6 +12,7 @@ arch/.config/zsh/.zim
 # WORKSPACE
 projects/
 forge/
+depository/
 
 # DATA
 python/.data/*
