@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.24 (2024-07-29)
+
+### Changed
+
+- neovim update
+
 ## v6.0.23 (2024-06-20)
 
 ### Fixed
