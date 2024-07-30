@@ -1,6 +1,8 @@
 # Installation steps
 
-Installation steps for Qtile
+Installation steps for arch/qtile/etc
+
+//WIP: Under construction
 
 - [ ] Create installation flash drive
 - [ ] Launch archlinux installation from flash drive
@@ -11,5 +13,4 @@ Installation steps for Qtile
     - [ ] Check config for ly
 - [ ] Generate (or copy) ssh key and add it to git
 - [ ] Clone dotfiles (or just copy installation files)
-- [ ] WIP Run 01-defaults.sh (Base installation files)
-    - [ ] Bluetooth might need extraction
+- [ ] Run installation scripts in order

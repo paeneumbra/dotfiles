@@ -19,10 +19,9 @@ WIP: Based on awesome, requires modification
     - [ ] PC gets blocked after removal of 1 monitor
 - [ ] Sound works
     - [ ] On firefox
-    - [ ] Required for [AWESOME](./../arch/.config/awesome/system/volume.lua)
         - [ ] Changing sound in the sidebar
         - [ ] Mute on the bottom bar
-- [ ] Bluetooth setup
+- [x] Bluetooth setup
 - [ ] Iosevka is present from nerd-fonts repos
     - [ ] Alacritty shows glyphs - missing on git (e.g. workspace)
     - [ ] urxvt font is reasonable and glyphs are present
@@ -34,10 +33,17 @@ WIP: Based on awesome, requires modification
     - [ ] Games are installable correctly and run accordingly
 - [ ] Picom
     - [ ] Transparency is enabled in alacritty
-- [ ] Microphone
-- [ ] Camera
+- [x] Microphone
+- [x] Camera
 - [ ] Neovim select text to clipboard
 - [ ] Intellij is not responding to qtile commands
-- [ ] Slack and Skype
-    - [ ] Camera is working, microphone does not look like
-- [ ] Game accounts
+- [x] Slack and Skype
+    - [x] Camera is working, microphone does not look like
+    - [x] Microphone also works
+- [x] Game accounts
+- [x] Nvidia GPU
+    - [x] nvidia-prime
+
+- [ ] Qtile updates
+    - [ ] Kill redshift everytime refresh is pressed or set it in the xinitrc
+    - [ ] Monitor unplugging is not working and blocks keybord for a bit
