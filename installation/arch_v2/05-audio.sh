@@ -14,12 +14,13 @@ function print_info() {
 PKGS=(
   pipewire
   pipewire-alsa
-  pipewire-pulse
   pipewire-jack
-  qpwgraph
+  pipewire-pulse
+  gst-plugin-pipewire
+  libpulse
   wireplumber
+  qpwgraph
   ffmpeg
-  vlc
 )
 
 print_info "Installing audio related packages"

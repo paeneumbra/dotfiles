@@ -15,6 +15,7 @@ function print_info() {
 
 PKGS=(
   skypeforlinux-bin
+  vlc
 )
 
 for PKG in "${PKGS[@]}"; do

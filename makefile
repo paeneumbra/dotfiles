@@ -51,11 +51,7 @@ clean: python-delete-venv
 .PHONY: init
 init:
 	@$(call warn, DEPRECATED - modules should be initiated as needed!)
-	@$(call warn, WIP - initiate neovim and ranger or leave it to the installation. Awesome should be under installation)
-	# @$(call warn, Init submodules - requires git ssh configuration)
-	# git submodule init
-	# git submodule update
-	# @$(call log, Submodules initialized)
+	@$(call warn, WIP - initiate neovim and ranger or leave it to the installation)
 
 .PHONY: workspace-clone
 workspace-clone:
