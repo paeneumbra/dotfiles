@@ -44,7 +44,7 @@ sudo archlinux-java unset
 
 if [[ "$(command -v sdk)" ]]; then
   source "$SDKMAN_DIR"/bin/sdkman-init.sh
-  print_info "Installing gradle groovy java11 java17 java21 kotlin maven scala"
+  print_info "Installing gradle groovy java11 java17 java21 java22 kotlin maven scala"
   zsh -c "sdk install gradle"
   zsh -c "sdk install groovy"
   zsh -c "sdk install java 11.0.24-tem"
