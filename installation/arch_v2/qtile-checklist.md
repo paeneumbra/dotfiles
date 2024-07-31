@@ -47,3 +47,6 @@ WIP: Based on awesome, requires modification
 - [ ] Qtile updates
     - [ ] Kill redshift everytime refresh is pressed or set it in the xinitrc
     - [ ] Monitor unplugging is not working and blocks keybord for a bit
+
+- [ ] Consider that sdkman and neovim might be needed before running development
+- [ ] Consider looking into gamemode: <https://wiki.archlinux.org/title/Gamemode>

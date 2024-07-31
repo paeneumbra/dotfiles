@@ -53,7 +53,6 @@ PKGS=(
   xclip
   wezterm
   zsh
-  zsh-completions
 )
 
 for PKG in "${PKGS[@]}"; do

@@ -11,9 +11,6 @@ function print_info() {
   echo -e "${GREEN}$1${RESET}"
 }
 
-# Define zsh config directory
-ZSH_DIR="$HOME/.config/zsh"
-
 PKGS=(
   zsh
   zsh-completions

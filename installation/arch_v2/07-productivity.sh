@@ -37,6 +37,7 @@ PKGS=(
   #https://archlinux.org/groups/x86_64/gnome/
   baobab
   cheese
+  seahorse
   gnome-disk-utility
   gnome-font-viewer
   xdg-user-dirs-gtk
