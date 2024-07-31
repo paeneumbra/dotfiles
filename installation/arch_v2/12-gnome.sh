@@ -27,18 +27,17 @@ PKGS=(
   gnome-tweaks
   mutter
   xdg-user-dirs-gtk
+
+  # Theme
+  qogir-gtk-theme
 )
 
-print_info "Installing qtile required packages"
+print_info "Installing gnome required packages"
 
 for PKG in "${PKGS[@]}"; do
   echo
   print_info "Installing package: $PKG"
-  sudo pacman -S "$PKG" --noconfirm --needed
+  yay -S "$PKG" --noconfirm --needed
 done
 
-print_info "Symlinking with stow"
-
-stow --restow --verbose --dir="$HOME/workspace" --target="$HOME" qtile
-
-print_info "Qtile setup is complete"
+print_info "Gnome setup is complete"

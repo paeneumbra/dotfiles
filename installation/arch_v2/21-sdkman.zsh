@@ -58,4 +58,6 @@ else
   print_info "Command sdk not found. Is zsh configured correctly?"
 fi
 
+print_info "to disable compinit error from zsh, modify .sdkman/etc/config sdkman_auto_complete=false"
+
 print_info "sdkman setup is complete"
