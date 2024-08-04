@@ -29,10 +29,12 @@ PKGS=(
 
 print_info "Installing Awesome required packages"
 
+print_info "Don't forget to uninstall awesome before replacing with awesome git!"
+
 for PKG in "${PKGS[@]}"; do
   echo
   print_info "Installing package: $PKG"
-  sudo pacman -S "$PKG" --noconfirm --needed
+  yay -S "$PKG" --noconfirm --needed
 done
 
 print_info "Symlinking with stow"

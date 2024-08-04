@@ -2,7 +2,7 @@ local awful = require "awful"
 local gears = require "gears"
 
 local cmd_wifi = "nmcli g | tail -1 | awk '{print $1}'"
-local cmd_strength = "awk '/^s*w/ { print  int($3 * 100 / 70) }' /proc/net/wireless"
+local cmd_strength = "awk 'NR==3 { print  int($3 * 100 / 70) }' /proc/net/wireless"
 
 -- Wifi
 local function get_wifi()

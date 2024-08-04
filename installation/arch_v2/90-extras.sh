@@ -16,6 +16,8 @@ function print_info() {
 PKGS=(
   skypeforlinux-bin
   vlc
+  spotify-launcher
+  ticktick
 )
 
 for PKG in "${PKGS[@]}"; do

@@ -39,6 +39,7 @@ PKGS=(
   git-filter-repo
   lazygit
   maim
+  man-db
   neofetch
   neovim
   networkmanager
@@ -50,6 +51,7 @@ PKGS=(
   stow
   tlp
   tree
+  unzip
   xclip
   wezterm
   zsh

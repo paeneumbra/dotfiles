@@ -21,11 +21,11 @@ PKGS=(
   tldr
   vivaldi
   obsidian
-  ticktick
 
   # Fonts
   # nerd-fonts-git
   noto-fonts
+  noto-fonts-emoji
   ttf-fira-code
   ttf-iosevka
   ttf-iosevka-nerd
@@ -40,6 +40,7 @@ PKGS=(
   seahorse
   gnome-disk-utility
   gnome-font-viewer
+  gvfs
   xdg-user-dirs-gtk
 
   #xfce

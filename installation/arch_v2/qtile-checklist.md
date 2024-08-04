@@ -12,6 +12,11 @@ WIP: Based on awesome, requires modification
 - [x] Poetry
 - [x] Intellij
 - [ ] Fix all DEPRECATED and WIP notes
+- [ ] Revisit wezterm -> seems to have a error on the colorscheme
+- [ ] Revisit images on ranger -> not working adequatly for wezterm and png large files
+- [ ] Neovim select text to clipboard
+- [ ] Nvidia active button?
+- [x] ~~Ly configuration~~
 
 - [ ] Dual monitor setup (to review, unsure what is needed in qtile)
     - [ ] xrandr display names remain the same (eDP-1, DP-2, ...)
@@ -35,7 +40,6 @@ WIP: Based on awesome, requires modification
     - [ ] Transparency is enabled in alacritty
 - [x] Microphone
 - [x] Camera
-- [ ] Neovim select text to clipboard
 - [ ] Intellij is not responding to qtile commands
 - [x] Slack and Skype
     - [x] Camera is working, microphone does not look like

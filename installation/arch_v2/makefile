@@ -63,18 +63,6 @@ productivity:
 	./07-productivity.sh
 	@$(call log, productivity tools)
 
-.PHONY: development
-development:
-	@$(call warn, installing development tools)
-	./08-development.sh
-	@$(call log, development tools)
-
-.PHONY: games
-games:
-	@$(call warn, installing games)
-	./09-gaming.sh
-	@$(call log, games)
-
 .PHONY: sdkman
 sdkman:
 	@$(call warn, sdkman)
@@ -86,6 +74,18 @@ neovim:
 	@$(call warn, installing and initializing neovim submodule)
 	./22-neovim.sh
 	@$(call log, neovim)
+
+.PHONY: development
+development:
+	@$(call warn, installing development tools)
+	./08-development.sh
+	@$(call log, development tools)
+
+.PHONY: games
+games:
+	@$(call warn, installing games)
+	./09-gaming.sh
+	@$(call log, games)
 
 .PHONY: keyboard
 keyboard:
@@ -102,5 +102,5 @@ mouse:
 .PHONY: extras
 extras:
 	@$(call, warn, installing extras)
-	./50-extras.sh
+	./90-extras.sh
 	@$(call log, extras)

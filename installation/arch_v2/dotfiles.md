@@ -23,7 +23,6 @@
 │   └── makefile
 ├── depository
 │   └── ...
-├── forge
 ├── lectern
 ├── linux
 │   ├── bin
@@ -43,7 +42,8 @@
 │   │   └── (installation scripts)
 ├── neovim
 ├── wallpapers
-└── workbench
+├── workbench
+└── zsh
 ```
 
 ## Installer

@@ -25,6 +25,7 @@ PKGS=(
   gnome-settings-daemon
   gnome-shell
   gnome-tweaks
+  gvfs
   mutter
   xdg-user-dirs-gtk
 
