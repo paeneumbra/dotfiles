@@ -4,3 +4,9 @@
 [submodule "awesome/.config/awesome/modules/bling"]
 	path = awesome/.config/awesome/modules/bling
 	url = git@github.com:BlingCorp/bling.git
+[submodule "base/.config/ranger/plugins/ranger-devicons2"]
+	path = base/.config/ranger/plugins/ranger-devicons2
+	url = git@github.com:cdump/ranger-devicons2.git
+[submodule "base/.config/ranger/plugins/ranger-zoxide"]
+	path = base/.config/ranger/plugins/ranger-zoxide
+	url = git@github.com:jchook/ranger-zoxide.git

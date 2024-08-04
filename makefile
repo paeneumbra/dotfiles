@@ -95,7 +95,7 @@ restow:
 	@$(call warn, restow - WIP)
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) zsh
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminal
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) base
 ifeq ($(OS), Darwin)
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) macos
 endif

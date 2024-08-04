@@ -1,29 +1,29 @@
 {
-    "name": "workspace/projects",
+    "name": "workspace",
     "repos": [
-        "git@github.com:itzalak/pyresume.git",
-        "git@github.com:itzalak/sheepskin.git",
-        "git@github.com:itzalak/thescream.nvim.git",
+        "git@github.com:itzalak/lectern.git",
         {
-            "name": "archived",
+            "name": "workspace/depository",
             "repos": [
-                "git@github.com:itzalak/pi-dotfiles.git",
-                "git@github.com:itzalak/deprecated-static-site.git"
-            ]
-        },
-        {
-            "name": "templates",
-            "repos": [
-                "git@github.com:itzalak/gradle-template.git",
-                "git@github.com:itzalak/obsidian-template.git",
-                "git@github.com:itzalak/cookiecutter-base.git",
-                "git@github.com:itzalak/cookiecutter-python.git",
-                "git@github.com:itzalak/cookiecutter-kotlin.git"
-            ]
-        },
-        {
-            "name": "repositories",
-            "repos": [
+                "git@github.com:itzalak/pyresume.git",
+                "git@github.com:itzalak/thescream.nvim.git",
+                {
+                    "name": "archived",
+                    "repos": [
+                        "git@github.com:itzalak/pi-dotfiles.git",
+                        "git@github.com:itzalak/deprecated-static-site.git"
+                    ]
+                },
+                {
+                    "name": "templates",
+                    "repos": [
+                        "git@github.com:itzalak/gradle-template.git",
+                        "git@github.com:itzalak/obsidian-template.git",
+                        "git@github.com:itzalak/cookiecutter-base.git",
+                        "git@github.com:itzalak/cookiecutter-python.git",
+                        "git@github.com:itzalak/cookiecutter-kotlin.git"
+                    ]
+                },
                 "git@github.com:tldr-pages/tldr.git",
                 "git@github.com:sherlock-project/sherlock.git"
             ]

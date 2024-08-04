@@ -31,12 +31,13 @@ brew-install:
 	bash brew-install.sh
 	@$(call print-footer, "brew")
 
-.PHONY: git-submodules-setup
-git-submodules-setup:
-	@$(call print-header,"git submodules")
-	git submodule init
-	git submodule update
-	@$(call print-footer,"git submodules")
+# # DEPRECATED: Initiate directly the required submodules
+# .PHONY: git-submodules-setup
+# git-submodules-setup:
+# 	@$(call print-header,"git submodules")
+# 	git submodule init
+# 	git submodule update
+# 	@$(call print-footer,"git submodules")
 
 .PHONY: brew-setup
 brew-setup:
@@ -50,7 +51,7 @@ stow-setup:
 	mkdir -p $(HOME)/.config
 	mkdir -p $(HOME)/.cache/zsh
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) terminal
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) base
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) macos
 	./03-zsh.sh
 	@$(call print-footer, "stow")
