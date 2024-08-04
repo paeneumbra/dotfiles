@@ -17,6 +17,7 @@ PKGS=(
   #https://archlinux.org/groups/x86_64/gnome-extra/
   baobab
   cheese
+  eog
   seahorse
   gnome-control-center
   gnome-disk-utility
@@ -27,6 +28,7 @@ PKGS=(
   gnome-tweaks
   gvfs
   mutter
+  tracker3-miners
   xdg-user-dirs-gtk
 
   # Theme
