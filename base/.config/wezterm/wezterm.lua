@@ -6,7 +6,7 @@ return {
         { family = "Iosevka Nerd Font Mono", weight = "Medium" },
         "Fira Code",
         "Material Design Icons",
-        "Noto Color Emoji"
+        "Noto Color Emoji",
     },
     warn_about_missing_glyphs = true,
     font_size = 13,

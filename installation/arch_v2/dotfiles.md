@@ -16,11 +16,11 @@
 
 ```shell
 ├── base
-│   ├── bin
 │   ├── neovim
 │   ├── decorator
 │   ├── ...
 │   └── makefile
+├── bin
 ├── depository
 │   └── ...
 ├── lectern
