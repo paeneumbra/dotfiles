@@ -15,12 +15,12 @@ Clone the workspace repository.
 git clone https://github.com/itzalak/workspace.git
 ```
 
-- Instructions for archlinux in [makefile](./installation/arch/makefile).
+- Instructions for archlinux in [makefile](./installation/linux/makefile).
 - Instructions for macOS in [makefile](./installation/macos/makefile) and [readme](./installation/macos/README.md).
 
 ## Awesomewm
 
-Take look into [awesome readme](arch/.config/awesome/README.md)
+Take look into [awesome readme](/linux/awesome/.config/awesome/README.md)
 
 ## Configuration
 
@@ -80,7 +80,7 @@ useradd -m -G wheel -s /bin/bash {{user}}
 sudo passwd {{user}}
 ```
 
-For installation follow instructions in [makefile](./installation/arch/makefile) setup-gnome instead of setup-awesome.
+For installation follow instructions in [makefile](./linux/installation/makefile) for gnome instead of awesome.
 
 ## IDEA
 

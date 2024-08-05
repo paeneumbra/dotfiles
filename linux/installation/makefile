@@ -19,6 +19,7 @@ define log
 endef
 
 # Must be setup in the zsh config files
+# TODO: Currently not working because I am using ly, it does not load xinitrc
 DISTRO := $(XDG_CURRENT_DESKTOP)
 
 .PHONY: default
@@ -78,13 +79,13 @@ neovim:
 .PHONY: development
 development:
 	@$(call warn, installing development tools)
-	./08-development.sh
+	./23-development.sh
 	@$(call log, development tools)
 
 .PHONY: games
 games:
 	@$(call warn, installing games)
-	./09-gaming.sh
+	./24-gnome-gaming.sh
 	@$(call log, games)
 
 .PHONY: keyboard
