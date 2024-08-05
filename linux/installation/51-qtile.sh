@@ -36,6 +36,6 @@ done
 
 print_info "Symlinking with stow"
 
-stow --restow --verbose --dir="$HOME/workspace" --target="$HOME" qtile
+stow --restow --verbose --dir="$HOME/workspace/linux" --target="$HOME" qtile
 
 print_info "Qtile setup is complete"

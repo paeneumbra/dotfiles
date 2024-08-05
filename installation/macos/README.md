@@ -51,7 +51,9 @@ Most instructions should be also present in [makefile](./makefile)
 
 ### Nvim
 
-Initiate git submodule with [nvim configuration](terminal/.config/nvim)
+Initiate git submodule with [nvim configuration](neovim/.config/nvim)
+
+TODO: Update correctly
 
 ```shell
 git submodule init
@@ -65,7 +67,8 @@ Symlink configurations like nvim, ranger and zsh to the proper folders
 
 ```shell
 stow -v -d $HOME/workspace -t ~/ macos
-stow -v -d $HOME/workspace -t ~/ terminal
+stow -v -d $HOME/workspace -t ~/ base
+stow -v -d $HOME/workspace -t ~/ zsh
 stow -v -d $HOME/workspace -t ~/ neovim
 ```
 
@@ -79,4 +82,4 @@ brew bundle
 
 ### Sdkman
 
-WIP: Used for installing java, kotlin, groovy, gradle, scala and maven
+Used for installing and configuraing java, kotlin, groovy, gradle, scala and maven
