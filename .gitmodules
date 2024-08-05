@@ -1,9 +1,6 @@
 [submodule "neovim/.config/nvim"]
 	path = neovim/.config/nvim
 	url = git@github.com:itzalak/nvim.git
-[submodule "awesome/.config/awesome/modules/bling"]
-	path = awesome/.config/awesome/modules/bling
-	url = git@github.com:BlingCorp/bling.git
 [submodule "base/.config/ranger/plugins/ranger-devicons2"]
 	path = base/.config/ranger/plugins/ranger-devicons2
 	url = git@github.com:cdump/ranger-devicons2.git

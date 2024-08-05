@@ -101,15 +101,21 @@ ifeq ($(OS), Darwin)
 endif
 ifeq ($(DISTRO), awesomewm)
 	@$(call warn, awesome)
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) arch
+	exec stow --restow --verbose --dir=$(HOME)/workspace/linux --target=$(HOME) dotfiles
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) awesome
 endif
 ifeq ($(DISTRO), qtile)
 	@$(call warn, qtile)
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) arch
+	exec stow --restow --verbose --dir=$(HOME)/workspace/linux --target=$(HOME) dotfiles
 	exec stow --restow --verbose --dir=$(HOME)/workspace/linux --target=$(HOME) qtile
 endif
 	@$(call log, restow)
+
+.PHONY: restow-awesome
+restow-awesome:
+	@$(call warn, awesome)
+	exec stow --restow --verbose --dir=$(HOME)/workspace/linux --target=$(HOME) dotfiles
+	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) awesome
 
 # Zimfw
 .PHONY: zimfw-refresh
