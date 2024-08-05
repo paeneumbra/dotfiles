@@ -39,9 +39,9 @@ done
 
 print_info "Symlinking with stow"
 
-stow --restow --verbose --dir="$HOME/workspace" --target="$HOME" awesome
+stow --restow --verbose --dir="$HOME/workspace/linux" --target="$HOME" awesome
 
 print_info "Initializing awesome submodules"
-git submodule update --init "$HOME/workspace/awesome/.config/awesome/modules/bling/"
+git submodule update --init "$HOME/workspace/linux/awesome/.config/awesome/modules/bling/"
 
 print_info "Awesome setup is complete"

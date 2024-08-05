@@ -34,7 +34,7 @@ done
 print_info "Stow configuration"
 mkdir -p "$HOME/.config/gtk-3.0"
 mkdir -p "$HOME/.local/bin"
-stow --restow --verbose --dir="$HOME/workspace/linux/" --target="$HOME" dotfiles
+stow --restow --verbose --dir="$HOME/workspace/linux" --target="$HOME" dotfiles
 stow --restow --verbose --dir="$HOME/workspace" --target="$HOME" base
 
 print_info "copy gtk files"
