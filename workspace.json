@@ -3,10 +3,12 @@
     "repos": [
         "git@github.com:itzalak/lectern.git",
         {
-            "name": "workspace/depository",
+            "name": "depository",
             "repos": [
                 "git@github.com:itzalak/pyresume.git",
                 "git@github.com:itzalak/thescream.nvim.git",
+                "git@github.com:tldr-pages/tldr.git",
+                "git@github.com:sherlock-project/sherlock.git",
                 {
                     "name": "archived",
                     "repos": [
@@ -23,9 +25,7 @@
                         "git@github.com:itzalak/cookiecutter-python.git",
                         "git@github.com:itzalak/cookiecutter-kotlin.git"
                     ]
-                },
-                "git@github.com:tldr-pages/tldr.git",
-                "git@github.com:sherlock-project/sherlock.git"
+                }
             ]
         }
     ]
