@@ -107,7 +107,7 @@ endif
 ifeq ($(DISTRO), qtile)
 	@$(call warn, qtile)
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) arch
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) qtile
+	exec stow --restow --verbose --dir=$(HOME)/workspace/linux --target=$(HOME) qtile
 endif
 	@$(call log, restow)
 
