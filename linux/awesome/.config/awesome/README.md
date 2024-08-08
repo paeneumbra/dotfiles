@@ -35,6 +35,10 @@ Setup dependencies:
 
 </details>
 
+Extra modules included as submodules:
+
+- [bling](https://blingcorp.github.io/bling/) used for extra layout `centered`
+
 Instructions can be found in [installation-scrips](./../../../installation)
 
 ### Color scheme

@@ -1,6 +1,7 @@
 local awful = require "awful"
 
 alt = "Mod1"
+meta = "Mod4"
 
 -- General awesome keybindings
 awful.keyboard.append_global_keybindings {
@@ -125,6 +126,12 @@ awful.keyboard.append_global_keybindings {
     awful.key({ alt, "Shift" }, "space", function()
         awful.layout.inc(-1)
     end, { description = "select previous", group = "layout" }),
+    awful.key({ meta, "Shift" }, "u", function()
+        awful.tag.incgap(-10)
+    end, { description = "increase useless gap", group = "layout" }),
+    awful.key({ meta }, "u", function()
+        awful.tag.incgap(10)
+    end, { description = "increase useless gap", group = "layout" }),
 }
 
 -- Client bindings
