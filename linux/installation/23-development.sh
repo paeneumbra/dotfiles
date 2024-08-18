@@ -29,6 +29,7 @@ PKGS=(
   # Docker
   docker
   docker-compose
+  lazydocker
 
   # Python
   python
@@ -47,6 +48,7 @@ PKGS=(
   # Misc
   cargo
   jq
+  shellcheck
   yq
   slack-desktop
 )
