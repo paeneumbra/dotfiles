@@ -29,14 +29,22 @@ VENV := .venv
 
 .PHONY: help
 help:
-	@echo "\n|> Directory: ${ROOT_DIR}"
+	@echo "|> Directory: ${ROOT_DIR}"
 	@echo "|> OS: ${OS}"
-	@echo "|> Available targets:\n"
-	@make -qpRr | egrep -e '^[a-z].*:$$' | sed -e 's~:~~g' | sort
+	@echo "|> Available targets:"
+	@make -qpRr | grep -E '^[a-z].*:$$' | sed -e 's~:~~g' | sort
 
 .PHONY: all
-all: clean poetry-install pre-commit
-	@$(call warn, init config)
+all: clean install
+	@$(call warn, all)
+
+.PHONY: install
+install: poetry-setup pre-commit-setup
+	@$(call warn, setup)
+
+.PHONY: update
+update: poetry-update pre-commit-update zimfw-refresh
+	@$(call warn, update)
 
 .PHONY: test
 test: poetry-test
@@ -47,11 +55,6 @@ clean: python-delete-venv
 ###############################################################################
 # Setup
 ###############################################################################
-
-.PHONY: init
-init:
-	@$(call warn, DEPRECATED - modules should be initiated as needed!)
-	@$(call warn, WIP - initiate neovim and ranger or leave it to the installation)
 
 .PHONY: workspace-clone
 workspace-clone:
@@ -79,7 +82,8 @@ else
 	sudo systemctl start keychron
 endif
 
-system-update: zimfw-refresh
+.PHONY: system-update
+system-update:
 ifeq ($(OS), Darwin)
 	@$(call warn, Updating osx packages via brewfile)
 	brew bundle --file $(HOME)/workspace/installation/macos/brew/Brewfile
@@ -113,8 +117,10 @@ restow-qtile:
 	exec stow --restow --verbose --dir=$(HOME)/workspace/linux --target=$(HOME) dotfiles
 	exec stow --restow --verbose --dir=$(HOME)/workspace/linux --target=$(HOME) qtile
 
-
+###############################################################################
 # Zimfw
+###############################################################################
+
 .PHONY: zimfw-refresh
 zimfw-refresh:
 	@$(call warn, zimfw)
@@ -185,10 +191,3 @@ bump:
 	cz bump
 	@$(call log, Dont forget to push the tags)
 	@$(call log, git push --tags)
-
-###############################################################################
-# Tools
-###############################################################################
-
-.PHONY: update
-update: pre-commit-update poetry-update
