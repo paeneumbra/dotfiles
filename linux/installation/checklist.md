@@ -14,7 +14,7 @@ WIP: Requires cleanup
 - [x] Poetry & Commitizen
 - [x] Intellij
 - [ ] Revisit wezterm -> seems to have a error on the colorscheme
-- [ ] Revisit images on ranger -> not working adequatly for wezterm and png large files
+- [x] Revisit images on ranger -> not working adequatly for wezterm and png large files
 - [ ] Neovim select text to clipboard
 - [x] ~~Ly configuration~~ Ly nis not configurable from $XDG_CONFIG
 - [ ] Explore remapping with <https://github.com/rvaiya/keyd>
@@ -42,7 +42,7 @@ WIP: Requires cleanup
 - [ ] Picom
     - [ ] Transparency is enabled in alacritty
 - [ ] Sound works
-    - [ ] On firefox
+    - [x] On firefox
     - [ ] Changing sound in the sidebar
     - [x] Mute on the bottom bar
 - [ ] Nvidia active button?

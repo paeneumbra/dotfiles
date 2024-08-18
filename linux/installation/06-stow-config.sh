@@ -20,6 +20,8 @@ PKGS=(
   redshift
   rofi
   zathura
+  zathura-cb
+  zathura-pdf-mupdf
   handlr
 )
 
