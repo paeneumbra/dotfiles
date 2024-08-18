@@ -86,7 +86,7 @@ endif
 system-update:
 ifeq ($(OS), Darwin)
 	@$(call warn, Updating osx packages via brewfile)
-	brew bundle --file $(HOME)/workspace/installation/macos/brew/Brewfile
+	brew bundle --file $(HOME)/workspace/macos/installation/brew/Brewfile
 	@$(call log, system update)
 else
 	@$(call warn, Updating archlinux packages via pacman/yay)
@@ -101,7 +101,7 @@ restow:
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) zsh
 	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) base
 ifeq ($(OS), Darwin)
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) macos
+	exec stow --restow --verbose --dir=$(HOME)/workspace/macos --target=$(HOME) dotfiles
 endif
 	@$(call log, restow)
 
