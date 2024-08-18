@@ -15,7 +15,7 @@ Clone the workspace repository.
 git clone https://github.com/itzalak/workspace.git
 ```
 
-- Instructions for archlinux in [makefile](./installation/linux/makefile).
+- Instructions for archlinux in [makefile](./linux/installation/makefile).
 - Instructions for macOS in [makefile](./macos/installation/makefile) and [readme](./macos/installation/README.md).
 
 ## Awesomewm

@@ -58,6 +58,7 @@ Note: I am not satisfied, this is more confusing than before
 Objective:
 
 - Install via scripts per os
+    - Single script is not very helpful in case of failures, step by step might be better (maybe with input?)
     - Brew installation might need to be a script, for installing brew and installing the brewfile
 - Update system via command
 - Setup dotfiles per os
