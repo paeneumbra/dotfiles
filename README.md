@@ -7,7 +7,7 @@ WIP: Ongoing refactoring!
 ## Installation
 
 - Install Arch Linux using [archinstall v2.5.2](https://github.com/archlinux/archinstall/tree/v2.5.2).
-- MacOS installed via [brew](./installation/macos/brew/Brewfile)
+- MacOS installed via [brew](./macos/installation/brew/Brewfile)
 
 Clone the workspace repository.
 
@@ -16,7 +16,7 @@ git clone https://github.com/itzalak/workspace.git
 ```
 
 - Instructions for archlinux in [makefile](./installation/linux/makefile).
-- Instructions for macOS in [makefile](./installation/macos/makefile) and [readme](./installation/macos/README.md).
+- Instructions for macOS in [makefile](./macos/installation/makefile) and [readme](./macos/installation/README.md).
 
 ## Awesomewm
 
