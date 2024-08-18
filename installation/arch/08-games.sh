@@ -2,12 +2,15 @@
 
 set -e
 
+# DEPRECATED
+# optimus-manager and gdm-prime are no longer used
+
 PKGS=(
   #https://github.com/Askannz/optimus-manager#gnome-gdm
-  gdm-prime
-  xinit-xsession
+  # gdm-prime
+  # xinit-xsession
   #https://github.com/Askannz/optimus-manager
-  optimus-manager
+  # optimus-manager
   # https://wiki.archlinux.org/title/Steam
   # Run with nvidia by setting "prime-run %command%"
   steam

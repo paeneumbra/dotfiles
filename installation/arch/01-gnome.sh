@@ -2,6 +2,10 @@
 
 set -e
 
+
+# DEPRECATED
+# prime-manager and gdm-prime are no longer used
+
 PKGS=(
   gnome
   gnome-extra
@@ -20,10 +24,10 @@ for PKG in "${PKGS[@]}"; do
 done
 
 # gmd is required for gnome, but conflicts with gdm-prime, which is required for prime usage
-
-yay -Rs gdm --noconfirm
-yay -S gdm-prime --noconfirm --needed
-yay -S gdm-settings --noconfirm --needed
+#
+# yay -Rs gdm --noconfirm
+# yay -S gdm-prime --noconfirm --needed
+# yay -S gdm-settings --noconfirm --needed
 
 echo
 echo "Installation is done"
