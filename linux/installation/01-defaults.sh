@@ -37,6 +37,7 @@ PKGS=(
   fzf
   git
   git-filter-repo
+  handlr
   lazygit
   maim
   man-db
