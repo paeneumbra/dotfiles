@@ -20,3 +20,4 @@ MD033:
     - details # there is no markdown equivalent for accordions
     - summary # there is no markdown equivalent for accordions
     - br
+    - kbd

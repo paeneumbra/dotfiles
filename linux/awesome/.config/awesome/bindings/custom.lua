@@ -5,26 +5,23 @@ local volume = require "system.volume"
 local brightness = require "system.brightness"
 local printscreen = require "system.printscreen"
 
-alt = "Mod1"
-meta = "Mod4"
-
 -- App keybinding
 awful.keyboard.append_global_keybindings {
     -- Apps
 
-    awful.key({ alt }, "Return", function()
+    awful.key({ MetaKey }, "Return", function()
         awful.spawn(Apps.terminal)
-    end, { description = "open alacritty", group = "launcher" }),
+    end, { description = "open wezterm", group = "launcher" }),
 
-    awful.key({ alt, meta }, "Return", function()
+    awful.key({ MetaKey, AltKey }, "Return", function()
         awful.spawn(Apps.alternative_terminal)
     end, { description = "open urxvt", group = "launcher" }),
 
-    awful.key({ meta }, "c", function()
+    awful.key({ AltKey }, "c", function()
         awful.spawn(Apps.browser)
     end, { description = "open firefox", group = "launcher" }),
 
-    awful.key({ meta }, "f", function()
+    awful.key({ AltKey }, "f", function()
         awful.spawn(Apps.file_manager)
     end, { description = "open thunar", group = "launcher" }),
 
@@ -32,24 +29,23 @@ awful.keyboard.append_global_keybindings {
     --     awful.spawn(Apps.email)
     -- end, { description = "open thunderbird", group = "launcher" }),
 
-    -- Todo: spawns and closes immediately
-    awful.key({ alt }, "space", function()
+    awful.key({ MetaKey }, "space", function()
         awful.spawn(Apps.launcher, false)
     end, { description = "open app menu", group = "Menus" }),
 
-    awful.key({ meta }, "Tab", function()
+    awful.key({ MetaKey }, "Tab", function()
         awful.spawn("rofi -theme base -modi window -show window", false)
     end, { description = "open window switcher menu", group = "Menus" }),
 
-    awful.key({ meta }, "t", function()
+    awful.key({ AltKey }, "t", function()
         awful.titlebar.toggle(client.focus)
     end, { description = "toggle titlebar", group = "Menus" }),
 
-    awful.key({ meta }, "d", function()
+    awful.key({ AltKey }, "d", function()
         awesome.emit_signal "dashboard::toggle"
     end, { description = "toggle dashboard", group = "Menus" }),
 
-    awful.key({ meta }, "x", function()
+    awful.key({ AltKey }, "x", function()
         awesome.emit_signal "power::toggle"
     end, { description = "toggle power menu", group = "Menus" }),
 
@@ -79,11 +75,11 @@ awful.keyboard.append_global_keybindings {
 
     -- Others
 
-    awful.key({ meta }, "p", function()
+    awful.key({ AltKey }, "p", function()
         printscreen.print_selected_area()
     end, { description = "Print screen selected area", group = "Others" }),
 
-    awful.key({ meta }, "i", function()
+    awful.key({ AltKey }, "i", function()
         hotkeys_popup.show_help(nil, awful.screen.focused())
     end, { description = "show help", group = "Others" }),
 }
