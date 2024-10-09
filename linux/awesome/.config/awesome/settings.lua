@@ -57,3 +57,6 @@ Apps = {
     file_manager = "thunar",
     email = "thunderbird",
 }
+
+MetaKey = "Mod4"
+AltKey = "Mod1"

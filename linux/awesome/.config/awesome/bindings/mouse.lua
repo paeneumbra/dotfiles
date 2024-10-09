@@ -15,10 +15,10 @@ client.connect_signal("request::default_mousebindings", function()
         awful.button({}, 1, function(c)
             c:activate { context = "mouse_click" }
         end),
-        awful.button({ alt }, 1, function(c)
+        awful.button({ MetaKey }, 1, function(c)
             c:activate { context = "mouse_click", action = "mouse_move" }
         end),
-        awful.button({ alt }, 3, function(c)
+        awful.button({ MetaKey }, 3, function(c)
             c:activate { context = "mouse_click", action = "mouse_resize" }
         end),
     }
