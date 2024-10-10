@@ -6,7 +6,7 @@ local displays = require "system.displays"
 
 -- Picom
 run.start_if_not_running("picom", function()
-    awful.spawn("picom --config /home/archy/.config/picom/picom.conf", false)
+    awful.spawn("picom", false)
 end)
 
 -- Display reset
