@@ -55,7 +55,7 @@ awful.keyboard.append_global_keybindings {
         end,
     },
     awful.key {
-        modifiers = { MetaKey, "Control", "Shift" },
+        modifiers = { MetaKey, AltKey },
         keygroup = "numrow",
         description = "toggle focused client on tag",
         group = "tag",
