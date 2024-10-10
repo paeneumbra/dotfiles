@@ -25,7 +25,7 @@ awful.keyboard.append_global_keybindings {
         awful.spawn(Apps.file_manager)
     end, { description = "open thunar", group = "launcher" }),
 
-    -- awful.key({ meta }, "e", function()
+    -- awful.key({ MetaKey }, "e", function()
     --     awful.spawn(Apps.email)
     -- end, { description = "open thunderbird", group = "launcher" }),
 
