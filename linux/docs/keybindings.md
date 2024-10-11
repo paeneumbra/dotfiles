@@ -71,7 +71,7 @@
 | <kbd>Meta</kbd> + <kbd>Alt</kbd> + <kbd>t</kbd>          | toggle titlebar                       |
 | <kbd>Meta</kbd> + <kbd>d</kbd>                           | toggle dashboard                      |
 | <kbd>Meta</kbd> + <kbd>x</kbd>                           | toggle power menu                     |
-| <kbd>XF86AudioMute</kbd>                                 | Mute/Unmute (F1)                      |
+| <kbd>XF86AudioMute</kbd>                                 | (Un)mute (F1)                         |
 | <kbd>XF86AudioLowerVolume</kbd>                          | Decrease Volume (F2)                  |
 | <kbd>XF86AudioRaiseVolume</kbd>                          | Increase Volume (F3)                  |
 | <kbd>XF86MonBrightnessDown</kbd>                         | Decrease brightness (F5)              |
