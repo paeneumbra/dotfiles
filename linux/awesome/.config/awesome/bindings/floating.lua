@@ -122,6 +122,24 @@ local function get_floating_clients(screen)
     return floating_clients
 end
 
+local function minimize_all_but_focused()
+    local focused_client = client.focus
+
+    if not focused_client then
+        naughty.notify { text = "No focused client!" }
+        return
+    end
+
+    local screen_clients = focused_client.screen.clients
+
+    for _, c in ipairs(screen_clients) do
+        -- If the client is not the focused one and is floating, minimize it
+        if c ~= focused_client and (awful.layout.get(c.screen) == awful.layout.suit.floating or c.floating) then
+            c.minimized = true
+        end
+    end
+end
+
 -- Floating layout bindings
 awful.keyboard.append_global_keybindings {
 
@@ -153,7 +171,7 @@ awful.keyboard.append_global_keybindings {
         else
             naughty.notify { text = "Not in floating layout or client not floating!" }
         end
-    end, { description = "Floating: swap clients position", group = "floating-layout" }),
+    end, { description = "Floating: swap windows position", group = "floating-layout" }),
 
     awful.key({ MetaKey, ControlKey }, "k", function()
         local current_layout = awful.layout.getname(awful.layout.get(awful.screen.focused()))
@@ -207,4 +225,8 @@ awful.keyboard.append_global_keybindings {
             center_client(c)
         end
     end, { description = " Floating: center client (half, third, quarter)", group = "floating-layout" }),
+
+    awful.key({ MetaKey, ControlKey }, "m", function()
+        minimize_all_but_focused()
+    end, { description = "Floating: Minimize all except focused window", group = "floating-layout" }),
 }
