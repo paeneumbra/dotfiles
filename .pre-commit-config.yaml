@@ -24,7 +24,7 @@ repos:
     rev: v1.3.3
     hooks:
       - id: python-safety-dependencies-check
-        args: ["--disable-optional-telemetry"]
+        args: [ "--disable-optional-telemetry" ]
 
   - repo: https://github.com/psf/black
     rev: 24.10.0
@@ -36,7 +36,7 @@ repos:
     rev: v3.29.1
     hooks:
       - id: commitizen
-        stages: [commit-msg]
+        stages: [ commit-msg ]
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.42.0
@@ -67,7 +67,8 @@ repos:
           (?x)^(
               CHANGELOG.md |
               lazyvim.json |
-              base/.config/ranger/scope.sh
+              base/.config/ranger/scope.sh |
+              .gitmodules
           )$
 
   - repo: https://github.com/python-poetry/poetry
@@ -75,4 +76,4 @@ repos:
     hooks:
       - id: poetry-check
       - id: poetry-lock
-        args: ["--no-update"]
+        args: [ "--no-update" ]
