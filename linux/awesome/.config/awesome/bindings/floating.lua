@@ -1,4 +1,5 @@
 local awful = require "awful"
+local naughty = require "naughty"
 
 local useless_gap = Dimensions.useless_gap * 2
 local border = Dimensions.border * 2
@@ -94,8 +95,83 @@ local function center_client(c)
     }
 end
 
+local function swap_clients(c1, c2)
+    if not (c1 and c2) then
+        return
+    end
+
+    -- Get the current geometry of both clients
+    local c1_geo = c1:geometry()
+    local c2_geo = c2:geometry()
+
+    -- Swap geometries (position and size)
+    c1:geometry(c2_geo)
+    c2:geometry(c1_geo)
+end
+
+local function get_floating_clients(screen)
+    local clients = screen.clients
+    local floating_clients = {}
+
+    for _, c in ipairs(clients) do
+        if awful.layout.get(screen) == awful.layout.suit.floating or c.floating then
+            table.insert(floating_clients, c)
+        end
+    end
+
+    return floating_clients
+end
+
+local function minimize_all_but_focused()
+    local focused_client = client.focus
+
+    if not focused_client then
+        naughty.notify { text = "No focused client!" }
+        return
+    end
+
+    local screen_clients = focused_client.screen.clients
+
+    for _, c in ipairs(screen_clients) do
+        -- If the client is not the focused one and is floating, minimize it
+        if c ~= focused_client and (awful.layout.get(c.screen) == awful.layout.suit.floating or c.floating) then
+            c.minimized = true
+        end
+    end
+end
+
 -- Floating layout bindings
 awful.keyboard.append_global_keybindings {
+
+    awful.key({ MetaKey, ControlKey }, "g", function()
+        local current_layout = awful.layout.get(client.focus.screen)
+        local screen = client.focus.screen
+
+        if current_layout == awful.layout.suit.floating or client.focus.floating then
+            local floating_clients = get_floating_clients(screen)
+
+            if not initial_client or not next_client_index then
+                initial_client = client.focus
+                next_client_index = 1
+            end
+
+            next_client_index = (next_client_index % #floating_clients) + 1
+
+            local next_client = floating_clients[next_client_index]
+            if next_client and next_client ~= initial_client then
+                swap_clients(initial_client, next_client)
+            end
+
+            -- Reset when we rotate through all clients
+            if next_client_index == 1 then
+                -- Reset initial client and index to stop rotating
+                initial_client = nil
+                next_client_index = nil
+            end
+        else
+            naughty.notify { text = "Not in floating layout or client not floating!" }
+        end
+    end, { description = "Floating: swap windows position", group = "floating-layout" }),
 
     awful.key({ MetaKey, ControlKey }, "k", function()
         local current_layout = awful.layout.getname(awful.layout.get(awful.screen.focused()))
@@ -149,4 +225,8 @@ awful.keyboard.append_global_keybindings {
             center_client(c)
         end
     end, { description = " Floating: center client (half, third, quarter)", group = "floating-layout" }),
+
+    awful.key({ MetaKey, ControlKey }, "m", function()
+        minimize_all_but_focused()
+    end, { description = "Floating: Minimize all except focused window", group = "floating-layout" }),
 }

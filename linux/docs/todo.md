@@ -66,9 +66,9 @@
 
 ## Awesomewm
 
-- [ ] Revisit layouts
-    - [ ] Consider floating layout with keybindings to snap to side, similar to rectangle/raycast config #INP
-- [ ] Revisit keybindings, many are unused
+- [x] Revisit layouts
+    - [x] Consider floating layout with keybindings to snap to side, similar to rectangle/raycast config
+- [x] Revisit keybindings, many are unused
 - [ ] Revisit dashboards
 - [ ] Move shutdowm menu to Rofi (can be reused on other wm)
 
