@@ -23,7 +23,6 @@ PKGS=(
   obsidian
 
   # Fonts
-  # nerd-fonts-git
   noto-fonts
   noto-fonts-emoji
   ttf-fira-code

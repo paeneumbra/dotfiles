@@ -1,12 +1,9 @@
 local awful = require "awful"
-local bling = require "modules.bling"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.tile,
-    awful.layout.suit.spiral.dwindle,
     awful.layout.suit.floating,
-    bling.layout.centered,
+    awful.layout.suit.tile,
 }
 
 -- Client rules
@@ -31,6 +28,26 @@ tag.connect_signal("property::layout", function(t)
         end
     end
 end)
+
+-- Floating Drag to the top to maximize
+awful.mouse.resize.add_leave_callback(function(c, _, args)
+    if (not c.floating) and awful.layout.get(c.screen) ~= awful.layout.suit.floating then
+        return
+    end
+
+    local coords = mouse.coords()
+    local sg = c.screen.geometry
+    local snap = awful.mouse.snap.default_distance
+
+    if
+        coords.x > snap + sg.x
+        and coords.x < sg.x + sg.width - snap
+        and coords.y <= snap + sg.y
+        and coords.y >= sg.y
+    then
+        awful.placement.maximize(c, { honor_workarea = true })
+    end
+end, "mouse.move")
 
 client.connect_signal("manage", function(c)
     if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then

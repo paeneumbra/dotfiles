@@ -21,21 +21,13 @@ awful.keyboard.append_global_keybindings {
         awful.spawn(Apps.browser)
     end, { description = "open firefox", group = "launcher" }),
 
-    awful.key({ MetaKey, AltKey }, "f", function()
-        awful.spawn(Apps.file_manager)
-    end, { description = "open thunar", group = "launcher" }),
-
-    -- awful.key({ MetaKey }, "e", function()
-    --     awful.spawn(Apps.email)
-    -- end, { description = "open thunderbird", group = "launcher" }),
-
     awful.key({ MetaKey }, "space", function()
         awful.spawn(Apps.launcher, false)
-    end, { description = "open app menu", group = "Menus" }),
+    end, { description = "Open rofi app menu", group = "Menus" }),
 
     awful.key({ MetaKey }, "Tab", function()
         awful.spawn("rofi -theme base -modi window -show window", false)
-    end, { description = "open window switcher menu", group = "Menus" }),
+    end, { description = "Select window to switch", group = "Menus" }),
 
     awful.key({ MetaKey, AltKey }, "t", function()
         awful.titlebar.toggle(client.focus)

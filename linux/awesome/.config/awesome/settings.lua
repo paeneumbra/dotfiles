@@ -60,3 +60,5 @@ Apps = {
 
 MetaKey = "Mod4"
 AltKey = "Mod1"
+ControlKey = "Control"
+ShiftKey = ShiftKey
