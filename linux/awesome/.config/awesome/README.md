@@ -12,12 +12,12 @@ Setup dependencies:
 - WM: [awesomewm](https://awesomewm.org/apidoc/index.html) using [aur/awesome-git](https://github.com/awesomeWM/awesome)
 - Compositor: [picom](https://github.com/yshui/picom)
 - Shell: [zsh](https://www.zsh.org/) with [zimfw](https://zimfw.sh/)
-- Terminal: [alacritty](https://alacritty.org/) and [urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)
+- Terminal: [wezterm](https://wezfurlong.org/wezterm/index.html), [alacritty](https://alacritty.org/) and [urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)
 - Launcher: [rofi](https://davatorium.github.io/rofi/)
 - File Manager: [ranger](https://ranger.github.io/)
 - Editor [neovim](https://neovim.io/) with [my own config](https://github.com/itzalak/nvim)
 - Font: [Iosevka](https://typeof.net/Iosevka/) via [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
-- Icons: [Material Design Icons](https://pictogrammers.com/library/mdi/)
+- Glyphs: [Material Design Icons](https://pictogrammers.com/library/mdi/) and [Noto Color Emoji](https://github.com/googlefonts/noto-emoji)
 
 <details>
 <summary>Other dependencies</summary>
@@ -29,17 +29,11 @@ Setup dependencies:
 - brightnessctl
 - nmtui via networkmanager
 - xrandr
-- ttf-nerd-fonts-symbols-2048-em-mono
-- ttf-material-design-icons-webfont
 - pipewire
 
 </details>
 
-Extra modules included as submodules:
-
-- [bling](https://blingcorp.github.io/bling/) used for extra layout `centered`
-
-Instructions can be found in [installation-scrips](./../../../installation)
+Instructions can be found in the [installation scripts](./../../../installation)
 
 ### Color scheme
 
