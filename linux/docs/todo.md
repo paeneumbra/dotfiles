@@ -6,13 +6,16 @@
 
 ## Notes
 
-- Look for #INP to monitor what is in progress
-- migration of ranger: <https://github.com/itzalak/lectern/blob/main/notes/cookbook/git-remove-submodule.md>
+- Look for [!] or #INP to monitor what is in progress
+- Migration of ranger: <https://github.com/itzalak/lectern/blob/main/notes/cookbook/git-remove-submodule.md>
+- Alternatives to gnome?
+- Scratchpad, from the top, with a local only todo/wip list
+- scratchpad like raycast but using python, bash and gum
 
 ## Generic
 
 - [ ] Fix all DEPRECATED and WIP notes
-- [ ] Design the new clone workspace script
+- [!] Design the new clone workspace script
 - [ ] Move path configuration to zshenv
     - Revisit <https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout>
 - [ ] Wezterm config
@@ -34,8 +37,14 @@
 - [ ] Explore remapping with <https://github.com/rvaiya/keyd>
 - [ ] Explore raycast alternatives
     - [ ] <https://ulauncher.io/>
+        - looks a nice half way between raycast and rofi
+        - uses python and some js
+        - lots of plugins
     - [ ] <https://albertlauncher.github.io/>
-    - [ ] Add Rofi functionality and scripts
+    - [ ] Why not Rofi/ it has the functionality and allows bash scripts
+        - very complex ui config
+        - crappy documentation
+        - few good examples
 - [ ] Picom revisit animations
     - [ ] Rofi looks clunky
 - [ ] Use Rofi for other common uses
