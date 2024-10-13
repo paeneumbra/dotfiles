@@ -1,10 +1,7 @@
 configuration {
-    font:                 "Iosevka Nerd Font 14";
+    font:                 "Iosevka Nerd Font Bold 24";
     show-icons:           true;
     click-to-exit:        true;
     disable-history:      true;
     sidebar-mode:         false;
-    display-window:       "";
-    display-run:          "";
-    display-drun:         "";
 }
