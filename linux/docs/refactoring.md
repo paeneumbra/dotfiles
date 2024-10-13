@@ -13,6 +13,30 @@
 
 ## TODO
 
+Naming:
+
+- projects, foundry, codebank, codeforge
+- workspace, dotfiles, depository, codeforge
+
+Maybe I could move them all to a blacksmith theme
+
+- anvil
+- foundry
+- forge
+
+Another idea is to create a single directory to hold everything.
+
+- Can workspace work from there?
+- what scripts or makefile I need or want
+
+```shell
+├── foundry
+    ├── forge
+    ├── depository
+    ├── lectern (ledger/logbook)
+    └── anvil
+```
+
 - [ ] Installer scripts (maybe more python)
 - [ ] Stow configuration based on installer/config scripts
     - [ ] Revisit stow config, to diminish number of nested folders
@@ -23,7 +47,7 @@
             - error prone
         - double ssh key config
             - stricter config
-            - possibly harder to use the depository outside the workspace
+            - possibly harder to use the project outside the workspace
         - maintaining configurations between multiple (possibly 4!) repositories
         - os specific configurations are growing
             - zsh
@@ -34,9 +58,9 @@
         - raycast use might increase even more the need for a split configuration
 - [ ] Backup script
 - [ ] Rename workbench/workspace/dotfiles to a different name, singleword?, no work word, ideas
-    - [ ] Bench, desk, forge
-    - [ ] CodeBench, CodeForge, CodeHub
-    - [ ] Dots, DotBench, Dotforge
+    - [x] ~~Bench, desk, forge~~
+    - [x] ~~CodeBench, CodeForge, CodeHub~~
+    - [x] ~~Dots, DotBench, Dotforge~~
 - [ ] Consider gum use cases to simplify configurations
 
 ## Structure
@@ -50,7 +74,7 @@
 │   ├── ...
 │   └── makefile
 ├── bin
-├── depository
+├── projects
 │   └── ...
 ├── lectern
 ├── linux
@@ -149,7 +173,7 @@ config:
 
 ```shell
 $HOME
-├── depository
+├── projects
 │   └── ...
 ├── personal (TODO: Rename)
 │   ├── neovim
@@ -167,7 +191,7 @@ $HOME
 dotfiles:
   - git@github.com:itzalak/lectern.git
 
-depository:
+projects:
   - git@github.com:itzalak/pyresume.git
   - git@github.com:itzalak/thescream.nvim.git
   - git@github.com:tldr-pages/tldr.git

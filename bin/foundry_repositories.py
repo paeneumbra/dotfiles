@@ -4,39 +4,32 @@
 Generates `git clone` commands based on given input file.
 Uses name to define the directory and subdirectories.
 
-Input json file should be in the following structure:
-{
-  "name": "folder",
-  "repos": [
-    "git@github.com:someone/other-stuff.git",
-    ...,
-    {
-      "name": "sub-folder-one",
-      "repos": [
-        "git@github.com:someone/one.git",
-        "ssh@bitbucket.com:someone/another-one.git",
-        ...
-        {
-            ...
-        }
-      ]
-    },
-    {
-        ...
-    }
-  ]
-}
+Input yaml file should be in the following structure:
+directory_one:
+- git@github.com:user/repository_one.git
+
+directory_two:
+- git@github.com:user/repository_two.git
+- subdirectory_one:
+  - git@github.com:user/repository_three.git
+  - git@github.com:user/repository_four.git
+- subdirectory_two:
+  - git@github.com:user/repository_five.git
+  - nested_subdirectory_one:
+    - git@github.com:user/orepository_six.git
 
 Environment variable $HOME must be defined.
 """
-import json
+
 import os
 import sys
 from argparse import ArgumentParser, Namespace
 
-__version__ = "0.3.1"
+__version__ = "1.0.1"
 
 from typing import Dict, Any
+
+import yaml
 
 parser = ArgumentParser()
 
@@ -50,7 +43,7 @@ def define_arguments():
         "-v", "--version", action="version", version="%(prog)s " + __version__
     )
     parser.add_argument(
-        "-s", "--source", type=str, help="JSON configuration file", required=True
+        "-s", "--source", type=str, help="YAML configuration file", required=True
     )
     parser.add_argument(
         "-r",
@@ -63,14 +56,13 @@ def define_arguments():
 
 def get_arguments() -> Dict[str, Any]:
     """The handling of parameters from the command line"""
-
     args, unknowns = parser.parse_known_args()
 
     if args.source is not None and not os.path.exists(args.source):
         sys.exit(f"File not found: {args.source}")
-
-    if type(args) == Namespace:
+    if type(args) is Namespace:
         args = vars(args)
+
     print(f"Arguments: {args}")
     return args
 
@@ -78,30 +70,31 @@ def get_arguments() -> Dict[str, Any]:
 HOME = os.getenv("HOME")
 
 
-def read_json(filepath: str):
-    """Returns a json object from given file"""
+def read_yaml(filepath: str):
+    """Returns a yaml object from given file"""
     with open(filepath) as read_file:
         try:
-            json_file = json.load(read_file)
+            yaml_file = yaml.safe_load(read_file)
         except ValueError as err:
             sys.exit(f"Failure reading file: {err}")
-    return json_file
+    return yaml_file
 
 
-def parse_repositories(json_obj: json, directory: str = ""):
+def parse_repositories(yaml_obj: Any, directory: str = ""):
     """
-    Returns a flat dict composed of directory and repository lists based on json structure.
+    Returns a flat dict composed of directory and repository lists based on the yaml structure.
     Directory is a composite of root node plus subdirectory, if it exists.
     """
     repository_dt = {}
-    directory = f"{directory}/{json_obj['name']}" if directory else json_obj["name"]
-
-    for value in (x for x in json_obj["repos"]):
-        if isinstance(value, dict):
-            repository_dt.update(parse_repositories(value, directory))
-        else:
-            repository_dt.setdefault(directory, []).append(value)
-
+    for key, value in yaml_obj.items():
+        current_path = os.path.join(directory, key)
+        if isinstance(value, list):
+            for item in value:
+                if isinstance(item, str):
+                    repository_dt.setdefault(current_path, []).append(item)
+                elif isinstance(item, dict):
+                    # Recursive call for nested dictionaries
+                    repository_dt.update(parse_repositories(item, current_path))
     return repository_dt
 
 
@@ -123,7 +116,8 @@ def create_commands(repository_structure: dict, destination: str):
             if os.path.exists(directory):
                 print(f"\n[WARN] {directory} exists, repo will not be cloned")
             else:
-                commands.append(f"git clone {repo} {destination}/{folder}/{name}")
+                command = f"git clone {repo} {destination}/{folder}/{name}"
+                commands.append(command)
     return commands
 
 
@@ -135,11 +129,15 @@ def execute_commands(commands: list, run_command: bool = False):
             os.system(command)
 
 
-define_arguments()
-arguments = get_arguments()
+def main(args):
+    yaml_object = read_yaml(args.get("source"))
+    repos = parse_repositories(yaml_object)
+    command_list = create_commands(repos, f"{HOME}")
 
-json_object = read_json(arguments.get("source"))
-repos = parse_repositories(json_object)
-command_list = create_commands(repos, f"{HOME}")
+    execute_commands(command_list, args.get("run"))
 
-execute_commands(command_list, arguments.get("run"))
+
+if __name__ == "__main__":
+    define_arguments()
+    arguments = get_arguments()
+    main(arguments)
