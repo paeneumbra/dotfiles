@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.25 (2024-10-14)
+
+### Tools
+
+- Update nvim and pre-commit config 14.10.24
+
 ## v6.0.24 (2024-07-29)
 
 ### Changed
