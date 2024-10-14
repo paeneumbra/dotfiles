@@ -46,18 +46,18 @@ softwareupdate --install-rosetta
 
 ## Personal setup
 
-Most instructions should be also present in [makefile](./makefile)
+Most instructions should be also present in [makefile](makefile)
 
 ### Mac defaults
 
-Settings for macos defaults can be found in [macos-defaults.sh](./macos-defaults.sh)
+Settings for macos defaults can be found in [macos-defaults.sh](macos-defaults.sh)
 
 ### Nvim
 
 Initiate git submodule with [nvim configuration](neovim/.config/nvim)
 
 ```shell
-git submodule update --init "$HOME/workspace/neovim"
+git submodule update --init "$HOME/anvil/neovim"
 
 ```
 
@@ -65,21 +65,21 @@ git submodule update --init "$HOME/workspace/neovim"
 
 Symlink configurations like nvim, ranger and zsh to the proper folders
 
-Zsh should already be installed, but more complete installation setup can be found in [01-zsh.sh](./01-zsh.sh).
+Zsh should already be installed, but more complete installation setup can be found in [01-zsh.sh](01-zsh.sh).
 
 ```shell
-stow -v -d $HOME/workspace/macos -t ~/ dotfiles
-stow -v -d $HOME/workspace -t ~/ base
-stow -v -d $HOME/workspace -t ~/ zsh
-stow -v -d $HOME/workspace -t ~/ neovim
+stow -v -d $HOME/anvil -t ~/ macos
+stow -v -d $HOME/anvil -t ~/ base
+stow -v -d $HOME/anvil -t ~/ zsh
+stow -v -d $HOME/anvil -t ~/ neovim
 ```
 
 Ranger requires initialization of submodules
 
 ```shell
 
-git submodule update --init "$HOME/workspace/base/.config/ranger/plugins/ranger-zoxide/"
-git submodule update --init "$HOME/workspace/base/.config/ranger/plugins/ranger-devicons2/"
+git submodule update --init "$HOME/anvil/base/.config/ranger/plugins/ranger-zoxide/"
+git submodule update --init "$HOME/anvil/base/.config/ranger/plugins/ranger-devicons2/"
 
 ```
 
@@ -91,12 +91,12 @@ Set up all required application through brew
 brew bundle
 ```
 
-Packages required for my personal setup can be found in the [brewfile](./brew/Brewfile) and can be run using the following command
+Packages required for my personal setup can be found in the [brewfile](Brewfile) and can be run using the following command
 
 ```shell
-brew bundle --file "$HOME/workspace/macos/installation/brew/Brewfile""
+brew bundle --file "$HOME/anvil/installation/macos/Brewfile""
 ```
 
 ### Sdkman
 
-Used for installing java, kotlin, groovy, gradle, scala and maven. Instructions can be found in [02-sdkamn.zsh](./02-sdkman.zsh)
+Used for installing java, kotlin, groovy, gradle, scala and maven. Instructions can be found in [02-sdkamn.zsh](02-sdkman.zsh)

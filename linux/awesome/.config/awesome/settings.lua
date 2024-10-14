@@ -42,7 +42,7 @@ Color = {
 
 -- TODO: Use gears.filesystem.file_readable (filename) to check is wallpaper exists
 -- if not, default, or send an error
-Wallpaper = os.getenv "HOME" .. "/workspace/wallpapers/wpp07bwSamurai.png"
+Wallpaper = os.getenv "HOME" .. "/anvil/wallpapers/wpp07bwSamurai.png"
 
 Terminal = "wezterm"
 Editor = "nvim"

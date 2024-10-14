@@ -28,10 +28,10 @@ def define_arguments():
         help="Full path to repositories folder",
     )
     parser.add_argument(
-        "-w",
-        "--workspace",
+        "-f",
+        "--foundry",
         action="store_true",
-        help="Update workspace repositories",
+        help="Update foundry repositories",
     )
     parser.add_argument(
         "-i",
@@ -60,8 +60,8 @@ def parse_arguments(parser: argparse.ArgumentParser):
     if len(sys.argv) <= 1:
         sys.exit("No arguments given, run updategitrepos -h")
 
-    if args.workspace:
-        args.source = os.path.join(HOME, "workspace")
+    if args.foundry:
+        args.source = os.path.join(HOME, "foundry")
 
     if args.source is not None and not os.path.exists(args.source):
         sys.exit(f"Directory not found: {args.source}")

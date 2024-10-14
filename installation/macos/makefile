@@ -39,7 +39,7 @@ all: install pynvim-install pipx-install stow-setup
 	@$(call warn, all)
 
 .PHONY: install
-install: brew-install brew-setup zsh-setup macos-defaults
+install: brew-install brew-setup zsh-setup macos-defaults stow-setup
 	@$(call warn, install)
 
 .PHONY: update
@@ -67,7 +67,7 @@ brew-install:
 .PHONY: brew-setup
 brew-setup:
 	@$(call warn, run brewfile)
-	brew bundle --file brew/Brewfile
+	brew bundle --file Brewfile
 	@$(call log, brewfile)
 
 ###############################################################################
@@ -99,10 +99,9 @@ stow-setup: neovim-submodule ranger-submodules
 	@$(call warn , run stow - WIP)
 	mkdir -p $(HOME)/.config
 	mkdir -p $(HOME)/.cache/zsh
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) zsh
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) base
-	exec stow --restow --verbose --dir=$(HOME)/workspace/macos --target=$(HOME) dotfiles
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) base
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
 	@$(call log, stow)
 
 ###############################################################################
@@ -131,7 +130,7 @@ endif
 	@. $(SDKMAN) && echo N | sdk install maven
 
 	@$(call log, sdkman)
-	@$(call log, java koltin scala groovy gradle maven")
+	@$(call log, java koltin scala groovy gradle maven)
 
 ###############################################################################
 # Python
@@ -170,12 +169,12 @@ zimfw-refresh:
 .PHONY: ranger-submodules
 ranger-submodules:
 	@$(call warn, initializing ranger submodules)
-	git submodule update --init $(HOME)/workspace/base/.config/ranger/plugins/ranger-zoxide
-	git submodule update --init $(HOME)/workspace/base/.config/ranger/plugins/ranger-devicons2
+	git submodule update --init $(HOME)/foundry/anvil/base/.config/ranger/plugins/ranger-zoxide
+	git submodule update --init $(HOME)/foundry/anvil/base/.config/ranger/plugins/ranger-devicons2
 	@$(call log, ranger submodules)
 
 .PHONY: neovim-submodule
 neovim-submodule:
 	@$(call warn, initializing neovim submodule)
-	git submodule update --init $(HOME)/workspace/neovim
+	git submodule update --init $(HOME)/foundry/anvil/neovim
 	@$(call log, neovim submodule)
