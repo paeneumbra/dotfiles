@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -eu
 
 # Define some colors for output
 GREEN=$(tput setaf 2)
