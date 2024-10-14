@@ -14,7 +14,7 @@ function print_info() {
 print_info "Installing logiops and required packages"
 sudo pacman -S --noconfirm cmake libevdev libconfig pkgconf
 
-LOGIOPS_DIR="$HOME/workspace/depository/logiops"
+LOGIOPS_DIR="$HOME/anvil/depository/logiops"
 mkdir -p "$LOGIOPS_DIR"
 
 print_info "Cloning logiops repository"

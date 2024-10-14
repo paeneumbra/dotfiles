@@ -57,7 +57,7 @@ Another idea is to create a single directory to hold everything.
             - nvm (maybe can be added to linux?)
         - raycast use might increase even more the need for a split configuration
 - [ ] Backup script
-- [ ] Rename workbench/workspace/dotfiles to a different name, singleword?, no work word, ideas
+- [ ] Rename workbench/anvil/dotfiles to a different name, singleword?, no work word, ideas
     - [x] ~~Bench, desk, forge~~
     - [x] ~~CodeBench, CodeForge, CodeHub~~
     - [x] ~~Dots, DotBench, Dotforge~~
@@ -122,7 +122,7 @@ Objective:
 The installation should be completed by running something akin to the following line
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/itzalak/workspace/refs/heads/main/bin/cloneworkspace.py | python
+curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/main/bin/cloneworkspace.py | python
 ```
 
 ### Macos

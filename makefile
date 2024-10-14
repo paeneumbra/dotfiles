@@ -64,7 +64,7 @@ clone-foundry:
 update-foundry:
 	@$(call warn, update foundry repositories)
 	@./bin/updategitrepos.py \
-		--workspace \
+		--anvil \
 		--ignore $(HOME)/foundry/depository/archived \
 		-r
 
@@ -81,7 +81,7 @@ endif
 system-update:
 ifeq ($(OS), Darwin)
 	@$(call warn, Updating osx packages via brewfile)
-	brew bundle --file $(HOME)/workspace/installation/macos/Brewfile
+	brew bundle --file $(HOME)/anvil/installation/macos/Brewfile
 	@$(call log, system update)
 else
 	@$(call warn, Updating archlinux packages via pacman/yay)
@@ -92,24 +92,24 @@ endif
 .PHONY: restow
 restow:
 	@$(call warn, restow - WIP)
-	exec stow --restow --verbose --dir=$(HOME)/foundry/workspace --target=$(HOME) neovim
-	exec stow --restow --verbose --dir=$(HOME)/foundry/workspace --target=$(HOME) base
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) base
 ifeq ($(OS), Darwin)
-	exec stow --restow --verbose --dir=$(HOME)/foundry/workspace --target=$(HOME) macos
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
 endif
 	@$(call log, restow)
 
 .PHONY: restow-awesome
 restow-awesome:
 	@$(call warn, awesome)
-	exec stow --restow --verbose --dir=$(HOME)/foundry/workspace/linux --target=$(HOME) dotfiles
-	exec stow --restow --verbose --dir=$(HOME)/foundry/workspace/linux --target=$(HOME) awesome
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) dotfiles
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) awesome
 
 .PHONY: restow-qtile
 restow-qtile:
 	@$(call warn, qtile)
-	exec stow --restow --verbose --dir=$(HOME)/foundry/workspace/linux --target=$(HOME) dotfiles
-	exec stow --restow --verbose --dir=$(HOME)/foundry/workspace/linux --target=$(HOME) qtile
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) dotfiles
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) qtile
 
 ###############################################################################
 # Zimfw

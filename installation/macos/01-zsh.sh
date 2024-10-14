@@ -46,8 +46,8 @@ sudo chsh -s "$(which zsh)"
 
 print_info "Symlinking with stow"
 
-stow --restow --verbose --dir="$HOME/workspace" --target="$HOME" zsh
-stow --restow --verbose --dir="$HOME/workspace/macos/.config" --target="$HOME/.config/zsh" zsh
+stow --restow --verbose --dir="$HOME/anvil" --target="$HOME" zsh
+stow --restow --verbose --dir="$HOME/anvil/macos/.config" --target="$HOME/.config/zsh" zsh
 
 print_info "Zsh setup is complete"
 print_info "Reboot to enable zsh configuration"

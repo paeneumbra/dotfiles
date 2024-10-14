@@ -1,6 +1,6 @@
-# Workspace
+# Anvil
 
-Personal workspace mostly for development.
+Personal laboratory mostly for development.
 
 WIP: Ongoing refactoring!
 
@@ -9,10 +9,10 @@ WIP: Ongoing refactoring!
 - Install Arch Linux using [archinstall v2.5.2](https://github.com/archlinux/archinstall/tree/v2.5.2).
 - MacOS installed via [brew](installation/macos/Brewfile)
 
-Clone the workspace repository.
+Clone the anvil repository.
 
 ```shell
-git clone https://github.com/itzalak/workspace.git
+git clone https://github.com/itzalak/anvil.git
 ```
 
 - Instructions for archlinux in [makefile](installation/linux/makefile).
