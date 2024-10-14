@@ -33,7 +33,7 @@ Another idea is to create a single directory to hold everything.
 ├── foundry
     ├── forge
     ├── depository
-    ├── lectern (ledger/logbook)
+    ├── lectern (scratchpad)
     └── anvil
 ```
 

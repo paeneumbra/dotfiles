@@ -41,9 +41,9 @@ stow --restow --verbose --dir="$HOME/workspace" --target="$HOME" base
 
 print_info "copy gtk files"
 rm -rf "$HOME/.config/mimeapps.list"
-cp "$HOME/workspace/linux/installation/extras/mimeapps.list" "$HOME/.config/"
+cp "$HOME/workspace/installation/linux/extras/mimeapps.list" "$HOME/.config/"
 rm -rf "$HOME/user-dirs"
-cp "$HOME/workspace/linux/installation/extras/user-dirs.dirs" "$HOME/.config/"
+cp "$HOME/workspace/installation/linux/extras/user-dirs.dirs" "$HOME/.config/"
 
 print_info "Initializing ranger submodules"
 git submodule update --init "$HOME/workspace/base/.config/ranger/plugins/ranger-zoxide/"

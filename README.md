@@ -7,7 +7,7 @@ WIP: Ongoing refactoring!
 ## Installation
 
 - Install Arch Linux using [archinstall v2.5.2](https://github.com/archlinux/archinstall/tree/v2.5.2).
-- MacOS installed via [brew](./macos/installation/brew/Brewfile)
+- MacOS installed via [brew](installation/macos/Brewfile)
 
 Clone the workspace repository.
 
@@ -15,8 +15,8 @@ Clone the workspace repository.
 git clone https://github.com/itzalak/workspace.git
 ```
 
-- Instructions for archlinux in [makefile](./linux/installation/makefile).
-- Instructions for macOS in [makefile](./macos/installation/makefile) and [readme](./macos/installation/README.md).
+- Instructions for archlinux in [makefile](installation/linux/makefile).
+- Instructions for macOS in [makefile](installation/macos/makefile) and [readme](installation/macos/README.md).
 
 ## Awesomewm
 
@@ -44,7 +44,7 @@ Configuration for zsh can be found under [zsh folder](./zsh/) plus [arch folder]
 There are three sets of stow folders to configure, they can be found under [base](./base/), [zsh](./zsh/) and specific to OS (plus neovim).
 
 Zsh framework configuration uses a self-installed, self-managed plugin manager called [zimfw](https://github.com/zimfw/zimfw) that will install itself and setup all needed plugins once zsh is started.
-Plugin configuration can be found in the [.zimrc file](./zsh/.config/zsh/.zimrc).
+Plugin configuration can be found in the [.zimrc file](base/.config/zsh/.zimrc).
 A folder will automatically be created as `.zim` to store all required files for `zimfw`.
 
 Global variable `ZDOTDIR` is defined under `./zshenv` as `$HOME/.config/zsh`. This tells zsh to look for further configurations files in that directory.
@@ -80,7 +80,7 @@ useradd -m -G wheel -s /bin/bash {{user}}
 sudo passwd {{user}}
 ```
 
-For installation follow instructions in [makefile](./linux/installation/makefile) for gnome instead of awesome.
+For installation follow instructions in [makefile](installation/linux/makefile) for gnome instead of awesome.
 
 ## IDEA
 
