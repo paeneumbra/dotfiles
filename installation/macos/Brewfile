@@ -2,8 +2,6 @@
 
 # taps
 tap 'homebrew/bundle'
-# tap 'homebrew/cask-fonts'
-# tap 'homebrew/cask-versions'
 tap 'homebrew/services'
 tap 'boz/repo'
 tap 'mike-engel/jwt-cli'

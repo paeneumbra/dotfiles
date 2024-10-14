@@ -28,10 +28,10 @@ def define_arguments():
         help="Full path to repositories folder",
     )
     parser.add_argument(
-        "-a",
-        "--anvil",
+        "-f",
+        "--foundry",
         action="store_true",
-        help="Update anvil repositories",
+        help="Update foundry repositories",
     )
     parser.add_argument(
         "-i",
@@ -60,8 +60,8 @@ def parse_arguments(parser: argparse.ArgumentParser):
     if len(sys.argv) <= 1:
         sys.exit("No arguments given, run updategitrepos -h")
 
-    if args.anvil:
-        args.source = os.path.join(HOME, "anvil")
+    if args.foundry:
+        args.source = os.path.join(HOME, "foundry")
 
     if args.source is not None and not os.path.exists(args.source):
         sys.exit(f"Directory not found: {args.source}")

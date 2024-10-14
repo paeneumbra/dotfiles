@@ -39,7 +39,7 @@ all: install pynvim-install pipx-install stow-setup
 	@$(call warn, all)
 
 .PHONY: install
-install: brew-install brew-setup zsh-setup macos-defaults
+install: brew-install brew-setup zsh-setup macos-defaults stow-setup
 	@$(call warn, install)
 
 .PHONY: update

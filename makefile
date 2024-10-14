@@ -64,7 +64,7 @@ clone-foundry:
 update-foundry:
 	@$(call warn, update foundry repositories)
 	@./bin/updategitrepos.py \
-		--anvil \
+		--foundry \
 		--ignore $(HOME)/foundry/depository/archived \
 		-r
 
