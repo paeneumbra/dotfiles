@@ -9,12 +9,6 @@ arch/.config/zsh/.zim
 .idea
 .vscode
 
-# WORKSPACE
-projects/
-forge/
-depository/
-lectern/
-
 # DATA
 python/.data/*
 !python/.data/.gitkeep
