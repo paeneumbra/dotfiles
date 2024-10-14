@@ -12,7 +12,7 @@ function print_info() {
 }
 
 # Define neovim source directory
-NEOVIM_DIR="$HOME/workspace/neovim"
+NEOVIM_DIR="$HOME/anvil/neovim"
 
 PKGS=(
   neovim
@@ -36,6 +36,6 @@ git submodule update --init "$NEOVIM_DIR"
 
 print_info "Symlinking with stow"
 
-stow --restow --verbose --dir="$HOME/workspace" --target="$HOME" neovim
+stow --restow --verbose --dir="$HOME/anvil" --target="$HOME" neovim
 
 print_info "Neovim setup is complete"

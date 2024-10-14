@@ -20,7 +20,6 @@ endef
 .DEFAULT_GOAL := help
 ROOT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 OS := $(shell uname -s)
-DISTRO := $(XDG_CURRENT_DESKTOP)
 VENV := .venv
 
 ###############################################################################
@@ -50,28 +49,24 @@ update: poetry-update pre-commit-update zimfw-refresh
 test: poetry-test
 
 .PHONY: clean
-clean: python-delete-venv
+clean: delete-venv
 
 ###############################################################################
 # Setup
 ###############################################################################
 
-.PHONY: workspace-clone
-workspace-clone:
-	@$(call warn, DEPRECATED - projects is being deprecated in favour of depository)
-	@$(call warn, Cloning workspace repositories)
-	./bin/cloneworkspace.py -s ./workspace.json -r
-	@$(call log, Cloning successfull)
+.PHONY: clone-repositories
+clone-foundry:
+	@$(call warn, set git repositories, requires proper ssh configuration)
+	./bin/clone_repositories.py -s ./repositories.yaml -r
 
-.PHONY: workspace-git-update
-workspace-git-update:
-	@$(call warn, DEPRECATED - projects is being deprecated in favour of depository)
-	@$(call warn, Update workspace repositories)
+.PHONY: update-repositories
+update-foundry:
+	@$(call warn, update foundry repositories)
 	@./bin/updategitrepos.py \
-		--workspace \
-		--ignore /home/archy/workspace/projects/archived /home/archy/workspace/projects/demos/ \
+		--foundry \
+		--ignore $(HOME)/foundry/depository/archived \
 		-r
-	@$(call log, Workspace git repositories successfully updated)
 
 .PHONY: k2-start
 k2-start:
@@ -86,7 +81,7 @@ endif
 system-update:
 ifeq ($(OS), Darwin)
 	@$(call warn, Updating osx packages via brewfile)
-	brew bundle --file $(HOME)/workspace/macos/installation/brew/Brewfile
+	brew bundle --file $(HOME)/anvil/installation/macos/Brewfile
 	@$(call log, system update)
 else
 	@$(call warn, Updating archlinux packages via pacman/yay)
@@ -97,25 +92,24 @@ endif
 .PHONY: restow
 restow:
 	@$(call warn, restow - WIP)
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) neovim
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) zsh
-	exec stow --restow --verbose --dir=$(HOME)/workspace --target=$(HOME) base
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) base
 ifeq ($(OS), Darwin)
-	exec stow --restow --verbose --dir=$(HOME)/workspace/macos --target=$(HOME) dotfiles
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
 endif
 	@$(call log, restow)
 
 .PHONY: restow-awesome
 restow-awesome:
 	@$(call warn, awesome)
-	exec stow --restow --verbose --dir=$(HOME)/workspace/linux --target=$(HOME) dotfiles
-	exec stow --restow --verbose --dir=$(HOME)/workspace/linux --target=$(HOME) awesome
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) dotfiles
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) awesome
 
 .PHONY: restow-qtile
 restow-qtile:
 	@$(call warn, qtile)
-	exec stow --restow --verbose --dir=$(HOME)/workspace/linux --target=$(HOME) dotfiles
-	exec stow --restow --verbose --dir=$(HOME)/workspace/linux --target=$(HOME) qtile
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) dotfiles
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) qtile
 
 ###############################################################################
 # Zimfw
@@ -133,61 +127,69 @@ zimfw-refresh:
 ###############################################################################
 
 .PHONY: poetry-setup
-poetry-setup: poetry-local-venv python-delete-venv poetry-install
+poetry-setup: poetry-local delete-venv poetry-install
 
-.PHONY: poetry-setup
+.PHONY: poetry-install
 poetry-install:
 	@$(call warn, create and install poetry dependencies)
 	poetry install
-	@$(call log, create and install poetry dependencies)
 
-python-delete-venv:
+.PHONY: delete-venv
+delete-venv:
 	@$(call warn, delete existent virtualenv)
 	rm -rf $(VENV)
 	rm -rf venv
-	@$(call log, delete existent virtualenv)
 
-poetry-local-venv:
+.PHONY: poetry-local
+poetry-local:
 	@$(call warn, setting virtualenv location to project)
 	poetry config virtualenvs.in-project true
-	@$(call log, virtualenv set to project location)
 
-poetry-get-env:
+.PHONY: poetry-env
+poetry-env:
+	@$(call warn, get poetry environment)
 	poetry env info --path
 
+.PHONY: poetry-update
 poetry-update:
 	@$(call warn, update poetry dependencies)
 	poetry update
 	poetry self update
-	@$(call log, poetry dependencies update)
 
+.PHONY: poetry-test
 poetry-test:
 	@$(call warn, run tests with poetry)
 	poetry run pytest
-	@$(call log, tests done)
 
 ###############################################################################
 # Pre commit
 ###############################################################################
 
+.PHONY: pre-commit
 pre-commit: pre-commit-setup pre-commit-update
 
+.PHONY: pre-commit-setup
 pre-commit-setup:
 	@$(call warn, install pre-commit dependencies)
 	pre-commit install
-	@$(call log, install pre-commit dependencies)
 
+.PHONY: pre-commit-update
 pre-commit-update:
 	@$(call warn, update pre-commit dependencies)
 	pre-commit autoupdate
-	@$(call log, update pre-commit dependencies)
 
 ###############################################################################
 # Commitizen
 ###############################################################################
 
+.PHONY: bump
 bump:
 	@$(call warn, bump version of commitizen)
 	cz bump
-	@$(call log, Dont forget to push the tags)
-	@$(call log, git push --tags)
+	@$(call log, sem ver bumped)
+
+.PHONY: bump-and-push
+bump-and-push: bump
+	@$(call warn, push git with tags)
+	git push --follow-tags
+	@$(call log, pushed tags with git push --follow-tags)

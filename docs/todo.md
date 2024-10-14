@@ -15,6 +15,7 @@
 ## Generic
 
 - [ ] Fix all DEPRECATED and WIP notes
+- [ ] Add anvil package and add poetry to it
 - [!] Design the new clone workspace script
 - [ ] Move path configuration to zshenv
     - Revisit <https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout>

@@ -12,7 +12,7 @@ function print_info() {
 }
 
 # Define yay directory
-YAY_DIR="$HOME/workspace/depository/yay"
+YAY_DIR="$HOME/anvil/depository/yay"
 
 # Create the directory if it doesn't exist
 mkdir -p "$YAY_DIR"

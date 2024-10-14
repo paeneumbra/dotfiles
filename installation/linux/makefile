@@ -40,11 +40,11 @@ zsh:
 	./03-zsh.sh
 	@$(call log, zsh)
 
-.PHONY: wirelles-bluetooth
-wirelles-bluetooth:
-	@$(call warn, setting up wirelles bluetooth)
+.PHONY: wireless-bluetooth
+wireless-bluetooth:
+	@$(call warn, setting up wireless bluetooth)
 	./04-wireless-bluetooth.sh
-	@$(call log, wirelles bluetooth)
+	@$(call log, wireless bluetooth)
 
 .PHONY: audio
 audio:

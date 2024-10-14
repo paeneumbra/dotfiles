@@ -13,7 +13,7 @@ function print_info() {
 
 print_info "Enabling keychron keyboard"
 print_info "https://github.com/adam-savard/keyboard-function-keys-linux"
-sudo cp "$HOME/workspace/linux/installation/extras/keychron.service" /etc/systemd/system/
+sudo cp "$HOME/anvil/installation/linux/extras/keychron.service" /etc/systemd/system/
 sudo systemctl enable --now keychron
 
 print_info "Installing zsa keyboard tool"
