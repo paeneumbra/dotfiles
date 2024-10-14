@@ -96,13 +96,21 @@ zsh-setup:
 
 .PHONY: stow-setup
 stow-setup: neovim-submodule ranger-submodules
-	@$(call warn , run stow - WIP)
+	@$(call warn, run stow)
 	mkdir -p $(HOME)/.config
 	mkdir -p $(HOME)/.cache/zsh
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) base
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
 	@$(call log, stow)
+
+.PHONY: stow-delete
+stow-delete:
+	@$(call warn, delete stow)
+	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
+	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) base
+	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
+	@$(call log, delete stow)
 
 ###############################################################################
 # Sdkman

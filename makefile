@@ -91,7 +91,7 @@ endif
 
 .PHONY: restow
 restow:
-	@$(call warn, restow - WIP)
+	@$(call warn, restow)
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) base
 ifeq ($(OS), Darwin)
@@ -110,6 +110,16 @@ restow-qtile:
 	@$(call warn, qtile)
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) dotfiles
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) qtile
+
+.PHONY: destow
+destow:
+	@$(call warn, delete stow)
+	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
+	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) base
+ifeq ($(OS), Darwin)
+	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
+endif
+	@$(call log, delete stow)
 
 ###############################################################################
 # Zimfw

@@ -13,22 +13,6 @@
 
 ## TODO
 
-Naming:
-
-- projects, foundry, codebank, codeforge
-- workspace, dotfiles, depository, codeforge
-
-Maybe I could move them all to a blacksmith theme
-
-- anvil
-- foundry
-- forge
-
-Another idea is to create a single directory to hold everything.
-
-- Can workspace work from there?
-- what scripts or makefile I need or want
-
 ```shell
 ├── foundry
     ├── forge
@@ -55,48 +39,44 @@ Another idea is to create a single directory to hold everything.
             - functions (maybe can be transformed in a bash script)
             - brew
             - nvm (maybe can be added to linux?)
-        - raycast use might increase even more the need for a split configuration
+        - ~~raycast use might increase even more the need for a split configuration~~
 - [ ] Backup script
-- [ ] Rename workbench/anvil/dotfiles to a different name, singleword?, no work word, ideas
+- [x] Rename workbench/anvil/dotfiles to a different name, singleword?, no work word, ideas
     - [x] ~~Bench, desk, forge~~
     - [x] ~~CodeBench, CodeForge, CodeHub~~
     - [x] ~~Dots, DotBench, Dotforge~~
+    - decided by anvil
 - [ ] Consider gum use cases to simplify configurations
 
 ## Structure
 
 > **WIP**
+> move the linux packages to root
 
 ```shell
-├── base
-│   ├── neovim
-│   ├── decorator
-│   ├── ...
-│   └── makefile
-├── bin
-├── projects
-│   └── ...
-├── lectern
-├── linux
-│   ├── bin
-│   │   └── (system scripts)
-│   ├── awesomewm
-│   ├── bspwm
-│   ├── dotfiles
-│   ├── qtile
-│   └── installation
-│       └── (installation scripts)
+anvil
+├── .git
+├── .github
+│  └── workflows
+├── anvil
+├── base (consider renaming)
+│  └── .config
+├── bin (move stuff to anvil)
+├── docs
+├── installation
+│  ├── linux
+│  └── macos
+├── linux (move to root)
+│  ├── awesome
+│  ├── dotfiles
+│  └── qtile
 ├── macos
-│   ├── bin
-│   │   └── (system scripts)
-│   ├── brewfile
-│   ├── dotfiles
-│   ├── installation
-│   │   └── (installation scripts)
+│  ├── .config
+│  └── .local
 ├── neovim
-├── wallpapers
-├── workbench
-└── zsh
+│  └── .config
+└── wallpapers
+
 ```
 
 ## Installer
@@ -172,14 +152,12 @@ config:
 > WIP: State of the idea
 
 ```shell
-$HOME
-├── projects
-│   └── ...
-├── personal (TODO: Rename)
-│   ├── neovim
-│   ├── notes
-│   └── lab
-└── work
+foundry
+├── anvil
+├── ...
+├── depository
+├── forge
+└── scratchpad
 ```
 
 > Considering the limitations of the professional setup I need to rethink the structure
