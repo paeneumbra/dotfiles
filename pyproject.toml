@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "workbench"
+name = "anvil"
 version = "6.0.24"
-description = "Personal development workbench"
+description = "Personal development laboratory"
 authors = ["Itzalak <itzalak@tuta.io>"]
 readme = "README.md"
 keywords = ["dotfiles"]
