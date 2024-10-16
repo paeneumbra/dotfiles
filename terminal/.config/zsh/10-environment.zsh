@@ -20,7 +20,7 @@ alias lzg='lazygit'
 alias lzd='lazydocker'
 
 alias dcu='docker compose up -d'
-alias dcp='docker compose down'
+alias dcd='docker compose down'
 
 # Gradle
 alias gw='./gradlew'
