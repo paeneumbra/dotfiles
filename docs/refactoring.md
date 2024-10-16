@@ -59,7 +59,7 @@ anvil
 ├── .github
 │  └── workflows
 ├── anvil
-├── base (consider renaming)
+├── terminal (consider renaming)
 │  └── .config
 ├── bin (move stuff to anvil)
 ├── docs

@@ -40,6 +40,6 @@ for PKG in "${PKGS[@]}"; do
 done
 
 # print_info "Symlinking with stow"
-# stow --restow --verbose --dir="$HOME/anvil/linux" --target="$HOME" bspwm
+# stow --restow --verbose --dir="$HOME/anvil" --target="$HOME" bspwm
 
 print_info "Bspwm setup is complete"

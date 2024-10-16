@@ -39,9 +39,9 @@ done
 
 print_info "Symlinking with stow"
 
-stow --restow --verbose --dir="$HOME/anvil/linux" --target="$HOME" awesome
+stow --restow --verbose --dir="$HOME/anvil" --target="$HOME" awesome
 
 print_info "Initializing awesome submodules"
-git submodule update --init "$HOME/anvil/linux/awesome/.config/awesome/modules/bling/"
+git submodule update --init "$HOME/anvil/awesome/.config/awesome/modules/bling/"
 
 print_info "Awesome setup is complete"

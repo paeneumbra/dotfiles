@@ -93,33 +93,41 @@ endif
 restow:
 	@$(call warn, restow)
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
-	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) base
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) terminal
 ifeq ($(OS), Darwin)
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
 endif
 	@$(call log, restow)
 
 .PHONY: restow-awesome
-restow-awesome:
+restow-awesome: restow
 	@$(call warn, awesome)
-	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) dotfiles
-	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) awesome
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) linux
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) awesome
 
 .PHONY: restow-qtile
 restow-qtile:
 	@$(call warn, qtile)
-	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) dotfiles
-	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/linux --target=$(HOME) qtile
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) linux
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) qtile
 
 .PHONY: destow
 destow:
 	@$(call warn, delete stow)
 	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
-	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) base
+	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) terminal
 ifeq ($(OS), Darwin)
 	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
+else ifeq ($(OS), Linux)
+	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) linux
+	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) awesome
 endif
 	@$(call log, delete stow)
+
+.PHONY: ranger-submodules
+ranger-submodules:
+	@$(call warn, initialize submodules)
+	git submodule update --init "$(HOME)/foundry/anvil/terminal/.config/ranger/plugins/ranger-devicons2/"
 
 ###############################################################################
 # Zimfw

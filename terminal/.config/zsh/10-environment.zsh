@@ -20,7 +20,7 @@ alias lzg='lazygit'
 alias lzd='lazydocker'
 
 alias dcu='docker compose up -d'
-alias dcp='docker compose down'
+alias dcd='docker compose down'
 
 # Gradle
 alias gw='./gradlew'
@@ -32,18 +32,14 @@ alias gwsa='./gradlew :spotlessApply'
 alias path='echo -e "${PATH//:/\\n}"'
 
 # Quick access
-export ANVIL="$HOME/anvil/"
+export ANVIL="$HOME/foundry/anvil/"
 export CONF="$HOME/.config/"
 export NVIM="$HOME/.config/nvim/"
-export FORGE="$HOME/anvil/forge"
-export OBS="$HOME/anvil/scratchpad"
-
-# nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+export FORGE="$HOME/foundry/anvil/forge"
+export OBS="$HOME/foundry/anvil/scratchpad"
 
 # Path
-export PATH="$HOME/anvil/bin:$PATH"
-export PATH="$HOME/anvil/anvil:$PATH"
-export PATH="$HOME/anvil/base/.config/decorator/scripts:$PATH"
+export PATH="$HOME/foundry/anvil/bin:$PATH"
+export PATH="$HOME/foundry/anvil/anvil:$PATH"
+export PATH="$HOME/foundry/anvil/terminal/.config/decorator/scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
