@@ -46,7 +46,7 @@ sudo chsh -s "$(which zsh)"
 
 print_info "Symlinking with stow"
 
-stow --restow --verbose --dir="$HOME/foundry/anvil/base/.config/" --target="$HOME/.config/zsh" zsh
+stow --restow --verbose --dir="$HOME/foundry/anvil/terminal/.config/" --target="$HOME/.config/zsh" zsh
 stow --restow --verbose --dir="$HOME/foundry/anvil/macos/.config" --target="$HOME/.config/zsh" zsh
 
 print_info "Zsh setup is complete"

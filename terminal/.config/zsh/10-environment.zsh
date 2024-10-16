@@ -45,5 +45,5 @@ export OBS="$HOME/anvil/scratchpad"
 # Path
 export PATH="$HOME/anvil/bin:$PATH"
 export PATH="$HOME/anvil/anvil:$PATH"
-export PATH="$HOME/anvil/base/.config/decorator/scripts:$PATH"
+export PATH="$HOME/anvil/terminal/.config/decorator/scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"

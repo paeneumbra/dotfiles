@@ -4,7 +4,7 @@ version = "6.0.24"
 description = "Personal development laboratory"
 authors = ["Itzalak <itzalak@tuta.io>"]
 readme = "README.md"
-keywords = ["dotfiles"]
+keywords = ["dotfiles", "awesomewm", "archlinux", "macos"]
 package-mode = false
 
 [tool.poetry.dependencies]

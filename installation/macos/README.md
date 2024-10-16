@@ -69,17 +69,14 @@ Zsh should already be installed, but more complete installation setup can be fou
 
 ```shell
 stow -v -d $HOME/anvil -t ~/ macos
-stow -v -d $HOME/anvil -t ~/ base
-stow -v -d $HOME/anvil -t ~/ zsh
+stow -v -d $HOME/anvil -t ~/ terminal
 stow -v -d $HOME/anvil -t ~/ neovim
 ```
 
 Ranger requires initialization of submodules
 
 ```shell
-
-git submodule update --init "$HOME/anvil/base/.config/ranger/plugins/ranger-zoxide/"
-git submodule update --init "$HOME/anvil/base/.config/ranger/plugins/ranger-devicons2/"
+git submodule update --init "$HOME/anvil/terminal/.config/ranger/plugins/ranger-devicons2/"
 
 ```
 

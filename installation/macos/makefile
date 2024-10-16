@@ -100,7 +100,7 @@ stow-setup: neovim-submodule ranger-submodules
 	mkdir -p $(HOME)/.config
 	mkdir -p $(HOME)/.cache/zsh
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
-	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) base
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) terminal
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
 	@$(call log, stow)
 
@@ -108,7 +108,7 @@ stow-setup: neovim-submodule ranger-submodules
 stow-delete:
 	@$(call warn, delete stow)
 	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
-	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) base
+	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) terminal
 	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
 	@$(call log, delete stow)
 
@@ -177,8 +177,7 @@ zimfw-refresh:
 .PHONY: ranger-submodules
 ranger-submodules:
 	@$(call warn, initializing ranger submodules)
-	git submodule update --init $(HOME)/foundry/anvil/base/.config/ranger/plugins/ranger-zoxide
-	git submodule update --init $(HOME)/foundry/anvil/base/.config/ranger/plugins/ranger-devicons2
+	git submodule update --init $(HOME)/foundry/anvil/terminal/.config/ranger/plugins/ranger-devicons2
 	@$(call log, ranger submodules)
 
 .PHONY: neovim-submodule
