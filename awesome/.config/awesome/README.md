@@ -39,7 +39,7 @@ Instructions can be found in the [installation scripts](./../../../installation)
 
 To have the intended colors running, please update `.Xresources` file.
 
-To set up correctly the color scheme please read [decorator](../../../../base/.config/decorator/README.md) instructions.
+To set up correctly the color scheme please read [decorator](../../../terminal/.config/decorator/README.md) instructions.
 
 ## Issues
 

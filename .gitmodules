@@ -1,9 +1,6 @@
 [submodule "neovim/.config/nvim"]
 	path = neovim/.config/nvim
 	url = git@github.com:itzalak/nvim.git
-[submodule "base/.config/ranger/plugins/ranger-devicons2"]
-	path = base/.config/ranger/plugins/ranger-devicons2
+[submodule "terminal/.config/ranger/plugins/ranger-devicons2"]
+	path = terminal/.config/ranger/plugins/ranger-devicons2
 	url = git@github.com:cdump/ranger-devicons2.git
-[submodule "base/.config/ranger/plugins/ranger-zoxide"]
-	path = base/.config/ranger/plugins/ranger-zoxide
-	url = git@github.com:jchook/ranger-zoxide.git

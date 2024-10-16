@@ -20,7 +20,7 @@ git clone https://github.com/itzalak/anvil.git
 
 ## Awesomewm
 
-Take look into [awesome readme](/linux/awesome/.config/awesome/README.md)
+Take look into [awesome readme](/awesome/.config/awesome/README.md)
 
 ## Configuration
 
@@ -29,7 +29,7 @@ Take look into [awesome readme](/linux/awesome/.config/awesome/README.md)
 This setup is designed for integrating setting up the colorscheme for linux system and it is heavily dependent on
 the `.Xresources` file, including `awesomewm`.
 
-More information and details can be found in [decorator](base/.config/decorator), inside scripts can be
+More information and details can be found in [decorator](terminal/.config/decorator), inside scripts can be
 found for using a json color scheme file - I personally use [terminal.sexy](https://terminal.sexy/) - and
 porting the result for `.Xresources` and other required formats.
 
@@ -41,10 +41,10 @@ does not account for macOS usage.
 <!--WIP: needs to be refactored-->
 
 Configuration for zsh can be found under [zsh folder](./zsh/) plus [arch folder](./arch) or [macos folder](./macos), specific os folders are required for correct functioning of the system like brew - and can it can be setup by allocating the files to the proper directory using [stow](https://www.gnu.org/software/stow/), symlink or just copying them.
-There are three sets of stow folders to configure, they can be found under [base](./base/), [zsh](./zsh/) and specific to OS (plus neovim).
+There are three sets of stow folders to configure, they can be found under [base](terminal/), [zsh](./zsh/) and specific to OS (plus neovim).
 
 Zsh framework configuration uses a self-installed, self-managed plugin manager called [zimfw](https://github.com/zimfw/zimfw) that will install itself and setup all needed plugins once zsh is started.
-Plugin configuration can be found in the [.zimrc file](base/.config/zsh/.zimrc).
+Plugin configuration can be found in the [.zimrc file](terminal/.config/zsh/.zimrc).
 A folder will automatically be created as `.zim` to store all required files for `zimfw`.
 
 Global variable `ZDOTDIR` is defined under `./zshenv` as `$HOME/.config/zsh`. This tells zsh to look for further configurations files in that directory.
