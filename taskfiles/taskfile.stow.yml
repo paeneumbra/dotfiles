@@ -9,6 +9,16 @@ vars:
 
 tasks:
 
+  default:
+    internal: true
+    desc: Default
+    cmds:
+      - |
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
   assert:
     internal: true
     cmds:
@@ -19,7 +29,6 @@ tasks:
   macos:
     desc: Modify all macos configuration
     deps: [ assert ]
-    internal: true
     platforms: [ darwin ]
     cmds:
       - task: common
@@ -30,7 +39,6 @@ tasks:
   destow-macos:
     desc: Delete all macos configuration
     deps: [ assert ]
-    internal: true
     platforms: [ darwin ]
     cmds:
       - task: common
@@ -39,9 +47,8 @@ tasks:
       - "{{.DESTOW_CMD}} macos"
 
   awesome:
-    desc: Modify all awesome configuration
+    desc: Modify awesome configuration
     deps: [ assert ]
-    internal: true
     platforms: [ linux ]
     cmds:
       - task: common
@@ -54,9 +61,8 @@ tasks:
       - "{{.RESTOW_CMD}} awesome"
 
   destow-awesome:
-    desc: Delete all awesome configuration
+    desc: Delete awesome configuration
     deps: [ assert ]
-    internal: true
     platforms: [ linux ]
     cmds:
       - task: common
@@ -66,9 +72,8 @@ tasks:
       - "{{.DESTOW_CMD}} awesome"
 
   qtile:
-    desc: Modify all qtile configuration
+    desc: Modify qtile configuration
     deps: [ assert ]
-    internal: true
     platforms: [ linux ]
     cmds:
       - task: common
@@ -81,9 +86,8 @@ tasks:
       - "{{.RESTOW_CMD}} qtile"
 
   destow-qtile:
-    desc: Delete all qtile configuration
+    desc: Delete qtile configuration
     deps: [ assert ]
-    internal: true
     platforms: [ linux ]
     cmds:
       - task: common
@@ -91,6 +95,29 @@ tasks:
           CMD: "{{.DESTOW_CMD}}"
       - "{{.DESTOW_CMD}} linux"
       - "{{.DESTOW_CMD}} qtile"
+
+  gnome:
+    desc: Modify gnome configuration
+    deps: [ assert ]
+    platforms: [ linux ]
+    cmds:
+      - task: common
+        vars:
+          CMD: "{{.RESTOW_CMD}}"
+      - task: helper:assert
+        vars:
+          REQUIRED_TOOLS: qtile
+      - "{{.RESTOW_CMD}} linux"
+
+  destow-gnome:
+    desc: Delete gnome configuration
+    deps: [ assert ]
+    platforms: [ linux ]
+    cmds:
+      - task: common
+        vars:
+          CMD: "{{.DESTOW_CMD}}"
+      - "{{.DESTOW_CMD}} linux"
 
   common:
     desc: Modify common configuration
