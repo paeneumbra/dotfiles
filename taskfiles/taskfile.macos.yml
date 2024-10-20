@@ -2,6 +2,16 @@ version: '3'
 
 tasks:
 
+  default:
+    desc: Default
+    internal: true
+    cmds:
+      - |
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
   setup:
     desc: Install brew, stow, zsh and update macos defaults
     platforms: [ darwin ]
@@ -21,18 +31,6 @@ tasks:
     cmds:
       - task: :brew:refresh
       - task: :zimfw:refresh
-
-  restow:
-    desc: Stow all macos configuration
-    platforms: [ darwin ]
-    cmds:
-      - task: :stow:macos
-
-  destow:
-    desc: Restow all macos configuration
-    platforms: [ darwin ]
-    cmds:
-      - task: :stow:destow-macos
 
   settings:
     desc: Apply macOS defaults

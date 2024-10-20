@@ -6,7 +6,19 @@ includes:
 vars:
   BREWDIR: "{{.ROOT_DIR}}/installation/macos"
 
+silent: true
+
 tasks:
+
+  default:
+    internal: true
+    desc: Default
+    cmds:
+      - |
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
 
   assert:
     internal: true
@@ -17,6 +29,7 @@ tasks:
 
   setup:
     desc: Install brew and packages
+    internal: true
     platforms: [ darwin ]
     cmds:
       - task: install
@@ -34,20 +47,20 @@ tasks:
   doctor:
     deps: [ assert ]
     desc: Modify common configuration
+    internal: true
     platforms: [ darwin ]
     cmds:
       - brew doctor
-    silent: true
 
   install:
     deps: [ assert ]
-    desc: Install brew
+    desc: Install brew minimal setup
     internal: true
     platforms: [ darwin ]
     status:
       - command -v brew
     cmds:
-      - "{{.BREWDIR}}/brew-install.sh"
+      - "{{.BREWDIR}}/minimal-setup.sh"
 
   brewfile:
     desc: Install brew from file
@@ -57,3 +70,4 @@ tasks:
         msg: 'Could not find `brew`'
     cmds:
       - "brew bundle --file {{.BREWDIR}}/Brewfile"
+      - task: doctor
