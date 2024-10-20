@@ -8,6 +8,7 @@ RESET=$(tput sgr0)
 
 # Print an info message
 function print_info() {
+  echo
   echo -e "${GREEN}$1${RESET}"
 }
 
@@ -32,7 +33,6 @@ PKGS=(
 )
 
 for PKG in "${PKGS[@]}"; do
-  echo
   print_info "INSTALLING PACKAGE: $PKG"
   sudo pacman -S "$PKG" --noconfirm --needed
 done
@@ -41,6 +41,7 @@ done
 # This might break other apps like taskwarrior
 echo
 print_info "Symlinking taskfile"
+print_info "This might break other apps like taskwarrior"
 print_info "INFO: to revert the symlink: sudo rm /usr/bin/task"
 sudo ln -s /usr/bin/go-task /usr/bin/task
 

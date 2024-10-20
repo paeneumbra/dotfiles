@@ -5,7 +5,18 @@ includes:
 
 tasks:
 
+  default:
+    internal: true
+    desc: Default
+    cmds:
+      - |
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
   assert:
+    internal: true
     cmds:
       - task: helper:assert
         vars:
@@ -45,8 +56,8 @@ tasks:
         ignore_error: true
 
   pyenv:
-    platforms: [ darwin ]
-    desc: Install pyenv
+    internal: true
+    desc: Install python through pyenv
     cmds:
       - pyenv install 3.13.0
       - pyenv global 3.13.0
