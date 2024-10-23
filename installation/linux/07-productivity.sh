@@ -61,5 +61,4 @@ for PKG in "${PKGS[@]}"; do
   yay -S "$PKG" --noconfirm --needed
 done
 
-
 print_info "Productivity setup is complete"
