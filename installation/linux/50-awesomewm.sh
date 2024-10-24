@@ -3,13 +3,13 @@
 set -uo pipefail
 
 # Define some colors for output
-GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
 RESET=$(tput sgr0)
 
 # Print an info message
 function print_info() {
   echo
-  echo -e "${GREEN}$1${RESET}"
+  echo -e "${YELLOW}$1${RESET}"
 }
 
 PKGS=(
@@ -30,7 +30,17 @@ PKGS=(
 
 print_info "Installing Awesome required packages"
 
-print_info "Don't forget to uninstall awesome before replacing with awesome git!"
+print_info "This installation requires uninstalling awesome before replacing with AUR awesome git!"
+print_info "Do you want to continue? (y/n) "
+read answer
+
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    print_info "Continuing with the installation"
+else
+    print_info "You declined to install awesome git!"
+    exit 0
+fi
+
 
 for PKG in "${PKGS[@]}"; do
   print_info "Installing package: $PKG"

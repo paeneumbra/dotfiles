@@ -41,18 +41,33 @@ tasks:
       - sh: '[[ -d "{{.HOME}}/.sdkman" ]]'
         msg: sdkman is not installed
     cmds:
-      - "{{.ZSH}} 'sdk install java 11.0.24-tem'"
-      - "{{.ZSH}} 'sdk install java 17.0.12-tem'"
-      - "{{.ZSH}} 'sdk install java 21.0.4-tem'"
-      - "{{.ZSH}} 'sdk install java 22.0.2-tem'"
-      - "{{.ZSH}} 'sdk install kotlin'"
-      - "{{.ZSH}} 'sdk install scala'"
-      - "{{.ZSH}} 'sdk install groovy'"
-      - "{{.ZSH}} 'sdk install maven'"
-      - "{{.ZSH}} 'sdk install gradle'"
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: java, kotlin, scala, groovy, mvn, gradle
+      - cmd: "{{.ZSH}} 'sdk install java 21.0.4-tem'"
+        ignore_error: true
+      - cmd: "{{.ZSH}} 'sdk install kotlin'"
+        ignore_error: true
+      - cmd: "{{.ZSH}} 'sdk install groovy'"
+        ignore_error: true
+      - cmd: "{{.ZSH}} 'sdk install maven'"
+        ignore_error: true
+      - cmd: "{{.ZSH}} 'sdk install gradle'"
+        ignore_error: true
+    silence: true
+
+  extra-packages:
+    desc: Install SDKMAN packages
+    prompt: DO YOU WANT TO INSTALL EXTRA JVM PACKAGES
+    preconditions:
+      - sh: '[[ -d "{{.HOME}}/.sdkman" ]]'
+        msg: sdkman is not installed
+    cmds:
+      - cmd: "{{.ZSH}} 'sdk install java 11.0.24-tem'"
+        ignore_error: true
+      - cmd: "{{.ZSH}} 'sdk install java 17.0.12-tem'"
+        ignore_error: true
+      - cmd: "{{.ZSH}} 'sdk install java 22.0.2-tem'"
+        ignore_error: true
+      - cmd: "{{.ZSH}} 'sdk install scala'"
+        ignore_error: true
     silence: true
 
   update:
@@ -72,5 +87,5 @@ tasks:
       - test -d "{{.HOME}}/.sdkman"
     cmds:
       - curl -Ss "https://get.sdkman.io" | bash
-      - rm -rf "{{.HOME}}/.zshrc
+      - rm -rf "{{.HOME}}/.zshrc"
     silence: true

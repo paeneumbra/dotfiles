@@ -8,4 +8,4 @@ import os
 
 
 def wallpaper():
-    os.system("feh --no-fehbg --bg-scale ~/anvil/wallpapers/blue-cosmos.jpg")
+    os.system("feh --no-fehbg --bg-scale ~/foundry/anvil/wallpapers/blue-cosmos.jpg")

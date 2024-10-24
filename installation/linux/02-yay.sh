@@ -3,17 +3,17 @@
 set -uo pipefail
 
 # Define some colors for output
-GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
 RESET=$(tput sgr0)
 
 # Print an info message
 function print_info() {
   echo
-  echo -e "${GREEN}$1${RESET}"
+  echo -e "${YELLOW}$1${RESET}"
 }
 
 # Define yay directory
-YAY_DIR="$HOME/anvil/depository/yay"
+YAY_DIR="$HOME/foundry/depository/yay"
 
 # Create the directory if it doesn't exist
 mkdir -p "$YAY_DIR"

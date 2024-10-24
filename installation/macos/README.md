@@ -57,7 +57,7 @@ Settings for macos defaults can be found in [macos-defaults.sh](macos-defaults.s
 Initiate git submodule with [nvim configuration](neovim/.config/nvim)
 
 ```shell
-git submodule update --init "$HOME/anvil/neovim"
+git submodule update --init "$HOME/foundry/anvil/neovim"
 
 ```
 
@@ -68,15 +68,15 @@ Symlink configurations like nvim, ranger and zsh to the proper folders
 Zsh should already be installed, but more complete installation setup can be found in [01-zsh.sh](01-zsh.sh).
 
 ```shell
-stow -v -d $HOME/anvil -t ~/ macos
-stow -v -d $HOME/anvil -t ~/ terminal
-stow -v -d $HOME/anvil -t ~/ neovim
+stow -v -d $HOME/foundry/anvil -t ~/ macos
+stow -v -d $HOME/foundry/anvil -t ~/ terminal
+stow -v -d $HOME/foundry/anvil -t ~/ neovim
 ```
 
 Ranger requires initialization of submodules
 
 ```shell
-git submodule update --init "$HOME/anvil/terminal/.config/ranger/plugins/ranger-devicons2/"
+git submodule update --init "$HOME/foundry/anvil/terminal/.config/ranger/plugins/ranger-devicons2/"
 
 ```
 
@@ -91,7 +91,7 @@ brew bundle
 Packages required for my personal setup can be found in the [brewfile](Brewfile) and can be run using the following command
 
 ```shell
-brew bundle --file "$HOME/anvil/installation/macos/Brewfile""
+brew bundle --file "$HOME/foundry/anvil/installation/macos/Brewfile""
 ```
 
 ### Sdkman

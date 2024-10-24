@@ -3,13 +3,13 @@
 set -uo pipefail
 
 # Define some colors for output
-GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
 RESET=$(tput sgr0)
 
 # Print an info message
 function print_info() {
   echo
-  echo -e "${GREEN}$1${RESET}"
+  echo -e "${YELLOW}$1${RESET}"
 }
 
 PKGS=(
@@ -36,6 +36,6 @@ done
 
 #print_info "Symlinking with stow"
 #
-#stow --restow --verbose --dir="$HOME/anvil/linux" --target="$HOME" qtile
+#stow --restow --verbose --dir="$HOME/foundry/anvil/linux" --target="$HOME" qtile
 
 print_info "Qtile setup is complete"
