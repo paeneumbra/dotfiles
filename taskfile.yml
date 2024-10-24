@@ -41,7 +41,7 @@ tasks:
       - task: poetry:update
       - task: precommit:update
 
-  precommitrun:
+  pcrun:
     aliases: [run]
     desc: Run pre-commit on all files
     cmds:

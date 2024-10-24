@@ -1,4 +1,3 @@
----
 # Configuration for https://pre-commit.com/
 
 default_install_hook_types:
@@ -76,7 +75,7 @@ repos:
           (?x)^(
               CHANGELOG.md |
               lazyvim.json |
-              terminal/.config/ranger/scope.sh |
+              ^terminal/.config/ranger |
               .gitmodules |
               ^git/
           )$
@@ -94,8 +93,14 @@ repos:
       - id: check-taskfile
       - id: check-github-workflows
 
-  - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.35.1
+  - repo: https://github.com/google/yamlfmt
+    rev: v0.10.0
     hooks:
-      - id: yamllint
-        args: ['--no-warnings']
+      - id: yamlfmt
+        args: ["-formatter", "retain_line_breaks=true"]
+
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.10.0-1
+    hooks:
+      - id: shfmt
+        exclude: ^terminal/.config/ranger

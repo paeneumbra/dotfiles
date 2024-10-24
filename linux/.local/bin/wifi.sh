@@ -42,7 +42,7 @@ get_wifi() {
   state="$STATUS"
 
   # Check if the status indicates disconnection or being asleep
-  if [[ "$state" == "disconnected" || "$state" == "asleep" ]]; then
+  if [[ $state == "disconnected" || $state == "asleep" ]]; then
     # Emit signal indicating Wi-Fi is not connected
     print_info "Wifi disconnected"
   else
@@ -50,7 +50,7 @@ get_wifi() {
     strength=$(eval "awk 'NR==3 { print int(\$3 * 100 / 70) }' /proc/net/wireless")
 
     # Validate the strength value; default to 0 if not available
-    if [[ -z "$strength" ]]; then
+    if [[ -z $strength ]]; then
       strength=0
     else
       strength=$(printf "%d" "$strength") # Convert to integer

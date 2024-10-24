@@ -34,6 +34,5 @@ tasks:
   run:
     deps: [assert]
     desc: Run pre-commit for all files
-    internal: true
     cmds:
       - pre-commit run --color always --all-files
