@@ -75,7 +75,7 @@ repos:
           (?x)^(
               CHANGELOG.md |
               lazyvim.json |
-              ^terminal/.config/ranger |
+              ^(terminal/.config/ranger/.*)$ |
               .gitmodules |
               ^git/
           )$
@@ -97,7 +97,7 @@ repos:
     rev: v0.10.0
     hooks:
       - id: yamlfmt
-        args: ["-formatter", "retain_line_breaks=true"]
+        args: ['-formatter', 'retain_line_breaks=true']
 
   - repo: https://github.com/scop/pre-commit-shfmt
     rev: v3.10.0-1

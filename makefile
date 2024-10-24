@@ -81,7 +81,7 @@ endif
 system-update:
 ifeq ($(OS), Darwin)
 	@$(call warn, Updating osx packages via brewfile)
-	brew bundle --file $(HOME)/anvil/installation/macos/Brewfile
+	brew bundle --file $(HOME)/foundry/anvil/installation/macos/Brewfile
 	@$(call log, system update)
 else
 	@$(call warn, Updating archlinux packages via pacman/yay)

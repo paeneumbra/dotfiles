@@ -3,19 +3,19 @@
 set -uo pipefail
 
 # Define some colors for output
-GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
 RESET=$(tput sgr0)
 
 # Print an info message
 function print_info() {
   echo
-  echo -e "${GREEN}$1${RESET}"
+  echo -e "${YELLOW}$1${RESET}"
 }
 
 print_info "Installing logiops and required packages"
 sudo pacman -S --noconfirm cmake libevdev libconfig pkgconf
 
-LOGIOPS_DIR="$HOME/anvil/depository/logiops"
+LOGIOPS_DIR="$HOME/foundry/depository/logiops"
 mkdir -p "$LOGIOPS_DIR"
 
 print_info "Cloning logiops repository"

@@ -3,18 +3,18 @@
 set -uo pipefail
 
 # Define some colors for output
-GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
 RESET=$(tput sgr0)
 
 # Print an info message
 function print_info() {
   echo
-  echo -e "${GREEN}$1${RESET}"
+  echo -e "${YELLOW}$1${RESET}"
 }
 
 print_info "Enabling keychron keyboard"
 print_info "https://github.com/adam-savard/keyboard-function-keys-linux"
-sudo cp "$HOME/anvil/installation/linux/extras/keychron.service" /etc/systemd/system/
+sudo cp "$HOME/foundry/anvil/installation/linux/extras/keychron.service" /etc/systemd/system/
 sudo systemctl enable --now keychron
 
 print_info "Installing zsa keyboard tool"

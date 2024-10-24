@@ -119,12 +119,11 @@ cask 'jdk-mission-control'
 cask 'visualvm'
 brew 'gum'
 
-# Python,
-# Pre commit, poetry, commitizen, virtualenv, pip-tools managed by pipx
-# Python, pip is managed by pyenv
+# Python: managed by pip, pipx and pyenv
+# https://raw.githubusercontent.com/itzalak/anvil/e868cb0d84777c6b15d9551ea3617a61f5aa2981/taskfiles/taskfile.python.yml
 
-# Java
-# java, groovy, scala, kotlin, maven and gradle are managed by sdkman
+# Java: managed by sdkman
+# https://raw.githubusercontent.com/itzalak/anvil/e868cb0d84777c6b15d9551ea3617a61f5aa2981/taskfiles/taskfile.sdkman.yml
 
 # Terraform
 # terraform and tfenv conflict if both are installed
@@ -133,7 +132,6 @@ brew 'gum'
 
 
 # Unused
-# brew 'awscli'
 # brew 'httpie'
 # cask 'chromium'
 # cask 'postman'
