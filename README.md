@@ -6,7 +6,7 @@ WIP: Ongoing refactoring!
 
 ## Installation
 
-- Install Arch Linux using [archinstall v2.5.2](https://github.com/archlinux/archinstall/tree/v2.5.2).
+- Install Arch Linux using [archinstall](https://github.com/archlinux/archinstall).
 - MacOS installed via [brew](installation/macos/Brewfile)
 
 Clone the anvil repository.
@@ -15,8 +15,22 @@ Clone the anvil repository.
 git clone https://github.com/itzalak/anvil.git
 ```
 
-- Instructions for archlinux in [makefile](installation/linux/makefile).
-- Instructions for macOS in [makefile](installation/macos/makefile) and [readme](installation/macos/README.md).
+Setup minimal installation
+
+For linux
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/v7-shogun/installation/linux/minimal-setup.sh | bash
+```
+
+For macos
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/v7-shogun/installation/macos/minimal-setup.sh | bash
+```
+
+- Instructions for archlinux in [taskfile](/taskfiles/taskfile.linux.yml).
+- Instructions for macOS in [taskfile](/taskfiles/taskfile.macos.yml) and [readme](installation/macos/README.md).
 
 ## Requirements
 
@@ -24,8 +38,6 @@ git clone https://github.com/itzalak/anvil.git
 - python
 - stow
 - zsh
-
-WIP: look into the taskfiles
 
 ## Awesomewm
 

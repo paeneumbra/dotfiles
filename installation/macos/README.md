@@ -6,7 +6,17 @@ Unless stated otherwise installations are done via terminal.
 
 ## Mac Setup
 
-These instruction must be added manually before using the makefile
+Minimal installation (automatic)
+
+For macos
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/v7-shogun/installation/macos/minimal-setup.sh | bash
+```
+
+Follow up through taskfile
+
+## Manual installation
 
 ### xcode
 
@@ -35,10 +45,10 @@ git --version
 brew install git
 ```
 
+### Rosetta
+
 - [Rosetta](https://developer.apple.com/documentation/apple-silicon/about-the-rosetta-translation-environment) is the
   translator to Apple silicon
-
-### Rosetta
 
 ```shell
 softwareupdate --install-rosetta
@@ -46,7 +56,7 @@ softwareupdate --install-rosetta
 
 ## Personal setup
 
-Most instructions should be also present in [makefile](makefile)
+Most instructions should be also present in [taskfile](/taskfile.yml) or [makefile](/installation/macos/makefile)
 
 ### Mac defaults
 
@@ -54,7 +64,7 @@ Settings for macos defaults can be found in [macos-defaults.sh](macos-defaults.s
 
 ### Nvim
 
-Initiate git submodule with [nvim configuration](neovim/.config/nvim)
+Initiate git submodule with [nvim configuration](/neovim/.config/nvim)
 
 ```shell
 git submodule update --init "$HOME/foundry/anvil/neovim"
@@ -65,7 +75,7 @@ git submodule update --init "$HOME/foundry/anvil/neovim"
 
 Symlink configurations like nvim, ranger and zsh to the proper folders
 
-Zsh should already be installed, but more complete installation setup can be found in [01-zsh.sh](01-zsh.sh).
+Zsh should already be installed, but more complete installation setup can be found in [taskfile.zsh.yml](/taskfiles/taskfile.zsh.yml).
 
 ```shell
 stow -v -d $HOME/foundry/anvil -t ~/ macos

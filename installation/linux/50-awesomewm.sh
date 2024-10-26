@@ -24,7 +24,7 @@ PKGS=(
   ranger
   redshift
   rofi
-  xrandr
+  xorg-xrandr
   xtitle
 )
 
@@ -34,13 +34,12 @@ print_info "This installation requires uninstalling awesome before replacing wit
 print_info "Do you want to continue? (y/n) "
 read answer
 
-if [ "$answer" != "${answer#[Yy]}" ] ;then
-    print_info "Continuing with the installation"
+if [ "$answer" != "${answer#[Yy]}" ]; then
+  print_info "Continuing with the installation"
 else
-    print_info "You declined to install awesome git!"
-    exit 0
+  print_info "You declined to install awesome git!"
+  exit 0
 fi
-
 
 for PKG in "${PKGS[@]}"; do
   print_info "Installing package: $PKG"

@@ -1,6 +1,7 @@
 # Keybindings
 
 - [ ] Can I automate this table from source?
+- [ ] TODO: Outdated
 
 ## Common keybindings
 
