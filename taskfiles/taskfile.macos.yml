@@ -23,7 +23,7 @@ tasks:
       - task: :zimfw:install
       - task: :zsh:shell
       - task: :sdkman:setup
-      - task: :settings
+      - task: settings
 
   update:
     desc: Run update tasks
@@ -38,4 +38,4 @@ tasks:
     internal: true
     prompt: WILL UPDATE MACOS DEFAULT SETTINGS, ARE YOU CERTAIN?
     cmds:
-      - bash installation/macos/macos-defaults.sh
+      - installation/macos/macos-defaults.sh

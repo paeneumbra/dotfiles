@@ -7,7 +7,6 @@
 ## Notes
 
 - Look for [!] or #INP to monitor what is in progress
-- Migration of ranger: <https://github.com/itzalak/lectern/blob/main/notes/cookbook/git-remove-submodule.md>
 - Alternatives to gnome?
 - Scratchpad, from the top, with a local only todo/wip list
 - scratchpad like raycast but using python, bash and gum
@@ -15,10 +14,10 @@
 ## Generic
 
 - [ ] Fix all DEPRECATED and WIP notes
-- [ ] Add anvil package and add poetry to it
-- [!] Design the new clone repositories script
-- [ ] Move path configuration to zshenv
-    - Revisit <https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout>
+- [x] Add anvil package and add poetry to it
+- [x] Design the new clone repositories script
+- [x] Move path configuration to zshenv
+- [ ] Revisit <https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout>
 - [ ] Wezterm config
     - [ ] Colorscheme error
     - [ ] Keybindings
@@ -28,46 +27,35 @@
     - [ ] webp is not recognized
 - [ ] Neovim select text to clipboard
 - [ ] Ly configuration
-- [ ] Microphone works on Slack, Skype and Teams
-    - [ ] Onboard
-    - [ ] Headphones
-- [ ] Games
-- [ ] Nvidia GPU
-    - [ ] nvidia-prime
+- [x] Games
+- [x] Nvidia GPU
+    - [x] ~~nvidia-prime~~
 - [ ] Consider looking into gamemode: <https://wiki.archlinux.org/title/Gamemode>
 - [ ] Explore remapping with <https://github.com/rvaiya/keyd>
-- [ ] Explore raycast alternatives
-    - [ ] <https://ulauncher.io/>
+- [x] Explore raycast alternatives
+    - [x] <https://ulauncher.io/>
         - looks a nice half way between raycast and rofi
         - uses python and some js
         - lots of plugins
-    - [ ] <https://albertlauncher.github.io/>
-    - [ ] Why not Rofi/ it has the functionality and allows bash scripts
+    - [x] <https://albertlauncher.github.io/>
+    - [x] Why not Rofi/ it has the functionality and allows bash scripts
         - very complex ui config
         - crappy documentation
         - few good examples
-- [ ] Picom revisit animations
-    - [ ] Rofi looks clunky
-- [ ] Use Rofi for other common uses
-    - [ ] Explore desktop
-    - [ ] Explore microphone and camera activation
-    - [ ] Consider another smaller and cleaner config
-    - [ ] Brightness
-    - [ ] Use desktop to bring functionality to rofi
-    - [ ] Add tabs to main menu (e.g. open )
-- [ ] Installation scripts
-    - [ ] Figure out how to run a raw github script
-        - [ ] Automate creation of folder structure
-        - [ ] Automate repository installation
-    - [ ] Automate installation scripts
-        - [ ] Automate stow configuration
+- [x] Picom revisit animations
+- [x] Installation scripts
+    - [x] Figure out how to run a raw github script
+        - [x] Automate creation of folder structure
+        - [x] Automate repository installation
+    - [x] Automate installation scripts
+        - [x] Automate stow configuration
 - [ ] How to setup dual boot?
 - [ ] Give Hyprland a chance again?
 - [ ] Give bspwm a chance again?
-- [ ] Keybindings (sync use cases between mchines)
+- [ ] Keybindings (sync use cases between machines)
     - [ ] Consider floating with specific bindings for placement
-    - [ ] Move screens
-    - [ ] Rotate between screens
+    - [x] Move screens
+    - [x] Rotate between screens
     - [ ] Sync generic keybindings and generate default list
     - [ ] Add application keybindings
         - [ ] Wezterm

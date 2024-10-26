@@ -53,8 +53,8 @@ tasks:
       - brew doctor
 
   install:
-    deps: [assert]
     desc: Install brew minimal setup
+    deps: [assert]
     internal: true
     platforms: [darwin]
     status:
