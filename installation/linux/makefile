@@ -85,7 +85,7 @@ development:
 .PHONY: games
 games:
 	@$(call warn, installing games)
-	./53-gnome-gaming.sh
+	./53-gaming.sh
 	@$(call log, games)
 
 .PHONY: keyboard
