@@ -30,9 +30,6 @@ tasks:
     cmds:
       - task: base
       - task: yay
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: yay
       - task: :zsh:setup
       - task: wifibluetooth
       - task: audio
@@ -79,6 +76,7 @@ tasks:
     status:
       - test -f "{{.YAY_BIN}}"
     cmds:
+      - mkdir -p ~/foundry/depository
       - bash "{{.ROOT_DIR}}/installation/linux/02-yay.sh"
     vars:
       YAY_BIN:
@@ -162,40 +160,6 @@ tasks:
       LOGID_BIN:
         sh: which logid || true
 
-  awesome:
-    deps: [assert]
-    internal: true
-    desc: Install development packages
-    platforms: [linux]
-    cmds:
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: yay
-      - bash "{{.ROOT_DIR}}/installation/linux/50-awesomewm.sh"
-
-  qtile:
-    deps: [assert]
-    internal: true
-    desc: Install development packages
-    platforms: [linux]
-    cmds:
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: yay
-      - bash "{{.ROOT_DIR}}/installation/linux/51-qtile.sh"
-
-  gnome:
-    deps: [assert]
-    internal: true
-    desc: Install development packages
-    platforms: [linux]
-    cmds:
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: yay
-      - bash "{{.ROOT_DIR}}/installation/linux/52-gnome.sh"
-      - task: games
-
   games:
     deps: [assert]
     internal: true
@@ -207,29 +171,40 @@ tasks:
           REQUIRED_TOOLS: yay
       - bash "{{.ROOT_DIR}}/installation/linux/53-gnome-gaming.sh"
 
-  setup-awesome:
+  awesome:
     deps: [assert]
     desc: Install linux
     platforms: [linux]
     cmds:
       - task: setup
       - task: :stow:awesome
-      - task: awesome
+      - task: awesome-setup
 
-  setup-qtile:
+  awesome-setup:
+    deps: [assert]
+    internal: true
+    desc: Install development packages
+    platforms: [linux]
+    cmds:
+      - cmd: "{{.ROOT_DIR}}/installation/linux/50-awesomewm.sh"
+        ignore_error: true
+
+  qtile:
     deps: [assert]
     desc: Install linux
     platforms: [linux]
     cmds:
       - task: setup
       - task: :stow:qtile
-      - task: qtile
+      - "{{.ROOT_DIR}}/installation/linux/51-qtile.sh"
 
-  setup-gnome:
+  gnome:
     deps: [assert]
     desc: Install linux
     platforms: [linux]
     cmds:
       - task: setup
       - task: :stow:gnome
-      - task: gnome
+      - task: gnome-setup
+      - bash "{{.ROOT_DIR}}/installation/linux/52-gnome.sh"
+      - task: games

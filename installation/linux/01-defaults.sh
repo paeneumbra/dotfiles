@@ -3,13 +3,13 @@
 set -uo pipefail
 
 # Define some colors for output
-GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
 RESET=$(tput sgr0)
 
 # Print an info message
 function print_info() {
   echo
-  echo -e "${GREEN}$1${RESET}"
+  echo -e "${YELLOW}$1${RESET}"
 }
 
 # Minimal default packages to install
@@ -57,6 +57,7 @@ PKGS=(
   unzip
   xclip
   wezterm
+  zoxide
   zsh
 )
 

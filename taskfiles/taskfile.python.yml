@@ -42,9 +42,6 @@ tasks:
       - pipx install pip-tools
       - pipx install virtualenv
       - pipx ensurepath
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: cz, poetry, pre-commit, virtualenv
 
   pynvim:
     deps: [assert]
