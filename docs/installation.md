@@ -17,8 +17,6 @@ Run minimal linux installation setup
 ./foundry/anvil/installation/linux/minimal-setup.sh
 ```
 
-TODO: update when in master
-
 ```shell
 curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/v7-shogun/installation/linux/minimal-setup.sh | bash
 ```

@@ -33,7 +33,7 @@ Setup dependencies:
 
 </details>
 
-Instructions can be found in the [installation scripts](./../../../installation)
+Instructions can be found in the [tasfile](/taskfiles/taskfile.linux.yml) and [installation](/installation/linux)
 
 ### Color scheme
 
