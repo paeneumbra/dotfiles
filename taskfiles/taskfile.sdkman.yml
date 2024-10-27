@@ -6,6 +6,8 @@ includes:
 vars:
   SDKMAN: "{{.HOME}}/.sdkman/bin/sdkman-init.sh"
   ZSH: "zsh -c"
+  SDK_BIN:
+    sh: which sdk || true
 
 tasks:
 
@@ -27,7 +29,6 @@ tasks:
           REQUIRED_TOOLS: curl
 
   setup:
-    deps: [assert]
     desc: Setup SDKMAN
     cmds:
       - task: install
@@ -56,8 +57,6 @@ tasks:
   extra-packages:
     desc: Install SDKMAN packages
     prompt: DO YOU WANT TO INSTALL EXTRA JVM PACKAGES
-    status:
-      - test -f "{{.SDK_BIN}}"
     preconditions:
       - sh: '[[ -d "{{.HOME}}/.sdkman" ]]'
         msg: sdkman is not installed
@@ -70,9 +69,6 @@ tasks:
         ignore_error: true
       - cmd: "{{.ZSH}} 'sdk install scala'"
         ignore_error: true
-    vars:
-      SDK_BIN:
-        sh: which sdk || true
     silence: true
 
   update:
@@ -86,11 +82,13 @@ tasks:
     silence: true
 
   install:
-    desc: Install SDKMAN
+    desc: Install SDKMAN, skips if already installed
     internal: true
+    deps: [assert]
     status:
-      - test -d "{{.HOME}}/.sdkman"
+      - "{{.SDK_BIN}}"
     cmds:
       - curl -Ss "https://get.sdkman.io" | bash
+      - echo "Cleaning automatically created ~/.zshrc"
       - rm -rf "{{.HOME}}/.zshrc"
     silence: true
