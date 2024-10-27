@@ -6,35 +6,12 @@ WIP: Ongoing refactoring!
 
 ## Installation
 
-- Install Arch Linux using [archinstall](https://github.com/archlinux/archinstall).
-- MacOS installed via [brew](installation/macos/Brewfile)
+- Arch Linux [installation](/installation/linux/README.md).
+- MacOS [installation](/installation/macos/README.md)
 
-Clone the anvil repository.
+### Requirements
 
-```shell
-git clone https://github.com/itzalak/anvil.git
-```
-
-Setup minimal installation
-
-For linux
-
-```shell
-curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/v7-shogun/installation/linux/minimal-setup.sh | bash
-```
-
-For macos
-
-```shell
-curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/v7-shogun/installation/macos/minimal-setup.sh | bash
-```
-
-- Instructions for archlinux in [taskfile](/taskfiles/taskfile.linux.yml).
-- Instructions for macOS in [taskfile](/taskfiles/taskfile.macos.yml) and [readme](installation/macos/README.md).
-
-## Requirements
-
-- task (go-task for linux)
+- go-task
 - python
 - stow
 - zsh
@@ -47,15 +24,18 @@ Take look into [awesome readme](/awesome/.config/awesome/README.md)
 
 ### Color scheme
 
-This setup is designed for integrating setting up the colorscheme for linux system and it is heavily dependent on
-the `.Xresources` file, including `awesomewm`.
+This setup is designed for integrating setting up the colorscheme for linux system, and it is heavily dependent on
+the `.Xresources` file.
 
-More information and details can be found in [decorator](terminal/.config/decorator), inside scripts can be
-found for using a json color scheme file - I personally use [terminal.sexy](https://terminal.sexy/) - and
-porting the result for `.Xresources` and other required formats.
+More information and details can be found in [decorator](/terminal/.config/decorator), scripts can be
+found for using a json color scheme file - I personally use [terminal.sexy](https://terminal.sexy/) to manipulate
+and tweak the color schemes, porting the result for `.Xresources` and any other required formats.
 
-It also works for macOS through `.Xresources` file, it configures mostly the terminals in that case, **WARN** the script
-does not account for macOS usage.
+It also works for macOS through `.Xresources` file, it configures mostly the terminals in that case.
+
+**WARN** the script does not fully account for macOS usage.
+
+- Currently using [the scream](https://github.com/itzalak/thescream.nvim)
 
 ### Zsh
 
@@ -79,47 +59,16 @@ In `./zshrc` we load all configuration files within the `ZDOTDIR` directory endi
 .
 ├── .config
 │   └── zsh
-│       ├── 00-path.zsh
-│       ├── 02-aliases.zsh
+│       ├── ...
 │       ├── 04-history.zsh
 │       ├── 05-git.zsh
-│       ├── ..
-│       ├── 99-starship.zsh
+│       ├── 08-functions.zsh
+│       ├── 10-environment.zsh
+│       ├── ...
+│       ├── 99-end.zsh
 │       ├── .zimrc
 │       └── .zshrc
 └── .zshenv
 ```
 
 </details>
-
-## Gnome
-
-For using a full gnome desktop create a new user and assign to wheel group.
-
-```shell
-useradd -m -G wheel -s /bin/bash {{user}}
-sudo passwd {{user}}
-```
-
-For installation follow instructions in [makefile](installation/linux/makefile) for gnome instead of awesome.
-
-## IDEA
-
-WIP: can I script this? or change? also update...
-Intellij IDEA community useful plugins:
-
-- .ignore
-- Emmylua
-- Gherkin
-- GraphQL
-- Hiberbee Theme
-- IdeaVim
-- Makefile Language
-- Python
-- Rainbow Brackets Lite
-- Terraform and HCL
-
-## Issues
-
-Some issues might arise while configuring this application, initializing submodules and cloning uses ssh and for it to
-work ssh must be configured with github.

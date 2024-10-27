@@ -14,7 +14,15 @@ For macos
 curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/v7-shogun/installation/macos/minimal-setup.sh | bash
 ```
 
-Follow up through taskfile
+Setup ssh and git.
+Clone the anvil repository.
+
+```shell
+mkdir -p foundry
+git clone git@github.com:itzalak/anvil.git foundry/anvil
+```
+
+Follow up on [taskfile](/taskfiles/taskfile.macos.yml)
 
 ## Manual installation
 

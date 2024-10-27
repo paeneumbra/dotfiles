@@ -55,11 +55,6 @@ clean: delete-venv
 # Setup
 ###############################################################################
 
-.PHONY: clone-repositories
-clone-foundry:
-	@$(call warn, set git repositories, requires proper ssh configuration)
-	./bin/clone_repositories.py -s ./repositories.yaml -r
-
 .PHONY: update-repositories
 update-foundry:
 	@$(call warn, update foundry repositories)
@@ -139,45 +134,6 @@ zimfw-refresh:
 	zsh -ic 'zimfw upgrade'
 	zsh -ic 'zimfw update'
 	@$(call log, zimfw)
-
-###############################################################################
-# Poetry setup and help
-###############################################################################
-
-.PHONY: poetry-setup
-poetry-setup: poetry-local delete-venv poetry-install
-
-.PHONY: poetry-install
-poetry-install:
-	@$(call warn, create and install poetry dependencies)
-	poetry install
-
-.PHONY: delete-venv
-delete-venv:
-	@$(call warn, delete existent virtualenv)
-	rm -rf $(VENV)
-	rm -rf venv
-
-.PHONY: poetry-local
-poetry-local:
-	@$(call warn, setting virtualenv location to project)
-	poetry config virtualenvs.in-project true
-
-.PHONY: poetry-env
-poetry-env:
-	@$(call warn, get poetry environment)
-	poetry env info --path
-
-.PHONY: poetry-update
-poetry-update:
-	@$(call warn, update poetry dependencies)
-	poetry update
-	poetry self update
-
-.PHONY: poetry-test
-poetry-test:
-	@$(call warn, run tests with poetry)
-	poetry run pytest
 
 ###############################################################################
 # Pre commit

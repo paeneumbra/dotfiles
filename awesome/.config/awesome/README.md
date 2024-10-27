@@ -2,7 +2,7 @@
 
 Awesome wm configuration files.
 
-**NOTE:** Ongoing process, it has a lot of quirks, I am still getting the hang of it.
+**NOTE:** This is a personal setup with a lot of coupling, might not work as expected for someone else.
 
 ## Details
 
@@ -33,13 +33,11 @@ Setup dependencies:
 
 </details>
 
-Instructions can be found in the [tasfile](/taskfiles/taskfile.linux.yml) and [installation](/installation/linux)
+Instructions can be found in the [tasfile](/taskfiles/taskfile.linux.yml) and [installation scripts](/installation/linux)
 
 ### Color scheme
 
-To have the intended colors running, please update `.Xresources` file.
-
-To set up correctly the color scheme please read [decorator](../../../terminal/.config/decorator/README.md) instructions.
+To set up correctly the color scheme please read [decorator](/terminal/.config/decorator/README.md) instructions.
 
 ## Issues
 

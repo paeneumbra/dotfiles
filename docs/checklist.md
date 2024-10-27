@@ -93,8 +93,7 @@ It's an WIP, configuration is not finished.
 
 ## Bspwm
 
-It's a TODO, no configuration anymore.
-
+- [ ] TODO
 - [ ] Dual monitor
 - [ ] Intellij
 - [ ] Picom
@@ -105,3 +104,17 @@ It's a TODO, no configuration anymore.
     - [ ] Changing sound in the sidebar
     - [ ] Mute on the bottom bar
 - [ ] Brightness
+
+## Xfce
+
+- [ ] TODO
+- [ ] Nvidia GPU
+- [ ] Bluetooth
+- [ ] Steam and Proton
+    - [ ] Proton is enabled
+    - [ ] Games run
+    - [ ] Games run with prime
+- [ ] MC launcher
+    - [ ] Runs
+    - [ ] Runs with prime
+- [ ] Keybindings
