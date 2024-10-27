@@ -1,5 +1,105 @@
 # Changelog
 
+## v7.0.0 (2024-10-27)
+
+### Breaking Change
+
+- Hard refactoring
+- Refactor and restructure linux
+
+### Changed
+
+- Update installation scripts
+- Add bashrc
+- Continue taskfiles modifications
+- Some more taskfiles modifications
+- Tweak zsh configuration
+- Update some awesome bindings to match macos
+- Adjust floating window key bindings
+- More modifications to floating window key bindings
+- Wrap modifications to floating window layout
+- add taskfile
+- Update taskfiles for linux, WIP
+- Refactor linux packages
+- Some more cleanup
+- Fix mistakes
+- update zsh alias
+- update brew installation file
+- update zsh configuration
+- cleanup
+- stow cleanup
+- tweak zsh configuration
+- cleanup and docs update
+- macos scripts
+- Renaming to anvil
+- fixes and refactoring
+- Update clone repository script
+- Modify base rofi theme
+- Regenerate keybindings table
+- Add keybinding for swapping clients
+- Add keybinding for minimizing non focused windows
+- Refactor awesome layouts and keybindings
+- Refactor and rename workspace yaml file
+- Update on keybindings
+- More keybinging shenanigans
+- Introduce docs directory
+- Wallpapers updates
+- Add wifi script
+- Refactor picom config
+- Keyboard and keybindings refactor
+- Refactor macos configuration
+- Deprecate optimus manager
+- Move amethyst and sketchybar config out of dotfiles
+- Tweak installation packages
+- Remove outdated installation folder
+- Update makefile
+- refactor linux package
+- continue refactor to linux package
+- more refactor to linux package
+- Awesome increase and decrease gaps for focus
+- More refactoring and restructure
+- Refactoring and moving stuff around
+- Wallpapers
+- update workspace installation json, add yaml file
+- Fixing poetry, qtile, refactoring zsh
+- remove backup qtile
+- refresh installation for games and gnome
+- add gnome installation script
+- add awesome installation script
+- add a comment
+- Tweak installations files around awesome, tweak sdkman installation
+- gnome tweaks
+
+### Fixed
+
+- Fix gnome file
+
+### Notes
+
+- Update documentation
+- Update readme instructions related to macos
+- Correct file link
+
+### Tools
+
+- Update documentation
+- Update poetry dependencies and test
+- cleanup brew taskfile
+- More taskfile modifications
+- Add installation initial config for xfce
+- Update alacritty configuration to newest version
+- Continuing taksfile cleanup
+- Cleanup taskfiles, scripts, pre commit, brewfile
+- Update installation taskfiles
+- Cleam installation scripts for linux
+- Apply yamlfmt configuration
+- Replace yamllint in pre commit with yamlfmt, add shfmt
+- Wrap taskfiles for linux
+- Apply editorconfig defaults
+- Update pre commit config 08.10.24
+- Update pre commit config 24.08.24
+- Update pre commit config 04.08.24
+
 ## v6.0.25 (2024-10-14)
 
 ### Tools
