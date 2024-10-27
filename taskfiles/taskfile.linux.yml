@@ -75,7 +75,7 @@ tasks:
     desc: Install development packages
     platforms: [linux]
     cmds:
-      - "{{.ROOT_DIR}}/installation/linux/01-defaults.sh"
+      - "{{.ROOT_DIR}}/installation/linux/01-base.sh"
 
   yay:
     internal: true

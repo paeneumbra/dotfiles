@@ -12,7 +12,7 @@ function print_info() {
   echo -e "${YELLOW}$1${RESET}"
 }
 
-# Minimal default packages to install
+# Base packages to install
 
 PKGS=(
   base-devel

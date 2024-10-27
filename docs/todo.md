@@ -1,19 +1,18 @@
 # TODO
 
+## Notes
+
 - checklist
 - steps taken
 - etc
-
-## Notes
-
 - Look for [!] or #INP to monitor what is in progress
 - Alternatives to gnome?
-- Scratchpad, from the top, with a local only todo/wip list
-- scratchpad like raycast but using python, bash and gum
+- Scratchpad, from the top, with a local only todo/wip list like raycast but using python, bash and gum
+- Revisit readme files
 
 ## Generic
 
-- [ ] Fix all DEPRECATED and WIP notes
+- [ ] Fix all DEPRECATED, TODO and WIP notes
 - [x] Add anvil package and add poetry to it
 - [x] Design the new clone repositories script
 - [x] Move path configuration to zshenv
@@ -25,8 +24,10 @@
 - [ ] Ranger revisit images preview
     - [ ] Not working on wezterm for large png files
     - [ ] webp is not recognized
+    - [ ] not workin on alacritty
 - [ ] Neovim select text to clipboard
 - [ ] Ly configuration
+    - [ ] Document on readme?
 - [x] Games
 - [x] Nvidia GPU
     - [x] ~~nvidia-prime~~
