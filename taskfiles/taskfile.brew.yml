@@ -1,12 +1,7 @@
 version: '3'
 
-includes:
-  helper: "./taskfile.helper.yml"
-
 vars:
   BREWDIR: "{{.ROOT_DIR}}/installation/macos"
-
-silent: true
 
 tasks:
 
@@ -20,13 +15,6 @@ tasks:
         task --list
     silent: true
 
-  assert:
-    internal: true
-    cmds:
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: brew
-
   setup:
     desc: Install brew and packages
     internal: true
@@ -36,29 +24,27 @@ tasks:
       - task: brewfile
 
   refresh:
-    deps: [assert]
-    desc: Upgrade and update brew and packages
+    desc: Upgrade and update brew, packages and casks
     platforms: [darwin]
+    preconditions:
+      - sh: brew -v
+        msg: 'Could not find `brew`'
     cmds:
       - brew upgrade
       - brew update
-      - task: brewfile
-
-  doctor:
-    deps: [assert]
-    desc: Modify common configuration
-    internal: true
-    platforms: [darwin]
-    cmds:
-      - brew doctor
+      - brew outdated --cask --greedy --verbose
+      - task: greedy
+      - task: cleanup
+      - cmd: brew doctor
+        ignore_error: true
 
   install:
-    desc: Install brew minimal setup
-    deps: [assert]
+    desc: Install brew minimal setup (docs)
     internal: true
     platforms: [darwin]
-    status:
-      - command -v brew
+    preconditions:
+      - sh: brew -v
+        msg: 'Could not find `brew`'
     cmds:
       - "{{.BREWDIR}}/minimal-setup.sh"
 
@@ -71,3 +57,25 @@ tasks:
     cmds:
       - "brew bundle --file {{.BREWDIR}}/Brewfile"
       - task: doctor
+
+  greedy:
+    desc: Update outdated casks
+    internal: true
+    platforms: [darwin]
+    prompt: WILL UPDATE CASKS, ARE YOU SURE?
+    preconditions:
+      - sh: brew -v
+        msg: 'Could not find `brew`'
+    cmds:
+      - brew upgrade --cask --greedy
+
+  cleanup:
+    desc: Clean package cache and dead links
+    internal: true
+    platforms: [darwin]
+    prompt: WILL CLEAN CACHE AND DEAD LINKS, ARE YOU SURE?
+    preconditions:
+      - sh: brew -v
+        msg: 'Could not find `brew`'
+    cmds:
+      - brew cleanup
