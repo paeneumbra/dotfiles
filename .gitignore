@@ -1,10 +1,6 @@
 # Linux
 *.der
 
-# Zimfw
-arch/.config/zsh/.zim
-/*/.config/zsh/*.zwc
-
 # IDE
 .idea
 .vscode

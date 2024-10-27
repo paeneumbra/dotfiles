@@ -13,15 +13,20 @@
 
 - [ ] Revisit installer scripts
     - [ ] Needs to be run with the basic tools present on a brand new installation
-    - [ ] pacman/brew with a minimal script run from curl
-    - [ ] What about the git configuration
+    - [ ] Installation probably should be split on complete tasks by tool...
+        - [ ] How to handle stow?
+    - [x] pacman/brew with a minimal script run from curl
+    - [x] ~~What about the git configuration~~
 - [ ] Reconsider breaking macos to its own repository
     - macos has limitations because of the ssh setup (prevent personal commits with company email)
         - os specific configurations are growing
 - [ ] Backup script
 - [ ] Consider gum use cases to simplify configurations
 - [ ] Create a scratch shell with a file with a WIP note
-    - [ ] Maybe even encrypt
+    - [ ] Maybe even encrypted
+- [ ] Revisit ranger image preview for macos and wezterm.
+- [ ] Consider what to do against duplication of the brewfile and tasks
+- [ ] Move the decorator to root? To consider?
 
 ## Structure
 
@@ -36,7 +41,6 @@ anvil
 │  └── .local
 ├── bin
 ├── docs
-├── git
 ├── installation
 │  ├── linux
 │  └── macos
@@ -89,6 +93,24 @@ foundry
 > All repositories must be under directories personal and work
 > ...
 > Maybe it's time to split macos from linux
+
+## IDEA
+
+WIP: can I script this? or change? also update...
+Or move to notes?
+
+Intellij IDEA community useful plugins:
+
+- .ignore
+- Emmylua
+- Gherkin
+- GraphQL
+- Hiberbee Theme
+- IdeaVim
+- Makefile Language
+- Python
+- Rainbow Brackets Lite
+- Terraform and HCL
 
 ## References
 
