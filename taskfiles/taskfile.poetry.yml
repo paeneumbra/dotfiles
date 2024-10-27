@@ -22,7 +22,6 @@ tasks:
   setup:
     deps: [assert]
     desc: Poetry local setup and install
-    internal: true
     cmds:
       - task: set-local-venv
       - task: get-local-venv
