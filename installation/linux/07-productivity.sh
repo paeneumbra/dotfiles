@@ -17,15 +17,15 @@ PKGS=(
   firefox
   git-extras
   mullvad-vpn-bin
+  obsidian
   seahorse
+  skypeforlinux-bin
+  spotify-launcher
   thunderbird
+  ticktick
   tldr
   vivaldi
-  obsidian
-  skypeforlinux-bin
   vlc
-  spotify-launcher
-  ticktick
 
   # Fonts
   noto-fonts

@@ -54,7 +54,7 @@ PKGS=(
   slack-desktop
 )
 
-print_info "Installing Development required packages"
+print_info "Installing required packages for development"
 
 for PKG in "${PKGS[@]}"; do
   print_info "Installing package: $PKG"

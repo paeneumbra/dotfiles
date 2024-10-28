@@ -1,8 +1,5 @@
 version: '3'
 
-includes:
-  helper: "./taskfile.helper.yml"
-
 tasks:
 
   default:
@@ -15,24 +12,25 @@ tasks:
         task --list
     silent: true
 
-  assert-pacman:
-    internal: true
-    platforms: [linux]
+  assert:
     cmds:
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: pacman
-
-  assert-yay:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
     internal: true
-    platforms: [linux]
-    cmds:
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: yay
+    vars:
+      REQUIRED_TOOLS: pacman, yay
 
+  # TODO: find a way to ask before every step
+  # TODO: figure out the order of execution and how to call it from here
   setup:
-    deps: [assert-pacman]
+    deps: [assert]
     internal: true
     desc: Install linux
     platforms: [linux]
@@ -53,13 +51,10 @@ tasks:
       - task: :zsh:shell
 
   update:
-    deps: [assert-pacman, assert-yay]
+    deps: [assert]
     desc: Run update tasks
     platforms: [linux]
     cmds:
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: yay, pacman
       - yay -Syu --noconfirm
       - task: :zimfw:refresh
 
@@ -70,7 +65,7 @@ tasks:
       - sudo systemctl start keychron
 
   base:
-    deps: [assert-pacman]
+    deps: [assert]
     internal: true
     desc: Install development packages
     platforms: [linux]
@@ -91,7 +86,7 @@ tasks:
         sh: which yay || true
 
   wifibluetooth:
-    deps: [assert-pacman]
+    deps: [assert]
     internal: true
     desc: Install development packages
     platforms: [linux]
@@ -99,7 +94,7 @@ tasks:
       - "{{.ROOT_DIR}}/installation/linux/04-wireless-bluetooth.sh"
 
   audio:
-    deps: [assert-pacman]
+    deps: [assert]
     internal: true
     desc: Install development packages
     platforms: [linux]
@@ -107,7 +102,7 @@ tasks:
       - "{{.ROOT_DIR}}/installation/linux/05-audio.sh"
 
   productivity:
-    deps: [assert-yay]
+    deps: [assert]
     internal: true
     desc: Install development packages
     platforms: [linux]
@@ -115,7 +110,7 @@ tasks:
       - "{{.ROOT_DIR}}/installation/linux/07-productivity.sh"
 
   config:
-    deps: [assert-yay]
+    deps: [assert]
     internal: true
     desc: Install development packages
     platforms: [linux]
@@ -123,15 +118,15 @@ tasks:
       CONFIG: "{{.HOME}}/.config"
       EXTRAS: "{{.ROOT_DIR}}/installation/linux/extras"
     cmds:
-      - mkdir -p "$HOME/.config/gtk-3.0"
-      - mkdir -p "$HOME/.local/bin"
-      - rm -rf "$HOME/.config/mimeapps.list"
+      - mkdir -p "{{.CONFIG}}/gtk-3.0"
+      - mkdir -p "{{.HOME}}/.local/bin"
+      - rm -rf "{{.CONFIG}}/mimeapps.list"
       - cp "{{.EXTRAS}}/mimeapps.list" "{{.CONFIG}}"
-      - rm -rf "$HOME/user-dirs"
+      - rm -rf "{{.HOME}}/user-dirs"
       - cp "{{.EXTRAS}}/user-dirs.dirs" "{{.CONFIG}}"
 
   dev:
-    deps: [assert-yay]
+    deps: [assert]
     internal: true
     desc: Install development packages
     platforms: [linux]
@@ -139,7 +134,7 @@ tasks:
       - "{{.ROOT_DIR}}/installation/linux/23-development.sh"
 
   keyboard:
-    deps: [assert-yay]
+    deps: [assert]
     internal: true
     desc: Install development packages
     platforms: [linux]
@@ -147,7 +142,7 @@ tasks:
       - "{{.ROOT_DIR}}/installation/linux/31-keyboard.sh"
 
   mouse:
-    deps: [assert-yay]
+    deps: [assert]
     internal: true
     desc: Install development packages
     platforms: [linux]
@@ -160,50 +155,46 @@ tasks:
         sh: which logid || true
 
   games:
-    deps: [assert-yay]
+    deps: [assert]
     internal: true
     desc: Install development packages
     platforms: [linux]
     cmds:
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: yay
       - "{{.ROOT_DIR}}/installation/linux/53-gaming.sh"
 
   awesome:
-    deps: [assert-yay]
+    deps: [assert]
     desc: Install linux
     platforms: [linux]
     cmds:
       - task: setup
-      - task: :stow:awesome
       - task: awesome-setup
+      - task: :stow:awesome
 
   awesome-setup:
-    deps: [assert-yay]
+    deps: [assert]
     internal: true
-    desc: Install development packages
+    desc: Install awesome packages
     platforms: [linux]
     cmds:
       - cmd: "{{.ROOT_DIR}}/installation/linux/50-awesomewm.sh"
         ignore_error: true
 
   qtile:
-    deps: [assert-yay]
+    deps: [assert]
     desc: Install linux
     platforms: [linux]
     cmds:
       - task: setup
-      - task: :stow:qtile
       - "{{.ROOT_DIR}}/installation/linux/51-qtile.sh"
+      - task: :stow:qtile
 
   gnome:
-    deps: [assert-yay]
+    deps: [assert]
     desc: Install linux
     platforms: [linux]
     cmds:
       - task: setup
-      - task: :stow:gnome
-      - task: gnome-setup
       - "{{.ROOT_DIR}}/installation/linux/52-gnome.sh"
+      - task: :stow:gnome
       - task: games
