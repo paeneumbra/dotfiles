@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.1 (2024-10-28)
+
+### Tools
+
+- restructure linux installation files
+
 ## v7.0.0 (2024-10-27)
 
 ### Breaking Change
