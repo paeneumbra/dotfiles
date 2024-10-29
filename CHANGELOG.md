@@ -1,5 +1,15 @@
 # Changelog
 
+## v7.0.2 (2024-10-29)
+
+### Notes
+
+- Update todos
+
+### Tools
+
+- new cp alias
+
 ## v7.0.1 (2024-10-28)
 
 ### Tools
