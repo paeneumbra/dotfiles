@@ -13,7 +13,11 @@ alias ll='ls -lh'
 alias v='nvim'
 alias vim='nvim'
 
+# (i) prompt before overwrite
+# (v) verbose
+# (a) creates hard links, preserving metadata
 alias cp='cp -iv'
+alias cpa='cp -a'
 alias mv='mv -iv'
 
 alias lzg='lazygit'
