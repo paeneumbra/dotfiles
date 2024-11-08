@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.3 (2024-11-08)
+
+### Changed
+
+- Update linux installation scripts
+
 ## v7.0.2 (2024-10-29)
 
 ### Notes
