@@ -41,6 +41,7 @@ PKGS=(
   #https://archlinux.org/groups/x86_64/gnome/
   baobab
   cheese
+  dosfstools
   seahorse
   gnome-disk-utility
   gnome-font-viewer
