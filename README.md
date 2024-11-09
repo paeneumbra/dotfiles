@@ -2,7 +2,10 @@
 
 Personal laboratory mostly for development.
 
-WIP: Ongoing refactoring!
+WIP: Ongoing refactorings
+
+- [v7 shogun](/docs/v7-shogun.md) already merged to master
+- [v8 going postal](/xfce/docs/v8-going-postal.md) new machine
 
 ## Installation
 

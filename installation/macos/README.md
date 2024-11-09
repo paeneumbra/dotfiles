@@ -11,7 +11,7 @@ Minimal installation (automatic)
 For macos
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/v7-shogun/installation/macos/minimal-setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/main/installation/macos/minimal-setup.sh | bash
 ```
 
 Setup ssh and git.

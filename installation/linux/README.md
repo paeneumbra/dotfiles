@@ -13,8 +13,6 @@ git clone git@github.com:itzalak/anvil.git foundry/anvil
 
 ## Minimal setup
 
-TODO: update when in master
-
 Run minimal linux installation setup manually
 
 ```shell
@@ -24,7 +22,7 @@ Run minimal linux installation setup manually
 or
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/v7-shogun/installation/linux/minimal-setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/main/installation/linux/minimal-setup.sh | bash
 ```
 
 ## Task

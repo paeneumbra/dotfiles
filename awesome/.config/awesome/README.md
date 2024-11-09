@@ -33,7 +33,7 @@ Setup dependencies:
 
 </details>
 
-Instructions can be found in the [tasfile](/taskfiles/taskfile.linux.yml) and [installation scripts](/installation/linux)
+Instructions can be found in the [taskfile](/taskfiles/taskfile.linux.yml) and [installation scripts](/installation/linux)
 
 ### Color scheme
 
@@ -41,16 +41,19 @@ To set up correctly the color scheme please read [decorator](/terminal/.config/d
 
 ## Issues
 
-During setup it can happen that some references have changed, this will most certainly happen for monitors and disk.
+During setup, it can happen that some references have changed, this will most certainly happen for monitors and disk.
 For getting new display namings run `xrandr` and replace all references in the project - e.g. `eDP-1`, `eDP-1-1`.
 
 NOTE: Depending on the active graphics card the monitor names are different
+TODO: Should be automated already?
 
 ```shell
 xrandr -q
 ```
 
 For disk setup run `lsblk -f` and replace the with new disk path.
+
+TODO: Can this be automated?
 
 ## Acknowledgements
 
