@@ -1,5 +1,13 @@
 # Changelog
 
+## v7.0.8 (2024-11-09)
+
+### Changed
+
+- fix scripts and documentation
+- re add neovim submodule
+- remove neovim submodule
+
 ## v7.0.7 (2024-11-09)
 
 ### Fixed
