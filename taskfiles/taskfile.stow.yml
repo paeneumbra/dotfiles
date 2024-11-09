@@ -127,5 +127,5 @@ tasks:
       - rm -rf "{{.HOME}}/.zshrc"
       - rm -rf "{{.HOME}}/.bashrc"
       - rm -rf "{{.HOME}}/.bash_profile"
-      - "{{.CMD}} neovim"
+      - "{{.CMD}} nvim"
       - "{{.CMD}} terminal"

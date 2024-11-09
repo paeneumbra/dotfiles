@@ -72,10 +72,10 @@ Settings for macos defaults can be found in [macos-defaults.sh](macos-defaults.s
 
 ### Nvim
 
-Initiate git submodule with [nvim configuration](/neovim/.config/nvim)
+Initiate git submodule
 
 ```shell
-git submodule update --init "$HOME/foundry/anvil/neovim"
+git submodule update --init "$HOME/foundry/anvil/nvim"
 
 ```
 
@@ -88,7 +88,7 @@ Zsh should already be installed, but more complete installation setup can be fou
 ```shell
 stow -v -d $HOME/foundry/anvil -t ~/ macos
 stow -v -d $HOME/foundry/anvil -t ~/ terminal
-stow -v -d $HOME/foundry/anvil -t ~/ neovim
+stow -v -d $HOME/foundry/anvil -t ~/ nvim
 ```
 
 Ranger requires initialization of submodules

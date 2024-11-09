@@ -13,7 +13,7 @@ function print_info() {
 }
 
 # Define neovim source directory
-NEOVIM_DIR="$HOME/foundry/anvil/neovim"
+NEOVIM_DIR="$HOME/foundry/anvil/nvim"
 
 PKGS=(
   neovim
@@ -36,6 +36,6 @@ git submodule update --init "$NEOVIM_DIR"
 
 print_info "Symlinking with stow"
 
-stow --restow --verbose --dir="$HOME/foundry/anvil" --target="$HOME" neovim
+stow --restow --verbose --dir="$HOME/foundry/anvil" --target="$HOME" nvim
 
 print_info "Neovim setup is complete"

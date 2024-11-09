@@ -7,7 +7,7 @@ vars:
   INIT: git submodule update --init
   DEINIT: git submodule deinit
   RANGER_PATH: "/terminal/.config/ranger/plugins/ranger-devicons2"
-  NEOVIM_PATH: "/neovim/.config/nvim"
+  NEOVIM_PATH: "/nvim"
 
 tasks:
 

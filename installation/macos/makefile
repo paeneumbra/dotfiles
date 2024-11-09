@@ -89,7 +89,7 @@ stow-setup: neovim-submodule ranger-submodules
 	@$(call warn, run stow)
 	mkdir -p $(HOME)/.config
 	mkdir -p $(HOME)/.cache/zsh
-	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) nvim
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) terminal
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
 	@$(call log, stow)
@@ -97,7 +97,7 @@ stow-setup: neovim-submodule ranger-submodules
 .PHONY: stow-delete
 stow-delete:
 	@$(call warn, delete stow)
-	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) neovim
+	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) nvim
 	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) terminal
 	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
 	@$(call log, delete stow)
@@ -134,5 +134,5 @@ ranger-submodules:
 .PHONY: neovim-submodule
 neovim-submodule:
 	@$(call warn, initializing neovim submodule)
-	git submodule update --init $(HOME)/foundry/anvil/neovim
+	git submodule update --init $(HOME)/foundry/anvil/nvim
 	@$(call log, neovim submodule)
