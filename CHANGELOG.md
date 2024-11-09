@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.6 (2024-11-09)
+
+### Tools
+
+- Update nvim
+
 ## v7.0.5 (2024-11-09)
 
 ### Changed
