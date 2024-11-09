@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.11 (2024-11-09)
+
+### Tools
+
+- tweak pre commit editorconfig
+
 ## v7.0.10 (2024-11-09)
 
 ### Tools
