@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.9 (2024-11-09)
+
+### Changed
+
+- now really fix scripts and documentation
+
 ## v7.0.8 (2024-11-09)
 
 ### Changed
