@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.5 (2024-11-09)
+
+### Changed
+
+- tweak python stuff and add a test
+
 ## v7.0.4 (2024-11-09)
 
 ### Fixed
