@@ -1,5 +1,15 @@
 # Changelog
 
+## v7.0.4 (2024-11-09)
+
+### Fixed
+
+- Correct taskfile mistake
+
+### Notes
+
+- Update documentation for v8 refactoring
+
 ## v7.0.3 (2024-11-08)
 
 ### Changed
