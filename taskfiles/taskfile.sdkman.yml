@@ -6,8 +6,6 @@ includes:
 vars:
   SDKMAN: "{{.HOME}}/.sdkman/bin/sdkman-init.sh"
   ZSH: "zsh -c"
-  SDK_BIN:
-    sh: which sdk || true
 
 tasks:
 
@@ -83,10 +81,9 @@ tasks:
 
   install:
     desc: Install SDKMAN, skips if already installed
-    internal: true
     deps: [assert]
     status:
-      - "{{.SDK_BIN}}"
+      - which sdk || true
     cmds:
       - curl -Ss "https://get.sdkman.io" | bash
       - echo "Cleaning automatically created ~/.zshrc"
