@@ -36,7 +36,7 @@ alias gwsa='./gradlew :spotlessApply'
 export ANVIL="$HOME/foundry/anvil/"
 export CONF="$HOME/.config/"
 export NVIM="$HOME/.config/nvim/"
-export FORGE="$HOME/foundry/anvil/forge"
+export FORGE="$HOME/foundry/forge"
 export OBS="$HOME/foundry/anvil/scratchpad"
 
 # Path
@@ -46,8 +46,3 @@ export PATH="$HOME/foundry/anvil/terminal/.config/decorator/scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 # Pretty print each PATH entry on a separate line
 alias path='echo -e "${PATH//:/\\n}"'
-
-# Python
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - path)"
