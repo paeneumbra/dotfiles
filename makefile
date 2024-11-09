@@ -87,7 +87,7 @@ endif
 .PHONY: restow
 restow:
 	@$(call warn, restow)
-	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) nvim
+	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil/nvim --target=$(HOME) nvim
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) terminal
 ifeq ($(OS), Darwin)
 	exec stow --restow --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos
@@ -109,7 +109,7 @@ restow-qtile:
 .PHONY: destow
 destow:
 	@$(call warn, delete stow)
-	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) nvim
+	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil/nvim --target=$(HOME) nvim
 	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) terminal
 ifeq ($(OS), Darwin)
 	exec stow --delete --verbose --dir=$(HOME)/foundry/anvil --target=$(HOME) macos

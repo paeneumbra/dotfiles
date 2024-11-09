@@ -36,6 +36,6 @@ git submodule update --init "$NEOVIM_DIR"
 
 print_info "Symlinking with stow"
 
-stow --restow --verbose --dir="$HOME/foundry/anvil" --target="$HOME" nvim
+stow --restow --verbose --dir="$HOME/foundry/anvil/nvim" --target="$HOME" nvim
 
 print_info "Neovim setup is complete"
