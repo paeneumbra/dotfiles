@@ -24,9 +24,9 @@ tasks:
     desc: Poetry local setup and install
     cmds:
       - task: set-local-venv
-      - task: get-local-venv
       - task: delete-local-venv
       - task: install
+      - task: get-local-venv
     silent: true
 
   set-local-venv:
