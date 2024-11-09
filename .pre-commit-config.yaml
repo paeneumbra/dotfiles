@@ -77,10 +77,8 @@ repos:
         exclude: |
           (?x)^(
               CHANGELOG.md |
-              lazyvim.json |
               ^(terminal/.config/ranger/.*)$ |
-              .gitmodules |
-              ^git/
+              .gitmodules
           )$
 
   - repo: https://github.com/python-poetry/poetry
