@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.7 (2024-11-09)
+
+### Fixed
+
+- Fix python management for  linux
+
 ## v7.0.6 (2024-11-09)
 
 ### Tools
