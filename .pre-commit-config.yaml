@@ -41,10 +41,14 @@ repos:
         exclude: ^terminal/.config/ranger
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.29.1
+    rev: v3.30.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
+      - id: commitizen-branch
+        stages:
+          - post-commit
+          - pre-push
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.42.0
@@ -87,13 +91,13 @@ repos:
         args: ['--no-update']
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.29.3
+    rev: 0.29.4
     hooks:
       - id: check-taskfile
       - id: check-github-workflows
 
   - repo: https://github.com/google/yamlfmt
-    rev: v0.10.0
+    rev: v0.14.0
     hooks:
       - id: yamlfmt
         args: ['-formatter', 'retain_line_breaks=true']
