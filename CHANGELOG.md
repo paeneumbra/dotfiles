@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.12 (2024-11-10)
+
+### Changed
+
+- update neovim
+
 ## v7.0.11 (2024-11-09)
 
 ### Tools
