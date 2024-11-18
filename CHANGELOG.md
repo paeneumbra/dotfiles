@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.13 (2024-11-18)
+
+### Changed
+
+- update bashrc
+
 ## v7.0.12 (2024-11-10)
 
 ### Changed
