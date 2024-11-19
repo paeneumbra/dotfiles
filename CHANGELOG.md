@@ -1,5 +1,15 @@
 # Changelog
 
+## v7.0.14 (2024-11-19)
+
+### Changed
+
+- update bash
+
+### Tools
+
+- update brewfile
+
 ## v7.0.13 (2024-11-18)
 
 ### Changed
