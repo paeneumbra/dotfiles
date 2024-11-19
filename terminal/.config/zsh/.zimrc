@@ -21,6 +21,7 @@ zmodule zsh-users/zsh-completions --fpath src
 # completion must be sourced after all modules that add completion definitions.
 zmodule completion
 
+# Experimental!!
 zmodule Aloxaf/fzf-tab
 
 # Modules that must be after completion

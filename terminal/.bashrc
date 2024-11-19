@@ -3,20 +3,11 @@ set -o vi
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# avoid duplicate or starting with space to history.
+# history.
 HISTCONTROL=ignoreboth
-
-# append to the file
 shopt -s histappend
-
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# Set environment language
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # Set default editors
 export EDITOR='nvim'
@@ -24,6 +15,7 @@ export VISUAL='nvim'
 export TERM='xterm-256color'
 
 # XDG directories
+# https://wiki.archlinux.org/title/XDG_Base_Directory
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -50,7 +42,6 @@ alias gst='git status'
 alias gsu='git stash -u -m'
 alias v='nvim'
 alias t='go-task'
-
 alias path='echo -e "${PATH//:/\\n}"'
 
 # Zoxide
