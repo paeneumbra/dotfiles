@@ -50,7 +50,6 @@ brew 'lazygit'
 brew 'lua'
 brew 'luarocks'
 brew 'magic-wormhole'
-brew 'nano'
 brew 'node'
 brew 'npm'
 brew 'nvim'
@@ -80,16 +79,12 @@ brew 'yarn'
 brew 'yq'
 brew 'zoxide'
 brew 'zsh'
-brew 'zsh-autosuggestions'
-brew 'zsh-completions'
-brew 'zsh-syntax-highlighting'
 
 # Casks
 cask 'alacritty'
 cask 'bluesnooze'
 cask 'caffeine'
 cask 'calibre'
-cask 'docker'
 cask 'firefox'
 cask 'firefox@developer-edition'
 cask 'font-fira-code'
@@ -132,6 +127,10 @@ brew 'gum'
 # brew 'tfenv'
 # brew 'tfsec'
 
+# Docker
+# Sometimes just stops working for no apparent reason
+# works when installed from docker.com
+# cask 'docker'
 
 # Unused
 # brew 'httpie'
