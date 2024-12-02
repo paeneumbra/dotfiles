@@ -1,5 +1,16 @@
 # Changelog
 
+## v7.0.16 (2024-12-02)
+
+### Changed
+
+- harmonize zsh and bash
+- cleanup zsh configs
+
+### Notes
+
+- documentation update
+
 ## v7.0.15 (2024-11-20)
 
 ### Changed
