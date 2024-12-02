@@ -3,6 +3,10 @@ if [ -e $ZDOTDIR ]; then
   for config ($ZDOTDIR/*.zsh) source $config
 fi
 
+if [ -e "$XDG_CONFIG_HOME/shell/" ]; then
+  for config ($XDG_CONFIG_HOME/shell/*.sh) source $config
+fi
+
 # Zim configuration
 # Based of https://raw.githubusercontent.com/zimfw/install/master/src/templates/zshrc
 

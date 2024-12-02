@@ -44,6 +44,13 @@ alias v='nvim'
 alias t='go-task'
 alias path='echo -e "${PATH//:/\\n}"'
 
+HELPERS_DIRECTORY="$XDG_CONFIG_HOME/shell/"
+for file in "$HELPERS_DIRECTORY"/*.sh; do
+        if [ -f "$file" ]; then
+                source "$file"
+        fi
+done
+
 # Zoxide
 eval "$(zoxide init bash)"
 

@@ -65,7 +65,6 @@ In `./zshrc` we load all configuration files within the `ZDOTDIR` directory endi
 │       ├── ...
 │       ├── 04-history.zsh
 │       ├── 05-git.zsh
-│       ├── 08-functions.zsh
 │       ├── 10-environment.zsh
 │       ├── ...
 │       ├── 99-end.zsh
