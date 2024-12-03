@@ -1,0 +1,24 @@
+{
+  "name": "mondego-dark",
+  "author": "Itzalak",
+  "color": [
+    "#152719",
+    "#f586aa",
+    "#a2bc3c",
+    "#ec984d",
+    "#63b8f0",
+    "#bb9af6",
+    "#41c6b1",
+    "#90c99b",
+    "#375c3f",
+    "#f9aac1",
+    "#b7d348",
+    "#f7b37c",
+    "#8eccf8",
+    "#cdb6f9",
+    "#4fdec7",
+    "#e6f6e8"
+  ],
+  "foreground": "#ccedd1",
+  "background": "#040b05"
+}
