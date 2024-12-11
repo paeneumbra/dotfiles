@@ -34,12 +34,14 @@ PKGS=(
   feh
   figlet
   firefox
+  fish
   fwupd
   fzf
   git
   git-filter-repo
   go-task
   handlr
+  kitty
   lazygit
   maim
   man-db

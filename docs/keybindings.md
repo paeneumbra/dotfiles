@@ -29,8 +29,6 @@
 ## ChatGPT parsing of awesomewm
 
 | Keys                                                          | Description                                    |
-|---------------------------------------------------------------|------------------------------------------------|
-| Keys                                                          | Description                                    |
 | -----                                                         | ----                                           |
 | <kbd>MetaKey</kbd> + <kbd>ControlKey</kbd> + <kbd>r</kbd>     | reload awesome                                 |
 | <kbd>MetaKey</kbd> + <kbd>ControlKey</kbd> + <kbd>q</kbd>     | quit awesome                                   |

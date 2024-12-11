@@ -19,6 +19,7 @@ PKGS=(
   mullvad-vpn-bin
   obsidian
   seahorse
+  slides
   skypeforlinux-bin
   spotify-launcher
   thunderbird
