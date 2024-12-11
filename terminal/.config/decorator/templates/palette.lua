@@ -1,25 +1,23 @@
 local colors = {
 
-    bg = "{{background}}", -- black
-    fg = "{{foreground}}", -- white
-    color00 = "{{color0}}", -- dark grey
-    color01 = "{{color1}}", -- red
-    color02 = "{{color2}}", -- vivid green
-    color03 = "{{color3}}", -- yellow
-    color04 = "{{color4}}", -- blue
-    color05 = "{{color5}}", -- purple
-    color06 = "{{color6}}", -- green
-    color07 = "{{color7}}", -- light gray
-    color08 = "{{color8}}", -- grey
-    color09 = "{{color9}}", -- orange
-    color10 = "{{color10}}", -- light green
-    color11 = "{{color11}}", -- dark yellow
-    color12 = "{{color12}}", -- light blue
-    color13 = "{{color13}}", -- light purple
-    color14 = "{{color14}}", -- pale green
-    color15 = "{{color15}}", -- white
-
-    nvim_bg = "#121212", -- Extra gray color (closer to black)
+    bg = "{{background}}",
+    fg = "{{foreground}}",
+    color00 = "{{color0}}",
+    color01 = "{{color1}}",
+    color02 = "{{color2}}",
+    color03 = "{{color3}}",
+    color04 = "{{color4}}",
+    color05 = "{{color5}}",
+    color06 = "{{color6}}",
+    color07 = "{{color7}}",
+    color08 = "{{color8}}",
+    color09 = "{{color9}}",
+    color10 = "{{color10}}",
+    color11 = "{{color11}}",
+    color12 = "{{color12}}",
+    color13 = "{{color13}}",
+    color14 = "{{color14}}",
+    color15 = "{{color15}}",
 }
 
 return colors

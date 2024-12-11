@@ -1,25 +1,23 @@
 local colors = {
 
-    bg = "#000508", -- black
-    fg = "#ebdbb2", -- white
-    color00 = "#282828", -- dark grey
-    color01 = "#cc241d", -- red
-    color02 = "#5f981a", -- vivid green
-    color03 = "#ffc700", -- yellow
-    color04 = "#326eb4", -- blue
-    color05 = "#593ea1", -- purple
-    color06 = "#689d6a", -- green
-    color07 = "#bbbbbb", -- light gray
-    color08 = "#928374", -- grey
-    color09 = "#bf5e29", -- orange
-    color10 = "#b8bb26", -- light green
-    color11 = "#ad8919", -- dark yellow
-    color12 = "#2bb2e8", -- light blue
-    color13 = "#8b7dca", -- light purple
-    color14 = "#8ec07c", -- pale green
-    color15 = "#eae8e1", -- white
-
-    nvim_bg = "#121212", -- Extra gray color (closer to black)
+    bg = "#152719",
+    fg = "#ccedd1",
+    color00 = "#224029",
+    color01 = "#e14433",
+    color02 = "#a2bc3c",
+    color03 = "#ec984d",
+    color04 = "#3c8cbf",
+    color05 = "#bb9af6",
+    color06 = "#3b9586",
+    color07 = "#90c99b",
+    color08 = "#3a6243",
+    color09 = "#f36552",
+    color10 = "#b7d348",
+    color11 = "#f7b37c",
+    color12 = "#4fa1d7",
+    color13 = "#cdb6f9",
+    color14 = "#47ac9b",
+    color15 = "#e6f6e8",
 }
 
 return colors

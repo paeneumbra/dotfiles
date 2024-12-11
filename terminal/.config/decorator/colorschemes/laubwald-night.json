@@ -1,0 +1,24 @@
+{
+  "name": "laubwald-night",
+  "author": "Itzalak",
+  "color": [
+    "#1d251e",
+    "#d65342",
+    "#43985a",
+    "#ba6f25",
+    "#2d8cc5",
+    "#985fe6",
+    "#2993a3",
+    "#abbfae",
+    "#475749",
+    "#e96e5d",
+    "#4fb069",
+    "#d58233",
+    "#41a2df",
+    "#aa7cf1",
+    "#32aabc",
+    "#edf2ee"
+  ],
+  "foreground": "#dce6dd",
+  "background": "#060a07"
+}

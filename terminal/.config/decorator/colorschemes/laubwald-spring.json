@@ -1,24 +1,24 @@
 {
-  "name": "mondego-dark",
+  "name": "laubwald-spring",
   "author": "Itzalak",
   "color": [
-    "#152719",
-    "#f586aa",
+    "#224029",
+    "#e14433",
     "#a2bc3c",
     "#ec984d",
-    "#63b8f0",
+    "#3c8cbf",
     "#bb9af6",
-    "#41c6b1",
+    "#3b9586",
     "#90c99b",
-    "#375c3f",
-    "#f9aac1",
+    "#3a6243",
+    "#f36552",
     "#b7d348",
     "#f7b37c",
-    "#8eccf8",
+    "#4fa1d7",
     "#cdb6f9",
-    "#4fdec7",
+    "#47ac9b",
     "#e6f6e8"
   ],
   "foreground": "#ccedd1",
-  "background": "#040b05"
+  "background": "#152719"
 }

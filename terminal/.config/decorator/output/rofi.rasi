@@ -1,11 +1,11 @@
 * {
-    transparent:    #00050820;
-    background:     #000508;
-    foreground:     #ebdbb2;
-    red:            #cc241d;
-    green:          #5f981a;
-    yellow:         #ffc700;
-    blue:           #326eb4;
-    gray:           #928374;
-    accent:         #689d6a;
+    transparent:    #15271920;
+    background:     #152719;
+    foreground:     #ccedd1;
+    red:            #e14433;
+    green:          #a2bc3c;
+    yellow:         #ec984d;
+    blue:           #3c8cbf;
+    gray:           #3a6243;
+    accent:         #3b9586;
 }
