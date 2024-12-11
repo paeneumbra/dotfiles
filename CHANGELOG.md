@@ -1,5 +1,12 @@
 # Changelog
 
+## v7.1.0 (2024-12-11)
+
+### Changed
+
+- revert neovim messy structure
+- remove nvim
+
 ## v7.0.17 (2024-12-11)
 
 ### Changed
