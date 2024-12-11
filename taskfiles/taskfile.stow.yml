@@ -6,8 +6,8 @@ includes:
 vars:
   RESTOW_CMD: "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}}"
   DESTOW_CMD: "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}}"
-  RESTOW_NVIM: "stow --restow --verbose --dir={{.ROOT_DIR}}/nvim --target={{.HOME}}"
-  DESTOW_NVIM: "stow --delete --verbose --dir={{.ROOT_DIR}}/nvim --target={{.HOME}}"
+  RESTOW_NVIM: "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}}"
+  DESTOW_NVIM: "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}}"
 
 tasks:
 
@@ -37,7 +37,7 @@ tasks:
         vars:
           CMD: "{{.RESTOW_CMD}}"
       - "{{.RESTOW_CMD}} macos"
-      - "{{.RESTOW_NVIM}} nvim"
+      - "{{.RESTOW_NVIM}} neovim"
 
   destow-macos:
     desc: Delete all macos configuration
@@ -48,7 +48,7 @@ tasks:
         vars:
           CMD: "{{.DESTOW_CMD}}"
       - "{{.DESTOW_CMD}} macos"
-      - "{{.DESTOW_NVIM}} nvim"
+      - "{{.DESTOW_NVIM}} neovim"
 
   awesome:
     desc: Modify awesome configuration
@@ -59,7 +59,7 @@ tasks:
         vars:
           CMD: "{{.RESTOW_CMD}}"
       - "{{.RESTOW_CMD}} linux"
-      - "{{.RESTOW_NVIM}} nvim"
+      - "{{.RESTOW_NVIM}} neovim"
       - "{{.RESTOW_CMD}} awesome"
 
   destow-awesome:
@@ -71,7 +71,7 @@ tasks:
         vars:
           CMD: "{{.DESTOW_CMD}}"
       - "{{.DESTOW_CMD}} linux"
-      - "{{.DESTOW_NVIM}} nvim"
+      - "{{.DESTOW_NVIM}} neovim"
       - "{{.DESTOW_CMD}} awesome"
 
   qtile:
@@ -83,7 +83,7 @@ tasks:
         vars:
           CMD: "{{.RESTOW_CMD}}"
       - "{{.RESTOW_CMD}} linux"
-      - "{{.RESTOW_NVIM}} nvim"
+      - "{{.RESTOW_NVIM}} neovim"
       - "{{.RESTOW_CMD}} qtile"
 
   destow-qtile:
@@ -95,7 +95,7 @@ tasks:
         vars:
           CMD: "{{.DESTOW_CMD}}"
       - "{{.DESTOW_CMD}} linux"
-      - "{{.DESTOW_NVIM}} nvim"
+      - "{{.DESTOW_NVIM}} neovim"
       - "{{.DESTOW_CMD}} qtile"
 
   gnome:
@@ -106,7 +106,7 @@ tasks:
       - task: common
         vars:
           CMD: "{{.RESTOW_CMD}}"
-      - "{{.RESTOW_NVIM}} nvim"
+      - "{{.RESTOW_NVIM}} neovim"
       - "{{.RESTOW_CMD}} linux"
 
   destow-gnome:

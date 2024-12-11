@@ -75,7 +75,7 @@ Settings for macos defaults can be found in [macos-defaults.sh](macos-defaults.s
 Initiate git submodule
 
 ```shell
-git submodule update --init "$HOME/foundry/anvil/nvim"
+git submodule update --init "$HOME/foundry/anvil/neovim"
 
 ```
 
