@@ -41,7 +41,7 @@ repos:
         exclude: ^terminal/.config/ranger
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.30.0
+    rev: v4.1.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
@@ -50,10 +50,10 @@ repos:
           - post-commit
           - pre-push
 
-  - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.42.0
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.16.0
     hooks:
-      - id: markdownlint
+      - id: markdownlint-cli2
         args:
           - --config
           - .markdownlint.yaml
@@ -61,7 +61,7 @@ repos:
         exclude: '^(CHANGELOG.md)$'
 
   - repo: https://github.com/JohnnyMorganz/StyLua
-    rev: v0.20.0
+    rev: v2.0.2
     hooks:
       - id: stylua-system
 
@@ -89,7 +89,7 @@ repos:
         args: ['--no-update']
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.29.4
+    rev: 0.30.0
     hooks:
       - id: check-taskfile
       - id: check-github-workflows
@@ -101,7 +101,7 @@ repos:
         args: ['-formatter', 'retain_line_breaks=true']
 
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.10.0-1
+    rev: v3.10.0-2
     hooks:
       - id: shfmt
         exclude: ^terminal/.config/ranger
