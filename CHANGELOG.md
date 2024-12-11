@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.1 (2024-12-11)
+
+### Tools
+
+- update pre commit plugins
+
 ## v7.1.0 (2024-12-11)
 
 ### Changed
