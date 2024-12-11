@@ -1,5 +1,14 @@
 # Changelog
 
+## v7.0.17 (2024-12-11)
+
+### Changed
+
+- update decorator colorschemes and templates
+- update nvim
+- add kitty and fish
+- add mondego colorscheme
+
 ## v7.0.16 (2024-12-02)
 
 ### Changed
