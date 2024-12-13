@@ -9,7 +9,6 @@ zmodule joke/zim-starship
 
 
 # Others
-zmodule kiesman99/zim-zoxide
 zmodule joke/zim-helm
 zmodule joke/zim-k9s
 zmodule joke/zim-kubectl
@@ -25,6 +24,7 @@ zmodule completion
 zmodule Aloxaf/fzf-tab
 
 # Modules that must be after completion
+zmodule kiesman99/zim-zoxide
 zmodule zsh-users/zsh-autosuggestions
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
