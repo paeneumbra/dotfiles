@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.2 (2024-12-13)
+
+### Fixed
+
+- zoxide configuration
+
 ## v7.1.1 (2024-12-11)
 
 ### Tools
