@@ -1,5 +1,12 @@
 # Changelog
 
+## v7.1.3 (2024-12-14)
+
+### Changed
+
+- nvim config update
+- ranger devicons update
+
 ## v7.1.2 (2024-12-13)
 
 ### Fixed
