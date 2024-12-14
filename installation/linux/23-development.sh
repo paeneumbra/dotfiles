@@ -52,6 +52,7 @@ PKGS=(
   shellcheck
   yq
   slack-desktop
+  markdownlint-cli2
 )
 
 print_info "Installing required packages for development"
