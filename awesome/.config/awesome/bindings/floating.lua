@@ -21,7 +21,7 @@ awful.keyboard.append_global_keybindings {
 -- Floating layout bindings
 awful.keyboard.append_global_keybindings {
 
-    awful.key({ MetaKey, ControlKey }, "g", function()
+    awful.key({ MetaKey, ControlKey }, "f", function()
         local current_layout = awful.layout.get(client.focus.screen)
         local screen = client.focus.screen
 
@@ -113,7 +113,7 @@ awful.keyboard.append_global_keybindings {
         end
     end, { description = " Floating: snap to top-right corner", group = "floating-layout" }),
 
-    awful.key({ MetaKey, ControlKey }, "a", function()
+    awful.key({ MetaKey, ControlKey }, "s", function()
         local current_layout = awful.layout.getname(awful.layout.get(awful.screen.focused()))
         local c = client.focus
         if current_layout == "floating" or c.floating == true then
@@ -124,7 +124,7 @@ awful.keyboard.append_global_keybindings {
         end
     end, { description = " Floating: snap to left (half, third, quarter)", group = "floating-layout" }),
 
-    awful.key({ MetaKey, ControlKey }, "f", function()
+    awful.key({ MetaKey, ControlKey }, "g", function()
         local current_layout = awful.layout.getname(awful.layout.get(awful.screen.focused()))
         local c = client.focus
         if current_layout == "floating" or c.floating == true then

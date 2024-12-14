@@ -5,7 +5,7 @@ local displays = require "system.displays"
 -- Displays
 client.connect_signal("request::default_keybindings", function()
     awful.keyboard.append_client_keybindings {
-        awful.key({ MetaKey, ControlKey }, "o", function(c)
+        awful.key({ MetaKey, ControlKey }, "d", function(c)
             c:move_to_screen()
         end, { description = "Move window between screens", group = "display" }),
     }
