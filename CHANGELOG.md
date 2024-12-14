@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.4 (2024-12-14)
+
+### Changed
+
+- adjust shell configurations, configure fish and kitty to run with it
+
 ## v7.1.3 (2024-12-14)
 
 ### Changed
