@@ -1,6 +1,3 @@
-#!/bin/bash
-
-# Git aliases
 alias ga='git add'
 alias gap='git add -p'
 alias gaa='git add --all'
@@ -14,7 +11,6 @@ alias glgg='git log --graph'
 alias glo="git log --graph --pretty='tformat:%C(auto)%h%d %s %C(black)%C(bold)%cL %C(green)%cr'"
 alias gloa='git log --oneline --decorate --graph --all'
 alias gm='git switch $(git_main_branch)'
-alias gmb='git branch --merged | grep -Ev "(^\*|^\s*(master|main)$)"'
 alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gst='git status'
@@ -22,18 +18,15 @@ alias gsu='git stash -u -m'
 alias gpr='git pull --rebase -v'
 alias glb='git branch -vv'
 alias gub='git branch -vv --no-merged'
-
 alias la='ls -lAh --color=auto'
 alias ll='ls -lh --color=auto'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-
-# (i) prompt before overwrite
-# (v) verbose
 alias cp='cp -iv'
 alias mv='mv -iv'
-
 alias v='nvim'
 alias t='go-task'
 
-alias path='echo -e "${PATH//:/\\n}"'
+# TODO:
+# abbr --add gmb 'git branch --merged | grep -Ev "(^\*|^\s*(master|main)$)"'
+# abbr --add path 'echo -e "${PATH//:/\\n}"'
