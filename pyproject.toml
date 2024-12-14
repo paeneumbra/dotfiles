@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "anvil"
-version = "7.1.4"
+version = "7.1.5"
 description = "Personal development laboratory"
 authors = ["Itzalak <itzalak@tuta.io>"]
 readme = "README.md"
@@ -21,7 +21,7 @@ build-backend = "poetry.core.masonry.api"
 name = "cz_customize"
 tag_format = "v$major.$minor.$patch"
 version_scheme = "semver"
-version = "7.1.4"
+version = "7.1.5"
 update_changelog_on_bump = true
 version_files = ["pyproject.toml"]
 

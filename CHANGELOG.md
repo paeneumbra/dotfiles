@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.5 (2024-12-14)
+
+### Changed
+
+- tweak keybindings to match macos config
+
 ## v7.1.4 (2024-12-14)
 
 ### Changed
