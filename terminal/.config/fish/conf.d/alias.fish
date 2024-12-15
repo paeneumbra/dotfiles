@@ -1,32 +1,24 @@
-alias ga='git add'
-alias gap='git add -p'
-alias gaa='git add --all'
-alias gc!='git commit --verbose --amend'
-alias gcb='git checkout -b'
-alias gcfl='git config --list'
-alias gcm='git commit -m'
-alias gco='git switch'
-alias gema='git log --pretty="%an - %ae"'
-alias glgg='git log --graph'
-alias glo="git log --graph --pretty='tformat:%C(auto)%h%d %s %C(black)%C(bold)%cL %C(green)%cr'"
-alias gloa='git log --oneline --decorate --graph --all'
-alias gm='git switch $(git_main_branch)'
-alias gsl='git stash list'
-alias gsp='git stash pop'
-alias gst='git status'
-alias gsu='git stash -u -m'
-alias gpr='git pull --rebase -v'
-alias glb='git branch -vv'
-alias gub='git branch -vv --no-merged'
+# Neovim
+alias v='nvim'
+alias vim='nvim'
+
+# Lazy
+alias lzg='lazygit'
+alias lzd='lazydocker'
+
+# Docker
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+
+# Gradle
+alias gw='./gradlew'
+alias gwa='./gradlew clean assemble'
+alias gwb='./gradlew clean build'
+
+# Other
 alias la='ls -lAh --color=auto'
 alias ll='ls -lh --color=auto'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias cp='cp -iv'
 alias mv='mv -iv'
-alias v='nvim'
-alias t='go-task'
-
-# TODO:
-# abbr --add gmb 'git branch --merged | grep -Ev "(^\*|^\s*(master|main)$)"'
-# abbr --add path 'echo -e "${PATH//:/\\n}"'

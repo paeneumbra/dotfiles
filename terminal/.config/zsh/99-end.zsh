@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+# Zsh specific
+# zimfw recommendation to avoid compinit conflicts
+alias rzsh='exec zsh'
+
 # These tools require the exports to be present in the end of the file
 # and might cause problems with completion and compinit
 

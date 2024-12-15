@@ -21,29 +21,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-# Aliases
-alias la='ls -lAh --color=auto'
-alias ll='ls -lh --color=auto'
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias ga='git add'
-alias gap='git add -p'
-alias gaa='git add --all'
-alias gc!='git commit --verbose --amend'
-alias gcb='git checkout -b'
-alias gcm='git commit -m'
-alias gco='git switch'
-alias gema='git log --pretty="%an - %ae"'
-alias glgg='git log --graph'
-alias glo="git log --graph --pretty='tformat:%C(auto)%h%d %s %C(black)%C(bold)%cL %C(green)%cr'"
-alias gm='git switch main'
-alias gsp='git stash pop'
-alias gst='git status'
-alias gsu='git stash -u -m'
-alias v='nvim'
-alias t='go-task'
-alias path='echo -e "${PATH//:/\\n}"'
-
 HELPERS_DIRECTORY="$XDG_CONFIG_HOME/shell/"
 for file in "$HELPERS_DIRECTORY"/*.sh; do
         if [ -f "$file" ]; then
