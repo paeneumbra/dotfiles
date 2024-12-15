@@ -82,7 +82,7 @@
 - QTILE LOGS: `~/.local/share/qtile/qtile.log`
 - [ ] Qtile updates
     - [ ] Kill redshift everytime refresh is pressed or set it in the xinitrc
-    - [ ] Monitor unplugging is not working and blocks keybord for a bit
+    - [ ] Monitor unpluging is not working and blocks keybord for a bit
 - [ ] Dual monitor setup (to review, unsure what is needed in qtile)
     - [ ] xrandr display names remain the same (eDP-1, DP-2, ...)
     - [ ] Second screen in the correct position

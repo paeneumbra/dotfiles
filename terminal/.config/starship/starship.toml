@@ -2,10 +2,120 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Inserts a blank line between shell prompts
-add_newline = true
+add_newline = false
 command_timeout = 20000
 
+# prompt
+# https://starship.rs/config/#prompt
+
+format = """
+[ 󰢛 ](bg:4)\
+$shell\
+[](bg:7 fg:4)\
+$directory\
+[ ](fg:7)\
+$kubernetes\
+$vcsh\
+$fossil_branch\
+$fossil_metrics\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$gleam\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$nats\
+$direnv\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$jobs\
+$status\
+$container\
+[ ](0)\
+$cmd_duration\
+$time\
+[ ](fg:0)\
+$line_break$character"""
+
+[directory]
+style = "fg:0 bg:7"
+format = "[ $path ]($style)"
+truncation_length = 3
+
+[git_branch]
+symbol = " "
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:0"
+format = '[[   $time ](fg:15 bg:0)]($style)'
+
 [cmd_duration]
-# $duration – The command duration (e.g. "15s")
-# $style    – The default style of the module (e.g. "bold yellow")
 format = "took [$duration]($style) "
+
+[shell]
+unknown_indicator = 'unknown shell'
+format = "[ $indicator ]($style)"
+style = "bg:4"
+disabled = false

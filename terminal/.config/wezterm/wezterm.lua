@@ -2,11 +2,11 @@ local wezterm = require "wezterm"
 
 return {
     font = wezterm.font_with_fallback {
-        { family = "IosevkaTerm Nerd Font Mono", weight = "Bold" },
-        { family = "Iosevka Nerd Font Mono", weight = "Bold" },
-        "Fira Code",
-        "Material Design Icons",
-        "Noto Color Emoji",
+        { family = "IosevkaTerm Nerd Font", weight = "Bold" },
+        { family = "Iosevka Nerd Font", weight = "Bold" },
+        { family = "Fira Code", weight = "Bold" },
+        { family = "Material Design Icons", weight = "Bold" },
+        { family = "Noto Color Emoji", weight = "Bold" },
     },
     warn_about_missing_glyphs = true,
     font_size = 13,
@@ -26,7 +26,7 @@ return {
 
     -- General
     automatically_reload_config = true,
-    window_background_opacity = 0.95,
+    window_background_opacity = 0.98,
     window_close_confirmation = "NeverPrompt",
 
     -- Coloscheme

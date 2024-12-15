@@ -21,6 +21,11 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+# Path
+export PATH="$HOME/foundry/anvil/bin:$PATH"
+export PATH="$HOME/foundry/anvil/terminal/.config/decorator/scripts:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
 HELPERS_DIRECTORY="$XDG_CONFIG_HOME/shell/"
 for file in "$HELPERS_DIRECTORY"/*.sh; do
         if [ -f "$file" ]; then
