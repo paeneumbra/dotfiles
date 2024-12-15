@@ -10,7 +10,9 @@ if type -q nvim
     set --export VISUAL nvim
 end
 
-set -x FZF_DEFAULT_OPTS "--preview-window='right,60%,border-bold,+{2}+3/3,~3' --color 'header:#ffc700,border:#ffc700' --info='inline-right' --no-separator --no-scrollbar --padding 2%"
+if type -q fzf
+    set -x FZF_DEFAULT_OPTS "--preview-window='right,60%,border-bold,+{2}+3/3,~3' --color 'header:#ffc700,border:#ffc700' --info='inline-right' --no-separator --no-scrollbar --padding 2%"
+end
 
 switch (uname)
     case Linux
