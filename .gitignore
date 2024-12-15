@@ -151,3 +151,6 @@ Brewfile.lock.json
 
 # taskfile
 .task
+
+# fish
+/terminal/.config/fish/fish_variables
