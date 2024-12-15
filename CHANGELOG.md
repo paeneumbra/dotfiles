@@ -1,5 +1,13 @@
 # Changelog
 
+## v7.1.6 (2024-12-15)
+
+### Changed
+
+- tweak fish to make sdk and pyenv behave reasonably
+- tweak fish configurations
+- synchronize alias and functions for bash, zsh and adjust fish accordingly
+
 ## v7.1.5 (2024-12-14)
 
 ### Changed
