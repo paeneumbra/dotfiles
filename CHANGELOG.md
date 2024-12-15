@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.7 (2024-12-15)
+
+### Fixed
+
+- correct exports, sync behavior between terminals
+
 ## v7.1.6 (2024-12-15)
 
 ### Changed
