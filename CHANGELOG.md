@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.10 (2024-12-16)
+
+### Changed
+
+- tweak starship to match lualine
+
 ## v7.1.9 (2024-12-16)
 
 ### Fixed
