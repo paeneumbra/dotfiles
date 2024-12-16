@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.9 (2024-12-16)
+
+### Fixed
+
+- on mac starhip does not recognize the path
+
 ## v7.1.8 (2024-12-16)
 
 ### Changed
