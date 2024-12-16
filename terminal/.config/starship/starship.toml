@@ -9,20 +9,17 @@ command_timeout = 20000
 # https://starship.rs/config/#prompt
 
 format = """
-[ 󰢛 ](bg:4)\
+[ 󰢛 ](fg:0 bg:4)\
 $shell\
-[](bg:7 fg:4)\
+[](bg:15 fg:4)\
+$git_branch\
+$git_status\
+[ ](fg:15)\
 $directory\
-[ ](fg:7)\
 $kubernetes\
 $vcsh\
 $fossil_branch\
 $fossil_metrics\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
 $hg_branch\
 $pijul_channel\
 $docker_context\
@@ -91,19 +88,29 @@ $sudo\
 $jobs\
 $status\
 $container\
-[ ](0)\
+$fill\
+[ ](4)\
 $cmd_duration\
+[](bg:4 fg:0)\
 $time\
 [ ](fg:0)\
 $line_break$character"""
 
+[fill]
+symbol = " "
+
 [directory]
-style = "fg:0 bg:7"
 format = "[ $path ]($style)"
-truncation_length = 3
+truncation_length = 5
 
 [git_branch]
-symbol = " "
+style = "fg:4 bg:15"
+format = '[ $symbol $branch ]($style)'
+symbol = ""
+
+[git_status]
+style = "fg:9 bg:15"
+format = '[ \[$all_status$ahead_behind\] ]($style)'
 
 [time]
 disabled = false
@@ -112,10 +119,11 @@ style = "bg:0"
 format = '[[   $time ](fg:15 bg:0)]($style)'
 
 [cmd_duration]
-format = "took [$duration]($style) "
+format = "[ took $duration ]($style)"
+style = "fg:3 bg:4"
 
 [shell]
 unknown_indicator = 'unknown shell'
 format = "[ $indicator ]($style)"
-style = "bg:4"
+style = "fg:0 bg:4"
 disabled = false
