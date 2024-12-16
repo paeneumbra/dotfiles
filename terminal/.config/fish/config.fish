@@ -32,6 +32,7 @@ if test -d "$HOME/.sdkman"
     fish_add_path --prepend (find "$HOME/.sdkman/candidates/scala/current/bin" -maxdepth 0)
 end
 
+set --universal --export STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 
 # End of file required
 starship init fish | source

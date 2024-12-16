@@ -4,6 +4,8 @@ export PATH="$HOME/foundry/anvil/bin:$PATH"
 export PATH="$HOME/foundry/anvil/terminal/.config/decorator/scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+
 # Zsh specific
 # zimfw recommendation to avoid compinit conflicts
 alias rzsh='exec zsh'
