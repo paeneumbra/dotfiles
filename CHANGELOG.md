@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.8 (2024-12-16)
+
+### Changed
+
+- nvim version update
+
 ## v7.1.7 (2024-12-15)
 
 ### Fixed
