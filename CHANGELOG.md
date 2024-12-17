@@ -1,5 +1,21 @@
 # Changelog
 
+## v7.1.11 (2024-12-17)
+
+### Changed
+
+- delete colors readjust some other colors
+- remove kitty, it does not work on mac, too much
+- introduce yazi
+
+### Fixed
+
+- purge kitty from the installation files
+
+### Tools
+
+- update poetry
+
 ## v7.1.10 (2024-12-16)
 
 ### Changed
