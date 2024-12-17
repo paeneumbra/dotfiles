@@ -41,7 +41,6 @@ PKGS=(
   git-filter-repo
   go-task
   handlr
-  kitty
   lazygit
   maim
   man-db
