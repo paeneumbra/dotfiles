@@ -1,5 +1,5 @@
 switch (uname)
     case Darwin
         alias t='task'
-        alias rssh="eval '$(ssh-agent -s)'"
+        alias rssh="eval '$(ssh-agent -c)'"
 end
