@@ -56,7 +56,9 @@ tasks:
     platforms: [linux]
     cmds:
       - yay -Syu --noconfirm
+      # TODO: zimfw should do well for himself
       - task: :zimfw:refresh
+        # TODO: Missing pipx update!
 
   k2:
     desc: Enable keychron fn keys

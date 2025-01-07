@@ -64,7 +64,6 @@ tasks:
     internal: true
     cmds:
       - poetry update
-      - poetry self update
 
   test:
     deps: [assert]

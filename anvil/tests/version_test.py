@@ -7,6 +7,6 @@ def test_version():
     with Path("pyproject.toml").open(encoding="utf8") as toml_file:
         pyproject_toml = toml.load(toml_file)
 
-    poetry_version = pyproject_toml["tool"]["poetry"]["version"]
+    project_version = pyproject_toml["project"]["version"]
     package_version = __version__
-    assert f"v{poetry_version}" == package_version
+    assert f"v{project_version}" == package_version

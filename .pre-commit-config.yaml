@@ -27,13 +27,6 @@ repos:
       - id: trailing-whitespace
         exclude: '^\.gitignore$'
 
-  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
-    rev: v1.3.3
-    hooks:
-      - id: python-safety-dependencies-check
-        files: pyproject.toml
-        args: ['--disable-optional-telemetry']
-
   - repo: https://github.com/psf/black
     rev: 24.10.0
     hooks:
@@ -51,7 +44,7 @@ repos:
           - pre-push
 
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.16.0
+    rev: v0.17.1
     hooks:
       - id: markdownlint-cli2
         args:
@@ -82,11 +75,10 @@ repos:
           )$
 
   - repo: https://github.com/python-poetry/poetry
-    rev: 1.8.0
+    rev: 2.0.0
     hooks:
       - id: poetry-check
       - id: poetry-lock
-        args: ['--no-update']
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.30.0
@@ -105,3 +97,18 @@ repos:
     hooks:
       - id: shfmt
         exclude: ^terminal/.config/ranger
+
+  - repo: local
+    hooks:
+      - id: poetry
+        name: refresh poetry environment
+        entry: poetry install
+        language: system
+        pass_filenames: false
+        verbose: true
+      - id: pytest
+        name: run tests
+        entry: poetry run pytest anvil/tests/
+        language: system
+        pass_filenames: false
+        verbose: true
