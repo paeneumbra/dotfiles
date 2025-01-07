@@ -9,13 +9,16 @@ command_timeout = 20000
 # https://starship.rs/config/#prompt
 
 format = """
-[ 󰢛 ](fg:0 bg:4)\
-$shell\
-[](bg:15 fg:4)\
+[ 󰥔 ](bg:black fg:yellow)\
+[ ](fg:black)\
+$time\
+$cmd_duration\
+\n\
+[ 󰉋 ](bg:black fg:yellow)\
+[ ](fg:black)\
+$directory\
 $git_branch\
 $git_status\
-[ ](fg:15)\
-$directory\
 $kubernetes\
 $vcsh\
 $fossil_branch\
@@ -88,42 +91,61 @@ $sudo\
 $jobs\
 $status\
 $container\
-$fill\
-[ ](4)\
-$cmd_duration\
-[](bg:4 fg:0)\
-$time\
-[ ](fg:0)\
-$line_break$character"""
+$line_break\
+[ 󰢛 ](fg:yellow bg:black)\
+[ ](fg:black)\
+$shell\
+$character
+"""
 
 [fill]
 symbol = " "
 
 [directory]
-format = "[ $path ]($style)"
-truncation_length = 5
+read_only = "󰌾 "
+read_only_style = "red"
+style = "fg:yellow"
+format = "[$read_only]($read_only_style)[$path ]($style)"
+truncation_length = 4
 
 [git_branch]
-style = "fg:4 bg:15"
-format = '[ $symbol $branch ]($style)'
-symbol = ""
+format = '[ $symbol  $branch ]($style)'
+symbol = "󰊤"
 
 [git_status]
-style = "fg:9 bg:15"
-format = '[ \[$all_status$ahead_behind\] ]($style)'
+style = "fg:red"
+format = '([\[ $all_status$ahead_behind\]]($style) )'
+conflicted = " "
+ahead = "[ ](fg:green)"
+behind = ""
+staged = "[ ](fg:green)"
+modified = "[󰏫 ](fg:yellow)"
+renamed = "[󰓹 ](fg:yellow)"
+deleted = "󰆴 "
+untracked = "[󰈔 ](fg:yellow)"
+stashed = "[󰀼 ](fg:yellow)"
+diverged = " "
+
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:0"
-format = '[[   $time ](fg:15 bg:0)]($style)'
+style = "fg:yellow"
+format = '[$time ]($style)'
 
 [cmd_duration]
 format = "[ took $duration ]($style)"
-style = "fg:3 bg:4"
+style = "fg:yellow"
 
 [shell]
 unknown_indicator = 'unknown shell'
-format = "[ $indicator ]($style)"
-style = "fg:0 bg:4"
+format = "[$indicator ]($style)"
+style = "fg:yellow"
+disabled = false
+
+[character]
+format = "$symbol"
+success_symbol = "[ ](green)"
+error_symbol = "[ ](red) "
+vimcmd_symbol = "[ ](yellow)"
 disabled = false
