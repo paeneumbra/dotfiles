@@ -1,5 +1,16 @@
 # Changelog
 
+## v7.1.15 (2025-01-07)
+
+### Changed
+
+- add ghostty config
+- update decorator
+- update shells config
+- update starship config
+- update yazi config
+- update fish config
+
 ## v7.1.14 (2025-01-07)
 
 ### Fixed
