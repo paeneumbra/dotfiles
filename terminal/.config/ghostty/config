@@ -1,0 +1,56 @@
+ # Font
+font-family = "IosevkaTerm Nerd Font"
+font-size = 16
+bold-is-bright = true
+font-style = Medium
+
+# Appearance
+window-padding-x = 10
+window-padding-y = 10
+window-decoration = false
+background-opacity = 0.90
+unfocused-split-opacity = 0.6
+
+# Behavior
+quit-after-last-window-closed = true
+clipboard-read = allow
+clipboard-write = allow
+cursor-style = block
+cursor-style-blink = false
+cursor-click-to-move = true
+
+
+# Keybindings
+keybind = alt+shift+r=reload_config
+keybind = alt+d=new_split:right
+keybind = alt+shift+d=new_split:down
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:bottom
+keybind = alt+k=goto_split:top
+keybind = alt+l=goto_split:right
+keybind = alt+t=new_tab
+keybind = alt+shift+h=previous_tab
+keybind = alt+shift+l=next_tab
+keybind = alt+shift+q=close_surface
+
+# Macos specific
+macos-option-as-alt = true
+background-blur-radius = 20
+window-decoration = true
+macos-titlebar-style = native
+macos-option-as-alt = true
+macos-window-shadow = false
+
+keybind = global:alt+shift+t=toggle_quick_terminal
+quick-terminal-animation-duration = 0.2
+
+# Loaded last
+config-file = "../decorator/output/ghostty"
+
+# TODO: symlink only when mac or linux? not with stow...
+# os specific configurations.
+# config-file = ?config-macos
+# config-file = ?config-linux
+# Shell
+# command = fish
+# shell-integration = fish
