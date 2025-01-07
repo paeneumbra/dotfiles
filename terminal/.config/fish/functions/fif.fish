@@ -1,4 +1,4 @@
-# Find in file with fzf, rg and bat
+# Find text in file, open in nvim
 function fif
     set RG_PREFIX "rg --column --line-number --no-heading --color=always --hidden --glob='!.git' --smart-case"
     set INITIAL_QUERY (string join ' ' $argv)

@@ -1,4 +1,3 @@
-
 # Find directory and move to it or copy to clipboard
 function fdir
     set FD_PREFIX "fd --hidden --no-ignore --ignore-case --type directory"

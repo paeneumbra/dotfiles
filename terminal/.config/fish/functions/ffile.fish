@@ -1,4 +1,4 @@
-# Find file with fd, fzf and open in nvim
+# Find file and open in nvim
 function ffile
     set FD_PREFIX "fd --hidden --no-ignore --ignore-case --type file"
     set INITIAL_QUERY (string join ' ' $argv)

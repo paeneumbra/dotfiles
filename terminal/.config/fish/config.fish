@@ -4,6 +4,9 @@ end
 
 set -g -x fish_greeting ''
 
+# Enable starship config
+set --universal --export STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
+
 if test "$os" = "darwin"
     fish_add_path /opt/homebrew/bin
 end
@@ -12,6 +15,8 @@ fish_add_path --prepend "$HOME/foundry/anvil/bin"
 fish_add_path --prepend "$HOME/foundry/anvil/terminal/.config/decorator/scripts"
 fish_add_path --prepend "$HOME/.local/bin"
 
+# Python, pip and pyenv
+fish_add_path --prepend "$HOME/.local/bin"
 if test -d "$HOME/.pyenv"
     set --universal --export PYENV_ROOT $HOME/.pyenv
     fish_add_path --prepend "$PYENV_ROOT/bin"
@@ -31,8 +36,6 @@ if test -d "$HOME/.sdkman"
     fish_add_path --prepend (find "$HOME/.sdkman/candidates/groovy/current/bin" -maxdepth 0)
     fish_add_path --prepend (find "$HOME/.sdkman/candidates/scala/current/bin" -maxdepth 0)
 end
-
-set --universal --export STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 
 # End of file required
 starship init fish | source
