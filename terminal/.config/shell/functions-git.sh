@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Check if main exists and use instead of master
 git_main_branch() {
   if ! git rev-parse --git-dir &>/dev/null; then

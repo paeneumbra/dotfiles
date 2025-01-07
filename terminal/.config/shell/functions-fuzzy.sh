@@ -1,11 +1,16 @@
 #!/bin/bash
 
-# Determine the clipboard command based on the operating system
 case "$(uname)" in
-Linux*)
-  CLIPBOARD_CMD="xclip -selection clipboard"
+Linux)
+  if command -v wl-copy &>/dev/null; then
+    # Wayland
+    CLIPBOARD_CMD="wl-copy"
+  elif command -v xclip &>/dev/null; then
+    # X11
+    CLIPBOARD_CMD="xclip -selection clipboard"
+  fi
   ;;
-Darwin*)
+Darwin)
   CLIPBOARD_CMD="pbcopy"
   ;;
 *)
