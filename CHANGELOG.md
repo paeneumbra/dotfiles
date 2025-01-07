@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.14 (2025-01-07)
+
+### Fixed
+
+- correct fish command
+
 ## v7.1.13 (2025-01-07)
 
 ### Tools
