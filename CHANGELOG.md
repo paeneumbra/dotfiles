@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.13 (2025-01-07)
+
+### Tools
+
+- update poetry, precommit config and taskfiles
+
 ## v7.1.12 (2025-01-04)
 
 ### Changed
