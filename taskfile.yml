@@ -14,6 +14,7 @@ includes:
   sdkman: "./taskfiles/taskfile.sdkman.yml"
   stow: "./taskfiles/taskfile.stow.yml"
   submodules: "./taskfiles/taskfile.submodules.yml"
+  terminal: "./taskfiles/taskfile.terminal.yml"
   zimfw: "./taskfiles/taskfile.zimfw.yml"
   zsh: "./taskfiles/taskfile.zsh.yml"
 

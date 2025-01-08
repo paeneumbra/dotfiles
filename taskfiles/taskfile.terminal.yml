@@ -1,0 +1,103 @@
+version: '3'
+
+tasks:
+
+  default:
+    internal: true
+    desc: Default
+    cmds:
+      - |
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
+  assert:
+    cmds:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+
+  terminal:
+    internal: true
+    desc: Setup terminal and shell
+    cmds:
+      - task: installation_linux
+      - task: fonts_linux
+      - task: cleanup
+      - task: stow
+
+  installation_linux:
+    internal: true
+    platforms: [linux]
+    desc: Install terminal and shell dependencies
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: bash, pacman
+      - "{{.ROOT_DIR}}/taskfiles/scripts/03-terminal.sh"
+
+  fonts_linux:
+    internal: true
+    platforms: [linux]
+    desc: Install fonts
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: bash, pacman
+      - "{{.ROOT_DIR}}/taskfiles/scripts/04-fonts.sh"
+
+  cleanup:
+    internal: true
+    desc: Delete existent shell configuration
+    cmds:
+      - rm -rf {{.HOME}}/.bashrc
+      - rm -rf {{.HOME}}/.bash_profile
+      - rm -rf {{.HOME}}/.bash_logout
+      - rm -rf {{.HOME}}/.config/fish
+      - rm -rf {{.HOME}}/.zshrc
+
+  stow:
+    desc: Symlink terminal and shell configuration
+    cmds:
+      - task: stow_linux
+      - task: stow_macos
+
+  stow_linux:
+    internal: true
+    platforms: [linux]
+    desc: Symlink terminal and shell configuration for linux
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: stow
+      - mkdir -p {{.HOME}}/.config/ghostty
+      - mkdir -p {{.HOME}}/.config/zsh
+      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} terminal --ignore='.*config.macos'"
+
+  stow_macos:
+    internal: true
+    platforms: [darwin]
+    desc: Symlink terminal and shell configuration for linux
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: stow
+      - mkdir -p {{.HOME}}/.config/ghostty
+      - mkdir -p {{.HOME}}/.config/zsh
+      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} terminal --ignore='.*config.linux'"
+
+  destow:
+    desc: Un-symlink terminal and shell configurations
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: stow
+      - "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} terminal"

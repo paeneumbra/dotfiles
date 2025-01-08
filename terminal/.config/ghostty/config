@@ -7,7 +7,7 @@ font-style = Medium
 window-padding-x = 10
 window-padding-y = 10
 window-decoration = false
-background-opacity = 0.80
+background-opacity = 0.90
 unfocused-split-opacity = 0.6
 unfocused-split-fill = #000000
 
@@ -36,15 +36,12 @@ keybind = alt+shift+l=next_tab
 keybind = alt+shift+q=close_surface
 
 keybind = global:ctrl+shift+alt+t=toggle_quick_terminal
-quick-terminal-position = center
+quick-terminal-position = top
 quick-terminal-screen = mouse
 quick-terminal-animation-duration = 0.2
 
 # Config files
 config-file = ?../decorator/output/ghostty
-# TODO: symlink only when mac or linux? not with stow...
-#   Maybe a little more complex, I can stow conditionally, using the taskfiles
-#   ‘--ignore=regexp’ >> --ignore='.*\.orig' --ignore='.*\.dist'
 # os specific configurations.
 config-file = ?config.macos
-# config-file = ?config.linux
+config-file = ?config.linux
