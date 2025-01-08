@@ -30,7 +30,7 @@ tasks:
     desc: Setup terminal and shell
     cmds:
       - task: installation_linux
-      - task: fonts_linux
+      - task: installation_macos
       - task: cleanup
       - task: stow
 
@@ -42,17 +42,17 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: bash, pacman
-      - "{{.ROOT_DIR}}/taskfiles/scripts/03-terminal.sh"
+      - "{{.ROOT_DIR}}/taskfiles/scripts/03-pacman-terminal.sh"
 
-  fonts_linux:
+  installation_macos:
     internal: true
-    platforms: [linux]
-    desc: Install fonts
+    platforms: [darwin]
+    desc: Install terminal and shell dependencies with brew
     cmds:
       - task: assert
         vars:
-          REQUIRED_TOOLS: bash, pacman
-      - "{{.ROOT_DIR}}/taskfiles/scripts/04-fonts.sh"
+          REQUIRED_TOOLS: bash, brew
+      - "{{.ROOT_DIR}}/taskfiles/scripts/03-brew-terminal.sh"
 
   cleanup:
     internal: true
@@ -78,6 +78,7 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: stow
+      - mkdir -p {{.HOME}}/.config/fish
       - mkdir -p {{.HOME}}/.config/ghostty
       - mkdir -p {{.HOME}}/.config/zsh
       - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} terminal --ignore='.*config.macos'"
@@ -90,6 +91,7 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: stow
+      - mkdir -p {{.HOME}}/.config/fish
       - mkdir -p {{.HOME}}/.config/ghostty
       - mkdir -p {{.HOME}}/.config/zsh
       - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} terminal --ignore='.*config.linux'"
