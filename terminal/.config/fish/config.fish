@@ -2,18 +2,17 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+if type -q /opt/homebrew/bin/brew
+    eval (/opt/homebrew/bin/brew shellenv)
+end
+
 set -g -x fish_greeting ''
 
 # Enable starship config
 set --universal --export STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 
-if test "$os" = "darwin"
-    fish_add_path /opt/homebrew/bin
-end
-
 fish_add_path --prepend "$HOME/foundry/anvil/bin"
 fish_add_path --prepend "$HOME/foundry/anvil/terminal/.config/decorator/scripts"
-fish_add_path --prepend "$HOME/.local/bin"
 
 # Python, pip and pyenv
 fish_add_path --prepend "$HOME/.local/bin"

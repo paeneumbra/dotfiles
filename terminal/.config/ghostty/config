@@ -1,24 +1,26 @@
  # Font
-font-family = "IosevkaTerm Nerd Font"
+font-family = "Terminus Nerd Font"
 font-size = 16
-bold-is-bright = true
 font-style = Medium
 
 # Appearance
 window-padding-x = 10
 window-padding-y = 10
 window-decoration = false
-background-opacity = 0.90
+background-opacity = 0.80
 unfocused-split-opacity = 0.6
+unfocused-split-fill = #000000
 
 # Behavior
 quit-after-last-window-closed = true
+confirm-close-surface = false
 clipboard-read = allow
 clipboard-write = allow
+shell-integration = fish
+shell-integration-features = no-cursor
 cursor-style = block
-cursor-style-blink = false
+cursor-style-blink = true
 cursor-click-to-move = true
-
 
 # Keybindings
 keybind = alt+shift+r=reload_config
@@ -33,24 +35,16 @@ keybind = alt+shift+h=previous_tab
 keybind = alt+shift+l=next_tab
 keybind = alt+shift+q=close_surface
 
-# Macos specific
-macos-option-as-alt = true
-background-blur-radius = 20
-window-decoration = true
-macos-titlebar-style = native
-macos-option-as-alt = true
-macos-window-shadow = false
-
-keybind = global:alt+shift+t=toggle_quick_terminal
+keybind = global:ctrl+shift+alt+t=toggle_quick_terminal
+quick-terminal-position = center
+quick-terminal-screen = mouse
 quick-terminal-animation-duration = 0.2
 
-# Loaded last
-config-file = "../decorator/output/ghostty"
-
+# Config files
+config-file = ?../decorator/output/ghostty
 # TODO: symlink only when mac or linux? not with stow...
+#   Maybe a little more complex, I can stow conditionally, using the taskfiles
+#   ‘--ignore=regexp’ >> --ignore='.*\.orig' --ignore='.*\.dist'
 # os specific configurations.
-# config-file = ?config-macos
-# config-file = ?config-linux
-# Shell
-# command = fish
-# shell-integration = fish
+config-file = ?config.macos
+# config-file = ?config.linux
