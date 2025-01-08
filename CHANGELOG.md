@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.17 (2025-01-08)
+
+### Changed
+
+- start revisiting taskfiles
+
 ## v7.1.16 (2025-01-08)
 
 ### Changed
