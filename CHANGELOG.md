@@ -1,5 +1,12 @@
 # Changelog
 
+## v7.1.16 (2025-01-08)
+
+### Changed
+
+- wrap conditional ghostty and fish config
+- ghostty fish config
+
 ## v7.1.15 (2025-01-07)
 
 ### Changed
