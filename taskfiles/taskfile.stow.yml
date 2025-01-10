@@ -1,13 +1,8 @@
 version: '3'
 
-includes:
-  helper: "./taskfile.helper.yml"
-
 vars:
   RESTOW_CMD: "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}}"
   DESTOW_CMD: "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}}"
-  RESTOW_NVIM: "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}}"
-  DESTOW_NVIM: "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}}"
 
 tasks:
 
@@ -22,44 +17,42 @@ tasks:
     silent: true
 
   assert:
-    internal: true
     cmds:
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: stow
+      - cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+    vars:
+      TOOL: stow
 
   macos:
     desc: Modify all macos configuration
     deps: [assert]
     platforms: [darwin]
     cmds:
-      - task: common
-        vars:
-          CMD: "{{.RESTOW_CMD}}"
+      - task: :neovim:stow
+      - task: :terminal:stow
       - "{{.RESTOW_CMD}} macos"
-      - "{{.RESTOW_NVIM}} neovim"
 
   destow-macos:
     desc: Delete all macos configuration
     deps: [assert]
     platforms: [darwin]
     cmds:
-      - task: common
-        vars:
-          CMD: "{{.DESTOW_CMD}}"
+      - task: :neovim:destow
+      - task: :terminal:destow
       - "{{.DESTOW_CMD}} macos"
-      - "{{.DESTOW_NVIM}} neovim"
 
   awesome:
     desc: Modify awesome configuration
     deps: [assert]
     platforms: [linux]
     cmds:
-      - task: common
-        vars:
-          CMD: "{{.RESTOW_CMD}}"
+      - task: :neovim:stow
+      - task: :terminal:stow
       - "{{.RESTOW_CMD}} linux"
-      - "{{.RESTOW_NVIM}} neovim"
       - "{{.RESTOW_CMD}} awesome"
 
   destow-awesome:
@@ -67,11 +60,9 @@ tasks:
     deps: [assert]
     platforms: [linux]
     cmds:
-      - task: common
-        vars:
-          CMD: "{{.DESTOW_CMD}}"
+      - task: :neovim:destow
+      - task: :terminal:destow
       - "{{.DESTOW_CMD}} linux"
-      - "{{.DESTOW_NVIM}} neovim"
       - "{{.DESTOW_CMD}} awesome"
 
   qtile:
@@ -79,11 +70,9 @@ tasks:
     deps: [assert]
     platforms: [linux]
     cmds:
-      - task: common
-        vars:
-          CMD: "{{.RESTOW_CMD}}"
+      - task: :neovim:stow
+      - task: :terminal:stow
       - "{{.RESTOW_CMD}} linux"
-      - "{{.RESTOW_NVIM}} neovim"
       - "{{.RESTOW_CMD}} qtile"
 
   destow-qtile:
@@ -91,11 +80,9 @@ tasks:
     deps: [assert]
     platforms: [linux]
     cmds:
-      - task: common
-        vars:
-          CMD: "{{.DESTOW_CMD}}"
+      - task: :neovim:destow
+      - task: :terminal:destow
       - "{{.DESTOW_CMD}} linux"
-      - "{{.DESTOW_NVIM}} neovim"
       - "{{.DESTOW_CMD}} qtile"
 
   gnome:
@@ -103,10 +90,8 @@ tasks:
     deps: [assert]
     platforms: [linux]
     cmds:
-      - task: common
-        vars:
-          CMD: "{{.RESTOW_CMD}}"
-      - "{{.RESTOW_NVIM}} neovim"
+      - task: :neovim:stow
+      - task: :terminal:stow
       - "{{.RESTOW_CMD}} linux"
 
   destow-gnome:
@@ -114,18 +99,6 @@ tasks:
     deps: [assert]
     platforms: [linux]
     cmds:
-      - task: common
-        vars:
-          CMD: "{{.DESTOW_CMD}}"
+      - task: :neovim:destow
+      - task: :terminal:destow
       - "{{.DESTOW_CMD}} linux"
-
-  common:
-    desc: Modify common configuration
-    deps: [assert]
-    internal: true
-    cmds:
-      - rm -rf "{{.HOME}}/.zshrc"
-      - rm -rf "{{.HOME}}/.bashrc"
-      - rm -rf "{{.HOME}}/.bash_profile"
-      - rm -rf "{{.HOME}}/.config/fish"
-      - "{{.CMD}} terminal"

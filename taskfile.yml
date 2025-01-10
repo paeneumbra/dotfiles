@@ -3,7 +3,6 @@ version: '3'
 includes:
   brew: "./taskfiles/taskfile.brew.yml"
   gotask: "./taskfiles/taskfile.gotask.yml"
-  fish: "./taskfiles/taskfile.fish.yml"
   foundry: "./taskfiles/taskfile.foundry.yml"
   helper: "./taskfiles/taskfile.helper.yml"
   linux: "./taskfiles/taskfile.linux.yml"
