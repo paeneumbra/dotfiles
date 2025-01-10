@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.21 (2025-01-10)
+
+### Changed
+
+- purge ranger from everywhere (almost)
+
 ## v7.1.20 (2025-01-10)
 
 ### Changed
