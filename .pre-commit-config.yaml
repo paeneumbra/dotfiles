@@ -18,9 +18,7 @@ repos:
       - id: check-toml
       - id: check-yaml
       - id: check-executables-have-shebangs
-        exclude: ^terminal/.config/ranger
       - id: check-shebang-scripts-are-executable
-        exclude: ^terminal/.config/ranger
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: name-tests-test
@@ -31,7 +29,6 @@ repos:
     rev: 24.10.0
     hooks:
       - id: black
-        exclude: ^terminal/.config/ranger
 
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v4.1.0
@@ -70,7 +67,6 @@ repos:
         exclude: |
           (?x)^(
               CHANGELOG.md |
-              ^(terminal/.config/ranger/.*)$ |
               .gitmodules
           )$
 
@@ -96,7 +92,6 @@ repos:
     rev: v3.10.0-2
     hooks:
       - id: shfmt
-        exclude: ^terminal/.config/ranger
 
   - repo: local
     hooks:

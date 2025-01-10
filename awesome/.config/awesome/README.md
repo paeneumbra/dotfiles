@@ -14,7 +14,7 @@ Setup dependencies:
 - Shell: [zsh](https://www.zsh.org/) with [zimfw](https://zimfw.sh/)
 - Terminal: [wezterm](https://wezfurlong.org/wezterm/index.html), [alacritty](https://alacritty.org/) and [urxvt](http://software.schmorp.de/pkg/rxvt-unicode.html)
 - Launcher: [rofi](https://davatorium.github.io/rofi/)
-- File Manager: [ranger](https://ranger.github.io/)
+- File Manager: [yazi](https://github.com/sxyazi/yazi)
 - Editor [neovim](https://neovim.io/) with [my own config](https://github.com/itzalak/nvim)
 - Font: [Iosevka](https://typeof.net/Iosevka/) via [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 - Glyphs: [Material Design Icons](https://pictogrammers.com/library/mdi/) and [Noto Color Emoji](https://github.com/googlefonts/noto-emoji)

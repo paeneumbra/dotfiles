@@ -21,7 +21,7 @@ PKGS=(
   brightnessctl
   networkmanager
   picom
-  ranger
+  yazi
   redshift
   rofi
   xorg-xrandr

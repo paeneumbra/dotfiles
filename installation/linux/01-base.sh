@@ -48,7 +48,6 @@ PKGS=(
   neovim
   networkmanager
   openssh
-  ranger
   ripgrep
   rxvt-unicode
   starship
@@ -57,6 +56,7 @@ PKGS=(
   tree
   unzip
   xclip
+  yazi
   wezterm
   zoxide
   zsh

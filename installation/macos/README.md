@@ -81,16 +81,9 @@ git submodule update --init "$HOME/foundry/anvil/neovim"
 
 ### Stow
 
-Symlink configurations like nvim, ranger and zsh to the proper folders [taskfile.stow.yml](/taskfiles/taskfile.stow.yml).
+Symlink configurations like nvim and zsh to the proper folders [taskfile.stow.yml](/taskfiles/taskfile.stow.yml).
 
 Zsh should already be installed, but more complete installation setup can be found in [taskfile.zsh.yml](/taskfiles/taskfile.zsh.yml).
-
-Ranger requires initialization of submodules
-
-```shell
-git submodule update --init "$HOME/foundry/anvil/terminal/.config/ranger/plugins/ranger-devicons2/"
-
-```
 
 ### Brew
 

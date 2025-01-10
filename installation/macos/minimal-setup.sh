@@ -29,8 +29,9 @@ PKGS=(
   go-task
   neovim
   openssh
-  ranger
+  yazi
   ripgrep
+  ripgrep-all
   starship
   stow
   zsh
@@ -44,6 +45,8 @@ done
 CASKS=(
   alacritty
   wezterm
+  ghostty
+  firefox
 )
 
 for CASK in "${CASKS[@]}"; do

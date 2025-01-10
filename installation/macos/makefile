@@ -85,7 +85,7 @@ macos-defaults:
 ###############################################################################
 
 .PHONY: stow-setup
-stow-setup: neovim-submodule ranger-submodules
+stow-setup: neovim-submodule
 	@$(call warn, run stow)
 	mkdir -p $(HOME)/.config
 	mkdir -p $(HOME)/.cache/zsh
@@ -124,12 +124,6 @@ pynvim-install:
 ###############################################################################
 # Gitmodules
 ###############################################################################
-
-.PHONY: ranger-submodules
-ranger-submodules:
-	@$(call warn, initializing ranger submodules)
-	git submodule update --init $(HOME)/foundry/anvil/terminal/.config/ranger/plugins/ranger-devicons2
-	@$(call log, ranger submodules)
 
 .PHONY: neovim-submodule
 neovim-submodule:

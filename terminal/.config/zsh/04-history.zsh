@@ -5,7 +5,7 @@ HIST_STAMPS="dd.mm.yyyy"
 HISTFILE=$HOME/.cache/zsh/histfile
 HISTSIZE=20000000
 SAVEHIST=20000000
-HISTORY_IGNORE="(clear|exit|ls|la|gst|gm|ranger|cd)"
+HISTORY_IGNORE="(clear|exit|ls|la|gst|cd)"
 
 # The meaning of these options can be found in man page of `zshoptions`.
 # do not put duplicated command into history list

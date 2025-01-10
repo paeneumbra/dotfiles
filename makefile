@@ -119,11 +119,6 @@ else ifeq ($(OS), Linux)
 endif
 	@$(call log, delete stow)
 
-.PHONY: ranger-submodules
-ranger-submodules:
-	@$(call warn, initialize submodules)
-	git submodule update --init "$(HOME)/foundry/anvil/terminal/.config/ranger/plugins/ranger-devicons2/"
-
 ###############################################################################
 # Zimfw
 ###############################################################################

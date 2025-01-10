@@ -24,7 +24,7 @@ PKGS=(
   go-task
   neovim
   openssh
-  ranger
+  yazi
   ripgrep
   starship
   stow

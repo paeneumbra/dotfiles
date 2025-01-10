@@ -16,7 +16,6 @@ application/x-extension-ics=userapp-Thunderbird-E7JO31.desktop;
 application/xhtml+xml=firefox.desktop;
 image/jpeg=feh.desktop;
 image/png=feh.desktop;
-inode/directory=ranger.desktop;
 message/rfc822=userapp-Thunderbird-B89P31.desktop;
 text/*=nvim.desktop;
 text/calendar=userapp-Thunderbird-E7JO31.desktop;

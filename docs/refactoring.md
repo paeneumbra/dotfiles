@@ -19,7 +19,6 @@
 - [ ] Consider gum use cases to simplify configurations
 - [ ] Create a scratch shell with a file with a WIP note
     - [ ] Maybe even encrypted
-- [ ] Revisit ranger image preview for macos and wezterm.
 - [ ] Consider what to do against duplication of the brewfile and tasks
 - [ ] Move the decorator to root? to its own package? reconsider
 
