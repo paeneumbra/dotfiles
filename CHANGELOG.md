@@ -1,5 +1,13 @@
 # Changelog
 
+## v7.1.18 (2025-01-10)
+
+### Changed
+
+- try another approach to stow, refactor taskfiles
+- purge ranger
+- cleanup terminal installation
+
 ## v7.1.17 (2025-01-08)
 
 ### Changed
