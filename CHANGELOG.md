@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.19 (2025-01-10)
+
+### Changed
+
+- correct failing taskfiles
+
 ## v7.1.18 (2025-01-10)
 
 ### Changed
