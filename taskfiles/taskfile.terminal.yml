@@ -80,8 +80,9 @@ tasks:
           REQUIRED_TOOLS: stow
       - mkdir -p {{.HOME}}/.config/fish
       - mkdir -p {{.HOME}}/.config/ghostty
+      - mkdir -p {{.HOME}}/.config/kitty
       - mkdir -p {{.HOME}}/.config/zsh
-      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} terminal --ignore='.*config.macos'"
+      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} terminal --ignore='.*macos.conf'"
 
   stow_macos:
     internal: true
@@ -93,8 +94,9 @@ tasks:
           REQUIRED_TOOLS: stow
       - mkdir -p {{.HOME}}/.config/fish
       - mkdir -p {{.HOME}}/.config/ghostty
+      - mkdir -p {{.HOME}}/.config/kitty
       - mkdir -p {{.HOME}}/.config/zsh
-      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} terminal --ignore='.*config.linux'"
+      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} terminal --ignore='.*linux.conf'"
 
   destow:
     desc: Un-symlink terminal and shell configurations

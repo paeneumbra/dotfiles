@@ -5,7 +5,6 @@ set -uo pipefail
 PKGS=(
   vim
   openssh
-  htop
   smartmontools
   xdg-utils
   brightnessctl

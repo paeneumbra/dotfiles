@@ -43,5 +43,5 @@ quick-terminal-animation-duration = 0.2
 # Config files
 config-file = ?../decorator/output/ghostty
 # os specific configurations.
-config-file = ?config.macos
-config-file = ?config.linux
+config-file = ?macos.conf
+config-file = ?linux.conf

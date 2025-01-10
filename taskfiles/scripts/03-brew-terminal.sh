@@ -32,9 +32,15 @@ CASKS=(
   alacritty
   wezterm
   ghostty
+  kitty
+  font-fira-code
+  font-fira-mono-nerd-font
   font-iosevka
   font-iosevka-nerd-font
   font-iosevka-term-nerd-font
+  font-noto-mono
+  font-noto-emoji
+  font-zed-mono-nerd-font
 )
 
 print_info "Installing terminal packages"
@@ -45,6 +51,6 @@ for PKG in "${PKGS[@]}"; do
 done
 
 for CASK in "${CASKS[@]}"; do
-  print_info "INSTALLING PACKAGE: CASK"
-  brew install --cask "CASK"
+  print_info "INSTALLING PACKAGE: $CASK"
+  brew install --cask "$CASK"
 done
