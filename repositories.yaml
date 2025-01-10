@@ -7,6 +7,7 @@ foundry:
       - git@github.com:itzalak/thescream.nvim.git
       - git@github.com:tldr-pages/tldr.git
       - git@github.com:sherlock-project/sherlock.git
+      - git@github.com:itzalak/basoa.nvim.git
       - archived:
           - git@github.com:itzalak/deprecated-static-site.git
       - templates:

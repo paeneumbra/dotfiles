@@ -13,11 +13,15 @@ tasks:
     silent: true
 
   assert:
-    internal: true
     cmds:
-      - task: :helper:assert
-        vars:
-          REQUIRED_TOOLS: poetry
+      - cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+    vars:
+      TOOL: poetry
 
   setup:
     deps: [assert]

@@ -1,0 +1,113 @@
+version: '3'
+
+vars:
+  PATH: "neovim"
+  CONFIG_PATH: ".config/nvim"
+
+tasks:
+
+  # The purpose of this file is to encapsulate all the operations related to neovim
+  # from installation, to submodule operation and stow
+  # Some special care is required since it should be usable in macos and linux
+  # NOTE: the folder creation is required for stow commands to work!
+  # Currently based on v8 (guards! guards!)
+
+  default:
+    internal: true
+    desc: Default
+    cmds:
+      - |
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
+  assert:
+    cmds:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+
+  neovim:
+    desc: Install and setup neovim
+    cmds:
+      - task: :submodule_neovim:init_submodule
+      - task: installation_linux
+      - task: installation_macos
+      - task: stow
+    silent: true
+
+  installation_linux:
+    internal: true
+    desc: Minimal installation of neovim and required packages
+    platforms: [linux]
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: pacman
+      - "{{.ROOT_DIR}}/{{.PATH}}/installation/pacman-neovim.sh"
+
+  installation_macos:
+    internal: true
+    desc: Minimal installation of neovim and required packages
+    platforms: [darwin]
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: brew
+      - "{{.ROOT_DIR}}/{{.PATH}}/installation/brew-neovim.sh"
+
+  stow:
+    desc: Symlink neovim
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: nvim, stow
+      - mkdir -p {{.HOME}}/.config/nvim
+      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}}/{{.CONFIG_PATH}} neovim"
+
+  destow:
+    desc: Delete neovim symlink
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: nvim, stow
+      - "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}}/{{.CONFIG_PATH}} neovim"
+
+  init_submodule:
+    desc: Initialize neovim submodule
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: git
+      - "git submodule update --init {{.ROOT_DIR}}/{{.PATH}}"
+
+  deinit_remove_submodule:
+    deps: [assert]
+    desc: Remove neovim submodule
+    prompt: ARE YOU SURE YOU WANT TO REMOVE THE NVIM SUBMODULE
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: git
+      - "git submodule deinit {{.PATH}}"
+      - "rm -rf {{.ROOT_DIR}}/.git/modules/{{.PATH}}"
+      - "git rm {{.PATH}}"
+      - "rm -rf {{.PATH}}"
+
+  add_submodule:
+    deps: [assert]
+    desc: Add neovim git submodule
+    prompt: ARE YOU SURE YOU WANT TO ADD THE NVIM SUBMODULE
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: git
+      - "git submodule add git@github.com:itzalak/nvim.git {{.PATH}}"
