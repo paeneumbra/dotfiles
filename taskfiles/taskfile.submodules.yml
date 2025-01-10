@@ -6,7 +6,6 @@ includes:
 vars:
   INIT: git submodule update --init
   DEINIT: git submodule deinit
-  RANGER_PATH: "/terminal/.config/ranger/plugins/ranger-devicons2"
   NEOVIM_PATH: "/neovim/.config/nvim"
 
 tasks:
@@ -32,15 +31,12 @@ tasks:
     desc: Initialize all submodules
     deps: [assert]
     cmds:
-      - task: ranger
-        vars:
-          CMD: "{{.INIT}}"
       - task: neovim
         vars:
           CMD: "{{.INIT}}"
       - task: helper:assert
         vars:
-          REQUIRED_TOOLS: ranger, nvim
+          REQUIRED_TOOLS: nvim
     silent: true
 
   deinit:
@@ -48,19 +44,10 @@ tasks:
     deps: [assert]
     prompt: ARE YOU SURE YOU WANT TO DEINIT THE SUBMODULES
     cmds:
-      - task: ranger
-        vars:
-          CMD: "{{.DEINIT}}"
       - task: neovim
         vars:
           CMD: "{{.DEINIT}}"
       - task: remove
-
-  ranger:
-    internal: true
-    desc: Initialize ranger plugins
-    cmds:
-      - "{{.CMD}} {{.ROOT_DIR}}{{.RANGER_PATH}}"
 
   neovim:
     internal: true
@@ -74,7 +61,5 @@ tasks:
     desc: Remove all submodules
     prompt: ARE YOU SURE YOU WANT TO REMOVE THE SUBMODULES
     cmds:
-      - "rm -rf {{.ROOT_DIR}}/.git/modules{{.RANGER_PATH}}"
       - "rm -rf {{.ROOT_DIR}}/.git/modules{{.NEOVIM_PATH}}"
-      - "git rm {{.ROOT_DIR}}{{.RANGER_PATH}}"
       - "git rm {{.ROOT_DIR}}{{.NEOVIM_PATH}}"
