@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.20 (2025-01-10)
+
+### Changed
+
+- correct ghostty font
+
 ## v7.1.19 (2025-01-10)
 
 ### Changed
