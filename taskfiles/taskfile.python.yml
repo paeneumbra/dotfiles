@@ -1,5 +1,8 @@
 version: '3'
 
+# TODO: Remove and refactor helper.
+# TODO: Create variable for py versions
+
 includes:
   helper: "./taskfile.helper.yml"
 
@@ -56,9 +59,9 @@ tasks:
     internal: true
     desc: Install python through pyenv
     cmds:
-      - pyenv install 3.13.0
-      - pyenv global 3.13.0
-      - pyenv local 3.13.0
+      - pyenv install 3.13.2
+      - pyenv global 3.13.2
+      - pyenv local 3.13.2
       - task: helper:assert
         vars:
           REQUIRED_TOOLS: python, pip
