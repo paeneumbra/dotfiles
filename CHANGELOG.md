@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.23 (2025-02-14)
+
+### Changed
+
+- update python installation
+
 ## v7.1.22 (2025-02-10)
 
 ### Tools
