@@ -10,7 +10,6 @@ tasks:
   # from installation, to submodule operation and stow
   # Some special care is required since it should be usable in macos and linux
   # NOTE: the folder creation is required for stow commands to work!
-  # Currently based on v8 (guards! guards!)
 
   default:
     internal: true
@@ -38,7 +37,7 @@ tasks:
   neovim:
     desc: Install and setup neovim
     cmds:
-      - task: :submodule_neovim:init_submodule
+      - task: init_submodule
       - task: installation_linux
       - task: installation_macos
       - task: stow

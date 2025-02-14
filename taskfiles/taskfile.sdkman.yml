@@ -1,11 +1,8 @@
 version: '3'
 
-includes:
-  helper: "./taskfile.helper.yml"
-
 vars:
   SDKMAN: "{{.HOME}}/.sdkman/bin/sdkman-init.sh"
-  ZSH: "zsh -c"
+  SOURCE_CMD: "bash -c 'source {{.SDKMAN}}"
 
 tasks:
 
@@ -20,71 +17,69 @@ tasks:
     silent: true
 
   assert:
+    cmds:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
     internal: true
-    cmds:
-      - task: helper:assert
-        vars:
-          REQUIRED_TOOLS: curl
 
-  setup:
-    desc: Setup SDKMAN
+  sdkman:
+    desc: Install SDKMAN packages
+    prompt: DO YOU WANT TO INSTALL SDKMAN AND JVM PACKAGES
     cmds:
-      - task: install
-      - task: packages
-    silence: true
+      - task: installation
+      - task: install_packages
 
-  packages:
+  install_packages:
+    internal: true
     desc: Install SDKMAN packages
     prompt: DO YOU WANT TO INSTALL JVM PACKAGES
     preconditions:
       - sh: '[[ -d "{{.HOME}}/.sdkman" ]]'
         msg: sdkman is not installed
     cmds:
-      - cmd: "{{.ZSH}} 'sdk install java 21.0.4-tem'"
-        ignore_error: true
-      - cmd: "{{.ZSH}} 'sdk install kotlin'"
-        ignore_error: true
-      - cmd: "{{.ZSH}} 'sdk install groovy'"
-        ignore_error: true
-      - cmd: "{{.ZSH}} 'sdk install maven'"
-        ignore_error: true
-      - cmd: "{{.ZSH}} 'sdk install gradle'"
-        ignore_error: true
+      - "{{.SOURCE_CMD}} && sdk install java 21.0.5-tem'"
+      - "{{.SOURCE_CMD}} && sdk install kotlin'"
+      - "{{.SOURCE_CMD}} && sdk install groovy'"
+      - "{{.SOURCE_CMD}} && sdk install maven'"
+      - "{{.SOURCE_CMD}} && sdk install gradle'"
     silence: true
 
-  extra-packages:
+  install_sdk_extra_packages:
     desc: Install SDKMAN packages
     prompt: DO YOU WANT TO INSTALL EXTRA JVM PACKAGES
     preconditions:
       - sh: '[[ -d "{{.HOME}}/.sdkman" ]]'
         msg: sdkman is not installed
     cmds:
-      - cmd: "{{.ZSH}} 'sdk install java 11.0.24-tem'"
-        ignore_error: true
-      - cmd: "{{.ZSH}} 'sdk install java 17.0.12-tem'"
-        ignore_error: true
-      - cmd: "{{.ZSH}} 'sdk install java 22.0.2-tem'"
-        ignore_error: true
-      - cmd: "{{.ZSH}} 'sdk install scala'"
-        ignore_error: true
+      - "{{.SOURCE_CMD}} && sdk install java 11.0.24-tem'"
+      - "{{.SOURCE_CMD}} && sdk install java 17.0.12-tem'"
+      - "{{.SOURCE_CMD}} && sdk install java 23.0.1-tem'"
+      - "{{.SOURCE_CMD}} && sdk install scala'"
     silence: true
 
-  update:
+  update_sdkman:
     desc: Update SDKMAN
-    internal: true
     preconditions:
       - sh: '[[ -d "{{.HOME}}/.sdkman" ]]'
         msg: sdkman is not installed
     cmds:
-      - "{{.ZSH}} 'sdk selfupdate force'"
-    silence: true
+      - "{{.SOURCE_CMD}} && sdk selfupdate force'"
 
-  install:
-    desc: Install SDKMAN, skips if already installed
-    deps: [assert]
-    status:
-      - which sdk || true
+  installation:
+    internal: true
+    desc: Install SDKMAN if not already installed
+    prompt: DO YOU WANT TO INSTALL SDKMAN
     cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: curl
       - curl -Ss "https://get.sdkman.io" | bash
       - echo "Cleaning automatically created ~/.zshrc"
       - rm -rf "{{.HOME}}/.zshrc"

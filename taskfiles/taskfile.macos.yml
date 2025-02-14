@@ -23,7 +23,7 @@ tasks:
       - task: :stow:macos
       - task: :zimfw:install
       - task: :zsh:shell
-      - task: :sdkman:setup
+      - task: :sdkman:sdkman
       - task: settings
 
   update:

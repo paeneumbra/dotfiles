@@ -34,8 +34,8 @@ tasks:
     platforms: [linux]
     cmds:
       - task: dev
-      - task: :sdkman:setup
-      - task: :python:setup
+      - task: :sdkman:sdkman
+      - task: :python:python
 
   yay:
     internal: true

@@ -41,8 +41,8 @@ tasks:
       - task: audio
       - task: config
       - task: dev
-      - task: :sdkman:setup
-      - task: :python:setup
+      - task: :sdkman:sdkman
+      - task: :python:python
       - task: productivity
       - task: keyboard
       - task: mouse
