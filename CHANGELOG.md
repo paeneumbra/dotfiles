@@ -1,5 +1,12 @@
 # Changelog
 
+## v7.1.25 (2025-02-14)
+
+### Changed
+
+- update taskfiles
+- update shell
+
 ## v7.1.24 (2025-02-14)
 
 ### Changed
