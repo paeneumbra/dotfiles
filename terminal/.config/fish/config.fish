@@ -14,6 +14,10 @@ set --universal --export STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 fish_add_path --prepend "$HOME/foundry/anvil/bin"
 fish_add_path --prepend "$HOME/foundry/anvil/terminal/.config/decorator/scripts"
 
+# Format man pages
+set -x MANROFFOPT "-c"
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
 # Python, pip and pyenv
 fish_add_path --prepend "$HOME/.local/bin"
 if test -d "$HOME/.pyenv"

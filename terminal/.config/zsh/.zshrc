@@ -1,3 +1,7 @@
+# --------------------
+# Common configuration
+# --------------------
+
 # Load external configuration files
 if [ -e $ZDOTDIR ]; then
   for config ($ZDOTDIR/*.zsh) source $config
@@ -7,8 +11,10 @@ if [ -e "$XDG_CONFIG_HOME/shell/" ]; then
   for config ($XDG_CONFIG_HOME/shell/*.sh) source $config
 fi
 
-# Zim configuration
+# -----------------------------------------------------------------------------------
+# Zsh configuration
 # Based of https://raw.githubusercontent.com/zimfw/install/master/src/templates/zshrc
+# -----------------------------------------------------------------------------------
 
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
 bindkey -v
@@ -24,24 +30,31 @@ zstyle ':zim:completion' dumpfile "$XDG_CACHE_HOME/zsh/.zcompdump-${ZSH_VERSION}
 # See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
+# ------------------
 # Initialize modules
+# ------------------
+
+ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+# Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
-  # Download zimfw script if missing.
-  command mkdir -p ${ZIM_HOME}
   if (( ${+commands[curl]} )); then
-    command curl -fsSL -o ${ZIM_HOME}/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
   else
-    command wget -nv -O ${ZIM_HOME}/zimfw.zsh https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+    mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
   fi
 fi
-
-  # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
-if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
   source ${ZIM_HOME}/zimfw.zsh init -q
 fi
-
-# Initialize modules
+# Initialize modules.
 source ${ZIM_HOME}/init.zsh
+
+# ------------------------------
+# Post-init module configuration
+# ------------------------------
 
 # zsh-history-substring-search
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
