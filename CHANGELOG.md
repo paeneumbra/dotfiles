@@ -1,5 +1,12 @@
 # Changelog
 
+## v7.1.24 (2025-02-14)
+
+### Changed
+
+- Add catppuccin, but keep using tokyonight
+- introduce tokyonight schemes
+
 ## v7.1.23 (2025-02-14)
 
 ### Changed
