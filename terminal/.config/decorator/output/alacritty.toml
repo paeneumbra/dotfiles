@@ -1,26 +1,26 @@
 [colors.primary]
 # Default colors
-background = "#092a13"
-foreground = "#e2f6a6"
+background = "#222436"
+foreground = "#c8d3f5"
 
 # Normal colors
 [colors.normal]
-black = "#353f0e"
-red = "#e14433"
-green = "#5cb200"
-yellow = "#ebbe2f"
-blue = "#56b8f7"
-magenta = "#bd97fc"
-cyan = "#27c3d9"
-white = "#b9d64a"
+black = "#1b1d2b"
+red = "#ff757f"
+green = "#c3e88d"
+yellow = "#ffc777"
+blue = "#82aaff"
+magenta = "#c099ff"
+cyan = "#86e1fc"
+white = "#828bb8"
 
 # Bright colors
 [colors.bright]
-black = "#637321"
-red = "#f36552"
-green = "#6aca00"
-yellow = "#fbd66e"
-blue = "#89cdfc"
-magenta = "#ceb5fd"
-cyan = "#42daf1"
-white = "#f3fbdf"
+black = "#444a73"
+red = "#ff757f"
+green = "#c3e88d"
+yellow = "#ffc777"
+blue = "#82aaff"
+magenta = "#c099ff"
+cyan = "#86e1fc"
+white = "#c8d3f5"
