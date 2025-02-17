@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.28 (2025-02-17)
+
+### Changed
+
+- tweak fish ssh stuffs
+
 ## v7.1.27 (2025-02-17)
 
 ### Changed
