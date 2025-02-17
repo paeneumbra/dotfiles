@@ -76,7 +76,9 @@ tasks:
     internal: true
     desc: Create required directories
     cmds:
-      - mkdir -p {{.HOME}}/.config/fish
+      - mkdir -p {{.HOME}}/.config/shell
+      - mkdir -p {{.HOME}}/.config/fish/conf.d
+      - mkdir -p {{.HOME}}/.config/fish/functions
       - mkdir -p {{.HOME}}/.config/ghostty
       - mkdir -p {{.HOME}}/.config/kitty
       - mkdir -p {{.HOME}}/.config/zsh
