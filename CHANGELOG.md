@@ -1,5 +1,12 @@
 # Changelog
 
+## v7.1.26 (2025-02-17)
+
+### Changed
+
+- Modify terminal configuration to allow machine specific config files
+- Add volume function to terminal
+
 ## v7.1.25 (2025-02-14)
 
 ### Changed
