@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.30 (2025-02-17)
+
+### Changed
+
+- revert does not work with an alias on fish
+
 ## v7.1.29 (2025-02-17)
 
 ### Changed
