@@ -13,6 +13,7 @@ alias rzsh='exec zsh'
 # and might cause problems with completion and compinit
 
 # nvm
+export NVM_DIR="$HOME/.local/share/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # To disable compinit error from zsh, modify sdkman/etc/config sdkman_auto_complete=false

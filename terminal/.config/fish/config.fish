@@ -26,6 +26,7 @@ if test -d "$HOME/.pyenv"
      pyenv init - | source
 end
 
+# SDKMAN
 if test -d "$HOME/.sdkman"
     set --universal --export SDKMAN_DIR "$HOME/.sdkman"
     if set -q SDKMAN_DIR; and not test -f "$SDKMAN_DIR/bin/sdkman-init.sh"
@@ -39,6 +40,9 @@ if test -d "$HOME/.sdkman"
     fish_add_path --prepend (find "$HOME/.sdkman/candidates/groovy/current/bin" -maxdepth 0)
     fish_add_path --prepend (find "$HOME/.sdkman/candidates/scala/current/bin" -maxdepth 0)
 end
+
+# nvm
+# TODO: nvm is not working on fish. Take a look at fisher + bass
 
 # End of file required
 starship init fish | source
