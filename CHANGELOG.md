@@ -1,5 +1,12 @@
 # Changelog
 
+## v7.1.31 (2025-03-13)
+
+### Changed
+
+- git switch alias
+- nvm
+
 ## v7.1.30 (2025-02-17)
 
 ### Changed
