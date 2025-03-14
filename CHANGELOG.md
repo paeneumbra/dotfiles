@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.1.32 (2025-03-14)
+
+### Changed
+
+- refresh wallpapers
+
 ## v7.1.31 (2025-03-13)
 
 ### Changed
