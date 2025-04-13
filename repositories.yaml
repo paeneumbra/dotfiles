@@ -5,11 +5,11 @@ foundry:
   - depository:
       - git@github.com:itzalak/pyresume.git
       - git@github.com:itzalak/thescream.nvim.git
-      - git@github.com:tldr-pages/tldr.git
-      - git@github.com:sherlock-project/sherlock.git
       - git@github.com:itzalak/basoa.nvim.git
+      - git@github.com:itzalak/microservice-api-demo.git
       - archived:
           - git@github.com:itzalak/deprecated-static-site.git
+          - git@github.com:itzalak/dotcachy.git
       - templates:
           - git@github.com:itzalak/gradle-template.git
           - git@github.com:itzalak/obsidian-template.git

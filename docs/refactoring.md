@@ -86,6 +86,7 @@ Configuration as  code for pycharm and IDEA
 
 Intellij IDEA community useful plugins:
 
+// TODO: Update
 - .ignore
 - Emmylua
 - Gherkin
