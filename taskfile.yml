@@ -10,6 +10,7 @@ includes:
   python: "./taskfiles/taskfile.python.yml"
   sdkman: "./taskfiles/taskfile.sdkman.yml"
   terminal: "./taskfiles/taskfile.terminal.yml"
+  hypr: "./taskfiles/taskfile.hyprland.yml"
 
 tasks:
 

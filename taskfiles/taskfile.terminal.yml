@@ -29,7 +29,6 @@ tasks:
     internal: true
 
   terminal:
-    internal: true
     desc: Setup terminal and shell
     cmds:
       - task: installation_linux
@@ -46,7 +45,7 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: bash, pacman
-      - "{{.ROOT_DIR}}/taskfiles/scripts/03-pacman-terminal.sh"
+      - "{{.ROOT_DIR}}/taskfiles/scripts/02-pacman-terminal.sh"
 
   installation_macos:
     internal: true
