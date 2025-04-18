@@ -7,6 +7,7 @@ PYTHON_PKGS=(
   pyenv
   python-pip
   python-pipx
+  python-uv
 )
 
 echo "Installing required python packages"
