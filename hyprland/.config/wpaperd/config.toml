@@ -5,6 +5,6 @@ sorting = "ascending"
 transition-time = 6000
 
 [any]
-path = "~/foundry/dotcachy/wallpapers"
+path = "~/foundry/anvil/wallpapers"
 
 [default.transition.fade]
