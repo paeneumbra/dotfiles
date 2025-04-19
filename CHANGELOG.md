@@ -1,5 +1,39 @@
 # Changelog
 
+## v8.0.0 (2025-04-19)
+
+### Breaking Change
+
+- Introduce hyprland, refactor taskfiles and installation
+
+### Changed
+
+- drop decorator
+- add foundry documentation for tint16
+- dotcachy cleanup
+- tweak repositories
+- update hyprland config and installation
+- Update macos backup and config
+- Update git alias
+- update macos taskfile
+- tweak git branch switch
+- update poetry and pre commit
+- wip compare
+- tweak fuzzy finder
+- move scripts around, cleanup, documentation
+- update the keyboard setup
+- purge qtile awesome and xfce configs
+- remove awesome
+- cleanup installation and configurations
+- remove qtile
+
+### Tools
+
+- replace poetry with uv
+- introduce uv
+- update neovim
+- update pre commit versions
+
 ## v7.1.33 (2025-03-30)
 
 ### Changed
