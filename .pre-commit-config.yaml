@@ -25,11 +25,6 @@ repos:
       - id: trailing-whitespace
         exclude: '^\.gitignore$'
 
-  - repo: https://github.com/psf/black
-    rev: 25.1.0
-    hooks:
-      - id: black
-
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v4.6.0
     hooks:
@@ -70,12 +65,6 @@ repos:
               .gitmodules
           )$
 
-  - repo: https://github.com/python-poetry/poetry
-    rev: 2.1.2
-    hooks:
-      - id: poetry-check
-      - id: poetry-lock
-
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.33.0
     hooks:
@@ -93,17 +82,29 @@ repos:
     hooks:
       - id: shfmt
 
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.6.14
+    hooks:
+      - id: uv-lock
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.6
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
   - repo: local
     hooks:
-      - id: poetry
-        name: refresh poetry environment
-        entry: poetry install
+      - id: uv
+        name: sync uv environment
+        entry: uv sync
         language: system
         pass_filenames: false
         verbose: true
       - id: pytest
         name: run tests
-        entry: poetry run pytest anvil/tests/
+        entry: uv run pytest anvil/tests/
         language: system
         pass_filenames: false
         verbose: true

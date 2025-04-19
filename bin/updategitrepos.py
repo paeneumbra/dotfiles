@@ -56,7 +56,7 @@ def define_arguments():
 def parse_arguments(parser: argparse.ArgumentParser):
     """The handling of parameters from the command line"""
 
-    args, unknowns = parser.parse_known_args()
+    args, _ = parser.parse_known_args()
 
     if len(sys.argv) <= 1:
         sys.exit("No arguments given, run updategitrepos -h")
@@ -67,7 +67,7 @@ def parse_arguments(parser: argparse.ArgumentParser):
     if args.source is not None and not os.path.exists(args.source):
         sys.exit(f"Directory not found: {args.source}")
 
-    if type(args) == argparse.Namespace:
+    if type(args) is argparse.Namespace:
         args = vars(args)
     print(f"Config: {args}")
     return args

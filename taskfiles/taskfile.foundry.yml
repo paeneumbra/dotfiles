@@ -28,13 +28,13 @@ tasks:
     silent: true
     internal: true
     vars:
-      REQUIRED_TOOLS: git, python3, poetry
+      REQUIRED_TOOLS: git, python3, uv
 
   setup:
     deps: [assert]
     desc: Setup foundry repositories
     cmds:
-      - ./bin/foundry_repositories.py -s ./repositories.yaml -r
+      - uv run ./bin/foundry_repositories.py -s ./repositories.yaml -r
 
   update:
     deps: [assert]
@@ -43,4 +43,4 @@ tasks:
       IGNORE: "{{.HOME}}/foundry/depository/archived"
       CMD: ./bin/updategitrepos.py
     cmds:
-      - "{{.CMD}} --foundry --ignore {{.IGNORE}} -r"
+      - "uv run {{.CMD}} --foundry --ignore {{.IGNORE}} -r"

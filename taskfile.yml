@@ -38,20 +38,20 @@ tasks:
     silent: true
     internal: true
     vars:
-      REQUIRED_TOOLS: pre-commit, poetry
+      REQUIRED_TOOLS: pre-commit, uv
 
   setup:
     deps: [assert]
-    desc: Set up poetry and pre-commit
+    desc: Set up uv and pre-commit
     cmds:
       - task: precommit_setup
-      - task: poetry_setup
+      - uv sync
 
   update:
     deps: [assert]
-    desc: Update poetry and pre-commit
+    desc: Update uv and pre-commit
     cmds:
-      - task: poetry_update
+      - task: uv_update
       - pre-commit autoupdate
 
   precommit_setup:
@@ -62,22 +62,14 @@ tasks:
       - pre-commit install
       - pre-commit autoupdate
 
-  poetry_setup:
+  uv_update:
     internal: true
     deps: [assert]
-    desc: Poetry local setup and install
+    desc: Update uv dependencies
     cmds:
-      - poetry config virtualenvs.in-project true
       - rm -rf .venv
-      - poetry install
-      - poetry env info --path
-
-  poetry_update:
-    internal: true
-    deps: [assert]
-    desc: Update poetry dependencies
-    cmds:
-      - poetry update
+      - uv lock --upgrade
+      - uv sync
 
   run:
     aliases: [pre_commit_run]
@@ -86,15 +78,15 @@ tasks:
     cmds:
       - pre-commit run --color always --all-files
 
-  poetry:
+  uv:
     deps: [assert]
-    desc: Refresh poetry environment
+    desc: Refresh uv environment
     cmds:
-      - poetry install
+      - uv sync
 
   test:
-    aliases: [poetry_test]
+    aliases: [uv_test]
     deps: [assert]
-    desc: Run tests using poetry
+    desc: Run tests using uv
     cmds:
-      - poetry run pytest
+      - uv run pytest

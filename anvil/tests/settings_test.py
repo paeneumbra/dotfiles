@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from anvil.settings import OS, DISTRO
+from anvil.settings import OS
 
 load_dotenv()
 
