@@ -12,7 +12,6 @@ set -g -x fish_greeting ''
 set --universal --export STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 
 fish_add_path --prepend "$HOME/foundry/anvil/bin"
-fish_add_path --prepend "$HOME/foundry/anvil/terminal/.config/decorator/scripts"
 
 # Format man pages
 set -x MANROFFOPT "-c"

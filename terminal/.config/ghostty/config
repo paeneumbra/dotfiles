@@ -36,7 +36,6 @@ keybind = alt+shift+l=next_tab
 keybind = alt+shift+q=close_surface
 
 # Config files
-config-file = ?../decorator/output/ghostty
 config-file = ?../tint16/palettes/ghostty
 # os specific configurations.
 config-file = ?macos.conf

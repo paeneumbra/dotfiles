@@ -32,7 +32,7 @@ return {
     -- Coloscheme
     -- color_scheme = "Bright (base16)",
     color_scheme_dirs = {
-        os.getenv("HOME") .. "/.config/decorator/output",
+        os.getenv("HOME") .. "/.config/tint16/palettes",
     },
 
     color_scheme = "Wezterm",
