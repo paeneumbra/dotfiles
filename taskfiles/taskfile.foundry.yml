@@ -44,3 +44,21 @@ tasks:
       CMD: ./bin/updategitrepos.py
     cmds:
       - "uv run {{.CMD}} --foundry --ignore {{.IGNORE}} -r"
+
+  tokyonight:
+    deps: [assert]
+    desc: Update colorscheme (documentation)
+    vars:
+      COLORSCHEME: "{{.HOME}}/.config/tint16/schemas/tokyonight-moon.json"
+      CMD: "{{.HOME}}/.config/tint16/main.py"
+    cmds:
+      - "uv run {{.CMD}} {{.COLORSCHEME}}"
+
+  tokyonight-day:
+    deps: [assert]
+    desc: Update colorscheme (documentation)
+    vars:
+      COLORSCHEME: "{{.HOME}}/.config/tint16/schemas/tokyonight-day.json"
+      CMD: "{{.HOME}}/.config/tint16/main.py"
+    cmds:
+      - "uv run {{.CMD}} {{.COLORSCHEME}}"
