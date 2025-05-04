@@ -56,7 +56,8 @@ tasks:
         msg: 'Could not find `brew`'
     cmds:
       - "brew bundle --file {{.BREWDIR}}/Brewfile"
-      - task: doctor
+      - cmd: brew doctor
+        ignore_error: true
 
   greedy:
     desc: Update outdated casks

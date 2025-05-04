@@ -32,6 +32,9 @@ tasks:
       - task: :brew:setup
       - task: stow
       - task: settings
+      - echo "docker and nvm require manual installation"
+      - echo "https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating"
+      - echo "https://docs.docker.com/desktop/setup/install/mac-install/"
 
   settings:
     desc: Apply macOS defaults

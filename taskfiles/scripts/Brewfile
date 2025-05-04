@@ -125,6 +125,12 @@ brew 'gum'
 # Java: managed by sdkman
 # https://raw.githubusercontent.com/itzalak/anvil/blob/main/taskfiles/taskfile.sdkman.yml
 
+# Nvm: Manual installation
+# https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+
+# Docker: Manual installation
+# https://docs.docker.com/desktop/setup/install/mac-install/
+
 # Terraform
 # terraform and tfenv conflict if both are installed
 # brew 'tfenv'
