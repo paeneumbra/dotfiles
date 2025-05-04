@@ -2,6 +2,9 @@
 # Common configuration
 # --------------------
 
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
 # Load external configuration files
 if [ -e $ZDOTDIR ]; then
   for config ($ZDOTDIR/*.zsh) source $config
