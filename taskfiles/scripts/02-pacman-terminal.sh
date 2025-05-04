@@ -11,7 +11,6 @@ PKGS=(
   eza
   fd
   fish
-  fisher
   fzf
   ghostty
   kitty
