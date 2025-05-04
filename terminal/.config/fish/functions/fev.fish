@@ -1,4 +1,3 @@
-# Find environment variable
-function fev
-    printenv | fzf -q "$argv"
+function fev --description 'Find environment variables'
+    printenv | fzf_wrapper -q "$argv"
 end

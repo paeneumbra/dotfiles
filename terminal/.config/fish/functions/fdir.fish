@@ -1,8 +1,7 @@
-# Find directory and move to it or copy to clipboard
-function fdir
+function fdir --description 'Find directory and move to it or copy to clipboard'
     set FD_PREFIX "fd --hidden --no-ignore --ignore-case --type directory"
     set INITIAL_QUERY (string join ' ' $argv)
-    set DIR ( : | fzf --ansi --disabled --query "$INITIAL_QUERY" \
+    set DIR ( : | fzf_wrapper --ansi --disabled --query "$INITIAL_QUERY" \
         --prompt 'CTRL-Y (Copy path) | Find Directory > ' \
         --bind "start:reload:$FD_PREFIX {q}" \
         --bind "change:reload:sleep 0.1; $FD_PREFIX {q} || true" \

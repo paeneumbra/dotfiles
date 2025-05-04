@@ -10,25 +10,6 @@ if type -q nvim
     set --export VISUAL nvim
 end
 
-if type -q fzf
-    set -x FZF_DEFAULT_OPTS "--style full \
-        --preview 'fzf-preview.sh {}' \
-        --color=gutter:#1e2030 \
-        --color=header:#ff966c \
-        --color=marker:#ff007c \
-        --color=pointer:#ff007c \
-        --color=prompt:#828bb8 \
-        --color=scrollbar:#82aaff \
-        --color 'preview-border:#82aaff,preview-label:#82aaff' \
-        --color 'list-border:#82aaff,list-label:#82aaff' \
-        --color 'input-border:#82aaff,input-label:#82aaff' \
-        --color 'header-border:#ffc777,header-label:#ffc777'\
-        --info='inline-right' \
-        --no-separator \
-        --no-scrollbar \
-        --padding 2%"
-end
-
 switch (uname)
     case Linux
         if type -q wl-copy

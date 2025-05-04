@@ -1,8 +1,7 @@
-# Find file and open in nvim
-function ffile
+function ffile --description 'Find file with fzf and open in nvim'
     set FD_PREFIX "fd --hidden --no-ignore --ignore-case --type file"
     set INITIAL_QUERY (string join ' ' $argv)
-    : | fzf --ansi --disabled --query "$INITIAL_QUERY" \
+    : | fzf_wrapper --ansi --disabled --query "$INITIAL_QUERY" \
         --prompt 'CTRL-Y (Copy path) | Find File > ' \
         --bind "start:reload:$FD_PREFIX {q}" \
         --bind "change:reload:sleep 0.1; $FD_PREFIX {q} || true" \

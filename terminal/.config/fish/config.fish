@@ -51,9 +51,6 @@ if test -d "$HOME/.sdkman"
     fish_add_path --prepend (find "$HOME/.sdkman/candidates/scala/current/bin" -maxdepth 0)
 end
 
-# nvm
-# TODO: nvm is not working on fish. Take a look at fisher + bass
-
 # End of file required
 starship init fish | source
 
