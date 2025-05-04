@@ -1,5 +1,20 @@
 # Changelog
 
+## v8.0.2 (2025-05-04)
+
+### Changed
+
+- bump neovim
+- revisit fzf on fish
+- introduce fish plug and plugins for bash and nvm
+- update macos installation scripts
+- bump neovim
+- correct brew taskfile, small cleanups
+
+### Fixed
+
+- Fix broken completion for zsh
+
 ## v8.0.1 (2025-05-02)
 
 ### Changed
