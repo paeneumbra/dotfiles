@@ -45,7 +45,7 @@ tasks:
 
   pipx:
     internal: true
-    desc: Install pipx packages of poetry and commitizen
+    desc: Install pipx packages
     platforms: [darwin]
     cmds:
       - task: assert

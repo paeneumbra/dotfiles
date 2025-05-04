@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  BREWDIR: "{{.ROOT_DIR}}/installation/macos"
+  BREWDIR: "{{.ROOT_DIR}}/taskfiles/scripts"
 
 tasks:
 

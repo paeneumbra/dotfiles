@@ -1,8 +1,6 @@
 # Brewfile
 
 # taps
-tap 'homebrew/bundle'
-tap 'homebrew/services'
 tap 'boz/repo'
 tap 'mike-engel/jwt-cli'
 tap 'hashicorp/tap'
