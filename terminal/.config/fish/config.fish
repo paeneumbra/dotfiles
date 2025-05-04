@@ -8,6 +8,17 @@ end
 
 set -g -x fish_greeting ''
 
+# https://github.com/kidonng/plug.fish#installation
+set plugins \
+    https://github.com/kidonng/plug.fish \
+    https://github.com/jorgebucaran/autopair.fish \
+    https://github.com/jorgebucaran/replay.fish \
+    https://github.com/jorgebucaran/nvm.fish
+source (
+    path filter $__fish_user_data_dir/plugins/plug.fish/conf.d/plugin_load.fish ||
+    curl https://raw.githubusercontent.com/kidonng/plug.fish/v3/conf.d/plugin_load.fish | psub
+)
+
 # Enable starship config
 set --universal --export STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 
