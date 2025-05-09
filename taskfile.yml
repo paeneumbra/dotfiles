@@ -11,6 +11,7 @@ includes:
   sdkman: "./taskfiles/taskfile.sdkman.yml"
   terminal: "./taskfiles/taskfile.terminal.yml"
   hypr: "./taskfiles/taskfile.hyprland.yml"
+  ai: "./taskfiles/taskfile.ai.yml"
 
 tasks:
 

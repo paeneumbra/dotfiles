@@ -1,0 +1,64 @@
+version: '3'
+
+tasks:
+
+  default:
+    internal: true
+    desc: Default
+    cmds:
+      - |
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
+  assert:
+    cmds:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+
+  ai:
+    desc: Installation AI tools
+    cmds:
+      - task: linux_installation
+      - task: macos_installation
+      - task: pipx
+    silent: true
+
+  linux_installation:
+    internal: true
+    desc: Install ollama
+    platforms: [linux]
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: pacman
+      - sudo pacman -S ollama
+
+  macos_installation:
+    internal: true
+    desc: Install ollama
+    platforms: [darwin]
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: brew
+      - brew install ollama
+
+  pipx:
+    internal: true
+    desc: Install pipx packages for AI
+    platforms: [darwin]
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: python, pipx
+      - python -m pip install aider-install
