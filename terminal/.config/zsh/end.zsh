@@ -21,5 +21,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Python
 export PYENV_ROOT="$HOME/.pyenv"
+export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/shims/python"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - path)"

@@ -32,6 +32,7 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 fish_add_path --prepend "$HOME/.local/bin"
 if test -d "$HOME/.pyenv"
     set --universal --export PYENV_ROOT $HOME/.pyenv
+    set --universal --export PIPX_DEFAULT_PYTHON $HOME/.pyenv/shims/python
     fish_add_path --prepend "$PYENV_ROOT/bin"
      pyenv init - | source
 end
