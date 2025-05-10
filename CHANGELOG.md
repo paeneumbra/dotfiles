@@ -1,5 +1,17 @@
 # Changelog
 
+## v8.0.3 (2025-05-10)
+
+### Changed
+
+- introduce ollama and aider-chat
+- bump pre commit config
+- bump neovim
+
+### Fixed
+
+- pipx path
+
 ## v8.0.2 (2025-05-04)
 
 ### Changed
