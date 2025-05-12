@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.5 (2025-05-12)
+
+### Changed
+
+- correct ai helper installer
+
 ## v8.0.4 (2025-05-10)
 
 ### Changed
