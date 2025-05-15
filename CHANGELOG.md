@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.6 (2025-05-15)
+
+### Changed
+
+- remove handlr alias
+
 ## v8.0.5 (2025-05-12)
 
 ### Changed
