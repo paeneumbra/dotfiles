@@ -26,7 +26,7 @@ repos:
         exclude: '^\.gitignore$'
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.6.3
+    rev: v4.7.2
     hooks:
       - id: commitizen
         stages: [commit-msg]
@@ -36,7 +36,7 @@ repos:
           - pre-push
 
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.17.2
+    rev: v0.18.1
     hooks:
       - id: markdownlint-cli2
         args:
@@ -83,12 +83,12 @@ repos:
       - id: shfmt
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.7.3
+    rev: 0.7.6
     hooks:
       - id: uv-lock
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.9
+    rev: v0.11.10
     hooks:
       - id: ruff
         args: [--fix]
