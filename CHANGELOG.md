@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.8 (2025-05-21)
+
+### Changed
+
+- remove librewolf from brewfile
+
 ## v8.0.7 (2025-05-21)
 
 ### Tools
