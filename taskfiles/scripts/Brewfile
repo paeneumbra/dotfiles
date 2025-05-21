@@ -101,7 +101,6 @@ cask 'ghostty@tip'
 cask 'jetbrains-toolbox'
 cask 'keymapp'
 cask 'kitty'
-cask 'librewolf'
 cask 'microsoft-office'
 cask 'microsoft-teams'
 cask 'obsidian'
@@ -118,6 +117,7 @@ cask 'appcleaner'
 cask 'jdk-mission-control'
 cask 'visualvm'
 brew 'gum'
+# cask 'librewolf'
 
 # Python: managed by pip, pipx and pyenv
 # https://raw.githubusercontent.com/itzalak/anvil/blob/main/taskfiles/taskfile.python.yml
