@@ -1,0 +1,13 @@
+##########################################################
+# Aider docs: https://aider.chat/docs/
+# Based on https://github.com/Aider-AI/aider/blob/main/aider/website/assets/sample.aider.conf.yml
+##########################################################
+
+model: ollama_chat/qwen3:14b
+set-env:
+  - OLLAMA_API_BASE=http://127.0.0.1:11434
+dark-mode: true
+pretty: true
+no-auto-commits: true
+yes-always: false
+editor: nvim

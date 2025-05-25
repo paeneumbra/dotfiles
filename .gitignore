@@ -154,3 +154,7 @@ Brewfile.lock.json
 
 # fish
 /terminal/.config/fish/fish_variables
+
+# aider
+.aider*
+!.aider.conf.yml
