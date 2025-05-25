@@ -1,5 +1,15 @@
 # Changelog
 
+## v8.0.9 (2025-05-25)
+
+### Changed
+
+- tryout basic config for aider with ollama
+
+### Tools
+
+- bump neovim config
+
 ## v8.0.8 (2025-05-21)
 
 ### Changed
