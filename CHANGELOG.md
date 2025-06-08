@@ -1,5 +1,12 @@
 # Changelog
 
+## v8.0.10 (2025-06-08)
+
+### Changed
+
+- bump pre commit
+- update yazi config
+
 ## v8.0.9 (2025-05-25)
 
 ### Changed
