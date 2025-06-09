@@ -1,5 +1,13 @@
 # Changelog
 
+## v8.0.11 (2025-06-09)
+
+### Tools
+
+- add version provider and remove pre bump on pyproject
+- add pre bump hook for uv lock
+- bump pre commit
+
 ## v8.0.10 (2025-06-08)
 
 ### Changed
