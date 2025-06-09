@@ -23,8 +23,10 @@ tag_format = "v$major.$minor.$patch"
 version_scheme = "semver"
 version = "8.0.10"
 update_changelog_on_bump = true
-version_files = ["pyproject.toml"]
-pre_bump_hooks = ["uv lock && git add uv.lock"]
+version_provider = "uv"
+
+[tool.uv]
+required-version = ">=0.7.3"
 
 [tool.commitizen.customize]
 schema = "<type>: <body>"
