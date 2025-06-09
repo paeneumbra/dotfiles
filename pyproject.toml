@@ -24,6 +24,7 @@ version_scheme = "semver"
 version = "8.0.10"
 update_changelog_on_bump = true
 version_files = ["pyproject.toml"]
+pre_bump_hooks = ["uv lock && git add uv.lock"]
 
 [tool.commitizen.customize]
 schema = "<type>: <body>"
