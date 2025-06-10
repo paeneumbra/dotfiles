@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.12 (2025-06-10)
+
+### Changed
+
+- bump neovim
+
 ## v8.0.11 (2025-06-09)
 
 ### Tools
