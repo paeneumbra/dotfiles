@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.13 (2025-06-12)
+
+### Changed
+
+- small cleanup for bash and documentation update
+
 ## v8.0.12 (2025-06-10)
 
 ### Changed
