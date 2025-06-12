@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.14 (2025-06-12)
+
+### Changed
+
+- add gum shutdown script
+
 ## v8.0.13 (2025-06-12)
 
 ### Changed
