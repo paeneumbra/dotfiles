@@ -13,6 +13,7 @@ PKGS=(
   fish
   fzf
   ghostty
+  gum
   kitty
   man-db
   man-pages
