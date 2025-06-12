@@ -23,7 +23,6 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 # Personal
 export PATH="$HOME/foundry/anvil/bin:$PATH"
-export PATH="$HOME/foundry/anvil/terminal/.config/decorator/scripts:$PATH"
 
 HELPERS_DIRECTORY="$XDG_CONFIG_HOME/shell/"
 for file in "$HELPERS_DIRECTORY"/*.sh; do
