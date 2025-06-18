@@ -116,6 +116,7 @@ cask 'appcleaner'
 cask 'jdk-mission-control'
 cask 'visualvm'
 brew 'gum'
+brew 'graphviz'
 
 # Python: managed by pip, pipx and pyenv
 # https://raw.githubusercontent.com/itzalak/anvil/blob/main/taskfiles/taskfile.python.yml
