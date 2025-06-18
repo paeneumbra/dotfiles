@@ -46,7 +46,7 @@ tasks:
       - sh: brew -v
         msg: 'Could not find `brew`'
     cmds:
-      - "{{.BREWDIR}}/minimal-setup.sh"
+      - "{{.BREWDIR}}/00-brew-minimal.sh"
 
   brewfile:
     desc: Install brew from file

@@ -57,6 +57,7 @@ tasks:
       - pipx install pre-commit
       - pipx install pip-tools
       - pipx install virtualenv
+      - pipx install cookiecutter
       - pipx ensurepath
 
   pyenv:

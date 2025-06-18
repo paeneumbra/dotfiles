@@ -14,7 +14,6 @@ brew 'bat'
 brew 'bitwarden-cli'
 brew 'bottom'
 brew 'boz/repo/kail'
-brew 'cookiecutter'
 brew 'coreutils'
 brew 'curl'
 brew 'eza'
@@ -117,7 +116,6 @@ cask 'appcleaner'
 cask 'jdk-mission-control'
 cask 'visualvm'
 brew 'gum'
-# cask 'librewolf'
 
 # Python: managed by pip, pipx and pyenv
 # https://raw.githubusercontent.com/itzalak/anvil/blob/main/taskfiles/taskfile.python.yml
