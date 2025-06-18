@@ -1,5 +1,12 @@
 # Changelog
 
+## v8.0.15 (2025-06-18)
+
+### Changed
+
+- bring back graphviz for UML
+- update installation scripts for macOS
+
 ## v8.0.14 (2025-06-12)
 
 ### Changed
