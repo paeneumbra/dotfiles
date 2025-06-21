@@ -32,7 +32,7 @@ YAYPKGS=(
   # https://wiki.archlinux.org/title/Asusctl
   # https://asus-linux.org/manual/asusctl-manual/
   # https://asus-linux.org/manual/supergfxctl-manual/
-  # supergfxctl
+  supergfxctl
   rog-control-center
   asusctl
 )
@@ -47,4 +47,4 @@ done
 echo "Setting asus services"
 
 sudo systemctl enable --now asusd.service
-# sudo systemctl enable --now supergfxd.service
+sudo systemctl enable --now supergfxd.service
