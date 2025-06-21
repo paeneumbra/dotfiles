@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.16 (2025-06-21)
+
+### Changed
+
+- small hyprland cleanup
+
 ## v8.0.15 (2025-06-18)
 
 ### Changed
