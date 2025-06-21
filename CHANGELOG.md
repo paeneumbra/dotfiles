@@ -1,5 +1,16 @@
 # Changelog
 
+## v8.0.18 (2025-06-21)
+
+### Changed
+
+- introduce vim keybindingsto fish
+- tweaks to installation scripts
+
+### Tools
+
+- bump pre commit and uv
+
 ## v8.0.17 (2025-06-21)
 
 ### Changed
