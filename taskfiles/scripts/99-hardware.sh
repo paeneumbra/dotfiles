@@ -2,8 +2,6 @@
 
 set -uo pipefail
 
-#// TODO: Under resivion
-
 PKGS=(
   # AMD
   xf86-video-amdgpu

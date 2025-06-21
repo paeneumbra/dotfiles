@@ -44,3 +44,6 @@ for PPKG in "${PARUPKGS[@]}"; do
 done
 
 echo "Packages installed"
+echo "Set dark mode for gtk"
+
+dconf write /org/gnome/desktop/interface/color-scheme '"prefer-dark"'

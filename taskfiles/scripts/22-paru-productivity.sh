@@ -12,6 +12,7 @@ PKGS=(
   ticktick
   thunderbird
   librewolf-bin
+  signal-desktop
 )
 
 echo "Installing packages"
