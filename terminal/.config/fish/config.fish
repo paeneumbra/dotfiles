@@ -52,6 +52,8 @@ if test -d "$HOME/.sdkman"
     fish_add_path --prepend (find "$HOME/.sdkman/candidates/scala/current/bin" -maxdepth 0)
 end
 
+fish_vi_key_bindings
+
 # End of file required
 starship init fish | source
 
