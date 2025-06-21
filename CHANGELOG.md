@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.17 (2025-06-21)
+
+### Changed
+
+- reintroduce supergfxctl
+
 ## v8.0.16 (2025-06-21)
 
 ### Changed
