@@ -32,7 +32,6 @@ check_required_tools() {
 }
 
 PIPX_PKGS=(
-  black
   ruff
   poetry
   commitizen
