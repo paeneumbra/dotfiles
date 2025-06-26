@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.20 (2025-06-26)
+
+### Changed
+
+- cleanup brewfile a bit
+
 ## v8.0.19 (2025-06-22)
 
 ### Changed
