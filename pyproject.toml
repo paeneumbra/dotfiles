@@ -1,6 +1,6 @@
 [project]
 name = "anvil"
-version = "8.0.21"
+version = "8.0.22"
 description = "Personal development laboratory"
 authors = [{ name = "Itzalak", email = "itzalak@tuta.io" }]
 readme = "README.md"

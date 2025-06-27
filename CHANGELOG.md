@@ -1,5 +1,12 @@
 # Changelog
 
+## v8.0.22 (2025-06-27)
+
+### Changed
+
+- make alacritty default to fish
+- continue with hypr configs
+
 ## v8.0.21 (2025-06-27)
 
 ### Changed
