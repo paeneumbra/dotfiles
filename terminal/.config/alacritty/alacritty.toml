@@ -34,3 +34,6 @@ style = "Bold"
 [general]
 live_config_reload = true
 import = ["~/.config/tint16/palettes/alacritty.toml"]
+
+[terminal]
+shell = { program = "fish" }
