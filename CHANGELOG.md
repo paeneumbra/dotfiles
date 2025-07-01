@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.23 (2025-07-01)
+
+### Changed
+
+- revert alacritty changes, use kitty for quick access console
+
 ## v8.0.22 (2025-06-27)
 
 ### Changed
