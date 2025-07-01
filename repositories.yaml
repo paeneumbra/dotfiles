@@ -1,18 +1,17 @@
-# Foundry repositories to set up
+# depositor set up
 
-foundry:
+depository:
   - git@github.com:itzalak/anvil.git
-  - depository:
-      - git@github.com:itzalak/pyresume.git
-      - git@github.com:itzalak/thescream.nvim.git
+  - git@github.com:itzalak/pyresume.git
+  - archived:
+      - git@github.com:itzalak/deprecated-static-site.git
+      - git@github.com:itzalak/dotcachy.git
+  - templates:
+      - git@github.com:itzalak/gradle-template.git
+      - git@github.com:itzalak/obsidian-template.git
+      - git@github.com:itzalak/cookiecutter-base.git
+      - git@github.com:itzalak/cookiecutter-python.git
+      - git@github.com:itzalak/cookiecutter-kotlin.git
+  - more:
       - git@github.com:itzalak/basoa.nvim.git
-      - git@github.com:itzalak/microservice-api-demo.git
-      - archived:
-          - git@github.com:itzalak/deprecated-static-site.git
-          - git@github.com:itzalak/dotcachy.git
-      - templates:
-          - git@github.com:itzalak/gradle-template.git
-          - git@github.com:itzalak/obsidian-template.git
-          - git@github.com:itzalak/cookiecutter-base.git
-          - git@github.com:itzalak/cookiecutter-python.git
-          - git@github.com:itzalak/cookiecutter-kotlin.git
+      - git@github.com:itzalak/thescream.git

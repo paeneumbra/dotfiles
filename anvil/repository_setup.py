@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 """
+This script clones git repositories into a defined structure
+starting from home directory.
+
 Generates `git clone` commands based on given input file.
 Uses name to define the directory and subdirectories.
 
@@ -16,16 +19,15 @@ directory_two:
 - subdirectory_two:
   - git@github.com:user/repository_five.git
   - nested_subdirectory_one:
-    - git@github.com:user/orepository_six.git
-
-Environment variable $HOME must be defined.
+    - git@github.com:user/repository_six.git
 """
 
 import os
 import sys
 from argparse import ArgumentParser, Namespace
+from pathlib import Path
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 from typing import Dict, Any
 
@@ -35,10 +37,6 @@ parser = ArgumentParser()
 
 
 def define_arguments():
-    """
-    Define allowed arguments.
-    Refer to https://docs.python.org/3/library/argparse.html for documentation
-    """
     parser.add_argument(
         "-v", "--version", action="version", version="%(prog)s " + __version__
     )
@@ -67,7 +65,7 @@ def get_arguments() -> Dict[str, Any]:
     return args
 
 
-HOME = os.getenv("HOME")
+HOME = Path.home()
 
 
 def read_yaml(filepath: str):
