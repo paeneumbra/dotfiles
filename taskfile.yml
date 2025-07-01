@@ -3,7 +3,7 @@ version: '3'
 includes:
   brew: "./taskfiles/taskfile.brew.yml"
   gotask: "./taskfiles/taskfile.gotask.yml"
-  foundry: "./taskfiles/taskfile.foundry.yml"
+  depository: "./taskfiles/taskfile.depository.yml"
   linux: "./taskfiles/taskfile.linux.yml"
   macos: "./taskfiles/taskfile.macos.yml"
   neovim: "./taskfiles/taskfile.neovim.yml"

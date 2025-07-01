@@ -1,8 +1,5 @@
 version: '3'
 
-# TODO: Refactor and remove foundry in favour of depository
-# Update the scripts
-
 tasks:
 
   default:
@@ -32,18 +29,18 @@ tasks:
 
   setup:
     deps: [assert]
-    desc: Setup foundry repositories
+    desc: Setup repositories
     cmds:
-      - uv run ./bin/foundry_repositories.py -s ./repositories.yaml -r
+      - uv run ./anvil/repository_setup.py -s ./repositories.yaml -r
 
   update:
     deps: [assert]
-    desc: Update foundry repositories
+    desc: Update depository
     vars:
-      IGNORE: "{{.HOME}}/foundry/depository/archived"
+      IGNORE: "{{.HOME}}/depository/archived"
       CMD: ./bin/updategitrepos.py
     cmds:
-      - "uv run {{.CMD}} --foundry --ignore {{.IGNORE}} -r"
+      - "uv run {{.CMD}} --depository --ignore {{.IGNORE}} -r"
 
   tokyonight:
     deps: [assert]

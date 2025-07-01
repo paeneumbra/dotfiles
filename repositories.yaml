@@ -11,7 +11,7 @@ depository:
       - git@github.com:paeneumbra/obsidian-template.git
       - git@github.com:paeneumbra/cookiecutter-base.git
       - git@github.com:paeneumbra/cookiecutter-python.git
-      - git@github.com:paeneumbra/cookiecutter-kotlin.git
+      - git@github.com:paeneumbra/cookiecutter-java-kotlin.git
   - more:
       - git@github.com:paeneumbra/basoa.nvim.git
       - git@github.com:paeneumbra/thescream.git
