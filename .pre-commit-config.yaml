@@ -66,13 +66,13 @@ repos:
           )$
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.33.0
+    rev: 0.33.1
     hooks:
       - id: check-taskfile
       - id: check-github-workflows
 
   - repo: https://github.com/google/yamlfmt
-    rev: v0.17.1
+    rev: v0.17.2
     hooks:
       - id: yamlfmt
         args: ['-formatter', 'retain_line_breaks=true']
@@ -83,12 +83,12 @@ repos:
       - id: shfmt
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.7.13
+    rev: 0.7.17
     hooks:
       - id: uv-lock
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.0
+    rev: v0.12.1
     hooks:
       - id: ruff
         args: [--fix]
