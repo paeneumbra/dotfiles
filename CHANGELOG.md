@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.24 (2025-07-01)
+
+### Changed
+
+- modify repository setup
+
 ## v8.0.23 (2025-07-01)
 
 ### Changed
