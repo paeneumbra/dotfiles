@@ -109,4 +109,4 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: git
-      - "git submodule add git@github.com:itzalak/nvim.git {{.PATH}}"
+      - "git submodule add git@github.com:paeneumbra/nvim.git {{.PATH}}"

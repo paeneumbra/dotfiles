@@ -31,7 +31,7 @@ Clone the anvil repository
 ```shell
 mkdir -p foundry
 cd foundry
-git clone git@github.com:itzalak/anvil.git anvil
+git clone git@github.com:paeneumbra/anvil.git anvil
 ```
 
 ## Minimal setup
@@ -45,7 +45,7 @@ Run minimal linux installation setup manually
 or
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/main/taskfiles/scripts/00-cachy-minimal.sh | bash
+curl -fsSL https://raw.githubusercontent.com/paeneumbra/anvil/refs/heads/main/taskfiles/scripts/00-cachy-minimal.sh | bash
 ```
 
 ## Other environments

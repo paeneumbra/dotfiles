@@ -1,17 +1,17 @@
 # depositor set up
 
 depository:
-  - git@github.com:itzalak/anvil.git
-  - git@github.com:itzalak/pyresume.git
+  - git@github.com:paeneumbra/anvil.git
+  - git@github.com:paeneumbra/pyresume.git
   - archived:
-      - git@github.com:itzalak/deprecated-static-site.git
-      - git@github.com:itzalak/dotcachy.git
+      - git@github.com:paeneumbra/deprecated-static-site.git
+      - git@github.com:paeneumbra/dotcachy.git
   - templates:
-      - git@github.com:itzalak/gradle-template.git
-      - git@github.com:itzalak/obsidian-template.git
-      - git@github.com:itzalak/cookiecutter-base.git
-      - git@github.com:itzalak/cookiecutter-python.git
-      - git@github.com:itzalak/cookiecutter-kotlin.git
+      - git@github.com:paeneumbra/gradle-template.git
+      - git@github.com:paeneumbra/obsidian-template.git
+      - git@github.com:paeneumbra/cookiecutter-base.git
+      - git@github.com:paeneumbra/cookiecutter-python.git
+      - git@github.com:paeneumbra/cookiecutter-kotlin.git
   - more:
-      - git@github.com:itzalak/basoa.nvim.git
-      - git@github.com:itzalak/thescream.git
+      - git@github.com:paeneumbra/basoa.nvim.git
+      - git@github.com:paeneumbra/thescream.git

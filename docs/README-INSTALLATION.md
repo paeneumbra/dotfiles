@@ -13,7 +13,7 @@ Minimal installation (automatic)
 For macos
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/itzalak/anvil/refs/heads/main/taskfiles/scripts/00-brew-minimal.sh | bash
+curl -fsSL https://raw.githubusercontent.com/paeneumbra/anvil/refs/heads/main/taskfiles/scripts/00-brew-minimal.sh | bash
 ```
 
 Setup ssh and git.
@@ -21,7 +21,7 @@ Clone the anvil repository.
 
 ```shell
 mkdir -p foundry
-git clone git@github.com:itzalak/anvil.git
+git clone git@github.com:paeneumbra/anvil.git
 ```
 
 Follow up on [taskfile](/taskfiles/taskfile.macos.yml)
