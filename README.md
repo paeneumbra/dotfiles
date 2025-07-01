@@ -29,8 +29,8 @@ Configuration through taskfiles using stow
 Clone the anvil repository
 
 ```shell
-mkdir -p foundry
-cd foundry
+mkdir -p depository
+cd depository
 git clone git@github.com:paeneumbra/anvil.git anvil
 ```
 
@@ -39,7 +39,7 @@ git clone git@github.com:paeneumbra/anvil.git anvil
 Run minimal linux installation setup manually
 
 ```shell
-./foundry/anvil/taskfiles/scripts/00-cachy-minimal.sh
+./depository/anvil/taskfiles/scripts/00-cachy-minimal.sh
 ```
 
 or

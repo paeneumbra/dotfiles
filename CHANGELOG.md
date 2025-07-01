@@ -178,7 +178,7 @@
 ### Changed
 
 - drop decorator
-- add foundry documentation for tint16
+- add depository documentation for tint16
 - dotcachy cleanup
 - tweak repositories
 - update hyprland config and installation

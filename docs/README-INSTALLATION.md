@@ -20,7 +20,7 @@ Setup ssh and git.
 Clone the anvil repository.
 
 ```shell
-mkdir -p foundry
+mkdir -p depository
 git clone git@github.com:paeneumbra/anvil.git
 ```
 

@@ -30,9 +30,9 @@ def define_arguments():
     )
     parser.add_argument(
         "-f",
-        "--foundry",
+        "--depository",
         action="store_true",
-        help="Update foundry repositories",
+        help="Update depository repositories",
     )
     parser.add_argument(
         "-i",
@@ -61,8 +61,8 @@ def parse_arguments(parser: argparse.ArgumentParser):
     if len(sys.argv) <= 1:
         sys.exit("No arguments given, run updategitrepos -h")
 
-    if args.foundry:
-        args.source = os.path.join(HOME, "foundry")
+    if args.depository:
+        args.source = os.path.join(HOME, "depository")
 
     if args.source is not None and not os.path.exists(args.source):
         sys.exit(f"Directory not found: {args.source}")

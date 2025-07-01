@@ -3,5 +3,5 @@
 Stow:
 
 ```shell
-stow --restow --verbose --dir="$HOME/foundry/anvil/" --target="$HOME" aider
+stow --restow --verbose --dir="$HOME/depository/anvil/" --target="$HOME" aider
 ```
