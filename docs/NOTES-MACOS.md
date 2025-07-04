@@ -1,4 +1,4 @@
-# macos
+# Notes Macos
 
 TODO: revisit
 
