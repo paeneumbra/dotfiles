@@ -22,7 +22,9 @@ source (
 # Enable starship config
 set --universal --export STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 
-fish_add_path --prepend "$HOME/foundry/anvil/bin"
+# Personal
+set --universal --export DOTS "$HOME/depository/anvil"
+fish_add_path --prepend "$DOTS/bin"
 
 # Format man pages
 set -x MANROFFOPT "-c"
