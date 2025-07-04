@@ -95,6 +95,7 @@ tasks:
         vars:
           REQUIRED_TOOLS: stow
       - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} terminal --ignore='.*macos.conf'"
+      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} linux"
 
   stow_macos:
     internal: true
