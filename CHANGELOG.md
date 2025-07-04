@@ -1,5 +1,22 @@
 # Changelog
 
+## v8.1.0 (2025-07-04)
+
+### Changed
+
+- wrap migration to dotfiles
+- bump neovim version
+- bump pre commit plugin version
+- rename anvil to dotfiles
+- refactor foundry
+- correct repositories
+- clean neovim
+- refactor foundry to depository
+- update taskfiles
+- bump pre commit and uv
+- update repositories
+- bump neovim version
+
 ## v8.0.24 (2025-07-01)
 
 ### Changed
