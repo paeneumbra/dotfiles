@@ -1,7 +1,7 @@
 # depositor set up
 
 depository:
-  - git@github.com:paeneumbra/anvil.git
+  - git@github.com:paeneumbra/dotfiles.git
   - git@github.com:paeneumbra/pyresume.git
   - archived:
       - git@github.com:paeneumbra/deprecated-static-site.git

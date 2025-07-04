@@ -5,6 +5,6 @@ sorting = "ascending"
 transition-time = 6000
 
 [any]
-path = "~/depository/anvil/wallpapers"
+path = "~/depository/dotfiles/wallpapers"
 
 [default.transition.fade]

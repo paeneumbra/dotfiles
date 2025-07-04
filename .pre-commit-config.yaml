@@ -104,7 +104,7 @@ repos:
         verbose: true
       - id: pytest
         name: run tests
-        entry: uv run pytest anvil/tests/
+        entry: uv run pytest dotfiles/tests/
         language: system
         pass_filenames: false
         verbose: true

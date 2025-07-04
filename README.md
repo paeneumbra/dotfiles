@@ -1,4 +1,4 @@
-# Anvil
+# Dotfiles
 
 Personal laboratory mostly for development.
 
@@ -24,14 +24,14 @@ Remainder is done through the taskfiles.
 Main shell is fish, a working setup exists for bash and zsh (with zimfw)
 Configuration through taskfiles using stow
 
-## Anvil setup
+## Dotfiles setup
 
-Clone the anvil repository
+Clone the dotfiles repository
 
 ```shell
 mkdir -p depository
 cd depository
-git clone git@github.com:paeneumbra/anvil.git anvil
+git clone git@github.com:paeneumbra/dotfiles.git dotfiles
 ```
 
 ## Minimal setup
@@ -39,13 +39,13 @@ git clone git@github.com:paeneumbra/anvil.git anvil
 Run minimal linux installation setup manually
 
 ```shell
-./depository/anvil/taskfiles/scripts/00-cachy-minimal.sh
+./depository/dotfiles/taskfiles/scripts/00-cachy-minimal.sh
 ```
 
 or
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/paeneumbra/anvil/refs/heads/main/taskfiles/scripts/00-cachy-minimal.sh | bash
+curl -fsSL https://raw.githubusercontent.com/paeneumbra/dotfiles/refs/heads/main/taskfiles/scripts/00-cachy-minimal.sh | bash
 ```
 
 ## Other environments

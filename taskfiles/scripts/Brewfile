@@ -117,10 +117,10 @@ brew 'gum'
 brew 'graphviz'
 
 # Python: managed by pip, pipx and pyenv
-# https://raw.githubusercontent.com/paeneumbra/anvil/blob/main/taskfiles/taskfile.python.yml
+# https://raw.githubusercontent.com/paeneumbra/dotfiles/blob/main/taskfiles/taskfile.python.yml
 
 # Java: managed by sdkman
-# https://raw.githubusercontent.com/paeneumbra/anvil/blob/main/taskfiles/taskfile.sdkman.yml
+# https://raw.githubusercontent.com/paeneumbra/dotfiles/blob/main/taskfiles/taskfile.sdkman.yml
 
 # Nvm: Manual installation
 # https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating

@@ -31,7 +31,7 @@ tasks:
     deps: [assert]
     desc: Setup repositories
     cmds:
-      - uv run ./anvil/repository_setup.py -s ./repositories.yaml -r
+      - uv run ./dotfiles/repository_setup.py -s ./repositories.yaml -r
 
   update:
     deps: [assert]

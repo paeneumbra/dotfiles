@@ -23,7 +23,7 @@ source (
 set --universal --export STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 
 # Personal
-set --universal --export DOTS "$HOME/depository/anvil"
+set --universal --export DOTS "$HOME/depository/dotfiles"
 fish_add_path --prepend "$DOTS/bin"
 
 # Format man pages

@@ -13,15 +13,15 @@ Minimal installation (automatic)
 For macos
 
 ```shell
-curl -fsSL https://raw.githubusercontent.com/paeneumbra/anvil/refs/heads/main/taskfiles/scripts/00-brew-minimal.sh | bash
+curl -fsSL https://raw.githubusercontent.com/paeneumbra/dotfiles/refs/heads/main/taskfiles/scripts/00-brew-minimal.sh | bash
 ```
 
 Setup ssh and git.
-Clone the anvil repository.
+Clone the dotfiles repository.
 
 ```shell
 mkdir -p depository
-git clone git@github.com:paeneumbra/anvil.git
+git clone git@github.com:paeneumbra/dotfiles.git
 ```
 
 Follow up on [taskfile](/taskfiles/taskfile.macos.yml)

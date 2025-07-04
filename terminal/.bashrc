@@ -22,7 +22,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 # Personal
-export DOTS="$HOME/depository/anvil"
+export DOTS="$HOME/depository/dotfiles"
 export PATH="$DOTS/bin:$PATH"
 
 HELPERS_DIRECTORY="$XDG_CONFIG_HOME/shell/"

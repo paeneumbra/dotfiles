@@ -1,5 +1,5 @@
 [project]
-name = "anvil"
+name = "dotfiles"
 version = "8.0.23"
 description = "Personal development laboratory"
 authors = [{ name = "Itzalak", email = "itzalak@tuta.io" }]

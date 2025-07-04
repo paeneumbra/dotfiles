@@ -11,7 +11,7 @@ __version__ = "0.2.0"
 HOME = os.getenv("HOME", os.getenv("USERPROFILE"))
 
 
-# TODO: Broken, remove automatic anvil update and logs need to be updated they are ugly
+# TODO: Broken, remove automatic dotfiles update and logs need to be updated they are ugly
 def define_arguments():
     """
     Define allowed arguments.

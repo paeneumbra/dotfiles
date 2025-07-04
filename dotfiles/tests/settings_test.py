@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from anvil.settings import OS
+from dotfiles.settings import OS
 
 load_dotenv()
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 # Path
-export DOTS="$HOME/depository/anvil"
+export DOTS="$HOME/depository/dotfiles"
 export PATH="$DOTS/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
