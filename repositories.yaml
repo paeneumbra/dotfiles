@@ -14,4 +14,4 @@ depository:
       - git@github.com:paeneumbra/cookiecutter-java-kotlin.git
   - more:
       - git@github.com:paeneumbra/basoa.nvim.git
-      - git@github.com:paeneumbra/thescream.git
+      - git@github.com:paeneumbra/thescream.nvim.git
