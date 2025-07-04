@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.1.1 (2025-07-04)
+
+### Changed
+
+- update terminal stow
+
 ## v8.1.0 (2025-07-04)
 
 ### Changed
