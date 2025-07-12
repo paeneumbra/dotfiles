@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.1.2 (2025-07-12)
+
+### Changed
+
+- update compare script
+
 ## v8.1.1 (2025-07-04)
 
 ### Changed
