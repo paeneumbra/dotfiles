@@ -21,7 +21,15 @@ Remainder is done through the taskfiles.
 
 Main shell is fish, a working setup exists for bash and zsh (with zimfw)
 
-- WIP: Fisher plugins
+## Fish
+
+Follow <https://github.com/kidonng/plug.fish#installation>
+
+```shell
+exec fish
+plugin_update
+```
+
 Configuration through taskfiles using stow
 
 ## Dotfiles setup

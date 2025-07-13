@@ -79,3 +79,16 @@ brew bundle
 ```
 
 Packages required for my personal setup can be found in the [brewfile](../taskfiles/scripts/Brewfile) and can be run using the following command
+
+```shell
+brew bundle --file taskfiles/scripts/Brewfile
+```
+
+## Fish
+
+Follow <https://github.com/kidonng/plug.fish#installation>
+
+```shell
+exec fish
+plugin_update
+```
