@@ -57,6 +57,14 @@ tasks:
           REQUIRED_TOOLS: bash, brew
       - "{{.ROOT_DIR}}/taskfiles/scripts/03-brew-terminal.sh"
 
+  fisher:
+    desc: Set up fisher plugins
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: fish
+      - exec fish
+
   cleanup:
     internal: true
     desc: Delete existent shell configuration

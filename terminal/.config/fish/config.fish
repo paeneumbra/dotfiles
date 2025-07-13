@@ -13,7 +13,8 @@ set plugins \
     https://github.com/kidonng/plug.fish \
     https://github.com/jorgebucaran/autopair.fish \
     https://github.com/jorgebucaran/replay.fish \
-    https://github.com/jorgebucaran/nvm.fish
+    https://github.com/jorgebucaran/nvm.fish \
+    https://github.com/edc/bass
 source (
     path filter $__fish_user_data_dir/plugins/plug.fish/conf.d/plugin_load.fish ||
     curl https://raw.githubusercontent.com/kidonng/plug.fish/v3/conf.d/plugin_load.fish | psub
