@@ -89,12 +89,6 @@ repos:
         args: [--fix]
       - id: ruff-format
 
-  - repo: https://github.com/hugoh/pre-commit-fish.git
-    rev: v1.2
-    hooks:
-      - id: fish_syntax
-      - id: fish_indent
-
   - repo: local
     hooks:
       - id: uv
