@@ -1,5 +1,12 @@
 # Changelog
 
+## v8.1.4 (2025-07-13)
+
+### Changed
+
+- tweak editorconfig
+- tweak touchpad behavior for hyprland
+
 ## v8.1.3 (2025-07-13)
 
 ### Changed
