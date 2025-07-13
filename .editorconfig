@@ -25,7 +25,7 @@ max_line_length = 80
 [*.patch]
 trim_trailing_whitespace = false
 
-[{*.bash,*.sh,*.zsh}]
+[*.{bash,sh,zsh}]
 indent_size = 2
 tab_width = 2
 ij_shell_binary_ops_start_line = false
