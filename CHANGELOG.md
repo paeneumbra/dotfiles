@@ -1,5 +1,14 @@
 # Changelog
 
+## v8.1.5 (2025-07-13)
+
+### Changed
+
+- update taskfiles
+- revert pre commit for fish
+- revert shfmt update
+- add fish script checker to pre comit
+
 ## v8.1.4 (2025-07-13)
 
 ### Changed
