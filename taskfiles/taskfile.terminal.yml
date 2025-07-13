@@ -36,6 +36,7 @@ tasks:
       - task: cleanup
       - task: directories
       - task: stow
+      - task: fisher
 
   installation_linux:
     internal: true
