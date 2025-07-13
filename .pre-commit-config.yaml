@@ -73,7 +73,7 @@ repos:
         args: ['-formatter', 'retain_line_breaks=true']
 
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.12.0-1
+    rev: v3.11.0-1
     hooks:
       - id: shfmt
 
