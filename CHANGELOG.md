@@ -1,5 +1,19 @@
 # Changelog
 
+## v8.1.3 (2025-07-13)
+
+### Changed
+
+- update fisher plugins installation
+
+### Notes
+
+- update fish set up
+
+### Tools
+
+- update pre commit config
+
 ## v8.1.2 (2025-07-12)
 
 ### Changed
