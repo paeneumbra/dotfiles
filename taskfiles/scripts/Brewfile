@@ -15,7 +15,6 @@ brew 'bitwarden-cli'
 brew 'bottom'
 brew 'boz/repo/kail'
 brew 'coreutils'
-brew 'curl'
 brew 'eza'
 brew 'fastfetch'
 brew 'fd'
@@ -116,7 +115,7 @@ cask 'visualvm'
 brew 'gum'
 brew 'graphviz'
 
-# Python: managed by pip, pipx and pyenv
+# Python: managed by pip, pipx, pyenv and uv
 # https://raw.githubusercontent.com/paeneumbra/dotfiles/blob/main/taskfiles/taskfile.python.yml
 
 # Java: managed by sdkman
@@ -128,19 +127,11 @@ brew 'graphviz'
 # Docker: Manual installation
 # https://docs.docker.com/desktop/setup/install/mac-install/
 
-# Terraform
-# terraform and tfenv conflict if both are installed
-# brew 'tfenv'
-# brew 'tfsec'
-
 # Docker
 # Sometimes just stops working for no apparent reason
 # works when installed from docker.com
 # cask 'docker'
 
 # Unused
-# brew 'httpie'
-# cask 'postman'
 # cask 'insomnia'
 # cask 'wezterm'
-# cask 'font-zed-mono-nerd-font'
