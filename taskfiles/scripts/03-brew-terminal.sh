@@ -20,7 +20,6 @@ PKGS=(
 
 CASKS=(
   alacritty
-  wezterm
   ghostty
   kitty
   font-fira-code

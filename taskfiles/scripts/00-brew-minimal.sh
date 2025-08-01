@@ -35,8 +35,8 @@ done
 
 CASKS=(
   alacritty
-  wezterm
   ghostty
+  kitty
   firefox
 )
 

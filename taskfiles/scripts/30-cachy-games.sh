@@ -4,7 +4,6 @@ set -uo pipefail
 
 PKGS=(
   cachyos-gaming-meta
-  prismlauncher
 )
 
 echo "Installing packages"
