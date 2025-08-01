@@ -1,5 +1,15 @@
 # Changelog
 
+## v8.1.7 (2025-08-01)
+
+### Changed
+
+- cleanup installation scripts
+
+### Tools
+
+- update pre commit plugins
+
 ## v8.1.6 (2025-07-17)
 
 ### Changed
