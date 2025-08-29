@@ -114,6 +114,8 @@ cask 'jdk-mission-control'
 cask 'visualvm'
 brew 'gum'
 brew 'graphviz'
+cask 'ollama-app'
+cask 'zen'
 
 # Python: managed by pip, pipx, pyenv and uv
 # https://raw.githubusercontent.com/paeneumbra/dotfiles/blob/main/taskfiles/taskfile.python.yml

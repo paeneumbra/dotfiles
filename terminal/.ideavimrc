@@ -1,0 +1,109 @@
+" ===========================================
+" Based on common LazyVim settings and keybindings.
+" Place this file as ~/.ideavimrc
+" https://github.com/JetBrains/ideavim/wiki/set-commands/0d373def7c31d79e8aeeeca775caf0ec56edf26d
+" ===========================================
+
+" Enable clipboard integration for seamless copy/paste with system clipboard
+set clipboard+=unnamedplus
+
+" Remap c to blackhole register "_" instead of clipboard
+nnoremap c
+vnoremap c
+nnoremap C
+nnoremap cc
+
+" Disable default IdeaVim leader key (usually '\') if you want to define your own.
+" LazyVim defaults to space as leader, so let's set it here.
+let mapleader = " "
+
+" Search
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" Always show the command line
+set showcmd
+
+" Sync undo history with IdeaVim's undo/redo stack
+set idearefactoring
+
+" --- Keybindings (Mimicking LazyVim) ---
+" LazyVim often uses <leader> (Space) for file management and various commands.
+
+" <leader>ff - Find files
+" This maps to Idea's built-in "Go to File" action.
+nnoremap <leader>ff :action GotoFile<CR>
+vnoremap <leader>ff :action GotoFile<CR>
+
+" Grep/Find in files
+" This maps to Idea's built-in "Find in Path" action.
+nnoremap <leader>sg :action FindInPath<CR>
+vnoremap <leader>sg :action FindInPath<CR>
+
+" <leader>fb - Find buffers (open files)
+" This maps to Idea's built-in "Recent Files" action.
+nnoremap <leader>fb :action RecentFiles<CR>
+vnoremap <leader>fb :action RecentFiles<CR>
+
+" <leader>ws - Open a new split window horizontally
+" (w - window, s - split)
+nnoremap <leader>ws :sp<CR>
+" <leader>wv - Open a new split window vertically
+" (w - window, v - vertical split)
+nnoremap <leader>wv :vsp<CR>
+
+" Delete current window/split
+" <leader>wd - close window
+nnoremap <leader>wd :q<CR>
+
+" Navigate between splits (consistent with LazyVim's default behavior)
+" You might need to adjust these if they conflict with your OS.
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+" Do not create swap file. Useful for IDEs to avoid conflict.
+set noswapfile
+
+" Persistent undo
+set undofile
+
+" Sets the maximum number of changes that can be undone
+set undolevels=1000
+
+" Set line wrap behavior
+set wrap
+set linebreak
+
+" Highlight yank
+set highlightedyank
+
+" Nerdtree - vim like control of file explorer
+
+" --- Plugin Integration (IdeaVim specific) ---
+
+set which-key
+set notimeout
+<
+let g:WhichKeyDesc_windows = "<Space>w  Windows"
+let g:WhichKeyDesc_windows_delete = "<Space>wd delete"
+let g:WhichKeyDesc_windows_split_below = "<Space>ws split below"
+let g:WhichKeyDesc_windows_split_vertical = "<Space>wv split vertical"
+let g:WhichKeyDesc_find = "<Space>f  Find"
+let g:WhichKeyDesc_search = "<Space>s  Search"
+>
+
+
+" TODO: comment, indent, buffer delete
+" gcc and gc<action> mappings.
+" Plug 'tpope/vim-commentary'
+" IdeaVim ships with some built-in plugins you can enable here.
+" For example, to enable the 'easymotion' plugin:
+" set surround
+" set commentary
+
+" --- Additional Common Settings ---
+
