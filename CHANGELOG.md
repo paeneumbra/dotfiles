@@ -1,5 +1,15 @@
 # Changelog
 
+## v8.1.8 (2025-08-29)
+
+### Changed
+
+- introduce ideavim
+
+### Tools
+
+- update precommit plugins
+
 ## v8.1.7 (2025-08-01)
 
 ### Changed
