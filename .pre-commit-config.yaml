@@ -9,7 +9,7 @@ default_stages:
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: check-builtin-literals
       - id: check-case-conflict
@@ -51,7 +51,7 @@ repos:
       - id: stylua-system
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: '3.2.1'
+    rev: '3.4.0'
     hooks:
       - id: editorconfig-checker
         exclude: |
@@ -61,7 +61,7 @@ repos:
           )$
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.33.2
+    rev: 0.33.3
     hooks:
       - id: check-taskfile
       - id: check-github-workflows
@@ -78,12 +78,12 @@ repos:
       - id: shfmt
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.8.4
+    rev: 0.8.14
     hooks:
       - id: uv-lock
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.7
+    rev: v0.12.11
     hooks:
       - id: ruff
         args: [--fix]
