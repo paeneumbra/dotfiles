@@ -1,5 +1,13 @@
 # Changelog
 
+## v8.1.9 (2025-08-30)
+
+### Changed
+
+- update waybar
+- update fn keybindings
+- replace librewolf with zen browser
+
 ## v8.1.8 (2025-08-29)
 
 ### Changed
