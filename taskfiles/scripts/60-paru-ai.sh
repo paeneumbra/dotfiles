@@ -3,16 +3,7 @@
 set -uo pipefail
 
 PKGS=(
-  seahorse
-  calibre
-  obsidian
-  vivaldi
-  slack-desktop-wayland
-  spotify-launcher
-  ticktick
-  thunderbird
-  signal-desktop
-  zen-browser
+  ollama
 )
 
 echo "Installing packages"
