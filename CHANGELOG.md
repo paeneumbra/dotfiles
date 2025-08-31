@@ -1,5 +1,12 @@
 # Changelog
 
+## v8.1.10 (2025-08-31)
+
+### Changed
+
+- update installation scripts
+- tweak keybindings
+
 ## v8.1.9 (2025-08-30)
 
 ### Changed
