@@ -14,6 +14,7 @@ PKGS=(
   libvdpau
   libva-nvidia-driver
   egl-wayland
+  fwupd
 )
 
 echo "Installing packages"
@@ -23,7 +24,7 @@ for PKG in "${PKGS[@]}"; do
   sudo pacman -S "$PKG" --noconfirm --needed
 done
 
-YAYPKGS=(
+PARUPKGS=(
   # AMD
   amdgpu_top
   # Asus
@@ -35,11 +36,11 @@ YAYPKGS=(
   asusctl
 )
 
-echo "Installing yay packages"
+echo "Installing packages"
 
-for YPKG in "${YAYPKGS[@]}"; do
-  echo "Installing package: $YPKG"
-  yay -S "$YPKG" --noconfirm --needed
+for PARU in "${PARUPKGS[@]}"; do
+  echo "Installing package: $PARU"
+  paru -S "$PARU" --noconfirm --needed
 done
 
 echo "Setting asus services"

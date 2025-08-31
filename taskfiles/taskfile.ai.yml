@@ -52,6 +52,7 @@ tasks:
         vars:
           REQUIRED_TOOLS: brew
       - brew install ollama
+      - brew install ollama-app
 
   aider:
     desc: Install packages for AI
