@@ -31,6 +31,12 @@ for file in "$HELPERS_DIRECTORY"/*.sh; do
                 source "$file"
         fi
 done
+SPECIAL_DIRECTORY="$XDG_CONFIG_HOME/bash"
+for special in "$SPECIAL_DIRECTORY"/*.sh; do
+        if [ -f "$special" ]; then
+                source  "$special"
+        fi
+done
 
 # Zoxide
 eval "$(zoxide init bash)"

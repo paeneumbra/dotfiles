@@ -31,6 +31,10 @@ fish_add_path --prepend "$DOTS/bin"
 set -x MANROFFOPT "-c"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
+# Brew (MacOS)
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_ENV_HINTS=1
+
 # Python, pip and pyenv
 fish_add_path --prepend "$HOME/.local/bin"
 if test -d "$HOME/.pyenv"
