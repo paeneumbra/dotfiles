@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.1.11 (2025-09-14)
+
+### Changed
+
+- update hyprland to new version
+
 ## v8.1.10 (2025-08-31)
 
 ### Changed
