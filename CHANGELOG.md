@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.1.12 (2025-09-14)
+
+### Tools
+
+- bump pre commit and uv
+
 ## v8.1.11 (2025-09-14)
 
 ### Changed

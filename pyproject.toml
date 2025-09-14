@@ -1,6 +1,6 @@
 [project]
 name = "dotfiles"
-version = "8.1.11"
+version = "8.1.12"
 description = "Personal development laboratory"
 authors = [{ name = "Itzalak", email = "itzalak@tuta.io" }]
 readme = "README.md"
