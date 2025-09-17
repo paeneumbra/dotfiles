@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.1.13 (2025-09-17)
+
+### Changed
+
+- brew config update
+
 ## v8.1.12 (2025-09-14)
 
 ### Tools
