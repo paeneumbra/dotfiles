@@ -34,7 +34,7 @@ done
 SPECIAL_DIRECTORY="$XDG_CONFIG_HOME/bash"
 for special in "$SPECIAL_DIRECTORY"/*.sh; do
         if [ -f "$special" ]; then
-                source  "$special"
+                source "$special"
         fi
 done
 

@@ -26,7 +26,7 @@ repos:
         exclude: '^\.gitignore$'
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.8.3
+    rev: v4.9.1
     hooks:
       - id: commitizen
         stages: [commit-msg]
@@ -46,7 +46,7 @@ repos:
         exclude: '^(CHANGELOG.md)$'
 
   - repo: https://github.com/JohnnyMorganz/StyLua
-    rev: v2.1.0
+    rev: v2.2.0
     hooks:
       - id: stylua-system
 
@@ -61,7 +61,7 @@ repos:
           )$
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.33.3
+    rev: 0.34.0
     hooks:
       - id: check-taskfile
       - id: check-github-workflows
@@ -78,12 +78,12 @@ repos:
       - id: shfmt
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.8.17
+    rev: 0.8.22
     hooks:
       - id: uv-lock
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.13.0
+    rev: v0.13.2
     hooks:
       - id: ruff
         args: [--fix]
