@@ -1,5 +1,12 @@
 # Changelog
 
+## v8.1.14 (2025-09-26)
+
+### Changed
+
+- bump precommit plugins and uv packages
+- bump neovim
+
 ## v8.1.13 (2025-09-17)
 
 ### Changed
