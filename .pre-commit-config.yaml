@@ -46,7 +46,7 @@ repos:
         exclude: '^(CHANGELOG.md)$'
 
   - repo: https://github.com/JohnnyMorganz/StyLua
-    rev: v2.2.0
+    rev: v2.3.0
     hooks:
       - id: stylua-system
 
@@ -61,7 +61,7 @@ repos:
           )$
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.34.0
+    rev: 0.34.1
     hooks:
       - id: check-taskfile
       - id: check-github-workflows
@@ -78,12 +78,12 @@ repos:
       - id: shfmt
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.8.22
+    rev: 0.9.2
     hooks:
       - id: uv-lock
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.13.2
+    rev: v0.14.0
     hooks:
       - id: ruff
         args: [--fix]
