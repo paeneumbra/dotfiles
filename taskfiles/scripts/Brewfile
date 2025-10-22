@@ -51,7 +51,7 @@ brew 'magic-wormhole'
 brew 'node'
 brew 'npm'
 brew 'nvim'
-brew 'ollama'
+# brew 'ollama'
 brew 'openssl'
 brew 'pipx'
 brew 'poppler'
@@ -116,6 +116,7 @@ brew 'gum'
 brew 'graphviz'
 cask 'ollama-app'
 cask 'zen'
+cask 'stillcolor'
 
 # Python: managed by pip, pipx, pyenv and uv
 # https://raw.githubusercontent.com/paeneumbra/dotfiles/blob/main/taskfiles/taskfile.python.yml
