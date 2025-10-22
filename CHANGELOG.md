@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.1.16 (2025-10-22)
+
+### Changed
+
+- introduce stillcolor to fix monitor flickering on mac
+
 ## v8.1.15 (2025-10-15)
 
 ### Changed
