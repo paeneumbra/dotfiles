@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.1.17 (2025-11-01)
+
+### Changed
+
+- bump precommit plugins and uv
+
 ## v8.1.16 (2025-10-22)
 
 ### Changed
