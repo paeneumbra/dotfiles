@@ -46,12 +46,12 @@ repos:
         exclude: '^(CHANGELOG.md)$'
 
   - repo: https://github.com/JohnnyMorganz/StyLua
-    rev: v2.3.0
+    rev: v2.3.1
     hooks:
       - id: stylua-system
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: '3.4.0'
+    rev: '3.4.1'
     hooks:
       - id: editorconfig-checker
         exclude: |
@@ -67,7 +67,7 @@ repos:
       - id: check-github-workflows
 
   - repo: https://github.com/google/yamlfmt
-    rev: v0.17.2
+    rev: v0.20.0
     hooks:
       - id: yamlfmt
         args: ['-formatter', 'retain_line_breaks=true']
@@ -78,12 +78,12 @@ repos:
       - id: shfmt
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.2
+    rev: 0.9.7
     hooks:
       - id: uv-lock
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.0
+    rev: v0.14.3
     hooks:
       - id: ruff
         args: [--fix]
