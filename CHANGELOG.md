@@ -1,5 +1,12 @@
 # Changelog
 
+## v8.1.18 (2025-11-20)
+
+### Changed
+
+- bump precommit plugins and uv
+- update mac config
+
 ## v8.1.17 (2025-11-01)
 
 ### Changed
