@@ -26,12 +26,15 @@ brew 'git'
 brew 'git-extras'
 brew 'git-filter-repo'
 brew 'glow'
+brew 'go'
+brew 'golangci-lint'
 brew 'gnu-sed'
 brew 'gnupg'
 brew 'gnutls'
 brew 'go-task'
 brew 'grep'
-brew 'gron'
+brew 'gron' # yq like tool
+brew 'gum'
 brew 'hashicorp/tap/terraform'
 brew 'hashicorp/tap/vault'
 brew 'helm'
@@ -42,16 +45,17 @@ brew 'k9s'
 brew 'ktlint'
 brew 'kubectl'
 brew 'kubectx'
+brew 'kubevpn'
 brew 'kustomize'
 brew 'lazydocker'
 brew 'lazygit'
+brew 'libpq'
 brew 'lua'
 brew 'luarocks'
 brew 'magic-wormhole'
 brew 'node'
 brew 'npm'
 brew 'nvim'
-# brew 'ollama'
 brew 'openssl'
 brew 'pipx'
 brew 'poppler'
@@ -71,9 +75,9 @@ brew 'tldr'
 brew 'trash'
 brew 'tree'
 brew 'uv'
-brew 'watch'
+brew 'watch' # https://www.man7.org/linux/man-pages/man1/watch.1.html
 brew 'wget'
-brew 'wrk'
+brew 'wrk' # https://github.com/wg/wrk
 brew 'yarn'
 brew 'yazi'
 brew 'yq'
@@ -101,22 +105,21 @@ cask 'kitty'
 cask 'microsoft-office'
 cask 'microsoft-teams'
 cask 'obsidian'
+cask 'ollama-app'
 cask 'raycast'
 cask 'slack'
 cask 'spotify', args: { require_sha: false }
+cask 'stillcolor' # Disable dithering in monitors
 cask 'ticktick'
 cask 'visual-studio-code'
 cask 'vivaldi'
+cask 'zen'
 
 # Under test
 cask 'appcleaner'
 cask 'jdk-mission-control'
 cask 'visualvm'
-brew 'gum'
 brew 'graphviz'
-cask 'ollama-app'
-cask 'zen'
-cask 'stillcolor'
 
 # Python: managed by pip, pipx, pyenv and uv
 # https://raw.githubusercontent.com/paeneumbra/dotfiles/blob/main/taskfiles/taskfile.python.yml
@@ -134,6 +137,10 @@ cask 'stillcolor'
 # Sometimes just stops working for no apparent reason
 # works when installed from docker.com
 # cask 'docker'
+
+# Ollama
+# Replace by ollama-app
+# brew 'ollama'
 
 # Unused
 # cask 'insomnia'

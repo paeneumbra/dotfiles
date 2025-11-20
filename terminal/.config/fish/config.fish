@@ -28,7 +28,7 @@ set --universal --export DOTS "$HOME/depository/dotfiles"
 fish_add_path --prepend "$DOTS/bin"
 
 # Format man pages
-set -x MANROFFOPT "-c"
+set -x MANROFFOPT -c
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 # Brew (MacOS)
@@ -41,7 +41,7 @@ if test -d "$HOME/.pyenv"
     set --universal --export PYENV_ROOT $HOME/.pyenv
     set --universal --export PIPX_DEFAULT_PYTHON $HOME/.pyenv/shims/python
     fish_add_path --prepend "$PYENV_ROOT/bin"
-     pyenv init - | source
+    pyenv init - | source
 end
 
 # SDKMAN

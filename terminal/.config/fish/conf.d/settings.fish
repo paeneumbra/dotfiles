@@ -20,6 +20,7 @@ switch (uname)
             set CLIPBOARD_CMD "xclip -selection clipboard"
         end
     case Darwin
+        fish_add_path /opt/homebrew/opt/libpq/bin
         set CLIPBOARD_CMD pbcopy
     case '*'
         echo "Unsupported OS: (uname)"
