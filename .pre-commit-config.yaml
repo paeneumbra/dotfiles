@@ -26,7 +26,7 @@ repos:
         exclude: '^\.gitignore$'
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.9.1
+    rev: v4.10.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
@@ -36,7 +36,7 @@ repos:
           - pre-push
 
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.18.1
+    rev: v0.19.0
     hooks:
       - id: markdownlint-cli2
         args:
@@ -61,7 +61,7 @@ repos:
           )$
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.34.1
+    rev: 0.35.0
     hooks:
       - id: check-taskfile
       - id: check-github-workflows
@@ -78,12 +78,12 @@ repos:
       - id: shfmt
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.7
+    rev: 0.9.10
     hooks:
       - id: uv-lock
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.3
+    rev: v0.14.5
     hooks:
       - id: ruff
         args: [--fix]
