@@ -5,7 +5,7 @@ font-style = Medium
 
 # Appearance
 window-padding-x = 10
-window-padding-y = 10
+window-padding-y = 1,10
 window-decoration = false
 background-opacity = 0.90
 unfocused-split-opacity = 0.6
@@ -17,10 +17,11 @@ confirm-close-surface = false
 clipboard-read = allow
 clipboard-write = allow
 shell-integration = fish
-shell-integration-features = no-cursor
+shell-integration-features = no-title
 cursor-style = block
 cursor-style-blink = true
 cursor-click-to-move = true
+title = "👻"
 
 # Keybindings
 keybind = alt+shift+r=reload_config
