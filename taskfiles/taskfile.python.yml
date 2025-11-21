@@ -61,12 +61,11 @@ tasks:
       - pipx ensurepath
 
   pyenv:
-    internal: true
     desc: Install python through pyenv
     cmds:
       - task: assert
         vars:
           REQUIRED_TOOLS: python, pip, pyenv
-      - pyenv install 3.13.3
-      - pyenv global 3.13.3
-      - pyenv local 3.13.3
+      - pyenv install 3.13.4
+      - pyenv global 3.13.4
+      - pyenv local 3.13.4
