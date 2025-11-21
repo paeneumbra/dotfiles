@@ -1,5 +1,17 @@
 # Changelog
 
+## v8.1.19 (2025-11-21)
+
+### Changed
+
+- update pyenv script
+- correct fish config
+- bump neovim
+- bump precommit plugins
+- adjust ghostty and kitty config for macos
+- bump neovim
+- correct fish config
+
 ## v8.1.18 (2025-11-20)
 
 ### Changed
