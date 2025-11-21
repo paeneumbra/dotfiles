@@ -5,10 +5,8 @@ set --query XDG_CACHE_HOME || set --export XDG_CACHE_HOME $HOME/.cache
 set --query XDG_DATA_HOME || set --export XDG_DATA_HOME $HOME/.local/share
 set --query XDG_STATE_HOME || set --export XDG_DATA_HOME $HOME/.local/state
 
-if type -q nvim
-    set --export EDITOR nvim
-    set --export VISUAL nvim
-end
+set --export EDITOR nvim
+set --export VISUAL nvim
 
 switch (uname)
     case Linux
