@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.1.20 (2025-11-26)
+
+### Changed
+
+- bump neovim
+
 ## v8.1.19 (2025-11-21)
 
 ### Changed
