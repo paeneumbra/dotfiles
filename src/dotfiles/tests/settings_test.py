@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from dotfiles.settings import OS
+from src.dotfiles.settings import OS
 
 load_dotenv()
 

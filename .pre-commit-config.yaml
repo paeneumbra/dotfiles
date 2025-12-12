@@ -99,7 +99,13 @@ repos:
         verbose: true
       - id: pytest
         name: run tests
-        entry: uv run pytest dotfiles/tests/
+        entry: uv run pytest src/dotfiles/tests/
         language: system
         pass_filenames: false
         verbose: true
+      - id: ty
+        name: ty check
+        entry: uvx ty check .
+        language: system
+        types: [python]
+        pass_filenames: false

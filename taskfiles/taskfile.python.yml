@@ -58,6 +58,7 @@ tasks:
       - pipx install pip-tools
       - pipx install virtualenv
       - pipx install cookiecutter
+      - pipx install ty
       - pipx ensurepath
 
   pyenv:

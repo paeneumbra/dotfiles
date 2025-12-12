@@ -62,7 +62,7 @@ def get_arguments() -> Dict[str, Any]:
         args = vars(args)
 
     print(f"Arguments: {args}")
-    return args
+    return vars(args)
 
 
 HOME = Path.home()

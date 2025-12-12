@@ -8,7 +8,9 @@ from datetime import datetime
 
 __version__ = "0.2.0"
 
-HOME = os.getenv("HOME", os.getenv("USERPROFILE"))
+from pathlib import Path
+
+HOME = Path.home()
 
 
 # TODO: Broken, remove automatic dotfiles update and logs need to be updated they are ugly
@@ -62,7 +64,7 @@ def parse_arguments(parser: argparse.ArgumentParser):
         sys.exit("No arguments given, run updategitrepos -h")
 
     if args.depository:
-        args.source = os.path.join(HOME, "depository")
+        args.source = HOME / "depository"
 
     if args.source is not None and not os.path.exists(args.source):
         sys.exit(f"Directory not found: {args.source}")

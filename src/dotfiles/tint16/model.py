@@ -1,26 +1,18 @@
+from __future__ import annotations
+
 from dataclasses import dataclass
-from typing import List, Dict, Any
+from typing import Any
 
 
-@dataclass
+@dataclass(frozen=True, slots=True)
 class Palette:
     name: str
     author: str
-    colors: List[str]
+    colors: list[str]
     foreground: str
     background: str
 
-    def to_json(self) -> Dict[str, Any]:
-        """Convert the color scheme instance to JSON format."""
-        return {
-            "name": self.name,
-            "author": self.author,
-            "color": self.colors,
-            "background": self.background,
-            "foreground": self.foreground,
-        }
-
-    def to_dict(self):
+    def to_dict(self) -> dict[str, Any]:
         return {
             "name": self.name,
             "author": self.author,
@@ -28,7 +20,7 @@ class Palette:
             "foreground": self.foreground,
             **{f"color{i}": color for i, color in enumerate(self.colors)},
             **{
-                f"color{i}_value": color[1:] if color.startswith("#") else color
+                f"color{i}_value": (color[1:] if color.startswith("#") else color)
                 for i, color in enumerate(self.colors)
             },
             "background_value": (
@@ -44,11 +36,11 @@ class Palette:
         }
 
     @staticmethod
-    def from_json(json_data: Dict[str, Any]) -> "Palette":
+    def from_json(data: dict[str, Any]) -> "Palette":
         return Palette(
-            name=json_data["name"],
-            author=json_data["author"],
-            colors=json_data["color"],
-            foreground=json_data["foreground"],
-            background=json_data["background"],
+            name=data["name"],
+            author=data["author"],
+            colors=data["color"],
+            foreground=data["foreground"],
+            background=data["background"],
         )
