@@ -1,5 +1,17 @@
 # Changelog
 
+## v8.2.0 (2025-12-12)
+
+### Changed
+
+- update tint16
+- update fish config
+- add sdkman java25
+
+### Fixed
+
+- intellij does not read env variables on mac
+
 ## v8.1.20 (2025-11-26)
 
 ### Changed
