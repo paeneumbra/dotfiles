@@ -2,6 +2,11 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+# https://youtrack.jetbrains.com/articles/SUPPORT-A-1727/Shell-Environment-Loading
+if set -q INTELLIJ_ENVIRONMENT_READER
+    return
+end
+
 if type -q /opt/homebrew/bin/brew
     eval (/opt/homebrew/bin/brew shellenv)
 end
