@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.2.1 (2025-12-13)
+
+### Changed
+
+- make tint16cli run from everywhere
+
 ## v8.2.0 (2025-12-12)
 
 ### Changed
