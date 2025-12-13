@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.2.3 (2025-12-13)
+
+### Changed
+
+- tweaks
+
 ## v8.2.2 (2025-12-13)
 
 ### Changed
