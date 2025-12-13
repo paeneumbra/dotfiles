@@ -43,7 +43,7 @@ def _print_available_schema_paths() -> None:
 @click.option(
     "--list-schemas",
     is_flag=True,
-    help="List available schema JSON files under terminal/.config/tint16/schemas and exit.",
+    help="List available schema JSON files under terminal/.config/tint16/schemas.",
 )
 @click.argument(
     "json_file",
