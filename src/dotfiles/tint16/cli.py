@@ -39,7 +39,7 @@ def _print_available_schema_paths() -> None:
 
 
 @click.command(context_settings={"help_option_names": ["-h", "--help"]})
-@click.version_option(version=get_version(), prog_name="tint16")
+@click.version_option(version=get_version(), prog_name="dotfiles.tint16")
 @click.option(
     "--list-schemas",
     is_flag=True,
