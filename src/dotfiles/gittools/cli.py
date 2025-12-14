@@ -35,8 +35,8 @@ def _print_found_repositories(paths: list[Path]) -> None:
 @click.option(
     "--ignore",
     "-i",
-    multiple=True,
-    help="Directory names to ignore. Can be specified multiple times.",
+    type=str,
+    help="Directory names to ignore (comma-separated).",
 )
 @click.option(
     "--list",
@@ -47,7 +47,7 @@ def _print_found_repositories(paths: list[Path]) -> None:
     help="List git repositories found on path",
 )
 def cli(
-    root: Path, depository: bool, ignore: list[str], list_repositories: bool
+    root: Path, depository: bool, ignore: str, list_repositories: bool
 ) -> None:
     click_debug(
         f"root: {root}, depository: {depository}, ignore: {ignore}, list: {list_repositories}"
@@ -59,7 +59,8 @@ def cli(
     if depository:
         root = Path.home() / "depository"
 
-    git_repos = find_git_repositories(root, ignore)
+    ignore_list = ignore.split(',') if ignore else []
+    git_repos = find_git_repositories(root, ignore_list)
 
     if list_repositories:
         _print_found_repositories(git_repos)

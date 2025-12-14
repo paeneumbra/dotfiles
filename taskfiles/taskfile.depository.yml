@@ -35,25 +35,26 @@ tasks:
 
   update:
     deps: [assert]
-    desc: Update depository
+    desc: Update depository (no archived or templates)
     vars:
-      IGNORE: "{{.HOME}}/depository/archived"
-      CMD: ./bin/updategitrepos.py
+      CMD: ./bin/gittoolscli
     cmds:
-      - "uv run {{.CMD}} --depository --ignore {{.IGNORE}} -r"
+      - "uv run {{.CMD}} --depository --ignore archived,templates"
 
   tokyonight:
     deps: [assert]
     desc: Update colorscheme (documentation)
     vars:
+      CMD: .bin/tint16cli
       COLORSCHEME: "{{.HOME}}/.config/tint16/schemas/tokyonight-moon.json"
     cmds:
-      - "uv run tint16 {{.COLORSCHEME}}"
+      - "uv run {{.CMD}} {{.COLORSCHEME}}"
 
   tokyonight-day:
     deps: [assert]
     desc: Update colorscheme (documentation)
     vars:
+      CMD: .bin/tint16cli
       COLORSCHEME: "{{.HOME}}/.config/tint16/schemas/tokyonight-day.json"
     cmds:
-      - "uv run tint16 {{.COLORSCHEME}}"
+      - "uv run {{.CMD}} {{.COLORSCHEME}}"
