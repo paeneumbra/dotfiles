@@ -14,9 +14,6 @@ dependencies = [
   "click>=8.3.1",
 ]
 
-[project.scripts]
-tint16 = "dotfiles.tint16.cli:cli"
-
 [build-system]
 requires = ["hatchling >= 1.26"]
 build-backend = "hatchling.build"
