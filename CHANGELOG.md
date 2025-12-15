@@ -1,5 +1,12 @@
 # Changelog
 
+## v8.3.1 (2025-12-15)
+
+### Changed
+
+- split cli commands
+- move compare to wip
+
 ## v8.3.0 (2025-12-14)
 
 ### Changed
