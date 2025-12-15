@@ -1,5 +1,6 @@
 import click
 
+from dotfiles.gittools.commands import bulk_update
 from dotfiles.version import get_version
 
 
@@ -9,8 +10,6 @@ def cli() -> None:
     """Git repository management tools."""
     pass
 
-
-from .commands import bulk_update
 
 cli.add_command(bulk_update.update)  # type: ignore
 

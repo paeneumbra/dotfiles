@@ -1,6 +1,6 @@
 from pathlib import Path
 import toml
-from src.dotfiles.version import __version__
+from dotfiles.version import __version__
 
 
 def test_version():

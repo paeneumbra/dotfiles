@@ -44,9 +44,7 @@ def _print_found_repositories(paths: list[Path]) -> None:
     is_flag=True,
     help="List git repositories found on path",
 )
-def update(
-    root: Path, depository: bool, ignore: str, list_repositories: bool
-) -> None:
+def update(root: Path, depository: bool, ignore: str, list_repositories: bool) -> None:
     click_debug(
         f"root: {root}, depository: {depository}, ignore: {ignore}, list: {list_repositories}"
     )

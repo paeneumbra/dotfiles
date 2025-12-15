@@ -2,12 +2,12 @@ import os
 import platform
 from pathlib import Path
 
-HOME = os.getenv("HOME") or os.getenv("USERPROFILE") or str(Path.home())
-XDG_CACHE_DIR = os.getenv("XDG_CACHE_HOME", os.path.join(HOME, ".cache"))
-XDG_CONF_DIR = os.getenv("XDG_CONFIG_HOME", os.path.join(HOME, ".config"))
+HOME = Path.home()
+XDG_CACHE_DIR = Path(os.getenv("XDG_CACHE_HOME", HOME / ".cache"))
+XDG_CONF_DIR = Path(os.getenv("XDG_CONFIG_HOME", HOME / ".config"))
 
-MODULE_DIR = os.path.dirname(__file__)
-DATA_DIR = os.path.join(MODULE_DIR, ".data")
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DATA_DIR = PROJECT_ROOT / ".data"
 
-OS = platform.uname()[0]
-DISTRO = platform.uname()[1]
+OS = platform.system()
+DISTRO = platform.node()
