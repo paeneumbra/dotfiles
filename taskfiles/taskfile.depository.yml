@@ -39,7 +39,7 @@ tasks:
     vars:
       CMD: ./bin/gittoolscli
     cmds:
-      - "uv run {{.CMD}} --depository --ignore archived,templates"
+      - "uv run {{.CMD}} update --depository --ignore archived,templates"
 
   tokyonight:
     deps: [assert]
