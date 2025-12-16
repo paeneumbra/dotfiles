@@ -1,5 +1,16 @@
 # Changelog
 
+## v8.3.2 (2025-12-16)
+
+### Changed
+
+- add clone to gittools
+- move test directory
+
+### Tools
+
+- update precommit and uv versions
+
 ## v8.3.1 (2025-12-15)
 
 ### Changed
