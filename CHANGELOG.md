@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.3.3 (2025-12-16)
+
+### Tools
+
+- remove precommit lua hook
+
 ## v8.3.2 (2025-12-16)
 
 ### Changed
