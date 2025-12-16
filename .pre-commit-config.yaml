@@ -36,7 +36,7 @@ repos:
           - pre-push
 
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.19.0
+    rev: v0.20.0
     hooks:
       - id: markdownlint-cli2
         args:
@@ -51,7 +51,7 @@ repos:
       - id: stylua-system
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: '3.4.1'
+    rev: '3.6.0'
     hooks:
       - id: editorconfig-checker
         exclude: |
@@ -61,7 +61,7 @@ repos:
           )$
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.35.0
+    rev: 0.36.0
     hooks:
       - id: check-taskfile
       - id: check-github-workflows
@@ -78,14 +78,14 @@ repos:
       - id: shfmt
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.11
+    rev: 0.9.18
     hooks:
       - id: uv-lock
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.6
+    rev: v0.14.9
     hooks:
-      - id: ruff
+      - id: ruff-check
         args: [--fix]
       - id: ruff-format
 
