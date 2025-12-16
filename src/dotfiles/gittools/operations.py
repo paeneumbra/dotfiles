@@ -2,6 +2,7 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
+from dotfiles.gittools.files import get_clone_arguments
 from dotfiles.gittools.models import OperationOutput, OperationResult
 
 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -21,13 +22,15 @@ git_default_branch = ["git", "symbolic-ref", "refs/remotes/origin/HEAD"]
 git_current_branch = ["git", "branch", "--show-current"]
 git_checkout = ["git", "switch"]
 git_fetch = ["git", "fetch", "--all"]
+git_clone = ["git", "clone"]
 
 
-def execute_git_command(command: list[str], repo_path: Path) -> OperationOutput:
+def execute_git_command(command: list[str], cwd: Path | None) -> OperationOutput:
+    # If cwd is not specified, use the current working directory -> Necessary for git clone
     try:
         operation_result = subprocess.run(
             command,
-            cwd=repo_path,
+            cwd=cwd,
             capture_output=True,
             text=True,
             check=False,
@@ -53,8 +56,7 @@ def execute_git_command(command: list[str], repo_path: Path) -> OperationOutput:
         return OperationOutput(command, -1, "", f"Unexpected error: {e}")
 
 
-# TODO: revisit the messages - they are appended before evaluating the result might not be needed
-def pull_default_branch(repo_path: Path) -> OperationResult:
+def update_repository(repo_path: Path) -> OperationResult:
     # Fails fast if any operation that returns a failure
     result = OperationResult(repo_path)
 
@@ -106,5 +108,15 @@ def pull_default_branch(repo_path: Path) -> OperationResult:
     return result
 
 
-def update_repository(repo: Path) -> OperationResult:
-    return pull_default_branch(repo)
+def clone_from_file(repositories: dict, root: str) -> OperationResult:
+    result = OperationResult(Path(root))
+    url_to_target_dir = get_clone_arguments(repositories, root)
+
+    for url, target_dir in url_to_target_dir.items():
+        # Explicitly set cwd to none for git clone, otherwise it will fail
+        clone = execute_git_command([*git_clone, url, target_dir], None)
+        if clone.failure:
+            result.append(clone, f"Failed to clone {url}")
+        else:
+            result.append(clone, f"Cloned {url} to {target_dir}")
+    return result

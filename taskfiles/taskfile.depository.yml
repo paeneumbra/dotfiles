@@ -27,11 +27,13 @@ tasks:
     vars:
       REQUIRED_TOOLS: git, python3, uv
 
-  setup:
+  clone:
     deps: [assert]
     desc: Setup repositories
+    vars:
+      CMD: ./bin/gittoolscli
     cmds:
-      - uv run ./dotfiles/repository_setup.py -s ./repositories.yaml -r
+      - "uv run {{.CMD}} clone -f ./repositories.yaml -r ~/depository"
 
   update:
     deps: [assert]

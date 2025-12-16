@@ -1,6 +1,6 @@
 import click
 
-from dotfiles.gittools.commands import bulk_update
+from dotfiles.gittools.commands import bulk_update, bulk_clone
 from dotfiles.version import get_version
 
 
@@ -12,6 +12,7 @@ def cli() -> None:
 
 
 cli.add_command(bulk_update.update)  # type: ignore
+cli.add_command(bulk_clone.clone)  # type: ignore
 
 if __name__ == "__main__":
     print(f"DEBUG: Registered commands: {cli.commands.keys()}")
