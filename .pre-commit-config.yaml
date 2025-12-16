@@ -45,11 +45,6 @@ repos:
           - --fix
         exclude: '^(CHANGELOG.md)$'
 
-  - repo: https://github.com/JohnnyMorganz/StyLua
-    rev: v2.3.1
-    hooks:
-      - id: stylua-system
-
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: '3.6.0'
     hooks:
