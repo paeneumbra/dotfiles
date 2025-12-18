@@ -19,6 +19,7 @@ Intellij IDEA community useful plugins:
 - ideavim
 
 Current
+
 - .ignore
 - Gherkin
 - IdeaVim
