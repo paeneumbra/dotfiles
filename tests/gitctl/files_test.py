@@ -1,7 +1,7 @@
 import pytest
 import yaml
 
-from dotfiles.gittools.files import (
+from dotfiles.gitctl.files import (
     map_directory_to_repositories,
     validate_repository_string,
     is_valid_path,

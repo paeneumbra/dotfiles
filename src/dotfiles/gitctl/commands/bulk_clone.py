@@ -3,8 +3,8 @@ from pathlib import Path
 import click
 
 from dotfiles.commons.file_operations import read_yaml
-from dotfiles.gittools.files import map_directory_to_repositories
-from dotfiles.gittools.operations import clone_from_file
+from dotfiles.gitctl.files import map_directory_to_repositories
+from dotfiles.gitctl.operations import clone_from_file
 from dotfiles.tui.click_logs import click_debug, click_error, click_success, click_info
 
 

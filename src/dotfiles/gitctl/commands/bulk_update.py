@@ -2,8 +2,8 @@ from pathlib import Path
 
 import click
 
-from dotfiles.gittools.finder import find_git_repositories
-from dotfiles.gittools.operations import update_repository
+from dotfiles.gitctl.finder import find_git_repositories
+from dotfiles.gitctl.operations import update_repository
 from dotfiles.tui.click_logs import click_debug, click_error, click_success, click_info
 
 

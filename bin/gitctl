@@ -17,7 +17,7 @@ subprocess.run(
         str(project_dir),
         "python",
         "-c",
-        f"from dotfiles.gittools.cli import cli; cli(prog_name='{script_name}')",
+        f"from dotfiles.gitctl.cli import cli; cli(prog_name='{script_name}')",
         *sys.argv[1:],
     ]
 )

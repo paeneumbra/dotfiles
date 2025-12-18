@@ -1,11 +1,11 @@
 import click
 
-from dotfiles.gittools.commands import bulk_update, bulk_clone
+from dotfiles.gitctl.commands import bulk_update, bulk_clone
 from dotfiles.version import get_version
 
 
 @click.group(context_settings={"help_option_names": ["-h", "--help"]})
-@click.version_option(version=get_version(), prog_name="dotfiles.gittools")
+@click.version_option(version=get_version(), prog_name="dotfiles.gitctl")
 def cli() -> None:
     """Git repository management tools."""
     pass

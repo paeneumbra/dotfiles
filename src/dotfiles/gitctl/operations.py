@@ -2,8 +2,8 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
-from dotfiles.gittools.files import get_clone_arguments
-from dotfiles.gittools.models import OperationOutput, OperationResult
+from dotfiles.gitctl.files import get_clone_arguments
+from dotfiles.gitctl.models import OperationOutput, OperationResult
 
 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
