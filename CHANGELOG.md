@@ -1,5 +1,12 @@
 # Changelog
 
+## v8.3.4 (2025-12-18)
+
+### Changed
+
+- start moving compare
+- cleanup
+
 ## v8.3.3 (2025-12-16)
 
 ### Tools
