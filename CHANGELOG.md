@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.3.5 (2025-12-18)
+
+### Changed
+
+- rename gittools as gitctl
+
 ## v8.3.4 (2025-12-18)
 
 ### Changed
