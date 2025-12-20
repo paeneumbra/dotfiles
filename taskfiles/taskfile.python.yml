@@ -67,6 +67,6 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: python, pip, pyenv
-      - pyenv install 3.13.4
-      - pyenv global 3.13.4
-      - pyenv local 3.13.4
+      - pyenv install 3.14.2
+      - pyenv global 3.14.2
+      - pyenv local 3.14.2
