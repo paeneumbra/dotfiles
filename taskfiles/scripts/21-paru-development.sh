@@ -23,6 +23,7 @@ PKGS=(
   yq
   lazygit
   gron
+  go
 )
 
 echo "Installing required packages for development"

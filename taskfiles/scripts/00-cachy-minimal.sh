@@ -9,6 +9,7 @@ PKGS=(
   # Apps
   bottom
   ghostty
+  go
   go-task
   neovim
   ripgrep

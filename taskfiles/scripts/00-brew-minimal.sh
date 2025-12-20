@@ -17,6 +17,7 @@ PKGS=(
   fish
   fzf
   git
+  go
   go-task
   neovim
   openssh
