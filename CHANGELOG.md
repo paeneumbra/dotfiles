@@ -1,5 +1,16 @@
 # Changelog
 
+## v8.3.6 (2025-12-20)
+
+### Changed
+
+- update neovim config
+- add go to installation
+
+### Tools
+
+- update pyenv shims version
+
 ## v8.3.5 (2025-12-18)
 
 ### Changed
