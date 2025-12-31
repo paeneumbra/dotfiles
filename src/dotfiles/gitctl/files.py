@@ -29,7 +29,7 @@ def validate_repository_string(repo_string: str) -> bool:
 
 
 def is_valid_path(path):
-    """
+    r"""
     Checks if a given file path is valid.
 
     This function uses a regular expression to validate the provided file
