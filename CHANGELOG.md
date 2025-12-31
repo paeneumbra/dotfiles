@@ -1,5 +1,12 @@
 # Changelog
 
+## v8.3.7 (2025-12-31)
+
+### Changed
+
+- bump neovim and precommit plugins
+- tweak intellij env variable
+
 ## v8.3.6 (2025-12-20)
 
 ### Changed
