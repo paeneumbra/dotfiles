@@ -34,6 +34,16 @@ zstyle ':zim:completion' dumpfile "$XDG_CACHE_HOME/zsh/.zcompdump-${ZSH_VERSION}
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # ------------------
+# Jetbrains IDEs
+# ------------------
+
+# https://youtrack.jetbrains.com/articles/SUPPORT-A-1727/Shell-Environment-Loading
+
+if [[ -n "$INTELLIJ_ENVIRONMENT_READER" ]]; then
+  return 0
+fi
+
+# ------------------
 # Initialize modules
 # ------------------
 
@@ -49,7 +59,7 @@ if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
   fi
 fi
 # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
-if [[ -z "${INTELLIJ_ENVIRONMENT_READER:-}" && ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
   source ${ZIM_HOME}/zimfw.zsh init -q
 fi
 # Initialize modules.

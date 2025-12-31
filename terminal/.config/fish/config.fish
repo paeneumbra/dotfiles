@@ -3,8 +3,8 @@ if status is-interactive
 end
 
 # https://youtrack.jetbrains.com/articles/SUPPORT-A-1727/Shell-Environment-Loading
-if set -q INTELLIJ_ENVIRONMENT_READER
-    return
+if test -n "$INTELLIJ_ENVIRONMENT_READER"
+  return 0
 end
 
 if type -q /opt/homebrew/bin/brew
