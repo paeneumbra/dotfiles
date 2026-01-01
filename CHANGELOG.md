@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.3.8 (2026-01-01)
+
+### Changed
+
+- update hyprland config
+
 ## v8.3.7 (2025-12-31)
 
 ### Changed
