@@ -2,17 +2,21 @@
 binds {
     Mod+Shift+Control+I { show-hotkey-overlay; }
 
-    Control+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    Ctrl+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // CTRL SHIFT ALT SUPER   # left extra key
     // CTRL SHIFT ALT         # right extra key
-    // https://docs.noctalia.dev/getting-started/keybinds/
-    Control+Space hotkey-overlay-title="Launch menu" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-    Control+Shift+Alt+S hotkey-overlay-title="Launch control center settings" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"; }
-    Control+Shift+Alt+C hotkey-overlay-title="Launch clipboard" {spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard";}
-    Control+Shift+Alt+E hotkey-overlay-title="Launch clipboard" {spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "emoji";}
-    Control+Shift+Alt+Q hotkey-overlay-title="Launch clipboard" {spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";}
+    // https://danklinux.com/docs/dankmaterialshell/compositors#dms-keybindings
+    Ctrl+Space hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Ctrl+Shift+Alt+S hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
+    Ctrl+Shift+Alt+C hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+    Ctrl+Shift+Alt+Q hotkey-overlay-title="Power Menu" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+    // Experimental
+    Ctrl+Shift+Alt+G hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
+    Ctrl+Shift+Alt+T hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
+    // Safe
+    Mod+D hotkey-overlay-title="Launch rofi" { spawn "rofi" "-show" "drun"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -97,9 +101,8 @@ binds {
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
-    Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+Ctrl+F { maximize-column;  }
     Mod+C { center-column; }
 
     Mod+Minus { set-column-width "-10%"; }
@@ -114,7 +117,7 @@ binds {
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
     Mod+W { toggle-column-tabbed-display; }
-    Mod+P { screenshot; }
+    Mod+Ctrl+P { screenshot; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here

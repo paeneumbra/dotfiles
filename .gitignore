@@ -158,3 +158,10 @@ Brewfile.lock.json
 # aider
 .aider*
 !.aider.conf.yml
+
+# dms
+/niri/.config/niri/dms/
+/terminal/.config/alacritty/dank-theme.toml
+/terminal/.config/ghostty/config-dankcolors
+/terminal/.config/kitty/dank-tabs.conf
+/terminal/.config/kitty/dank-theme.conf

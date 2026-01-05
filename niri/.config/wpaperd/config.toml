@@ -1,0 +1,13 @@
+[default]
+duration = "10m"
+mode = "center"
+sorting = "ascending"
+transition-time = 6000
+
+[any]
+path = "~/depository/dotfiles/wallpapers/black"
+
+# ["re:DP-\\d"]
+# path =  "~/depository/dotfiles/wallpapers/black"
+
+[default.transition.fade]

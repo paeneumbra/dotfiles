@@ -4,11 +4,14 @@ input {
         xkb {
             layout "us"
         }
+        repeat-delay 200
+        repeat-rate 25
     }
 
     touchpad {
         tap
         dwt
+        drag false
         scroll-method "two-finger"
         // disabled-on-external-mouse
     }
@@ -16,4 +19,6 @@ input {
     mouse {
         scroll-factor 1.0
     }
+
+    workspace-auto-back-and-forth
 }

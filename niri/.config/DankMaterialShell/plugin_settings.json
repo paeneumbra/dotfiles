@@ -1,0 +1,15 @@
+{
+  "asusControlCenter": {
+    "enabled": true
+  },
+  "emojiLauncher": {
+    "enabled": true,
+    "trigger": ":",
+    "noTrigger": false
+  },
+  "niriWindows": {
+    "enabled": true,
+    "trigger": "@",
+    "noTrigger": false
+  }
+}

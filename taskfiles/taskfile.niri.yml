@@ -53,7 +53,7 @@ tasks:
         vars:
           REQUIRED_TOOLS: stow
       - "rm -rf {{.HOME}}/.config/niri"
-      - "rm -rf {{.HOME}}/.config/noctalia"
+      - "mkdir -p {{.HOME}}/.config/DankMaterialShell/plugins"
       - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} niri"
 
 

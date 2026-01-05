@@ -1,4 +1,6 @@
 // https://yalter.github.io/niri/Configuration:-Outputs
+
+// AsusMuxDgpu mode
 output "eDP-1" {
     mode "2880x1800"
     scale 1.5
@@ -8,6 +10,8 @@ output "eDP-1" {
         bottom-left
     }
 }
+
+// Hybrid or Integrated graphics mode
 output "eDP-2" {
     mode "2880x1800"
     scale 1.5
@@ -17,6 +21,8 @@ output "eDP-2" {
         bottom-left
     }
 }
+
+// HDMI Port
 output "HDMI-A-1" {
     mode "3840x2160"
     transform "normal"
@@ -25,6 +31,8 @@ output "HDMI-A-1" {
         bottom-right
     }
 }
+
+// DP Ports
 output "DP-1" {
     mode "3840x2160"
     transform "normal"

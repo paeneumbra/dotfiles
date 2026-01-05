@@ -1,20 +1,25 @@
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
 
-// Open the Firefox picture-in-picture player as floating by default.
+// Open floating by default.
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="pavucontrol"
+    match app-id="rog-control-center"
+    match title=r#".*Extension.*Bitwarden.*"#
     open-floating true
+    open-focused true
 }
 
-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
-    block-out-from "screen-capture"
-}
 
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+    tiled-state true
+    draw-border-with-background false
+}
+
+layer-rule {
+    match namespace="dms:blurwallpaper"
+    place-within-backdrop true
 }

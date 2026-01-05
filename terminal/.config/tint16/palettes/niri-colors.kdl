@@ -1,0 +1,40 @@
+//# Tint16 generated palette
+//# Theme: "Tokyonight Moon"
+//# Author: "Folke (https://github.com/folke/tokyonight.nvim)"
+
+layout {
+    background-color "transparent"
+
+    focus-ring {
+        active-color   "#82aaff"
+        inactive-color "#444a73"
+        urgent-color   "#ffc777"
+    }
+
+    border {
+        active-color   "#82aaff"
+        inactive-color "#444a73"
+        urgent-color   "#ffc777"
+    }
+
+    shadow {
+        color "#00000070"
+    }
+
+    tab-indicator {
+        active-color   "#82aaff"
+        inactive-color "#444a73"
+        urgent-color   "#ffc777"
+    }
+
+    insert-hint {
+        color "#42a5f580"
+    }
+}
+
+recent-windows {
+    highlight {
+        active-color   "#86e1fc"
+        urgent-color   "#ffc777"
+    }
+}

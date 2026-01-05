@@ -4,5 +4,9 @@ environment {
     XDG_SESSION_TYPE "wayland"
     XDG_CURRENT_DESKTOP "niri"
     QT_QPA_PLATFORMTHEME "gtk3"
+    QT_QPA_PLATFORMTHEME_QT6 "qt6ct"
     QS_ICON_THEME "Papirus"
+    // Disable theme file generation
+    // -> enable again for generating qt and gtk colorschemes
+    // DMS_DISABLE_MATUGEN "1"
 }

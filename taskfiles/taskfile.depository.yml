@@ -47,7 +47,7 @@ tasks:
     deps: [assert]
     desc: Update colorscheme (documentation)
     vars:
-      CMD: .bin/tint16cli
+      CMD: ./bin/tint16cli
       COLORSCHEME: "{{.HOME}}/.config/tint16/schemas/tokyonight-moon.json"
     cmds:
       - "uv run {{.CMD}} {{.COLORSCHEME}}"
@@ -56,7 +56,7 @@ tasks:
     deps: [assert]
     desc: Update colorscheme (documentation)
     vars:
-      CMD: .bin/tint16cli
+      CMD: ./bin/tint16cli
       COLORSCHEME: "{{.HOME}}/.config/tint16/schemas/tokyonight-day.json"
     cmds:
       - "uv run {{.CMD}} {{.COLORSCHEME}}"

@@ -20,6 +20,6 @@ palette = 14={color14}
 palette = 15={color15}
 background = {background}
 foreground = {foreground}
-cursor-color = {color8}
+cursor-color = {color15}
 selection-background = {color8}
 selection-foreground = {foreground}

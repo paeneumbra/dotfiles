@@ -12,12 +12,13 @@ PKGS=(
   udiskie
   qt5-wayland
   qt6-wayland
-  polkit-kde-agent
+  polkit-gnome
   brightnessctl
   cava
   cliphist
   wl-clipboard
   nwg-look
+  wpaperd
   # quickshell+dms
   dgop
 )
@@ -36,6 +37,7 @@ PARUPKGS=(
   matugen-git
   dsearch-bin
   qt6ct-kde
+  journalctl-desktop-notification
 )
 
 echo "Installing hypr AUR packages"
