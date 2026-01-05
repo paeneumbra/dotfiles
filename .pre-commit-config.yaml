@@ -43,7 +43,12 @@ repos:
           - --config
           - .markdownlint.yaml
           - --fix
-        exclude: '^(CHANGELOG.md)$'
+        exclude: |
+          (?x)^(
+              CHANGELOG\.md|
+              \.gitmodules|
+              niri/\.config/noctalia/plugins/.*
+          )$
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: '3.6.0'
@@ -51,8 +56,9 @@ repos:
       - id: editorconfig-checker
         exclude: |
           (?x)^(
-              CHANGELOG.md |
-              .gitmodules
+              CHANGELOG\.md|
+              \.gitmodules|
+              niri/\.config/noctalia/plugins/.*
           )$
 
   - repo: https://github.com/python-jsonschema/check-jsonschema

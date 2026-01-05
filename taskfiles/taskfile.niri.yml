@@ -1,0 +1,67 @@
+version: '3'
+
+tasks:
+
+  default:
+    internal: true
+    desc: Default
+    cmds:
+      - |
+        echo "Working dir: {{.USER_WORKING_DIR}}"
+        echo "OS: {{OS}}"
+        task --list
+    silent: true
+
+  assert:
+    cmds:
+      - for:
+          var: REQUIRED_TOOLS
+          split: ','
+          as: TOOL
+        cmd: |
+          [ -n "$(which {{ .TOOL }})" ] || ( \
+            echo "ERROR: `{{ .TOOL }}` not found" && exit 1; \
+          )
+    silent: true
+    internal: true
+
+  niri:
+    desc: Base installation
+    platforms: [linux]
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: pacman, stow
+      - task: installation
+      - task: stow
+
+  installation:
+    internal: true
+    desc: Niri installation
+    platforms: [linux]
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: pacman
+      - "{{.ROOT_DIR}}/taskfiles/scripts/51-paru-niri.sh"
+
+  stow:
+    desc: Symlink Niri packages
+    platforms: [linux]
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: stow
+      - "rm -rf {{.HOME}}/.config/niri"
+      - "rm -rf {{.HOME}}/.config/noctalia"
+      - "stow --restow --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} niri"
+
+
+  destow:
+    desc: Unstow niri packages
+    platforms: [linux]
+    cmds:
+      - task: assert
+        vars:
+          REQUIRED_TOOLS: stow
+      - "stow --delete --verbose --dir={{.ROOT_DIR}} --target={{.HOME}} niri"

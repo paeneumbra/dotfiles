@@ -3,25 +3,23 @@
 set -uo pipefail
 
 PKGS=(
-  hyprland
-  hyprland-guiutils
-  dunst
-  kitty
-  xdg-desktop-portal-hyprland
+  niri
+  waybar
+  alacritty
   xdg-desktop-portal-gtk
+  xdg-desktop-portal-gnome
+  xwayland-satellite
+  udiskie
   qt5-wayland
   qt6-wayland
   polkit-kde-agent
-  grim
-  slurp
   brightnessctl
-  # Others
-  waybar
-  wpaperd
+  cava
   cliphist
-  # fuzzel
+  wl-clipboard
   nwg-look
-  rofi-wayland
+  # quickshell+dms
+  dgop
 )
 
 echo "Installing packages"
@@ -32,8 +30,12 @@ for PKG in "${PKGS[@]}"; do
 done
 
 PARUPKGS=(
-  hyprsunset
-  bemoji
+  # quickshell dms
+  adw-gtk-theme
+  dms-shell-bin
+  matugen-git
+  dsearch-bin
+  qt6ct-kde
 )
 
 echo "Installing hypr AUR packages"
