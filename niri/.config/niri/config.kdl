@@ -8,7 +8,7 @@ include "window-rule.kdl"
 include "binds.kdl"
 include "environment.kdl"
 // TODO: This should be a relative path or at least a option (available in the next release)
-include "/home/angua/.config/tint16/palettes/niri-colors.kdl"
+include "/home/vimes/.config/tint16/palettes/niri-colors.kdl"
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-at-startup
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
