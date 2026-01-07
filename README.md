@@ -2,9 +2,11 @@
 
 Personal laboratory mostly for development.
 
+Version alias: Harry Dresden
+
 ## Installation
 
-Current installation is done with cachy.
+Current using cachyOS and Niri.
 Remainder is done through the taskfiles.
 
 ### Requirements
