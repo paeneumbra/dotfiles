@@ -19,6 +19,7 @@ PKGS=(
   man-pages
   zip
   unzip
+  7zip
   poppler
   ripgrep
   ripgrep-all

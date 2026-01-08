@@ -245,7 +245,12 @@
     "osd": [
       "all"
     ],
-    "toast": [],
+    "toast": [
+      {
+        "name": "HDMI-A-1",
+        "model": "DELL P3223QE"
+      }
+    ],
     "notepad": [
       "all"
     ]

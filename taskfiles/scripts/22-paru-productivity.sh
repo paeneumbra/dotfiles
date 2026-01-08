@@ -6,9 +6,8 @@ PKGS=(
   seahorse
   calibre
   obsidian
-  vivaldi
   slack-desktop-wayland
-  spotify-launcher
+  spotify
   ticktick
   thunderbird
   signal-desktop
