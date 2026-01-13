@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# lists windows via 'msg windows', extract IDs and close them.
+niri msg -j windows |
+        jq -r '.[] | .id' |
+        xargs -I{} niri msg action close-window --id {}
+
+# Move to the first workspace
+niri msg action focus-workspace 1

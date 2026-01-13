@@ -31,7 +31,8 @@ for PKG in "${PKGS[@]}"; do
 done
 
 PARUPKGS=(
-  # quickshell dms
+  # quickshell+dms
+  quickshell-git
   adw-gtk-theme
   dms-shell-bin
   matugen-git

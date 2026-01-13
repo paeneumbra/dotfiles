@@ -19,7 +19,6 @@ PKGS=(
   waybar
   wpaperd
   cliphist
-  # fuzzel
   nwg-look
   rofi-wayland
 )

@@ -33,10 +33,11 @@ check_required_tools() {
 
 PIPX_PKGS=(
   ruff
-  poetry
+  # poetry
   commitizen
   pre-commit
-  cookiecutter
+  # cookiecutter
+  ty
 )
 
 PIPX_REQUIREMENTS=(python pip)
