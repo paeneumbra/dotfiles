@@ -10,12 +10,14 @@ binds {
     // https://danklinux.com/docs/dankmaterialshell/compositors#dms-keybindings
     Ctrl+Space hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Ctrl+Shift+Alt+S hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
-    Ctrl+Shift+Alt+C hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+    Ctrl+Shift+Alt+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+    Ctrl+Shift+Alt+C hotkey-overlay-title="Clipboard Manager" { spawn "sh" "-c" "cliphist list | rofi -dmenu | cliphist decode | wl-copy"; }
     Ctrl+Shift+Alt+Q hotkey-overlay-title="Power Menu" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
-    // Experimental
     Ctrl+Shift+Alt+G hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
     Ctrl+Shift+Alt+T hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
-    // Safe
+    // Experimental
+    Ctrl+Shift+Alt+Mod+N hotkey-overlay-title="DMS Notepad" { spawn "dms" "ipc" "call" "notepad" "open"; }
+    // Backup in case DMS fails
     Mod+D hotkey-overlay-title="Launch rofi" { spawn "rofi" "-show" "drun"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }

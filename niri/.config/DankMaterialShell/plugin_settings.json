@@ -11,5 +11,8 @@
     "enabled": true,
     "trigger": "@",
     "noTrigger": false
+  },
+  "dankBatteryAlerts": {
+    "enabled": true
   }
 }

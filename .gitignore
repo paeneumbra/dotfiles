@@ -161,6 +161,7 @@ Brewfile.lock.json
 
 # dms
 /niri/.config/niri/dms/
+/niri/.config/DankMaterialShell/themes/
 /terminal/.config/alacritty/dank-theme.toml
 /terminal/.config/ghostty/config-dankcolors
 /terminal/.config/kitty/dank-tabs.conf
