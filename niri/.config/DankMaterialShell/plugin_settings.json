@@ -8,7 +8,7 @@
     "noTrigger": false
   },
   "niriWindows": {
-    "enabled": true,
+    "enabled": false,
     "trigger": "@",
     "noTrigger": false
   },

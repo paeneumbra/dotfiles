@@ -16,7 +16,6 @@ PKGS=(
   ripgrep-all
   stow
   yazi
-  cliphist
 )
 
 for PKG in "${PKGS[@]}"; do

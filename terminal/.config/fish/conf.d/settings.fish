@@ -10,7 +10,10 @@ set --export VISUAL nvim
 
 switch (uname)
     case Linux
-        if type -q wl-copy
+        if type -q dms cl copy
+            # dms
+            set CLIPBOARD_CMD dms cl copy
+        else if type -q wl-copy
             # Wayland
             set CLIPBOARD_CMD wl-copy
         else if type -q xclip

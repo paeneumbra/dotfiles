@@ -2,7 +2,10 @@
 
 case "$(uname)" in
 Linux)
-  if command -v wl-copy &>/dev/null; then
+  if command -v dms cl copy &>/dev/null; then
+    #DMS
+    CLIPBOARD_CMD="dms cl copy"
+  elif command -v wl-copy &>/dev/null; then
     # Wayland
     CLIPBOARD_CMD="wl-copy"
   elif command -v xclip &>/dev/null; then

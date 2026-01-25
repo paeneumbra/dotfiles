@@ -28,7 +28,7 @@
   "nightModeEnabled": false,
   "animationSpeed": 1,
   "customAnimationDuration": 200,
-  "wallpaperFillMode": "Fill",
+  "wallpaperFillMode": "Stretch",
   "blurredWallpaperLayer": false,
   "blurWallpaperOnOverview": false,
   "showLauncherButton": true,
@@ -60,6 +60,7 @@
   "controlCenterShowMicPercent": false,
   "controlCenterShowBatteryIcon": false,
   "controlCenterShowPrinterIcon": false,
+  "controlCenterShowScreenSharingIcon": true,
   "showPrivacyButton": true,
   "privacyShowMicIcon": false,
   "privacyShowCameraIcon": false,
@@ -333,7 +334,9 @@
   "screenPreferences": {
     "dock": [],
     "notifications": [],
-    "wallpaper": [],
+    "wallpaper": [
+      "all"
+    ],
     "osd": [
       "all"
     ],
@@ -390,11 +393,24 @@
         {
           "id": "privacyIndicator",
           "enabled": true
+        },
+        {
+          "id": "clock",
+          "enabled": true,
+          "clockCompactMode": true
         }
       ],
       "rightWidgets": [
         {
+          "id": "idleInhibitor",
+          "enabled": true
+        },
+        {
           "id": "notificationButton",
+          "enabled": true
+        },
+        {
+          "id": "clipboard",
           "enabled": true
         },
         {
@@ -410,16 +426,15 @@
           "enabled": true
         },
         {
+          "id": "asusControlCenter",
+          "enabled": true
+        },
+        {
           "id": "systemTray",
           "enabled": true
         },
         {
-          "id": "clock",
-          "enabled": true,
-          "clockCompactMode": false
-        },
-        {
-          "id": "asusControlCenter",
+          "id": "powerMenuButton",
           "enabled": true
         }
       ],

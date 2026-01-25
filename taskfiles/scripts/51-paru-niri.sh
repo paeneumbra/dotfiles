@@ -4,7 +4,6 @@ set -uo pipefail
 
 PKGS=(
   niri
-  waybar
   alacritty
   xdg-desktop-portal-gtk
   xdg-desktop-portal-gnome
@@ -15,12 +14,14 @@ PKGS=(
   polkit-gnome
   brightnessctl
   cava
-  cliphist
-  wl-clipboard
   nwg-look
-  wpaperd
+  rofi
   # quickshell+dms
   dgop
+  # replaced by dms
+  # cliphist
+  # wpaperd
+  # waybar
 )
 
 echo "Installing packages"
