@@ -44,7 +44,7 @@ tasks:
       - sh: '[[ -d "{{.HOME}}/.sdkman" ]]'
         msg: sdkman is not installed
     cmds:
-      - "{{.SOURCE_CMD}} && sdk install java 25-tem'"
+      - "{{.SOURCE_CMD}} && sdk install java 25.0.2-tem'"
       - "{{.SOURCE_CMD}} && sdk install java 21.0.5-tem'"
       - "{{.SOURCE_CMD}} && sdk install kotlin'"
       - "{{.SOURCE_CMD}} && sdk install groovy'"
