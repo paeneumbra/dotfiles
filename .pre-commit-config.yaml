@@ -26,7 +26,7 @@ repos:
         exclude: '^\.gitignore$'
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.11.0
+    rev: v4.13.7
     hooks:
       - id: commitizen
         stages: [commit-msg]
@@ -62,13 +62,13 @@ repos:
           )$
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.36.0
+    rev: 0.36.1
     hooks:
       - id: check-taskfile
       - id: check-github-workflows
 
   - repo: https://github.com/google/yamlfmt
-    rev: v0.20.0
+    rev: v0.21.0
     hooks:
       - id: yamlfmt
         args: ['-formatter', 'retain_line_breaks=true']
@@ -79,12 +79,12 @@ repos:
       - id: shfmt
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.9.21
+    rev: 0.10.2
     hooks:
       - id: uv-lock
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.10
+    rev: v0.15.1
     hooks:
       - id: ruff-check
         args: [--fix]
