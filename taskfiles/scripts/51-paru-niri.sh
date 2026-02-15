@@ -18,8 +18,8 @@ PKGS=(
   rofi
   # quickshell+dms
   dgop
+  cliphist
   # replaced by dms
-  # cliphist
   # wpaperd
   # waybar
 )
