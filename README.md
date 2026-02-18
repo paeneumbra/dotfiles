@@ -14,7 +14,6 @@ Remainder is done through the taskfiles.
 - go-task
 - python
 - stow
-- zsh
 - fish
 
 ## Configuration

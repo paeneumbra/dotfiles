@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-
 # Fix for pyenv rehash lock file issue caused by FZF interruptions
 #
 # SYMPTOM:
@@ -28,7 +27,7 @@ set -euo pipefail
 # Remove the stale lock file left behind by the interrupted FZF/pyenv interaction
 # and force a clean rehash.
 # Use PYENV_ROOT if set; otherwise pyenv's common default.
-PYENV_ROOT="${PYENV_ROOT:-$HOME/.pyenv}"  # default is $HOME/.pyenv [web:17]
+PYENV_ROOT="${PYENV_ROOT:-$HOME/.pyenv}" # default is $HOME/.pyenv [web:17]
 
 lock_file="$PYENV_ROOT/shims/.pyenv-shim"
 
@@ -44,4 +43,3 @@ if [[ -e "$lock_file" ]]; then
 else
   echo "ℹ️  No lock file found."
 fi
-
