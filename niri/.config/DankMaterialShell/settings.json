@@ -169,7 +169,7 @@
   "niriOverviewOverlayEnabled": true,
   "useAutoLocation": false,
   "weatherEnabled": true,
-  "networkPreference": "auto",
+  "networkPreference": "wifi",
   "vpnLastConnected": "",
   "iconTheme": "Papirus-Dark",
   "cursorSettings": {
