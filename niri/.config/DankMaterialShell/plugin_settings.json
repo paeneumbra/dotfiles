@@ -14,5 +14,11 @@
   },
   "dankBatteryAlerts": {
     "enabled": true
+  },
+  "dankKDEConnect": {
+    "enabled": true
+  },
+  "dankLauncherKeys": {
+    "enabled": true
   }
 }
