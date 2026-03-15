@@ -30,11 +30,11 @@ version_provider = "uv"
 required-version = ">=0.7.3"
 
 [tool.commitizen.customize]
-schema = "<type>: <body>"
-schema_pattern = "(bump|break|feat|chore|tools|docs|fix):(\\s.*)"
-bump_pattern = "^(bump|break|feat|tools|fix|chore)"
-bump_map = { "break" = "MAJOR", "feat" = "MINOR", "fix" = "PATCH", "tools" = "PATCH", "chore" = "PATCH", "docs" = "PATCH" }
-change_type_order = ["break", "feat", "fix", "tools", "chore", "docs"]
-commit_parser = "^(?P<change_type>break|feat|chore|tools|docs|fix):\\s(?P<message>.*)?"
-changelog_pattern = "^(break|feat|chore|tools|docs|fix)?(!)?"
-change_type_map = { "break" = "Breaking Change", "feat" = "Changed", "fix" = "Fixed", "tools" = "Tools", "chore" = "Changed", "docs" = "Notes" }
+schema = "<type>[(scope)]: <message>"
+schema_pattern = "^(feat|fix|docs|test|chore|revert)(\\([^()\\r\\n]+\\))?(!)?:\\s.*"
+bump_pattern = "^(feat|fix|chore)"
+bump_map = { "feat" = "MINOR", "fix" = "PATCH", "chore" = "PATCH" }
+commit_parser = "^(?P<change_type>feat|fix|docs|test|chore|revert)(?:\\((?P<scope>[^()\\r\\n]*)\\))?(?P<breaking>!)?:\\s(?P<message>.*)?"
+changelog_pattern = "^(feat|fix|chore|docs)"
+change_type_map = { "feat" = "Features", "fix" = "Bug Fixes", "chore" = "Chores", "docs" = "Documentation" }
+change_type_order = ["Features", "Bug Fixes", "Chores", "Documentation"]
