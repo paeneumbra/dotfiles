@@ -42,7 +42,7 @@ PARUPKGS=(
   journalctl-desktop-notification
 )
 
-echo "Installing hypr AUR packages"
+echo "Installing AUR packages"
 
 for PPKG in "${PARUPKGS[@]}"; do
   echo "Installing package: $PPKG"

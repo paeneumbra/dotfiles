@@ -4,7 +4,7 @@ version = "8.3.9"
 description = "Personal development laboratory"
 authors = [{ name = "Itzalak", email = "itzalak@tuta.io" }]
 readme = "README.md"
-keywords = ["dotfiles", "archlinux", "hyprland", "macos"]
+keywords = ["dotfiles", "archlinux", "macos"]
 requires-python = ">=3.13"
 dependencies = [
   "pytest >= 8.3.3",
@@ -31,10 +31,22 @@ required-version = ">=0.7.3"
 
 [tool.commitizen.customize]
 schema = "<type>[(scope)]: <message>"
-schema_pattern = "^(feat|fix|docs|test|chore|revert)(\\([^()\\r\\n]+\\))?(!)?:\\s.*"
-bump_pattern = "^(feat|fix|chore)"
-bump_map = { "feat" = "MINOR", "fix" = "PATCH", "chore" = "PATCH" }
-commit_parser = "^(?P<change_type>feat|fix|docs|test|chore|revert)(?:\\((?P<scope>[^()\\r\\n]*)\\))?(?P<breaking>!)?:\\s(?P<message>.*)?"
-changelog_pattern = "^(feat|fix|chore|docs)"
-change_type_map = { "feat" = "Features", "fix" = "Bug Fixes", "chore" = "Chores", "docs" = "Documentation" }
-change_type_order = ["Features", "Bug Fixes", "Chores", "Documentation"]
+schema_pattern = "^(break|feat|fix|docs|chore)(\\([^()\\r\\n]+\\))?(!)?:\\s.*"
+bump_pattern = "^(break|feat|fix|chore)"
+bump_map = { "break" = "MAJOR", "feat" = "MINOR", "fix" = "PATCH", "chore" = "PATCH" }
+commit_parser = "^(?P<change_type>feat|fix|break|docs|chore)(?:\\((?P<scope>[^()\\r\\n]*)\\))?(?P<breaking>!)?:\\s(?P<message>.*)?"
+changelog_pattern = "^(break|feat|fix|chore|docs)"
+change_type_order = [
+  "⚠️ Breaking Change",
+  "🚀 New Feature",
+  "🧹 Chore",
+  "🐛 Fix",
+  "📚 Documentation",
+]
+
+[tool.commitizen.customize.change_type_map]
+break = "⚠️ Breaking Change"
+feat = "🚀 New Feature"
+chore = "🧹 Chore"
+fix = "🐛 Fix"
+docs = "📚 Documentation"

@@ -1,11 +1,5 @@
 # Changelog
 
-## v8.3.9 (2026-01-07)
-
-### Changed
-
-- comment broken config
-
 ## v8.3.8 (2026-01-01)
 
 ### Changed
