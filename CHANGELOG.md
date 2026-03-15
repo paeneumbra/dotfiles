@@ -1,5 +1,33 @@
 # Changelog
 
+## v9.0.0 (2026-03-15)
+
+### ⚠️ Breaking Change
+
+- **niri**: drop hyprland in favor of niri
+
+### 🧹 Chore
+
+- **uv**: update project config
+- bump dank shell version and update config
+- more tweaks
+- tweaks
+- bump neovim version
+- clipboard config update
+- add python rehash fix
+- update brew script
+- cleanup hyprland
+- bump dms config version
+- script basic commands
+- cleanup
+- dms notifications update
+- add wayland flags
+- remove fuzzel generation from tint16
+- name the version update
+- adjust to vimes
+- introduce dms quickshell
+- comment broken config
+
 ## v8.3.8 (2026-01-01)
 
 ### Changed
