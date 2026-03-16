@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.1 (2026-03-16)
+
+### 🧹 Chore
+
+- **brew**: update brewfile
+
 ## v9.0.0 (2026-03-15)
 
 ### ⚠️ Breaking Change
