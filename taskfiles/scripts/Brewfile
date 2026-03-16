@@ -118,6 +118,7 @@ cask 'appcleaner'
 cask 'jdk-mission-control'
 cask 'visualvm'
 brew 'graphviz'
+cask 'claude-code'
 
 # Python: managed by pip, pipx, pyenv and uv
 # https://raw.githubusercontent.com/paeneumbra/dotfiles/blob/main/taskfiles/taskfile.python.yml
