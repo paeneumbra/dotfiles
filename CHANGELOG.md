@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.2 (2026-03-19)
+
+### 🧹 Chore
+
+- **markdownlint**: update config
+
 ## v9.0.1 (2026-03-16)
 
 ### 🧹 Chore
