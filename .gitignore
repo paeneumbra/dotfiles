@@ -154,10 +154,7 @@ Brewfile.lock.json
 
 # fish
 /terminal/.config/fish/fish_variables
-
-# aider
-.aider*
-!.aider.conf.yml
+/terminal/.config/fish/completions/4scr.fish
 
 # dms
 /niri/.config/niri/dms/
@@ -166,3 +163,9 @@ Brewfile.lock.json
 /terminal/.config/ghostty/config-dankcolors
 /terminal/.config/kitty/dank-tabs.conf
 /terminal/.config/kitty/dank-theme.conf
+
+# AI
+.aider*
+!.aider.conf.yml
+/.claude
+/docs/
