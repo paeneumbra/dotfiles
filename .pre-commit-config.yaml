@@ -36,7 +36,7 @@ repos:
           - pre-push
 
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.21.0
+    rev: v0.22.0
     hooks:
       - id: markdownlint-cli2
         args:
@@ -62,7 +62,7 @@ repos:
           )$
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.37.0
+    rev: 0.37.1
     hooks:
       - id: check-taskfile
       - id: check-github-workflows
@@ -74,17 +74,18 @@ repos:
         args: ['-formatter', 'retain_line_breaks=true']
 
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.12.0-2
+    rev: v3.13.0-1
     hooks:
       - id: shfmt
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.10.10
+    rev: 0.11.3
     hooks:
       - id: uv-lock
+      - id: uv-sync
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.6
+    rev: v0.15.9
     hooks:
       - id: ruff-check
         args: [--fix]
@@ -92,21 +93,15 @@ repos:
 
   - repo: local
     hooks:
-      - id: uv
-        name: sync uv environment
-        entry: uv sync
-        language: system
-        pass_filenames: false
-        verbose: true
       - id: pytest
         name: run tests
         entry: uv run pytest tests/
         language: system
         pass_filenames: false
         verbose: true
-      - id: ty
-        name: ty check
-        entry: uvx ty check .
+      - id: ty-check
+        name: ty-check
         language: system
-        types: [python]
-        pass_filenames: false
+        entry: uv run ty check
+        types:
+          - python
