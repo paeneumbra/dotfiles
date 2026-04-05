@@ -1,5 +1,19 @@
 # Changelog
 
+## v9.0.3 (2026-04-05)
+
+### 🧹 Chore
+
+- **uv**: bump packages
+- **niri**: update trackpad input behavior
+- **mardownlint**: correct typo
+- **neovim**: update neovim config version
+- **precommit**: plugins version update
+
+### 📚 Documentation
+
+- move todos around
+
 ## v9.0.2 (2026-03-19)
 
 ### 🧹 Chore
