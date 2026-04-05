@@ -12,6 +12,7 @@ PKGS=(
   thunderbird
   signal-desktop
   zen-browser
+  chromium
 )
 
 echo "Installing packages"

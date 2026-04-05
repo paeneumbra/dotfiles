@@ -10,21 +10,21 @@
 set -e
 
 if (($# == 0)); then
-        echo "Usage: webapp-install-list <file>"
-        exit 1
+  echo "Usage: webapp-install-list <file>"
+  exit 1
 fi
 
 LIST_FILE="$1"
 
 if [[ ! -f $LIST_FILE ]]; then
-        echo "Error: List file not found: $LIST_FILE"
-        exit 1
+  echo "Error: List file not found: $LIST_FILE"
+  exit 1
 fi
 
 while IFS='|' read -r name url icon || [[ -n $name ]]; do
-        [[ -z $name || $name == \#* ]] && continue
-        name=$(echo "$name" | xargs)
-        url=$(echo "$url" | xargs)
-        icon=$(echo "$icon" | xargs)
-        webapp-install "$name" "$url" ${icon:+"$icon"}
+  [[ -z $name || $name == \#* ]] && continue
+  name=$(echo "$name" | xargs)
+  url=$(echo "$url" | xargs)
+  icon=$(echo "$icon" | xargs)
+  webapp-install "$name" "$url" ${icon:+"$icon"}
 done <"$LIST_FILE"
