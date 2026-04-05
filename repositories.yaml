@@ -3,15 +3,9 @@
 depository:
   - git@github.com:paeneumbra/dotfiles.git
   - git@github.com:paeneumbra/pyresume.git
-  - archived:
-      - git@github.com:paeneumbra/deprecated-static-site.git
-      - git@github.com:paeneumbra/dotcachy.git
   - templates:
-      - git@github.com:paeneumbra/gradle-template.git
       - git@github.com:paeneumbra/obsidian-template.git
-      - git@github.com:paeneumbra/cookiecutter-base.git
       - git@github.com:paeneumbra/cookiecutter-python.git
-      - git@github.com:paeneumbra/cookiecutter-java-kotlin.git
   - more:
       - git@github.com:paeneumbra/basoa.nvim.git
       - git@github.com:paeneumbra/thescream.nvim.git
