@@ -6,7 +6,7 @@ MD004:
   style: dash
 
 # MD007 - Unordered list indentation
-# We want to prevent conflict between the muliple apps involved to modify markdown
+# We want to prevent conflict between the multiple apps involved in modifying markdown
 MD007:
   indent: 4
 
