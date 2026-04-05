@@ -38,7 +38,7 @@ tasks:
     silent: true
     internal: true
     vars:
-      REQUIRED_TOOLS: pre-commit, uv
+      REQUIRED_TOOLS: pre-commit, uv, prek
 
   setup:
     deps: [assert]

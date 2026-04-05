@@ -51,15 +51,12 @@ tasks:
       - task: assert
         vars:
           REQUIRED_TOOLS: python, pipx
-      # - pipx install poetry
-      # - pipx inject poetry poetry-plugin-export
       - pipx install commitizen
       - pipx install pre-commit
       - pipx install pip-tools
       - pipx install ruff
-      # - pipx install virtualenv
-      # - pipx install cookiecutter
       - pipx install ty
+      - pipx install prek
       - pipx ensurepath
 
   pyenv:
