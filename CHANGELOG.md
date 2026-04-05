@@ -1,5 +1,12 @@
 # Changelog
 
+## v9.0.5 (2026-04-05)
+
+### 🧹 Chore
+
+- **nvim**: bump neovim config
+- **python**: update installation for python version
+
 ## v9.0.4 (2026-04-05)
 
 ### 🧹 Chore
