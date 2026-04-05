@@ -13,7 +13,7 @@ input {
         dwt
         drag false
         scroll-method "two-finger"
-        // disabled-on-external-mouse
+        click-method "clickfinger"
     }
 
     mouse {
