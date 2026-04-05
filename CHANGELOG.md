@@ -1,5 +1,17 @@
 # Changelog
 
+## v9.0.4 (2026-04-05)
+
+### 🧹 Chore
+
+- **scripts**: move installation scripts to correct place, add chromium
+- **scripts**: add scripts for desktop webapps
+- **prek**: introduce prek as alternative to pre-commit
+
+### 📚 Documentation
+
+- cleanup the repo list
+
 ## v9.0.3 (2026-04-05)
 
 ### 🧹 Chore
