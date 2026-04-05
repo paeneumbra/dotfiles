@@ -1,6 +1,0 @@
-#!/bin/bash
-
-APP_NAME=$1
-
-pkill -x "$APP_NAME"
-niri msg action spawn -- "$APP_NAME"

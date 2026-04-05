@@ -1,0 +1,8 @@
+#!/bin/bash
+DESKTOP_DIR="$HOME/.local/share/applications"
+
+while IFS= read -r -d '' file; do
+        name=$(grep '^Name=' "$file" | cut -d= -f2-)
+        url=$(grep '^Exec=' "$file" | sed 's/.*webapp-launch //')
+        printf "%-30s %s\n" "$name" "$url"
+done < <(find "$DESKTOP_DIR" -name '*-webapp.desktop' -print0 | sort -z)
