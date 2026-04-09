@@ -1,5 +1,12 @@
 # Changelog
 
+## v9.0.6 (2026-04-09)
+
+### 🧹 Chore
+
+- **nvim**: bump neovim config
+- **brew**: update packages
+
 ## v9.0.5 (2026-04-05)
 
 ### 🧹 Chore
