@@ -49,6 +49,11 @@ if test -d "$HOME/.pyenv"
     pyenv init - | source
 end
 
+# Cargo
+if test -d "$HOME/.cargo/bin"
+    fish_add_path --prepend "$HOME/.cargo/bin"
+end
+
 # SDKMAN
 if test -d "$HOME/.sdkman"
     set --universal --export SDKMAN_DIR "$HOME/.sdkman"

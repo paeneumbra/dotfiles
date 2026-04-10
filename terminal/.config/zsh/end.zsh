@@ -3,6 +3,7 @@
 export DOTS="$HOME/depository/dotfiles"
 export PATH="$DOTS/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
 # Zsh specific
