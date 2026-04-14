@@ -5,6 +5,8 @@ tap 'boz/repo'
 tap 'mike-engel/jwt-cli'
 tap 'hashicorp/tap'
 tap 'ankitpokhrel/jira-cli'
+tap 'atlassian/homebrew-acli'
+tap "janosmiko/tap"
 
 # Install apps in macos Applications directory
 cask_args appdir: '/Applications'
@@ -123,6 +125,8 @@ brew 'rtk'
 brew 'jira-cli'
 brew 'kcat'
 brew 'gh'
+brew 'acli'
+brew "janosmiko/tap/lfk"
 
 # Python: managed by pip, pipx, pyenv and uv
 # https://raw.githubusercontent.com/paeneumbra/dotfiles/blob/main/taskfiles/taskfile.python.yml
