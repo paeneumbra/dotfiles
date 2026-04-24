@@ -1,5 +1,12 @@
 # Changelog
 
+## v9.0.8 (2026-04-24)
+
+### 🧹 Chore
+
+- **tools**: introduce revdiff
+- clean pyproject versioning
+
 ## v9.0.7 (2026-04-14)
 
 ### 🧹 Chore
