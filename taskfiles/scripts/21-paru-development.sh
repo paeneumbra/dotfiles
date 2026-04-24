@@ -24,6 +24,7 @@ PKGS=(
   lazygit
   gron
   go
+  revdiff
 )
 
 echo "Installing required packages for development"
