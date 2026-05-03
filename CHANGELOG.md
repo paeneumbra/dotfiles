@@ -1,5 +1,12 @@
 # Changelog
 
+## v9.0.10 (2026-05-03)
+
+### 🧹 Chore
+
+- **dank**: tweaks for dank bar
+- **cargo**: add cargo to path
+
 ## v9.0.9 (2026-05-01)
 
 ### 🧹 Chore
