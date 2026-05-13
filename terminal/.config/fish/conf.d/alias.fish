@@ -15,6 +15,10 @@ alias gw='./gradlew'
 alias gwa='./gradlew clean assemble'
 alias gwb='./gradlew clean build'
 
+# Claude
+alias cc='claude'
+alias cr='claude --resume'
+
 # Other
 alias ls='eza -al --color=always --group-directories-first --icons' # preferred listing
 alias la='eza -a --color=always --group-directories-first --icons'  # all files and dirs

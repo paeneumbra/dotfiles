@@ -17,6 +17,10 @@ alias gw='./gradlew'
 alias gwa='./gradlew clean assemble'
 alias gwb='./gradlew clean build'
 
+# claude
+alias cc='claude'
+alias cr='claude --resume'
+
 # Others
 # (i) prompt before overwrite
 # (v) verbose
