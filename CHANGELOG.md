@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.11 (2026-05-13)
+
+### 🧹 Chore
+
+- **claude**: add alias
+
 ## v9.0.10 (2026-05-03)
 
 ### 🧹 Chore
