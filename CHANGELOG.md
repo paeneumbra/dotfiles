@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.12 (2026-05-20)
+
+### 🧹 Chore
+
+- bump precommit and uv
+
 ## v9.0.11 (2026-05-13)
 
 ### 🧹 Chore
