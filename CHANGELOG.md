@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.13 (2026-05-20)
+
+### 🧹 Chore
+
+- **brew**: update packages
+
 ## v9.0.12 (2026-05-20)
 
 ### 🧹 Chore
