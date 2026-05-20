@@ -6,7 +6,6 @@ tap 'mike-engel/jwt-cli'
 tap 'hashicorp/tap'
 tap 'atlassian/homebrew-acli'
 tap "janosmiko/tap"
-tap 'oven-sh/bun'
 
 # Install apps in macos Applications directory
 cask_args appdir: '/Applications'
@@ -61,7 +60,7 @@ brew 'nvim'
 brew 'openssl'
 brew 'pipx'
 brew 'poppler'
-brew 'postgresql@16'
+brew 'postgresql@17'
 brew 'protobuf'
 brew 'pyenv'
 brew 'ripgrep'
@@ -126,7 +125,6 @@ brew 'gh'
 brew 'acli'
 brew 'janosmiko/tap/lfk'
 brew 'umputun/apps/revdiff'
-brew 'bun'
 
 # Python: managed by pip, pipx, pyenv and uv
 # https://raw.githubusercontent.com/paeneumbra/dotfiles/blob/main/taskfiles/taskfile.python.yml
