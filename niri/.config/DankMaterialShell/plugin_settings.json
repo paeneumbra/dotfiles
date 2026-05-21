@@ -20,5 +20,8 @@
   },
   "dankLauncherKeys": {
     "enabled": true
+  },
+  "voxtype": {
+    "enabled": true
   }
 }
