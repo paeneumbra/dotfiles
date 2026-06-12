@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.14 (2026-06-12)
+
+### 🧹 Chore
+
+- **brew**: update brewfile to use lastest claude
+
 ## v9.0.13 (2026-05-20)
 
 ### 🧹 Chore
