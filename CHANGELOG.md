@@ -1,5 +1,12 @@
 # Changelog
 
+## v9.0.15 (2026-07-19)
+
+### 🧹 Chore
+
+- update dms to 1.5
+- **niri**: add voxtype
+
 ## v9.0.14 (2026-06-12)
 
 ### 🧹 Chore
