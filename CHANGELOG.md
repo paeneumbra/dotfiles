@@ -1,5 +1,13 @@
 # Changelog
 
+## v9.0.16 (2026-07-23)
+
+### 🧹 Chore
+
+- **uv**: dependency bump
+- **prek**: migrate to prek and plugin bump
+- **dank**: small tweaks of configuration
+
 ## v9.0.15 (2026-07-19)
 
 ### 🧹 Chore
