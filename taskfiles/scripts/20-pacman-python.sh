@@ -35,7 +35,7 @@ PIPX_PKGS=(
   ruff
   # poetry
   commitizen
-  pre-commit
+  # pre-commit
   # cookiecutter
   ty
 )

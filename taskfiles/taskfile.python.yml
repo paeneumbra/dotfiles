@@ -52,7 +52,7 @@ tasks:
         vars:
           REQUIRED_TOOLS: python, pipx
       - pipx install commitizen
-      - pipx install pre-commit
+      # - pipx install pre-commit
       - pipx install pip-tools
       - pipx install ruff
       - pipx install ty

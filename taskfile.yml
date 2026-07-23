@@ -38,29 +38,32 @@ tasks:
     silent: true
     internal: true
     vars:
-      REQUIRED_TOOLS: pre-commit, uv, prek
+      REQUIRED_TOOLS: uv, prek
 
   setup:
     deps: [assert]
-    desc: Set up uv and pre-commit
+    desc: Set up uv and prek
     cmds:
-      - task: precommit_setup
+      - task: prek_setup
       - uv sync
 
   update:
     deps: [assert]
-    desc: Update uv and pre-commit
+    desc: Update uv and prek
     cmds:
       - task: uv_update
-      - pre-commit autoupdate
+      - prek auto-update
+      - prek cache gc
+      - prek validate-config
 
-  precommit_setup:
+  prek_setup:
     internal: true
     deps: [assert]
-    desc: Initialize pre-commit
+    desc: Initialize prek
     cmds:
-      - pre-commit install
-      - pre-commit autoupdate
+      - prek install
+      - prek auto-update
+      - prek validate-config
 
   uv_update:
     internal: true
@@ -72,11 +75,11 @@ tasks:
       - uv sync
 
   run:
-    aliases: [pre_commit_run]
+    aliases: [prek_run]
     deps: [assert]
-    desc: Run pre-commit on all files
+    desc: Run prek on all files
     cmds:
-      - pre-commit run --color always --all-files
+      - prek run --color always --all-files
 
   uv:
     deps: [assert]
