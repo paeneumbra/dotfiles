@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.17 (2026-08-03)
+
+### 🧹 Chore
+
+- brew and terminal tweaks
+
 ## v9.0.16 (2026-07-23)
 
 ### 🧹 Chore
