@@ -39,6 +39,7 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 # Brew (MacOS)
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_REQUIRE_TAP_TRUST=1
 
 # Python, pip and pyenv
 fish_add_path --prepend "$HOME/.local/bin"

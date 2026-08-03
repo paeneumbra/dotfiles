@@ -16,12 +16,12 @@ quit-after-last-window-closed = true
 confirm-close-surface = false
 clipboard-read = allow
 clipboard-write = allow
-shell-integration = fish
-shell-integration-features = no-title
+shell-integration = detect
+shell-integration-features = true
 cursor-style = block
 cursor-style-blink = true
 cursor-click-to-move = true
-title = "👻"
+title = " "
 
 # Keybindings
 keybind = alt+shift+r=reload_config
