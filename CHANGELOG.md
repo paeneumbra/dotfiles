@@ -1,5 +1,13 @@
 # Changelog
 
+## v9.0.18 (2026-08-13)
+
+### 🧹 Chore
+
+- **uv**: bump dependencies
+- **prek**: bump plugins
+- **brew**: clean unused
+
 ## v9.0.17 (2026-08-03)
 
 ### 🧹 Chore
