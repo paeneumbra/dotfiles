@@ -2,10 +2,10 @@ import pytest
 import yaml
 
 from dotfiles.gitctl.files import (
+    get_clone_arguments,
+    is_valid_path,
     map_directory_to_repositories,
     validate_repository_string,
-    is_valid_path,
-    get_clone_arguments,
 )
 
 

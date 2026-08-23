@@ -20,7 +20,7 @@ def calculate_sha256(file_path: Path) -> str | None:
                 if not data:
                     break
                 sha256.update(data)
-    except (IOError, PermissionError, FileNotFoundError) as err:
+    except (OSError, PermissionError, FileNotFoundError) as err:
         click_error(f"Error reading file: {file_path}, {err}")
         return None
     return sha256.hexdigest()

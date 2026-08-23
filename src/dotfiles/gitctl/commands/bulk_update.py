@@ -4,7 +4,7 @@ import click
 
 from dotfiles.gitctl.finder import find_git_repositories
 from dotfiles.gitctl.operations import update_repository
-from dotfiles.tui.click_logs import click_debug, click_error, click_success, click_info
+from dotfiles.tui.click_logs import click_debug, click_error, click_info, click_success
 
 
 def _print_found_repositories(paths: list[Path]) -> None:

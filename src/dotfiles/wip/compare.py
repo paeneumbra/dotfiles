@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 
 
-import os
 import hashlib
+import os
 import sys
-
 
 __version__ = "0.2.1"
 
@@ -16,7 +15,7 @@ def calculate_sha256(file_path):
         with open(file_path, "rb") as f:
             for chunk in iter(lambda: f.read(4096), b""):
                 sha256.update(chunk)
-    except IOError:
+    except OSError:
         print(f"Error reading file: {file_path}")
         return None
     return sha256.hexdigest()

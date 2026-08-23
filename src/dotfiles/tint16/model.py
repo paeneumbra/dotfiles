@@ -20,23 +20,15 @@ class Palette:
             "foreground": self.foreground,
             **{f"color{i}": color for i, color in enumerate(self.colors)},
             **{
-                f"color{i}_value": (color[1:] if color.startswith("#") else color)
+                f"color{i}_value": (color.removeprefix("#"))
                 for i, color in enumerate(self.colors)
             },
-            "background_value": (
-                self.background[1:]
-                if self.background.startswith("#")
-                else self.background
-            ),
-            "foreground_value": (
-                self.foreground[1:]
-                if self.foreground.startswith("#")
-                else self.foreground
-            ),
+            "background_value": (self.background.removeprefix("#")),
+            "foreground_value": (self.foreground.removeprefix("#")),
         }
 
     @staticmethod
-    def from_json(data: dict[str, Any]) -> "Palette":
+    def from_json(data: dict[str, Any]) -> Palette:
         return Palette(
             name=data["name"],
             author=data["author"],

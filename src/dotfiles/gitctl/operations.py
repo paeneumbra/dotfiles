@@ -5,19 +5,23 @@ from pathlib import Path
 from dotfiles.gitctl.files import get_clone_arguments
 from dotfiles.gitctl.models import OperationOutput, OperationResult
 
-timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
 git_pull = ["git", "pull"]
 git_log = ["git", "log"]
 git_status = ["git", "status", "--porcelain"]
-git_stash = [
-    "git",
-    "stash",
-    "push",
-    "--include-untracked",
-    "--message",
-    f"GIT UPDATE SCRIPT AUTO STASH {timestamp}",
-]
+
+
+def git_stash() -> list[str]:
+    timestamp = datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S")
+    return [
+        "git",
+        "stash",
+        "push",
+        "--include-untracked",
+        "--message",
+        f"GIT UPDATE SCRIPT AUTO STASH {timestamp}",
+    ]
+
+
 git_default_branch = ["git", "symbolic-ref", "refs/remotes/origin/HEAD"]
 git_current_branch = ["git", "branch", "--show-current"]
 git_checkout = ["git", "switch"]
@@ -52,7 +56,7 @@ def execute_git_command(command: list[str], cwd: Path | None) -> OperationOutput
         )
     except FileNotFoundError:
         return OperationOutput(command, -1, "", "Git not found in PATH")
-    except Exception as e:
+    except OSError as e:
         return OperationOutput(command, -1, "", f"Unexpected error: {e}")
 
 
@@ -83,7 +87,7 @@ def update_repository(repo_path: Path) -> OperationResult:
         return result
 
     if status.stdout.strip() != "":
-        stash = execute_git_command(git_stash, repo_path)
+        stash = execute_git_command(git_stash(), repo_path)
         if stash.failure:
             result.append(stash)
             return result

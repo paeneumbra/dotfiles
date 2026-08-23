@@ -9,7 +9,7 @@ project_dir = Path(__file__).resolve().parent.parent
 script_name = Path(__file__).name
 
 # Run uv with the project directory
-subprocess.run(
+result = subprocess.run(
     [
         "uv",
         "run",
@@ -19,5 +19,8 @@ subprocess.run(
         "-c",
         f"from dotfiles.gitctl.cli import cli; cli(prog_name='{script_name}')",
         *sys.argv[1:],
-    ]
+    ],
+    check=False,
 )
+
+sys.exit(result.returncode)

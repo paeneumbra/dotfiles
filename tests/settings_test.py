@@ -3,8 +3,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from dotfiles.settings import OS, HOME
-from dotfiles.settings import PROJECT_ROOT
+from dotfiles.settings import HOME, OS, PROJECT_ROOT
 
 load_dotenv()
 

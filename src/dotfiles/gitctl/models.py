@@ -37,7 +37,7 @@ class OperationResult:
 
     def append(
         self, result: OperationOutput, result_message: str | None = None
-    ) -> "OperationResult":
+    ) -> OperationResult:
         self.operation_results.append(result)
         if result_message:
             self.messages.append(result_message)

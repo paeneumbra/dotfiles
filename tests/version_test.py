@@ -1,5 +1,7 @@
 from pathlib import Path
+
 import toml
+
 from dotfiles.version import __version__
 
 

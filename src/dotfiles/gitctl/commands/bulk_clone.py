@@ -5,7 +5,7 @@ import click
 from dotfiles.commons.file_operations import read_yaml
 from dotfiles.gitctl.files import map_directory_to_repositories
 from dotfiles.gitctl.operations import clone_from_file
-from dotfiles.tui.click_logs import click_debug, click_error, click_success, click_info
+from dotfiles.tui.click_logs import click_debug, click_error, click_info, click_success
 
 
 def _print_found_repositories(repos: dict[str, str]) -> None:
@@ -86,6 +86,11 @@ def clone(yaml_file: Path, root: Path, list_repositories: bool):
 
     try:
         yaml_content = read_yaml(yaml_file)
+        if not isinstance(yaml_content, dict):
+            click_error(
+                f"Error cloning repositories: {yaml_file} is not a YAML mapping"
+            )
+            return
         repos = map_directory_to_repositories(yaml_content)
 
         if list_repositories:
@@ -96,7 +101,7 @@ def clone(yaml_file: Path, root: Path, list_repositories: bool):
                 click_success(result.get_messages())
             else:
                 click_error(result.get_errors())
-    except Exception as e:
+    except (click.ClickException, OSError) as e:
         click_error(f"Error cloning repositories: {e}")
 
 

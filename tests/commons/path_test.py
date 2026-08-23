@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from dotfiles.commons.path_operations import should_ignore_path, get_files_in_dir
+from dotfiles.commons.path_operations import get_files_in_dir, should_ignore_path
 
 
 @pytest.mark.parametrize(
