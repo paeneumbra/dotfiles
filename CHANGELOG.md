@@ -1,5 +1,14 @@
 # Changelog
 
+## v9.0.19 (2026-08-23)
+
+### 🧹 Chore
+
+- **uv**: dependency bump
+- **prek**: bump dependencies
+- **py**: correct ruff check warnings
+- **dms**: update config
+
 ## v9.0.18 (2026-08-13)
 
 ### 🧹 Chore
