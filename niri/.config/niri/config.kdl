@@ -44,3 +44,9 @@ animations {
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
 }
+
+// DMS Include Configs
+include "dms/layout.kdl"
+include "dms/cursor.kdl"
+include "dms/binds.kdl"
+include "dms/outputs.kdl"

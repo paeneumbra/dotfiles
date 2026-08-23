@@ -157,12 +157,8 @@ Brewfile.lock.json
 /terminal/.config/fish/completions/4scr.fish
 
 # dms
-/niri/.config/niri/dms/
 /niri/.config/DankMaterialShell/themes/
 /terminal/.config/alacritty/dank-theme.toml
-/terminal/.config/ghostty/config-dankcolors
-/terminal/.config/kitty/dank-tabs.conf
-/terminal/.config/kitty/dank-theme.conf
 
 # AI
 .aider*

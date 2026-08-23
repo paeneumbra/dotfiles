@@ -18,7 +18,7 @@
   "controlCenterTileColorMode": "primary",
   "buttonColorMode": "primary",
   "cornerRadius": 5,
-  "niriLayoutGapsOverride": -1,
+  "niriLayoutGapsOverride": -2,
   "niriLayoutRadiusOverride": -1,
   "niriLayoutBorderSize": -1,
   "hyprlandLayoutGapsOverride": -1,
@@ -175,7 +175,7 @@
   ],
   "showWorkspaceIndex": false,
   "showWorkspaceName": false,
-  "showWorkspacePadding": false,
+  "showWorkspacePadding": true,
   "workspaceScrolling": false,
   "showWorkspaceApps": false,
   "workspaceDragReorder": true,
@@ -303,7 +303,7 @@
   "dankLauncherV2IncludeFilesInAll": false,
   "dankLauncherV2IncludeFoldersInAll": false,
   "launcherUseOverlayLayer": true,
-  "launcherStyle": "full",
+  "launcherStyle": "spotlight",
   "spotlightBarShowModeChips": false,
   "keybindsFloatingWindow": false,
   "useAutoLocation": false,
@@ -319,7 +319,7 @@
     },
     {
       "id": "wallpaper",
-      "enabled": true
+      "enabled": false
     },
     {
       "id": "weather",
@@ -396,8 +396,8 @@
   "batterySuspendBehavior": 0,
   "batteryProfileName": "",
   "batteryPostLockMonitorTimeout": 0,
-  "batteryChargeLimit": 100,
-  "batteryNotifyChargeLimit": false,
+  "batteryChargeLimit": 80,
+  "batteryNotifyChargeLimit": true,
   "batteryCriticalThreshold": 10,
   "batteryNotifyCritical": true,
   "batteryLowThreshold": 20,
@@ -413,11 +413,6 @@
   "fadeToDpmsEnabled": true,
   "fadeToDpmsGracePeriod": 5,
   "launchPrefix": "",
-  "brightnessDevicePins": {},
-  "wifiNetworkPins": {},
-  "bluetoothDevicePins": {},
-  "audioInputDevicePins": {},
-  "audioOutputDevicePins": {},
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
@@ -435,9 +430,9 @@
   "matugenTemplateQt6ct": true,
   "matugenTemplateFirefox": false,
   "matugenTemplatePywalfox": false,
-  "matugenTemplateZenBrowser": true,
+  "matugenTemplateZenBrowser": false,
   "matugenTemplateVesktop": false,
-  "matugenTemplateVencord": true,
+  "matugenTemplateVencord": false,
   "matugenTemplateEquibop": false,
   "matugenTemplateGhostty": false,
   "matugenTemplateKitty": false,
@@ -448,8 +443,8 @@
   "matugenTemplateDgop": true,
   "matugenTemplateKcolorscheme": false,
   "matugenTemplateVscode": false,
-  "matugenTemplateEmacs": true,
-  "matugenTemplateZed": true,
+  "matugenTemplateEmacs": false,
+  "matugenTemplateZed": false,
   "matugenTemplateNeovimSettings": {
     "dark": {
       "baseTheme": "github_dark",
@@ -468,7 +463,7 @@
   "dockGroupByApp": false,
   "dockRestoreSpecialWorkspaceOnClick": false,
   "dockOpenOnOverview": false,
-  "dockPosition": 0,
+  "dockPosition": 1,
   "dockSpacing": 4,
   "dockBottomGap": 0,
   "dockMargin": 0,
@@ -478,7 +473,7 @@
   "dockBorderColor": "surfaceText",
   "dockBorderOpacity": 1,
   "dockBorderThickness": 1,
-  "dockIsolateDisplays": true,
+  "dockIsolateDisplays": false,
   "dockLauncherEnabled": false,
   "dockLauncherLogoMode": "apps",
   "dockLauncherLogoCustomPath": "",
@@ -488,7 +483,7 @@
   "dockLauncherLogoContrast": 1,
   "dockMaxVisibleApps": 0,
   "dockMaxVisibleRunningApps": 0,
-  "dockShowOverflowBadge": true,
+  "dockShowOverflowBadge": false,
   "dockShowTrash": false,
   "dockTrashFileManager": "default",
   "dockTrashCustomCommand": "",
@@ -522,7 +517,7 @@
   "lockScreenVideoCycling": false,
   "lockScreenWallpaperPath": "",
   "lockScreenWallpaperFillMode": "",
-  "lockScreenFontFamily": "",
+  "lockScreenFontFamily": "Iosevka Nerd Font",
   "hideBrightnessSlider": false,
   "notificationTimeoutLow": 5000,
   "notificationTimeoutNormal": 10000,
@@ -576,10 +571,10 @@
   "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
   "updaterIntervalSeconds": 1800,
-  "updaterIncludeFlatpak": true,
+  "updaterIncludeFlatpak": false,
   "updaterAllowAUR": true,
   "updaterIgnoredPackages": [],
-  "displayNameMode": "system",
+  "displayNameMode": "model",
   "screenPreferences": {
     "dock": [],
     "notifications": [],
@@ -599,7 +594,7 @@
       "all"
     ],
     "lockScreen": [
-      "HDMI-A-1"
+      "all"
     ]
   },
   "showOnLastDisplay": {
@@ -609,10 +604,34 @@
     "toast": true,
     "notepad": true
   },
-  "niriOutputSettings": {},
+  "niriOutputSettings": {
+    "Dell Inc. DELL P3223QE 1Y7KWN3": {
+      "layout": {
+        "alwaysCenterSingleColumn": true
+      },
+      "hotCorners": {
+        "corners": [
+          "bottom-right"
+        ]
+      },
+      "focusAtStartup": true
+    },
+    "Samsung Display Corp. ATNA40CU05-0  Unknown": {
+      "hotCorners": {
+        "corners": [
+          "bottom-left"
+        ]
+      },
+      "layout": {
+        "alwaysCenterSingleColumn": true
+      }
+    }
+  },
   "hyprlandOutputSettings": {},
   "displayProfiles": {},
-  "activeDisplayProfile": {},
+  "activeDisplayProfile": {
+    "niri": ""
+  },
   "displayProfileAutoSelect": false,
   "displayShowDisconnected": false,
   "displaySnapToEdge": true,
@@ -625,11 +644,11 @@
       "position": 0,
       "screenPreferences": [
         {
-          "name": "HDMI-A-1",
+          "name": "DP-2",
           "model": "DELL P3223QE"
         }
       ],
-      "showOnLastDisplay": true,
+      "showOnLastDisplay": false,
       "leftWidgets": [
         "launcherButton",
         {
@@ -721,7 +740,8 @@
       "popupGapsManual": 4,
       "maximizeDetection": true,
       "clickThrough": false,
-      "shadowIntensity": 0
+      "shadowIntensity": 0,
+      "hoverPopouts": false
     }
   ],
   "desktopClockEnabled": false,
@@ -816,23 +836,26 @@
   "launcherPluginVisibility": {},
   "launcherPluginOrder": [],
   "frameEnabled": false,
-  "frameThickness": 16,
-  "frameRounding": 23,
+  "frameThickness": 5,
+  "frameRounding": 12,
   "frameColor": "",
-  "frameOpacity": 1,
+  "frameOpacity": 0.5,
   "frameScreenPreferences": [
-    "all"
+    {
+      "name": "DP-2",
+      "model": "DELL P3223QE"
+    }
   ],
   "frameBarSize": 40,
-  "frameShowOnOverview": false,
+  "frameShowOnOverview": true,
   "frameBlurEnabled": true,
   "frameCloseGaps": true,
   "frameLauncherEmergeSide": "bottom",
   "frameLauncherArcExtender": false,
   "frameLauncherEdgeHover": false,
-  "frameMode": "connected",
+  "frameMode": "separate",
   "barInsetPaddingShared": -1,
   "barInsetPaddingSyncAll": false,
   "frameBarInsetPadding": -1,
-  "configVersion": 12
+  "configVersion": 13
 }
