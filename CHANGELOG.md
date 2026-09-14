@@ -1,5 +1,13 @@
 # Changelog
 
+## v9.0.20 (2026-09-14)
+
+### 🧹 Chore
+
+- **brew**: cleanup brewfile
+- **brew**: update apps
+- **scripts**: cleanup for eclipse generated files
+
 ## v9.0.19 (2026-08-23)
 
 ### 🧹 Chore
