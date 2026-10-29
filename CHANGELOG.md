@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.21 (2026-10-29)
+
+### 🧹 Chore
+
+- **dms**: update config
+
 ## v9.0.20 (2026-09-14)
 
 ### 🧹 Chore
