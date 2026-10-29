@@ -3,7 +3,7 @@
 output "Samsung Display Corp. ATNA40CU05-0  Unknown" {
     mode "2880x1800@120.000"
     scale 1.5
-    position x=0 y=0
+    position x=0 y=528
     hot-corners {
         bottom-left
     }
