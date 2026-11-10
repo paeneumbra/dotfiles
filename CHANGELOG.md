@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.22 (2026-11-10)
+
+### 🧹 Chore
+
+- **ghostty**: update title config
+
 ## v9.0.21 (2026-10-29)
 
 ### 🧹 Chore
