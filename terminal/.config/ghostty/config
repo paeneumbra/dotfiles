@@ -21,7 +21,6 @@ shell-integration-features = true
 cursor-style = block
 cursor-style-blink = true
 cursor-click-to-move = true
-title = " "
 
 # Keybindings
 keybind = alt+shift+r=reload_config
